@@ -1,0 +1,32 @@
+<GMLFeatureClassList>
+  <GMLFeatureClass>
+    <Name>boundary</Name>
+    <ElementPath>boundary</ElementPath>
+    <SRSName>http://www.opengis.net/def/crs/EPSG/0/4258</SRSName>
+    <DatasetSpecificInfo>
+      <FeatureCount>55</FeatureCount>
+      <ExtentXMin>-73.24815</ExtentXMin>
+      <ExtentXMax>55.83663</ExtentXMax>
+      <ExtentYMin>-21.38985</ExtentYMin>
+      <ExtentYMax>83.66498</ExtentYMax>
+    </DatasetSpecificInfo>
+    <PropertyDefn>
+      <Name>ICC</Name>
+      <ElementPath>ICC</ElementPath>
+      <Type>String</Type>
+      <Width>2</Width>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>NAMN</Name>
+      <ElementPath>NAMN</ElementPath>
+      <Type>String</Type>
+      <Width>39</Width>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>DESN</Name>
+      <ElementPath>DESN</ElementPath>
+      <Type>String</Type>
+      <Width>44</Width>
+    </PropertyDefn>
+  </GMLFeatureClass>
+</GMLFeatureClassList>

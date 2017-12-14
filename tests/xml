@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<envelope released="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://cdr.eionet.europa.eu/schemas/envelope-metadata.xsd">
+  <title>Test Envelope</title>
+  <description></description>
+  <date>2017-11-06T13:17:35Z</date>
+  <coverage>http://rod.eionet.europa.eu/spatial/35</coverage>
+  <countrycode>ES</countrycode>
+  <obligation>http://rod.eionet.europa.eu/obligations/721</obligation>
+  <link>http://cdrtest.eionet.europa.eu/es/eu/euris/envwgmijw</link>
+  <year>2016</year>
+  <endyear></endyear>
+  <partofyear></partofyear>
+  <file name="input.xml" type="text/xml" schema="http://dd.eionet.europa.eu/schemas/euregistryonindustrialsites/EUReg.xsd" title="" restricted="no" link="input.xml" uploaded="2017-11-28T07:23:19Z"/>
+</envelope>
