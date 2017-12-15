@@ -30,36 +30,36 @@ declare namespace rest = "http://basex.org/rest";
 declare variable $db:master := "http://admin:admin@ied-registry.herokuapp.com/rest/MASTER";
 
 declare function db:getFeatureNames(
-  $featureName as xs:string,
-  $nameName as xs:string
+        $featureName as xs:string,
+        $nameName as xs:string
 ) as element()* {
-  let $seq :=
-  for $file in doc($db:master)/rest:database/rest:resource/text()
-    let $file := $db:master || "/" || $file
-    let $doc := doc($file)
-    let $root := $doc/child::gml:FeatureCollection
+    let $seq :=
+        for $file in doc($db:master)/rest:database/rest:resource/text()
+        let $file := $db:master || "/" || $file
+        let $doc := doc($file)
+        let $root := $doc/child::gml:FeatureCollection
 
-    return $root/descendant::*[local-name()=$featureName]/descendant::*[local-name()=$nameName]/descendant::*:nameOfFeature
+        return $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $nameName]/descendant::*:nameOfFeature
 
-  for $x at $i in $seq
+    for $x at $i in $seq
     let $p := scripts:getParent($x)
     let $id := scripts:getInspireId($p)
 
     let $o :=
-    for $y in subsequence($seq, $i + 1)
-      let $q := scripts:getParent($y)
-      let $ic := scripts:getInspireId($q)
+        for $y in subsequence($seq, $i + 1)
+        let $q := scripts:getParent($y)
+        let $ic := scripts:getInspireId($q)
 
-      where $id != $ic
-      return $x
-    where count($seq)-$i = count($o)
+        where $id != $ic
+        return $x
+    where count($seq) - $i = count($o)
     return $x
 };
 
 declare function db:getAll(
-  $name as xs:string
+        $name as xs:string
 ) as element()* {
-  for $file in doc($db:master)/rest:database/rest:resource/text()
+    for $file in doc($db:master)/rest:database/rest:resource/text()
     let $file := $db:master || "/" || $file
     let $doc := doc($file)
     let $root := $doc/child::gml:FeatureCollection
@@ -71,7 +71,7 @@ declare function db:getAll(
 
 declare function db:getReportingCountries(
 ) as element()* {
-  for $file in doc($db:master)/rest:database/rest:resource/text()
+    for $file in doc($db:master)/rest:database/rest:resource/text()
     let $file := $db:master || "/" || $file
     let $doc := doc($file)
     let $root := $doc/child::gml:FeatureCollection
@@ -83,9 +83,9 @@ declare function db:getReportingCountries(
 };
 
 declare function db:getReportingYearsByCountry(
-  $c as xs:string
+        $c as xs:string
 ) as xs:string* {
-  for $file in doc($db:master)/rest:database/rest:resource/text()
+    for $file in doc($db:master)/rest:database/rest:resource/text()
     let $file := $db:master || "/" || $file
     let $doc := doc($file)
     let $root := $doc/child::gml:FeatureCollection
@@ -102,11 +102,11 @@ declare function db:getReportingYearsByCountry(
 };
 
 declare function db:query(
-  $c as xs:string,
-  $y as xs:string,
-  $name as xs:string
+        $c as xs:string,
+        $y as xs:string,
+        $name as xs:string
 ) as element()* {
-  for $file in doc($db:master)/rest:database/rest:resource/text()
+    for $file in doc($db:master)/rest:database/rest:resource/text()
     let $file := $db:master || "/" || $file
     let $doc := doc($file)
     let $root := $doc/child::gml:FeatureCollection
