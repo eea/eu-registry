@@ -225,6 +225,13 @@ declare function scripts:checkActivity(
     let $valid := scripts:getValidConcepts($value)
 
     let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+(:
+    let $seq := if(empty($seq))
+                then
+                    $root/descendant::*[local-name() = $activityType]
+                else
+                    $seq
+:)
 
     let $data :=
         for $x in $seq
@@ -413,23 +420,24 @@ declare function scripts:checkotherRelevantChapters(
     let $activityName := "RelevantChapter"
     let $activityType := "otherRelevantChapters"
 
-    let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " ||
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
+(:    let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " ||
                 scripts:makePlural($featureName) || " is not recognised. Please use an activity listed in the " ||
                 $activityName || "Value code list"
     let $type := "error"
 
     let $value := $activityName || "Value"
-    let $valid := scripts:getValidConcepts($value) (: get all valid terms from code list :)
+    let $valid := scripts:getValidConcepts($value) :)(: get all valid terms from code list :)(:
 
     let $seq := $root/descendant::*[local-name() = $activityType]
 
     let $data :=
         for $x in $seq
-            let $parent := scripts:getParent($x) (: EUReg:ProductionInstallation :)
-            let $feature := $parent/local-name() (: ProductionInstallation :)
+            let $parent := scripts:getParent($x) :)(: EUReg:ProductionInstallation :)(:
+            let $feature := $parent/local-name() :)(: ProductionInstallation :)(:
             let $id := scripts:getGmlId($parent)
 
-            let $activity := replace($x/attribute::*:href, '/+$', '') (: code url :)
+            let $activity := replace($x/attribute::*:href, '/+$', '') :)(: code url :)(:
 
             let $p := scripts:getPath($x)
             let $v := scripts:normalize($activity)
@@ -445,7 +453,7 @@ declare function scripts:checkotherRelevantChapters(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details):)
 
 };
 
