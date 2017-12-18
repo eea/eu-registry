@@ -297,7 +297,6 @@ declare function scripts3:checkGroupedInstallation(
 
         let $p := scripts:getPath($x)
         let $v := data($x/@xlink:href)
-        let $asd := trace($v, "gml:id")
 
         let $ok := count(fn:index-of($gmlIDs, fn:substring($v, 2))) >= 1
         where not($ok)
@@ -307,6 +306,53 @@ declare function scripts3:checkGroupedInstallation(
             }
 
     let $hdrs := ("Feature", "GML ID", "Path", "groupedInstallation/@xlink:href")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(: C13.5 pf:groupedInstallation xlink:href
+"must start with # and be followed by the value of the gml:id of the relevant production installation
+Example: <pf:groupedInstallation xlink:href=""#_010101011.INSTALLATION""/> is correct if the production installation
+<EUReg:ProductionInstallation gml:id=""_010101011.INSTALLATION""> exists"
+
+:)
+
+(:  C13.6 act-core:geometry
+
+    in INSPIRE PF, the geometry for the facility is a generic GM_Object,
+    the EURegistry constraints to be a point (geometryIsKindOfGM_Point constraint).
+    <act-core:geometry> descendant shall be <gml:Point>
+:)
+
+declare function scripts3:checkActCoreGeometry(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionFacility"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = "geometry"]
+
+    let $msg := "The act-core:geometry does not have gml:Point descendant for the following " ||
+                scripts:makePlural($featureName) || ". Please verify them"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+
+        let $p := scripts:getPath($x)
+
+        let $ok := exists($x/descendant::*[local-name() = "Point"])
+        where not($ok)
+            return map {
+            "marks" : (3),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p)
+            }
+
+    let $hdrs := ("Feature", "GML ID", "Path")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)

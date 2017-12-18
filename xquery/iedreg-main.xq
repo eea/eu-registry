@@ -17,6 +17,7 @@ xquery version "3.1" encoding "utf-8";
 
  :)
 
+(:import module namespace iedreg = "http://cdrtest.eionet.europa.eu/help/ied_registry" at "iedreg.xq";:)
 import module namespace iedreg = "http://cdrtest.eionet.europa.eu/help/ied_registry" at "iedreg-qa3.xq";
 
 declare variable $source_url external;
