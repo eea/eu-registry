@@ -165,8 +165,6 @@ declare function scripts3:checkReportData(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-
-    (:return scripts3:checkCondition($refcode, $rulename, $featureName, $activityName, $activityType, $seq, $condition):)
 };
 
 (: C13.2 hostingSite
@@ -230,6 +228,43 @@ declare function scripts3:checkeHostingSite(
     <EUReg:ProductionSite gml:id=""_123456789.Site""> element exists"
 :)
 
+declare function scripts3:checkeHostingSiteHref(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionFacility"
+    let $activityType := "hostingSite"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $gmlID := data($root/descendant::*[local-name() = "ProductionSite"][@gml:id]/@gml:id)
+    let $asd := trace($gmlID, "gmlid: ")
+
+    let $msg := "The gml:ID specified in the " || $activityType || " field for the following " ||
+                scripts:makePlural($featureName) || " is not recognised.
+                Please verify and ensure the correct gml:ID has been inputted"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+
+        let $p := scripts:getPath($x)
+        let $v := data($x/@xlink:href)
+
+        let $ok := $v eq concat("#", $gmlID)
+        where not($ok)
+            return map {
+            "marks" : (5),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v, $gmlID)
+            }
+
+    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, "/@xlink:href"), "ProductionSite/@gml:id")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
 (:~
  : vim: sts=2 ts=2 sw=2 et
  :)
