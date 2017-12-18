@@ -216,23 +216,19 @@ declare function scripts:checkActivity(
         $root as element(),
         $featureName as xs:string,
         $activityName as xs:string,
-        $activityType as xs:string
+        $activityType as xs:string,
+        $seq as element()*
 ) as element()* {
-    let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " || scripts:makePlural($featureName) || " is not recognised. Please use an activity listed in the " || $activityName || "Value code list"
+    let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " ||
+                scripts:makePlural($featureName) || " is not recognised. Please use an activity listed in the " ||
+                $activityName || "Value code list"
     let $type := "error"
 
     let $value := $activityName || "Value"
     let $valid := scripts:getValidConcepts($value)
-
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
 (:
-    let $seq := if(empty($seq))
-                then
-                    $root/descendant::*[local-name() = $activityType]
-                else
-                    $seq
+    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
 :)
-
     let $data :=
         for $x in $seq
         let $parent := scripts:getParent($x)
@@ -270,8 +266,9 @@ declare function scripts:checkMainEPRTRAnnexIActivity(
     let $featureName := "ProductionFacility"
     let $activityName := "EPRTRAnnexIActivity"
     let $activityType := "mainActivity"
+    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (:~
@@ -286,8 +283,9 @@ declare function scripts:checkOtherEPRTRAnnexIActivity(
     let $featureName := "ProductionFacility"
     let $activityName := "EPRTRAnnexIActivity"
     let $activityType := "otherActivity"
+    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (:~
@@ -302,8 +300,9 @@ declare function scripts:checkMainIEDAnnexIActivity(
     let $featureName := "ProductionInstallation"
     let $activityName := "IEDAnnexIActivity"
     let $activityType := "mainActivity"
+    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (:~
@@ -318,8 +317,9 @@ declare function scripts:checkOtherIEDAnnexIActivity(
     let $featureName := "ProductionInstallation"
     let $activityName := "IEDAnnexIActivity"
     let $activityType := "otherActivity"
+    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (:~
@@ -406,55 +406,6 @@ declare function scripts:checkReasonValue(
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
-
-(:
-    C1.7 otherRelevantChapters consistency
-:)
-declare function scripts:checkotherRelevantChapters(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $featureName := "ProductionInstallation"
-    let $activityName := "RelevantChapter"
-    let $activityType := "otherRelevantChapters"
-
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
-(:    let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " ||
-                scripts:makePlural($featureName) || " is not recognised. Please use an activity listed in the " ||
-                $activityName || "Value code list"
-    let $type := "error"
-
-    let $value := $activityName || "Value"
-    let $valid := scripts:getValidConcepts($value) :)(: get all valid terms from code list :)(:
-
-    let $seq := $root/descendant::*[local-name() = $activityType]
-
-    let $data :=
-        for $x in $seq
-            let $parent := scripts:getParent($x) :)(: EUReg:ProductionInstallation :)(:
-            let $feature := $parent/local-name() :)(: ProductionInstallation :)(:
-            let $id := scripts:getGmlId($parent)
-
-            let $activity := replace($x/attribute::*:href, '/+$', '') :)(: code url :)(:
-
-            let $p := scripts:getPath($x)
-            let $v := scripts:normalize($activity)
-
-            where not(scripts:is-empty($activity)) and not($activity = $valid)
-            return map {
-            "marks" : (4),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
-            }
-
-    let $hdrs := ("Feature", "GML ID", "Path", $activityName || "Value")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details):)
-
 };
 
 (:~
