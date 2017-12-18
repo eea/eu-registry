@@ -18,14 +18,21 @@ xquery version "3.1" encoding "utf-8";
  :)
 
 module namespace scripts3 = "iedreg-scripts-qa3";
+
 import module namespace scripts = "iedreg-scripts" at "iedreg-scripts.xq";
+import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
+
+declare namespace xlink = "http://www.w3.org/1999/xlink";
+declare namespace gml = "http://www.opengis.net/gml/3.2";
 
 (:~
  : 1. CODE LIST CHECKS
  :)
 
-(:
-    C1.7 otherRelevantChapters consistency
+(: C1.7 otherRelevantChapters consistency
+
+    <EUReg:otherRelevantChapters  xlink:href > shall contain a value from codelist
+    http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/RelevantChapterValue
 :)
 declare function scripts3:checkOtherRelevantChapters(
         $refcode as xs:string,
@@ -40,8 +47,10 @@ declare function scripts3:checkOtherRelevantChapters(
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(:
-    C1.8 pf:status consistency
+(: C1.8 pf:status consistency
+
+    <pf:statusType xlink:href > shall contain a value from codelist
+    http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/
 :)
 
 declare function scripts3:checkStatusType($refcode as xs:string,
@@ -56,8 +65,10 @@ declare function scripts3:checkStatusType($refcode as xs:string,
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(:
-    C1.9 plantType consistency
+(: C1.9 plantType consistency
+
+    <EUReg:plantType xlink:href > shall contain a value from codelist
+    http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue
 :)
 
 declare function scripts3:checkPlantType($refcode as xs:string,
@@ -72,8 +83,10 @@ declare function scripts3:checkPlantType($refcode as xs:string,
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(:
-    C1.10 derogations consistency
+(: C1.10 derogations consistency
+
+    <EUReg:derogations  xlink:href> shall contain values from codelist
+    http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/
 :)
 
 declare function scripts3:checkDerogations($refcode as xs:string,
@@ -88,8 +101,10 @@ declare function scripts3:checkDerogations($refcode as xs:string,
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(:
-    C1.11 derogations consistency
+(: C1.11 derogations consistency
+
+    <EUReg:specificConditions  xlink:href> shall contain values
+    from codelist  http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/Article51Value
 :)
 
 declare function scripts3:checkSpecificConditions($refcode as xs:string,
@@ -105,20 +120,115 @@ declare function scripts3:checkSpecificConditions($refcode as xs:string,
 };
 
 (:
-    C13.1 checkReportData
+    C13 OTHER CHECKS
 :)
 
-declare function scripts3:checkReportData($refcode as xs:string,
+(: C13.1 checkReportData
+
+    "must start with # and be followed by the value of the gml:id of the Report Data feature.
+    This means checking that starts with ""#""  +  what follows is the gml:id of the ReportData feature type.
+    Example: <EUReg:reportData xlink:href=""#RD_1""/> is correct if the element <EUReg:ReportData gml:id=""RD_1""> exists"
+:)
+
+declare function scripts3:checkReportData(
+        $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $featureName := "ProductionInstallationPart"
-    let $activityName := "Article51"
-    let $activityType := "specificConditions"
-    let $seq := $root/descendant::*[local-name() = $activityType]
+    let $featureName := "ProductionSite"
+    let $activityType := "reportData"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $gmlID := data($root/descendant::*[local-name() = "ReportData"][@gml:id]/@gml:id)
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    let $msg := "The gml:ID specified in the " || $activityType || " field for the following " ||
+                scripts:makePlural($featureName) || " is not recognised.
+                Please verify and ensure the correct gml:ID has been inputted"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+
+        let $p := scripts:getPath($x)
+        let $v := data($x/@xlink:href)
+
+        let $ok := $v eq concat("#", $gmlID)
+        where not($ok)
+            return map {
+            "marks" : (5),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v, $gmlID)
+            }
+
+    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, "/@xlink:href"), "ReportData/@gml:id")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+
+    (:return scripts3:checkCondition($refcode, $rulename, $featureName, $activityName, $activityType, $seq, $condition):)
 };
+
+(: C13.2 hostingSite
+
+    "Each facility must specify its hosting site. The  hostingSite is  optional
+    in INSPIRE PF (so the XMLValidator would not detect the error),
+    but for the EURegistry it is mandatory (oneHostingSite constraint).
+    This means that for the <EUReg:ProductionFacility> the </pf:status> tag
+    shall be followed by the <pf:hostingSite> tag"
+:)
+
+declare function scripts3:checkeHostingSite(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionFacility"
+    let $seq := $root/descendant::*[local-name() = $featureName]
+
+    let $msg := "The status element is not followed by hostingSite element.
+                Please verify and ensure the correct order of elements"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+        let $indexOfStatus :=
+            if (exists($seq/child::*[local-name() = "status"]))
+            then
+                functx:index-of-node($seq/*, $seq/*[local-name() = "status"])
+            else
+                0
+        let $indexOfHostingSite :=
+            if (exists($seq/child::*[local-name() = "hostingSite"]))
+            then
+                functx:index-of-node($seq/*, $seq/*[local-name() = "hostingSite"])
+            else
+                0
+
+        let $p := scripts:getPath($x)
+
+        let $ok := $indexOfHostingSite - $indexOfStatus = 1
+        where not($ok)
+        return map {
+        "marks" : (3),
+        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $indexOfStatus, $indexOfHostingSite)
+        }
+
+    let $hdrs := ("Feature", "GML ID", "Path", "position of pf:status", "position of pf:hostingSite")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(: C13.3 pf:hostingSite xlink:href
+
+    "must start with # and be followed by the value of the gml:id of the relevant ProductionSite
+    Example:  <pf:hostingSite xlink:href=""#_123456789.Site""/> is correct if the
+    <EUReg:ProductionSite gml:id=""_123456789.Site""> element exists"
+:)
 
 (:~
  : vim: sts=2 ts=2 sw=2 et

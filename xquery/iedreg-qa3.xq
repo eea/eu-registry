@@ -243,8 +243,8 @@ declare function iedreg:runChecks13($root as element()) as element()* {
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C13.1", "reportData validity", $root, scripts3:checkReportData#3)
-        (:iedreg:failsafeWrapper("C13.2", "eSPIRSId validity", $root, scripts:checkeSPIRSIdentifier#3),:)
+        iedreg:failsafeWrapper("C13.1", "reportData validity", $root, scripts3:checkReportData#3),
+        iedreg:failsafeWrapper("C13.2", "hostingSite validity", $root, scripts3:checkeHostingSite #3)
         (:iedreg:failsafeWrapper("C13.3", "ProductionFacility facilityName to parentCompanyName comparison", $root, scripts:checkFacilityName#3),:)
         (:iedreg:failsafeWrapper("C13.4", "nameOfFeature", $root, iedreg:notYet#3),:)
         (:iedreg:failsafeWrapper("C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#3),:)

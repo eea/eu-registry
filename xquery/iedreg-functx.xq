@@ -90,3 +90,10 @@ declare function functx:substring-before-last-match
     replace($arg, concat('^(.*)', $regex, '.*'), '$1')
 };
 
+declare function functx:index-of-node($seq as node()*, $search as node()) as xs:integer*
+{
+    fn:filter(
+      1 to fn:count($seq),
+      function($i as xs:integer) as xs:boolean {$seq[$i] is $search}
+    )
+};
