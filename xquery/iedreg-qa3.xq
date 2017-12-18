@@ -241,13 +241,13 @@ declare function iedreg:runChecks13($root as element()) as element()* {
         iedreg:failsafeWrapper("C13.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #3),
         iedreg:failsafeWrapper("C13.3", "hostingSite/@xlink:href validity", $root, scripts3:checkeHostingSiteHref#3),
         iedreg:failsafeWrapper("C13.4", "groupedInstallation validity", $root, scripts3:checkGroupedInstallation#3),
-        (:iedreg:failsafeWrapper("C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#3),:)
-        iedreg:failsafeWrapper("C13.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3)
-        (:iedreg:failsafeWrapper("C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#3),:)
-        (:iedreg:failsafeWrapper("C13.8", "Character string space identification", $root, scripts:checkWhitespaces#3),:)
-        (:iedreg:failsafeWrapper("C13.9", "Character string space identification", $root, scripts:checkWhitespaces#3),:)
-        (:iedreg:failsafeWrapper("C13.10", "Character string space identification", $root, scripts:checkWhitespaces#3),:)
-        (:iedreg:failsafeWrapper("C13.11", "Character string space identification", $root, scripts:checkWhitespaces#3):)
+        iedreg:failsafeWrapper("C13.5", "groupedInstallation/@xlink:href validity", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C13.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),
+        iedreg:failsafeWrapper("C13.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),
+        iedreg:failsafeWrapper("C13.8", "pf:groupedInstallationPart validity", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C13.9", "pf:groupedInstallationPart/@xlink:href validity", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C13.10", "pf:status validity", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C13.11", "pf:pointGeometry validity", $root, iedreg:notYet#3)
     }</div>
 };
 

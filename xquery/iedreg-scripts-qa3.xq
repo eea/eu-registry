@@ -53,7 +53,8 @@ declare function scripts3:checkOtherRelevantChapters(
     http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/
 :)
 
-declare function scripts3:checkStatusType($refcode as xs:string,
+declare function scripts3:checkStatusType(
+        $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
 ) as element()* {
@@ -71,7 +72,8 @@ declare function scripts3:checkStatusType($refcode as xs:string,
     http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue
 :)
 
-declare function scripts3:checkPlantType($refcode as xs:string,
+declare function scripts3:checkPlantType(
+        $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
 ) as element()* {
@@ -89,7 +91,8 @@ declare function scripts3:checkPlantType($refcode as xs:string,
     http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/
 :)
 
-declare function scripts3:checkDerogations($refcode as xs:string,
+declare function scripts3:checkDerogations(
+        $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
 ) as element()* {
@@ -107,7 +110,8 @@ declare function scripts3:checkDerogations($refcode as xs:string,
     from codelist  http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/Article51Value
 :)
 
-declare function scripts3:checkSpecificConditions($refcode as xs:string,
+declare function scripts3:checkSpecificConditions(
+        $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
 ) as element()* {
@@ -318,6 +322,8 @@ Example: <pf:groupedInstallation xlink:href=""#_010101011.INSTALLATION""/> is co
 
 :)
 
+
+
 (:  C13.6 act-core:geometry
 
     in INSPIRE PF, the geometry for the facility is a generic GM_Object,
@@ -356,6 +362,25 @@ declare function scripts3:checkActCoreGeometry(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(: 13.7 act-core:activity validity
+
+    <act-core:activity xlink:href> shall contain a value from codelist
+    http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/NACEValue
+:)
+
+declare function scripts3:checkActCoreActivity(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionFacility"
+    let $activityName := "NACE"
+    let $activityType := "activity"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (:~
