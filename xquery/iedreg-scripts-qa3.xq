@@ -237,9 +237,8 @@ declare function scripts3:checkeHostingSiteHref(
     let $activityType := "hostingSite"
     let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
     let $gmlID := data($root/descendant::*[local-name() = "ProductionSite"][@gml:id]/@gml:id)
-    let $asd := trace($gmlID, "gmlid: ")
 
-    let $msg := "The gml:ID specified in the " || $activityType || " field for the following " ||
+    let $msg := "The gml:ID specified in the " || $activityType || "/@xlink:href field for the following " ||
                 scripts:makePlural($featureName) || " is not recognised.
                 Please verify and ensure the correct gml:ID has been inputted"
     let $type := "error"
@@ -265,6 +264,54 @@ declare function scripts3:checkeHostingSiteHref(
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
+
+(: C13.4 pf:groupedInstallation 
+
+    "Each installation belongs to a facility. For each ProductionInstallation gml:id,
+    a relevant <pf:groupedInstallation xlink:href=""#_gml:id""/> must exist.
+    Example:
+    for the <EUReg:ProductionInstallation gml:id=""_010101011.INSTALLATION""> there must be the element
+    <pf:groupedInstallation xlink:href=""#_010101011.INSTALLATION""/>"
+:)
+
+declare function scripts3:checkGroupedInstallation(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionFacility"
+    let $activityType := "groupedInstallation"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $gmlIDs := $root/descendant::*[local-name() = "ProductionInstallation"]/@gml:id
+
+    let $msg := "The gml:id specified in the " || $activityType || "/@xlink:href field for the following " ||
+                scripts:makePlural($featureName) || " is not recognised.
+                Please verify and ensure the correct gml:ID has been inputted"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+
+        let $p := scripts:getPath($x)
+        let $v := data($x/@xlink:href)
+        let $asd := trace($v, "gml:id")
+
+        let $ok := count(fn:index-of($gmlIDs, fn:substring($v, 2))) >= 1
+        where not($ok)
+            return map {
+            "marks" : (4),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+            }
+
+    let $hdrs := ("Feature", "GML ID", "Path", "groupedInstallation/@xlink:href")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
 (:~
  : vim: sts=2 ts=2 sw=2 et
  :)

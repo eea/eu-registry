@@ -245,8 +245,8 @@ declare function iedreg:runChecks13($root as element()) as element()* {
     <div class="iedreg table parent">{
         iedreg:failsafeWrapper("C13.1", "reportData validity", $root, scripts3:checkReportData#3),
         iedreg:failsafeWrapper("C13.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #3),
-        iedreg:failsafeWrapper("C13.3", "hostingSite href validity", $root, scripts3:checkeHostingSiteHref#3)
-        (:iedreg:failsafeWrapper("C13.4", "nameOfFeature", $root, iedreg:notYet#3),:)
+        iedreg:failsafeWrapper("C13.3", "hostingSite/@xlink:href validity", $root, scripts3:checkeHostingSiteHref#3),
+        iedreg:failsafeWrapper("C13.4", "groupedInstallation validity", $root, scripts3:checkGroupedInstallation#3)
         (:iedreg:failsafeWrapper("C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#3),:)
         (:iedreg:failsafeWrapper("C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#3),:)
         (:iedreg:failsafeWrapper("C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#3),:)
