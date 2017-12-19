@@ -158,7 +158,11 @@ declare function scripts3:checkReportData(
         let $p := scripts:getPath($x)
         let $v := data($x/@xlink:href)
 
-        let $ok := $v eq concat("#", $gmlID)
+        let $ok := (
+            $v eq concat("#", $gmlID)
+            and
+            fn:substring($v, 1, 1) eq "#"
+        )
         where not($ok)
             return map {
             "marks" : (5),
@@ -256,7 +260,11 @@ declare function scripts3:checkeHostingSiteHref(
         let $p := scripts:getPath($x)
         let $v := data($x/@xlink:href)
 
-        let $ok := $v eq concat("#", $gmlID)
+        let $ok := (
+            $v eq concat("#", $gmlID)
+            and
+            fn:substring($v, 1, 1) eq "#"
+        )
         where not($ok)
             return map {
             "marks" : (5),
@@ -346,7 +354,11 @@ declare function scripts3:checkGroupedInstallationHref(
         let $p := scripts:getPath($x)
         let $v := data($x/@xlink:href)
 
-        let $ok := count(fn:index-of($gmlIDs, fn:substring($v, 2))) >= 1
+        let $ok := (
+            count(fn:index-of($gmlIDs, fn:substring($v, 2))) >= 1
+            and
+            fn:substring($v, 1, 1) eq "#"
+        )
         where not($ok)
             return map {
             "marks" : (4),
@@ -458,6 +470,54 @@ declare function scripts3:checkGroupedInstallationPart(
             }
 
     let $hdrs := ("Feature", "GML ID", "Path")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(: 13.9 pf:groupedInstallationPart xlink:href validity
+
+    must start with # and be followed by the value of the gml:id of the relevant production installation
+    Example: <pf:groupedInstallationPart xlink:href=""#_987654321.PART""/> is correct if the installation part
+    <EUReg:ProductionInstallationPart gml:id=""_987654321.PART""> exists"
+:)
+
+declare function scripts3:checkGroupedInstallationPartHref(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionInstallation"
+    let $activityType := "groupedInstallationPart"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $gmlIDs := $root/descendant::*[local-name() = "ProductionInstallationPart"]/@gml:id
+
+    let $msg := "The gml:id specified in the following " || scripts:makePlural($activityType) ||
+                " does not have a relevant ProductionInstallationPart.
+                Please verify and ensure the correct gml:ID has been inputted"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+
+        let $p := scripts:getPath($x)
+        let $v := data($x/@xlink:href)
+
+        let $ok := (
+            count(fn:index-of($gmlIDs, fn:substring($v, 2))) >= 1
+            and
+            fn:substring($v, 1, 1) eq "#"
+        )
+        where not($ok)
+            return map {
+            "marks" : (4),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+            }
+
+    let $hdrs := ("Feature", "GML ID", "Path", "groupedInstallationPart/@xlink:href")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
