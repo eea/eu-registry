@@ -90,6 +90,13 @@ declare function functx:substring-before-last-match
     replace($arg, concat('^(.*)', $regex, '.*'), '$1')
 };
 
+declare function functx:value-except
+( $arg1 as xs:anyAtomicType* ,
+        $arg2 as xs:anyAtomicType* ) as xs:anyAtomicType* {
+
+    distinct-values($arg1[not(.=$arg2)])
+};
+
 declare function functx:index-of-node($seq as node()*, $search as node()) as xs:integer*
 {
     fn:filter(

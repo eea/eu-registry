@@ -21,6 +21,7 @@ module namespace scripts = "iedreg-scripts";
 
 declare namespace act-core = 'http://inspire.ec.europa.eu/schemas/act-core/4.0';
 declare namespace adms = "http://www.w3.org/ns/adms#";
+declare namespace base = "http://inspire.ec.europa.eu/schemas/base/3.3";
 declare namespace EUReg = 'http://dd.eionet.europa.eu/euregistryonindustrialsites';
 declare namespace GML = "http://www.opengis.net/gml";
 declare namespace gml = "http://www.opengis.net/gml/3.2";
@@ -226,9 +227,9 @@ declare function scripts:checkActivity(
 
     let $value := $activityName || "Value"
     let $valid := scripts:getValidConcepts($value)
-(:
+
     let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
-:)
+
     let $data :=
         for $x in $seq
         let $parent := scripts:getParent($x)
@@ -445,14 +446,58 @@ declare function scripts:checkInspireIdUniqueness(
 };
 
 (:~
- : TODO C2.1 High proportion of new inspireIds
- : Rationale: There is a need to identify submissions which report a high proportion of new inspireIds within a single XML submission, implying a large array of newly reported entities within the country.
- : Criteria warning: All inspireIds within a single XML submission will be compared to the inspireIds in the master database, for the same reporting country. The amount of inspireIds, found in both the submission and the master database, will be evaluated in the context of the total amount of inspireIds in the XML submission. The amount of new IDs within a single XML submission should not exceed 50% of the total number of inspireIds.
- : Criteria info: All inspireIds within a single submission will be compared to the inspireIds in the master database, for the same reporting country. The amount of inspireIds, found in both the submission and the master database, will be evaluated in the context of the total amount of inspireIds in the XML submission. The amount of new IDs within a single XML submission should ideally not exceed 20% of the total number of inspireIds.
- : Message warning: The amount of new inspireIds within this submission exceeds 50%, please verify to ensure these are new entities reported for the first time [insert list of new inspireIds]
- : Message info: The amount of new inspireIds within this submission exceeds the ideal threshold of 20%, please verify to ensure these are new entities reported for the first time [insert list of new inspireIds]
- : Lookup data: This check is dependent on the master database
+ : C2.1 High proportion of new inspireIds
  :)
+
+declare function scripts:checkAmountOfInspireIds(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $warn := "The amount of new inspireIds within this submission equals PERC, which exceeds 50%, please verify to ensure these are new entities reported for the first time."
+    let $info := "The amount of new inspireIds within this submission equals PERC, which exceeds the ideal threshold of 20%, please verify to ensure these are new entities reported for the first time."
+
+    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+
+    let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+
+    let $seq := $root/descendant::pf:inspireId
+
+    let $fromDB := database:query($cntry, $lastReportingYear, (
+        "pf:inspireId"
+    ))
+
+    let $xIDs := $seq/descendant::base:localId
+    let $yIDs := $fromDB/descendant::base:localId
+
+    let $data :=
+        for $id in $xIDs
+        let $p := scripts:getParent($id)
+
+        where not($id = $yIDs)
+        return map {
+        "marks": (2),
+        "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>)
+        }
+
+    let $ratio := count($data) div count($xIDs)
+    let $perc := round-half-to-even($ratio * 100, 1) || '%'
+
+    let $hdrs := ("Feature", "Inspire ID")
+
+    return
+        if ($ratio gt 0.5) then
+            let $msg := replace($warn, 'PERC', $perc)
+            let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+            return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+        else if ($ratio gt 0.2) then
+            let $msg := replace($info, 'PERC', $perc)
+            let $details := scripts:getDetails($msg, "info", $hdrs, $data)
+            return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+        else
+            scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
+};
 
 (:~
  : C2.2 ProductionSite inspireId uniqueness
@@ -775,11 +820,7 @@ declare function scripts:checkMissing(
 };
 
 (:~
- : TODO C3.9 Missing ProductionSites, previous submissions
- : Rationale: One of the desired intentions of the EU Registry is to, via consistent and accurate reporting, build a comprehensive master database, via which it is possible to detail the lifetime of a ProductionSite. A ProductionSite which is missing from a submission but has been reported in previous submissions prevents the EU Registry from reaching this objective.
- : Criteria blocker: The check will compare existing reported inspireIds contained in the master database with the newly reported inspireIds. All inspireIds present in the master database must also be found in the XML submission except where the corresponding inspireId for the ProductionSite has the value 'decommissioned' for the field status in the previous reporting year.
- : Message blocker: There are inspireIDs for ProductionSites missing from this submission: [insert list of ProductionSites missing from XML submission] Please verify to ensure that no ProductionSites have been missed.
- : Lookup data: This check requires either for the master database to be accessible via service or a lookup table of ProductionSite inspireIds be added to the sematic data service..
+ : C3.9 Missing ProductionSites, previous submissions
  :)
 
 declare function scripts:checkMissingProductionSites(
@@ -794,11 +835,7 @@ declare function scripts:checkMissingProductionSites(
 };
 
 (:~
- : TODO C3.10 Missing ProductionFacilities, previous submissions
- : Rationale: One of the desired intentions of the EU Registry is to, via consistent and accurate reporting, build a comprehensive master database, via which it is possible to detail the lifetime of a ProductionFacility. A ProductionFacility which is missing from a submission but has been reported in previous submissions prevents the EU Registry from reaching this objective.
- : Criteria blocker: The check will compare existing reported inspireIds contained in the master database with newly reported inspireIds. All inspireIds present in the master database should also be found in the XML submission except where the corresponding inspireId for the ProductionFacility has the value 'decommissioned' or 'not regulated' for the field status in the previous reporting year.
- : Message blocker: There are inspireIDs for ProductionFacilities missing from this submission: [insert list of ProductionFacilities missing from XML submission] Please verify to ensure that no ProductionFacilities have been missed.
- : Lookup data: This check requires either for the master database to be accessible via service or a lookup table of ProductionFacility inspireIds for each member state be added to the sematic data service.
+ : C3.10 Missing ProductionFacilities, previous submissions
  :)
 
 declare function scripts:checkMissingProductionFacilities(
@@ -813,11 +850,7 @@ declare function scripts:checkMissingProductionFacilities(
 };
 
 (:~
- : TODO C3.11 Missing ProductionInstallations, previous submissions
- : Rationale: One of the desired intentions of the EU Registry is to, via consistent and accurate reporting, build a comprehensive master database, via which it is possible to detail the lifetime of a ProductionInstallation. A ProductionInstallation which is missing from a submission but has been reported in previous submissions prevents the EU Registry from reaching this objective.
- : Criteria blocker: The check will compare existing reported inspireIds contained in the master database with newly reported inspireIds. All inspireIds present in the master database should also be found in the XML submission except where the ProductionInstallation was previously reported as 'decommissioned' or 'not regulated' in the previous reporting year.
- : Message blocker: There are inspireIDs for ProductionInstallations missing from this submission: [insert list of ProductionInstallations missing from XML submission] Please verify to ensure that no ProductionInstallations have been missed.
- : Lookup data: This check requires either the master database to be accessible via a service or a lookup table of ProductionInstallation inspireIds for each member state be added to the sematic data service.
+ : C3.11 Missing ProductionInstallations, previous submissions
  :)
 
 declare function scripts:checkMissingProductionInstallations(
@@ -832,11 +865,7 @@ declare function scripts:checkMissingProductionInstallations(
 };
 
 (:~
- : TODO C3.12 Missing ProductionInstallationsParts, previous submissions
- : Rationale: One of the desired intentions of the EU Registry is to, via consistent and accurate reporting, build a comprehensive master database, via which it is possible to detail the lifetime of a ProductionInstallationPart. A ProductionInstallationPart which is missing from a submission but has been reported in previous submissions prevents the EU Registry from reaching this objective.
- : Criteria blocker: The check will compare existing reported inspireIds contained in the master database with newly reported inspireIds. All inspireIds present in the master database should also be found in the XML submission except where the ProductionInstallationPart was previously reported as 'decommissioned' in the previous reporting year.
- : Message blocker: There are inspireIDs for ProductionInstallationParts missing from this submission: [insert list of ProductionInstallationParts missing from XML submission] Please verify to ensure that no ProductionInstallationParts have been missed.
- : Lookup data: This check requires either the master database to be accessible via a service or a lookup table of ProductionInstallationPart inspireIds for each member state be added to the sematic data service
+ : C3.12 Missing ProductionInstallationsParts, previous submissions
  :)
 
 declare function scripts:checkMissingProductionInstallationParts(
@@ -1149,17 +1178,103 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
 };
 
 (:~
- : TODO C4.6 Coordinate continuity
- : Rationale: Coordinates are specified in specific fields for all spatial objects considered by the data model. These coordinates should remain constant over time for the life of the spatial object. Refinement in accuracy however may occur, and a check is required to discern between genuine improvements in accuracy, and the allocation of incorrect coordinates.
- : Criteria blocker: The coordinates for all spatial objects within an XML submission will be compared to the spatial object of the same InspireID within the master database. Coordinates should remain constant over time, but it is recognised that coordinates may seldom change in relation to improved accuracy. The differences in coordinates between the XML submission and the master database will be evaluated based on the linear distance invoked by the change. A distance change above 100m is deemed as introducing nonsensical data into the master database.
- : Criteria warning: The coordinates for all spatial objects within an XML submission will be compared to the spatial object of the same InspireID within the master database. Coordinates should remain constant over time, further but it is recognised that coordinates may seldom change in relation to improved accuracy. The differences in coordinates between the XML submission and the master database will be evaluated based on the linear distance invoked by the change. A distance change between the two coordinates of 30-100m is considered as unlikely and represents a significant change.
- : Criteria info: The coordinates for all spatial objects within an XML submission will be compared to the spatial object of the same InspireID within the master database. Coordinates should remain constant over time, further but it is recognised that coordinates may seldom change in relation to improved accuracy. The differences in coordinates between the XML submission and the master database will be evaluated based on the linear distance invoked by the change. A distance change between the two coordinates of 10-30m may be considered as coordinate refinement.
- : Message blocker: The coordinates, for the following spatial objects have changed by over 100m when compared to the master database: [insert list of spatial objects whose coordinates have changed by over 100m, alongside the current master database coordinates]. Changes in excess of 100m are considered as introducing poor quality data to the master database please verify the coordinates and ensure they have been inputted correctly.
- : Message warning: The coordinates, for the following fields, have changed by 30-100m compared to the master database: [insert list of spatial objects whose coordinates have changed by 30-100m alongside the current master database coordinates]. Please verify the coordinates and ensure that they have been inputted correctly.
- : Message info: The coordinates, for the following fields, have changed by 10 -30m compared to the master database: [insert list of spatial objects whose coordinates have changed by 10-30m, alongside the current master database coordinates]. Distance changes between 10-30m may represent coordinate refinement, however please verify the coordinates and ensure that they have been inputted correctly.
- : Lookup data: This check is dependent on data contained within the master database.
+ : C4.6 Coordinate continuity
  :)
+(:
+declare function scripts:checkCoordinateContinuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $error := "The coordinates, for the following spatial objects, have changed by over 100m when compared to the master database. Changes in excess of 100m are considered as introducing poor quality data to the master database, please verify the coordinates and ensure they have been inputted correctly."
+  let $warn :=  "The coordinates, for the following spatial objects, have changed by 30-100m compared to the master database. Please verify the coordinates and ensure that they have been inputted correctly."
+  let $info :=  "The coordinates, for the following spatial objects, have changed by 10 -30m compared to the master database. Distance changes between 10-30m may represent coordinate refinement, however please verify the coordinates and ensure that they have been inputted correctly."
 
+  let $srsName :=
+  for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
+    return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
+
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+
+  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+
+  let $seq := (
+    $root/descendant::EUReg:location,
+    $root/descendant::act-core:geometry,
+    $root/descendant::pf:pointGeometry
+  )
+  let $fromDB := database:query($cntry, $lastReportingYear, (
+    "EUReg:location",
+    "act-core:geometry",
+    "pf:pointGeometry"
+  ))
+
+  let $data :=
+  for $x in $seq/descendant::gml:*/descendant-or-self::*[not(*)]
+    let $p := scripts:getParent($x)
+    let $id := scripts:getInspireId($p)/text()
+
+    let $y :=
+    for $y in $fromDB/descendant::gml:*/descendant-or-self::*[not(*)]
+      let $q := scripts:getParent($y)
+      let $ic := scripts:getInspireId($q)/text()
+
+      where $id = $ic
+
+      return $y
+
+    where not(empty($y))
+
+    let $xlong := substring-before($x, ' ')
+    let $xlat := substring-after($x, ' ')
+    let $xp := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$xlong},{$xlat}</GML:coordinates></GML:Point>
+
+    let $ylong := substring-before($y, ' ')
+    let $ylat := substring-after($y, ' ')
+    let $yp := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$ylong},{$ylat}</GML:coordinates></GML:Point>
+
+    let $dist := round-half-to-even(geo:distance($xp, $yp) * 111319.9, 2)
+
+    return [$p/local-name(), $id, string-join(($xlat, $xlong), ", "), string-join(($ylat, $ylong), ", "), $dist]
+
+  let $red :=
+  for $x in $data
+    where $x(5) gt 100
+    return map {
+      "marks": (5),
+      "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, <span class="iedreg nowrap">{$x(3)}</span>, <span class="iedreg nowrap">{$x(4)}</span>, $x(5))
+    }
+
+  let $yellow :=
+  for $x in $data
+    where $x(5) gt 30 and $x(5) le 100
+    return map {
+      "marks": (5),
+      "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, <span class="iedreg nowrap">{$x(3)}</span>, <span class="iedreg nowrap">{$x(4)}</span>, $x(5))
+    }
+
+  let $blue :=
+  for $x in $data
+    where $x(5) gt 10 and $x(5) le 30
+    return map {
+      "marks": (5),
+      "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, <span class="iedreg nowrap">{$x(3)}</span>, <span class="iedreg nowrap">{$x(4)}</span>, $x(5))
+    }
+
+  let $hdrs := ("Feature", "Inspire ID", "Coordinates", "Previous coordinates (DB)", "Difference (meters)")
+
+  let $details :=
+    <div class="iedreg">{
+    if (empty($red)) then () else scripts:getDetails($error, "error", $hdrs, $red),
+    if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
+    if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
+    }</div>
+
+  return
+    scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
+};
+:)
 (:~
  : C4.7 ProductionSite to ProductionFacility coordinate comparison
  :)
@@ -1339,6 +1454,83 @@ declare function scripts:checkActivityUniqueness(
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
+declare function scripts:checkActivityContinuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $featureName as xs:string,
+  $activityName as xs:string
+) as element()* {
+  let $warn := "There have been changes in the " || $activityName || " field, compared to the master database - this field should remain constant over time and seldom change, particularly between activity groups. Changes have been noticed in the following " || scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
+  let $info := "There have been changes in the " || $activityName || " field, compared to the master database - this field should remain constant over time and seldom change. Changes have been noticed in the following "|| scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
+
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+
+  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+
+  let $seq := $root/descendant::*[local-name()=$featureName]
+
+  let $fromDB := database:query($cntry, $lastReportingYear, (
+    "EUReg:" || $featureName
+  ))
+
+  let $data :=
+  for $x in $seq
+    let $id := scripts:getInspireId($x)
+
+    for $y in $fromDB
+      let $ic := scripts:getInspireId($y)
+
+      where $id = $ic
+
+      let $xActivity := $x/descendant::*[local-name()=$activityName]
+      let $yActivity := $y/descendant::*[local-name()=$activityName]
+
+      for $act in $xActivity/descendant-or-self::*[not(*)]
+        let $p := scripts:getPath($x)
+        let $q := scripts:getPath($act)
+
+        let $xAct := replace($act/@xlink:href, '/+$', '')
+        let $yAct := replace($yActivity/descendant-or-self::*[not(*) and local-name() = $act/local-name()]/@xlink:href, '/+$', '')
+
+        let $xAct :=
+          if (scripts:is-empty($xAct)) then
+            " "
+          else $xAct
+
+        where not (scripts:is-empty($yAct))
+        where not ($xAct = $yAct)
+        return [$x/local-name(), $id/text(), $act/local-name(), scripts:normalize($xAct), scripts:normalize($yAct)]
+
+  let $yellow :=
+  for $x in $data
+    where not(tokenize($x(4), "[.()]+")[1] = tokenize($x(5), "[.()]+")[1])
+    return map {
+      "marks": (4, 5),
+      "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $x(3), $x(4), $x(5))
+    }
+
+  let $blue :=
+  for $x in $data
+    where tokenize($x(4), "[.()]+")[1] = tokenize($x(5), "[.()]+")[1]
+    return map {
+      "marks": (4, 5),
+      "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $x(3), $x(4), $x(5))
+    }
+
+  let $hdrs := ("Feature", "Inspire ID", $activityName, "Value", "Value (DB)")
+
+  let $details :=
+    <div class="iedreg">{
+    if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
+    if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
+    }</div>
+
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
+};
+
 (:~
  : C5.1 EPRTRAnnexIActivity uniqueness
  :)
@@ -1355,14 +1547,19 @@ declare function scripts:checkEPRTRAnnexIActivityUniqueness(
 };
 
 (:~
- : TODO C5.2 EPRTRAnnexIActivity continuity
- : Rationale: The activity relative to those listed in Annex I of the E-PRTR Regulation is required in the ProductionFacility feature type. The activity should remain constant over time for the lifetime of the ProductionFacility. A check is required to restrict the allocation of incorrect activities relative to what has previously been reported, which in turn can lead to inconsistencies once the XML submission becomes integrated into the master database.
- : Criteria warning: The EPRTRAnnexIActivity field of for all ProductionFacilities within an XML submission will be compared to the ProductionFacility of the same InspireID within the master database. The EPRTRAnnexIActivityType should remain constant over time and seldom change, particularly between activity group (the activity group is denoted by the first digit of the EPRTRAnnexIActivityType ID).
- : Criteria info: The EPRTRAnnexIActivity field of for all ProductionFacilities within an XML submission will be compared to the ProductionFacility of the same InspireID within the master database. The EPRTRAnnexIActivityType should remain constant over time and seldom change. Changes within the same activity group may appear in the form: 1(a) to 1(c)) .
- : Message warning: There have been changes in the EPRTRAnnexIActivityType field, compared to the master database - this field should remain constant over time and seldom change, particularly between activity groups. Changes have been noticed in the following: [insert list of ProductionFacilities where the EPRTRAnnexIActivity field has changed activity group, compared to the master database]. Please ensure all inputs are correct.
- : Message info: There have been changes in the EPRTRAnnexIActivityType field, compared to the master database - this field should remain constant over time and seldom change. Changes have been noticed in the following: [insert list of ProductionFacilities where the EPRTRAnnexIActivity field has changed, within the same activity group, compared to the master database]. Please ensure all inputs are correct.
- : Lookup data: This check is dependent on data contained within the master database.
+ : C5.2 EPRTRAnnexIActivity continuity
  :)
+
+declare function scripts:checkEPRTRAnnexIActivityContinuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $featureName := "ProductionFacility"
+  let $activityName := "EPRTRAnnexIActivity"
+
+  return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName, $activityName)
+};
 
 (:~
  : C5.3 IEDAnnexIActivity uniqueness
@@ -1380,14 +1577,19 @@ declare function scripts:checkIEDAnnexIActivityUniqueness(
 };
 
 (:~
- : TODO C5.4 IEDAnnexIActivity continuity
- : Rationale: The activity relative to those listed in Annex I of the IED is required in the ProductionInstallation feature type. The activity should remain constant over time for the lifetime of the ProductionInstallation. A check is required to restrict the allocation of incorrect activities relative to what has previously been reported, which in turn can lead to inconsistencies once the XML submission becomes integrated into the master database.
- : Criteria warning: The IEDAnnexIActivity field of for all ProductionInstallations within an XML submission will be compared to the ProductionInstallation of the same InspireId within the master database. The IEDAnnexIActivityType should remain constant over time, and seldom change, particularly between activity group (the activity group is denoted by the first digit of the IEDAnnexIActivityType Id).
- : Criteria info: The IEDAnnexIActivity field of for all ProductionInstallations within an XML submission will be compared to the ProductionInstallation of the same InspireId within the master database. The IEDAnnexIActivityType should remain constant over time, and seldom change. Changes within the same activity group may appear in the form: 2.1 to 2.2.
- : Message warning: There have been changes in the IEDAnnexIActivityType field, compared to the master database - this field should remain constant over time and seldom change, particularly between activity groups. Changes have been noticed in the following: [insert list of ProductionInstallation where the IEDAnnexIActivity field has changed activity group, compared to the master database]. Please ensure all inputs are correct.
- : Message info: There have been changes in the IEDAnnexIActivityType field, compared to the master database - this field should remain constant over time and seldom change. Changes have been noticed in the following: [insert list of ProductionInstallations where the IEDAnnexIActivity field has changed, within the same activity group, compared to the master database]. Please ensure all inputs are correct.
- : Lookup data: This check is dependent on data contained within the master database.
+ : C5.4 IEDAnnexIActivity continuity
  :)
+
+declare function scripts:checkIEDAnnexIActivityContinuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $featureName := "ProductionInstallation"
+  let $activityName := "IEDAnnexIActivity"
+
+  return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName, $activityName)
+};
 
 (:~
  : 6. STATUS CHECKS
@@ -1529,11 +1731,67 @@ declare function scripts:checkProductionInstallationDisusedStatus(
 };
 
 (:~
- : TODO C6.5 Decommissioned to functional plausibility
- : Rationale: This check is based on the fact that the status between the same spatial objects between years must be logical, as certain statuses pose limitations towards the statuses in future reporting years.
- : Criteria blocker: In a single XML submission the StatusType of all spatial objects will be queried. If the StatusType is populated with the term 'functional', the StatusType for the same spatial object in the previous report year must not be 'decommissioned'.
- : Message blocker: The StatusType, of the following spatial objects, has changed from 'decomissioned' in the previous submission to 'functional' in this current submission: [insert list of spatial objects with StatusType 'functional' with StatusType 'decomissioned' in the previous report]. Please verify inputs and ensure consistency with the previous report.
+ : C6.5 Decommissioned to functional plausibility
  :)
+
+declare function scripts:checkFunctionalStatusType(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "The StatusType, of the following spatial objects, has changed from 'decomissioned' in the previous submission to 'functional' in this current submission. Please verify inputs and ensure consistency with the previous report."
+  let $type := "error"
+
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+
+  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+
+  let $seq := $root/descendant::pf:statusType
+
+  let $fromDB := database:query($cntry, $lastReportingYear, (
+    "pf:statusType"
+  ))
+
+  let $value := "ConditionOfFacilityValue"
+  let $valid := scripts:getValidConcepts($value)
+
+  let $data :=
+  for $x in $seq
+    let $p := scripts:getParent($x)
+    let $id := scripts:getInspireId($p)
+
+    let $xStatus := replace($x/@xlink:href, '/+$', '')
+
+    where not(scripts:is-empty($xStatus)) and $xStatus = $valid
+    let $xStat := scripts:normalize($xStatus)
+
+    for $y in $fromDB
+      let $q := scripts:getParent($y)
+      let $ic := scripts:getInspireId($q)
+
+      where $id = $ic
+
+      let $yStatus := replace($y/@xlink:href, '/+$', '')
+
+      where not(scripts:is-empty($yStatus)) and $yStatus = $valid
+      let $yStat := scripts:normalize($yStatus)
+
+      where $xStat = "functional"
+      where $yStat = "decommissioned"
+
+      return map {
+        "marks": (4, 5),
+        "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, scripts:getPath($x), $yStat, $xStat)
+      }
+
+  let $hdrs := ("Feature", "Inspire ID", "Path", "StatusType (DB)", "StatusType")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
 
 (:~
  : 7. DATE CHECKS
@@ -1828,11 +2086,62 @@ declare function scripts:checkPermit(
 };
 
 (:~
- : TODO C8.3 PermitURL to dateOfGranting comparison
- : Rationale: The ProductionInstallation feature type contains a permit field, which in turn links to the PermitDetails data type. Within this data type, the date the permit was granted is required and alongside a voidable field used to specify the web address of the permit, if hosted online. When the date of granting changes for an installation, the receipt of a new permit is implied. If, at this instance, the permitURL remains unchanged, this suggests the reporting country may have failed to update the web address in accordance to the new permit.
- : Criteria info: The dateOfGranting field will compared against a lookup table detailing the previous dateOfGranting for all ProductionInstallations. If a change in this date is identified, the permitURL fields will also be compared. The permitURL should be different to one another.
- : Message info: The dateofGranting, for the following ProductionInstallations, has changed from the previous submission, but the PermitURL has remained the same: [insert list specifying ProductionInstallations where dateofGranting has changed but PermitURL has remained the same]. Please verify and ensure all required changes in the PermitURL field have been made.
+ : C8.3 PermitURL to dateOfGranting comparison
  :)
+
+declare function scripts:checkDateOfGrantingPermitURL(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "The dateofGranting, for the following ProductionInstallations, has changed from the previous submission, but the PermitURL has remained the same. Please verify and ensure all required changes in the PermitURL field have been made."
+  let $type := "info"
+
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+
+  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+
+  let $seq := $root/descendant::EUReg:ProductionInstallation
+
+  let $fromDB := database:query($cntry, $lastReportingYear, (
+    "EUReg:ProductionInstallation"
+  ))
+
+  let $data :=
+  for $x in $seq
+    let $id := scripts:getInspireId($x)
+
+    let $xDate := $x/EUReg:permit/descendant::EUReg:dateOfGranting
+    let $xUrl := $x/EUReg:permit/descendant::EUReg:permitURL
+
+    for $y in $fromDB
+      let $ic := scripts:getInspireId($y)
+
+      where $id = $ic
+
+      let $yDate := $y/EUReg:permit/descendant::EUReg:dateOfGranting
+      let $yUrl := $y/EUReg:permit/descendant::EUReg:permitURL
+
+      where not($xDate = $yDate)
+      where ($xUrl = $yUrl) or (empty($xUrl) and empty($yUrl))
+
+      let $url := if (scripts:is-empty($xUrl)) then " " else $xUrl/text()
+      let $oldDate := if (scripts:is-empty($yDate/text())) then " " else xs:date($yDate/text())
+      let $newDate := if (scripts:is-empty($xDate/text())) then " " else xs:date($xDate/text())
+
+      return map {
+        "marks": (4, 5),
+        "data": ($x/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, $oldDate, $newDate, $url)
+      }
+
+  let $hdrs := ("Feature", "Inspire ID", "dateofGranting (DB)", "dateofGranting", "permitURL")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+    scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+};
 
 (:~
  : 9. DEROGATION CHECKS
@@ -1993,29 +2302,108 @@ declare function scripts:checkArticle35(
     return scripts:checkDerogationsYear($refcode, $rulename, $root, $article, $year)
 };
 
-(:~
- : TODO C9.5 Limited life time derogation continuity
- : Rationale: The ProductionInstallationPart feature type contains a derogations field, which in turn links to a code list containing the articles under which derogations for LCPs are granted in the IED. One of the derogations, Article 33, is only applicable 'During the period from 1 January 2016 to 31 December 2023' (Article 31[1]). Once an LCP has reported as subject to this derogation it is unlikely to change between submissions, a check is required to help minimise non-intentional changes in the derogation value.
- : Criteria warning: The derogation field of for all ProductionInstallationParts within an XML submission will be compared to the ProductionInstallationPart of the same InspireID within the master database. If 'Article 33' is given within the master database, the field value should also be 'Article 33'. Once the period described above has passed, this check will be made obsolete.
- : Message warning: Under certain limited lifetime derogations, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database: [insert list specifying the ProductionInstallationParts where the DerogationValue differs between the XML and the master database]. Please verify and ensure all values are inputted correctly.
- : Lookup data: This check is dependent on data contained within the master database.
- :)
+declare function scripts:checkDerogationsContinuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $msg as xs:string,
+  $article as xs:string
+) as element()* {
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+
+  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+
+  let $seq := $root/descendant::EUReg:derogations
+
+  let $fromDB := database:query($cntry, $lastReportingYear, (
+    "EUReg:derogations"
+  ))
+
+  let $value := "DerogationValue"
+  let $valid := scripts:getValidConcepts($value)
+
+  let $data :=
+  for $x in $seq
+    let $p := scripts:getParent($x)
+    let $id := scripts:getInspireId($p)
+
+    let $xderogations := replace($x/@xlink:href, '/+$', '')
+
+    where not(scripts:is-empty($xderogations)) and $xderogations = $valid
+    let $xder := scripts:normalize($xderogations)
+
+    for $y in $fromDB
+      let $q := scripts:getParent($y)
+      let $ic := scripts:getInspireId($q)
+
+      where $id = $ic
+
+      let $yderogations := replace($y/@xlink:href, '/+$', '')
+
+      where not(scripts:is-empty($yderogations)) and $yderogations = $valid
+      let $yder := scripts:normalize($yderogations)
+
+      where $yder = $article
+      where not($xder = $article)
+
+      return map {
+        "marks": (3, 4),
+        "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, $xder, $yder)
+      }
+
+  let $hdrs := ("Feature", "Inspire ID", "DerogationValue", "DerogationValue (DB)")
+
+  let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+};
 
 (:~
- : TODO C9.6 District heat plant derogation continuity
- : Rationale: The ProductionInstallationPart feature type contains a derogations field, which in turn links to a code list containing the articles under which derogations for LCPs are granted in the IED. One of the derogations, Article 35, is only applicable 'Until 31 December 2022' (Article 35[1]). Once an LCP has reported as subject to this derogation it is unlikely to change between submissions, a check is required to help minimise non-intentional changes in the derogation value.
- : Criteria warning: The derogation field for all ProductionInstallationParts within an XML submission will be compared to the ProductionInstallationPart of the same InspireID within the master database. If 'Article 35' is given within the master database, the field value should also be 'Article 35'. Once the period described above has passed, this check will be made obsolete.
- : Message warning: Under the district heat plant derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following Installation Parts do not have the same DerogationValue in the XML submission and the master database: [insert list specifying the ProductionInstallationParts where the DerogationValue differs between the XML and the master database]. Please verify and ensure all values are inputted correctly.
- : Lookup data: This check is dependent on data contained within the master database.
+ : C9.5 Limited life time derogation continuity
  :)
 
+declare function scripts:checkArticle33Continuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "Under certain limited lifetime derogations, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
+  let $article := "Article33"
+
+  return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+};
+
 (:~
- : TODO C9.7 Transitional National Plan derogation continuity
- : Rationale: The rationale for this check is based on Article 32(1) of the IED which states the ability for member states to draw up and implement transitional national plans 'During the period from 1 January 2016 to 30 June 2020'. The ProductionInstallationPart feature type contains a derogation field in which member states can state the installation parts subject to transitional national plans. Due to the manner in which they are implemented, the contents of the field should not change over time, until the end of the relevant period for this derogation.
- : Criteria warning: The derogation field of for all ProductionInstallationPart within an XML submission will be compared to the ProductionInstallationPart of the same InspireID within the master database. If 'Article 32' is given within the master database, the field value should also be 'Article 32'. This check will be made obsolete once the period described above has passed.
- : Message warning: Under Transitional National Plan derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database: [insert list specifying the ProductionInstallationParts where the DerogationValue differs between the XML and the master database]. Please verify and ensure all values are inputted correctly.
- : Lookup data: This check is dependent on data contained within the master database.
+ : C9.6 District heat plant derogation continuity
  :)
+
+declare function scripts:checkArticle35Continuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "Under the district heat plant derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following Installation Parts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
+  let $article := "Article35"
+
+  return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+};
+
+(:~
+ : C9.7 Transitional National Plan derogation continuity
+ :)
+
+declare function scripts:checkArticle32Continuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "Under Transitional National Plan derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
+  let $article := "Article32"
+
+  return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+};
 
 (:~
  : 10. LCP & WASTE INCINERATOR CHECKS
@@ -2353,7 +2741,6 @@ declare function scripts:checkConfidentialityOveruse(
             return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
         else
             scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
-
 };
 
 (:~
@@ -2475,12 +2862,55 @@ declare function scripts:checkFacilityName(
 };
 
 (:~
- : TODO C12.4 nameOfFeature
- : Rationale: The nameOfFeature field is required in specific fields for all spatial objects considered by the data model. The name supplied within this field should remain constant over time for the life of the spatial object. A check is required to restrict the allocation of incorrect names, which in turn can lead to inconsistencies once the XML submission becomes integrated into the master database.
- : Criteria info: The nameOfFeature field within the FeatureName data type of all spatial objects within an XML submission will be compared to the name of the spatial object of the same inspireId within the master database. Names should remain constant over time.
- : Message info: The names, provided in this XML submission, for the following spatial objects are not the same as the names within the master database: [insert list specifying all spatial objects where the name provided has changed compared to the master data base, display the current name of the spatial object in the master database alongside the imposed name for the same spatial object within the submission]. Please verify and ensure that all names have been inputted correctly.
- : Lookup data: This check is dependent on data contained within the master database.
+ : C12.4 nameOfFeature
  :)
+
+declare function scripts:checkNameOfFeatureContinuity(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "The names, provided in this XML submission, for the following spatial objects are not the same as the names within the master database. Please verify and ensure that all names have been inputted correctly."
+  let $type := "info"
+
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+
+  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+
+  let $seq := $root/descendant::EUReg:nameOfFeature
+
+  let $fromDB := database:query($cntry, $lastReportingYear, (
+    "EUReg:nameOfFeature"
+  ))
+
+  let $data :=
+  for $x in $seq
+    let $p := scripts:getParent($x)
+    let $id := scripts:getInspireId($p)
+
+    for $y in $fromDB
+      let $q := scripts:getParent($y)
+      let $ic := scripts:getInspireId($q)
+
+      where $id = $ic
+
+      let $xName := normalize-space($x/text())
+      let $yName := normalize-space($y/text())
+
+      where not($xName = $yName)
+      return map {
+        "marks": (4, 5),
+        "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, <span class="iedreg nowrap">{$xName}</span>, <span class="iedreg nowrap">{$yName}</span>)
+      }
+
+  let $hdrs := ("Feature", "Inspire ID", "nameOfFeature", "nameOfFeature (DB)")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+    scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+};
 
 (:~
  : C12.5 reportingYear plausibility
