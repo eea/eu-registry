@@ -169,7 +169,7 @@ declare function scripts3:checkReportData(
             "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v, $gmlID)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, "/@xlink:href"), "ReportData/@gml:id")
+    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, " xlink:href"), "ReportData gml:id")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -192,8 +192,8 @@ declare function scripts3:checkeHostingSite(
     let $featureName := "ProductionFacility"
     let $seq := $root/descendant::*[local-name() = $featureName]
 
-    let $msg := "The status element is not followed by hostingSite element.
-                Please verify and ensure the correct order of elements"
+    let $msg := "The status element is not followed by hostingSite element in the following " ||
+                scripts:makePlural($featureName)||". Please verify and ensure the correct order of elements"
     let $type := "error"
 
     let $data :=
@@ -219,7 +219,7 @@ declare function scripts3:checkeHostingSite(
         let $ok := $indexOfHostingSite - $indexOfStatus = 1
         where not($ok)
         return map {
-        "marks" : (3),
+        "marks" : (5),
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $indexOfStatus, $indexOfHostingSite)
         }
 
@@ -246,7 +246,7 @@ declare function scripts3:checkeHostingSiteHref(
     let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
     let $gmlID := data($root/descendant::*[local-name() = "ProductionSite"][@gml:id]/@gml:id)
 
-    let $msg := "The gml:ID specified in the " || $activityType || "/@xlink:href field for the following " ||
+    let $msg := "The gml:ID specified in the " || $activityType || " xlink:href field for the following " ||
                 scripts:makePlural($featureName) || " is not recognised.
                 Please verify and ensure the correct gml:ID has been inputted"
     let $type := "error"
@@ -271,7 +271,7 @@ declare function scripts3:checkeHostingSiteHref(
             "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v, $gmlID)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, "/@xlink:href"), "ProductionSite/@gml:id")
+    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, " xlink:href"), "ProductionSite gml:id")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -572,6 +572,50 @@ declare function scripts3:checkStatusNil(
             "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
             }
     let $hdrs := ("Feature", "GML ID", "Path", "status")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(:  13.11 pf:pointGeometry validity
+
+    The pointGeometry field is  optional  in INSPIRE PF (so the XMLValidator would not detect the error),
+    but for the EURegistry it is mandatory (pointGeometryIsMandatory constraint)
+    For the <EUReg:ProductionInstallation> and the <EUReg:ProductionInstallationPart>,
+    the </pf:inspireId> tag shall be followed by the <pf:pointGeometry> tag
+:)
+
+
+declare function scripts3:checkePointGeometry(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := ("ProductionInstallation", "ProductionInstallationPart")
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = "inspireId"]
+
+    let $msg := "The inspireId element is not followed by pointGeometry element
+                in the following " || scripts:makePlural(fn:string-join($featureName, ', ')) ||
+                ". Please verify and ensure the correct order of elements"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+
+        let $p := scripts:getPath($x)
+        let $following := $x/following-sibling::*[1]/local-name()
+
+        let $ok := $following = "pointGeometry"
+        where not($ok)
+        return map {
+        "marks" : (5),
+        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $following)
+        }
+
+    let $hdrs := ("Feature", "GML ID", "Path", "element after inspireId")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)

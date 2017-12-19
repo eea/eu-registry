@@ -247,7 +247,7 @@ declare function iedreg:runChecks13($root as element()) as element()* {
         iedreg:failsafeWrapper("C13.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#3),
         iedreg:failsafeWrapper("C13.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#3),
         iedreg:failsafeWrapper("C13.10", "pf:status validity", $root, scripts3:checkStatusNil#3),
-        iedreg:failsafeWrapper("C13.11", "pf:pointGeometry validity", $root, iedreg:notYet#3)
+        iedreg:failsafeWrapper("C13.11", "pf:pointGeometry validity", $root, scripts3:checkePointGeometry#3)
     }</div>
 };
 
