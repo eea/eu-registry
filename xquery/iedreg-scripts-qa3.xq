@@ -523,6 +523,60 @@ declare function scripts3:checkGroupedInstallationPartHref(
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
+(:  13.10 pf:status validity
+
+    status field in INSPIRE PF is 'voidable -one to many', whilst EURegistry constraints it not to be void
+    and be only one (onlyOneStatusAndNotVoid constraint). The status value must moreover
+    be contained in ConditionOfFacilityValue codelist
+    This means that :
+    1. elements <pf:status xsi:nil=""true""/>  are not allowed
+    2. two consecutive <pf:status> elements are not allowed."
+:)
+
+
+declare function scripts3:checkStatusNil(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := ("ProductionFacility", "ProductionInstallation", "ProductionInstallationPart")
+    let $activityType := "status"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+
+    let $msg := "The " || $activityType ||" element in the following " || scripts:makePlural(fn:string-join($featureName, ', ')) ||
+                " have xsi:nil attribute value true or two or more consecutive pf:status elements are found.
+                Please verify pf:status elements"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+
+        let $p := scripts:getPath($x)
+
+        let $ok := (
+            fn:lower-case($x/@xsi:nil) ne "true"
+            and
+            $x/following-sibling::*[1]/local-name() ne $activityType
+        )
+        let $v := if (fn:lower-case($x/@xsi:nil) eq "true")
+                    then
+                        "xsi:nil is true"
+                    else
+                        "two or more consecutive elements found"
+        where not($ok)
+            return map {
+            "marks" : (4),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+            }
+    let $hdrs := ("Feature", "GML ID", "Path", "status")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
 (:~
  : vim: sts=2 ts=2 sw=2 et
  :)
