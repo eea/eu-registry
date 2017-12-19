@@ -285,11 +285,55 @@ declare function scripts3:checkGroupedInstallation(
 ) as element()* {
     let $featureName := "ProductionFacility"
     let $activityType := "groupedInstallation"
+    let $seq := $root/descendant::*[local-name() = "ProductionInstallation"]
+    let $gmlIDs := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]/@xlink:href
+
+    let $msg := "The gml:id specified in the following " || scripts:makePlural("ProductionInstallation") ||
+                " does not have a relevant " || $activityType || ".
+                Please verify and ensure the correct gml:ID has been inputted"
+    let $type := "error"
+
+    let $data :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+
+        let $p := scripts:getPath($x)
+        let $v := data($x/@gml:id)
+
+        let $ok := count(fn:index-of($gmlIDs, concat("#", $v))) >= 1
+        where not($ok)
+            return map {
+            "marks" : (3),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p)
+            }
+
+    let $hdrs := ("Feature", "GML ID", "Path")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(: C13.5 pf:groupedInstallation xlink:href
+"must start with # and be followed by the value of the gml:id of the relevant production installation
+Example: <pf:groupedInstallation xlink:href=""#_010101011.INSTALLATION""/> is correct if the production installation
+<EUReg:ProductionInstallation gml:id=""_010101011.INSTALLATION""> exists"
+
+:)
+
+declare function scripts3:checkGroupedInstallationHref(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionFacility"
+    let $activityType := "groupedInstallation"
     let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
     let $gmlIDs := $root/descendant::*[local-name() = "ProductionInstallation"]/@gml:id
 
-    let $msg := "The gml:id specified in the " || $activityType || "/@xlink:href field for the following " ||
-                scripts:makePlural($featureName) || " is not recognised.
+    let $msg := "The gml:id specified in the following " || scripts:makePlural($activityType) ||
+                " does not have a relevant ProductionInstallation.
                 Please verify and ensure the correct gml:ID has been inputted"
     let $type := "error"
 
@@ -314,15 +358,6 @@ declare function scripts3:checkGroupedInstallation(
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
-
-(: C13.5 pf:groupedInstallation xlink:href
-"must start with # and be followed by the value of the gml:id of the relevant production installation
-Example: <pf:groupedInstallation xlink:href=""#_010101011.INSTALLATION""/> is correct if the production installation
-<EUReg:ProductionInstallation gml:id=""_010101011.INSTALLATION""> exists"
-
-:)
-
-
 
 (:  C13.6 act-core:geometry
 

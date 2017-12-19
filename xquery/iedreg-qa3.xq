@@ -239,13 +239,13 @@ declare function iedreg:runChecks13($root as element()) as element()* {
     <div class="iedreg table parent">{
         iedreg:failsafeWrapper("C13.1", "reportData validity", $root, scripts3:checkReportData#3),
         iedreg:failsafeWrapper("C13.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #3),
-        iedreg:failsafeWrapper("C13.3", "hostingSite/@xlink:href validity", $root, scripts3:checkeHostingSiteHref#3),
-        iedreg:failsafeWrapper("C13.4", "groupedInstallation validity", $root, scripts3:checkGroupedInstallation#3),
-        iedreg:failsafeWrapper("C13.5", "groupedInstallation/@xlink:href validity", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C13.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#3),
+        iedreg:failsafeWrapper("C13.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#3),
+        iedreg:failsafeWrapper("C13.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#3),
         iedreg:failsafeWrapper("C13.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),
         iedreg:failsafeWrapper("C13.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),
         iedreg:failsafeWrapper("C13.8", "pf:groupedInstallationPart validity", $root, iedreg:notYet#3),
-        iedreg:failsafeWrapper("C13.9", "pf:groupedInstallationPart/@xlink:href validity", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C13.9", "pf:groupedInstallationPart link:href validity", $root, iedreg:notYet#3),
         iedreg:failsafeWrapper("C13.10", "pf:status validity", $root, iedreg:notYet#3),
         iedreg:failsafeWrapper("C13.11", "pf:pointGeometry validity", $root, iedreg:notYet#3)
     }</div>
