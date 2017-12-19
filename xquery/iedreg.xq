@@ -24,6 +24,7 @@ declare namespace xlink = "http://www.w3.org/1999/xlink";
 
 import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 import module namespace scripts = "iedreg-scripts" at "iedreg-scripts.xq";
+import module namespace scripts3 = "iedreg-scripts-qa3" at "iedreg-scripts-qa3.xq";
 
 (:~
  : --------------
@@ -223,7 +224,12 @@ declare function iedreg:runChecks01($root as element()) as element()* {
         iedreg:failsafeWrapper("C1.3", "IEDAnnexIActivity mainActivity consistency", $root, scripts:checkMainIEDAnnexIActivity#3),
         iedreg:failsafeWrapper("C1.4", "IEDAnnexIActivity otherActivity consistency", $root, scripts:checkOtherIEDAnnexIActivity#3),
         iedreg:failsafeWrapper("C1.5", "CountryId consistency", $root, scripts:checkCountryId#3),
-        iedreg:failsafeWrapper("C1.6", "reasonValue consistency", $root, scripts:checkReasonValue#3)
+        iedreg:failsafeWrapper("C1.6", "reasonValue consistency", $root, scripts:checkReasonValue#3),
+        iedreg:failsafeWrapper("C1.7", "otherRelevantChapters consistency", $root, scripts3:checkOtherRelevantChapters#3),
+        iedreg:failsafeWrapper("C1.8", "statusType consistency", $root, scripts3:checkStatusType#3),
+        iedreg:failsafeWrapper("C1.9", "plantType consistency", $root, scripts3:checkPlantType#3),
+        iedreg:failsafeWrapper("C1.10", "derogations consistency", $root, scripts3:checkDerogations#3),
+        iedreg:failsafeWrapper("C1.11", "specificConditions consistency", $root, scripts3:checkSpecificConditions#3)
     }</div>
 };
 
@@ -436,6 +442,30 @@ declare function iedreg:runChecks12($root as element()) as element()* {
     }</div>
 };
 
+(:~
+ : 13. OTHER CHECKS
+ :)
+
+declare function iedreg:runChecks13($root as element()) as element()* {
+    let $rulename := '13. OTHER CHECKS'
+
+    return
+        <div class="iedreg header">{$rulename}</div>,
+    <div class="iedreg table parent">{
+        iedreg:failsafeWrapper("C13.1", "reportData validity", $root, scripts3:checkReportData#3),
+        iedreg:failsafeWrapper("C13.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #3),
+        iedreg:failsafeWrapper("C13.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#3),
+        iedreg:failsafeWrapper("C13.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#3),
+        iedreg:failsafeWrapper("C13.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#3),
+        iedreg:failsafeWrapper("C13.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),
+        iedreg:failsafeWrapper("C13.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),
+        iedreg:failsafeWrapper("C13.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#3),
+        iedreg:failsafeWrapper("C13.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#3),
+        iedreg:failsafeWrapper("C13.10", "pf:status validity", $root, scripts3:checkStatusNil#3),
+        iedreg:failsafeWrapper("C13.11", "pf:pointGeometry validity", $root, scripts3:checkePointGeometry#3)
+    }</div>
+};
+
 declare function iedreg:runChecks($url as xs:string) as element()*
 {
     let $doc := doc($url)
@@ -463,7 +493,8 @@ iedreg:runChecks08($root),
 iedreg:runChecks09($root),
 iedreg:runChecks10($root),
 iedreg:runChecks11($root),
-iedreg:runChecks12($root)
+iedreg:runChecks12($root),
+iedreg:runChecks13($root)
 )
 } ;
 
