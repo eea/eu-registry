@@ -26,10 +26,10 @@ declare namespace xlink = "http://www.w3.org/1999/xlink";
 declare namespace gml = "http://www.opengis.net/gml/3.2";
 
 (:~
- : 1. CODE LIST CHECKS
+ : 13.12+
  :)
 
-(: C1.7 otherRelevantChapters consistency
+(: C13.12 otherRelevantChapters consistency
 
     <EUReg:otherRelevantChapters  xlink:href > shall contain a value from codelist
     http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/RelevantChapterValue
@@ -47,7 +47,7 @@ declare function scripts3:checkOtherRelevantChapters(
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(: C1.8 pf:status consistency
+(: C13.13 pf:status consistency
 
     <pf:statusType xlink:href > shall contain a value from codelist
     http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/
@@ -66,7 +66,7 @@ declare function scripts3:checkStatusType(
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(: C1.9 plantType consistency
+(: C13.14 plantType consistency
 
     <EUReg:plantType xlink:href > shall contain a value from codelist
     http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue
@@ -85,7 +85,7 @@ declare function scripts3:checkPlantType(
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(: C1.10 derogations consistency
+(: C13.15 derogations consistency
 
     <EUReg:derogations  xlink:href> shall contain values from codelist
     http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/
@@ -104,7 +104,7 @@ declare function scripts3:checkDerogations(
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(: C1.11 derogations consistency
+(: C13.16 derogations consistency
 
     <EUReg:specificConditions  xlink:href> shall contain values
     from codelist  http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/Article51Value
