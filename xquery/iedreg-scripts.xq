@@ -228,7 +228,7 @@ declare function scripts:checkActivity(
     let $value := $activityName || "Value"
     let $valid := scripts:getValidConcepts($value)
 
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+    (:let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]:)
 
     let $data :=
         for $x in $seq

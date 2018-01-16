@@ -22,7 +22,7 @@
 			</act-core:geometry>
 			<act-core:function>
 				<act-core:Function>
-					<act-core:activity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/NACEValue/35.11"/>
+					<act-core:activity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/NACEValue/35.111"/>
 				</act-core:Function>
 			</act-core:function>
 			<act-core:validFrom xsi:nil="true"/>
@@ -162,7 +162,7 @@
 					<EUReg:dateOfGranting>1956-01-01+00:00</EUReg:dateOfGranting>
 				</EUReg:PermitDetails>
 			</EUReg:permit>
-			<EUReg:otherRelevantChapters xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/RelevantChapterValue/ChapterIII"/>
+			<EUReg:otherRelevantChapters xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/RelevantChapterValue/ChapterIII2"/>
 			<EUReg:dateOfStartOfOperation>1956-01-01+00:00</EUReg:dateOfStartOfOperation>
 		</EUReg:ProductionInstallation>
 	</gml:featureMember>
@@ -182,7 +182,7 @@
 			</pf:pointGeometry>
 			<pf:status>
 				<pf:StatusType>
-					<pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+					<pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/used"/>
 					<pf:validFrom xsi:nil="true"/>
 				</pf:StatusType>
 			</pf:status>
@@ -276,8 +276,8 @@
 					<EUReg:nameOfFeature>Example large combustion plant</EUReg:nameOfFeature>
 				</EUReg:FeatureName>
 			</EUReg:installationPartName>
-			<EUReg:plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
-			<EUReg:derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+			<EUReg:plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP1"/>
+			<EUReg:derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/testArticle"/>
 			<EUReg:totalRatedThermalInput>125</EUReg:totalRatedThermalInput>
 			<EUReg:dateOfStartOfOperation>1956-01-01+00:00</EUReg:dateOfStartOfOperation>
 		</EUReg:ProductionInstallationPart>
