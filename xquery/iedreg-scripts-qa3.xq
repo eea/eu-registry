@@ -142,7 +142,7 @@ declare function scripts3:checkReportData(
     let $featureName := "ProductionSite"
     let $activityType := "reportData"
     let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
-    let $gmlID := data($root/descendant::*[local-name() = "ReportData"][@gml:id]/@gml:id)
+    let $gmlID := data($root/descendant::*[local-name() = "ReportData"][@gml:id]/concat("#", @gml:id))
 
     let $msg := "The gml:ID specified in the " || $activityType || " field for the following " ||
                 scripts:makePlural($featureName) || " is not recognised.
@@ -159,17 +159,17 @@ declare function scripts3:checkReportData(
         let $v := data($x/@xlink:href)
 
         let $ok := (
-            $v eq concat("#", $gmlID)
+            $v = $gmlID
             and
             fn:substring($v, 1, 1) eq "#"
         )
         where not($ok)
             return map {
-            "marks" : (5),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v, $gmlID)
+            "marks" : (4),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, " xlink:href"), "ReportData gml:id")
+    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, " xlink:href"))
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -202,15 +202,16 @@ declare function scripts3:checkeHostingSite(
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
         let $indexOfStatus :=
-            if (exists($seq/child::*[local-name() = "status"]))
+            if (exists($x/child::*[local-name() = "status"]))
             then
-                functx:index-of-node($seq/*, $seq/*[local-name() = "status"])
+                functx:index-of-node($x/*, $x/*[local-name() = "status"])
             else
                 0
+
         let $indexOfHostingSite :=
-            if (exists($seq/child::*[local-name() = "hostingSite"]))
+            if (exists($x/child::*[local-name() = "hostingSite"]))
             then
-                functx:index-of-node($seq/*, $seq/*[local-name() = "hostingSite"])
+                functx:index-of-node($x/*, $x/*[local-name() = "hostingSite"])
             else
                 0
 
@@ -244,12 +245,13 @@ declare function scripts3:checkeHostingSiteHref(
     let $featureName := "ProductionFacility"
     let $activityType := "hostingSite"
     let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
-    let $gmlID := data($root/descendant::*[local-name() = "ProductionSite"][@gml:id]/@gml:id)
+    let $gmlID := data($root/descendant::*[local-name() = "ProductionSite"][@gml:id]/concat("#", @gml:id))
 
     let $msg := "The gml:ID specified in the " || $activityType || " xlink:href field for the following " ||
                 scripts:makePlural($featureName) || " is not recognised.
                 Please verify and ensure the correct gml:ID has been inputted"
     let $type := "error"
+
 
     let $data :=
         for $x in $seq
@@ -258,20 +260,21 @@ declare function scripts3:checkeHostingSiteHref(
         let $id := scripts:getGmlId($parent)
 
         let $p := scripts:getPath($x)
+
         let $v := data($x/@xlink:href)
 
         let $ok := (
-            $v eq concat("#", $gmlID)
+            $v = $gmlID
             and
             fn:substring($v, 1, 1) eq "#"
         )
         where not($ok)
             return map {
-            "marks" : (5),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v, $gmlID)
+            "marks" : (4),
+            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, " xlink:href"), "ProductionSite gml:id")
+    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, " xlink:href"))
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -294,7 +297,8 @@ declare function scripts3:checkGroupedInstallation(
     let $featureName := "ProductionFacility"
     let $activityType := "groupedInstallation"
     let $seq := $root/descendant::*[local-name() = "ProductionInstallation"]
-    let $gmlIDs := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]/@xlink:href
+    let $gmlIDs :=
+        $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]/@xlink:href
 
     let $msg := "The gml:id specified in the following " || scripts:makePlural("ProductionInstallation") ||
                 " does not have a relevant " || $activityType || ".
@@ -311,13 +315,14 @@ declare function scripts3:checkGroupedInstallation(
         let $v := data($x/@gml:id)
 
         let $ok := count(fn:index-of($gmlIDs, concat("#", $v))) >= 1
+
         where not($ok)
             return map {
             "marks" : (3),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p)
+            "data" : ($feature, $p, <span class="iedreg nowrap">{$id}</span>)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path")
+    let $hdrs := ("Feature", "Path", "GML ID" )
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -398,7 +403,9 @@ declare function scripts3:checkActCoreGeometry(
 
         let $p := scripts:getPath($x)
 
-        let $ok := exists($x/descendant::*[local-name() = "Point"])
+        let $ok := (
+            exists($x/descendant::*[local-name() = "Point"])
+        )
         where not($ok)
             return map {
             "marks" : (3),
@@ -432,7 +439,8 @@ declare function scripts3:checkActCoreActivity(
 
 (: 13.8 pf:groupedInstallationPart validity
 
-    for each ProductionInstallationPart gml:id , a relevant <pf:groupedInstallationPart xlink:href=""#_gml:id""/> must exist.
+    for each ProductionInstallationPart gml:id ,
+    a relevant <pf:groupedInstallationPart xlink:href=""#_gml:id""/> must exist.
     Example:
     for the <EUReg:ProductionInstallationPart gml:id=""_987654321.PART""> there must be
     a related element <pf:groupedInstallationPart xlink:href=""#_987654321.PART""/>
@@ -466,10 +474,10 @@ declare function scripts3:checkGroupedInstallationPart(
         where not($ok)
             return map {
             "marks" : (3),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p)
+            "data" : ($feature, $p, <span class="iedreg nowrap">{$id}</span>)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path")
+    let $hdrs := ("Feature", "Path", "GML ID")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -611,7 +619,7 @@ declare function scripts3:checkePointGeometry(
         let $ok := $following = "pointGeometry"
         where not($ok)
         return map {
-        "marks" : (5),
+        "marks" : (4),
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $following)
         }
 
