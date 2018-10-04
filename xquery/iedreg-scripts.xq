@@ -52,12 +52,15 @@ declare function scripts:is-empty($item as item()*) as xs:boolean {
     normalize-space(string-join($item)) = ''
 };
 
-declare function scripts:makePlural($name as xs:string) as xs:string {
-    let $name := replace($name, 'Site$', 'Sites')
-    let $name := replace($name, 'Facility$', 'Facilities')
-    let $name := replace($name, 'Installation$', 'Installations')
-    let $name := replace($name, 'InstallationPart$', 'InstallationParts')
-    return $name
+declare function scripts:makePlural($names as xs:string*) as xs:string {
+    let $res :=
+        for $name in $names
+            let $name := replace($name, 'Site$', 'Sites')
+            let $name := replace($name, 'Facility$', 'Facilities')
+            let $name := replace($name, 'Installation$', 'Installations')
+            let $name := replace($name, 'InstallationPart$', 'InstallationParts')
+            return $name
+    return $res
 };
 
 declare function scripts:getPath($e as element()) as xs:string {
@@ -563,41 +566,47 @@ declare function scripts:checkDuplicates(
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
-        $feature as xs:string
+        $featureNames as xs:string*,
+        $nodeNames as xs:string*
 ) as element()* {
-    let $nameName := $feature || 'Name'
-    let $featureName := 'Production' || functx:capitalize-first($feature)
-
-    let $msg := "The similarity threshold has been exceeded, for the following " || scripts:makePlural($featureName) || ". Please ammend the XML submission to ensure that there is no duplication"
     let $type := "warning"
-
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $nameName]/descendant::*:nameOfFeature
-
-    let $norm := ft:normalize(?, map {'stemming' : true()})
+    let $msg := "The similarity threshold has been exceeded, for the following "
+        || scripts:makePlural($featureNames) => fn:string-join(', ') ||
+        ". Please ammend the XML submission to ensure that there is no duplication"
 
     let $data :=
-        for $x at $i in $seq
-        let $p := scripts:getParent($x)
-        let $id := scripts:getGmlId($p)
+        for $nodeName in $nodeNames
+            let $seq := $root/descendant::*[local-name() = $featureNames]/
+                    descendant::*[local-name() = $nodeName]
 
-        for $y in subsequence($seq, $i + 1)
-        let $q := scripts:getParent($y)
-        let $ic := scripts:getGmlId($q)
+            let $norm := ft:normalize(?, map {'stemming' : true()})
 
-        let $z := strings:levenshtein($norm($x/data()), $norm($y/data()))
-        where $z >= 0.5
-        return map {
-        "marks" : (4, 5, 6),
-        "data" : (
-            $featureName,
-            <span class="iedreg nowrap">{$id}</span>,
-            <span class="iedreg nowrap">{$ic}</span>,
-            '"' || $x/data() || '"', '"' || $y/data() || '"',
-            round-half-to-even($z * 100, 1) || '%'
-        )
-        }
+            for $node at $ind in $seq
+                let $attributeName := $node/local-name()
+                let $feature := scripts:getParent($node)
+                let $featureName := $feature/local-name()
 
-    let $hdrs := ('Feature', 'GML IDs', ' ', 'Feature names', ' ', 'Similarity')
+                let $gmlid := scripts:getGmlId($feature)
+
+                for $sub in subsequence($seq, $ind + 1)
+                let $subParent := scripts:getParent($sub)
+                let $gmlidSub := scripts:getGmlId($subParent)
+
+                let $levRatio := strings:levenshtein($norm($node/data()), $norm($sub/data()))
+                where $levRatio >= 0.9
+                return map {
+                "marks" : (5, 6, 7),
+                "data" : (
+                    $featureName,
+                    $attributeName,
+                    <span class="iedreg nowrap">{$gmlid}</span>,
+                    <span class="iedreg nowrap">{$gmlidSub}</span>,
+                    '"' || $node/data() || '"', '"' || $sub/data() || '"',
+                    round-half-to-even($levRatio * 100, 1) || '%'
+                )
+                }
+
+    let $hdrs := ('Feature', 'Attribute name', 'GML IDs', ' ', 'Feature names', ' ', 'Similarity')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -614,9 +623,10 @@ declare function scripts:checkProductionSiteDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'site'
+    let $features := ('ProductionSite')
+    let $nodes := ('siteName', 'location')
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $feature)
+    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
 };
 
 (:~
@@ -628,9 +638,10 @@ declare function scripts:checkProductionFacilityDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'facility'
+    let $features := ('ProductionFacility')
+    let $nodes := ('geometry', 'parentCompany', 'EPRTRAnnexIActivity', 'facilityName')
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $feature)
+    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
 };
 
 (:~
@@ -642,9 +653,10 @@ declare function scripts:checkProductionInstallationDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'installation'
+    let $features := ('ProductionInstallation')
+    let $nodes := ('pointGeometry', 'IEDAnnexIActivity', 'installationName')
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $feature)
+    return scripts:checkDuplicates($refcode, $rulename, $root, $features, nodes)
 };
 
 (:~
@@ -656,9 +668,10 @@ declare function scripts:checkProductionInstallationPartDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'installationPart'
+    let $features := ('ProductionInstallationPart')
+    let $nodes := ('plantType', 'installationPartName')
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $feature)
+    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
 };
 
 declare function scripts:checkDatabaseDuplicates(
@@ -777,27 +790,29 @@ declare function scripts:checkMissing(
 ) as element()* {
     let $featureName := 'Production' || functx:capitalize-first($feature)
 
-    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName) || " missing from this submission. Please verify to ensure that no " || scripts:makePlural($featureName) || " have been missed."
-    let $type := "error"
+    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName)
+        || " missing from this submission. Please verify to ensure that no "
+        || scripts:makePlural($featureName) || " have been missed."
+    let $type := "warning"
 
-    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
-    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+    let $country := $root//EUReg:ReportData/EUReg:countryId
+    let $cntry := tokenize($country/@xlink:href, '/+')[last()]
 
     let $lastYear := max(database:getReportingYearsByCountry($cntry))
 
-    let $seq := $root/descendant::pf:inspireId
+    let $seq := $root//pf:inspireId
     let $fromDB := database:query($cntry, $lastYear, "pf:inspireId")
 
     let $data :=
         for $id in $fromDB
-        where not($id/descendant::*:localId = $seq/descendant::*:localId)
+        where not($id//*:localId = $seq//*:localId)
 
         let $p := scripts:getParent($id)
         where $p/local-name() = $featureName
 
-        let $id := $id/descendant::*:localId/text()
+        let $id := $id//*:localId/text()
 
-        let $status := $p/pf:status/descendant::pf:statusType
+        let $status := $p/pf:status//pf:statusType
         let $status := replace($status/@xlink:href, '/+$', '')
         let $status := scripts:normalize($status)
 
@@ -1427,19 +1442,19 @@ declare function scripts:checkActivityUniqueness(
     let $seq := $root/descendant::*[local-name() = $featureName]
 
     let $data :=
-        for $r in $seq
-        let $parent := scripts:getParent($r)
-        let $inspireId := scripts:getInspireId($parent)
-        let $activity := $r/descendant::*[local-name() = $activityName]
+        for $node in $seq
+        let $parent := scripts:getParent($node)
+        (:let $inspireId := scripts:getInspireId($parent):)
+        let $activity := $node/descendant::*[local-name() = $activityName]
         let $acts := $activity/descendant-or-self::*[not(*)]
 
-        let $path := scripts:getPath($activity)
+
         let $id := scripts:getGmlId($parent)
 
         let $dups :=
             for $a in functx:non-distinct-values($acts/attribute::*:href)
             return scripts:normalize(data($a))
-
+        where $acts//local-name() => fn:distinct-values() => fn:count() = 2
         for $act in $dups
         return map {
         "marks" : (3),
@@ -2418,7 +2433,11 @@ declare function scripts:checkRelevantChapters(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := "The following ProductionInstallations have PlantTypeValues that are not consistent with the chapter specified in the otherRelevantChapters field. Please verify and ensure where 'Chapter III' is referred to the PlantTypeValue is 'LCP', and where 'Chapter IV' is referred the PlantTypeValue is 'WI'."
+    let $msg := "The following ProductionInstallations does not have at least one
+    PlantTypeValues that is consistent with the chapter specified
+    in the otherRelevantChapters field.
+    Please verify and ensure where 'Chapter III' is referred to the PlantTypeValue is 'LCP',
+    and where 'Chapter IV' is referred the PlantTypeValue is 'WI'."
     let $type := "warning"
 
     let $validChapters := scripts:getValidConcepts("RelevantChapterValue")
@@ -2427,29 +2446,50 @@ declare function scripts:checkRelevantChapters(
     let $seq := $root/descendant::EUReg:ProductionInstallation
 
     let $data :=
-        for $x in $seq
-        let $x_id := scripts:getGmlId($x)
-        let $chapter := replace($x/EUReg:otherRelevantChapters/@xlink:href, '/+$', '')
+        for $node in $seq
+        let $gmlid := scripts:getGmlId($node)
+        let $chapter := replace($node/EUReg:otherRelevantChapters/@xlink:href, '/+$', '')
 
         where $chapter = $validChapters
         let $chapter := scripts:normalize($chapter)
 
-        for $y_id in $x/pf:groupedInstallationPart/@xlink:href
-        let $y_id := replace(data($y_id), "^#", "")
+        let $partTypes :=
+            for $partid in $node/pf:groupedInstallationPart/@xlink:href
+                let $partid := replace(data($partid), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id = $y_id]
-        let $plant := replace($y/EUReg:plantType/@xlink:href, '/+$', '')
+                for $part in $root//EUReg:ProductionInstallationPart[@gml:id = $partid]
+                    let $plant := replace($part/EUReg:plantType/@xlink:href, '/+$', '')
 
-        where $plant = $validPlants
-        let $plant := scripts:normalize($plant)
+                    where $plant = $validPlants
+                    let $plant := scripts:normalize($plant)
+                    return $plant
 
-        where ((($chapter = "ChapterIII") and not($plant = "LCP")) or (($chapter = "ChapterIV") and not($plant = "WI")))
+        let $partType := if($chapter = "ChapterIII")
+            then 'LCP'
+            else if($chapter = "ChapterIV")
+            then 'WI'
+            else ''
+
+        where ((
+                ($chapter = "ChapterIII")
+                and fn:exists($partTypes)
+                and fn:index-of($partTypes, $partType) => fn:count() = 0)
+            or (
+                ($chapter = "ChapterIV")
+                and fn:exists($partTypes)
+                and fn:index-of($partTypes, $partType) => fn:count() = 0))
         return map {
-        "marks" : (5, 6),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $chapter, $plant)
+        "marks" : (3, 4),
+        "data" : (
+            $node/local-name(),
+            <span class="iedreg nowrap">{$gmlid}</span>,
+            (:<span class="iedreg nowrap">{$partid}</span>,:)
+            $chapter,
+            $partType
+            )
         }
 
-    let $hdrs := ("Feature", "GML ID", "Feature", "GML ID", "Relevant Chapter", "Plant Type")
+    let $hdrs := ("Feature", "GML ID", "Relevant Chapter", "Plant Type")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -2466,31 +2506,59 @@ declare function scripts:checkLCP(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := "When PlantTypeValue is 'LCP' the totalRatedThermalInput and derogations fields should both be populated, and nominalCapacity and specificConditions fields should not be populated. The populated fields for the following ProductionInstallationParts do not meet the above criteria. Please verify and ensure the correct fields have been populated."
+    let $msg := "When PlantTypeValue is 'LCP' the totalRatedThermalInput
+    field should be populated, and nominalCapacity, specificConditions,
+    HeatReleaseHazardousWaste, untreatedMunicipalWaste,
+    publicDisclosure and publicDisclosureURL fields should not be populated.
+    The populated fields for the following ProductionInstallationParts
+    do not meet the above criteria. Please verify and ensure the correct
+    fields have been populated."
+
     let $type := "warning"
+    let $needed := ('totalRatedThermalInput')
+    let $notNeeded := ('nominalCapacity', 'specificConditions',
+        'HeatReleaseHazardousWaste', 'untreatedMunicipalWaste',
+        'publicDisclosure', 'publicDisclosureURL')
 
     let $valid := scripts:getValidConcepts("PlantTypeValue")
 
     let $seq := $root/descendant::EUReg:ProductionInstallationPart
 
     let $data :=
-        for $x in $seq
-        let $id := scripts:getGmlId($x)
-        let $plant := replace($x/EUReg:plantType/@xlink:href, '/+$', '')
-        let $derogations := $x/EUReg:derogations
-        let $totalRatedThermalInput := $x/EUReg:totalRatedThermalInput
-        let $nominalCapacity := $x/EUReg:nominalCapacity
-        let $specificConditions := $x/EUReg:nominalCapacity
+        for $part in $seq
+            let $id := scripts:getGmlId($part)
+            let $plant := replace($part/EUReg:plantType/@xlink:href, '/+$', '')
 
-        where $plant = $valid
-        let $plant := scripts:normalize($plant)
+            let $neededFound :=
+                for $node in $needed
+                    let $valuesCount := $part//*[local-name() = $node
+                        and functx:if-empty(data(), '') != ''] => fn:count()
+                    return if($valuesCount > 0)
+                        then 1
+                        else ()
 
-        where $plant = "LCP" and (scripts:is-empty($derogations) or scripts:is-empty($totalRatedThermalInput) or not(scripts:is-empty($nominalCapacity)) and not(scripts:is-empty($specificConditions)))
-        return map {
-        "marks" : (),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$id}</span>)
-        }
+            let $notNeededFound :=
+                for $node in $notNeeded
+                    let $valuesCount := $part//*[local-name() = $node
+                        and functx:if-empty(data(), '') != ''] => fn:count()
+                    return if($valuesCount > 0)
+                        then 1
+                        else ()
 
+            where $plant = $valid
+            let $plant := scripts:normalize($plant)
+
+            where $plant = "LCP"
+                and
+                (
+                    $neededFound => fn:count() != $needed => fn:count()
+                    or $notNeededFound => fn:count() != 0
+                )
+
+            return map {
+            "marks" : (),
+            "data" : ($part/local-name(), <span class="iedreg nowrap">{$id}</span>)
+            }
 
     let $hdrs := ("Feature", "GML ID")
 
@@ -2520,7 +2588,7 @@ declare function scripts:checkRatedThermalInput(
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
 
-        let $v := xs:float($x)
+        let $v := xs:float($x => functx:if-empty(0))
         where $v le 50 or $v gt 8500
 
         return map {
@@ -2545,7 +2613,20 @@ declare function scripts:checkWI(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := "When PlantTypeValue is 'WI' the nominalCapacity field should be populated, and totalRatedThermalInput and derogations fields should not be populated. The populated fields for the following ProductionInstallationParts do not meet the above criteria. Please verify and ensure the correct fields have been populated."
+    let $reportingYear := $root//EUReg:reportingYear/data()
+    let $needed := ('nominalCapacity', 'specificConditions')
+    let $notNeeded2017 := ('totalRatedThermalInput', 'derogations')
+    let $notNeeded2018 := ('HeatReleaseHazardousWaste', 'untreatedMunicipalWaste',
+        'publicDisclosure', 'publicDisclosureURL')
+    let $notNeededFinal := if($reportingYear = 2017)
+        then $notNeeded2017
+        else ($notNeeded2017, $notNeeded2018)
+
+    let $msg := "When PlantTypeValue is 'WI' " || fn:string-join($needed, ', ') ||
+        " fields should be populated, and " || fn:string-join($notNeededFinal, ', ') ||
+        " fields should not be populated. The populated fields for the following
+        ProductionInstallationParts do not meet the above criteria. Please verify
+        and ensure the correct fields have been populated."
     let $type := "warning"
 
     let $valid := scripts:getValidConcepts("PlantTypeValue")
@@ -2553,22 +2634,45 @@ declare function scripts:checkWI(
     let $seq := $root/descendant::EUReg:ProductionInstallationPart
 
     let $data :=
-        for $x in $seq
-        let $id := scripts:getGmlId($x)
-        let $plant := replace($x/EUReg:plantType/@xlink:href, '/+$', '')
-        let $derogations := $x/EUReg:derogations
-        let $totalRatedThermalInput := $x/EUReg:totalRatedThermalInput
-        let $nominalCapacity := $x/EUReg:nominalCapacity
+        for $part in $seq
+            let $id := scripts:getGmlId($part)
+            let $plant := replace($part/EUReg:plantType/@xlink:href, '/+$', '')
 
-        where $plant = $valid
-        let $plant := scripts:normalize($plant)
+            let $neededFound :=
+                for $node in $needed
+                    let $valuesCount := $part//*[local-name() = $node
+                        and functx:if-empty(data(), '') != ''] => fn:count()
+                    return if($valuesCount > 0)
+                        then 1
+                        else ()
 
-        where $plant = "WI" and (not(scripts:is-empty($derogations)) or not(scripts:is-empty($totalRatedThermalInput)) or scripts:is-empty($nominalCapacity))
-        return map {
-        "marks" : (),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$id}</span>)
-        }
+            let $notNeededFound :=
+                for $node in $notNeededFinal
+                    let $valuesCount := $part//*[local-name() = $node
+                        and functx:if-empty(data(), '') != ''] => fn:count()
+                    return if($valuesCount > 0)
+                        then 1
+                        else ()
 
+            where $plant = $valid
+            let $plant := scripts:normalize($plant)
+
+            where $plant = "WI"
+                and
+                (
+                    $neededFound => fn:count() != $needed => fn:count()
+                    or $notNeededFound => fn:count() != 0
+                )
+
+            (:let $asd := trace($id, 'id:'):)
+            (:let $asd := trace($neededFound => fn:count(), 'neededFound:'):)
+            (:let $asd := trace($needed => fn:count(), 'needed:'):)
+            (:let $asd := trace($notNeededFound => fn:count(), 'notNeededFound:'):)
+
+            return map {
+            "marks" : (),
+            "data" : ($part/local-name(), <span class="iedreg nowrap">{$id}</span>)
+            }
 
     let $hdrs := ("Feature", "GML ID")
 
@@ -2587,64 +2691,89 @@ declare function scripts:checkNominalCapacity(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $error := "The integer supplied in the permittedCapacityHazardous field is greater than the integer supplied in the totalNominalCapacityAnyWasteType field, for the following ProductionInstallationParts. Please review and amend so the permittedCapacityHazardous field represents an integer less than or equal to the totalNominalCapacityAnyWasteType."
-    let $warn := "The integer specified in the totalNominalCapacityAnyWasteType field exceeds the anticipated maximum threshold of 60. Please verify and ensure the integer supplied is correct."
-    let $info := "The integer specified in the totalNominalCapacityAnyWasteType field is greater than the ideal threshold of 30. Please verify and ensure the integer supplied is correct."
+    let $warn1 := "The integer supplied in the permittedCapacityHazardous
+        or permittedCapacityNonHazardous field
+        is greater than the integer supplied in the totalNominalCapacityAnyWasteType field,
+        for the following ProductionInstallationParts.
+        Please review and amend so the permittedCapacityHazardous/permittedCapacityNonHazardous
+        field represents an integer less than or equal to the totalNominalCapacityAnyWasteType."
+
+    let $warn2 := "The integer specified in the totalNominalCapacityAnyWasteType field
+        exceeds the anticipated maximum threshold of 60. Please verify and ensure the integer
+        supplied is correct."
+    let $info := "The integer specified in the totalNominalCapacityAnyWasteType field
+        is greater than the ideal threshold of 30.
+        Please verify and ensure the integer supplied is correct."
 
     let $seq := $root/descendant::EUReg:ProductionInstallationPart/EUReg:nominalCapacity
 
     let $data :=
-        for $x in $seq
-        let $parent := scripts:getParent($x)
-        let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+        for $node in $seq
+            let $totalAnyWaste := $node//*:totalNominalCapacityAnyWasteType/xs:float(.)
+            let $hazardous := $node//*:permittedCapacityHazardous/xs:float(.)
+            let $nonHazardous := $node//*:permittedCapacityNonHazardous/xs:float(.)
+            where $totalAnyWaste >= 30
+                or $hazardous > $totalAnyWaste
+                or $nonHazardous > $totalAnyWaste
+            let $parent := scripts:getParent($node)
+            let $feature := $parent/local-name()
+            let $id := scripts:getGmlId($parent)
 
-        let $hazardous := $x/descendant::EUReg:permittedCapacityHazardous/xs:float(.)
-        let $any := $x/descendant::EUReg:totalNominalCapacityAnyWasteType/xs:float(.)
+            return map {
+            "marks" : (3, 4, 5),
+            "data" : (
+                $feature,
+                <span class="iedreg nowrap">{$id}</span>,
+                $hazardous,
+                $nonHazardous,
+                $totalAnyWaste
+            )
+            }
+
+    let $yellow1 :=
+        for $m in $data
+        let $hazardous := $m("data")[3]
+        let $nonHazardous := $m("data")[4]
+        let $totalAnyWaste := $m("data")[5]
+        where $hazardous > $totalAnyWaste or $nonHazardous > $totalAnyWaste
+        let $mark1 := if($hazardous > $totalAnyWaste) then (3) else ()
+        let $mark2 := if($nonHazardous > $totalAnyWaste) then (4) else ()
 
         return map {
-        "marks" : (3, 4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $hazardous, $any)
+            "marks" : ($mark1, $mark2),
+            "data" : $m("data")
         }
 
-    let $red :=
+    let $yellow2 :=
         for $m in $data
-        let $hazardous := $m("data")[3]
-        let $any := $m("data")[4]
-        where $hazardous gt $any
-        return $m
-
-    let $yellow :=
-        for $m in $data
-        let $hazardous := $m("data")[3]
-        let $any := $m("data")[4]
-        where $any gt 60
+        let $totalAnyWaste := $m("data")[5]
+        where $totalAnyWaste gt 60
         return map {
-        "marks" : (4),
-        "data" : $m("data")
+            "marks" : (5),
+            "data" : $m("data")
         }
 
     let $blue :=
         for $m in $data
-        let $hazardous := $m("data")[3]
-        let $any := $m("data")[4]
-        where $any gt 30 and $any le 60
+        let $totalAnyWaste := $m("data")[5]
+        where $totalAnyWaste gt 30 and $totalAnyWaste le 60
         return map {
-        "marks" : (4),
-        "data" : $m("data")
+            "marks" : (5),
+            "data" : $m("data")
         }
 
-    let $hdrs := ("Feature", "GML ID", "permittedCapacityHazardous", "totalNominalCapacityAnyWasteType")
+    let $hdrs := ("Feature", "GML ID", "permittedCapacityHazardous",
+        "permittedCapacityNonHazardous", "totalNominalCapacityAnyWasteType")
 
     let $details :=
         <div class="iedreg">{
-            if (empty($red)) then () else scripts:getDetails($error, "error", $hdrs, $red),
-            if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
+            if (empty($yellow1)) then () else scripts:getDetails($warn1, "warning", $hdrs, $yellow1),
+            if (empty($yellow2)) then () else scripts:getDetails($warn2, "warning", $hdrs, $yellow2),
             if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
         }</div>
 
     return
-        scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
+        scripts:renderResult($refcode, $rulename, 0, count(($yellow1, $yellow2)), count($blue), $details)
 };
 
 (:~
@@ -2774,16 +2903,16 @@ declare function scripts:checkIdentifier(
     let $seq := $root/descendant::*[local-name() = $feature]/child::*[local-name() = $identifier]
 
     let $data :=
-        for $x in $seq
-        let $parent := scripts:getParent($x)
+        for $identifier in $seq
+        let $parent := scripts:getParent($identifier)
         let $id := scripts:getGmlId($parent)
 
-        let $v := $x/text()
-        where not($v = $ids)
+        let $value := $identifier/text() => functx:if-empty('')
+        where $value != '' and not($value = $ids)
 
         return map {
         "marks" : (3),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
+        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $value)
         }
 
     let $hdrs := ("Feature", "GML ID", $identifier)

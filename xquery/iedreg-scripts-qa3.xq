@@ -104,7 +104,7 @@ declare function scripts3:checkDerogations(
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(: C13.16 derogations consistency
+(: C13.16 specificConditions consistency
 
     <EUReg:specificConditions  xlink:href> shall contain values
     from codelist  http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/Article51Value

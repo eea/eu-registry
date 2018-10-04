@@ -104,3 +104,12 @@ declare function functx:index-of-node($seq as node()*, $search as node()) as xs:
       function($i as xs:integer) as xs:boolean {$seq[$i] is $search}
     )
 };
+
+declare function functx:if-empty(
+    $arg as item()? ,
+    $value as item()*
+) as item()* {
+    if (string($arg) != '')
+    then data($arg)
+    else $value
+};
