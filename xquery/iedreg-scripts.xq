@@ -1961,10 +1961,11 @@ declare function scripts:checkPermitDates(
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
-        $date1 as xs:string,
-        $date2 as xs:string
+        $date1 as xs:string,  (: dateOfGranting :)
+        $date2 as xs:string  (: dateOfLastUpdate :)
 ) as element()* {
-    let $msg := "The " || $date1 || " does not precede " || $date2 || " for the following ProductionInstallations. Please verify dates and ensure they are correct."
+    let $msg := "The " || $date1 || " does not precede " || $date2 || " for the following
+        ProductionInstallations. Please verify dates and ensure they are correct."
     let $type := "warning"
 
     let $seq := $root/descendant::*:ProductionInstallation/EUReg:permit/EUReg:PermitDetails
@@ -2006,7 +2007,7 @@ declare function scripts:checkDateOfLastReconsideration(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    scripts:checkPermitDates($refcode, $rulename, $root, "dateOfGranting", "dateOfLastReconsideration")
+    scripts:checkPermitDates($refcode, $rulename, $root, "dateOfGranting", "dateOfLastUpdate")
 };
 
 (:~
@@ -2034,21 +2035,24 @@ declare function scripts:checkInspections(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := "The competentAuthorityInspections field has not been filled out for the following ProductionInstallations where the inspection field is greater than or equal to 1. Please verify to ensure the competent authority for these insepctions has been specified in the appropriate fields."
+    let $msg := "The competentAuthorityInspections field has not been filled out
+        for the following ProductionInstallations where the inspection field is
+        greater than or equal to 1. Please verify to ensure the competent authority
+        for these insepctions has been specified in the appropriate fields."
     let $type := "warning"
 
     let $seq := $root/descendant::*:ProductionInstallation
 
     let $data :=
-        for $x in $seq
-        let $feature := $x/local-name()
-        let $id := scripts:getGmlId($x)
+        for $installation in $seq
+        let $feature := $installation/local-name()
+        let $id := scripts:getGmlId($installation)
 
-        let $inspections := $x/EUReg:inspections
-        let $authInspections := $x/EUReg:competentAuthorityInspections
+        let $siteVisits := $installation//EUReg:siteVisitNumber
+        let $authInspections := $installation/EUReg:competentAuthorityInspections
 
-        where not(scripts:is-empty($inspections))
-        let $v := xs:float($inspections/text())
+        where not(scripts:is-empty($siteVisits))
+        let $v := xs:float($siteVisits/text())
 
         where ($v gt 0) and scripts:is-empty($authInspections)
         return map {
@@ -3209,5 +3213,194 @@ declare function scripts:checkWhitespaces(
 };
 
 (:~
- : vim: sts=2 ts=2 sw=2 et
- :)
+    C1.1 2017 reporting year versus 2018 and later reporting years
+:)
+
+declare function scripts:check2018year(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $msg := 'ASD QWE ARARSAR'
+    let $type := 'error'
+    let $iedVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/IED'
+
+    let $mapAttrs := map {
+        'ProductionInstallation': ('baselineReportIndicator', 'publicEmissionMonitoring',
+            'BATConclusion'),
+        'siteVisits': ('SiteVisitURL'),
+        'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate',
+            'derogationDurationEndDate'),
+        'stricterPermitConditions': ('StricterPermitConditionsIndicator', 'article18',
+            'article14.4', 'BATAEL')
+    }
+
+    let $seq := $root//*:ProductionInstallation
+
+    let $data :=
+        for $installation in $seq
+            let $featureMain := $installation/local-name()
+            let $gmlid := scripts:getGmlId($installation)
+            let $installationType := $installation//*:installationType/@xlink:href
+            where $installationType = $iedVocab
+
+            for $feature in map:keys($mapAttrs)
+                let $featureSubList := $installation/descendant-or-self::*
+                        [local-name() = $feature]
+
+                let $featureSubList := if(fn:empty($featureSubList))
+                    then <empty/>
+                    else $featureSubList
+
+                for $featureSub in $featureSubList
+                    let $batDerogInd := $featureSub//*:BATDerogationIndicator
+                    where $feature != 'BATDerogation' or
+                        ($feature = 'BATDerogation' and $batDerogInd)
+
+                    for $attr in $mapAttrs?($feature)
+                        let $strictPermit := $featureSub//*:stricterPermitConditionsIndicator
+                        where $feature != 'stricterPermitConditions' or
+                            ($feature = 'stricterPermitConditions' and $attr != 'BATAEL') or
+                            ($feature = 'stricterPermitConditions' and $attr = 'BATAEL'
+                                    and $strictPermit)
+
+                        let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
+
+                        where $attrCount = 0
+                        return map {
+                            "marks" : (3),
+                            "data" : ($featureMain, $gmlid, $feature, $attr)
+                        }
+
+    let $hdrs := ('Feature main', 'GML ID', 'Feature sub', 'Attribute')
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(:~
+    C1.2 Facility Type
+:)
+
+declare function scripts:checkFacilityType(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $msg := 'ASD QWE ARARSAR'
+    let $type := 'error'
+    let $eprtrVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FaciltyTypeValue/EPRTR'
+
+    let $mapAttrs := map {
+        'CompetentAuthority': ('organisationName', 'individualName',
+            'electronicMailAddress', 'telephoneNo'),
+        'Address': ('streetName', 'buildingNumber', 'city', 'postalCode'),
+        'parentCompanyDetails': ('parentCompanyName'),
+        'EPRTRAnnexIActivity': ('mainActivity')
+    }
+
+    let $seq := $root//*:ProductionFacility
+
+    let $data :=
+        for $facility in $seq
+            let $featureMain := $facility/local-name()
+            let $gmlid := scripts:getGmlId($facility)
+            let $facilityType := $facility//*:facilityType/@xlink:href
+            where $facilityType = $eprtrVocab
+
+            for $feature in map:keys($mapAttrs)
+                let $featureSubList := $facility/descendant-or-self::*
+                        [local-name() = $feature]
+
+                let $featureSubList := if(fn:empty($featureSubList))
+                    then <empty/>
+                    else $featureSubList
+
+                for $featureSub in $featureSubList
+
+                    for $attr in $mapAttrs?($feature)
+
+                        let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
+
+                        where $attrCount = 0
+                        return map {
+                            "marks" : (3),
+                            "data" : ($featureMain, $gmlid, $feature, $attr)
+                        }
+
+    let $hdrs := ('Feature main', 'GML ID', 'Feature sub', 'Attribute')
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(:~
+    C1.3 Installation Type
+:)
+
+declare function scripts:checkInstallationType(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $msg := 'ASD QWE ARARSAR'
+    let $type := 'error'
+    let $eprtrVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FaciltyTypeValue/EPRTR'
+
+    let $mapAttrs2017 := map {
+        'ProductionInstallation': ('baselineReportIndicator'),
+        'CompetentAuthority': ('organisationName', 'individualName',
+            'electronicMailAddress', 'telephoneNo'),
+        'Address': ('streetName', 'buildingNumber', 'city', 'postalCode'),
+        'siteVisits': ('siteVisitNumber'),
+        'PermitDetails': ('permitGranted', 'permitReconsidered', 'PermitUpdated'),
+        'IEDAnnexIActivityType': 'mainActivity'
+    }
+    let $mapAttrs2018 := map {
+        'ProductionInstallation': ('publicEmissionMonitoring', 'BATconclusions'),
+        'stricterPermitConditions': ('StricterPermitConditionsIndicator', 'article18',
+            'article14.4', 'BATAEL'),
+        'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate',
+            'derogationDurationEndDate'),
+    }
+
+    let $seq := $root//*:ProductionFacility
+
+    let $data :=
+        for $facility in $seq
+            let $featureMain := $facility/local-name()
+            let $gmlid := scripts:getGmlId($facility)
+            let $facilityType := $facility//*:facilityType/@xlink:href
+            where $facilityType = $eprtrVocab
+
+            for $feature in map:keys($mapAttrs)
+                let $featureSubList := $facility/descendant-or-self::*
+                        [local-name() = $feature]
+
+                let $featureSubList := if(fn:empty($featureSubList))
+                    then <empty/>
+                    else $featureSubList
+
+                for $featureSub in $featureSubList
+
+                    for $attr in $mapAttrs?($feature)
+
+                        let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
+
+                        where $attrCount = 0
+                        return map {
+                            "marks" : (3),
+                            "data" : ($featureMain, $gmlid, $feature, $attr)
+                        }
+
+    let $hdrs := ('Feature main', 'GML ID', 'Feature sub', 'Attribute')
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};

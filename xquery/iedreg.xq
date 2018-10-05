@@ -26,7 +26,18 @@ import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 import module namespace scripts = "iedreg-scripts" at "iedreg-scripts.xq";
 import module namespace scripts3 = "iedreg-scripts-qa3" at "iedreg-scripts-qa3.xq";
 
-declare variable $iedreg:checks2018 := ('C10.5');
+declare variable $iedreg:checks2018 := (
+    'C1.1',
+    'C3.1',
+    'C4.5', 'C4.6', 'C4.7','C4.8', 'C4.9', 'C4.10', 'C4.11', 'C4.12',
+    'C5.6',
+    'C6.2', 'C6.4',
+    'C7.5',
+    'C9.3', 'C9.5', 'C9.6',
+    'C10.2', 'C10.5', 'C10.6', 'C10.7',
+    'C13.4'
+);
+declare variable $iedreg:skipCountries := ('CH');
 declare variable $iedreg:skip2018 := false();
 
 (:~
@@ -53,6 +64,17 @@ declare function iedreg:getNotActive(
             <span class="iedreg nowrap header">Not active</span>
             <br/>
             <span class="iedreg">This check is active from 2018 reporting year onwards</span>
+        </div>
+    </div>
+};
+
+declare function iedreg:getNotApplicable(
+) as element(div)* {
+    <div class="iedreg">
+        <div class="iedreg inner msg gray mnone">
+            <span class="iedreg nowrap header">Not applicable</span>
+            <br/>
+            <span class="iedreg">This check is not applicable for your country</span>
         </div>
     </div>
 };
@@ -139,6 +161,15 @@ declare function iedreg:notActive(
     return iedreg:renderResult($refcode, $rulename, 'none', $details)
 };
 
+declare function iedreg:notApplicable(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $details := iedreg:getNotApplicable()
+    return iedreg:renderResult($refcode, $rulename, 'none', $details)
+};
+
 declare function iedreg:failsafeWrapper(
         $refcode as xs:string,
         $rulename as xs:string,
@@ -147,8 +178,11 @@ declare function iedreg:failsafeWrapper(
 ) as element()* {
     try {
         let $reportingYear := $root//*:reportingYear/xs:float(.)
+        let $countryCode := tokenize($root//*:countryId/@xlink:href, '/+')[last()]
         return
-            if($iedreg:skip2018 and $refcode = $iedreg:checks2018 and $reportingYear < 2018)
+            if($countryCode = $iedreg:skipCountries)
+            then iedreg:notApplicable($refcode, $rulename, $root)
+            else if($iedreg:skip2018 and $refcode = $iedreg:checks2018 and $reportingYear < 2018)
             then iedreg:notActive($refcode, $rulename, $root)
             else $checkFunc($refcode, $rulename, $root)
     } catch * {
@@ -246,8 +280,8 @@ declare function iedreg:runChecks01($root as element()) as element()* {
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: new :) iedreg:failsafeWrapper("C1.1", "2017 reporting year versus 2018 and later reporting years", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C1.2", "Facility Type", $root, iedreg:notYet#3),
+        (: new DONE :) iedreg:failsafeWrapper("C1.1", "2017 reporting year versus 2018 and later reporting years", $root, scripts:check2018year#3),
+        (: new DONE :) iedreg:failsafeWrapper("C1.2", "Facility Type", $root, scripts:checkFacilityType#3),
         (: new :) iedreg:failsafeWrapper("C1.3", "Installation Type", $root, iedreg:notYet#3)
     }</div>
 };
@@ -318,12 +352,10 @@ declare function iedreg:runChecks04($root as element()) as element()* {
         (: upd :) iedreg:failsafeWrapper("C4.6", "Identification of ProductionFacility duplicates within the database", $root, scripts:checkProductionFacilityDatabaseDuplicates#3),
         (: upd :) iedreg:failsafeWrapper("C4.7", "Identification of ProductionInstallation duplicates within the database", $root, scripts:checkProductionInstallationDatabaseDuplicates#3),
         (: upd :) iedreg:failsafeWrapper("C4.8", "Identification of ProductionInstallationPart duplicates within the database", $root, scripts:checkProductionInstallationPartDatabaseDuplicates#3),
-        (: upd :) iedreg:failsafeWrapper("C4.9",
-                "ProductionSite and Facility Continuity", $root,
-                scripts:checkMissingProductionSites#3),
-        (: upd :) iedreg:failsafeWrapper("C4.10", "Missing ProductionFacilities, previous submissions", $root, scripts:checkMissingProductionFacilities#3),
-        (: upd :) iedreg:failsafeWrapper("C4.11", "Missing ProductionInstallations, previous submissions", $root, scripts:checkMissingProductionInstallations#3),
-        (: upd :) iedreg:failsafeWrapper("C4.12", "Missing ProductionInstallationsParts, previous submissions", $root, scripts:checkMissingProductionInstallationParts#3)
+        (: upd :) iedreg:failsafeWrapper("C4.9", "ProductionSite and Facility Continuity", $root, scripts:checkMissingProductionSites#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C4.10", "Missing ProductionFacilities, previous submissions", $root, scripts:checkMissingProductionFacilities#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C4.11", "Missing ProductionInstallations, previous submissions", $root, scripts:checkMissingProductionInstallations#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C4.12", "Missing ProductionInstallationsParts, previous submissions", $root, scripts:checkMissingProductionInstallationParts#3)
     }</div>
 };
 
@@ -399,7 +431,7 @@ declare function iedreg:runChecks08($root as element()) as element()* {
         iedreg:failsafeWrapper("C8.1", "dateOfStartOfOperation comparison", $root, scripts:checkDateOfStartOfOperation#3),
         iedreg:failsafeWrapper("C8.2", "dateOfStartOfOperation LCP restriction", $root, scripts:checkDateOfStartOfOperationLCP#3),
         (: removed :) (:iedreg:failsafeWrapper("C8.3", "dateOfStartOfOperation to dateOfGranting comparison", $root, scripts:checkDateOfGranting#3),:)
-        (: upd :) iedreg:failsafeWrapper("C8.3", "dateOfGranting plausibility", $root, scripts:checkDateOfLastReconsideration#3)
+        (: upd DONE :) iedreg:failsafeWrapper("C8.3", "dateOfGranting plausibility", $root, scripts:checkDateOfLastReconsideration#3)
         (: removed :) (:iedreg:failsafeWrapper("C8.4", "dateOfLastReconsideration plausibility", $root, scripts:checkDateOfLastUpdate#3):)
     }</div>
 };
@@ -414,7 +446,7 @@ declare function iedreg:runChecks09($root as element()) as element()* {
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: upd :) iedreg:failsafeWrapper("C9.1", "competentAuthorityInspections to inspections comparison", $root, scripts:checkInspections#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C9.1", "competentAuthorityInspections to inspections comparison", $root, scripts:checkInspections#3),
         iedreg:failsafeWrapper("C9.2", "competentAuthorityPermits and permit field comparison", $root, scripts:checkPermit#3),
         (: new :) iedreg:failsafeWrapper("C9.3", "PermitURL to dateOfGranting comparison", $root, iedreg:notYet#3),
         (: new :) iedreg:failsafeWrapper("C9.5", "enforcementAction to permitGranted comparison", $root, iedreg:notYet#3),
@@ -543,7 +575,7 @@ declare function iedreg:runChecks($url as xs:string) as element()*
     )
 
     return (
-        (:iedreg:runChecks01($root),:)
+        iedreg:runChecks01($root),
         (:iedreg:runChecks02($root),:)
         (:iedreg:runChecks03($root),:)
         (:iedreg:runChecks04($root),:)
@@ -552,10 +584,10 @@ declare function iedreg:runChecks($url as xs:string) as element()*
         (:iedreg:runChecks07($root),:)
         (:iedreg:runChecks08($root),:)
         (:iedreg:runChecks09($root),:)
-        iedreg:runChecks10($root),
+        (:iedreg:runChecks10($root),:)
         (:iedreg:runChecks11($root),:)
         (:iedreg:runChecks12($root),:)
-        iedreg:runChecks13($root),
+        (:iedreg:runChecks13($root),:)
         iedreg:runChecks14($root)
     )
 };
