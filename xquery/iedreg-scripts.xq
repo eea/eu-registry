@@ -211,7 +211,7 @@ declare function scripts:renderResult(
 };
 
 (:~
- : 1. CODE LIST CHECKS
+ : 2. CODE LIST CHECKS
  :)
 
 declare function scripts:checkActivity(
@@ -259,7 +259,7 @@ declare function scripts:checkActivity(
 };
 
 (:~
- : C1.1 EPRTRAnnexIActivity mainActivity consistency
+ : C2.1 EPRTRAnnexIActivity mainActivity consistency
  :)
 
 declare function scripts:checkMainEPRTRAnnexIActivity(
@@ -276,7 +276,7 @@ declare function scripts:checkMainEPRTRAnnexIActivity(
 };
 
 (:~
- : C1.2 EPRTRAnnexIActivity otherActivity consistency
+ : C2.2 EPRTRAnnexIActivity otherActivity consistency
  :)
 
 declare function scripts:checkOtherEPRTRAnnexIActivity(
@@ -293,7 +293,7 @@ declare function scripts:checkOtherEPRTRAnnexIActivity(
 };
 
 (:~
- : C1.3 IEDAnnexIActivity mainActivity consistency
+ : C2.3 IEDAnnexIActivity mainActivity consistency
  :)
 
 declare function scripts:checkMainIEDAnnexIActivity(
@@ -310,7 +310,7 @@ declare function scripts:checkMainIEDAnnexIActivity(
 };
 
 (:~
- : C1.4 IEDAnnexIActivity otherActivity consistency
+ : C2.4 IEDAnnexIActivity otherActivity consistency
  :)
 
 declare function scripts:checkOtherIEDAnnexIActivity(
@@ -327,7 +327,7 @@ declare function scripts:checkOtherIEDAnnexIActivity(
 };
 
 (:~
- : C1.5 CountryId consistency
+ : C2.5 CountryId consistency
  :)
 
 declare function scripts:checkCountryId(
@@ -371,7 +371,7 @@ declare function scripts:checkCountryId(
 };
 
 (:~
- : C1.6 reasonValue consistency
+ : C2.6 reasonValue consistency
  :)
 
 declare function scripts:checkReasonValue(
@@ -413,7 +413,89 @@ declare function scripts:checkReasonValue(
 };
 
 (:~
- : 2. INSPIRE ID CHECKS
+    2.7 FacilityType consistency
+:)
+declare function scripts:checkFacilityTypeVocab(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionFacility"
+    let $activityName := "FacilityType"
+    let $activityType := "facilityType"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+};
+
+(:~
+    2.8 InstallationType consistency
+:)
+declare function scripts:checkInstallationTypeVocab(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionInstallation"
+    let $activityName := "InstallationType"
+    let $activityType := "installationType"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+};
+
+(:~
+    2.8 BaselineReport consistency
+:)
+declare function scripts:checkBaselineReportTypeVocab(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionInstallation"
+    let $activityName := "BaselineReport"
+    let $activityType := "baselineReportIndicator"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+};
+
+(:~
+    2.8 BATConclusion consistency
+:)
+declare function scripts:checkBATConclusionTypeVocab(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionInstallation"
+    let $activityName := "BATConclusion"
+    let $activityType := "BATConclusion"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+};
+
+(:~
+    2.8 BATAEL consistency
+:)
+declare function scripts:checkBATAELTypeVocab(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $featureName := "ProductionInstallation"
+    let $activityName := "BATAEL"
+    let $activityType := "BATAEL"
+    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+};
+
+
+
+(:~
+ : 3. INSPIRE ID CHECKS
  :)
 
 declare function scripts:checkInspireIdUniqueness(
@@ -3349,7 +3431,7 @@ declare function scripts:checkInstallationType(
 ) as element()* {
     let $msg := 'ASD QWE ARARSAR'
     let $type := 'error'
-    let $eprtrVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FaciltyTypeValue/EPRTR'
+    let $installationVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/IED'
 
     let $mapAttrs2017 := map {
         'ProductionInstallation': ('baselineReportIndicator'),
@@ -3358,27 +3440,30 @@ declare function scripts:checkInstallationType(
         'Address': ('streetName', 'buildingNumber', 'city', 'postalCode'),
         'siteVisits': ('siteVisitNumber'),
         'PermitDetails': ('permitGranted', 'permitReconsidered', 'PermitUpdated'),
-        'IEDAnnexIActivityType': 'mainActivity'
+        'IEDAnnexIActivityType': ('mainActivity')
     }
     let $mapAttrs2018 := map {
         'ProductionInstallation': ('publicEmissionMonitoring', 'BATconclusions'),
         'stricterPermitConditions': ('StricterPermitConditionsIndicator', 'article18',
-            'article14.4', 'BATAEL'),
+            'article14.4'),
+        'siteVisits': ('siteVisitURL'),
         'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate',
-            'derogationDurationEndDate'),
+            'derogationDurationEndDate')
     }
 
-    let $seq := $root//*:ProductionFacility
+    let $reportingYear := $root//*:reportingYear/xs:float(.)
 
-    let $data :=
-        for $facility in $seq
-            let $featureMain := $facility/local-name()
-            let $gmlid := scripts:getGmlId($facility)
-            let $facilityType := $facility//*:facilityType/@xlink:href
-            where $facilityType = $eprtrVocab
+    let $seq := $root//*:ProductionInstallation
 
-            for $feature in map:keys($mapAttrs)
-                let $featureSubList := $facility/descendant-or-self::*
+    let $data2017 :=
+        for $installation in $seq
+            let $featureMain := $installation/local-name()
+            let $gmlid := scripts:getGmlId($installation)
+            let $installationType := $installation//*:installationType/@xlink:href
+            where $installationType = $installationVocab
+
+            for $feature in map:keys($mapAttrs2017)
+                let $featureSubList := $installation/descendant-or-self::*
                         [local-name() = $feature]
 
                 let $featureSubList := if(fn:empty($featureSubList))
@@ -3387,7 +3472,7 @@ declare function scripts:checkInstallationType(
 
                 for $featureSub in $featureSubList
 
-                    for $attr in $mapAttrs?($feature)
+                    for $attr in $mapAttrs2017?($feature)
 
                         let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
 
@@ -3396,6 +3481,40 @@ declare function scripts:checkInstallationType(
                             "marks" : (3),
                             "data" : ($featureMain, $gmlid, $feature, $attr)
                         }
+
+    let $data2018 := if($reportingYear < 2018)
+        then ()
+        else
+        for $installation in $seq
+            let $featureMain := $installation/local-name()
+            let $gmlid := scripts:getGmlId($installation)
+            let $installationType := $installation//*:installationType/@xlink:href
+            where $installationType = $installationVocab
+
+            for $feature in map:keys($mapAttrs2018)
+                let $featureSubList := $installation/descendant-or-self::*
+                        [local-name() = $feature]
+
+                let $featureSubList := if(fn:empty($featureSubList))
+                    then <empty/>
+                    else $featureSubList
+
+                for $featureSub in $featureSubList
+                    let $batDerogInd := $featureSub//*:BATDerogationIndicator
+                    where $feature != 'BATDerogation' or
+                        ($feature = 'BATDerogation' and $batDerogInd)
+
+                    for $attr in $mapAttrs2018?($feature)
+
+                        let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
+
+                        where $attrCount = 0
+                        return map {
+                            "marks" : (3),
+                            "data" : ($featureMain, $gmlid, $feature, $attr)
+                        }
+
+    let $data := ($data2017, $data2018)
 
     let $hdrs := ('Feature main', 'GML ID', 'Feature sub', 'Attribute')
 

@@ -282,7 +282,7 @@ declare function iedreg:runChecks01($root as element()) as element()* {
     <div class="iedreg table parent">{
         (: new DONE :) iedreg:failsafeWrapper("C1.1", "2017 reporting year versus 2018 and later reporting years", $root, scripts:check2018year#3),
         (: new DONE :) iedreg:failsafeWrapper("C1.2", "Facility Type", $root, scripts:checkFacilityType#3),
-        (: new :) iedreg:failsafeWrapper("C1.3", "Installation Type", $root, iedreg:notYet#3)
+        (: new DONE :) iedreg:failsafeWrapper("C1.3", "Installation Type", $root, scripts:checkInstallationType#3)
     }</div>
 };
 
@@ -303,11 +303,11 @@ declare function iedreg:runChecks02($root as element()) as element()* {
         iedreg:failsafeWrapper("C2.4", "IEDAnnexIActivity otherActivity consistency", $root, scripts:checkOtherIEDAnnexIActivity#3),
         iedreg:failsafeWrapper("C2.5", "CountryId consistency", $root, scripts:checkCountryId#3),
         iedreg:failsafeWrapper("C2.6", "reasonValue consistency", $root, scripts:checkReasonValue#3),
-        (: new :) iedreg:failsafeWrapper("C2.7", "FacilityType consistency", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C2.8", "InstallationType consistency", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C2.9", "BaselineReport consistency", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C2.10", "BATConclusion consistency", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C2.11", "BATAEL consistency", $root, iedreg:notYet#3),
+        (: new DONE :) iedreg:failsafeWrapper("C2.7", "FacilityType consistency", $root, scripts:checkFacilityTypeVocab#3),
+        (: new DONE :) iedreg:failsafeWrapper("C2.8", "InstallationType consistency", $root, scripts:checkInstallationTypeVocab#3),
+        (: new DONE :) iedreg:failsafeWrapper("C2.9", "BaselineReport consistency", $root, scripts:checkBaselineReportTypeVocab#3),
+        (: new DONE :) iedreg:failsafeWrapper("C2.10", "BATConclusion consistency", $root, scripts:checkBATConclusionTypeVocab#3),
+        (: new DONE :) iedreg:failsafeWrapper("C2.11", "BATAEL consistency", $root, scripts:checkBATAELTypeVocab#3),
         (: QA3 :) iedreg:failsafeWrapper("C2.12", "Article51 consistency", $root, scripts3:checkSpecificConditions#3),
         (: QA3 :) iedreg:failsafeWrapper("C2.13", "ConditionOfFacility consistency", $root, scripts3:checkStatusType#3),
         (: QA3 :) iedreg:failsafeWrapper("C2.14", "Derogation consistency", $root, scripts3:checkDerogations#3),
@@ -575,8 +575,8 @@ declare function iedreg:runChecks($url as xs:string) as element()*
     )
 
     return (
-        iedreg:runChecks01($root),
-        (:iedreg:runChecks02($root),:)
+        (:iedreg:runChecks01($root),:)
+        iedreg:runChecks02($root),
         (:iedreg:runChecks03($root),:)
         (:iedreg:runChecks04($root),:)
         (:iedreg:runChecks05($root),:)
