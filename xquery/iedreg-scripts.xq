@@ -35,7 +35,7 @@ declare namespace xlink = "http://www.w3.org/1999/xlink";
 
 import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 import module namespace database = "iedreg-database" at "iedreg-database.xq";
-(:import module namespace geo = "http://expath.org/ns/geo";:)
+import module namespace geo = "http://expath.org/ns/geo";
 
 (:~
  : --------------
@@ -445,7 +445,7 @@ declare function scripts:checkInstallationTypeVocab(
 };
 
 (:~
-    2.8 BaselineReport consistency
+    2.9 BaselineReport consistency
 :)
 declare function scripts:checkBaselineReportTypeVocab(
         $refcode as xs:string,
@@ -461,7 +461,7 @@ declare function scripts:checkBaselineReportTypeVocab(
 };
 
 (:~
-    2.8 BATConclusion consistency
+    2.10 BATConclusion consistency
 :)
 declare function scripts:checkBATConclusionTypeVocab(
         $refcode as xs:string,
@@ -477,7 +477,7 @@ declare function scripts:checkBATConclusionTypeVocab(
 };
 
 (:~
-    2.8 BATAEL consistency
+    2.11 BATAEL consistency
 :)
 declare function scripts:checkBATAELTypeVocab(
         $refcode as xs:string,
@@ -531,7 +531,7 @@ declare function scripts:checkInspireIdUniqueness(
 };
 
 (:~
- : C2.1 High proportion of new inspireIds
+ : C3.1 High proportion of new inspireIds
  :)
 
 declare function scripts:checkAmountOfInspireIds(
@@ -539,8 +539,12 @@ declare function scripts:checkAmountOfInspireIds(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $warn := "The amount of new inspireIds within this submission equals PERC, which exceeds 50%, please verify to ensure these are new entities reported for the first time."
-    let $info := "The amount of new inspireIds within this submission equals PERC, which exceeds the ideal threshold of 20%, please verify to ensure these are new entities reported for the first time."
+    let $warn := "The amount of new inspireIds within this submission equals PERC,
+        which exceeds 50%, please verify to ensure these are new entities reported for
+        the first time."
+    let $info := "The amount of new inspireIds within this submission equals PERC,
+        which exceeds the ideal threshold of 20%, please verify to ensure these are
+        new entities reported for the first time."
 
     let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
     let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
@@ -585,7 +589,7 @@ declare function scripts:checkAmountOfInspireIds(
 };
 
 (:~
- : C2.2 ProductionSite inspireId uniqueness
+ : C3.2 ProductionSite inspireId uniqueness
  :)
 
 declare function scripts:checkProductionSiteUniqueness(
@@ -599,7 +603,7 @@ declare function scripts:checkProductionSiteUniqueness(
 };
 
 (:~
- : C2.3 ProductionFacility inspireId uniqueness
+ : C3.3 ProductionFacility inspireId uniqueness
  :)
 
 declare function scripts:checkProductionFacilityUniqueness(
@@ -613,7 +617,7 @@ declare function scripts:checkProductionFacilityUniqueness(
 };
 
 (:~
- : C2.4 ProductionInstallation inspireId uniqueness
+ : C3.4 ProductionInstallation inspireId uniqueness
  :)
 
 declare function scripts:checkProductionInstallationUniqueness(
@@ -627,7 +631,7 @@ declare function scripts:checkProductionInstallationUniqueness(
 };
 
 (:~
- : C2.5 ProductionInstallationPart inspireId uniqueness
+ : C3.5 ProductionInstallationPart inspireId uniqueness
  :)
 
 declare function scripts:checkProductionInstallationPartUniqueness(
@@ -641,7 +645,7 @@ declare function scripts:checkProductionInstallationPartUniqueness(
 };
 
 (:~
- : 3. DUPLICATE IDENTIFICATION CHECKS
+ : 4. DUPLICATE IDENTIFICATION CHECKS
  :)
 
 declare function scripts:checkDuplicates(
@@ -697,7 +701,7 @@ declare function scripts:checkDuplicates(
 };
 
 (:~
- : C3.1 Identification of ProductionSite duplicates
+ : C4.1 Identification of ProductionSite duplicates
  :)
 
 declare function scripts:checkProductionSiteDuplicates(
@@ -712,7 +716,7 @@ declare function scripts:checkProductionSiteDuplicates(
 };
 
 (:~
- : C3.2 Identification of ProductionFacility duplicates
+ : C4.2 Identification of ProductionFacility duplicates
  :)
 
 declare function scripts:checkProductionFacilityDuplicates(
@@ -727,7 +731,7 @@ declare function scripts:checkProductionFacilityDuplicates(
 };
 
 (:~
- : C3.3 Identification of ProductionInstallation duplicates
+ : C4.3 Identification of ProductionInstallation duplicates
  :)
 
 declare function scripts:checkProductionInstallationDuplicates(
@@ -742,7 +746,7 @@ declare function scripts:checkProductionInstallationDuplicates(
 };
 
 (:~
- : C3.4 Identification of ProductionInstallationPart duplicates
+ : C4.4 Identification of ProductionInstallationPart duplicates
  :)
 
 declare function scripts:checkProductionInstallationPartDuplicates(
@@ -808,7 +812,7 @@ declare function scripts:checkDatabaseDuplicates(
 };
 
 (:~
- : C3.5 Identification of ProductionSite duplicates within the database
+ : C4.5 Identification of ProductionSite duplicates within the database
  :)
 
 declare function scripts:checkProductionSiteDatabaseDuplicates(
@@ -822,7 +826,7 @@ declare function scripts:checkProductionSiteDatabaseDuplicates(
 };
 
 (:~
- : C3.6 Identification of ProductionFacility duplicates within the database
+ : C4.6 Identification of ProductionFacility duplicates within the database
  :)
 
 declare function scripts:checkProductionFacilityDatabaseDuplicates(
@@ -836,7 +840,7 @@ declare function scripts:checkProductionFacilityDatabaseDuplicates(
 };
 
 (:~
- : C3.7 Identification of ProductionInstallation duplicates within the database
+ : C4.7 Identification of ProductionInstallation duplicates within the database
  :)
 
 declare function scripts:checkProductionInstallationDatabaseDuplicates(
@@ -850,7 +854,7 @@ declare function scripts:checkProductionInstallationDatabaseDuplicates(
 };
 
 (:~
- : C3.8 Identification of ProductionInstallationPart duplicates within the database
+ : C4.8 Identification of ProductionInstallationPart duplicates within the database
  :)
 
 declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
@@ -917,7 +921,7 @@ declare function scripts:checkMissing(
 };
 
 (:~
- : C3.9 Missing ProductionSites, previous submissions
+ : C4.9 Missing ProductionSites, previous submissions
  :)
 
 declare function scripts:checkMissingProductionSites(
@@ -932,7 +936,7 @@ declare function scripts:checkMissingProductionSites(
 };
 
 (:~
- : C3.10 Missing ProductionFacilities, previous submissions
+ : C4.10 Missing ProductionFacilities, previous submissions
  :)
 
 declare function scripts:checkMissingProductionFacilities(
@@ -947,7 +951,7 @@ declare function scripts:checkMissingProductionFacilities(
 };
 
 (:~
- : C3.11 Missing ProductionInstallations, previous submissions
+ : C4.11 Missing ProductionInstallations, previous submissions
  :)
 
 declare function scripts:checkMissingProductionInstallations(
@@ -962,7 +966,7 @@ declare function scripts:checkMissingProductionInstallations(
 };
 
 (:~
- : C3.12 Missing ProductionInstallationsParts, previous submissions
+ : C4.12 Missing ProductionInstallationsParts, previous submissions
  :)
 
 declare function scripts:checkMissingProductionInstallationParts(
@@ -977,7 +981,7 @@ declare function scripts:checkMissingProductionInstallationParts(
 };
 
 (:~
- : 4. GEOGRAPHICAL AND COORDINATE CHECKS
+ : 5. GEOGRAPHICAL AND COORDINATE CHECKS
  :)
 
 declare function scripts:haversine(
@@ -1174,60 +1178,62 @@ declare function scripts:checkProdutionInstallationRadius(
 (:~
  : C4.4 Coordinates to country comparison
  :)
-(:
+
 declare function scripts:checkCountryBoundary(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
 ) as element()* {
-  let $msg := "The following respective fields for spatial objects contain coordinates that fall outside of the country's boundary (including territorial waters). Please verify and correct coordinates in these fields."
-  let $type := 'warning'
+    let $msg := "The following respective fields for spatial objects contain coordinates
+    that fall outside of the country's boundary (including territorial waters).
+    Please verify and correct coordinates in these fields."
+    let $type := 'warning'
 
-  let $srsName :=
-  for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
-    return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
+    let $srsName :=
+        for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
+        return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
 
-  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId/attribute::xlink:href
-  let $cntry := tokenize($country, '/+')[last()]
-  let $boundary := "boundary-" || lower-case($cntry) || ".gml"
-  let $doc := doc("http://converterstest.eionet.europa.eu/xmlfile/" || $boundary)
-  let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/child::*
+    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId/attribute::xlink:href
+    let $cntry := tokenize($country, '/+')[last()]
+    let $boundary := "boundary-" || lower-case($cntry) || ".gml"
+    let $doc := doc("http://converterstest.eionet.europa.eu/xmlfile/" || $boundary)
+    let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/child::*
 
-  let $seq := (
-    $root/descendant::EUReg:location,
-    $root/descendant::act-core:geometry,
-    $root/descendant::pf:pointGeometry
-  )
+    let $seq := (
+        $root/descendant::EUReg:location,
+        $root/descendant::act-core:geometry,
+        $root/descendant::pf:pointGeometry
+    )
 
-  let $data :=
-  for $g in $seq
-    let $parent := scripts:getParent($g)
-    let $feature := $parent/local-name()
+    let $data :=
+        for $g in $seq
+        let $parent := scripts:getParent($g)
+        let $feature := $parent/local-name()
 
-    for $coords in $g/descendant::gml:*/descendant-or-self::*[not(*)]
-      let $id := scripts:getGmlId($coords/parent::*)
+        for $coords in $g/descendant::gml:*/descendant-or-self::*[not(*)]
+        let $id := scripts:getGmlId($coords/parent::*)
 
-      let $p := scripts:getPath($coords)
+        let $p := scripts:getPath($coords)
 
-      let $long := substring-before($coords, ' ')
-      let $lat := substring-after($coords, ' ')
+        let $long := substring-before($coords, ' ')
+        let $lat := substring-after($coords, ' ')
 
-      let $point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$long},{$lat}</GML:coordinates></GML:Point>
+        let $point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$long},{$lat}</GML:coordinates></GML:Point>
 
-      where not(geo:within($point, $geom))
-      return map {
-        'marks': (3, 4),
-        'data': ($feature, <span class="iedreg nowrap">{$id}</span>, replace($coords/text(), ' ', ', '), $cntry)
-      }
+        where not(geo:within($point, $geom))
+        return map {
+        'marks' : (3, 4),
+        'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, replace($coords/text(), ' ', ', '), $cntry)
+        }
 
-  let $hdrs := ("Feature", "GML ID", "Coordinates", "Country")
+    let $hdrs := ("Feature", "GML ID", "Coordinates", "Country")
 
-  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-  return
-    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+    return
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
-:)
+
 (:~
  : C4.5 Coordinate precision completeness
  :)
@@ -1275,9 +1281,9 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
 };
 
 (:~
- : C4.6 Coordinate continuity
+ : C5.6 Coordinate continuity
  :)
-(:
+
 declare function scripts:checkCoordinateContinuity(
   $refcode as xs:string,
   $rulename as xs:string,
@@ -1371,11 +1377,11 @@ declare function scripts:checkCoordinateContinuity(
   return
     scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
 };
-:)
+
 (:~
- : C4.7 ProductionSite to ProductionFacility coordinate comparison
+ : C5.7 ProductionSite to ProductionFacility coordinate comparison
  :)
-(:
+
 declare function scripts:checkProdutionSiteBuffers(
   $refcode as xs:string,
   $rulename as xs:string,
@@ -1384,8 +1390,12 @@ declare function scripts:checkProdutionSiteBuffers(
   let $warnRadius := 5000
   let $infoRadius := 30000
 
-  let $warn := "The following ProductionFacilities have coordinates that are within a " || $warnRadius || "m radius of the coordinates provided for the associated ProductionSite. Please verify the coordinates and ensure that they have been inputted correctly."
-  let $info := "The following ProductionFacilities have coordinates that are within a " || $infoRadius || "m radius of the coordinates provided for the associated ProductionSite. Please verify the coordinates and ensure that they have been inputted correctly."
+  let $warn := "The following ProductionFacilities have coordinates that are within a "
+    || $warnRadius || "m radius of the coordinates provided for the associated ProductionSite.
+    Please verify the coordinates and ensure that they have been inputted correctly."
+  let $info := "The following ProductionFacilities have coordinates that are within a "
+    || $infoRadius || "m radius of the coordinates provided for the associated ProductionSite.
+    Please verify the coordinates and ensure that they have been inputted correctly."
 
   let $srsName :=
   for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
@@ -1464,9 +1474,9 @@ declare function scripts:checkProdutionSiteBuffers(
   return
     scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
 };
-:)
+
 (:~
- : C4.8 ProductionInstallation to ProductionInstallationPart coordinate comparison
+ : C5.8 ProductionInstallation to ProductionInstallationPart coordinate comparison
  :)
 
 declare function scripts:checkProdutionInstallationPartCoords(
@@ -1508,7 +1518,7 @@ declare function scripts:checkProdutionInstallationPartCoords(
 };
 
 (:~
- : 5. ACTIVITY CHECKS
+ : 6. ACTIVITY CHECKS
  :)
 
 declare function scripts:checkActivityUniqueness(
@@ -1558,8 +1568,15 @@ declare function scripts:checkActivityContinuity(
   $featureName as xs:string,
   $activityName as xs:string
 ) as element()* {
-  let $warn := "There have been changes in the " || $activityName || " field, compared to the master database - this field should remain constant over time and seldom change, particularly between activity groups. Changes have been noticed in the following " || scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
-  let $info := "There have been changes in the " || $activityName || " field, compared to the master database - this field should remain constant over time and seldom change. Changes have been noticed in the following "|| scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
+  let $warn := "There have been changes in the " || $activityName || " field,
+      compared to the master database - this field should remain constant over time
+      and seldom change, particularly between activity groups. Changes have been noticed
+      in the following " || scripts:makePlural($featureName) || ".
+      Please ensure all inputs are correct."
+  let $info := "There have been changes in the " || $activityName || " field,
+      compared to the master database - this field should remain constant over time
+      and seldom change. Changes have been noticed in the following "
+      || scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
 
   let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
   let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
@@ -1573,23 +1590,23 @@ declare function scripts:checkActivityContinuity(
   ))
 
   let $data :=
-  for $x in $seq
-    let $id := scripts:getInspireId($x)
+  for $feature in $seq
+    let $idFeature := scripts:getInspireId($feature)
 
-    for $y in $fromDB
-      let $ic := scripts:getInspireId($y)
+    for $featureDB in $fromDB
+      let $idFeatureDB := scripts:getInspireId($featureDB)
 
-      where $id = $ic
+      where $idFeature = $idFeatureDB
 
-      let $xActivity := $x/descendant::*[local-name()=$activityName]
-      let $yActivity := $y/descendant::*[local-name()=$activityName]
+      let $featureActivity := $feature/descendant::*[local-name()=$activityName]
+      let $featureDBActivity := $featureDB/descendant::*[local-name()=$activityName]
 
-      for $act in $xActivity/descendant-or-self::*[not(*)]
-        let $p := scripts:getPath($x)
-        let $q := scripts:getPath($act)
+      for $act in $featureActivity/descendant-or-self::*[not(*)]
+        let $pathFeature := scripts:getPath($feature)
+        let $pathAct := scripts:getPath($act)
 
         let $xAct := replace($act/@xlink:href, '/+$', '')
-        let $yAct := replace($yActivity/descendant-or-self::*[not(*) and local-name() = $act/local-name()]/@xlink:href, '/+$', '')
+        let $yAct := replace($featureDBActivity/descendant-or-self::*[not(*) and local-name() = $act/local-name()]/@xlink:href, '/+$', '')
 
         let $xAct :=
           if (scripts:is-empty($xAct)) then
@@ -1598,7 +1615,9 @@ declare function scripts:checkActivityContinuity(
 
         where not (scripts:is-empty($yAct))
         where not ($xAct = $yAct)
-        return [$x/local-name(), $id/text(), $act/local-name(), scripts:normalize($xAct), scripts:normalize($yAct)]
+        where $activityName != 'EPRTRAnnexIActivity'
+            or ($activityName = 'EPRTRAnnexIActivity' and $act/local-name() = 'mainActivity')
+        return [$feature/local-name(), $idFeature/text(), $act/local-name(), scripts:normalize($xAct), scripts:normalize($yAct)]
 
   let $yellow :=
   for $x in $data
@@ -1629,7 +1648,7 @@ declare function scripts:checkActivityContinuity(
 };
 
 (:~
- : C5.1 EPRTRAnnexIActivity uniqueness
+ : C6.1 EPRTRAnnexIActivity uniqueness
  :)
 
 declare function scripts:checkEPRTRAnnexIActivityUniqueness(
@@ -1644,7 +1663,7 @@ declare function scripts:checkEPRTRAnnexIActivityUniqueness(
 };
 
 (:~
- : C5.2 EPRTRAnnexIActivity continuity
+ : C6.2 EPRTRAnnexIActivity continuity
  :)
 
 declare function scripts:checkEPRTRAnnexIActivityContinuity(
@@ -1659,7 +1678,7 @@ declare function scripts:checkEPRTRAnnexIActivityContinuity(
 };
 
 (:~
- : C5.3 IEDAnnexIActivity uniqueness
+ : C6.3 IEDAnnexIActivity uniqueness
  :)
 
 declare function scripts:checkIEDAnnexIActivityUniqueness(
@@ -1674,7 +1693,7 @@ declare function scripts:checkIEDAnnexIActivityUniqueness(
 };
 
 (:~
- : C5.4 IEDAnnexIActivity continuity
+ : C6.4 IEDAnnexIActivity continuity
  :)
 
 declare function scripts:checkIEDAnnexIActivityContinuity(
@@ -1689,7 +1708,7 @@ declare function scripts:checkIEDAnnexIActivityContinuity(
 };
 
 (:~
- : 6. STATUS CHECKS
+ : 7. STATUS CHECKS
  :)
 
 declare function scripts:checkStatus(
@@ -1756,7 +1775,7 @@ declare function scripts:checkStatus(
 };
 
 (:~
- : C6.1 Decommissioned StatusType comparison ProductionFacility and ProductionInstallation
+ : C7.1 Decommissioned StatusType comparison ProductionFacility and ProductionInstallation
  :)
 
 declare function scripts:checkProductionFacilityDecommissionedStatus(
@@ -1774,7 +1793,7 @@ declare function scripts:checkProductionFacilityDecommissionedStatus(
 };
 
 (:~
- : C6.2 Decommissioned StatusType comparison ProductionInstallations and ProductionInstallationParts
+ : C7.2 Decommissioned StatusType comparison ProductionInstallations and ProductionInstallationParts
  :)
 
 declare function scripts:checkProductionInstallationDecommissionedStatus(
@@ -1792,7 +1811,7 @@ declare function scripts:checkProductionInstallationDecommissionedStatus(
 };
 
 (:~
- : C6.3 Disused StatusType comparison ProductionFacility and ProductionInstallation
+ : C7.3 Disused StatusType comparison ProductionFacility and ProductionInstallation
  :)
 
 declare function scripts:checkProductionFacilityDisusedStatus(
@@ -1810,7 +1829,7 @@ declare function scripts:checkProductionFacilityDisusedStatus(
 };
 
 (:~
- : C6.4 Disused StatusType comparison ProductionInstallations and ProductionInstallationParts
+ : C7.4 Disused StatusType comparison ProductionInstallations and ProductionInstallationParts
  :)
 
 declare function scripts:checkProductionInstallationDisusedStatus(
@@ -1828,7 +1847,7 @@ declare function scripts:checkProductionInstallationDisusedStatus(
 };
 
 (:~
- : C6.5 Decommissioned to functional plausibility
+ : C7.5 Decommissioned to functional plausibility
  :)
 
 declare function scripts:checkFunctionalStatusType(
@@ -1891,7 +1910,7 @@ declare function scripts:checkFunctionalStatusType(
 };
 
 (:~
- : 7. DATE CHECKS
+ : 8. DATE CHECKS
  :)
 
 declare function scripts:queryDate(
@@ -1926,7 +1945,7 @@ declare function scripts:queryDate(
 };
 
 (:~
- : C7.1 dateOfStartOperation comparison
+ : C8.1 dateOfStartOperation comparison
  :)
 
 declare function scripts:checkDateOfStartOfOperation(
@@ -1953,7 +1972,7 @@ declare function scripts:checkDateOfStartOfOperation(
 };
 
 (:~
- : C7.2 dateOfStartOperation LCP restriction
+ : C8.2 dateOfStartOperation LCP restriction
  :)
 
 declare function scripts:checkDateOfStartOfOperationLCP(
@@ -1998,7 +2017,7 @@ declare function scripts:checkDateOfStartOfOperationLCP(
 };
 
 (:~
- : C7.3 dateOfStartOperation to dateOfGranting comparison
+ : C8.3 dateOfStartOperation to dateOfGranting comparison
  :)
 
 declare function scripts:checkDateOfGranting(
@@ -2081,7 +2100,7 @@ declare function scripts:checkPermitDates(
 };
 
 (:~
- : C7.4 dateOfGranting plausibility
+ : C8.4 dateOfGranting plausibility
  :)
 
 declare function scripts:checkDateOfLastReconsideration(
@@ -2093,7 +2112,7 @@ declare function scripts:checkDateOfLastReconsideration(
 };
 
 (:~
- : C7.5 dateOfLastReconsideration plausibility
+ : C8.5 dateOfLastReconsideration plausibility
  :)
 
 declare function scripts:checkDateOfLastUpdate(
@@ -2105,11 +2124,11 @@ declare function scripts:checkDateOfLastUpdate(
 };
 
 (:~
- : 8. PERMITS & COMPETENT AUTHORITY CHECKS
+ : 9. PERMITS & COMPETENT AUTHORITY CHECKS
  :)
 
 (:~
- : C8.1 competentAuthorityInspections to inspections comparison
+ : C9.1 competentAuthorityInspections to inspections comparison
  :)
 
 declare function scripts:checkInspections(
@@ -2151,7 +2170,7 @@ declare function scripts:checkInspections(
 };
 
 (:~
- : C8.2 competentAuthorityPermits and permit field comparison
+ : C9.2 competentAuthorityPermits and permit field comparison
  :)
 
 declare function scripts:checkPermit(
@@ -2187,7 +2206,7 @@ declare function scripts:checkPermit(
 };
 
 (:~
- : C8.3 PermitURL to dateOfGranting comparison
+ : C9.3 PermitURL to dateOfGranting comparison
  :)
 
 declare function scripts:checkDateOfGrantingPermitURL(
@@ -2245,11 +2264,87 @@ declare function scripts:checkDateOfGrantingPermitURL(
 };
 
 (:~
- : 9. DEROGATION CHECKS
+    9.5 enforcementAction to permitGranted comparison
+:)
+
+declare function scripts:checkEnforcementAction(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $msg := "The enforcementAction attribute must be populated with a description
+        of what enforcement action has been taken for the following ProductionInstallations."
+    let $type := "warning"
+    let $seq := $root//*:ProductionInstallation//*[local-name() = 'permit']
+
+    let $data :=
+        for $permit in $seq
+            let $parent := scripts:getParent($permit)
+            let $id := scripts:getInspireId($parent)
+
+            where $permit//*:permitGranted = false()
+            where $permit//*:enforcementAction => functx:if-empty('') = ''
+
+            return map {
+                "marks": (),
+                "data": (
+                    $parent/local-name(),
+                    $id
+                )
+            }
+
+    let $hdrs := ("Feature", "Inspire ID")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+};
+(:~
+    9.6 StricterPermitConditions
+:)
+
+declare function scripts:checkStricterPermitConditions(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $msg := "The BATAEL attribute within the stricterPermitConditions data type
+        must be populated for the following ProductionInstallations."
+    let $type := "error"
+    let $seq := $root//*:ProductionInstallation//*[local-name() = 'stricterPermitConditions']
+
+    let $data :=
+        for $stricterPermit in $seq
+            let $parent := scripts:getParent($stricterPermit)
+            let $id := scripts:getInspireId($parent)
+
+            where $stricterPermit//*:stricterPermitConditionsIndicator = true()
+            where $stricterPermit//*:BATAEL => functx:if-empty('') = ''
+
+            return map {
+                "marks": (),
+                "data": (
+                    $parent/local-name(),
+                    $id
+                )
+            }
+
+    let $hdrs := ("Feature", "Inspire ID")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+
+(:~
+ : 10. DEROGATION CHECKS
  :)
 
 (:~
- : C9.1 BATDerogationIndicitor to dateOfGranting comparison
+ : C10.1 BATDerogationIndicitor to dateOfGranting comparison
  :)
 
 declare function scripts:checkBATPermit(
@@ -2287,7 +2382,7 @@ declare function scripts:checkBATPermit(
         scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 (:~
- : C9.2 dateOfGranting to Transitional National Plan comparison
+ : C10.2 dateOfGranting to Transitional National Plan comparison
  :)
 
 declare function scripts:checkArticle32(
@@ -2374,7 +2469,7 @@ declare function scripts:checkDerogationsYear(
 };
 
 (:~
- : C9.3 Limited lifetime derogation to reportingYear comparison
+ : C10.3 Limited lifetime derogation to reportingYear comparison
  :)
 
 declare function scripts:checkArticle33(
@@ -2389,7 +2484,7 @@ declare function scripts:checkArticle33(
 };
 
 (:~
- : C9.4 District heating plants derogation to reportingYear comparison
+ : C10.4 District heating plants derogation to reportingYear comparison
  :)
 
 declare function scripts:checkArticle35(
@@ -2462,7 +2557,7 @@ declare function scripts:checkDerogationsContinuity(
 };
 
 (:~
- : C9.5 Limited life time derogation continuity
+ : C10.5 Limited life time derogation continuity
  :)
 
 declare function scripts:checkArticle33Continuity(
@@ -2477,7 +2572,7 @@ declare function scripts:checkArticle33Continuity(
 };
 
 (:~
- : C9.6 District heat plant derogation continuity
+ : C10.6 District heat plant derogation continuity
  :)
 
 declare function scripts:checkArticle35Continuity(
@@ -2492,7 +2587,7 @@ declare function scripts:checkArticle35Continuity(
 };
 
 (:~
- : C9.7 Transitional National Plan derogation continuity
+ : C10.7 Transitional National Plan derogation continuity
  :)
 
 declare function scripts:checkArticle32Continuity(
@@ -2507,11 +2602,11 @@ declare function scripts:checkArticle32Continuity(
 };
 
 (:~
- : 10. LCP & WASTE INCINERATOR CHECKS
+ : 11. LCP & WASTE INCINERATOR CHECKS
  :)
 
 (:~
- : C10.1 otherRelevantChapters to plantType comparison
+ : C11.1 otherRelevantChapters to plantType comparison
  :)
 
 declare function scripts:checkRelevantChapters(
@@ -2584,7 +2679,7 @@ declare function scripts:checkRelevantChapters(
 };
 
 (:~
- : C10.2 LCP plantType
+ : C11.2 LCP plantType
  :)
 
 declare function scripts:checkLCP(
@@ -2655,7 +2750,7 @@ declare function scripts:checkLCP(
 };
 
 (:~
- : C10.3 totalRatedThermalInput plausibility
+ : C11.3 totalRatedThermalInput plausibility
  :)
 
 declare function scripts:checkRatedThermalInput(
@@ -2691,7 +2786,7 @@ declare function scripts:checkRatedThermalInput(
 };
 
 (:~
- : C10.4 WI plantType
+ : C11.4 WI plantType
  :)
 
 declare function scripts:checkWI(
@@ -2769,7 +2864,7 @@ declare function scripts:checkWI(
 };
 
 (:~
- : C10.5 nominalCapacity plausibility
+ : C11.5 nominalCapacity plausibility
  :)
 
 declare function scripts:checkNominalCapacity(
@@ -2863,11 +2958,11 @@ declare function scripts:checkNominalCapacity(
 };
 
 (:~
- : 11. CONFIDENTIALITY CHECKS
+ : 12. CONFIDENTIALITY CHECKS
  :)
 
 (:~
- : C11.1 Confidentiality restriction
+ : C12.1 Confidentiality restriction
  :)
 
 declare function scripts:checkConfidentialityRestriction(
@@ -2904,7 +2999,7 @@ declare function scripts:checkConfidentialityRestriction(
 };
 
 (:~
- : C11.2 Confidentiality overuse
+ : C12.2 Confidentiality overuse
  :)
 
 declare function scripts:checkConfidentialityOveruse(
@@ -2959,7 +3054,7 @@ declare function scripts:checkConfidentialityOveruse(
 };
 
 (:~
- : 12. OTHER IDENTIFIERS & MISCELLANEOUS CHECKS
+ : 13. OTHER IDENTIFIERS & MISCELLANEOUS CHECKS
  :)
 
 declare function scripts:getIdentifier(
@@ -3010,7 +3105,7 @@ declare function scripts:checkIdentifier(
 };
 
 (:~
- : C12.1 ETSIdentifier validity
+ : C13.1 ETSIdentifier validity
  :)
 
 declare function scripts:checkETSIdentifier(
@@ -3026,7 +3121,7 @@ declare function scripts:checkETSIdentifier(
 };
 
 (:~
- : C12.2 eSPIRSId validity
+ : C13.2 eSPIRSId validity
  :)
 
 declare function scripts:checkeSPIRSIdentifier(
@@ -3042,7 +3137,7 @@ declare function scripts:checkeSPIRSIdentifier(
 };
 
 (:~
- : C12.3 ProductionFacility facilityName to parentCompanyName comparison
+ : C13.3 ProductionFacility facilityName to parentCompanyName comparison
  :)
 
 declare function scripts:checkFacilityName(
@@ -3077,7 +3172,7 @@ declare function scripts:checkFacilityName(
 };
 
 (:~
- : C12.4 nameOfFeature
+ : C13.4 nameOfFeature
  :)
 
 declare function scripts:checkNameOfFeatureContinuity(
@@ -3128,7 +3223,7 @@ declare function scripts:checkNameOfFeatureContinuity(
 };
 
 (:~
- : C12.5 reportingYear plausibility
+ : C13.5 reportingYear plausibility
  :)
 
 declare function scripts:checkReportingYear(
@@ -3179,7 +3274,7 @@ declare function scripts:checkReportingYear(
 };
 
 (:~
- : C12.6 electronicMailAddress format
+ : C13.6 electronicMailAddress format
  :)
 
 declare function scripts:checkElectronicMailAddressFormat(
@@ -3216,7 +3311,7 @@ declare function scripts:checkElectronicMailAddressFormat(
 };
 
 (:~
- : C12.7 Lack of facility address
+ : C13.7 Lack of facility address
  :)
 
 declare function scripts:checkFacilityAddress(
@@ -3261,7 +3356,7 @@ declare function scripts:checkFacilityAddress(
 };
 
 (:~
- : C12.8 Character string space identification
+ : C13.8 Character string space identification
  :)
 
 declare function scripts:checkWhitespaces(

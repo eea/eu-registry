@@ -326,7 +326,7 @@ declare function iedreg:runChecks03($root as element()) as element()* {
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: new :) iedreg:failsafeWrapper("C3.1", "High proportion of new inspireIds", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C3.1", "High proportion of new inspireIds", $root, scripts:checkAmountOfInspireIds#3),
         iedreg:failsafeWrapper("C3.2", "ProductionSite inspireId uniqueness", $root, scripts:checkProductionSiteUniqueness#3),
         iedreg:failsafeWrapper("C3.3", "ProductionFacility inspireId uniqueness", $root, scripts:checkProductionFacilityUniqueness#3),
         iedreg:failsafeWrapper("C3.4", "ProductionInstallation inspireId uniqueness", $root, scripts:checkProductionInstallationUniqueness#3),
@@ -372,12 +372,10 @@ declare function iedreg:runChecks05($root as element()) as element()* {
         iedreg:failsafeWrapper("C5.1", "ProductionSite radius", $root, scripts:checkProdutionSiteRadius#3),
         iedreg:failsafeWrapper("C5.2", "ProductionFacility radius", $root, scripts:checkProdutionFacilityRadius#3),
         iedreg:failsafeWrapper("C5.3", "ProductionInstallation radius", $root, scripts:checkProdutionInstallationRadius#3),
-        (: new :) iedreg:failsafeWrapper("C5.4", "Coordinates to country comparison", $root, iedreg:notYet#3),
-        (: removed :) (:iedreg:failsafeWrapper("C5.4", "Coordinates to country comparison", $root, scripts:checkCountryBoundary#3),:)
+        iedreg:failsafeWrapper("C5.4", "Coordinates to country comparison", $root, scripts:checkCountryBoundary#3),
         iedreg:failsafeWrapper("C5.5", "Coordinate precision completeness", $root, scripts:checkCoordinatePrecisionCompleteness#3),
-        (: new :) iedreg:failsafeWrapper("C5.6", "Coordinate continuity", $root, iedreg:notYet#3),
-        (: removed :)(:iedreg:failsafeWrapper("C5.7", "ProductionSite to ProductionFacility coordinate comparison", $root, scripts:checkProdutionSiteBuffers#3),:)
-        iedreg:failsafeWrapper("C5.7", "ProductionSite to ProductionFacility coordinate comparison", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C5.6", "Coordinate continuity", $root, scripts:checkCoordinateContinuity#3),
+        iedreg:failsafeWrapper("C5.7", "ProductionSite to ProductionFacility coordinate comparison", $root, scripts:checkProdutionSiteBuffers#3),
         iedreg:failsafeWrapper("C5.8", "ProductionInstallation to ProductionInstallationPart coordinate comparison", $root, scripts:checkProdutionInstallationPartCoords#3)
     }</div>
 };
@@ -392,11 +390,10 @@ declare function iedreg:runChecks06($root as element()) as element()* {
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: upd DONE :)
-        iedreg:failsafeWrapper("C6.1", "EPRTRAnnexIActivity uniqueness", $root, scripts:checkEPRTRAnnexIActivityUniqueness#3),
-        (: new :) iedreg:failsafeWrapper("C6.2", "EPRTRAnnexIActivity continuity", $root, iedreg:notYet#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C6.1", "EPRTRAnnexIActivity uniqueness", $root, scripts:checkEPRTRAnnexIActivityUniqueness#3),
+        iedreg:failsafeWrapper("C6.2", "EPRTRAnnexIActivity continuity", $root, scripts:checkEPRTRAnnexIActivityContinuity#3),
         (: upd DONE :) iedreg:failsafeWrapper("C6.3", "IEDAnnexIActivity uniqueness", $root, scripts:checkIEDAnnexIActivityUniqueness#3),
-        (: new :) iedreg:failsafeWrapper("C6.4", "IEDAnnexIActivity continuity", $root, iedreg:notYet#3)
+        iedreg:failsafeWrapper("C6.4", "IEDAnnexIActivity continuity", $root, scripts:checkIEDAnnexIActivityContinuity#3)
     }</div>
 };
 
@@ -414,7 +411,7 @@ declare function iedreg:runChecks07($root as element()) as element()* {
         iedreg:failsafeWrapper("C7.2", "Decommissioned StatusType comparison ProductionInstallations and ProductionInstallationParts", $root, scripts:checkProductionInstallationDecommissionedStatus#3),
         iedreg:failsafeWrapper("C7.3", "Disused StatusType comparison ProductionFacility and ProductionInstallation", $root, scripts:checkProductionFacilityDisusedStatus#3),
         iedreg:failsafeWrapper("C7.4", "Disused StatusType comparison ProductionInstallations and ProductionInstallationParts", $root, scripts:checkProductionInstallationDisusedStatus#3),
-        (: new :) iedreg:failsafeWrapper("C7.5", "Decommissioned to functional plausibility", $root, iedreg:notYet#3)
+        iedreg:failsafeWrapper("C7.5", "Decommissioned to functional plausibility", $root, scripts:checkFunctionalStatusType#3)
     }</div>
 };
 
@@ -448,9 +445,9 @@ declare function iedreg:runChecks09($root as element()) as element()* {
     <div class="iedreg table parent">{
         (: upd DONE :) iedreg:failsafeWrapper("C9.1", "competentAuthorityInspections to inspections comparison", $root, scripts:checkInspections#3),
         iedreg:failsafeWrapper("C9.2", "competentAuthorityPermits and permit field comparison", $root, scripts:checkPermit#3),
-        (: new :) iedreg:failsafeWrapper("C9.3", "PermitURL to dateOfGranting comparison", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C9.5", "enforcementAction to permitGranted comparison", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C9.6", "StricterPermitConditions", $root, iedreg:notYet#3)
+        iedreg:failsafeWrapper("C9.3", "permitURL to dateOfGranting comparison", $root, scripts:checkDateOfGrantingPermitURL#3),
+        (: new DONE :) iedreg:failsafeWrapper("C9.5", "enforcementAction to permitGranted comparison", $root, scripts:checkEnforcementAction#3),
+        (: new DONE :) iedreg:failsafeWrapper("C9.6", "StricterPermitConditions", $root, scripts:checkStricterPermitConditions#3)
     }</div>
 };
 
@@ -469,9 +466,9 @@ declare function iedreg:runChecks10($root as element()) as element()* {
         (: removed :) (:iedreg:failsafeWrapper("C10.2", "dateOfGranting to Transitional National Plan comparison", $root, scripts:checkArticle32#3),:)
         iedreg:failsafeWrapper("C10.3", "Limited lifetime derogation to reportingYear comparison", $root, scripts:checkArticle33#3),
         iedreg:failsafeWrapper("C10.4", "District heating plants derogation to reportingYear comparison", $root, scripts:checkArticle35#3),
-        (: new :) iedreg:failsafeWrapper("C10.5", "Limited life time derogation continuity", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C10.6", "District heat plant derogation continuity", $root, iedreg:notYet#3),
-        (: new :) iedreg:failsafeWrapper("C10.7", "Transitional National Plan derogation continuity", $root, iedreg:notYet#3)
+        iedreg:failsafeWrapper("C10.5", "Limited life time derogation continuity", $root, scripts:checkArticle33Continuity#3),
+        iedreg:failsafeWrapper("C10.6", "District heat plant derogation continuity", $root, scripts:checkArticle35Continuity#3),
+        iedreg:failsafeWrapper("C10.7", "Transitional National Plan derogation continuity", $root, scripts:checkArticle32Continuity#3)
     }</div>
 };
 
@@ -521,7 +518,7 @@ declare function iedreg:runChecks13($root as element()) as element()* {
         (: upd DONE :) iedreg:failsafeWrapper("C13.1", "ETSIdentifier validity", $root, scripts:checkETSIdentifier#3),
         (: upd DONE :) iedreg:failsafeWrapper("C13.2", "eSPIRSId validity", $root, scripts:checkeSPIRSIdentifier#3),
         iedreg:failsafeWrapper("C13.3", "ProductionFacility facilityName to parentCompanyName comparison", $root, scripts:checkFacilityName#3),
-        (: new :) iedreg:failsafeWrapper("C13.4", "nameOfFeature", $root, iedreg:notYet#3),
+        iedreg:failsafeWrapper("C13.4", "nameOfFeature", $root, scripts:checkNameOfFeatureContinuity#3),
         iedreg:failsafeWrapper("C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#3),
         iedreg:failsafeWrapper("C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#3),
         iedreg:failsafeWrapper("C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#3),
@@ -576,14 +573,14 @@ declare function iedreg:runChecks($url as xs:string) as element()*
 
     return (
         (:iedreg:runChecks01($root),:)
-        iedreg:runChecks02($root),
+        (:iedreg:runChecks02($root),:)
         (:iedreg:runChecks03($root),:)
         (:iedreg:runChecks04($root),:)
         (:iedreg:runChecks05($root),:)
         (:iedreg:runChecks06($root),:)
         (:iedreg:runChecks07($root),:)
         (:iedreg:runChecks08($root),:)
-        (:iedreg:runChecks09($root),:)
+        iedreg:runChecks09($root),
         (:iedreg:runChecks10($root),:)
         (:iedreg:runChecks11($root),:)
         (:iedreg:runChecks12($root),:)
