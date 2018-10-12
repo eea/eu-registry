@@ -462,7 +462,7 @@ declare function iedreg:runChecks10($root as element()) as element()* {
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
         iedreg:failsafeWrapper("C10.1", "BATDerogationIndicator to permitGranted comparison", $root, scripts:checkBATPermit#3),
-        (: new :) iedreg:failsafeWrapper("C10.2", "BATDerogation", $root, iedreg:notYet#3),
+        (: new DONE :) iedreg:failsafeWrapper("C10.2", "BATDerogation", $root, scripts:checkBATDerogation#3),
         (: removed :) (:iedreg:failsafeWrapper("C10.2", "dateOfGranting to Transitional National Plan comparison", $root, scripts:checkArticle32#3),:)
         iedreg:failsafeWrapper("C10.3", "Limited lifetime derogation to reportingYear comparison", $root, scripts:checkArticle33#3),
         iedreg:failsafeWrapper("C10.4", "District heating plants derogation to reportingYear comparison", $root, scripts:checkArticle35#3),
@@ -522,7 +522,7 @@ declare function iedreg:runChecks13($root as element()) as element()* {
         iedreg:failsafeWrapper("C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#3),
         iedreg:failsafeWrapper("C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#3),
         iedreg:failsafeWrapper("C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#3),
-        (: new :) iedreg:failsafeWrapper("C13.8", "DateOfStartOfOperation future year", $root, iedreg:notYet#3)
+        (: new DONE :) iedreg:failsafeWrapper("C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#3)
         (: removed :) (:iedreg:failsafeWrapper("C13.8", "Character string space identification", $root, scripts:checkWhitespaces#3):)
     }</div>
 };
@@ -580,11 +580,11 @@ declare function iedreg:runChecks($url as xs:string) as element()*
         (:iedreg:runChecks06($root),:)
         (:iedreg:runChecks07($root),:)
         (:iedreg:runChecks08($root),:)
-        iedreg:runChecks09($root),
+        (:iedreg:runChecks09($root),:)
         (:iedreg:runChecks10($root),:)
         (:iedreg:runChecks11($root),:)
         (:iedreg:runChecks12($root),:)
-        (:iedreg:runChecks13($root),:)
+        iedreg:runChecks13($root),
         iedreg:runChecks14($root)
     )
 };

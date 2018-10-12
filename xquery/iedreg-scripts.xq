@@ -2381,8 +2381,54 @@ declare function scripts:checkBATPermit(
     return
         scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
+
 (:~
- : C10.2 dateOfGranting to Transitional National Plan comparison
+    C10.2 BATDerogation
+:)
+
+declare function scripts:checkBATDerogation(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $msg := "For the following ProductionInstallations the BATAEL or publicReasonURL
+        attributes, within the BATDerogationType data type, must be populated."
+    let $type := "error"
+
+    let $seq := $root//*:ProductionInstallation/*:BATDerogation
+    let $attrs := ('BATAEL', 'publicReasonURL')
+
+    let $data :=
+        for $batDerogation in $seq
+        let $batDerogInd := $batDerogation//*:BATDerogationIndicator
+        where $batDerogInd = true()
+        let $parent := scripts:getParent($batDerogation)
+        let $id := scripts:getGmlId($parent)
+        for $attr in $attrs
+            let $attrValue := if($attr = 'BATAEL')
+                then $batDerogation//*[local-name() = $attr]/@xlink:href
+                else $batDerogation//*[local-name() = $attr]/data()
+            where $attrValue => functx:if-empty('') = ''
+
+            return map {
+                "marks" : (3),
+                "data" : (
+                    $parent/local-name(),
+                    $id,
+                    $attr
+                )
+            }
+
+    let $hdrs := ("Feature", "GML ID", "Attribute")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(:~
+ : C10.2(old) dateOfGranting to Transitional National Plan comparison
  :)
 
 declare function scripts:checkArticle32(
@@ -3356,7 +3402,53 @@ declare function scripts:checkFacilityAddress(
 };
 
 (:~
- : C13.8 Character string space identification
+    C13.8 DateOfStartOfOperation future year
+:)
+
+declare function scripts:checkDateOfStartOfOperationFuture(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $msg := "For the following ProductionFacilities, ProductionInstallations
+        , ProductionInstallationParts the dateOfStartOfOperation attribute is
+        referring to a year which is a future year relative to the year specified
+        in the reportingYear attribute."
+    let $type := "error"
+    let $reportingYear := $root//*:reportingYear/xs:float(.)
+
+    let $seq := $root//*:dateOfStartOfOperation
+
+    let $data :=
+        for $date in $seq
+            let $parent := scripts:getParent($date)
+            let $id := scripts:getInspireId($parent)
+            (:let $yearFromDate := fn:year-from-dateTime(xs:dateTime($date/data())):)
+            let $yearFromDate := $date/data() => fn:substring(1, 4)
+                => functx:if-empty(0) => fn:number()
+
+            where $yearFromDate > $reportingYear
+
+            return map {
+                "marks": (),
+                "data": (
+                    $parent/local-name(),
+                    $id,
+                    $date,
+                    $reportingYear
+                )
+            }
+
+    let $hdrs := ("Feature", "GML ID", "Date of start of operation", "Reporting year")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(:~
+ : C13.8(old) Character string space identification
  :)
 
 declare function scripts:checkWhitespaces(
