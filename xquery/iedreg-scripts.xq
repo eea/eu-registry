@@ -37,6 +37,7 @@ import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 import module namespace database = "iedreg-database" at "iedreg-database.xq";
 import module namespace geo = "http://expath.org/ns/geo";
 
+declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
 (:~
  : --------------
  : Util functions
@@ -119,6 +120,8 @@ declare function scripts:getDetails(
                     }
                 </div>
                 {for $d in $data
+                (:count $pos:)
+                (:where $pos <= $scripts:MSG_LIMIT:)
                 return
                     <div class="iedreg row">
                         {for $z at $i in $d('data')
@@ -131,6 +134,24 @@ declare function scripts:getDetails(
             </div>
 
         </div>
+};
+
+declare function scripts:noPreviousYearWarning(
+  $refcode as xs:string,
+  $rulename as xs:string
+){
+    let $warnDb := "There are no data available for previous years."
+    let $details := scripts:getDetails($warnDb, "warning", (), ())
+    return scripts:renderResult($refcode, $rulename, 0, 1, 0, $details)
+};
+
+declare function scripts:noDbWarning(
+  $refcode as xs:string,
+  $rulename as xs:string
+){
+    let $warnDb := "The database is currently not available. Please try again later."
+    let $details := scripts:getDetails($warnDb, "warning", (), ())
+    return scripts:renderResult($refcode, $rulename, 0, 1, 0, $details)
 };
 
 (:~
@@ -876,35 +897,35 @@ declare function scripts:checkMissing(
 ) as element()* {
     let $featureName := 'Production' || functx:capitalize-first($feature)
 
-    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName)
-        || " missing from this submission. Please verify to ensure that no "
-        || scripts:makePlural($featureName) || " have been missed."
-    let $type := "warning"
+    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName) || " missing from this submission. Please verify to ensure that no " || scripts:makePlural($featureName) || " have been missed."
+    let $type := "error"
 
-    let $country := $root//EUReg:ReportData/EUReg:countryId
-    let $cntry := tokenize($country/@xlink:href, '/+')[last()]
+    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-    let $lastYear := max(database:getReportingYearsByCountry($cntry))
+    let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-    let $seq := $root//pf:inspireId
-    let $fromDB := database:query($cntry, $lastYear, "pf:inspireId")
+    let $seq := $root/descendant::*:inspireId
+    let $fromDB := database:query($cntry, $lastReportingYear, (
+        "pf:inspireId", "act-core:inspireId"
+    ))
 
     let $data :=
         for $id in $fromDB
-        where not($id//*:localId = $seq//*:localId)
+        where not($id/descendant::*:localId = $seq/descendant::*:localId)
 
         let $p := scripts:getParent($id)
         where $p/local-name() = $featureName
 
-        let $id := $id//*:localId/text()
+        let $id := $id/descendant::*:localId/text()
 
-        let $status := $p/pf:status//pf:statusType
+        let $status := $p/pf:status/descendant::pf:statusType
         let $status := replace($status/@xlink:href, '/+$', '')
-        let $status := scripts:normalize($status)
+        let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
 
         where not($status = $allowed)
         return map {
-        "marks" : (),
+        "marks" : (2),
         "data" : (
             $featureName,
             <span class="iedreg nowrap">{$id}</span>,
@@ -917,7 +938,65 @@ declare function scripts:checkMissing(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+        if (not(database:dbExists())) then
+            scripts:noDbWarning($refcode, $rulename)
+        else if (empty($lastReportingYear)) then
+            scripts:noPreviousYearWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+declare function scripts:checkMissingSites(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element(),
+        $featureName as xs:string,
+        $allowed as xs:string*
+) as element()* {
+    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName)
+        || " missing from this submission. Please verify to ensure that no "
+        || scripts:makePlural($featureName) || " have been missed."
+    let $type := "warning"
+
+    let $country := $root//EUReg:ReportData/EUReg:countryId
+    let $cntry := tokenize($country/@xlink:href, '/+')[last()]
+
+    let $lastYear := max(database:getReportingYearsByCountry($cntry))
+
+    let $seq := $root//*[local-name() = $featureName]/pf:inspireId
+    let $fromDB := database:query($cntry, $lastYear, (
+        "pf:inspireId", "act-core:inspireId"
+    ))
+
+    let $data :=
+        for $id in $fromDB
+        where not($id/data() = $seq//*:localId)
+
+        let $p := scripts:getParent($id)
+        where $p/local-name() = $featureName
+
+        let $id := $id//*:localId/text()
+
+        let $status := $p/pf:status//pf:statusType
+        let $status := replace($status/@xlink:href, '/+$', '')
+        let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
+
+        where not($status = $allowed)
+        return map {
+        "marks" : (2),
+        "data" : (
+            $featureName,
+            <span class="iedreg nowrap">{$id}</span>,
+            $status
+        )
+        }
+
+    let $hdrs := ('Feature', 'Inspire ID', 'Status')
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
@@ -929,10 +1008,10 @@ declare function scripts:checkMissingProductionSites(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'site'
+    let $feature := 'ProdunctionFacility'
     let $allowed := ("decommissioned")
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
+    return scripts:checkMissingSites($refcode, $rulename, $root, $feature, $allowed)
 };
 
 (:~

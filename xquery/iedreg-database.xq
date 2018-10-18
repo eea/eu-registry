@@ -29,6 +29,23 @@ declare namespace rest = "http://basex.org/rest";
 
 declare variable $db:master := "http://admin:admin@ied-registry.herokuapp.com/rest/MASTER";
 
+declare function db:dbExists() as xs:boolean {
+  try {
+    if(doc($db:master)) then true()
+    else false()
+  } catch * {
+    false()
+  }
+};
+
+declare function db:getMasterDb() as xs:string* {
+  try {
+    doc($db:master)/rest:database/rest:resource/text()
+  } catch * {
+    ()
+  }
+};
+
 declare function db:getFeatureNames(
         $featureName as xs:string,
         $nameName as xs:string
@@ -103,25 +120,28 @@ declare function db:getReportingYearsByCountry(
 
 declare function db:query(
         $c as xs:string,
-        $y as xs:string,
-        $name as xs:string
+        $lastYear as xs:string*,
+        $name as xs:string*
 ) as element()* {
-    for $file in doc($db:master)/rest:database/rest:resource/text()
-    let $file := $db:master || "/" || $file
-    let $doc := doc($file)
-    let $root := $doc/child::gml:FeatureCollection
+    if (empty($lastYear)) then
+        ()
+    else
+        for $file in db:getMasterDb()
+        let $file := $db:master || "/" || $file
+        let $doc := doc($file)
+        let $root := $doc/child::gml:FeatureCollection
 
-    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
-    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
-    where $cntry = $c
+        let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+        let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+        where $cntry = $c
 
-    let $year := $root/descendant::EUReg:ReportData/EUReg:reportingYear
-    let $yr := $year/text()
-    where $yr = $y
+        let $year := $root/descendant::EUReg:ReportData/EUReg:reportingYear
+        let $yr := $year/text()
+        where $yr = $lastYear
 
-    let $seq := $root/descendant::*[name() = $name]
+        let $seq := $root/descendant::*[name() = $name]
 
-    return $seq
+        return $seq
 };
 
 (:~

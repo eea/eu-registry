@@ -37,7 +37,9 @@ declare variable $iedreg:checks2018 := (
     'C10.2', 'C10.5', 'C10.6', 'C10.7',
     'C13.4'
 );
-declare variable $iedreg:skipCountries := ('CH');
+declare variable $iedreg:skipCountries := map {
+    'CH': ('C4.9', 'C4.10', 'C4.11', 'C4.12')
+};
 declare variable $iedreg:skip2018 := false();
 
 (:~
@@ -180,7 +182,8 @@ declare function iedreg:failsafeWrapper(
         let $reportingYear := $root//*:reportingYear/xs:float(.)
         let $countryCode := tokenize($root//*:countryId/@xlink:href, '/+')[last()]
         return
-            if($countryCode = $iedreg:skipCountries)
+            if($countryCode = map:keys($iedreg:skipCountries)
+                    and $refcode = $iedreg:skipCountries?($countryCode))
             then iedreg:notApplicable($refcode, $rulename, $root)
             else if($iedreg:skip2018 and $refcode = $iedreg:checks2018 and $reportingYear < 2018)
             then iedreg:notActive($refcode, $rulename, $root)
@@ -348,10 +351,10 @@ declare function iedreg:runChecks04($root as element()) as element()* {
         (: upd :) iedreg:failsafeWrapper("C4.2", "Identification of ProductionFacility duplicates", $root, scripts:checkProductionFacilityDuplicates#3),
         (: upd :) iedreg:failsafeWrapper("C4.3", "Identification of ProductionInstallation duplicates", $root, scripts:checkProductionInstallationDuplicates#3),
         (: upd :) iedreg:failsafeWrapper("C4.4", "Identification of ProductionInstallationPart duplicates", $root, scripts:checkProductionInstallationPartDuplicates#3),
-        (: upd :) iedreg:failsafeWrapper("C4.5", "Identification of ProductionSite duplicates within the database", $root, scripts:checkProductionSiteDatabaseDuplicates#3),
-        (: upd :) iedreg:failsafeWrapper("C4.6", "Identification of ProductionFacility duplicates within the database", $root, scripts:checkProductionFacilityDatabaseDuplicates#3),
-        (: upd :) iedreg:failsafeWrapper("C4.7", "Identification of ProductionInstallation duplicates within the database", $root, scripts:checkProductionInstallationDatabaseDuplicates#3),
-        (: upd :) iedreg:failsafeWrapper("C4.8", "Identification of ProductionInstallationPart duplicates within the database", $root, scripts:checkProductionInstallationPartDatabaseDuplicates#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C4.5", "Identification of ProductionSite duplicates within the database", $root, scripts:checkProductionSiteDatabaseDuplicates#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C4.6", "Identification of ProductionFacility duplicates within the database", $root, scripts:checkProductionFacilityDatabaseDuplicates#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C4.7", "Identification of ProductionInstallation duplicates within the database", $root, scripts:checkProductionInstallationDatabaseDuplicates#3),
+        (: upd DONE :) iedreg:failsafeWrapper("C4.8", "Identification of ProductionInstallationPart duplicates within the database", $root, scripts:checkProductionInstallationPartDatabaseDuplicates#3),
         (: upd :) iedreg:failsafeWrapper("C4.9", "ProductionSite and Facility Continuity", $root, scripts:checkMissingProductionSites#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.10", "Missing ProductionFacilities, previous submissions", $root, scripts:checkMissingProductionFacilities#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.11", "Missing ProductionInstallations, previous submissions", $root, scripts:checkMissingProductionInstallations#3),
