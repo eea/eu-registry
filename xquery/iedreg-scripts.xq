@@ -45,95 +45,94 @@ declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
  :)
 
 declare function scripts:normalize($url as xs:string) as xs:string {
-(: replace($url, 'http://dd\.eionet\.europa\.eu/vocabulary[a-z]*/euregistryonindustrialsites/', '') :)
-    replace($url, 'http://dd\.eionet\.europa\.eu/vocabulary[a-z]*/euregistryonindustrialsites/[a-zA-Z0-9]+/', '')
+  (: replace($url, 'http://dd\.eionet\.europa\.eu/vocabulary[a-z]*/euregistryonindustrialsites/', '') :)
+  replace($url, 'http://dd\.eionet\.europa\.eu/vocabulary[a-z]*/euregistryonindustrialsites/[a-zA-Z0-9]+/', '')
 };
 
 declare function scripts:is-empty($item as item()*) as xs:boolean {
-    normalize-space(string-join($item)) = ''
+  normalize-space(string-join($item)) = ''
 };
 
-declare function scripts:makePlural($names as xs:string*) as xs:string {
-    let $res :=
-        for $name in $names
-            let $name := replace($name, 'Site$', 'Sites')
-            let $name := replace($name, 'Facility$', 'Facilities')
-            let $name := replace($name, 'Installation$', 'Installations')
-            let $name := replace($name, 'InstallationPart$', 'InstallationParts')
-            return $name
-    return $res
+declare function scripts:makePlural($name as xs:string) as xs:string {
+  let $name := replace($name, 'Site$', 'Sites')
+  let $name := replace($name, 'Facility$', 'Facilities')
+  let $name := replace($name, 'Installation$', 'Installations')
+  let $name := replace($name, 'InstallationPart$', 'InstallationParts')
+  return $name
 };
 
 declare function scripts:getPath($e as element()) as xs:string {
-    $e/string-join(ancestor-or-self::*[not(fn:matches(local-name(), '^(FeatureCollection)|(featureMember)$'))]/local-name(.), '/')
+  $e/string-join(ancestor-or-self::*[not(fn:matches(local-name(), '^(FeatureCollection)|(featureMember)$'))]/local-name(.), '/')
 };
 
 declare function scripts:getParent($e as element()) as element() {
-    $e/ancestor-or-self::*[fn:matches(local-name(), '^Production[a-zA-Z]')]
+  $e/ancestor-or-self::*[fn:matches(local-name(), '^Production[a-zA-Z]')]
 };
 
 declare function scripts:getInspireId($e as element()) as element()* {
-    let $parent := scripts:getParent($e)
-    return $parent/child::*:inspireId/descendant::*:localId
+  let $parent := scripts:getParent($e)
+  return $parent/child::*:inspireId/descendant::base:localId
 };
 
 declare function scripts:getGmlId($e as element()) as xs:string {
-    let $id := $e/attribute::gml:id
-    return if (scripts:is-empty($id)) then "–" else data($id)
+  let $id := $e/attribute::gml:id
+  return if (scripts:is-empty($id)) then "–" else data($id)
 };
 
 declare function scripts:getValidConcepts($value as xs:string) as xs:string* {
-    let $valid := "http://dd.eionet.europa.eu/vocabulary/datadictionary/status/valid"
+  let $valid := "http://dd.eionet.europa.eu/vocabulary/datadictionary/status/valid"
 
-    let $vocabulary := "http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/"
-    let $vocabularyconcept := "http://dd.eionet.europa.eu/vocabularyconcept/euregistryonindustrialsites/"
+  let $vocabulary := "http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/"
+  let $vocabularyconcept := "http://dd.eionet.europa.eu/vocabularyconcept/euregistryonindustrialsites/"
 
-    let $url := $vocabulary || $value || "/rdf"
+  let $url := $vocabulary || $value || "/rdf"
 
-    return
-        data(doc($url)//skos:Concept[adms:status/@rdf:resource = $valid]/@rdf:about)
+  return
+    data(doc($url)//skos:Concept[adms:status/@rdf:resource = $valid]/@rdf:about)
 };
 
 declare function scripts:getDetails(
-        $msg as xs:string,
-        $type as xs:string,
-        $hdrs as (xs:string)*,
-        $data as (map(*))*
+  $msg as xs:string,
+  $type as xs:string,
+  $hdrs as (xs:string)*,
+  $data as (map(*))*
 ) as element(div)* {
-    let $msgClass := concat('inner msg',
-            if ($type = 'error') then ' red merror'
-            else if ($type = 'warning') then ' yellow mwarning'
-            else if ($type = 'info') then ' blue minfo'
-                else ()
-    )
+  let $msgClass := concat('inner msg',
+    if ($type = 'error') then ' red merror'
+    else if ($type = 'warning') then ' yellow mwarning'
+    else if ($type = 'info') then ' blue minfo'
+    else ()
+  )
 
-    return
-        <div class="iedreg">
+  return
+      <div class="iedreg">
 
-            <div class="iedreg {$msgClass}">{$msg}</div>
+      <div class="iedreg {$msgClass}">{$msg}</div>
 
-            <div class="iedreg table inner">
-                <div class="iedreg row">
-                    {for $h in $hdrs
-                    return
-                        <div class="iedreg col inner th"><span class="iedreg nowrap">{$h}</span></div>
-                    }
-                </div>
-                {for $d in $data
-                (:count $pos:)
-                (:where $pos <= $scripts:MSG_LIMIT:)
-                return
-                    <div class="iedreg row">
-                        {for $z at $i in $d('data')
-                        let $x := if (fn:index-of($d('marks'), $i)) then <span class="iedreg nowrap">{$z}</span> else $z
-                        return
-                            <div class="iedreg col inner{if (fn:index-of($d('marks'), $i)) then ' ' || $type else ''}">{$x}</div>
-                        }
-                    </div>
-                }
+        {if (count($data) > 0) then
+          <div class="iedreg table inner">
+            <div class="iedreg row">
+              {for $h in $hdrs
+              return
+                <div class="iedreg col inner th"><span class="iedreg nowrap">{$h}</span></div>
+              }
             </div>
+            {for $d in $data
+            return
+              <div class="iedreg row">
+                {for $z at $i in $d('data')
+                let $x := if (fn:index-of($d('marks'), $i)) then <span class="iedreg nowrap">{$z}</span> else $z
+                return
+                  <div class="iedreg col inner{if (fn:index-of($d('marks'), $i)) then ' ' || $type else ''}">{$x}</div>
+                }
+              </div>
+            }
+          </div>
+        else
+          ()
+        }
 
-        </div>
+      </div>
 };
 
 declare function scripts:noPreviousYearWarning(
@@ -161,958 +160,809 @@ declare function scripts:noDbWarning(
  :)
 
 declare function scripts:renderResult(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $errors as xs:integer,
-        $warnings as xs:integer,
-        $messages as xs:integer,
-        $details as element()*
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $errors as xs:integer,
+  $warnings as xs:integer,
+  $messages as xs:integer,
+  $details as element()*
 ) {
-    let $id := random:integer(65536)
+  let $id := random:integer(65536)
 
-    let $label :=
-        <label class="iedreg" for="toggle-{$id}">
-            <span class="iedreg link">More...</span>
-        </label>
+  let $label :=
+            <label class="iedreg" for="toggle-{$id}">
+              <span class="iedreg link">More...</span>
+            </label>
 
-    let $toggle :=
-        <input class="iedreg toggle" id="toggle-{$id}" type="checkbox" />
+  let $toggle :=
+      <input class="iedreg toggle" id="toggle-{$id}" type="checkbox" />
 
-    let $showRecords := ($errors + $warnings + $messages > 0)
+  let $showRecords := ($errors + $warnings + $messages > 0)
 
-    let $type :=
-        if ($errors > 0) then
-            'error'
-        else if ($warnings > 0) then
-            'warning'
-        else if ($messages > 0) then
-                'info'
-            else
-                'pass'
+  let $type :=
+    if ($errors > 0) then
+      'error'
+    else if ($warnings > 0) then
+      'warning'
+    else if ($messages > 0) then
+      'info'
+    else
+      'pass'
 
-    return
+  return
+  <div class="iedreg row">
+    <div class="iedreg col outer noborder">
+
+      <!-- report table -->
+      <div class="iedreg table">
         <div class="iedreg row">
-            <div class="iedreg col outer noborder">
+          <div class="iedreg col ten center middle">
+            <span class="iedreg medium {$type}">{$refcode}</span>
+          </div>
 
-                <!-- report table -->
-                <div class="iedreg table">
-                    <div class="iedreg row">
-                        <div class="iedreg col ten center middle">
-                            <span class="iedreg medium {$type}">{$refcode}</span>
-                        </div>
+          <div class="iedreg col left middle">
+            <span class="iedreg">{$rulename}</span>
+          </div>
 
-                        <div class="iedreg col left middle">
-                            <span class="iedreg">{$rulename}</span>
-                        </div>
+          <div class="iedreg col quarter right middle">
+            <span class="iedreg nowrap">{$errors} errors</span>
+            <span class="iedreg nowrap">{$warnings} warnings</span>
+            { if ($messages > 0) then
+            <span class="iedreg nowrap">{$messages} messages</span>
+            else () }
+          </div>
 
-                        <div class="iedreg col quarter right middle">
-                            <span class="iedreg nowrap">{$errors} errors</span>
-                            <span class="iedreg nowrap">{$warnings} warnings</span>
-                            {if ($messages > 0) then
-                                <span class="iedreg nowrap">{$messages} messages</span>
-                            else ()}
-                        </div>
-
-                        <div class="iedreg col ten center middle">
-                            {if ($showRecords) then
-                                $label
-                            else ' '}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- details table -->
-                {if ($showRecords) then
-                    ($toggle, $details)
-                else
-                    ()
-                }
-            </div>
+          <div class="iedreg col ten center middle">
+            { if ($showRecords) then
+            $label
+            else ' ' }
+          </div>
         </div>
+      </div>
+
+      <!-- details table -->
+      { if ($showRecords) then
+          ($toggle, $details)
+        else
+          ()
+      }
+    </div>
+  </div>
 };
 
 (:~
- : 2. CODE LIST CHECKS
+ : 1. CODE LIST CHECKS
  :)
 
 declare function scripts:checkActivity(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $featureName as xs:string,
-        $activityName as xs:string,
-        $activityType as xs:string,
-        $seq as element()*
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $featureName as xs:string,
+  $activityName as xs:string,
+  $activityType as xs:string
 ) as element()* {
-    let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " ||
-                scripts:makePlural($featureName) || " is not recognised. Please use an activity listed in the " ||
-                $activityName || "Value code list"
-    let $type := "error"
+  let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " || scripts:makePlural($featureName) ||" is not recognised. Please use an activity listed in the " || $activityName || "Value code list"
+  let $type := "error"
 
-    let $value := $activityName || "Value"
-    let $valid := scripts:getValidConcepts($value)
+  let $value := $activityName || "Value"
+  let $valid := scripts:getValidConcepts($value)
 
-    (:let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]:)
+  let $seq := $root/descendant::*[local-name()=$activityName]/descendant::*[local-name()=$activityType]
 
-    let $data :=
-        for $x in $seq
-        let $parent := scripts:getParent($x)
-        let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+  let $data :=
+  (for $x in $seq
+    let $parent := scripts:getParent($x)
+    let $feature := $parent/local-name()
+    let $id := scripts:getGmlId($parent)
 
-        let $activity := replace($x/attribute::*:href, '/+$', '')
+    let $activity := replace($x/@xlink:href, '/+$', '')
 
-        let $p := scripts:getPath($x)
-        let $v := scripts:normalize($activity)
+    let $p := scripts:getPath($x)
+    let $v := scripts:normalize($activity)
 
-        where not(scripts:is-empty($activity)) and not($activity = $valid)
-        return map {
-        "marks" : (4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
-        }
+    where not(scripts:is-empty($activity)) and not($activity = $valid)
+    return map {
+      "marks": (4),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "Path", $activityName || "Value")
+  let $hdrs := ("Feature", "GML ID", "Path", $activityName || "Value")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
- : C2.1 EPRTRAnnexIActivity mainActivity consistency
+ : C1.1 EPRTRAnnexIActivity mainActivity consistency
  :)
 
 declare function scripts:checkMainEPRTRAnnexIActivity(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $featureName := "ProductionFacility"
-    let $activityName := "EPRTRAnnexIActivity"
-    let $activityType := "mainActivity"
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+  let $featureName := "ProductionFacility"
+  let $activityName := "EPRTRAnnexIActivity"
+  let $activityType := "mainActivity"
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+  return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
 };
 
 (:~
- : C2.2 EPRTRAnnexIActivity otherActivity consistency
+ : C1.2 EPRTRAnnexIActivity otherActivity consistency
  :)
 
 declare function scripts:checkOtherEPRTRAnnexIActivity(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $featureName := "ProductionFacility"
-    let $activityName := "EPRTRAnnexIActivity"
-    let $activityType := "otherActivity"
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+  let $featureName := "ProductionFacility"
+  let $activityName := "EPRTRAnnexIActivity"
+  let $activityType := "otherActivity"
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+  return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
 };
 
 (:~
- : C2.3 IEDAnnexIActivity mainActivity consistency
+ : C1.3 IEDAnnexIActivity mainActivity consistency
  :)
 
 declare function scripts:checkMainIEDAnnexIActivity(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $featureName := "ProductionInstallation"
-    let $activityName := "IEDAnnexIActivity"
-    let $activityType := "mainActivity"
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+  let $featureName := "ProductionInstallation"
+  let $activityName := "IEDAnnexIActivity"
+  let $activityType := "mainActivity"
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+  return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
 };
 
 (:~
- : C2.4 IEDAnnexIActivity otherActivity consistency
+ : C1.4 IEDAnnexIActivity otherActivity consistency
  :)
 
 declare function scripts:checkOtherIEDAnnexIActivity(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $featureName := "ProductionInstallation"
-    let $activityName := "IEDAnnexIActivity"
-    let $activityType := "otherActivity"
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+  let $featureName := "ProductionInstallation"
+  let $activityName := "IEDAnnexIActivity"
+  let $activityType := "otherActivity"
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+  return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType)
 };
 
 (:~
- : C2.5 CountryId consistency
+ : C1.5 CountryId consistency
  :)
 
 declare function scripts:checkCountryId(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The CountryCodeValue specified in the countryId field is not recognised. Please use a CountryId listed in the CountryCodeValue code list"
-    let $type := "error"
+  let $msg := "The CountryCodeValue specified in the countryId field is not recognised. Please use a CountryId listed in the CountryCodeValue code list"
+  let $type := "error"
 
-    let $value := "CountryCodeValue"
-    let $valid := scripts:getValidConcepts($value)
+  let $value := "CountryCodeValue"
+  let $valid := scripts:getValidConcepts($value)
 
-    let $seq := $root/descendant::EUReg:ReportData
+  let $seq := $root/descendant::EUReg:ReportData
 
-    let $data :=
-        for $rd in $seq
-        let $feature := $rd/local-name()
-        let $id := scripts:getGmlId($rd)
+  let $data :=
+  (for $rd in $seq
+    let $feature := $rd/local-name()
+    let $id := scripts:getGmlId($rd)
 
-        let $countries := $rd/descendant::*:countryId
+    let $countries := $rd/descendant::*:countryId
 
-        for $x in $countries
-        let $country := replace($x/attribute::xlink:href, '/+$', '')
+    for $x in $countries
+      let $country := replace($x/attribute::xlink:href, '/+$', '')
 
-        let $p := scripts:getPath($x)
-        let $v := scripts:normalize(data($country))
+      let $p := scripts:getPath($x)
+      let $v := scripts:normalize(data($country))
 
-        where not(scripts:is-empty($country)) and not($country = $valid)
-        return map {
-        "marks" : (4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
-        }
+      where not(scripts:is-empty($country)) and not($country = $valid)
+      return map {
+        "marks": (4),
+        "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "Path", "CountryId")
+  let $hdrs := ("Feature", "GML ID", "Path", "CountryId")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
- : C2.6 reasonValue consistency
+ : C1.6 reasonValue consistency
  :)
 
 declare function scripts:checkReasonValue(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The ReasonValue supplied in the confidentialityReason field for the following spatial objects is not recognised. Please use a reason listed in the ReasonValue code list"
-    let $type := "error"
+  let $msg := "The ReasonValue supplied in the confidentialityReason field for the following spatial objects is not recognised. Please use a reason listed in the ReasonValue code list"
+  let $type := "error"
 
-    let $value := "ReasonValue"
-    let $valid := scripts:getValidConcepts($value)
+  let $value := "ReasonValue"
+  let $valid := scripts:getValidConcepts($value)
 
-    let $seq := $root/descendant::*:confidentialityReason
+  let $seq := $root/descendant::*:confidentialityReason[normalize-space(@xlink:href) != ""]
 
-    let $data :=
-        for $r in $seq
-        let $parent := scripts:getParent($r)
-        let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+  let $data :=
+  (for $r in $seq
+    let $parent := scripts:getParent($r)
+    let $feature := $parent/local-name()
+    let $id := scripts:getGmlId($parent)
 
-        let $reason := replace($r/attribute::xlink:href, '/+$', '')
+    let $reason := replace($r/attribute::xlink:href, '/+$', '')
 
-        let $p := scripts:getPath($r)
-        let $v := scripts:normalize(data($reason))
+    let $p := scripts:getPath($r)
+    let $v := scripts:normalize(data($reason))
 
-        where (not(empty($reason)) and not($reason = $valid))
-        return map {
-        "marks" : (4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
-        }
+    where (not(empty($reason)) and not($reason = $valid))
+    return map {
+      "marks": (4),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "Path", "ReasonValue")
+  let $hdrs := ("Feature", "GML ID", "Path", "ReasonValue")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
-    2.7 FacilityType consistency
-:)
-declare function scripts:checkFacilityTypeVocab(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $featureName := "ProductionFacility"
-    let $activityName := "FacilityType"
-    let $activityType := "facilityType"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
-
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
-};
-
-(:~
-    2.8 InstallationType consistency
-:)
-declare function scripts:checkInstallationTypeVocab(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $featureName := "ProductionInstallation"
-    let $activityName := "InstallationType"
-    let $activityType := "installationType"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
-
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
-};
-
-(:~
-    2.9 BaselineReport consistency
-:)
-declare function scripts:checkBaselineReportTypeVocab(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $featureName := "ProductionInstallation"
-    let $activityName := "BaselineReport"
-    let $activityType := "baselineReportIndicator"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
-
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
-};
-
-(:~
-    2.10 BATConclusion consistency
-:)
-declare function scripts:checkBATConclusionTypeVocab(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $featureName := "ProductionInstallation"
-    let $activityName := "BATConclusion"
-    let $activityType := "BATConclusion"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
-
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
-};
-
-(:~
-    2.11 BATAEL consistency
-:)
-declare function scripts:checkBATAELTypeVocab(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $featureName := "ProductionInstallation"
-    let $activityName := "BATAEL"
-    let $activityType := "BATAEL"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
-
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
-};
-
-
-
-(:~
- : 3. INSPIRE ID CHECKS
+ : 2. INSPIRE ID CHECKS
  :)
 
 declare function scripts:checkInspireIdUniqueness(
-        $root as element(),
-        $refcode as xs:string,
-        $feature as xs:string
-) as element()* {
-    let $rulename := $feature || " inspireId uniqueness"
+  $root as element(),
+  $refcode as xs:string,
+  $feature as xs:string
+)  as element()* {
+  let $rulename := $feature || " inspireId uniqueness"
 
-    let $msg := "All inspireIds for " || scripts:makePlural($feature) || " should be unique. Please ensure all inspireIds are different"
-    let $type := "error"
+  let $msg := "All inspireIds for " || scripts:makePlural($feature) ||" should be unique. Please ensure all inspireIds are different"
+  let $type := "error"
 
-    let $seq := $root/descendant::*[local-name() = $feature]
+  let $seq := $root/descendant::*[local-name()=$feature]
 
-    let $dups := functx:non-distinct-values($seq/scripts:getInspireId(.))
+  let $dups := functx:non-distinct-values($seq/scripts:getInspireId(.))
 
-    let $data :=
-        for $d in $dups
-        for $x in $seq
-        let $id := scripts:getGmlId($x)
-        where scripts:getInspireId($x)/text() = $d
-        return map {
-        "marks" : (3),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $d)
-        }
+  let $data :=
+  (for $d in $dups
+    for $x in $seq
+      let $id := scripts:getGmlId($x)
+      where scripts:getInspireId($x)/text() = $d
+      return map {
+        "marks": (3),
+        "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $d)
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "Inspire ID")
+  let $hdrs := ("Feature", "GML ID", "Inspire ID")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
- : C3.1 High proportion of new inspireIds
+ : C2.1 High proportion of new inspireIds
  :)
 
 declare function scripts:checkAmountOfInspireIds(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $warn := "The amount of new inspireIds within this submission equals PERC,
-        which exceeds 50%, please verify to ensure these are new entities reported for
-        the first time."
-    let $info := "The amount of new inspireIds within this submission equals PERC,
-        which exceeds the ideal threshold of 20%, please verify to ensure these are
-        new entities reported for the first time."
+  let $warn := "The amount of new inspireIds within this submission equals PERC, which exceeds 50%, please verify to ensure these are new entities reported for the first time."
+  let $info := "The amount of new inspireIds within this submission equals PERC, which exceeds the ideal threshold of 20%, please verify to ensure these are new entities reported for the first time."
 
-    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
-    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-    let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-    let $seq := $root/descendant::pf:inspireId
+  let $seq := $root/descendant::*:inspireId
+  let $fromDB := database:query($cntry, $lastReportingYear, (
+    "pf:inspireId", "act-core:inspireId"
+  ))
 
-    let $fromDB := database:query($cntry, $lastReportingYear, (
-        "pf:inspireId"
-    ))
+  let $xIDs := $seq/descendant::base:localId
+  let $yIDs := $fromDB/descendant::base:localId
 
-    let $xIDs := $seq/descendant::base:localId
-    let $yIDs := $fromDB/descendant::base:localId
+  let $data :=
+    (for $id in $xIDs
+      let $p := scripts:getParent($id)
 
-    let $data :=
-        for $id in $xIDs
-        let $p := scripts:getParent($id)
-
-        where not($id = $yIDs)
-        return map {
+      where not($id = $yIDs)
+      return map {
         "marks": (2),
         "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>)
-        }
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $ratio := count($data) div count($xIDs)
-    let $perc := round-half-to-even($ratio * 100, 1) || '%'
+  let $ratio := count($data) div count($xIDs)
+  let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
-    let $hdrs := ("Feature", "Inspire ID")
+  let $hdrs := ("Feature", "Inspire ID")
 
-    return
-        if ($ratio gt 0.5) then
-            let $msg := replace($warn, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
-        else if ($ratio gt 0.2) then
-            let $msg := replace($info, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "info", $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
-        else
-            scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
+  return
+    if (not(database:dbExists())) then
+       scripts:noDbWarning($refcode, $rulename)
+    else if (empty($lastReportingYear)) then
+      scripts:noPreviousYearWarning($refcode, $rulename)
+    else if ($ratio gt 0.5) then
+      let $msg := replace($warn, 'PERC', $perc)
+      let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+      return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+    else if ($ratio gt 0.2) then
+      let $msg := replace($info, 'PERC', $perc)
+      let $details := scripts:getDetails($msg, "info", $hdrs, $data)
+      return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+    else
+      scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
 };
 
 (:~
- : C3.2 ProductionSite inspireId uniqueness
+ : C2.2 ProductionSite inspireId uniqueness
  :)
 
 declare function scripts:checkProductionSiteUniqueness(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := "ProductionSite"
+  let $feature := "ProductionSite"
 
-    return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
+  return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
 };
 
 (:~
- : C3.3 ProductionFacility inspireId uniqueness
+ : C2.3 ProductionFacility inspireId uniqueness
  :)
 
-declare function scripts:checkProductionFacilityUniqueness(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $feature := "ProductionFacility"
 
-    return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
+declare function scripts:checkProductionFacilityUniqueness(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $feature := "ProductionFacility"
+
+  return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
 };
 
 (:~
- : C3.4 ProductionInstallation inspireId uniqueness
+ : C2.4 ProductionInstallation inspireId uniqueness
  :)
 
 declare function scripts:checkProductionInstallationUniqueness(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := "ProductionInstallation"
+  let $feature := "ProductionInstallation"
 
-    return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
+  return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
 };
 
 (:~
- : C3.5 ProductionInstallationPart inspireId uniqueness
+ : C2.5 ProductionInstallationPart inspireId uniqueness
  :)
 
 declare function scripts:checkProductionInstallationPartUniqueness(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := "ProductionInstallationPart"
+  let $feature := "ProductionInstallationPart"
 
-    return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
+  return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
 };
 
 (:~
- : 4. DUPLICATE IDENTIFICATION CHECKS
+ : 3. DUPLICATE IDENTIFICATION CHECKS
  :)
 
 declare function scripts:checkDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $featureNames as xs:string*,
-        $nodeNames as xs:string*
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $feature as xs:string
 ) as element()* {
-    let $type := "warning"
-    let $msg := "The similarity threshold has been exceeded, for the following "
-        || scripts:makePlural($featureNames) => fn:string-join(', ') ||
-        ". Please ammend the XML submission to ensure that there is no duplication"
+  let $nameName := $feature || 'Name'
+  let $featureName := 'Production' || functx:capitalize-first($feature)
 
-    let $data :=
-        for $nodeName in $nodeNames
-            let $seq := $root/descendant::*[local-name() = $featureNames]/
-                    descendant::*[local-name() = $nodeName]
+  let $msg := "The similarity threshold has been exceeded, for the following " || scripts:makePlural($featureName) || ". Please ammend the XML submission to ensure that there is no duplication"
+  let $type := "warning"
 
-            let $norm := ft:normalize(?, map {'stemming' : true()})
+  let $seq := $root/descendant::*[local-name()=$featureName]/descendant::*[local-name()=$nameName]/descendant::*:nameOfFeature
 
-            for $node at $ind in $seq
-                let $attributeName := $node/local-name()
-                let $feature := scripts:getParent($node)
-                let $featureName := $feature/local-name()
+  let $norm := ft:normalize(?, map { 'stemming': true() } )
 
-                let $gmlid := scripts:getGmlId($feature)
+  let $data :=
+  (for $x at $i in $seq
+    let $p := scripts:getParent($x)
+    let $id := scripts:getGmlId($p)
 
-                for $sub in subsequence($seq, $ind + 1)
-                let $subParent := scripts:getParent($sub)
-                let $gmlidSub := scripts:getGmlId($subParent)
+    for $y in subsequence($seq, $i + 1)
+      let $q := scripts:getParent($y)
+      let $ic := scripts:getGmlId($q)
 
-                let $levRatio := strings:levenshtein($norm($node/data()), $norm($sub/data()))
-                where $levRatio >= 0.9
-                return map {
-                "marks" : (5, 6, 7),
-                "data" : (
-                    $featureName,
-                    $attributeName,
-                    <span class="iedreg nowrap">{$gmlid}</span>,
-                    <span class="iedreg nowrap">{$gmlidSub}</span>,
-                    '"' || $node/data() || '"', '"' || $sub/data() || '"',
-                    round-half-to-even($levRatio * 100, 1) || '%'
-                )
-                }
+      let $z := strings:levenshtein($norm($x/data()), $norm($y/data()))
+      where $z >= 0.5
+      return map {
+        "marks": (4, 5, 6),
+        "data": (
+          $featureName,
+          <span class="iedreg nowrap">{$id}</span>,
+          <span class="iedreg nowrap">{$ic}</span>,
+          '"' || $x/data() || '"', '"' || $y/data() || '"',
+          round-half-to-even($z * 100, 1) || '%'
+        )
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ('Feature', 'Attribute name', 'GML IDs', ' ', 'Feature names', ' ', 'Similarity')
+  let $hdrs := ('Feature', 'GML IDs', ' ', 'Feature names', ' ', 'Similarity')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C4.1 Identification of ProductionSite duplicates
+ : C3.1 Identification of ProductionSite duplicates
  :)
 
 declare function scripts:checkProductionSiteDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $features := ('ProductionSite')
-    let $nodes := ('siteName', 'location')
+  let $feature := 'site'
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
+  return scripts:checkDuplicates($refcode, $rulename, $root, $feature)
 };
 
 (:~
- : C4.2 Identification of ProductionFacility duplicates
+ : C3.2 Identification of ProductionFacility duplicates
  :)
 
 declare function scripts:checkProductionFacilityDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $features := ('ProductionFacility')
-    let $nodes := ('geometry', 'parentCompany', 'EPRTRAnnexIActivity', 'facilityName')
+  let $feature := 'facility'
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
+  return scripts:checkDuplicates($refcode, $rulename, $root, $feature)
 };
 
 (:~
- : C4.3 Identification of ProductionInstallation duplicates
+ : C3.3 Identification of ProductionInstallation duplicates
  :)
 
 declare function scripts:checkProductionInstallationDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $features := ('ProductionInstallation')
-    let $nodes := ('pointGeometry', 'IEDAnnexIActivity', 'installationName')
+  let $feature := 'installation'
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $features, nodes)
+  return scripts:checkDuplicates($refcode, $rulename, $root, $feature)
 };
 
 (:~
- : C4.4 Identification of ProductionInstallationPart duplicates
+ : C3.4 Identification of ProductionInstallationPart duplicates
  :)
 
 declare function scripts:checkProductionInstallationPartDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $features := ('ProductionInstallationPart')
-    let $nodes := ('plantType', 'installationPartName')
+  let $feature := 'installationPart'
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
+  return scripts:checkDuplicates($refcode, $rulename, $root, $feature)
 };
 
 declare function scripts:checkDatabaseDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $feature as xs:string
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $feature as xs:string
 ) as element()* {
-    let $nameName := $feature || 'Name'
-    let $featureName := 'Production' || functx:capitalize-first($feature)
+  let $nameName := $feature || 'Name'
+  let $featureName := 'Production' || functx:capitalize-first($feature)
 
-    let $msg := "The similarity threshold has been exceeded, for the following " || scripts:makePlural($featureName) || ". These " || scripts:makePlural($featureName) || " have similar " || scripts:makePlural($featureName) || " already present in the master database. Please ensure that there is no duplication."
-    let $type := "warning"
+  let $msg := "The similarity threshold has been exceeded, for the following " || scripts:makePlural($featureName) || ". These " || scripts:makePlural($featureName) || " have similar " || scripts:makePlural($featureName) || " already present in the master database. Please ensure that there is no duplication."
+  let $type := "warning"
 
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $nameName]/descendant::*:nameOfFeature
+  let $seq := $root/descendant::*[local-name()=$featureName]/descendant::*[local-name()=$nameName]/descendant::*:nameOfFeature
 
-    (: this is where we get the data from the database :)
-    let $fromDB := database:getFeatureNames($featureName, $nameName)
+  (: this is where we get the data from the database :)
+  let $fromDB := database:getFeatureNames($featureName, $nameName)
 
-    let $norm := ft:normalize(?, map {'stemming' : true()})
+  let $norm := ft:normalize(?, map { 'stemming': true() })
 
-    let $data :=
-        for $x in $seq
-        let $p := scripts:getParent($x)
-        let $id := scripts:getInspireId($p)
+  let $data :=
+  (for $x in $seq
+    let $p := scripts:getParent($x)
+    let $id := scripts:getInspireId($p)
 
-        for $y in $fromDB
-        let $q := scripts:getParent($y)
-        let $ic := scripts:getInspireId($q)
+    for $y in $fromDB
+      let $q := scripts:getParent($y)
+      let $ic := scripts:getInspireId($q)
 
-        where $id != $ic
+      where $id != $ic
 
-        let $z := strings:levenshtein($norm($x/data()), $norm($y/data()))
-        where $z >= 0.5
-        return map {
-        "marks" : (4, 5, 6),
-        "data" : (
-            $featureName,
-            <span class="iedreg nowrap">{$id}</span>,
-            <span class="iedreg nowrap">{$ic}</span>,
-            '"' || $x/data() || '"', '"' || $y/data() || '"',
-            round-half-to-even($z * 100, 1) || '%'
+      let $z := strings:levenshtein($norm($x/data()), $norm($y/data()))
+      where $z >= 0.5
+      return map {
+        "marks": (4, 5, 6),
+        "data": (
+          $featureName,
+          <span class="iedreg nowrap">{$id}</span>,
+          <span class="iedreg nowrap">{$ic}</span>,
+          '"' || $x/data() || '"', '"' || $y/data() || '"',
+          round-half-to-even($z * 100, 1) || '%'
         )
-        }
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ('Feature', 'Inspire ID', 'Inspire ID (DB)', 'Feature name', 'Feature name (DB)', 'Similarity')
+  let $hdrs := ('Feature', 'Inspire ID', 'Inspire ID (DB)', 'Feature name', 'Feature name (DB)', 'Similarity')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    if (not(database:dbExists())) then
+         scripts:noDbWarning($refcode, $rulename)
+    else
+         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C4.5 Identification of ProductionSite duplicates within the database
+ : C3.5 Identification of ProductionSite duplicates within the database
  :)
 
 declare function scripts:checkProductionSiteDatabaseDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := 'site'
+  let $feature := 'site'
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
+  return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
 };
 
 (:~
- : C4.6 Identification of ProductionFacility duplicates within the database
+ : C3.6 Identification of ProductionFacility duplicates within the database
  :)
 
 declare function scripts:checkProductionFacilityDatabaseDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := 'facility'
+  let $feature := 'facility'
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
+  return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
 };
 
 (:~
- : C4.7 Identification of ProductionInstallation duplicates within the database
+ : C3.7 Identification of ProductionInstallation duplicates within the database
  :)
 
 declare function scripts:checkProductionInstallationDatabaseDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := 'installation'
+  let $feature := 'installation'
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
+  return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
 };
 
 (:~
- : C4.8 Identification of ProductionInstallationPart duplicates within the database
+ : C3.8 Identification of ProductionInstallationPart duplicates within the database
  :)
 
 declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := 'installationPart'
+  let $feature := 'installationPart'
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
+  return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
 };
 
 declare function scripts:checkMissing(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $feature as xs:string,
-        $allowed as xs:string*
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $feature as xs:string,
+  $allowed as xs:string*
 ) as element()* {
-    let $featureName := 'Production' || functx:capitalize-first($feature)
+  let $featureName := 'Production' || functx:capitalize-first($feature)
 
-    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName) || " missing from this submission. Please verify to ensure that no " || scripts:makePlural($featureName) || " have been missed."
-    let $type := "error"
+  let $msg := "There are inspireIDs for " || scripts:makePlural($featureName) || " missing from this submission. Please verify to ensure that no " || scripts:makePlural($featureName) || " have been missed."
+  let $type := "error"
 
-    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
-    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-    let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-    let $seq := $root/descendant::*:inspireId
-    let $fromDB := database:query($cntry, $lastReportingYear, (
-        "pf:inspireId", "act-core:inspireId"
-    ))
+  let $seq := $root/descendant::*:inspireId
+  let $fromDB := database:query($cntry, $lastReportingYear, (
+    "pf:inspireId", "act-core:inspireId"
+  ))
 
-    let $data :=
-        for $id in $fromDB
-        where not($id/descendant::*:localId = $seq/descendant::*:localId)
+  let $data :=
+  (for $id in $fromDB
+    where not($id/descendant::*:localId = $seq/descendant::*:localId)
 
-        let $p := scripts:getParent($id)
-        where $p/local-name() = $featureName
+    let $p := scripts:getParent($id)
+    where $p/local-name() = $featureName
 
-        let $id := $id/descendant::*:localId/text()
+    let $id := $id/descendant::*:localId/text()
 
-        let $status := $p/pf:status/descendant::pf:statusType
-        let $status := replace($status/@xlink:href, '/+$', '')
-        let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
+    let $status := $p/pf:status/descendant::pf:statusType
+    let $status := replace($status/@xlink:href, '/+$', '')
+    let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
 
-        where not($status = $allowed)
-        return map {
-        "marks" : (2),
-        "data" : (
-            $featureName,
-            <span class="iedreg nowrap">{$id}</span>,
-            $status
-        )
-        }
+    where not($status = $allowed)
+    return map {
+      "marks": (2),
+      "data": (
+        $featureName,
+        <span class="iedreg nowrap">{$id}</span>,
+        $status
+      )
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ('Feature', 'Inspire ID', 'Status')
+  let $hdrs := ('Feature', 'Inspire ID', 'Status')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        if (not(database:dbExists())) then
-            scripts:noDbWarning($refcode, $rulename)
-        else if (empty($lastReportingYear)) then
-            scripts:noPreviousYearWarning($refcode, $rulename)
-        else
-            scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
-
-declare function scripts:checkMissingSites(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $featureName as xs:string,
-        $allowed as xs:string*
-) as element()* {
-    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName)
-        || " missing from this submission. Please verify to ensure that no "
-        || scripts:makePlural($featureName) || " have been missed."
-    let $type := "warning"
-
-    let $country := $root//EUReg:ReportData/EUReg:countryId
-    let $cntry := tokenize($country/@xlink:href, '/+')[last()]
-
-    let $lastYear := max(database:getReportingYearsByCountry($cntry))
-
-    let $seq := $root//*[local-name() = $featureName]/pf:inspireId
-    let $fromDB := database:query($cntry, $lastYear, (
-        "pf:inspireId", "act-core:inspireId"
-    ))
-
-    let $data :=
-        for $id in $fromDB
-        where not($id/data() = $seq//*:localId)
-
-        let $p := scripts:getParent($id)
-        where $p/local-name() = $featureName
-
-        let $id := $id//*:localId/text()
-
-        let $status := $p/pf:status//pf:statusType
-        let $status := replace($status/@xlink:href, '/+$', '')
-        let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
-
-        where not($status = $allowed)
-        return map {
-        "marks" : (2),
-        "data" : (
-            $featureName,
-            <span class="iedreg nowrap">{$id}</span>,
-            $status
-        )
-        }
-
-    let $hdrs := ('Feature', 'Inspire ID', 'Status')
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    if (not(database:dbExists())) then
+         scripts:noDbWarning($refcode, $rulename)
+    else if (empty($lastReportingYear)) then
+      scripts:noPreviousYearWarning($refcode, $rulename)
+    else
+      scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
- : C4.9 Missing ProductionSites, previous submissions
+ : C3.9 Missing ProductionSites, previous submissions
  :)
 
 declare function scripts:checkMissingProductionSites(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := 'ProdunctionFacility'
-    let $allowed := ("decommissioned")
+  let $feature := 'site'
+  let $allowed := ("decommissioned")
 
-    return scripts:checkMissingSites($refcode, $rulename, $root, $feature, $allowed)
+  return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
 };
 
 (:~
- : C4.10 Missing ProductionFacilities, previous submissions
+ : C3.10 Missing ProductionFacilities, previous submissions
  :)
 
 declare function scripts:checkMissingProductionFacilities(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := 'facility'
-    let $allowed := ("decommissioned", "Not regulated")
+  let $feature := 'facility'
+  let $allowed := ("decommissioned", "Not regulated")
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
+  return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
 };
 
 (:~
- : C4.11 Missing ProductionInstallations, previous submissions
+ : C3.11 Missing ProductionInstallations, previous submissions
  :)
 
 declare function scripts:checkMissingProductionInstallations(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := 'installation'
-    let $allowed := ("decommissioned", "Not regulated")
+  let $feature := 'installation'
+  let $allowed := ("decommissioned", "Not regulated")
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
+  return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
 };
 
 (:~
- : C4.12 Missing ProductionInstallationsParts, previous submissions
+ : C3.12 Missing ProductionInstallationsParts, previous submissions
  :)
 
 declare function scripts:checkMissingProductionInstallationParts(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $feature := 'installationPart'
-    let $allowed := ("decommissioned")
+  let $feature := 'installationPart'
+  let $allowed := ("decommissioned")
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
+  return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
 };
 
 (:~
- : 5. GEOGRAPHICAL AND COORDINATE CHECKS
+ : 4. GEOGRAPHICAL AND COORDINATE CHECKS
  :)
 
 declare function scripts:haversine(
-        $lat1 as xs:float,
-        $lon1 as xs:float,
-        $lat2 as xs:float,
-        $lon2 as xs:float
+$lat1 as xs:float,
+$lon1 as xs:float,
+$lat2 as xs:float,
+$lon2 as xs:float
 ) as xs:float {
-    let $dlat := ($lat2 - $lat1) * math:pi() div 180
-    let $dlon := ($lon2 - $lon1) * math:pi() div 180
+    let $dlat  := ($lat2 - $lat1) * math:pi() div 180
+    let $dlon  := ($lon2 - $lon1) * math:pi() div 180
     let $rlat1 := $lat1 * math:pi() div 180
     let $rlat2 := $lat2 * math:pi() div 180
-    let $a := math:sin($dlat div 2) * math:sin($dlat div 2) + math:sin($dlon div 2) * math:sin($dlon div 2) * math:cos($rlat1) * math:cos($rlat2)
-    let $c := 2 * math:atan2(math:sqrt($a), math:sqrt(1 - $a))
+    let $a     := math:sin($dlat div 2) * math:sin($dlat div 2) + math:sin($dlon div 2) * math:sin($dlon div 2) * math:cos($rlat1) * math:cos($rlat2)
+    let $c     := 2 * math:atan2(math:sqrt($a), math:sqrt(1-$a))
     return xs:float($c * 6371.0)
 };
 
 declare function scripts:checkRadius(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $data as (map(*))*,
-        $parentFeature as xs:string,
-        $childFeature as xs:string,
-        $lowerLimit as xs:float,
-        $upperLimit as xs:float
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $data as (map(*))*,
+  $parentFeature as xs:string,
+  $childFeature as xs:string,
+  $lowerLimit as xs:float,
+  $upperLimit as xs:float
 ) as element()* {
-    let $warn := "The coordinates supplied for the following " || scripts:makePlural($childFeature) || " are outside of a " || $upperLimit || "km radius, of the coordinates supplied for their associated " || scripts:makePlural($parentFeature) || ". Please ensure all coordinates have been inputted correctly."
-    let $info := "The coordinates supplied for the following " || scripts:makePlural($childFeature) || " are outside the ideal " || $lowerLimit || "km radius of the coordinates supplied for their associated " || scripts:makePlural($parentFeature) || ". Please ensure all coordinates have been inputted correctly."
+  let $warn := "The coordinates supplied for the following " || scripts:makePlural($childFeature) || " are outside of a " || $upperLimit || "km radius, of the coordinates supplied for their associated " || scripts:makePlural($parentFeature) || ". Please ensure all coordinates have been inputted correctly."
+  let $info := "The coordinates supplied for the following " || scripts:makePlural($childFeature) || " are outside the ideal " || $lowerLimit || "km radius of the coordinates supplied for their associated " || scripts:makePlural($parentFeature) || ". Please ensure all coordinates have been inputted correctly."
 
-    let $yellow :=
-        for $m in $data
-        let $dist := $m("data")[5]
-        where $dist gt $upperLimit
-        return $m
+  let $yellow :=
+  for $m in $data
+    let $dist := $m("data")[5]
+    where $dist gt $upperLimit
+    return $m
 
-    let $blue :=
-        for $m in $data
-        let $dist := $m("data")[5]
-        where $dist le $upperLimit and $dist gt $lowerLimit
-        return $m
+  let $blue :=
+  for $m in $data
+    let $dist := $m("data")[5]
+    where $dist le $upperLimit and $dist gt $lowerLimit
+    return $m
 
-    let $hdrs := ("Feature", "GML ID", "Feature", "GML ID", "Distance (km)")
+  let $hdrs := ("Feature", "GML ID", "Feature", "GML ID", "Distance (km)")
 
-    let $details :=
-        <div class="iedreg">{
-            if (count($yellow) gt 0) then scripts:getDetails($warn, "warning", $hdrs, $yellow) else (),
-            if (count($blue) gt 0) then scripts:getDetails($info, "info", $hdrs, $blue) else ()
-        }</div>
+  let $details :=
+    <div class="iedreg">{
+    if (count($yellow) gt 0) then scripts:getDetails($warn, "warning", $hdrs, $yellow) else (),
+    if (count($blue) gt 0) then scripts:getDetails($info, "info", $hdrs, $blue) else ()
+    }</div>
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
 };
 
 (:~
@@ -1120,44 +970,44 @@ declare function scripts:checkRadius(
  :)
 
 declare function scripts:checkProdutionSiteRadius(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $parentFeature := "ProductionSite"
-    let $childFeature := "ProductionFacility"
-    let $lowerLimit := 5.0
-    let $upperLimit := 10.0
+  let $parentFeature := "ProductionSite"
+  let $childFeature := "ProductionFacility"
+  let $lowerLimit := 5.0
+  let $upperLimit := 10.0
 
-    let $data :=
-        for $x in $root/descendant::EUReg:ProductionSite
-        let $x_id := scripts:getGmlId($x)
-        let $x_location := $x/EUReg:location
+  let $data :=
+  (for $x in $root/descendant::EUReg:ProductionSite
+    let $x_id := scripts:getGmlId($x)
+    let $x_location := $x/EUReg:location
 
-        for $x_coords in $x_location/descendant::gml:*/descendant-or-self::*[not(*)]
-        let $x_long := substring-before($x_coords, ' ')
-        let $x_lat := substring-after($x_coords, ' ')
+    for $x_coords in $x_location/descendant::gml:*/descendant-or-self::*[not(*)]
+      let $x_lat := substring-before($x_coords, ' ')
+      let $x_long := substring-after($x_coords, ' ')
 
-        for $y in $root/descendant::EUReg:ProductionFacility[pf:hostingSite[@xlink:href = '#' || $x_id]]
+      for $y in $root/descendant::EUReg:ProductionFacility[pf:hostingSite[@xlink:href='#' || $x_id]]
         let $y_id := scripts:getGmlId($y)
         let $y_geometry := $y/act-core:geometry
 
         for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
-        let $y_long := substring-before($y_coords, ' ')
-        let $y_lat := substring-after($y_coords, ' ')
+          let $y_lat := substring-before($y_coords, ' ')
+          let $y_long := substring-after($y_coords, ' ')
 
-        let $dist := scripts:haversine(
-                xs:float($x_lat), xs:float($x_long),
-                xs:float($y_lat), xs:float($y_long)
-        )
+          let $dist := scripts:haversine(
+            xs:float($x_lat), xs:float($x_long),
+            xs:float($y_lat), xs:float($y_long)
+          )
 
-        return map {
-        "marks" : (5),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $dist)
-        }
+          return map {
+            "marks": (5),
+            "data": ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $dist)
+          })[position() = 1 to $scripts:MSG_LIMIT]
 
-    return
-        scripts:checkRadius($refcode, $rulename, $root, $data, $parentFeature, $childFeature, $lowerLimit, $upperLimit)
+  return
+    scripts:checkRadius($refcode, $rulename, $root, $data, $parentFeature, $childFeature, $lowerLimit, $upperLimit)
 };
 
 (:~
@@ -1165,46 +1015,46 @@ declare function scripts:checkProdutionSiteRadius(
  :)
 
 declare function scripts:checkProdutionFacilityRadius(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $parentFeature := "ProductionFacility"
-    let $childFeature := "ProductionInstallation"
-    let $lowerLimit := 1.0
-    let $upperLimit := 5.0
+  let $parentFeature := "ProductionFacility"
+  let $childFeature := "ProductionInstallation"
+  let $lowerLimit := 1.0
+  let $upperLimit := 5.0
 
-    let $data :=
-        for $x in $root/descendant::EUReg:ProductionFacility
-        let $x_id := scripts:getGmlId($x)
-        let $x_geometry := $x/act-core:geometry
+  let $data :=
+  (for $x in $root/descendant::EUReg:ProductionFacility
+    let $x_id := scripts:getGmlId($x)
+    let $x_geometry := $x/act-core:geometry
 
-        for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
-        let $x_long := substring-before($x_coords, ' ')
-        let $x_lat := substring-after($x_coords, ' ')
+    for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+      let $x_lat := substring-before($x_coords, ' ')
+      let $x_long := substring-after($x_coords, ' ')
 
-        for $y_id in $x/pf:groupedInstallation/@xlink:href
+      for $y_id in $x/pf:groupedInstallation/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallation[@gml:id = $y_id]
-        let $y_geometry := $y/pf:pointGeometry
+        for $y in $root/descendant::EUReg:ProductionInstallation[@gml:id=$y_id]
+          let $y_geometry := $y/pf:pointGeometry
 
-        for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
-        let $y_long := substring-before($y_coords, ' ')
-        let $y_lat := substring-after($y_coords, ' ')
+          for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+            let $y_lat := substring-before($y_coords, ' ')
+            let $y_long := substring-after($y_coords, ' ')
 
-        let $dist := scripts:haversine(
-                xs:float($x_lat), xs:float($x_long),
-                xs:float($y_lat), xs:float($y_long)
-        )
+            let $dist := scripts:haversine(
+              xs:float($x_lat), xs:float($x_long),
+              xs:float($y_lat), xs:float($y_long)
+            )
 
-        return map {
-        "marks" : (5),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $dist)
-        }
+            return map {
+              "marks": (5),
+              "data": ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $dist)
+            })[position() = 1 to $scripts:MSG_LIMIT]
 
-    return
-        scripts:checkRadius($refcode, $rulename, $root, $data, $parentFeature, $childFeature, $lowerLimit, $upperLimit)
+  return
+    scripts:checkRadius($refcode, $rulename, $root, $data, $parentFeature, $childFeature, $lowerLimit, $upperLimit)
 };
 
 (:~
@@ -1212,46 +1062,46 @@ declare function scripts:checkProdutionFacilityRadius(
  :)
 
 declare function scripts:checkProdutionInstallationRadius(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $parentFeature := "ProductionInstallation"
-    let $childFeature := "ProductionInstallationPart"
-    let $lowerLimit := 0.5
-    let $upperLimit := 3.0
+  let $parentFeature := "ProductionInstallation"
+  let $childFeature := "ProductionInstallationPart"
+  let $lowerLimit := 0.5
+  let $upperLimit := 3.0
 
-    let $data :=
-        for $x in $root/descendant::EUReg:ProductionInstallation
-        let $x_id := scripts:getGmlId($x)
-        let $x_geometry := $x/pf:pointGeometry
+  let $data :=
+  (for $x in $root/descendant::EUReg:ProductionInstallation
+    let $x_id := scripts:getGmlId($x)
+    let $x_geometry := $x/pf:pointGeometry
 
-        for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
-        let $x_long := substring-before($x_coords, ' ')
-        let $x_lat := substring-after($x_coords, ' ')
+    for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+      let $x_lat := substring-before($x_coords, ' ')
+      let $x_long := substring-after($x_coords, ' ')
 
-        for $y_id in $x/pf:groupedInstallationPart/@xlink:href
+      for $y_id in $x/pf:groupedInstallationPart/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id = $y_id]
-        let $y_geometry := $y/pf:pointGeometry
+        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id=$y_id]
+          let $y_geometry := $y/pf:pointGeometry
 
-        for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
-        let $y_long := substring-before($y_coords, ' ')
-        let $y_lat := substring-after($y_coords, ' ')
+          for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+            let $y_lat := substring-before($y_coords, ' ')
+            let $y_long := substring-after($y_coords, ' ')
 
-        let $dist := scripts:haversine(
-                xs:float($x_lat), xs:float($x_long),
-                xs:float($y_lat), xs:float($y_long)
-        )
+            let $dist := scripts:haversine(
+              xs:float($x_lat), xs:float($x_long),
+              xs:float($y_lat), xs:float($y_long)
+            )
 
-        return map {
-        "marks" : (5),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $dist)
-        }
+            return map {
+              "marks": (5),
+              "data": ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $dist)
+            })[position() = 1 to $scripts:MSG_LIMIT]
 
-    return
-        scripts:checkRadius($refcode, $rulename, $root, $data, $parentFeature, $childFeature, $lowerLimit, $upperLimit)
+  return
+    scripts:checkRadius($refcode, $rulename, $root, $data, $parentFeature, $childFeature, $lowerLimit, $upperLimit)
 };
 
 (:~
@@ -1259,58 +1109,56 @@ declare function scripts:checkProdutionInstallationRadius(
  :)
 
 declare function scripts:checkCountryBoundary(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The following respective fields for spatial objects contain coordinates
-    that fall outside of the country's boundary (including territorial waters).
-    Please verify and correct coordinates in these fields."
-    let $type := 'warning'
+  let $msg := "The following respective fields for spatial objects contain coordinates that fall outside of the country's boundary (including territorial waters). Please verify and correct coordinates in these fields."
+  let $type := 'warning'
 
-    let $srsName :=
-        for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
-        return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
+  let $srsName :=
+  for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
+    return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
 
-    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId/attribute::xlink:href
-    let $cntry := tokenize($country, '/+')[last()]
-    let $boundary := "boundary-" || lower-case($cntry) || ".gml"
-    let $doc := doc("http://converterstest.eionet.europa.eu/xmlfile/" || $boundary)
-    let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/child::*
+  let $country := $root/descendant::EUReg:ReportData/EUReg:countryId/attribute::xlink:href
+  let $cntry := tokenize($country, '/+')[last()]
+  let $boundary := "boundary-" || lower-case($cntry) || ".gml"
+  let $doc := doc("https://converterstest.eionet.europa.eu/xmlfile/" || $boundary)
+  let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/child::*
 
-    let $seq := (
-        $root/descendant::EUReg:location,
-        $root/descendant::act-core:geometry,
-        $root/descendant::pf:pointGeometry
-    )
+  let $seq := (
+    $root/descendant::EUReg:location,
+    $root/descendant::act-core:geometry,
+    $root/descendant::pf:pointGeometry
+  )
 
-    let $data :=
-        for $g in $seq
-        let $parent := scripts:getParent($g)
-        let $feature := $parent/local-name()
+  let $data :=
+  (for $g in $seq
+    let $parent := scripts:getParent($g)
+    let $feature := $parent/local-name()
 
-        for $coords in $g/descendant::gml:*/descendant-or-self::*[not(*)]
-        let $id := scripts:getGmlId($coords/parent::*)
+    for $x_coords in $g/descendant::gml:*/descendant-or-self::*[not(*)]
+      let $id := scripts:getGmlId($x_coords/parent::*)
 
-        let $p := scripts:getPath($coords)
+      let $p := scripts:getPath($x_coords)
 
-        let $long := substring-before($coords, ' ')
-        let $lat := substring-after($coords, ' ')
+      let $x_lat := substring-before($x_coords, ' ')
+      let $x_long := substring-after($x_coords, ' ')
 
-        let $point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$long},{$lat}</GML:coordinates></GML:Point>
+      let $point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_long},{$x_lat}</GML:coordinates></GML:Point>
 
-        where not(geo:within($point, $geom))
-        return map {
-        'marks' : (3, 4),
-        'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, replace($coords/text(), ' ', ', '), $cntry)
-        }
+      where not(geo:within($point, $geom))
+      return map {
+        'marks': (3, 4),
+        'data': ($feature, <span class="iedreg nowrap">{$id}</span>, replace($x_coords/text(), ' ', ', '), $cntry)
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "Coordinates", "Country")
+  let $hdrs := ("Feature", "GML ID", "Coordinates", "Country")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
@@ -1318,49 +1166,51 @@ declare function scripts:checkCountryBoundary(
  :)
 
 declare function scripts:checkCoordinatePrecisionCompleteness(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The coordinates are not consistent to 4 decimal places for the following fields. Please ensure all coordinates have been inputted correctly."
-    let $type := 'warning'
+  let $msg := "The coordinates are not consistent to 4 decimal places for the following fields. Please ensure all coordinates have been inputted correctly."
+  let $type := 'warning'
 
-    let $seq := (
-        $root/descendant::EUReg:location,
-        $root/descendant::act-core:geometry,
-        $root/descendant::pf:pointGeometry
-    )
+  let $seq := (
+    $root/descendant::EUReg:location,
+    $root/descendant::act-core:geometry,
+    $root/descendant::pf:pointGeometry
+  )
 
-    let $data :=
-        for $g in $seq
-        let $parent := scripts:getParent($g)
-        let $feature := $parent/local-name()
+  let $data :=
+  (for $g in $seq
+    let $parent := scripts:getParent($g)
+    let $feature := $parent/local-name()
 
-        for $coords in $g/descendant::gml:*/descendant-or-self::*[not(*)]
-        let $id := scripts:getGmlId($coords/parent::*)
+    for $x_coords in $g/descendant::gml:*/descendant-or-self::*[not(*)]
+      let $id := scripts:getGmlId($x_coords/parent::*)
 
-        let $p := scripts:getPath($coords)
+      let $p := scripts:getPath($x_coords)
 
-        let $long := substring-before($coords, ' ')
-        let $lat := substring-after($coords, ' ')
-        let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (5) else ()
-        let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (4) else ()
-        where (string-length(substring-after($long, '.')) lt 4) or (string-length(substring-after($lat, '.')) lt 4)
-        return map {
-        'marks' : ($errLong, $errLat),
-        'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $long, $lat)
-        }
+      let $x_lat := substring-before($x_coords, ' ')
+      let $x_long := substring-after($x_coords, ' ')
 
-    let $hdrs := ("Feature", "GML ID", "Path", "Longitude", "Latitude")
+      let $err_lat := if (string-length(substring-after($x_lat, '.')) lt 4) then (4) else ()
+      let $err_long := if (string-length(substring-after($x_long, '.')) lt 4) then (5) else ()
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+      where (string-length(substring-after($x_lat, '.')) lt 4) or (string-length(substring-after($x_long, '.')) lt 4)
+      return map {
+        'marks': ($err_lat, $err_long),
+        'data': ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $x_lat, $x_long)
+      }) [position() = 1 to $scripts:MSG_LIMIT]
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  let $hdrs := ("Feature", "GML ID", "Path", "Latitude", "Longitude")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C5.6 Coordinate continuity
+ : C4.6 Coordinate continuity
  :)
 
 declare function scripts:checkCoordinateContinuity(
@@ -1393,32 +1243,31 @@ declare function scripts:checkCoordinateContinuity(
   ))
 
   let $data :=
-  for $x in $seq/descendant::gml:*/descendant-or-self::*[not(*)]
-    let $p := scripts:getParent($x)
+  (for $x_coords in $seq/descendant::gml:*/descendant-or-self::*[not(*)]
+    let $p := scripts:getParent($x_coords)
     let $id := scripts:getInspireId($p)/text()
 
-    let $y :=
+    let $y_coords :=
     for $y in $fromDB/descendant::gml:*/descendant-or-self::*[not(*)]
       let $q := scripts:getParent($y)
       let $ic := scripts:getInspireId($q)/text()
 
       where $id = $ic
-
       return $y
 
-    where not(empty($y))
+    where not(empty($y_coords))
 
-    let $xlong := substring-before($x, ' ')
-    let $xlat := substring-after($x, ' ')
-    let $xp := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$xlong},{$xlat}</GML:coordinates></GML:Point>
+    let $x_lat := substring-before($x_coords, ' ')
+    let $x_long := substring-after($x_coords, ' ')
+    let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_long},{$x_lat}</GML:coordinates></GML:Point>
 
-    let $ylong := substring-before($y, ' ')
-    let $ylat := substring-after($y, ' ')
-    let $yp := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$ylong},{$ylat}</GML:coordinates></GML:Point>
+    let $y_lat := substring-before($y_coords, ' ')
+    let $y_long := substring-after($y_coords, ' ')
+    let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_long},{$y_lat}</GML:coordinates></GML:Point>
 
-    let $dist := round-half-to-even(geo:distance($xp, $yp) * 111319.9, 2)
+    let $dist := round-half-to-even(geo:distance($x_point, $y_point) * 111319.9, 2)
 
-    return [$p/local-name(), $id, string-join(($xlat, $xlong), ", "), string-join(($ylat, $ylong), ", "), $dist]
+    return [$p/local-name(), $id, string-join(($x_lat, $x_long), ", "), string-join(($y_lat, $y_long), ", "), $dist])[position() = 1 to $scripts:MSG_LIMIT]
 
   let $red :=
   for $x in $data
@@ -1454,11 +1303,16 @@ declare function scripts:checkCoordinateContinuity(
     }</div>
 
   return
-    scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
+      if (not(database:dbExists())) then
+         scripts:noDbWarning($refcode, $rulename)
+      else if (empty($lastReportingYear)) then
+        scripts:noPreviousYearWarning($refcode, $rulename)
+      else
+        scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
 };
 
 (:~
- : C5.7 ProductionSite to ProductionFacility coordinate comparison
+ : C4.7 ProductionSite to ProductionFacility coordinate comparison
  :)
 
 declare function scripts:checkProdutionSiteBuffers(
@@ -1466,32 +1320,26 @@ declare function scripts:checkProdutionSiteBuffers(
   $rulename as xs:string,
   $root as element()
 ) as element()* {
-  let $warnRadius := 5000
-  let $infoRadius := 30000
+  let $warnRadius := 5
+  let $infoRadius := 30
 
-  let $warn := "The following ProductionFacilities have coordinates that are within a "
-    || $warnRadius || "m radius of the coordinates provided for the associated ProductionSite.
-    Please verify the coordinates and ensure that they have been inputted correctly."
-  let $info := "The following ProductionFacilities have coordinates that are within a "
-    || $infoRadius || "m radius of the coordinates provided for the associated ProductionSite.
-    Please verify the coordinates and ensure that they have been inputted correctly."
+  let $warn := "The following ProductionFacilities have coordinates that are within a " || $warnRadius || "m radius of the coordinates provided for the associated ProductionSite. Please verify the coordinates and ensure that they have been inputted correctly."
+  let $info := "The following ProductionFacilities have coordinates that are within a " || $infoRadius || "m radius of the coordinates provided for the associated ProductionSite. Please verify the coordinates and ensure that they have been inputted correctly."
 
   let $srsName :=
   for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
     return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
 
   let $data :=
-  for $x in $root/descendant::EUReg:ProductionSite
+  (for $x in $root/descendant::EUReg:ProductionSite
     let $x_id := scripts:getGmlId($x)
     let $x_location := $x/EUReg:location
 
     for $x_coords in $x_location/descendant::gml:*/descendant-or-self::*[not(*)]
-      let $x_long := substring-before($x_coords, ' ')
-      let $x_lat := substring-after($x_coords, ' ')
+      let $x_lat := substring-before($x_coords, ' ')
+      let $x_long := substring-after($x_coords, ' ')
 
       let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_long},{$x_lat}</GML:coordinates></GML:Point>
-      let $x_buffer_warn := geo:buffer($x_point, xs:double($warnRadius div 111319.9))
-      let $x_buffer_info := geo:buffer($x_point, xs:double($infoRadius div 111319.9))
 
       let $facilities :=
       for $y in $root/descendant::EUReg:ProductionFacility[pf:hostingSite[@xlink:href='#' || $x_id]]
@@ -1499,44 +1347,51 @@ declare function scripts:checkProdutionSiteBuffers(
         let $y_geometry := $y/act-core:geometry
 
         for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
-          let $y_long := substring-before($y_coords, ' ')
-          let $y_lat := substring-after($y_coords, ' ')
+          let $y_lat := substring-before($y_coords, ' ')
+          let $y_long := substring-after($y_coords, ' ')
 
           let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_long},{$y_lat}</GML:coordinates></GML:Point>
-          let $y_buffer_warn := geo:buffer($y_point, xs:double($warnRadius div 111319.9))
-          let $y_buffer_info := geo:buffer($y_point, xs:double($infoRadius div 111319.9))
 
-          return [$y/local-name(), $y_id, $y_point, $y_buffer_warn, $y_buffer_info]
+          return [$y/local-name(), $y_id, $y_point]
 
         return (
-          [$x/local-name(), $x_id, $x_point, $x_buffer_warn, $x_buffer_info],
-          $facilities
-        )
+          [$x/local-name(), $x_id, $x_point, $facilities]
+        ))[position() = 1 to $scripts:MSG_LIMIT]
 
   let $yellow :=
-  for $x at $i in $data
-    for $y in subsequence($data, $i + 1)
+  for $x in $data
+    where not(empty($x(4)))
+
+    let $x_buffer := geo:buffer($x(3), xs:double($warnRadius div 111319.9))
+
+    for $y in $x(4)
+      let $y_buffer := geo:buffer($y(3), xs:double($warnRadius div 111319.9))
+
+      where geo:intersects($x_buffer, $y_buffer)
       let $dist := round-half-to-even(geo:distance($x(3), $y(3)) * 111319.9, 2)
 
-      where count($data) gt 2
-
-      where geo:intersects($x(4), $y(4))
       return map {
         "marks": (5),
         "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $y(1), <span class="iedreg nowrap">{$y(2)}</span>, $dist)
       }
 
   let $blue :=
-  for $x at $i in $data
-    for $y in subsequence($data, $i + 1)
-      let $dist := round-half-to-even(geo:distance($x(3), $y(3)) * 111319.9, 2)
+  for $x in $data
+    where not(empty($x(4)))
 
-      where count($data) gt 2
+    let $x_buffer := geo:buffer($x(3), xs:double($infoRadius div 111319.9))
 
+    for $y in $x(4)
+      let $seen :=
       for $z in $yellow
-      where not($z('data')[1] = $x(1) and $z('data')[2]/text() = $x(2) and $z('data')[3] = $y(1) and $z('data')[4]/text() = $y(2) and $z('data')[5] = $dist)
+        return [$z('data')[2]/text(), $z('data')[4]/text()]
+      where not([$x(2), $y(2)] = $seen)
 
-      where geo:intersects($x(5), $y(5))
+      let $y_buffer := geo:buffer($y(3), xs:double($infoRadius div 111319.9))
+
+      where geo:intersects($x_buffer, $y_buffer)
+
+      let $dist := round-half-to-even(geo:distance($x(3), $y(3)) * 111319.9, 2)
       return map {
         "marks": (5),
         "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $y(1), <span class="iedreg nowrap">{$y(2)}</span>, $dist)
@@ -1555,89 +1410,89 @@ declare function scripts:checkProdutionSiteBuffers(
 };
 
 (:~
- : C5.8 ProductionInstallation to ProductionInstallationPart coordinate comparison
+ : C4.8 ProductionInstallation to ProductionInstallationPart coordinate comparison
  :)
 
 declare function scripts:checkProdutionInstallationPartCoords(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The coordinates provided for the following ProductionInstallationParts are identical to the coordinates for the associated ProductionInstallation. Please verify the coordinates and ensure that they have been inputted correctly."
-    let $type := "warning"
+  let $msg := "The coordinates provided for the following ProductionInstallationParts are identical to the coordinates for the associated ProductionInstallation. Please verify the coordinates and ensure that they have been inputted correctly."
+  let $type := "warning"
 
-    let $data :=
-        for $x in $root/descendant::EUReg:ProductionInstallation
-        let $x_id := scripts:getGmlId($x)
-        let $x_geometry := $x/pf:pointGeometry
+  let $data :=
+  (for $x in $root/descendant::EUReg:ProductionInstallation
+    let $x_id := scripts:getGmlId($x)
+    let $x_geometry := $x/pf:pointGeometry
 
-        where count($x/pf:groupedInstallationPart) gt 1
+    where count($x/pf:groupedInstallationPart) gt 1
 
-        for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
-        for $y_id in $x/pf:groupedInstallationPart/@xlink:href
+    for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+      for $y_id in $x/pf:groupedInstallationPart/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id = $y_id]
-        let $y_geometry := $y/pf:pointGeometry
+        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id=$y_id]
+          let $y_geometry := $y/pf:pointGeometry
 
-        for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+          for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
 
-        where $x_coords/text() = $y_coords/text()
-        return map {
-        "marks" : (5),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, replace($x_coords/text(), ' ', ', '))
-        }
+            where $x_coords/text() = $y_coords/text()
+            return map {
+              "marks": (5),
+              "data": ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, replace($x_coords/text(), ' ', ', '))
+            })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "Feature", "GML ID", "Coordinates")
+  let $hdrs := ("Feature", "GML ID", "Feature", "GML ID", "Coordinates")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : 6. ACTIVITY CHECKS
+ : 5. ACTIVITY CHECKS
  :)
 
 declare function scripts:checkActivityUniqueness(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $featureName as xs:string,
-        $activityName as xs:string
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $featureName as xs:string,
+  $activityName as xs:string
 ) as element()* {
-    let $msg := "Each " || $activityName || " should be unique, the following " || scripts:makePlural($featureName) || " share the same main and other Activity. Please evaluate and ensure the inputs for these fields are unique to one another"
-    let $type := "error"
+  let $msg := "Each " || $activityName || " should be unique, the following " || scripts:makePlural($featureName) || " share the same main and other Activity. Please evaluate and ensure the inputs for these fields are unique to one another"
+  let $type := "error"
 
-    let $seq := $root/descendant::*[local-name() = $featureName]
+  let $seq := $root/descendant::*[local-name()=$featureName]
 
-    let $data :=
-        for $node in $seq
-        let $parent := scripts:getParent($node)
-        (:let $inspireId := scripts:getInspireId($parent):)
-        let $activity := $node/descendant::*[local-name() = $activityName]
-        let $acts := $activity/descendant-or-self::*[not(*)]
+  let $data :=
+  (for $r in $seq
+    let $parent := scripts:getParent($r)
+    let $inspireId := scripts:getInspireId($parent)
+    let $activity := $r/descendant::*[local-name()=$activityName]
+    let $acts := $activity/descendant-or-self::*[not(*)]
 
+    let $path := scripts:getPath($activity)
+    let $id := scripts:getGmlId($parent)
 
-        let $id := scripts:getGmlId($parent)
+    let $dups :=
+    for $a in functx:non-distinct-values($acts/attribute::*:href)
+      return scripts:normalize(data($a))
 
-        let $dups :=
-            for $a in functx:non-distinct-values($acts/attribute::*:href)
-            return scripts:normalize(data($a))
-        where $acts//local-name() => fn:distinct-values() => fn:count() = 2
-        for $act in $dups
-        return map {
-        "marks" : (3),
-        "data" : ($featureName, <span class="iedreg nowrap">{$id}</span>, $act)
-        }
+    for $act in $dups
+      return map {
+        "marks": (3),
+        "data": ($featureName, <span class="iedreg nowrap">{$id}</span>, $act)
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", $activityName)
+  let $hdrs := ("Feature", "GML ID", $activityName)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 declare function scripts:checkActivityContinuity(
@@ -1647,15 +1502,8 @@ declare function scripts:checkActivityContinuity(
   $featureName as xs:string,
   $activityName as xs:string
 ) as element()* {
-  let $warn := "There have been changes in the " || $activityName || " field,
-      compared to the master database - this field should remain constant over time
-      and seldom change, particularly between activity groups. Changes have been noticed
-      in the following " || scripts:makePlural($featureName) || ".
-      Please ensure all inputs are correct."
-  let $info := "There have been changes in the " || $activityName || " field,
-      compared to the master database - this field should remain constant over time
-      and seldom change. Changes have been noticed in the following "
-      || scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
+  let $warn := "There have been changes in the " || $activityName || " field, compared to the master database - this field should remain constant over time and seldom change, particularly between activity groups. Changes have been noticed in the following " || scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
+  let $info := "There have been changes in the " || $activityName || " field, compared to the master database - this field should remain constant over time and seldom change. Changes have been noticed in the following "|| scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
 
   let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
   let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
@@ -1669,23 +1517,23 @@ declare function scripts:checkActivityContinuity(
   ))
 
   let $data :=
-  for $feature in $seq
-    let $idFeature := scripts:getInspireId($feature)
+  (for $x in $seq
+    let $id := scripts:getInspireId($x)
 
-    for $featureDB in $fromDB
-      let $idFeatureDB := scripts:getInspireId($featureDB)
+    for $y in $fromDB
+      let $ic := scripts:getInspireId($y)
 
-      where $idFeature = $idFeatureDB
+      where $id = $ic
 
-      let $featureActivity := $feature/descendant::*[local-name()=$activityName]
-      let $featureDBActivity := $featureDB/descendant::*[local-name()=$activityName]
+      let $xActivity := $x/descendant::*[local-name()=$activityName]
+      let $yActivity := $y/descendant::*[local-name()=$activityName]
 
-      for $act in $featureActivity/descendant-or-self::*[not(*)]
-        let $pathFeature := scripts:getPath($feature)
-        let $pathAct := scripts:getPath($act)
+      for $act in $xActivity/descendant-or-self::*[not(*)]
+        let $p := scripts:getPath($x)
+        let $q := scripts:getPath($act)
 
         let $xAct := replace($act/@xlink:href, '/+$', '')
-        let $yAct := replace($featureDBActivity/descendant-or-self::*[not(*) and local-name() = $act/local-name()]/@xlink:href, '/+$', '')
+        let $yAct := replace($yActivity/descendant-or-self::*[not(*) and local-name() = $act/local-name()]/@xlink:href, '/+$', '')
 
         let $xAct :=
           if (scripts:is-empty($xAct)) then
@@ -1694,9 +1542,7 @@ declare function scripts:checkActivityContinuity(
 
         where not (scripts:is-empty($yAct))
         where not ($xAct = $yAct)
-        where $activityName != 'EPRTRAnnexIActivity'
-            or ($activityName = 'EPRTRAnnexIActivity' and $act/local-name() = 'mainActivity')
-        return [$feature/local-name(), $idFeature/text(), $act/local-name(), scripts:normalize($xAct), scripts:normalize($yAct)]
+        return [$x/local-name(), $id/text(), $act/local-name(), scripts:normalize($xAct), scripts:normalize($yAct)])[position() = 1 to $scripts:MSG_LIMIT]
 
   let $yellow :=
   for $x in $data
@@ -1723,26 +1569,31 @@ declare function scripts:checkActivityContinuity(
     }</div>
 
   return
-    scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
+      if (not(database:dbExists())) then
+         scripts:noDbWarning($refcode, $rulename)
+      else if (empty($lastReportingYear)) then
+        scripts:noPreviousYearWarning($refcode, $rulename)
+      else
+        scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
 };
 
 (:~
- : C6.1 EPRTRAnnexIActivity uniqueness
+ : C5.1 EPRTRAnnexIActivity uniqueness
  :)
 
 declare function scripts:checkEPRTRAnnexIActivityUniqueness(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $featureName := "ProductionFacility"
-    let $activityName := "EPRTRAnnexIActivity"
+  let $featureName := "ProductionFacility"
+  let $activityName := "EPRTRAnnexIActivity"
 
-    return scripts:checkActivityUniqueness($refcode, $rulename, $root, $featureName, $activityName)
+  return scripts:checkActivityUniqueness($refcode, $rulename, $root, $featureName, $activityName)
 };
 
 (:~
- : C6.2 EPRTRAnnexIActivity continuity
+ : C5.2 EPRTRAnnexIActivity continuity
  :)
 
 declare function scripts:checkEPRTRAnnexIActivityContinuity(
@@ -1757,22 +1608,22 @@ declare function scripts:checkEPRTRAnnexIActivityContinuity(
 };
 
 (:~
- : C6.3 IEDAnnexIActivity uniqueness
+ : C5.3 IEDAnnexIActivity uniqueness
  :)
 
 declare function scripts:checkIEDAnnexIActivityUniqueness(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $featureName := "ProductionInstallation"
-    let $activityName := "IEDAnnexIActivity"
+  let $featureName := "ProductionInstallation"
+  let $activityName := "IEDAnnexIActivity"
 
-    return scripts:checkActivityUniqueness($refcode, $rulename, $root, $featureName, $activityName)
+  return scripts:checkActivityUniqueness($refcode, $rulename, $root, $featureName, $activityName)
 };
 
 (:~
- : C6.4 IEDAnnexIActivity continuity
+ : C5.4 IEDAnnexIActivity continuity
  :)
 
 declare function scripts:checkIEDAnnexIActivityContinuity(
@@ -1787,146 +1638,146 @@ declare function scripts:checkIEDAnnexIActivityContinuity(
 };
 
 (:~
- : 7. STATUS CHECKS
+ : 6. STATUS CHECKS
  :)
 
 declare function scripts:checkStatus(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $type as xs:string,
-        $parentName as xs:string,
-        $childName as xs:string,
-        $groupName as xs:string,
-        $parentStatus as xs:string,
-        $childStatus as xs:string*
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $type as xs:string,
+  $parentName as xs:string,
+  $childName as xs:string,
+  $groupName as xs:string,
+  $parentStatus as xs:string,
+  $childStatus as xs:string*
 ) as element()* {
-    let $warn := "The '" || $parentStatus || "' statuses, of the following " || scripts:makePlural($parentName) || ", are not consistent with the associated " || scripts:makePlural($childName) || ". Please verify inputs and ensure consistency when classifying a " || $parentName || " and its " || scripts:makePlural($childName) || " as '" || $parentStatus || "'."
-    let $error := "The '" || $parentStatus || "' StatusTypes, of the following " || scripts:makePlural($parentName) || ", are not consistent with the associated " || scripts:makePlural($childName) || ". Please verify inputs and ensure consistency, classifying a " || $parentName || "'s " || scripts:makePlural($childName) || " as '" || string-join($childStatus, "' or '") || "' also."
+  let $warn := "The '" || $parentStatus || "' statuses, of the following " || scripts:makePlural($parentName) || ", are not consistent with the associated " || scripts:makePlural($childName) || ". Please verify inputs and ensure consistency when classifying a " || $parentName || " and its " || scripts:makePlural($childName) || " as '" || $parentStatus || "'."
+  let $error := "The '" || $parentStatus || "' StatusTypes, of the following " || scripts:makePlural($parentName) || ", are not consistent with the associated " || scripts:makePlural($childName) || ". Please verify inputs and ensure consistency, classifying a " || $parentName ||"'s " || scripts:makePlural($childName) || " as '" || string-join($childStatus, "' or '") || "' also."
 
-    let $value := "ConditionOfFacilityValue"
-    let $valid := scripts:getValidConcepts($value)
+  let $value := "ConditionOfFacilityValue"
+  let $valid := scripts:getValidConcepts($value)
 
-    let $data :=
-        for $x in $root/descendant::*[local-name() = $parentName]
-        let $x_id := scripts:getGmlId($x)
+  let $data :=
+  (for $x in $root/descendant::*[local-name()=$parentName]
+    let $x_id := scripts:getGmlId($x)
 
-        let $x_status := $x/pf:status/descendant::pf:statusType
-        let $p := scripts:getPath($x_status)
+    let $x_status := $x/pf:status/descendant::pf:statusType
+    let $p := scripts:getPath($x_status)
 
-        let $x_status := replace($x_status/@xlink:href, '/+$', '')
-        where $x_status = $valid
+    let $x_status := replace($x_status/@xlink:href, '/+$', '')
+    where $x_status = $valid
 
-        let $x_status := scripts:normalize($x_status)
-        where $x_status = $parentStatus
+    let $x_status := scripts:normalize($x_status)
+    where $x_status = $parentStatus
 
-        let $children :=
-            for $y_id in $x/child::*[local-name() = $groupName]/@xlink:href
-            let $y_id := replace(data($y_id), "^#", "")
+    let $children :=
+    for $y_id in $x/child::*[local-name()=$groupName]/@xlink:href
+      let $y_id := replace(data($y_id), "^#", "")
 
-            for $y in $root/descendant::*[local-name() = $childName][@gml:id = $y_id]
-            let $y_status := replace($y/pf:status/descendant::pf:statusType/@xlink:href, '/+$', '')
-            where $y_status = $valid
+      for $y in $root/descendant::*[local-name()=$childName][@gml:id=$y_id]
+        let $y_status := replace($y/pf:status/descendant::pf:statusType/@xlink:href, '/+$', '')
+        where $y_status = $valid
 
-            let $y_status := scripts:normalize($y_status)
-            where not($y_status = $childStatus)
-            return $y_status
-
-        return
-            if (not(empty($children))) then
-                map {
-                "marks" : (4),
-                "data" : ($parentName, <span class="iedreg nowrap">{$x_id}</span>, $p, $x_status)
-                }
-            else ()
-
-    let $hdrs := ("Feature", "GML ID", "Path", "Status")
+        let $y_status := scripts:normalize($y_status)
+        where not($y_status = $childStatus)
+        return $y_status
 
     return
-        if ($type = "warning") then
-            let $details := scripts:getDetails($warn, $type, $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
-        else if ($type = "error") then
-            let $details := scripts:getDetails($error, $type, $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-        else
-            scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
+      if (not(empty($children))) then
+        map {
+          "marks": (4),
+          "data": ($parentName, <span class="iedreg nowrap">{$x_id}</span>, $p, $x_status)
+        }
+      else ())[position() = 1 to $scripts:MSG_LIMIT]
+
+  let $hdrs := ("Feature", "GML ID", "Path", "Status")
+
+  return
+    if ($type = "warning") then
+      let $details := scripts:getDetails($warn, $type, $hdrs, $data)
+      return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+    else if ($type = "error") then
+      let $details := scripts:getDetails($error, $type, $hdrs, $data)
+      return scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+    else
+      scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
 };
 
 (:~
- : C7.1 Decommissioned StatusType comparison ProductionFacility and ProductionInstallation
+ : C6.1 Decommissioned StatusType comparison ProductionFacility and ProductionInstallation
  :)
 
 declare function scripts:checkProductionFacilityDecommissionedStatus(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $parentName := "ProductionFacility"
-    let $childName := "ProductionInstallation"
-    let $groupName := "groupedInstallation"
-    let $parentStatus := "decommissioned"
-    let $childStatus := "decommissioned"
+  let $parentName := "ProductionFacility"
+  let $childName := "ProductionInstallation"
+  let $groupName := "groupedInstallation"
+  let $parentStatus := "decommissioned"
+  let $childStatus := "decommissioned"
 
-    return scripts:checkStatus($refcode, $rulename, $root, "warning", $parentName, $childName, $groupName, $parentStatus, $childStatus)
+  return scripts:checkStatus($refcode, $rulename, $root, "warning", $parentName, $childName, $groupName, $parentStatus, $childStatus)
 };
 
 (:~
- : C7.2 Decommissioned StatusType comparison ProductionInstallations and ProductionInstallationParts
+ : C6.2 Decommissioned StatusType comparison ProductionInstallations and ProductionInstallationParts
  :)
 
 declare function scripts:checkProductionInstallationDecommissionedStatus(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $parentName := "ProductionInstallation"
-    let $childName := "ProductionInstallationPart"
-    let $groupName := "groupedInstallationPart"
-    let $parentStatus := "decommissioned"
-    let $childStatus := "decommissioned"
+  let $parentName := "ProductionInstallation"
+  let $childName := "ProductionInstallationPart"
+  let $groupName := "groupedInstallationPart"
+  let $parentStatus := "decommissioned"
+  let $childStatus := "decommissioned"
 
-    return scripts:checkStatus($refcode, $rulename, $root, "warning", $parentName, $childName, $groupName, $parentStatus, $childStatus)
+  return scripts:checkStatus($refcode, $rulename, $root, "warning", $parentName, $childName, $groupName, $parentStatus, $childStatus)
 };
 
 (:~
- : C7.3 Disused StatusType comparison ProductionFacility and ProductionInstallation
+ : C6.3 Disused StatusType comparison ProductionFacility and ProductionInstallation
  :)
 
 declare function scripts:checkProductionFacilityDisusedStatus(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $parentName := "ProductionFacility"
-    let $childName := "ProductionInstallation"
-    let $groupName := "groupedInstallation"
-    let $parentStatus := "disused"
-    let $childStatus := ("disused", "decommissioned")
+  let $parentName := "ProductionFacility"
+  let $childName := "ProductionInstallation"
+  let $groupName := "groupedInstallation"
+  let $parentStatus := "disused"
+  let $childStatus := ("disused", "decommissioned")
 
-    return scripts:checkStatus($refcode, $rulename, $root, "error", $parentName, $childName, $groupName, $parentStatus, $childStatus)
+  return scripts:checkStatus($refcode, $rulename, $root, "error", $parentName, $childName, $groupName, $parentStatus, $childStatus)
 };
 
 (:~
- : C7.4 Disused StatusType comparison ProductionInstallations and ProductionInstallationParts
+ : C6.4 Disused StatusType comparison ProductionInstallations and ProductionInstallationParts
  :)
 
 declare function scripts:checkProductionInstallationDisusedStatus(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $parentName := "ProductionInstallation"
-    let $childName := "ProductionInstallationPart"
-    let $groupName := "groupedInstallationPart"
-    let $parentStatus := "disused"
-    let $childStatus := ("disused", "decommissioned")
+  let $parentName := "ProductionInstallation"
+  let $childName := "ProductionInstallationPart"
+  let $groupName := "groupedInstallationPart"
+  let $parentStatus := "disused"
+  let $childStatus := ("disused", "decommissioned")
 
-    return scripts:checkStatus($refcode, $rulename, $root, "error", $parentName, $childName, $groupName, $parentStatus, $childStatus)
+  return scripts:checkStatus($refcode, $rulename, $root, "error", $parentName, $childName, $groupName, $parentStatus, $childStatus)
 };
 
 (:~
- : C7.5 Decommissioned to functional plausibility
+ : C6.5 Decommissioned to functional plausibility
  :)
 
 declare function scripts:checkFunctionalStatusType(
@@ -1952,7 +1803,7 @@ declare function scripts:checkFunctionalStatusType(
   let $valid := scripts:getValidConcepts($value)
 
   let $data :=
-  for $x in $seq
+  (for $x in $seq
     let $p := scripts:getParent($x)
     let $id := scripts:getInspireId($p)
 
@@ -1978,9 +1829,121 @@ declare function scripts:checkFunctionalStatusType(
       return map {
         "marks": (4, 5),
         "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, scripts:getPath($x), $yStat, $xStat)
-      }
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
   let $hdrs := ("Feature", "Inspire ID", "Path", "StatusType (DB)", "StatusType")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+    if (not(database:dbExists())) then
+         scripts:noDbWarning($refcode, $rulename)
+    else if (empty($lastReportingYear)) then
+      scripts:noPreviousYearWarning($refcode, $rulename)
+    else
+      scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+(:~
+ : 7. DATE CHECKS
+ :)
+
+declare function scripts:queryDate(
+  $root as element(),
+  $parentName as xs:string,
+  $childName as xs:string,
+  $groupName as xs:string,
+  $dateName as xs:string
+) as (map(*))* {
+  (for $x in $root/descendant::*[local-name()=$parentName]
+    let $x_id := scripts:getGmlId($x)
+    let $x_date := $x/child::*[local-name()=$dateName]
+
+    where not(scripts:is-empty($x_date))
+    let $x_date := xs:date($x_date/text())
+
+    for $y_id in $x/child::*[local-name()=$groupName]/@xlink:href
+      let $y_id := replace(data($y_id), "^#", "")
+
+      for $y in $root/descendant::*[local-name()=$childName][@gml:id=$y_id]
+        let $y_date := $y/child::*[local-name()=$dateName]
+
+        where not(scripts:is-empty($y_date))
+        let $y_date := xs:date($y_date/text())
+
+        where $x_date gt $y_date
+
+        return map {
+          "marks": (3, 4),
+          "data": ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $x_date, $y_date)
+        })[position() = 1 to $scripts:MSG_LIMIT]
+};
+
+(:~
+ : C7.1 dateOfStartOperation comparison
+ :)
+
+declare function scripts:checkDateOfStartOfOperation(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $dateName := "dateOfStartOfOperation"
+
+  let $msg := "The " || $dateName || " field within the ProductionFacility, ProductionInstallation and ProductionInstallationPart have been queried against each other to check chronology. In the following cases, the ProductionFacility operational start date occurs after that of the associated productionInstallations and/or the ProductionInstallation operational start date occurs after that of the associated ProductionInstallationParts. Please verify all inputs are accurate before submitting."
+  let $type := "warning"
+
+  let $data := (
+    scripts:queryDate($root, "ProductionFacility", "ProductionInstallation", "groupedInstallation", $dateName),
+    scripts:queryDate($root, "ProductionInstallation", "ProductionInstallationPart", "groupedInstallationPart", $dateName)
+  )
+
+  let $hdrs := ("Feature", "GML ID", "Feature date", "Feature child date")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+};
+
+(:~
+ : C7.2 dateOfStartOperation LCP restriction
+ :)
+
+declare function scripts:checkDateOfStartOfOperationLCP(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $dateName := "dateOfStartOfOperation"
+
+  let $msg := "The " || $dateName || " field for the following LCPs are blank. This is a mandatory requirement when reporting an LCP."
+  let $type := "error"
+
+  let $value := "PlantTypeValue"
+  let $valid := scripts:getValidConcepts($value)
+
+  let $seq := $root/descendant::*:ProductionInstallationPart/child::*:plantType
+
+  let $data :=
+  (for $x in $seq
+    let $parent := scripts:getParent($x)
+    let $feature := $parent/local-name()
+    let $id := scripts:getGmlId($parent)
+
+    let $plant := $x/attribute::*:href
+    let $date := $parent/child::*[local-name()=$dateName]
+
+    let $p := scripts:getPath($x)
+    let $v := scripts:normalize($plant)
+
+    where (scripts:is-empty($date) and ($v = "LCP"))
+    return map {
+      "marks": (3),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
+    })[position() = 1 to $scripts:MSG_LIMIT]
+
+  let $hdrs := ("Feature", "GML ID", "Plant type")
 
   let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1989,303 +1952,192 @@ declare function scripts:checkFunctionalStatusType(
 };
 
 (:~
- : 8. DATE CHECKS
- :)
-
-declare function scripts:queryDate(
-        $root as element(),
-        $parentName as xs:string,
-        $childName as xs:string,
-        $groupName as xs:string,
-        $dateName as xs:string
-) as (map(*))* {
-    for $x in $root/descendant::*[local-name() = $parentName]
-    let $x_id := scripts:getGmlId($x)
-    let $x_date := $x/child::*[local-name() = $dateName]
-
-    where not(scripts:is-empty($x_date))
-    let $x_date := xs:date($x_date/text())
-
-    for $y_id in $x/child::*[local-name() = $groupName]/@xlink:href
-    let $y_id := replace(data($y_id), "^#", "")
-
-    for $y in $root/descendant::*[local-name() = $childName][@gml:id = $y_id]
-    let $y_date := $y/child::*[local-name() = $dateName]
-
-    where not(scripts:is-empty($y_date))
-    let $y_date := xs:date($y_date/text())
-
-    where $x_date gt $y_date
-
-    return map {
-    "marks" : (3, 4),
-    "data" : ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $x_date, $y_date)
-    }
-};
-
-(:~
- : C8.1 dateOfStartOperation comparison
- :)
-
-declare function scripts:checkDateOfStartOfOperation(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $dateName := "dateOfStartOfOperation"
-
-    let $msg := "The " || $dateName || " field within the ProductionFacility, ProductionInstallation and ProductionInstallationPart have been queried against each other to check chronology. In the following cases, the ProductionFacility operational start date occurs after that of the associated productionInstallations and/or the ProductionInstallation operational start date occurs after that of the associated ProductionInstallationParts. Please verify all inputs are accurate before submitting."
-    let $type := "warning"
-
-    let $data := (
-        scripts:queryDate($root, "ProductionFacility", "ProductionInstallation", "groupedInstallation", $dateName),
-        scripts:queryDate($root, "ProductionInstallation", "ProductionInstallationPart", "groupedInstallationPart", $dateName)
-    )
-
-    let $hdrs := ("Feature", "GML ID", "Feature date", "Feature child date")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
-};
-
-(:~
- : C8.2 dateOfStartOperation LCP restriction
- :)
-
-declare function scripts:checkDateOfStartOfOperationLCP(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $dateName := "dateOfStartOfOperation"
-
-    let $msg := "The " || $dateName || " field for the following LCPs are blank. This is a mandatory requirement when reporting an LCP."
-    let $type := "error"
-
-    let $value := "PlantTypeValue"
-    let $valid := scripts:getValidConcepts($value)
-
-    let $seq := $root/descendant::*:ProductionInstallationPart/child::*:plantType
-
-    let $data :=
-        for $x in $seq
-        let $parent := scripts:getParent($x)
-        let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
-
-        let $plant := $x/attribute::*:href
-        let $date := $parent/child::*[local-name() = $dateName]
-
-        let $p := scripts:getPath($x)
-        let $v := scripts:normalize($plant)
-
-        where (scripts:is-empty($date) and ($v = "LCP"))
-        return map {
-        "marks" : (3),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
-        }
-
-    let $hdrs := ("Feature", "GML ID", "Plant type")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
-
-(:~
- : C8.3 dateOfStartOperation to dateOfGranting comparison
+ : C7.3 dateOfStartOperation to dateOfGranting comparison
  :)
 
 declare function scripts:checkDateOfGranting(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The dateOfGranting does not precede dateOfStartOfOperation for the following ProductionInstallations. It is anticipated that a valid permit will be granted prior to operation, especially when a new ProductionInstallation is reported. Please verify dates and ensure they are correct."
-    let $type := "warning"
+  let $msg := "The dateOfGranting does not precede dateOfStartOfOperation for the following ProductionInstallations. It is anticipated that a valid permit will be granted prior to operation, especially when a new ProductionInstallation is reported. Please verify dates and ensure they are correct."
+  let $type := "warning"
 
-    let $seq := $root/descendant::*:ProductionInstallation/EUReg:permit/EUReg:PermitDetails
+  let $seq := $root/descendant::*:ProductionInstallation/EUReg:permit/EUReg:PermitDetails
 
-    let $data :=
-        for $x in $seq
-        let $parent := scripts:getParent($x)
-        let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+  let $data :=
+  (for $x in $seq
+    let $parent := scripts:getParent($x)
+    let $feature := $parent/local-name()
+    let $id := scripts:getGmlId($parent)
 
-        let $p := scripts:getPath($x)
-        let $dateOfGranting := $x/EUReg:dateOfGranting
-        let $dateOfStart := $parent/EUReg:dateOfStartOfOperation
+    let $p := scripts:getPath($x)
+    let $dateOfGranting := $x/EUReg:dateOfGranting
+    let $dateOfStart := $parent/EUReg:dateOfStartOfOperation
 
-        where not(scripts:is-empty($dateOfGranting)) and not(scripts:is-empty($dateOfStart))
-        let $dateOfGranting := xs:date($dateOfGranting/text())
-        let $dateOfStart := xs:date($dateOfStart/text())
+    where not(scripts:is-empty($dateOfGranting)) and not(scripts:is-empty($dateOfStart))
+    let $dateOfGranting := xs:date($dateOfGranting/text())
+    let $dateOfStart := xs:date($dateOfStart/text())
 
-        where $dateOfGranting gt $dateOfStart
-        return map {
-        "marks" : (3, 4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $dateOfGranting, $dateOfStart)
-        }
+    where $dateOfGranting gt $dateOfStart
+    return map {
+      "marks": (3, 4),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $dateOfGranting, $dateOfStart)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "dateOfGranting", "dateOfStartOfOperation")
+  let $hdrs := ("Feature", "GML ID", "dateOfGranting", "dateOfStartOfOperation")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 declare function scripts:checkPermitDates(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $date1 as xs:string,  (: dateOfGranting :)
-        $date2 as xs:string  (: dateOfLastUpdate :)
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $date1 as xs:string,
+  $date2 as xs:string
 ) as element()* {
-    let $msg := "The " || $date1 || " does not precede " || $date2 || " for the following
-        ProductionInstallations. Please verify dates and ensure they are correct."
-    let $type := "warning"
+  let $msg := "The " || $date1 || " does not precede " || $date2 || " for the following ProductionInstallations. Please verify dates and ensure they are correct."
+  let $type := "warning"
 
-    let $seq := $root/descendant::*:ProductionInstallation/EUReg:permit/EUReg:PermitDetails
+  let $seq := $root/descendant::*:ProductionInstallation/EUReg:permit/EUReg:PermitDetails
 
-    let $data :=
-        for $x in $seq
-        let $parent := scripts:getParent($x)
-        let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+  let $data :=
+  (for $x in $seq
+    let $parent := scripts:getParent($x)
+    let $feature := $parent/local-name()
+    let $id := scripts:getGmlId($parent)
 
-        let $p := scripts:getPath($x)
-        let $d1 := $x/child::*[local-name() = $date1]
-        let $d2 := $x/child::*[local-name() = $date2]
+    let $p := scripts:getPath($x)
+    let $d1 := $x/child::*[local-name()=$date1]
+    let $d2 := $x/child::*[local-name()=$date2]
 
-        where (not(scripts:is-empty($d1)) and not(scripts:is-empty($d2)))
-        let $d1 := xs:date($d1/text())
-        let $d2 := xs:date($d2/text())
+    where (not(scripts:is-empty($d1)) and not(scripts:is-empty($d2)))
+    let $d1 := xs:date($d1/text())
+    let $d2 := xs:date($d2/text())
 
-        where $d1 gt $d2
-        return map {
-        "marks" : (3, 4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $d1, $d2)
-        }
+    where $d1 gt $d2
+    return map {
+      "marks": (3, 4),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $d1, $d2)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", $date1, $date2)
+  let $hdrs := ("Feature", "GML ID", $date1, $date2)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C8.4 dateOfGranting plausibility
+ : C7.4 dateOfGranting plausibility
  :)
 
 declare function scripts:checkDateOfLastReconsideration(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    scripts:checkPermitDates($refcode, $rulename, $root, "dateOfGranting", "dateOfLastUpdate")
+  scripts:checkPermitDates($refcode, $rulename, $root, "dateOfGranting", "dateOfLastReconsideration")
 };
 
 (:~
- : C8.5 dateOfLastReconsideration plausibility
+ : C7.5 dateOfLastReconsideration plausibility
  :)
 
 declare function scripts:checkDateOfLastUpdate(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    scripts:checkPermitDates($refcode, $rulename, $root, "dateOfLastReconsideration", "dateOfLastUpdate")
+  scripts:checkPermitDates($refcode, $rulename, $root, "dateOfLastReconsideration", "dateOfLastUpdate")
 };
 
 (:~
- : 9. PERMITS & COMPETENT AUTHORITY CHECKS
+ : 8. PERMITS & COMPETENT AUTHORITY CHECKS
  :)
 
 (:~
- : C9.1 competentAuthorityInspections to inspections comparison
+ : C8.1 competentAuthorityInspections to inspections comparison
  :)
 
 declare function scripts:checkInspections(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The competentAuthorityInspections field has not been filled out
-        for the following ProductionInstallations where the inspection field is
-        greater than or equal to 1. Please verify to ensure the competent authority
-        for these insepctions has been specified in the appropriate fields."
-    let $type := "warning"
+  let $msg := "The competentAuthorityInspections field has not been filled out for the following ProductionInstallations where the inspection field is greater than or equal to 1. Please verify to ensure the competent authority for these insepctions has been specified in the appropriate fields."
+  let $type := "warning"
 
-    let $seq := $root/descendant::*:ProductionInstallation
+  let $seq := $root/descendant::*:ProductionInstallation
 
-    let $data :=
-        for $installation in $seq
-        let $feature := $installation/local-name()
-        let $id := scripts:getGmlId($installation)
+  let $data :=
+  (for $x in $seq
+    let $feature := $x/local-name()
+    let $id := scripts:getGmlId($x)
 
-        let $siteVisits := $installation//EUReg:siteVisitNumber
-        let $authInspections := $installation/EUReg:competentAuthorityInspections
+    let $inspections := $x/EUReg:inspections
+    let $authInspections := $x/EUReg:competentAuthorityInspections
 
-        where not(scripts:is-empty($siteVisits))
-        let $v := xs:float($siteVisits/text())
+    where not(scripts:is-empty($inspections))
+    let $v := xs:float($inspections/text())
 
-        where ($v gt 0) and scripts:is-empty($authInspections)
-        return map {
-        "marks" : (),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>)
-        }
+    where ($v gt 0) and scripts:is-empty($authInspections)
+    return map {
+      "marks": (),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID")
+  let $hdrs := ("Feature", "GML ID")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C9.2 competentAuthorityPermits and permit field comparison
+ : C8.2 competentAuthorityPermits and permit field comparison
  :)
 
 declare function scripts:checkPermit(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The competentAuthorityPermits field has not been filled out for the following ProductionInstallations where a permit action has been detailed. Please verify and ensure that the competent authority for these permits actions is specified."
-    let $type := "info"
+  let $msg := "The competentAuthorityPermits field has not been filled out for the following ProductionInstallations where a permit action has been detailed. Please verify and ensure that the competent authority for these permits actions is specified."
+  let $type := "info"
 
-    let $seq := $root/descendant::*:ProductionInstallation
+  let $seq := $root/descendant::*:ProductionInstallation
 
-    let $data :=
-        for $x in $seq
-        let $feature := $x/local-name()
-        let $id := scripts:getGmlId($x)
+  let $data :=
+  (for $x in $seq
+    let $feature := $x/local-name()
+    let $id := scripts:getGmlId($x)
 
-        let $permit := $x/EUReg:permit
-        let $authPermits := $x/EUReg:competentAuthorityPermits
+    let $permit := $x/EUReg:permit
+    let $authPermits := $x/EUReg:competentAuthorityPermits
 
-        where not(scripts:is-empty($permit)) and scripts:is-empty($authPermits)
-        return map {
-        "marks" : (),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>)
-        }
+    where not(scripts:is-empty($permit)) and scripts:is-empty($authPermits)
+    return map {
+      "marks": (),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID")
+  let $hdrs := ("Feature", "GML ID")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 
 (:~
- : C9.3 PermitURL to dateOfGranting comparison
+ : C8.3 PermitURL to dateOfGranting comparison
  :)
 
 declare function scripts:checkDateOfGrantingPermitURL(
@@ -2308,7 +2160,7 @@ declare function scripts:checkDateOfGrantingPermitURL(
   ))
 
   let $data :=
-  for $x in $seq
+  (for $x in $seq
     let $id := scripts:getInspireId($x)
 
     let $xDate := $x/EUReg:permit/descendant::EUReg:dateOfGranting
@@ -2332,295 +2184,178 @@ declare function scripts:checkDateOfGrantingPermitURL(
       return map {
         "marks": (4, 5),
         "data": ($x/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, $oldDate, $newDate, $url)
-      }
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
   let $hdrs := ("Feature", "Inspire ID", "dateofGranting (DB)", "dateofGranting", "permitURL")
 
   let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
   return
-    scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
-};
-
-(:~
-    9.5 enforcementAction to permitGranted comparison
-:)
-
-declare function scripts:checkEnforcementAction(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := "The enforcementAction attribute must be populated with a description
-        of what enforcement action has been taken for the following ProductionInstallations."
-    let $type := "warning"
-    let $seq := $root//*:ProductionInstallation//*[local-name() = 'permit']
-
-    let $data :=
-        for $permit in $seq
-            let $parent := scripts:getParent($permit)
-            let $id := scripts:getInspireId($parent)
-
-            where $permit//*:permitGranted = false()
-            where $permit//*:enforcementAction => functx:if-empty('') = ''
-
-            return map {
-                "marks": (),
-                "data": (
-                    $parent/local-name(),
-                    $id
-                )
-            }
-
-    let $hdrs := ("Feature", "Inspire ID")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
-};
-(:~
-    9.6 StricterPermitConditions
-:)
-
-declare function scripts:checkStricterPermitConditions(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := "The BATAEL attribute within the stricterPermitConditions data type
-        must be populated for the following ProductionInstallations."
-    let $type := "error"
-    let $seq := $root//*:ProductionInstallation//*[local-name() = 'stricterPermitConditions']
-
-    let $data :=
-        for $stricterPermit in $seq
-            let $parent := scripts:getParent($stricterPermit)
-            let $id := scripts:getInspireId($parent)
-
-            where $stricterPermit//*:stricterPermitConditionsIndicator = true()
-            where $stricterPermit//*:BATAEL => functx:if-empty('') = ''
-
-            return map {
-                "marks": (),
-                "data": (
-                    $parent/local-name(),
-                    $id
-                )
-            }
-
-    let $hdrs := ("Feature", "Inspire ID")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
-
-
-(:~
- : 10. DEROGATION CHECKS
- :)
-
-(:~
- : C10.1 BATDerogationIndicitor to dateOfGranting comparison
- :)
-
-declare function scripts:checkBATPermit(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := "When the BATDerogationIndicator Boolean is 'true', the Boolean for permitGranted should also be 'true'. The Boolean fields within the following ProductionInstallations are not consistent with this rule. Please verify and ensure all information is correct."
-    let $type := "info"
-
-    let $seq := $root/descendant::*:ProductionInstallation
-
-    let $data :=
-        for $x in $seq
-        let $id := scripts:getGmlId($x)
-
-        let $bat := $x/EUReg:BATDerogationIndicator
-        let $permit := $x/EUReg:permit/descendant::EUReg:permitGranted
-
-        let $bat := $bat = true()
-        let $permit := not(scripts:is-empty($permit)) and $permit = true()
-
-        where $bat and not($permit)
-
-        return map {
-        "marks" : (3, 4),
-        "data" : ($x/local-name(), $id, $bat, $permit)
-        }
-
-    let $hdrs := ("Feature", "GML ID", "BATDerogationIndicator", "permitGranted")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
+      if (not(database:dbExists())) then
+        scripts:noDbWarning($refcode, $rulename)
+      else if (empty($lastReportingYear)) then
+        scripts:noPreviousYearWarning($refcode, $rulename)
+      else
         scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 
 (:~
-    C10.2 BATDerogation
-:)
-
-declare function scripts:checkBATDerogation(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := "For the following ProductionInstallations the BATAEL or publicReasonURL
-        attributes, within the BATDerogationType data type, must be populated."
-    let $type := "error"
-
-    let $seq := $root//*:ProductionInstallation/*:BATDerogation
-    let $attrs := ('BATAEL', 'publicReasonURL')
-
-    let $data :=
-        for $batDerogation in $seq
-        let $batDerogInd := $batDerogation//*:BATDerogationIndicator
-        where $batDerogInd = true()
-        let $parent := scripts:getParent($batDerogation)
-        let $id := scripts:getGmlId($parent)
-        for $attr in $attrs
-            let $attrValue := if($attr = 'BATAEL')
-                then $batDerogation//*[local-name() = $attr]/@xlink:href
-                else $batDerogation//*[local-name() = $attr]/data()
-            where $attrValue => functx:if-empty('') = ''
-
-            return map {
-                "marks" : (3),
-                "data" : (
-                    $parent/local-name(),
-                    $id,
-                    $attr
-                )
-            }
-
-    let $hdrs := ("Feature", "GML ID", "Attribute")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
+ : 9. DEROGATION CHECKS
+ :)
 
 (:~
- : C10.2(old) dateOfGranting to Transitional National Plan comparison
+ : C9.1 BATDerogationIndicitor to dateOfGranting comparison
+ :)
+
+declare function scripts:checkBATPermit(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "When the BATDerogationIndicator Boolean is 'true', the Boolean for permitGranted should also be 'true'. The Boolean fields within the following ProductionInstallations are not consistent with this rule. Please verify and ensure all information is correct."
+  let $type := "info"
+
+  let $seq := $root/descendant::*:ProductionInstallation
+
+  let $data :=
+  (for $x in $seq
+    let $id := scripts:getGmlId($x)
+
+    let $bat := $x/EUReg:BATDerogationIndicator
+    let $permit := $x/EUReg:permit/descendant::EUReg:permitGranted
+
+    let $bat := $bat = true()
+    let $permit := not(scripts:is-empty($permit)) and $permit = true()
+
+    where $bat and not($permit)
+
+    return map {
+      "marks": (3, 4),
+      "data": ($x/local-name(), $id, $bat, $permit)
+    })[position() = 1 to $scripts:MSG_LIMIT]
+
+  let $hdrs := ("Feature", "GML ID", "BATDerogationIndicator", "permitGranted")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+    scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+};
+(:~
+ : C9.2 dateOfGranting to Transitional National Plan comparison
  :)
 
 declare function scripts:checkArticle32(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The DerogationValue indicates the ProductionInstallation is subject to 'Article 32' of the IED, however the dateOfGranting contains a date that occurs after the 27th November 2002 for the following ProductionInstallationParts. This date is not applicable for the derogation reported. Please verify and ensure dates have been inputted correctly."
-    let $type := "warning"
+  let $msg := "The DerogationValue indicates the ProductionInstallation is subject to 'Article 32' of the IED, however the dateOfGranting contains a date that occurs after the 27th November 2002 for the following ProductionInstallationParts. This date is not applicable for the derogation reported. Please verify and ensure dates have been inputted correctly."
+  let $type := "warning"
 
-    let $value := "DerogationValue"
-    let $valid := scripts:getValidConcepts($value)
+  let $value := "DerogationValue"
+  let $valid := scripts:getValidConcepts($value)
 
-    let $data :=
-        for $x in $root/descendant::EUReg:ProductionInstallation
-        let $x_id := scripts:getGmlId($x)
-        let $dateOfGranting := $x/EUReg:permit/descendant::EUReg:dateOfGranting
+  let $data :=
+  (for $x in $root/descendant::EUReg:ProductionInstallation
+    let $x_id := scripts:getGmlId($x)
+    let $dateOfGranting := $x/EUReg:permit/descendant::EUReg:dateOfGranting
 
-        where not(scripts:is-empty($dateOfGranting))
-        let $dateOfGranting := xs:date($dateOfGranting/text())
+    where not(scripts:is-empty($dateOfGranting))
+    let $dateOfGranting := xs:date($dateOfGranting/text())
 
-        for $y_id in $x/pf:groupedInstallationPart/@xlink:href
-        let $y_id := replace(data($y_id), "^#", "")
+    for $y_id in $x/pf:groupedInstallationPart/@xlink:href
+      let $y_id := replace(data($y_id), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id = $y_id]
-        let $derogations := replace($y/EUReg:derogations/@xlink:href, '/+$', '')
+      for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id=$y_id]
+        let $derogations := $y/EUReg:derogations/replace(@xlink:href, '/+$', '')
 
         where not(scripts:is-empty($derogations)) and $derogations = $valid
         let $derogations := scripts:normalize($derogations)
 
         where ($derogations = "Article32") and ($dateOfGranting gt xs:date("2002-11-27"))
         return map {
-        "marks" : (4),
-        "data" : ($y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $derogations, $dateOfGranting)
-        }
+          "marks": (4),
+          "data": ($y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $derogations, $dateOfGranting)
+        })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "DerogationValue", "dateOfGranting")
+  let $hdrs := ("Feature", "GML ID", "DerogationValue", "dateOfGranting")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 declare function scripts:checkDerogationsYear(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $article as xs:string,
-        $year as xs:integer
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $article as xs:string,
+  $year as xs:integer
 ) as element()* {
-    let $value := "DerogationValue"
+  let $value := "DerogationValue"
 
-    let $msg := "The " || $value || " indicates '" || $article || "' has been reported, however the reporting year is greater than " || $year || ". The derogation in the following fields is no longer valid in respect to the reporting year. Please verify and correct the inputs for these fields."
-    let $type := "error"
+  let $msg := "The " || $value || " indicates '" || $article || "' has been reported, however the reporting year is greater than " || $year || ". The derogation in the following fields is no longer valid in respect to the reporting year. Please verify and correct the inputs for these fields."
+  let $type := "error"
 
-    let $valid := scripts:getValidConcepts($value)
+  let $valid := scripts:getValidConcepts($value)
 
-    let $reportingYear := $root/descendant::EUReg:ReportData/EUReg:reportingYear
+  let $reportingYear := $root/descendant::EUReg:ReportData/EUReg:reportingYear
 
-    let $data :=
-        for $x in $root/descendant::EUReg:ProductionInstallationPart
-        let $id := scripts:getGmlId($x)
-        let $derogations := replace($x/EUReg:derogations/@xlink:href, '/+$', '')
+  let $data :=
+  (for $x in $root/descendant::EUReg:ProductionInstallationPart
+    let $id := scripts:getGmlId($x)
+    let $derogations := $x/EUReg:derogations/replace(@xlink:href, '/+$', '')
 
-        where not(scripts:is-empty($derogations)) and $derogations = $valid
-        let $derogations := scripts:normalize($derogations)
+    where not(scripts:is-empty($derogations)) and $derogations = $valid
+    let $derogations := scripts:normalize($derogations)
 
-        where not(scripts:is-empty($reportingYear))
-        let $reportingYear := xs:integer($reportingYear/text())
+    where not(scripts:is-empty($reportingYear))
+    let $reportingYear := xs:integer($reportingYear/text())
 
-        where ($derogations = $article) and ($reportingYear gt $year)
-        return map {
-        "marks" : (4),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$id}</span>, $derogations, $reportingYear)
-        }
+    where ($derogations = $article) and ($reportingYear gt $year)
+    return map {
+      "marks": (4),
+      "data": ($x/local-name(), <span class="iedreg nowrap">{$id}</span>, $derogations, $reportingYear)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "DerogationValue", "reportingYear")
+  let $hdrs := ("Feature", "GML ID", "DerogationValue", "reportingYear")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
- : C10.3 Limited lifetime derogation to reportingYear comparison
+ : C9.3 Limited lifetime derogation to reportingYear comparison
  :)
 
 declare function scripts:checkArticle33(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $article := "Article33"
-    let $year := 2023
+  let $article := "Article33"
+  let $year := 2023
 
-    return scripts:checkDerogationsYear($refcode, $rulename, $root, $article, $year)
+  return scripts:checkDerogationsYear($refcode, $rulename, $root, $article, $year)
 };
 
 (:~
- : C10.4 District heating plants derogation to reportingYear comparison
+ : C9.4 District heating plants derogation to reportingYear comparison
  :)
 
 declare function scripts:checkArticle35(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $article := "Article35"
-    let $year := 2022
+  let $article := "Article35"
+  let $year := 2022
 
-    return scripts:checkDerogationsYear($refcode, $rulename, $root, $article, $year)
+  return scripts:checkDerogationsYear($refcode, $rulename, $root, $article, $year)
 };
 
 declare function scripts:checkDerogationsContinuity(
@@ -2645,7 +2380,7 @@ declare function scripts:checkDerogationsContinuity(
   let $valid := scripts:getValidConcepts($value)
 
   let $data :=
-  for $x in $seq
+  (for $x in $seq
     let $p := scripts:getParent($x)
     let $id := scripts:getInspireId($p)
 
@@ -2671,18 +2406,23 @@ declare function scripts:checkDerogationsContinuity(
       return map {
         "marks": (3, 4),
         "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, $xder, $yder)
-      }
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
   let $hdrs := ("Feature", "Inspire ID", "DerogationValue", "DerogationValue (DB)")
 
   let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
 
   return
-    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+      if (not(database:dbExists())) then
+         scripts:noDbWarning($refcode, $rulename)
+      else if (empty($lastReportingYear)) then
+        scripts:noPreviousYearWarning($refcode, $rulename)
+      else
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C10.5 Limited life time derogation continuity
+ : C9.5 Limited life time derogation continuity
  :)
 
 declare function scripts:checkArticle33Continuity(
@@ -2697,7 +2437,7 @@ declare function scripts:checkArticle33Continuity(
 };
 
 (:~
- : C10.6 District heat plant derogation continuity
+ : C9.6 District heat plant derogation continuity
  :)
 
 declare function scripts:checkArticle35Continuity(
@@ -2712,7 +2452,7 @@ declare function scripts:checkArticle35Continuity(
 };
 
 (:~
- : C10.7 Transitional National Plan derogation continuity
+ : C9.7 Transitional National Plan derogation continuity
  :)
 
 declare function scripts:checkArticle32Continuity(
@@ -2727,577 +2467,465 @@ declare function scripts:checkArticle32Continuity(
 };
 
 (:~
- : 11. LCP & WASTE INCINERATOR CHECKS
+ : 10. LCP & WASTE INCINERATOR CHECKS
  :)
 
 (:~
- : C11.1 otherRelevantChapters to plantType comparison
+ : C10.1 otherRelevantChapters to plantType comparison
  :)
 
 declare function scripts:checkRelevantChapters(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The following ProductionInstallations does not have at least one
-    PlantTypeValues that is consistent with the chapter specified
-    in the otherRelevantChapters field.
-    Please verify and ensure where 'Chapter III' is referred to the PlantTypeValue is 'LCP',
-    and where 'Chapter IV' is referred the PlantTypeValue is 'WI'."
-    let $type := "warning"
+  let $msg := "The following ProductionInstallations have PlantTypeValues that are not consistent with the chapter specified in the otherRelevantChapters field. Please verify and ensure where 'Chapter III' is referred to the PlantTypeValue is 'LCP', and where 'Chapter IV' is referred the PlantTypeValue is 'WI'."
+  let $type := "warning"
 
-    let $validChapters := scripts:getValidConcepts("RelevantChapterValue")
-    let $validPlants := scripts:getValidConcepts("PlantTypeValue")
+  let $validChapters := scripts:getValidConcepts("RelevantChapterValue")
+  let $validPlants := scripts:getValidConcepts("PlantTypeValue")
 
-    let $seq := $root/descendant::EUReg:ProductionInstallation
+  let $seq := $root/descendant::EUReg:ProductionInstallation
 
-    let $data :=
-        for $node in $seq
-        let $gmlid := scripts:getGmlId($node)
-        let $chapter := replace($node/EUReg:otherRelevantChapters/@xlink:href, '/+$', '')
+  let $data :=
+  (for $x in $seq
+    let $x_id := scripts:getGmlId($x)
+    let $chapters := $x/EUReg:otherRelevantChapters/@xlink:href
+    for $c in $chapters
+        let $chapter := replace($c, '/+$', '')
 
         where $chapter = $validChapters
         let $chapter := scripts:normalize($chapter)
 
-        let $partTypes :=
-            for $partid in $node/pf:groupedInstallationPart/@xlink:href
-                let $partid := replace(data($partid), "^#", "")
+        for $y_id in $x/pf:groupedInstallationPart/@xlink:href
+          let $y_id := replace(data($y_id), "^#", "")
 
-                for $part in $root//EUReg:ProductionInstallationPart[@gml:id = $partid]
-                    let $plant := replace($part/EUReg:plantType/@xlink:href, '/+$', '')
+          for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id=$y_id]
+            let $plant := replace($y/EUReg:plantType/@xlink:href, '/+$', '')
 
-                    where $plant = $validPlants
-                    let $plant := scripts:normalize($plant)
-                    return $plant
+            where $plant = $validPlants
+            let $plant := scripts:normalize($plant)
 
-        let $partType := if($chapter = "ChapterIII")
-            then 'LCP'
-            else if($chapter = "ChapterIV")
-            then 'WI'
-            else ''
+            where((($chapter="ChapterIII") and not($plant="LCP")) or (($chapter="ChapterIV") and not($plant="WI")))
+            return map {
+              "marks": (5, 6),
+              "data": ($x/local-name(), <span class="iedreg nowrap">{$x_id}</span>, $y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $chapter, $plant)
+            })[position() = 1 to $scripts:MSG_LIMIT]
 
-        where ((
-                ($chapter = "ChapterIII")
-                and fn:exists($partTypes)
-                and fn:index-of($partTypes, $partType) => fn:count() = 0)
-            or (
-                ($chapter = "ChapterIV")
-                and fn:exists($partTypes)
-                and fn:index-of($partTypes, $partType) => fn:count() = 0))
-        return map {
-        "marks" : (3, 4),
-        "data" : (
-            $node/local-name(),
-            <span class="iedreg nowrap">{$gmlid}</span>,
-            (:<span class="iedreg nowrap">{$partid}</span>,:)
-            $chapter,
-            $partType
-            )
-        }
+  let $hdrs := ("Feature", "GML ID", "Feature", "GML ID", "Relevant Chapter", "Plant Type")
 
-    let $hdrs := ("Feature", "GML ID", "Relevant Chapter", "Plant Type")
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C11.2 LCP plantType
+ : C10.2 LCP plantType
  :)
 
 declare function scripts:checkLCP(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "When PlantTypeValue is 'LCP' the totalRatedThermalInput
-    field should be populated, and nominalCapacity, specificConditions,
-    HeatReleaseHazardousWaste, untreatedMunicipalWaste,
-    publicDisclosure and publicDisclosureURL fields should not be populated.
-    The populated fields for the following ProductionInstallationParts
-    do not meet the above criteria. Please verify and ensure the correct
-    fields have been populated."
+  let $msg := "When PlantTypeValue is 'LCP' the totalRatedThermalInput and derogations fields should both be populated, and nominalCapacity and specificConditions fields should not be populated. The populated fields for the following ProductionInstallationParts do not meet the above criteria. Please verify and ensure the correct fields have been populated."
+  let $type := "warning"
 
-    let $type := "warning"
-    let $needed := ('totalRatedThermalInput')
-    let $notNeeded := ('nominalCapacity', 'specificConditions',
-        'HeatReleaseHazardousWaste', 'untreatedMunicipalWaste',
-        'publicDisclosure', 'publicDisclosureURL')
+  let $valid:= scripts:getValidConcepts("PlantTypeValue")
 
-    let $valid := scripts:getValidConcepts("PlantTypeValue")
+  let $seq := $root/descendant::EUReg:ProductionInstallationPart
 
-    let $seq := $root/descendant::EUReg:ProductionInstallationPart
+  let $data :=
+  (for $x in $seq
+    let $id := scripts:getGmlId($x)
+    let $plant := replace($x/EUReg:plantType/@xlink:href, '/+$', '')
+    let $derogations := $x/EUReg:derogations/replace(@xlink:href, '/+$', '')
+    let $totalRatedThermalInput := $x/EUReg:totalRatedThermalInput
+    let $nominalCapacity := $x/EUReg:nominalCapacity
+    let $specificConditions := $x/EUReg:nominalCapacity
 
-    let $data :=
-        for $part in $seq
-            let $id := scripts:getGmlId($part)
-            let $plant := replace($part/EUReg:plantType/@xlink:href, '/+$', '')
+    where $plant = $valid
+    let $plant := scripts:normalize($plant)
 
-            let $neededFound :=
-                for $node in $needed
-                    let $valuesCount := $part//*[local-name() = $node
-                        and functx:if-empty(data(), '') != ''] => fn:count()
-                    return if($valuesCount > 0)
-                        then 1
-                        else ()
+    where $plant="LCP" and (scripts:is-empty($derogations) or scripts:is-empty($totalRatedThermalInput) or not(scripts:is-empty($nominalCapacity)) and not(scripts:is-empty($specificConditions)))
+    return map {
+      "marks": (),
+      "data": ($x/local-name(), <span class="iedreg nowrap">{$id}</span>)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-            let $notNeededFound :=
-                for $node in $notNeeded
-                    let $valuesCount := $part//*[local-name() = $node
-                        and functx:if-empty(data(), '') != ''] => fn:count()
-                    return if($valuesCount > 0)
-                        then 1
-                        else ()
 
-            where $plant = $valid
-            let $plant := scripts:normalize($plant)
+  let $hdrs := ("Feature", "GML ID")
 
-            where $plant = "LCP"
-                and
-                (
-                    $neededFound => fn:count() != $needed => fn:count()
-                    or $notNeededFound => fn:count() != 0
-                )
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-            return map {
-            "marks" : (),
-            "data" : ($part/local-name(), <span class="iedreg nowrap">{$id}</span>)
-            }
-
-    let $hdrs := ("Feature", "GML ID")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C11.3 totalRatedThermalInput plausibility
+ : C10.3 totalRatedThermalInput plausibility
  :)
 
 declare function scripts:checkRatedThermalInput(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The totalRatedThermalInput fields in this submission contain an integer less than or equal to 50 or an integer greater than 8500, meaning the spatial object is no longer considered an LCP. Please verify and ensure the values entered are correct."
-    let $type := "warning"
+  let $msg := "The totalRatedThermalInput fields in this submission contain an integer less than or equal to 50 or an integer greater than 8500, meaning the spatial object is no longer considered an LCP. Please verify and ensure the values entered are correct."
+  let $type := "warning"
 
-    let $seq := $root/descendant::EUReg:ProductionInstallationPart/EUReg:totalRatedThermalInput
+  let $seq := $root/descendant::EUReg:ProductionInstallationPart/EUReg:totalRatedThermalInput
 
-    let $data :=
-        for $x in $seq
-        let $parent := scripts:getParent($x)
-        let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+  let $data :=
+  (for $x in $seq
+    let $parent := scripts:getParent($x)
+    let $feature := $parent/local-name()
+    let $id := scripts:getGmlId($parent)
 
-        let $v := xs:float($x => functx:if-empty(0))
-        where $v le 50 or $v gt 8500
+    let $v := xs:float($x)
+    where $v le 50 or $v gt 8500
 
-        return map {
-        "marks" : (3),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
-        }
+    return map {
+      "marks": (3),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "totalRatedThermalInput")
+  let $hdrs := ("Feature", "GML ID", "totalRatedThermalInput")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C11.4 WI plantType
+ : C10.4 WI plantType
  :)
 
 declare function scripts:checkWI(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $reportingYear := $root//EUReg:reportingYear/data()
-    let $needed := ('nominalCapacity', 'specificConditions')
-    let $notNeeded2017 := ('totalRatedThermalInput', 'derogations')
-    let $notNeeded2018 := ('HeatReleaseHazardousWaste', 'untreatedMunicipalWaste',
-        'publicDisclosure', 'publicDisclosureURL')
-    let $notNeededFinal := if($reportingYear = 2017)
-        then $notNeeded2017
-        else ($notNeeded2017, $notNeeded2018)
+  let $msg := "When PlantTypeValue is 'WI' the nominalCapacity field should be populated, and totalRatedThermalInput and derogations fields should not be populated. The populated fields for the following ProductionInstallationParts do not meet the above criteria. Please verify and ensure the correct fields have been populated."
+  let $type := "warning"
 
-    let $msg := "When PlantTypeValue is 'WI' " || fn:string-join($needed, ', ') ||
-        " fields should be populated, and " || fn:string-join($notNeededFinal, ', ') ||
-        " fields should not be populated. The populated fields for the following
-        ProductionInstallationParts do not meet the above criteria. Please verify
-        and ensure the correct fields have been populated."
-    let $type := "warning"
+  let $valid:= scripts:getValidConcepts("PlantTypeValue")
 
-    let $valid := scripts:getValidConcepts("PlantTypeValue")
+  let $seq := $root/descendant::EUReg:ProductionInstallationPart
 
-    let $seq := $root/descendant::EUReg:ProductionInstallationPart
+  let $data :=
+  (for $x in $seq
+    let $id := scripts:getGmlId($x)
+    let $plant := replace($x/EUReg:plantType/@xlink:href, '/+$', '')
+    let $derogations := $x/EUReg:derogations/replace(@xlink:href, '/+$', '')
+    let $totalRatedThermalInput := $x/EUReg:totalRatedThermalInput
+    let $nominalCapacity := $x/EUReg:nominalCapacity
 
-    let $data :=
-        for $part in $seq
-            let $id := scripts:getGmlId($part)
-            let $plant := replace($part/EUReg:plantType/@xlink:href, '/+$', '')
+    where $plant = $valid
+    let $plant := scripts:normalize($plant)
 
-            let $neededFound :=
-                for $node in $needed
-                    let $valuesCount := $part//*[local-name() = $node
-                        and functx:if-empty(data(), '') != ''] => fn:count()
-                    return if($valuesCount > 0)
-                        then 1
-                        else ()
+    where $plant="WI" and (not(scripts:is-empty($derogations)) or not(scripts:is-empty($totalRatedThermalInput)) or scripts:is-empty($nominalCapacity))
+    return map {
+      "marks": (),
+      "data": ($x/local-name(), <span class="iedreg nowrap">{$id}</span>)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-            let $notNeededFound :=
-                for $node in $notNeededFinal
-                    let $valuesCount := $part//*[local-name() = $node
-                        and functx:if-empty(data(), '') != ''] => fn:count()
-                    return if($valuesCount > 0)
-                        then 1
-                        else ()
 
-            where $plant = $valid
-            let $plant := scripts:normalize($plant)
+  let $hdrs := ("Feature", "GML ID")
 
-            where $plant = "WI"
-                and
-                (
-                    $neededFound => fn:count() != $needed => fn:count()
-                    or $notNeededFound => fn:count() != 0
-                )
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-            (:let $asd := trace($id, 'id:'):)
-            (:let $asd := trace($neededFound => fn:count(), 'neededFound:'):)
-            (:let $asd := trace($needed => fn:count(), 'needed:'):)
-            (:let $asd := trace($notNeededFound => fn:count(), 'notNeededFound:'):)
-
-            return map {
-            "marks" : (),
-            "data" : ($part/local-name(), <span class="iedreg nowrap">{$id}</span>)
-            }
-
-    let $hdrs := ("Feature", "GML ID")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C11.5 nominalCapacity plausibility
+ : C10.5 nominalCapacity plausibility
  :)
 
 declare function scripts:checkNominalCapacity(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $warn1 := "The integer supplied in the permittedCapacityHazardous
-        or permittedCapacityNonHazardous field
-        is greater than the integer supplied in the totalNominalCapacityAnyWasteType field,
-        for the following ProductionInstallationParts.
-        Please review and amend so the permittedCapacityHazardous/permittedCapacityNonHazardous
-        field represents an integer less than or equal to the totalNominalCapacityAnyWasteType."
+  let $error := "The integer supplied in the permittedCapacityHazardous field is greater than the integer supplied in the totalNominalCapacityAnyWasteType field, for the following ProductionInstallationParts. Please review and amend so the permittedCapacityHazardous field represents an integer less than or equal to the totalNominalCapacityAnyWasteType."
+  let $warn := "The integer specified in the totalNominalCapacityAnyWasteType field exceeds the anticipated maximum threshold of 60. Please verify and ensure the integer supplied is correct."
+  let $info := "The integer specified in the totalNominalCapacityAnyWasteType field is greater than the ideal threshold of 30. Please verify and ensure the integer supplied is correct."
 
-    let $warn2 := "The integer specified in the totalNominalCapacityAnyWasteType field
-        exceeds the anticipated maximum threshold of 60. Please verify and ensure the integer
-        supplied is correct."
-    let $info := "The integer specified in the totalNominalCapacityAnyWasteType field
-        is greater than the ideal threshold of 30.
-        Please verify and ensure the integer supplied is correct."
+  let $seq := $root/descendant::EUReg:ProductionInstallationPart/EUReg:nominalCapacity
 
-    let $seq := $root/descendant::EUReg:ProductionInstallationPart/EUReg:nominalCapacity
+  let $data :=
+  (for $x in $seq
+    let $parent := scripts:getParent($x)
+    let $feature := $parent/local-name()
+    let $id := scripts:getGmlId($parent)
 
-    let $data :=
-        for $node in $seq
-            let $totalAnyWaste := $node//*:totalNominalCapacityAnyWasteType/xs:float(.)
-            let $hazardous := $node//*:permittedCapacityHazardous/xs:float(.)
-            let $nonHazardous := $node//*:permittedCapacityNonHazardous/xs:float(.)
-            where $totalAnyWaste >= 30
-                or $hazardous > $totalAnyWaste
-                or $nonHazardous > $totalAnyWaste
-            let $parent := scripts:getParent($node)
-            let $feature := $parent/local-name()
-            let $id := scripts:getGmlId($parent)
+    let $hazardous := $x/descendant::EUReg:permittedCapacityHazardous/xs:float(.)
+    let $any := $x/descendant::EUReg:totalNominalCapacityAnyWasteType/xs:float(.)
 
-            return map {
-            "marks" : (3, 4, 5),
-            "data" : (
-                $feature,
-                <span class="iedreg nowrap">{$id}</span>,
-                $hazardous,
-                $nonHazardous,
-                $totalAnyWaste
-            )
-            }
+    return map {
+      "marks": (3, 4),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $hazardous, $any)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $yellow1 :=
-        for $m in $data
-        let $hazardous := $m("data")[3]
-        let $nonHazardous := $m("data")[4]
-        let $totalAnyWaste := $m("data")[5]
-        where $hazardous > $totalAnyWaste or $nonHazardous > $totalAnyWaste
-        let $mark1 := if($hazardous > $totalAnyWaste) then (3) else ()
-        let $mark2 := if($nonHazardous > $totalAnyWaste) then (4) else ()
+  let $red :=
+  for $m in $data
+    let $hazardous := $m("data")[3]
+    let $any := $m("data")[4]
+    where $hazardous gt $any
+    return $m
 
-        return map {
-            "marks" : ($mark1, $mark2),
-            "data" : $m("data")
-        }
+  let $yellow :=
+  for $m in $data
+    let $hazardous := $m("data")[3]
+    let $any := $m("data")[4]
+    where $any gt 60
+    return map {
+      "marks": (4),
+      "data": $m("data")
+    }
 
-    let $yellow2 :=
-        for $m in $data
-        let $totalAnyWaste := $m("data")[5]
-        where $totalAnyWaste gt 60
-        return map {
-            "marks" : (5),
-            "data" : $m("data")
-        }
+  let $blue :=
+  for $m in $data
+    let $hazardous := $m("data")[3]
+    let $any := $m("data")[4]
+    where $any gt 30 and $any le 60
+    return map {
+      "marks": (4),
+      "data": $m("data")
+    }
 
-    let $blue :=
-        for $m in $data
-        let $totalAnyWaste := $m("data")[5]
-        where $totalAnyWaste gt 30 and $totalAnyWaste le 60
-        return map {
-            "marks" : (5),
-            "data" : $m("data")
-        }
+  let $hdrs := ("Feature", "GML ID", "permittedCapacityHazardous", "totalNominalCapacityAnyWasteType")
 
-    let $hdrs := ("Feature", "GML ID", "permittedCapacityHazardous",
-        "permittedCapacityNonHazardous", "totalNominalCapacityAnyWasteType")
+  let $details :=
+    <div class="iedreg">{
+    if (empty($red)) then () else scripts:getDetails($error, "error", $hdrs, $red),
+    if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
+    if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
+    }</div>
 
-    let $details :=
-        <div class="iedreg">{
-            if (empty($yellow1)) then () else scripts:getDetails($warn1, "warning", $hdrs, $yellow1),
-            if (empty($yellow2)) then () else scripts:getDetails($warn2, "warning", $hdrs, $yellow2),
-            if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
-        }</div>
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, count(($yellow1, $yellow2)), count($blue), $details)
+  return
+    scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
 };
 
 (:~
- : 12. CONFIDENTIALITY CHECKS
+ : 11. CONFIDENTIALITY CHECKS
  :)
 
 (:~
- : C12.1 Confidentiality restriction
+ : C11.1 Confidentiality restriction
  :)
 
 declare function scripts:checkConfidentialityRestriction(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The following ProductionFacilities and/or ProductionInstallations, have claims for confidentiality for the competent authority address. The address details of a competent authority cannot be claimed as confidential. Please leave the confidentialityReason field unpopulated"
-    let $type := "error"
+  let $msg := "The following ProductionFacilities and/or ProductionInstallations, have claims for confidentiality for the competent authority address. The address details of a competent authority cannot be claimed as confidential. Please leave the confidentialityReason field unpopulated"
+  let $type := "error"
 
-    let $seq := $root/descendant::*:CompetentAuthority
+  let $seq := $root/descendant::*:CompetentAuthority
 
-    let $data :=
-        for $s in $seq
-        let $feature := $s/parent::*/parent::*
-        let $reason := $s/descendant::*:AddressDetails/child::*:confidentialityReason
+  let $data :=
+    (for $s in $seq
+    let $feature := $s/parent::*/parent::*
+    let $reason := $s/descendant::*:AddressDetails/child::*:confidentialityReason
 
-        let $id := scripts:getGmlId($feature)
-        let $p := scripts:getPath($reason)
-        let $rsn := scripts:normalize(data($reason/attribute::*:href))
+    let $id := scripts:getGmlId($feature)
+    let $p := scripts:getPath($reason)
+    let $rsn := scripts:normalize(data($reason/attribute::*:href))
 
-        where (not(scripts:is-empty($reason)))
-        return map {
-        "marks" : (4),
-        "data" : ($feature/local-name(), <span class="iedreg nowrap">{$id}</span>, $p, $rsn)
-        }
+    where (not(scripts:is-empty($reason)))
+    return map {
+      "marks": (4),
+      "data": ($feature/local-name(), <span class="iedreg nowrap">{$id}</span>, $p, $rsn)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "Path", "Confidentiality reason")
+  let $hdrs := ("Feature", "GML ID", "Path", "Confidentiality reason")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
- : C12.2 Confidentiality overuse
+ : C11.2 Confidentiality overuse
  :)
 
 declare function scripts:checkConfidentialityOveruse(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) {
-    let $warn := "The total amount of data types claiming confidentiality in the XML submission is PERC, which is greater than expected (10% of data types). Please evaluate to determine all inputs are correct and all cliams for confidentiality are necessary."
-    let $info := "The total amount of data types claiming confidentiality in the XML submission is PERC, which is greater than ideally anticipated (5% of data types). Please evaluate to determine all inputs are correct and all claims for confidentiality are necessary."
+  let $warn := "The total amount of data types claiming confidentiality in the XML submission is PERC, which is greater than expected (10% of data types). Please evaluate to determine all inputs are correct and all cliams for confidentiality are necessary."
+  let $info := "The total amount of data types claiming confidentiality in the XML submission is PERC, which is greater than ideally anticipated (5% of data types). Please evaluate to determine all inputs are correct and all claims for confidentiality are necessary."
 
-    let $value := "ReasonValue"
-    let $valid := scripts:getValidConcepts($value)
+  let $value := "ReasonValue"
+  let $valid := scripts:getValidConcepts($value)
 
-    let $seq := (
-        $root/descendant::EUReg:AddressDetails,
-        $root/descendant::EUReg:FeatureName,
-        $root/descendant::EUReg:ParentCompanyDetails
-    )
+  let $seq := (
+    $root/descendant::EUReg:AddressDetails,
+    $root/descendant::EUReg:FeatureName,
+    $root/descendant::EUReg:ParentCompanyDetails
+  )
 
-    let $data :=
-        for $r in $seq/child::EUReg:confidentialityReason
-        let $parent := scripts:getParent($r)
-        let $feature := $parent/local-name()
+  let $data :=
+  (for $r in $seq/child::EUReg:confidentialityReason
+    let $parent := scripts:getParent($r)
+    let $feature := $parent/local-name()
 
-        let $p := scripts:getPath($r)
-        let $id := scripts:getGmlId($parent)
+    let $p := scripts:getPath($r)
+    let $id := scripts:getGmlId($parent)
 
-        let $reason := $r/attribute::xlink:href
-        let $v := scripts:normalize(data($reason))
+    let $reason := $r/attribute::xlink:href
+    let $v := scripts:normalize(data($reason))
 
-        return map {
-        "marks" : (4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
-        }
+    return map {
+      "marks": (4),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $ratio := count($data) div count($seq)
-    let $perc := round-half-to-even($ratio * 100, 1) || '%'
+  let $ratio := count($data) div count($seq)
+  let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
-    let $hdrs := ("Feature", "GML ID", "Path", "confidentialityReason")
+  let $hdrs := ("Feature", "GML ID", "Path", "confidentialityReason")
 
-    return
-        if ($ratio gt 0.1) then
-            let $msg := replace($warn, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
-        else if ($ratio gt 0.05) then
-            let $msg := replace($info, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "info", $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
-        else
-            scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
+  return
+    if ($ratio gt 0.1) then
+      let $msg := replace($warn, 'PERC', $perc)
+      let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+      return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+    else if ($ratio gt 0.05) then
+      let $msg := replace($info, 'PERC', $perc)
+      let $details := scripts:getDetails($msg, "info", $hdrs, $data)
+      return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+    else
+      scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
 };
 
 (:~
- : 13. OTHER IDENTIFIERS & MISCELLANEOUS CHECKS
+ : 12. OTHER IDENTIFIERS & MISCELLANEOUS CHECKS
  :)
 
 declare function scripts:getIdentifier(
-        $file as xs:string,
-        $identifier as xs:string
+  $file as xs:string,
+  $identifier as xs:string
 ) as element()* {
-    let $url := "http://converterstest.eionet.europa.eu/xmlfile/" || $file
-    return if (doc-available($url)) then
-        doc($url)/descendant::*[local-name() = $identifier]
-    else if (doc-available($file)) then
-            doc($file)/descendant::*[local-name() = $identifier]
-        else
-            ()
+  let $url := "https://converterstest.eionet.europa.eu/xmlfile/" || $file
+  return if (doc-available($url)) then
+    doc($url)/descendant::*[local-name()=$identifier]
+  else if (doc-available($file)) then
+    doc($file)/descendant::*[local-name()=$identifier]
+  else
+    ()
 };
 
 declare function scripts:checkIdentifier(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element(),
-        $feature as xs:string,
-        $identifier as xs:string,
-        $ids as xs:string*
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element(),
+  $feature as xs:string,
+  $identifier as xs:string,
+  $ids as xs:string*
 ) as element()* {
-    let $msg := "The following " || scripts:makePlural($feature) || " have " || $identifier || " values that are not valid. Please verify an ensure all IDs are correct."
-    let $type := "warning"
+  let $msg := "The following " || scripts:makePlural($feature) || " have " || $identifier || " values that are not valid. Please verify an ensure all IDs are correct."
+  let $type := "warning"
 
-    let $seq := $root/descendant::*[local-name() = $feature]/child::*[local-name() = $identifier]
+  let $seq := $root/descendant::*[local-name()=$feature]/child::*[local-name()=$identifier]
 
-    let $data :=
-        for $identifier in $seq
-        let $parent := scripts:getParent($identifier)
-        let $id := scripts:getGmlId($parent)
+  let $data :=
+  (for $x in $seq
+    let $parent := scripts:getParent($x)
+    let $id := scripts:getGmlId($parent)
 
-        let $value := $identifier/text() => functx:if-empty('')
-        where $value != '' and not($value = $ids)
+    let $v := $x/text()
+    where not($v = $ids)
 
-        return map {
-        "marks" : (3),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $value)
-        }
+    return map {
+      "marks": (3),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", $identifier)
+  let $hdrs := ("Feature", "GML ID", $identifier)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C13.1 ETSIdentifier validity
+ : C12.1 ETSIdentifier validity
  :)
 
 declare function scripts:checkETSIdentifier(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) {
-    let $feature := "ProductionInstallation"
-    let $identifier := "ETSIdentifier"
-    let $ids := scripts:getIdentifier('iedreg-ets.xml', $identifier)/text()
+  let $feature := "ProductionInstallation"
+  let $identifier := "ETSIdentifier"
+  let $ids := scripts:getIdentifier('iedreg-ets.xml', $identifier)/text()
 
-    return scripts:checkIdentifier($refcode, $rulename, $root, $feature, $identifier, $ids)
+  return scripts:checkIdentifier($refcode, $rulename, $root, $feature, $identifier, $ids)
 };
 
 (:~
- : C13.2 eSPIRSId validity
+ : C12.2 eSPIRSId validity
  :)
 
 declare function scripts:checkeSPIRSIdentifier(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) {
-    let $feature := "ProductionInstallation"
-    let $identifier := "eSPIRSIdentifier"
-    let $ids := scripts:getIdentifier('iedreg-espirs.xml', $identifier)/text()
+  let $feature := "ProductionInstallation"
+  let $identifier := "eSPIRSIdentifier"
+  let $ids := scripts:getIdentifier('iedreg-espirs.xml', $identifier)/text()
 
-    return scripts:checkIdentifier($refcode, $rulename, $root, $feature, $identifier, $ids)
+  return scripts:checkIdentifier($refcode, $rulename, $root, $feature, $identifier, $ids)
 };
 
 (:~
- : C13.3 ProductionFacility facilityName to parentCompanyName comparison
+ : C12.3 ProductionFacility facilityName to parentCompanyName comparison
  :)
 
 declare function scripts:checkFacilityName(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The facilityName fields and parentCompany fields are the same for the following ProductionFacilities. Please verify and consider refining either name so that each name is distinct."
-    let $type := "info"
+  let $msg := "The facilityName fields and parentCompany fields are the same for the following ProductionFacilities. Please verify and consider refining either name so that each name is distinct."
+  let $type := "info"
 
-    let $seq := $root/descendant::EUReg:ProductionFacility
+  let $seq := $root/descendant::EUReg:ProductionFacility
 
-    let $data :=
-        for $x in $seq
-        let $id := scripts:getGmlId($x)
-        let $facilityName := $x/EUReg:facilityName/descendant::EUReg:nameOfFeature
-        let $companyName := $x/EUReg:parentCompany/descendant::EUReg:parentCompanyName
+  let $data :=
+  (for $x in $seq
+    let $id := scripts:getGmlId($x)
+    let $facilityName := $x/EUReg:facilityName/descendant::EUReg:nameOfFeature
+    let $companyName := $x/EUReg:parentCompany/descendant::EUReg:parentCompanyName
 
-        where not(scripts:is-empty($facilityName)) and not(scripts:is-empty($companyName))
-        where ($facilityName/text() = $companyName/text())
-        return map {
-        "marks" : (3),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$id}</span>, $facilityName/text())
-        }
+    where not(scripts:is-empty($facilityName)) and not(scripts:is-empty($companyName))
+    where ($facilityName/text() = $companyName/text())
+    return map {
+      "marks": (3, 4),
+      "data": ($x/local-name(), <span class="iedreg nowrap">{$id}</span>, <span class="iedreg nowrap">{$facilityName/text()}</span>, <span class="iedreg nowrap">{$companyName/text()}</span>)
+    }) [position() = 1 to $scripts:MSG_LIMIT]
 
-    let $hdrs := ("Feature", "GML ID", "facilityName")
+  let $hdrs := ("Feature", "GML ID", "facilityName", "parentCompany")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 
 (:~
- : C13.4 nameOfFeature
+ : C12.4 nameOfFeature
  :)
 
 declare function scripts:checkNameOfFeatureContinuity(
@@ -3320,7 +2948,7 @@ declare function scripts:checkNameOfFeatureContinuity(
   ))
 
   let $data :=
-  for $x in $seq
+  (for $x in $seq
     let $p := scripts:getParent($x)
     let $id := scripts:getInspireId($p)
 
@@ -3337,9 +2965,103 @@ declare function scripts:checkNameOfFeatureContinuity(
       return map {
         "marks": (4, 5),
         "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, <span class="iedreg nowrap">{$xName}</span>, <span class="iedreg nowrap">{$yName}</span>)
-      }
+      })[position() = 1 to $scripts:MSG_LIMIT]
 
   let $hdrs := ("Feature", "Inspire ID", "nameOfFeature", "nameOfFeature (DB)")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+      if (not(database:dbExists())) then
+         scripts:noDbWarning($refcode, $rulename)
+      else if (empty($lastReportingYear)) then
+        scripts:noPreviousYearWarning($refcode, $rulename)
+      else
+        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+};
+
+(:~
+ : C12.5 reportingYear plausibility
+ :)
+
+declare function scripts:checkReportingYear(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "The XML submission has a different reportingYear to that of Reportnet's envelope year. Please verify and ensure the correct year has been inputted."
+  let $type := "warning"
+
+  let $url := data($root/gml:metaDataProperty/attribute::xlink:href)
+  let $envelope := doc($url)/envelope
+
+  let $error :=
+  if (scripts:is-empty($envelope)) then
+    error(xs:QName('err:FOER0000'), 'Failed to retrieve envelope metadata')
+  else
+    ()
+
+  let $envelopeYear := $envelope/year
+  where not(scripts:is-empty($envelopeYear))
+  let $envelopeYear := xs:integer($envelopeYear/text())
+
+  let $seq := $root/descendant::EUReg:ReportData
+
+  let $data :=
+  (for $x in $seq
+    let $feature := $x/local-name()
+    let $id := scripts:getGmlId($x)
+
+    let $reportingYear := $x/EUReg:reportingYear
+    let $p := scripts:getPath($reportingYear)
+
+    where not(scripts:is-empty($reportingYear))
+    let $reportingYear := xs:integer($reportingYear/text())
+
+    where $reportingYear ne $envelopeYear
+    return map {
+      "marks": (4, 5),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $reportingYear, $envelopeYear)
+    })[position() = 1 to $scripts:MSG_LIMIT]
+
+  let $hdrs := ("Feature", "GML ID", "Path", "reportingYear", "envelopeYear")
+
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+};
+
+(:~
+ : C12.6 electronicMailAddress format
+ :)
+
+declare function scripts:checkElectronicMailAddressFormat(
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+) as element()* {
+  let $msg := "The email address specified in the electronicMailAddress field, for the following ProductionFacility/ProductionInstallation, does not contain the at (@) symbol and at least one dot (.) after it (e.g. emailaddress@test.com). Please verify and ensure all email addresses are inputted correctly"
+  let $type := "info"
+
+  let $seq := $root/descendant::*:electronicMailAddress
+
+  let $data :=
+  (for $r in $seq
+    let $parent := scripts:getParent($r)
+    let $feature := $parent/local-name()
+
+    let $p := scripts:getPath($r)
+    let $id := scripts:getGmlId($parent)
+    let $email := $r/text()
+
+    where (not(matches($r, '.+@.+\..{2,63}')))
+    return map {
+      "marks": (4),
+      "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $email)
+    })[position() = 1 to $scripts:MSG_LIMIT]
+
+  let $hdrs := ("Feature", "GML ID", "Path", "E-mail address")
 
   let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3348,444 +3070,84 @@ declare function scripts:checkNameOfFeatureContinuity(
 };
 
 (:~
- : C13.5 reportingYear plausibility
- :)
-
-declare function scripts:checkReportingYear(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := "The XML submission has a different reportingYear to that of Reportnet's envelope year. Please verify and ensure the correct year has been inputted."
-    let $type := "warning"
-
-    let $url := data($root/gml:metaDataProperty/attribute::xlink:href)
-    let $envelope := doc($url)/envelope
-
-    let $error :=
-        if (scripts:is-empty($envelope)) then
-            error(xs:QName('err:FOER0000'), 'Failed to retrieve envelope metadata')
-        else
-            ()
-
-    let $envelopeYear := $envelope/year
-    where not(scripts:is-empty($envelopeYear))
-    let $envelopeYear := xs:integer($envelopeYear/text())
-
-    let $seq := $root/descendant::EUReg:ReportData
-
-    let $data :=
-        for $x in $seq
-        let $feature := $x/local-name()
-        let $id := scripts:getGmlId($x)
-
-        let $reportingYear := $x/EUReg:reportingYear
-        let $p := scripts:getPath($reportingYear)
-
-        where not(scripts:is-empty($reportingYear))
-        let $reportingYear := xs:integer($reportingYear/text())
-
-        return map {
-        "marks" : (4, 5),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $reportingYear, $envelopeYear)
-        }
-
-    let $hdrs := ("Feature", "GML ID", "Path", "reportingYear", "envelopeYear")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
-};
-
-(:~
- : C13.6 electronicMailAddress format
- :)
-
-declare function scripts:checkElectronicMailAddressFormat(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := "The email address specified in the electronicMailAddress field, for the following ProductionFacility/ProductionInstallation, does not contain the at (@) symbol and at least one dot (.) after it (e.g. emailaddress@test.com). Please verify and ensure all email addresses are inputted correctly"
-    let $type := "info"
-
-    let $seq := $root/descendant::*:electronicMailAddress
-
-    let $data :=
-        for $r in $seq
-        let $parent := scripts:getParent($r)
-        let $feature := $parent/local-name()
-
-        let $p := scripts:getPath($r)
-        let $id := scripts:getGmlId($parent)
-        let $email := $r/text()
-
-        where (not(matches($r, '.+@.+\..{2,63}')))
-        return map {
-        "marks" : (4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $email)
-        }
-
-    let $hdrs := ("Feature", "GML ID", "Path", "E-mail address")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
-};
-
-(:~
- : C13.7 Lack of facility address
+ : C12.7 Lack of facility address
  :)
 
 declare function scripts:checkFacilityAddress(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $warn := "The number of ProductionFacilities without the address field populated equals PERC, which exceeds threshold limit 0.7%. Please verify and populate the required address fields."
-    let $info := "The number of ProductionFacilities without the address field populated equals PERC, which exceeds recommended limit 0.1%. Please verify and populate the required address fields."
+  let $warn := "The number of ProductionFacilities without the address field populated equals PERC, which exceeds threshold limit 0.7%. Please verify and populate the required address fields."
+  let $info := "The number of ProductionFacilities without the address field populated equals PERC, which exceeds recommended limit 0.1%. Please verify and populate the required address fields."
 
-    let $seq := $root/descendant::*:ProductionFacility
+  let $seq := $root/descendant::*:ProductionFacility
 
-    let $data :=
-        for $f in $seq
-        let $inspireId := scripts:getInspireId($f)
+  let $data :=
+  (for $f in $seq
+    let $inspireId := scripts:getInspireId($f)
 
-        let $p := scripts:getPath($f)
-        let $id := scripts:getGmlId($f)
+    let $p := scripts:getPath($f)
+    let $id := scripts:getGmlId($f)
 
-        where (string-length(string-join($f/child::*:address/child::*:AddressDetails/child::*, '')) = 0)
-        return map {
-        "marks" : (2),
-        "data" : ($p, <span class="iedreg nowrap">{$id}</span>)
-        }
+    where (string-length(string-join($f/child::*:address/child::*:AddressDetails/child::*, '')) = 0)
+    return map {
+      "marks": (2),
+      "data": ($p, <span class="iedreg nowrap">{$id}</span>)
+    })[position() = 1 to $scripts:MSG_LIMIT]
 
-    let $ratio := count($data) div count($seq)
-    let $perc := round-half-to-even($ratio * 100, 1) || '%'
+  let $ratio := count($data) div count($seq)
+  let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
-    let $hdrs := ("Path", "Inspire ID")
+  let $hdrs := ("Path", "GML ID")
 
-    return
-        if ($ratio <= 0.001) then
-            scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
-        else if ($ratio <= 0.007) then
-            let $msg := replace($info, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "info", $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
-        else
-            let $msg := replace($warn, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    if ($ratio <= 0.001) then
+      scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
+    else if ($ratio <= 0.007) then
+      let $msg := replace($info, 'PERC', $perc)
+      let $details := scripts:getDetails($msg, "info", $hdrs, $data)
+      return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+    else
+      let $msg := replace($warn, 'PERC', $perc)
+      let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+      return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
-    C13.8 DateOfStartOfOperation future year
-:)
-
-declare function scripts:checkDateOfStartOfOperationFuture(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := "For the following ProductionFacilities, ProductionInstallations
-        , ProductionInstallationParts the dateOfStartOfOperation attribute is
-        referring to a year which is a future year relative to the year specified
-        in the reportingYear attribute."
-    let $type := "error"
-    let $reportingYear := $root//*:reportingYear/xs:float(.)
-
-    let $seq := $root//*:dateOfStartOfOperation
-
-    let $data :=
-        for $date in $seq
-            let $parent := scripts:getParent($date)
-            let $id := scripts:getInspireId($parent)
-            (:let $yearFromDate := fn:year-from-dateTime(xs:dateTime($date/data())):)
-            let $yearFromDate := $date/data() => fn:substring(1, 4)
-                => functx:if-empty(0) => fn:number()
-
-            where $yearFromDate > $reportingYear
-
-            return map {
-                "marks": (),
-                "data": (
-                    $parent/local-name(),
-                    $id,
-                    $date,
-                    $reportingYear
-                )
-            }
-
-    let $hdrs := ("Feature", "GML ID", "Date of start of operation", "Reporting year")
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
-
-(:~
- : C13.8(old) Character string space identification
+ : C12.8 Character string space identification
  :)
 
 declare function scripts:checkWhitespaces(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
 ) as element()* {
-    let $msg := "The first character, of the following spatial objects' characterStrings, represents a space. Please verify and ensure the CharacterString has been inputted correctly to prevent duplication"
-    let $type := "warning"
+  let $msg := "The first character, of the following spatial objects' characterStrings, represents a space. Please verify and ensure the CharacterString has been inputted correctly to prevent duplication"
+  let $type := "warning"
 
-    let $seq := $root/descendant::*
+  let $seq := $root/descendant::*
 
-    let $data :=
-        for $e in $seq
-        let $p := scripts:getPath($e)
-        let $whites := <whites>{functx:get-matches-and-non-matches($e/text(), '^\s+')}</whites>
-        let $result := <span class="iedreg">&quot;<pre class="iedreg">{replace(replace(replace($whites/match/text(), '\t', '\\t'), '\r', '\\r'), '\n', '\\n')}</pre>{$whites/non-match/text()}&quot;</span>
+  let $data :=
+  for $e in $seq
+    let $p := scripts:getPath($e)
+    let $whites := <whites>{functx:get-matches-and-non-matches($e/text(), '^\s+')}</whites>
+    let $result := <span class="iedreg">&quot;<pre class="iedreg">{replace(replace(replace($whites/match/text(), '\t', '\\t'), '\r', '\\r'), '\n', '\\n')}</pre>{$whites/non-match/text()}&quot;</span>
 
-        where ($e/text() and not($e/*) and not(normalize-space($e) = '') and not(empty($e/text())) and matches($e, '^\s+'))
-        return map {
-        "marks" : (2),
-        "data" : ($p, $result)
-        }
+    where ($e/text() and not($e/*) and not(normalize-space($e) = '') and not(empty($e/text())) and matches($e, '^\s+'))
+    return map {
+      "marks": (2),
+      "data": ($p, $result)
+    }
 
-    let $hdrs := ("Path", "CharacterString")
+  let $hdrs := ("Path", "CharacterString")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-    return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+  return
+    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
-    C1.1 2017 reporting year versus 2018 and later reporting years
-:)
-
-declare function scripts:check2018year(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := 'ASD QWE ARARSAR'
-    let $type := 'error'
-    let $iedVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/IED'
-
-    let $mapAttrs := map {
-        'ProductionInstallation': ('baselineReportIndicator', 'publicEmissionMonitoring',
-            'BATConclusion'),
-        'siteVisits': ('SiteVisitURL'),
-        'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate',
-            'derogationDurationEndDate'),
-        'stricterPermitConditions': ('StricterPermitConditionsIndicator', 'article18',
-            'article14.4', 'BATAEL')
-    }
-
-    let $seq := $root//*:ProductionInstallation
-
-    let $data :=
-        for $installation in $seq
-            let $featureMain := $installation/local-name()
-            let $gmlid := scripts:getGmlId($installation)
-            let $installationType := $installation//*:installationType/@xlink:href
-            where $installationType = $iedVocab
-
-            for $feature in map:keys($mapAttrs)
-                let $featureSubList := $installation/descendant-or-self::*
-                        [local-name() = $feature]
-
-                let $featureSubList := if(fn:empty($featureSubList))
-                    then <empty/>
-                    else $featureSubList
-
-                for $featureSub in $featureSubList
-                    let $batDerogInd := $featureSub//*:BATDerogationIndicator
-                    where $feature != 'BATDerogation' or
-                        ($feature = 'BATDerogation' and $batDerogInd)
-
-                    for $attr in $mapAttrs?($feature)
-                        let $strictPermit := $featureSub//*:stricterPermitConditionsIndicator
-                        where $feature != 'stricterPermitConditions' or
-                            ($feature = 'stricterPermitConditions' and $attr != 'BATAEL') or
-                            ($feature = 'stricterPermitConditions' and $attr = 'BATAEL'
-                                    and $strictPermit)
-
-                        let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
-
-                        where $attrCount = 0
-                        return map {
-                            "marks" : (3),
-                            "data" : ($featureMain, $gmlid, $feature, $attr)
-                        }
-
-    let $hdrs := ('Feature main', 'GML ID', 'Feature sub', 'Attribute')
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
-
-(:~
-    C1.2 Facility Type
-:)
-
-declare function scripts:checkFacilityType(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := 'ASD QWE ARARSAR'
-    let $type := 'error'
-    let $eprtrVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FaciltyTypeValue/EPRTR'
-
-    let $mapAttrs := map {
-        'CompetentAuthority': ('organisationName', 'individualName',
-            'electronicMailAddress', 'telephoneNo'),
-        'Address': ('streetName', 'buildingNumber', 'city', 'postalCode'),
-        'parentCompanyDetails': ('parentCompanyName'),
-        'EPRTRAnnexIActivity': ('mainActivity')
-    }
-
-    let $seq := $root//*:ProductionFacility
-
-    let $data :=
-        for $facility in $seq
-            let $featureMain := $facility/local-name()
-            let $gmlid := scripts:getGmlId($facility)
-            let $facilityType := $facility//*:facilityType/@xlink:href
-            where $facilityType = $eprtrVocab
-
-            for $feature in map:keys($mapAttrs)
-                let $featureSubList := $facility/descendant-or-self::*
-                        [local-name() = $feature]
-
-                let $featureSubList := if(fn:empty($featureSubList))
-                    then <empty/>
-                    else $featureSubList
-
-                for $featureSub in $featureSubList
-
-                    for $attr in $mapAttrs?($feature)
-
-                        let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
-
-                        where $attrCount = 0
-                        return map {
-                            "marks" : (3),
-                            "data" : ($featureMain, $gmlid, $feature, $attr)
-                        }
-
-    let $hdrs := ('Feature main', 'GML ID', 'Feature sub', 'Attribute')
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
-
-(:~
-    C1.3 Installation Type
-:)
-
-declare function scripts:checkInstallationType(
-        $refcode as xs:string,
-        $rulename as xs:string,
-        $root as element()
-) as element()* {
-    let $msg := 'ASD QWE ARARSAR'
-    let $type := 'error'
-    let $installationVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/IED'
-
-    let $mapAttrs2017 := map {
-        'ProductionInstallation': ('baselineReportIndicator'),
-        'CompetentAuthority': ('organisationName', 'individualName',
-            'electronicMailAddress', 'telephoneNo'),
-        'Address': ('streetName', 'buildingNumber', 'city', 'postalCode'),
-        'siteVisits': ('siteVisitNumber'),
-        'PermitDetails': ('permitGranted', 'permitReconsidered', 'PermitUpdated'),
-        'IEDAnnexIActivityType': ('mainActivity')
-    }
-    let $mapAttrs2018 := map {
-        'ProductionInstallation': ('publicEmissionMonitoring', 'BATconclusions'),
-        'stricterPermitConditions': ('StricterPermitConditionsIndicator', 'article18',
-            'article14.4'),
-        'siteVisits': ('siteVisitURL'),
-        'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate',
-            'derogationDurationEndDate')
-    }
-
-    let $reportingYear := $root//*:reportingYear/xs:float(.)
-
-    let $seq := $root//*:ProductionInstallation
-
-    let $data2017 :=
-        for $installation in $seq
-            let $featureMain := $installation/local-name()
-            let $gmlid := scripts:getGmlId($installation)
-            let $installationType := $installation//*:installationType/@xlink:href
-            where $installationType = $installationVocab
-
-            for $feature in map:keys($mapAttrs2017)
-                let $featureSubList := $installation/descendant-or-self::*
-                        [local-name() = $feature]
-
-                let $featureSubList := if(fn:empty($featureSubList))
-                    then <empty/>
-                    else $featureSubList
-
-                for $featureSub in $featureSubList
-
-                    for $attr in $mapAttrs2017?($feature)
-
-                        let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
-
-                        where $attrCount = 0
-                        return map {
-                            "marks" : (3),
-                            "data" : ($featureMain, $gmlid, $feature, $attr)
-                        }
-
-    let $data2018 := if($reportingYear < 2018)
-        then ()
-        else
-        for $installation in $seq
-            let $featureMain := $installation/local-name()
-            let $gmlid := scripts:getGmlId($installation)
-            let $installationType := $installation//*:installationType/@xlink:href
-            where $installationType = $installationVocab
-
-            for $feature in map:keys($mapAttrs2018)
-                let $featureSubList := $installation/descendant-or-self::*
-                        [local-name() = $feature]
-
-                let $featureSubList := if(fn:empty($featureSubList))
-                    then <empty/>
-                    else $featureSubList
-
-                for $featureSub in $featureSubList
-                    let $batDerogInd := $featureSub//*:BATDerogationIndicator
-                    where $feature != 'BATDerogation' or
-                        ($feature = 'BATDerogation' and $batDerogInd)
-
-                    for $attr in $mapAttrs2018?($feature)
-
-                        let $attrCount := $featureSub//*[local-name() = $attr] => fn:count()
-
-                        where $attrCount = 0
-                        return map {
-                            "marks" : (3),
-                            "data" : ($featureMain, $gmlid, $feature, $attr)
-                        }
-
-    let $data := ($data2017, $data2018)
-
-    let $hdrs := ('Feature main', 'GML ID', 'Feature sub', 'Attribute')
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-    return
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
-};
+ : vim: sts=2 ts=2 sw=2 et
+ :)
