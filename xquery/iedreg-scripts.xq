@@ -1116,7 +1116,7 @@ declare function scripts:checkRadius(
 };
 
 (:~
- : C4.1 ProductionSite radius
+ : C5.1 ProductionSite radius
  :)
 
 declare function scripts:checkProdutionSiteRadius(
@@ -1161,7 +1161,7 @@ declare function scripts:checkProdutionSiteRadius(
 };
 
 (:~
- : C4.2 ProductionFacility radius
+ : C5.2 ProductionFacility radius
  :)
 
 declare function scripts:checkProdutionFacilityRadius(
@@ -1208,7 +1208,7 @@ declare function scripts:checkProdutionFacilityRadius(
 };
 
 (:~
- : C4.3 ProductionInstallation radius
+ : C5.3 ProductionInstallation radius
  :)
 
 declare function scripts:checkProdutionInstallationRadius(
@@ -1255,7 +1255,7 @@ declare function scripts:checkProdutionInstallationRadius(
 };
 
 (:~
- : C4.4 Coordinates to country comparison
+ : C5.4 Coordinates to country comparison
  :)
 
 declare function scripts:checkCountryBoundary(
@@ -1314,7 +1314,7 @@ declare function scripts:checkCountryBoundary(
 };
 
 (:~
- : C4.5 Coordinate precision completeness
+ : C5.5 Coordinate precision completeness
  :)
 
 declare function scripts:checkCoordinatePrecisionCompleteness(
