@@ -243,7 +243,7 @@
 			<EUReg:eSPIRSIdentifier>Seveso5555.ES.fake</EUReg:eSPIRSIdentifier>
 			<EUReg:IEDAnnexIActivity>
 				<EUReg:IEDAnnexIActivityType>
-					<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/1.1123123123"/>
+					<EUReg:mainActivity />
 				</EUReg:IEDAnnexIActivityType>
 			</EUReg:IEDAnnexIActivity>
 			<EUReg:permit>
@@ -251,7 +251,8 @@
 					<EUReg:permitGranted>true</EUReg:permitGranted>
 					<EUReg:permitReconsidered>false</EUReg:permitReconsidered>
 					<EUReg:permitUpdated>false</EUReg:permitUpdated>
-					<EUReg:dateOfGranting>2005-01-01+00:00</EUReg:dateOfGranting>
+					<EUReg:dateOfGranting>2011-01-01+00:00</EUReg:dateOfGranting>
+					<EUReg:permitURL>https://www.example.com/</EUReg:permitURL>
 				</EUReg:PermitDetails>
 			</EUReg:permit>
 			<EUReg:otherRelevantChapters xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/RelevantChapterValue/ChapterIII"/>
@@ -262,7 +263,7 @@
 		<EUReg:ProductionInstallation gml:id="_010101012.INSTALLATION">
 			<pf:inspireId>
 				<base:Identifier>
-					<base:localId>010101011.INSTALLATION</base:localId>
+					<base:localId>010101012.INSTALLATION</base:localId>
 					<base:namespace>ES.CAED</base:namespace>
 					<base:versionId xsi:nil="true"/>
 				</base:Identifier>
@@ -489,8 +490,8 @@
 			</EUReg:parentCompany>
 			<EUReg:EPRTRAnnexIActivity>
 				<EUReg:EPRTRAnnexIActivityType>
-					<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(c)"/>
-					<EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(cccc)"/>
+					<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(c)(i)"/>
+					<EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(c)"/>
 				</EUReg:EPRTRAnnexIActivityType>
 			</EUReg:EPRTRAnnexIActivity>
 			<EUReg:dateOfStartOfOperation>1982-01-01+00:00</EUReg:dateOfStartOfOperation>
