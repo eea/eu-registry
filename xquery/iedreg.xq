@@ -179,7 +179,7 @@ declare function iedreg:failsafeWrapper(
         $checkFunc as function(xs:string, xs:string, element()) as element()*
 ) as element()* {
     try {
-        (:let $asd := trace($refcode, '- '):)
+        let $asd := trace($refcode, '- ')
         let $reportingYear := $root//*:reportingYear/xs:float(.)
         let $countryCode := tokenize($root//*:countryId/@xlink:href, '/+')[last()]
         return
@@ -280,7 +280,6 @@ span.iedreg.none { color: #fff; background-color: #999 }
 
 declare function iedreg:runChecks01($root as element()) as element()* {
     let $rulename := '1. Data control checks'
-    (:let $asd := trace($rulename, 'starting '):)
 
     return
         <div class="iedreg header">{$rulename}</div>,
@@ -298,7 +297,7 @@ declare function iedreg:runChecks01($root as element()) as element()* {
 
 declare function iedreg:runChecks02($root as element()) as element()* {
     let $rulename := '2. CODE LIST CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -327,7 +326,7 @@ declare function iedreg:runChecks02($root as element()) as element()* {
 
 declare function iedreg:runChecks03($root as element()) as element()* {
     let $rulename := '3. INSPIRE ID CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -345,19 +344,19 @@ declare function iedreg:runChecks03($root as element()) as element()* {
 
 declare function iedreg:runChecks04($root as element()) as element()* {
     let $rulename := '4. DUPLICATE IDENTIFICATION CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: upd :)(: iedreg:failsafeWrapper("C4.1", "Identification of ProductionSite duplicates", $root, scripts:checkProductionSiteDuplicates#3),:)
-        (: upd :)(: iedreg:failsafeWrapper("C4.2", "Identification of ProductionFacility duplicates", $root, scripts:checkProductionFacilityDuplicates#3),:)
-        (: upd :)(: iedreg:failsafeWrapper("C4.3", "Identification of ProductionInstallation duplicates", $root, scripts:checkProductionInstallationDuplicates#3),:)
-        (: upd :)(: iedreg:failsafeWrapper("C4.4", "Identification of ProductionInstallationPart duplicates", $root, scripts:checkProductionInstallationPartDuplicates#3),:)
+        (: upd DONE:) iedreg:failsafeWrapper("C4.1", "Identification of ProductionSite duplicates", $root, scripts:checkProductionSiteDuplicates#3),
+        (: upd DONE:) iedreg:failsafeWrapper("C4.2", "Identification of ProductionFacility duplicates", $root, scripts:checkProductionFacilityDuplicates#3),
+        (: upd DONE:) iedreg:failsafeWrapper("C4.3", "Identification of ProductionInstallation duplicates", $root, scripts:checkProductionInstallationDuplicates#3),
+        (: upd DONE:) iedreg:failsafeWrapper("C4.4", "Identification of ProductionInstallationPart duplicates", $root, scripts:checkProductionInstallationPartDuplicates#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.5", "Identification of ProductionSite duplicates within the database", $root, scripts:checkProductionSiteDatabaseDuplicates#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.6", "Identification of ProductionFacility duplicates within the database", $root, scripts:checkProductionFacilityDatabaseDuplicates#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.7", "Identification of ProductionInstallation duplicates within the database", $root, scripts:checkProductionInstallationDatabaseDuplicates#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.8", "Identification of ProductionInstallationPart duplicates within the database", $root, scripts:checkProductionInstallationPartDatabaseDuplicates#3),
-        (: upd :)(: iedreg:failsafeWrapper("C4.9", "ProductionSite and Facility Continuity", $root, scripts:checkMissingProductionSites#3),:)
+        (: upd :) iedreg:failsafeWrapper("C4.9", "ProductionSite and Facility Continuity", $root, scripts:checkMissingProductionSites#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.10", "Missing ProductionFacilities, previous submissions", $root, scripts:checkMissingProductionFacilities#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.11", "Missing ProductionInstallations, previous submissions", $root, scripts:checkMissingProductionInstallations#3),
         (: upd DONE :) iedreg:failsafeWrapper("C4.12", "Missing ProductionInstallationsParts, previous submissions", $root, scripts:checkMissingProductionInstallationParts#3)
@@ -370,7 +369,7 @@ declare function iedreg:runChecks04($root as element()) as element()* {
 
 declare function iedreg:runChecks05($root as element()) as element()* {
     let $rulename := '5. GEOGRAPHICAL AND COORDINATE CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -391,7 +390,7 @@ declare function iedreg:runChecks05($root as element()) as element()* {
 
 declare function iedreg:runChecks06($root as element()) as element()* {
     let $rulename := '6. ACTIVITY CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -408,7 +407,7 @@ declare function iedreg:runChecks06($root as element()) as element()* {
 
 declare function iedreg:runChecks07($root as element()) as element()* {
     let $rulename := '7. STATUS CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -426,7 +425,7 @@ declare function iedreg:runChecks07($root as element()) as element()* {
 
 declare function iedreg:runChecks08($root as element()) as element()* {
     let $rulename := '8. DATE CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -444,7 +443,7 @@ declare function iedreg:runChecks08($root as element()) as element()* {
 
 declare function iedreg:runChecks09($root as element()) as element()* {
     let $rulename := '9. PERMITS &amp; COMPETENT AUTHORITY CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -462,7 +461,7 @@ declare function iedreg:runChecks09($root as element()) as element()* {
 
 declare function iedreg:runChecks10($root as element()) as element()* {
     let $rulename := '10. DEROGATION CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -483,7 +482,7 @@ declare function iedreg:runChecks10($root as element()) as element()* {
 
 declare function iedreg:runChecks11($root as element()) as element()* {
     let $rulename := '11. LCP &amp; WASTE INCINERATOR CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -501,7 +500,7 @@ declare function iedreg:runChecks11($root as element()) as element()* {
 
 declare function iedreg:runChecks12($root as element()) as element()* {
     let $rulename := "12. CONFIDENTIALITY CHECKS"
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -516,7 +515,7 @@ declare function iedreg:runChecks12($root as element()) as element()* {
 
 declare function iedreg:runChecks13($root as element()) as element()* {
     let $rulename := '13. OTHER IDENTIFIERS &amp; MISCELLANEOUS CHECKS'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -538,7 +537,7 @@ declare function iedreg:runChecks13($root as element()) as element()* {
 
 declare function iedreg:runChecks14($root as element()) as element()* {
     let $rulename := '14. GML Validation Checks'
-    (:let $asd := trace($rulename, 'starting '):)
+
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
@@ -577,19 +576,19 @@ declare function iedreg:runChecks($url as xs:string) as element()*
     )
 
     return (
-        iedreg:runChecks01($root),
-        iedreg:runChecks02($root),
-        iedreg:runChecks03($root),
+        (:iedreg:runChecks01($root),:)
+        (:iedreg:runChecks02($root),:)
+        (:iedreg:runChecks03($root),:)
         iedreg:runChecks04($root),
         (:iedreg:runChecks05($root),:)
-        iedreg:runChecks06($root),
-        iedreg:runChecks07($root),
-        iedreg:runChecks08($root),
-        iedreg:runChecks09($root),
-        iedreg:runChecks10($root),
-        iedreg:runChecks11($root),
-        iedreg:runChecks12($root),
-        iedreg:runChecks13($root),
+        (:iedreg:runChecks06($root),:)
+        (:iedreg:runChecks07($root),:)
+        (:iedreg:runChecks08($root),:)
+        (:iedreg:runChecks09($root),:)
+        (:iedreg:runChecks10($root),:)
+        (:iedreg:runChecks11($root),:)
+        (:iedreg:runChecks12($root),:)
+        (:iedreg:runChecks13($root),:)
         iedreg:runChecks14($root)
     )
 };

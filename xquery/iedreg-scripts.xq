@@ -674,46 +674,57 @@ declare function scripts:checkDuplicates(
         $rulename as xs:string,
         $root as element(),
         $featureNames as xs:string*,
-        $nodeNames as xs:string*
+        $nodeNames as xs:string*,
+        $attrs as xs:string*
 ) as element()* {
     let $type := "warning"
     let $msg := "The similarity threshold has been exceeded, for the following "
         || scripts:makePlural($featureNames) => fn:string-join(', ') ||
         ". Please ammend the XML submission to ensure that there is no duplication"
 
+    let $seq := $root/descendant::*[local-name() = $featureNames]
+    let $norm := ft:normalize(? , map {'stemming' : true()})
+
     let $data :=
-        for $nodeName in $nodeNames
-            let $seq := $root/descendant::*[local-name() = $featureNames]/
-                    descendant::*[local-name() = $nodeName]
+        for $node at $ind in $seq
+            let $stringMain := $node/*[local-name() = $nodeNames]/data()
+                => fn:string-join(' / ')
+            let $stringMainAttrs := $node/*[local-name() = $attrs]
+                    //fn:tokenize(@xlink:href/data(), '/')[last()]
 
-            let $norm := ft:normalize(?, map {'stemming' : true()})
+            let $stringMain := ($stringMain, $stringMainAttrs) => fn:string-join(' / ')
 
-            for $node at $ind in $seq
-                let $attributeName := $node/local-name()
-                let $feature := scripts:getParent($node)
-                let $featureName := $feature/local-name()
+            let $featureName := $node/local-name()
+            let $gmlid := scripts:getGmlId($node)
 
-                let $gmlid := scripts:getGmlId($feature)
+            for $sub in subsequence($seq, $ind + 1)
+                let $gmlidSub := scripts:getGmlId($sub)
+                let $stringSub := $sub/*[local-name() = $nodeNames]/data()
+                    => fn:string-join(' / ')
+                let $stringSubAttrs := $sub/*[local-name() = $attrs]
+                    //fn:tokenize(@xlink:href/data(), '/')[last()]
+                let $stringSub := ($stringSub, $stringSubAttrs) => fn:string-join(' / ')
 
-                for $sub in subsequence($seq, $ind + 1)
-                let $subParent := scripts:getParent($sub)
-                let $gmlidSub := scripts:getGmlId($subParent)
+                let $levRatio := strings:levenshtein(
+                        $norm(fn:replace($stringMain, ' / ', '')),
+                        $norm(fn:replace($stringSub, ' / ', '')))
 
-                let $levRatio := strings:levenshtein($norm($node/data()), $norm($sub/data()))
                 where $levRatio >= 0.9
+
                 return map {
                 "marks" : (5, 6, 7),
                 "data" : (
                     $featureName,
-                    $attributeName,
+                    ($nodeNames, $attrs) => fn:string-join(' / '),
                     <span class="iedreg nowrap">{$gmlid}</span>,
                     <span class="iedreg nowrap">{$gmlidSub}</span>,
-                    '"' || $node/data() || '"', '"' || $sub/data() || '"',
+                    '"' || $stringMain || '"',
+                    '"' || $stringSub || '"',
                     round-half-to-even($levRatio * 100, 1) || '%'
                 )
                 }
 
-    let $hdrs := ('Feature', 'Attribute name', 'GML IDs', ' ', 'Feature names', ' ', 'Similarity')
+    let $hdrs := ('Feature', 'Attribute names', 'GML IDs', ' ', 'Attribute values', ' ', 'Similarity')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -732,8 +743,9 @@ declare function scripts:checkProductionSiteDuplicates(
 ) as element()* {
     let $features := ('ProductionSite')
     let $nodes := ('siteName', 'location')
+    let $attrs := ()
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
+    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes, $attrs)
 };
 
 (:~
@@ -746,9 +758,10 @@ declare function scripts:checkProductionFacilityDuplicates(
         $root as element()
 ) as element()* {
     let $features := ('ProductionFacility')
-    let $nodes := ('geometry', 'parentCompany', 'EPRTRAnnexIActivity', 'facilityName')
+    let $nodes := ('geometry', 'facilityName', 'parentCompany')
+    let $attrs := ('EPRTRAnnexIActivity')
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
+    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes, $attrs)
 };
 
 (:~
@@ -761,9 +774,10 @@ declare function scripts:checkProductionInstallationDuplicates(
         $root as element()
 ) as element()* {
     let $features := ('ProductionInstallation')
-    let $nodes := ('pointGeometry', 'IEDAnnexIActivity', 'installationName')
+    let $nodes := ('pointGeometry', 'installationName')
+    let $attrs := ('IEDAnnexIActivity')
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $features, nodes)
+    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes, $attrs)
 };
 
 (:~
@@ -776,9 +790,10 @@ declare function scripts:checkProductionInstallationPartDuplicates(
         $root as element()
 ) as element()* {
     let $features := ('ProductionInstallationPart')
-    let $nodes := ('plantType', 'installationPartName')
+    let $nodes := ('installationPartName')
+    let $attrs := ('plantType')
 
-    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes)
+    return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes, $attrs)
 };
 
 declare function scripts:checkDatabaseDuplicates(
@@ -963,35 +978,37 @@ declare function scripts:checkMissingSites(
 
     let $lastYear := max(database:getReportingYearsByCountry($cntry))
 
-    let $seq := $root//*[local-name() = $featureName]/pf:inspireId
+    let $seq := $root//*[local-name() = $featureName]
     let $fromDB := database:query($cntry, $lastYear, (
-        "pf:inspireId", "act-core:inspireId"
+        "ProductionSite"
     ))
 
-    let $data :=
-        for $id in $fromDB
-        where not($id/data() = $seq//*:localId)
+    let $data1 :=
+        for $facility in $seq
+            let $inspireId := $facility/*:inspireId//*:localId
+            let $hostingSite := $facility/*[local-name() = 'hostingSite']/@xlink:href
+            let $fromDBhostingSite := $fromDB/*:ProductionFacility[*:inspireId//*:localId = $inspireId]
 
-        let $p := scripts:getParent($id)
-        where $p/local-name() = $featureName
+            where $hostingSite != $fromDBhostingSite
 
-        let $id := $id//*:localId/text()
+            return map {
+            "marks" : (2),
+            "data" : (
+                'ProductionFacility associated with ProductionSite changed
+                in comparison with the previous year',
+                $featureName,
+                $inspireId,
+                $hostingSite,
+                $fromDBhostingSite
+            )
+            }
 
-        let $status := $p/pf:status//pf:statusType
-        let $status := replace($status/@xlink:href, '/+$', '')
-        let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
+    let $data2 :=
+        ()
 
-        where not($status = $allowed)
-        return map {
-        "marks" : (2),
-        "data" : (
-            $featureName,
-            <span class="iedreg nowrap">{$id}</span>,
-            $status
-        )
-        }
+    let $data := ($data1, $data2)
 
-    let $hdrs := ('Feature', 'Inspire ID', 'Status')
+    let $hdrs := ('Message', 'Feature type', 'Inspire ID', 'Associated site', 'DB Associated site')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1008,7 +1025,7 @@ declare function scripts:checkMissingProductionSites(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'ProdunctionFacility'
+    let $feature := 'ProductionSite'
     let $allowed := ("decommissioned")
 
     return scripts:checkMissingSites($refcode, $rulename, $root, $feature, $allowed)
