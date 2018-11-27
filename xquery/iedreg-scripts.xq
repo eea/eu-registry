@@ -851,7 +851,10 @@ declare function scripts:checkDatabaseDuplicates(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+        if (not(database:dbExists())) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
