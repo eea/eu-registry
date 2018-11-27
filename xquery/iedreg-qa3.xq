@@ -32,7 +32,7 @@ import module namespace common = "iedreg-common" at "iedreg-common.xq";
  :)
 
 declare function iedreg-qa3:runChecks13($root as element()) as element()* {
-    let $rulename := '14. GML Validation Checks'
+    let $rulename := '14. GML VALIDATION CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
@@ -45,7 +45,7 @@ declare function iedreg-qa3:runChecks13($root as element()) as element()* {
         (:iedreg:failsafeWrapper("C14.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),:)
         iedreg:failsafeWrapper("C14.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),
         iedreg:failsafeWrapper("C14.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#3),
-        iedreg:failsafeWrapper("C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#3),
+        iedreg:failsafeWrapper("C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#3)
         (:iedreg:failsafeWrapper("C14.10", "pf:status validity", $root, scripts3:checkStatusNil#3),:)
         (:iedreg:failsafeWrapper("C14.11", "pf:pointGeometry validity", $root, scripts3:checkePointGeometry#3),:)
         (:iedreg:failsafeWrapper("C14.12", "otherRelevantChapters consistency", $root, scripts3:checkOtherRelevantChapters#3),:)

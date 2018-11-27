@@ -197,11 +197,11 @@ declare function iedreg:failsafeWrapper(
 };
 
 (:~
-   1. Data control checks
+   1. DATA CONTROL CHECKS
 :)
 
 declare function iedreg:runChecks01($root as element()) as element()* {
-    let $rulename := '1. Data control checks'
+    let $rulename := '1. DATA CONTROL CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
