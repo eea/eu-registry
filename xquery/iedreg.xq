@@ -576,19 +576,19 @@ declare function iedreg:runChecks($url as xs:string) as element()*
     )
 
     return (
-        (:iedreg:runChecks01($root),:)
-        (:iedreg:runChecks02($root),:)
-        (:iedreg:runChecks03($root),:)
+        iedreg:runChecks01($root),
+        iedreg:runChecks02($root),
+        iedreg:runChecks03($root),
         iedreg:runChecks04($root),
         (:iedreg:runChecks05($root),:)
-        (:iedreg:runChecks06($root),:)
-        (:iedreg:runChecks07($root),:)
-        (:iedreg:runChecks08($root),:)
-        (:iedreg:runChecks09($root),:)
-        (:iedreg:runChecks10($root),:)
-        (:iedreg:runChecks11($root),:)
-        (:iedreg:runChecks12($root),:)
-        (:iedreg:runChecks13($root),:)
+        iedreg:runChecks06($root),
+        iedreg:runChecks07($root),
+        iedreg:runChecks08($root),
+        iedreg:runChecks09($root),
+        iedreg:runChecks10($root),
+        iedreg:runChecks11($root),
+        iedreg:runChecks12($root),
+        iedreg:runChecks13($root),
         iedreg:runChecks14($root)
     )
 };
