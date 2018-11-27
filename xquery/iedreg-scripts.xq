@@ -1004,7 +1004,28 @@ declare function scripts:checkMissingSites(
             }
 
     let $data2 :=
-        ()
+        for $fromDbfacility in $fromDB
+            let $inspireIdFromDb := $fromDbfacility/*:inspireId//*:localId
+            let $inspireId := $root/*[local-name() = $featureName]/*:inspireId//*:localId
+
+            let $status := $fromDbfacility/pf:status/descendant::pf:statusType
+            let $status := replace($status/@xlink:href, '/+$', '')
+            let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
+
+            where not($status = $allowed)
+            where $inspireId != $inspireIdFromDb
+
+            return map {
+            "marks" : (2),
+            "data" : (
+                'InspireId is not found in the XML submission',
+                $featureName,
+                $inspireId,
+                '-',
+                '-'
+            )
+            }
+
 
     let $data := ($data1, $data2)
 
@@ -1013,7 +1034,12 @@ declare function scripts:checkMissingSites(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+        if (not(database:dbExists())) then
+            scripts:noDbWarning($refcode, $rulename)
+        else if (empty($lastYear)) then
+            scripts:noPreviousYearWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
