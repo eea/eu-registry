@@ -112,27 +112,30 @@ declare function scripts:getDetails(
 
             <div class="iedreg {$msgClass}">{$msg}</div>
 
-            <div class="iedreg table inner">
-                <div class="iedreg row">
-                    {for $h in $hdrs
-                    return
-                        <div class="iedreg col inner th"><span class="iedreg nowrap">{$h}</span></div>
-                    }
-                </div>
-                {for $d in $data
-                (:count $pos:)
-                (:where $pos <= $scripts:MSG_LIMIT:)
-                return
+            {if (fn:count($data) > 0)
+            then
+                <div class="iedreg table inner">
                     <div class="iedreg row">
-                        {for $z at $i in $d('data')
-                        let $x := if (fn:index-of($d('marks'), $i)) then <span class="iedreg nowrap">{$z}</span> else $z
+                        {for $h in $hdrs
                         return
-                            <div class="iedreg col inner{if (fn:index-of($d('marks'), $i)) then ' ' || $type else ''}">{$x}</div>
+                            <div class="iedreg col inner th"><span class="iedreg nowrap">{$h}</span></div>
                         }
                     </div>
-                }
-            </div>
-
+                    {for $d in $data
+                    count $pos
+                    where $pos <= $scripts:MSG_LIMIT
+                    return
+                        <div class="iedreg row">
+                            {for $z at $i in $d('data')
+                            let $x := if (fn:index-of($d('marks'), $i)) then <span class="iedreg nowrap">{$z}</span> else $z
+                            return
+                                <div class="iedreg col inner{if (fn:index-of($d('marks'), $i)) then ' ' || $type else ''}">{$x}</div>
+                            }
+                        </div>
+                    }
+                </div>
+            else ()
+            }
         </div>
 };
 
@@ -189,6 +192,10 @@ declare function scripts:renderResult(
                 'info'
             else
                 'pass'
+
+    let $errors := if($errors > 1000) then 1000 else $errors
+    let $warnings := if($warnings > 1000) then 1000 else $warnings
+    let $messages := if($messages > 1000) then 1000 else $messages
 
     return
         <div class="iedreg row">
@@ -575,8 +582,8 @@ declare function scripts:checkAmountOfInspireIds(
     let $seq := $root/descendant::pf:inspireId
 
     let $fromDB := database:query($cntry, $lastReportingYear, (
-        "pf:inspireId"
-    ))
+     "pf:inspireId", "act-core:inspireId"
+   ))
 
     let $xIDs := $seq/descendant::base:localId
     let $yIDs := $fromDB/descendant::base:localId
@@ -1436,11 +1443,11 @@ declare function scripts:checkCoordinateContinuity(
   ))
 
   let $data :=
-  for $x in $seq/descendant::gml:*/descendant-or-self::*[not(*)]
-    let $p := scripts:getParent($x)
+  for $x_coords in $seq/descendant::gml:*/descendant-or-self::*[not(*)]
+    let $p := scripts:getParent($x_coords)
     let $id := scripts:getInspireId($p)/text()
 
-    let $y :=
+    let $y_coords :=
     for $y in $fromDB/descendant::gml:*/descendant-or-self::*[not(*)]
       let $q := scripts:getParent($y)
       let $ic := scripts:getInspireId($q)/text()
@@ -1449,19 +1456,19 @@ declare function scripts:checkCoordinateContinuity(
 
       return $y
 
-    where not(empty($y))
+    where not(empty($y_coords))
 
-    let $xlong := substring-before($x, ' ')
-    let $xlat := substring-after($x, ' ')
-    let $xp := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$xlong},{$xlat}</GML:coordinates></GML:Point>
+    let $x_lat := substring-before($x_coords, ' ')
+    let $x_long := substring-after($x_coords, ' ')
+    let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_long},{$x_lat}</GML:coordinates></GML:Point>
 
-    let $ylong := substring-before($y, ' ')
-    let $ylat := substring-after($y, ' ')
-    let $yp := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$ylong},{$ylat}</GML:coordinates></GML:Point>
+    let $y_lat := substring-before($y_coords, ' ')
+    let $y_long := substring-after($y_coords, ' ')
+    let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_long},{$y_lat}</GML:coordinates></GML:Point>
 
-    let $dist := round-half-to-even(geo:distance($xp, $yp) * 111319.9, 2)
+    let $dist := round-half-to-even(geo:distance($x_point, $y_point) * 111319.9, 2)
 
-    return [$p/local-name(), $id, string-join(($xlat, $xlong), ", "), string-join(($ylat, $ylong), ", "), $dist]
+    return [$p/local-name(), $id, string-join(($x_lat, $x_long), ", "), string-join(($y_lat, $y_long), ", "), $dist]
 
   let $red :=
   for $x in $data
@@ -1497,7 +1504,12 @@ declare function scripts:checkCoordinateContinuity(
     }</div>
 
   return
-    scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
+      if (not(database:dbExists()))
+      then scripts:noDbWarning($refcode, $rulename)
+      else if (empty($lastReportingYear))
+      then scripts:noPreviousYearWarning($refcode, $rulename)
+      else
+        scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
 };
 
 (:~
@@ -1509,8 +1521,8 @@ declare function scripts:checkProdutionSiteBuffers(
   $rulename as xs:string,
   $root as element()
 ) as element()* {
-  let $warnRadius := 5000
-  let $infoRadius := 30000
+  let $warnRadius := 5
+  let $infoRadius := 30
 
   let $warn := "The following ProductionFacilities have coordinates that are within a "
     || $warnRadius || "m radius of the coordinates provided for the associated ProductionSite.
@@ -1529,12 +1541,10 @@ declare function scripts:checkProdutionSiteBuffers(
     let $x_location := $x/EUReg:location
 
     for $x_coords in $x_location/descendant::gml:*/descendant-or-self::*[not(*)]
-      let $x_long := substring-before($x_coords, ' ')
-      let $x_lat := substring-after($x_coords, ' ')
+      let $x_lat := substring-before($x_coords, ' ')
+      let $x_long := substring-after($x_coords, ' ')
 
       let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_long},{$x_lat}</GML:coordinates></GML:Point>
-      let $x_buffer_warn := geo:buffer($x_point, xs:double($warnRadius div 111319.9))
-      let $x_buffer_info := geo:buffer($x_point, xs:double($infoRadius div 111319.9))
 
       let $facilities :=
       for $y in $root/descendant::EUReg:ProductionFacility[pf:hostingSite[@xlink:href='#' || $x_id]]
@@ -1546,40 +1556,47 @@ declare function scripts:checkProdutionSiteBuffers(
           let $y_lat := substring-after($y_coords, ' ')
 
           let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_long},{$y_lat}</GML:coordinates></GML:Point>
-          let $y_buffer_warn := geo:buffer($y_point, xs:double($warnRadius div 111319.9))
-          let $y_buffer_info := geo:buffer($y_point, xs:double($infoRadius div 111319.9))
 
-          return [$y/local-name(), $y_id, $y_point, $y_buffer_warn, $y_buffer_info]
+          return [$y/local-name(), $y_id, $y_point]
 
         return (
-          [$x/local-name(), $x_id, $x_point, $x_buffer_warn, $x_buffer_info],
-          $facilities
+          [$x/local-name(), $x_id, $x_point,$facilities]
         )
 
   let $yellow :=
-  for $x at $i in $data
-    for $y in subsequence($data, $i + 1)
-      let $dist := round-half-to-even(geo:distance($x(3), $y(3)) * 111319.9, 2)
+  for $x in $data
+     where not(empty($x(4)))
 
-      where count($data) gt 2
+     let $x_buffer := geo:buffer($x(3), xs:double($warnRadius div 111319.9))
 
-      where geo:intersects($x(4), $y(4))
-      return map {
-        "marks": (5),
-        "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $y(1), <span class="iedreg nowrap">{$y(2)}</span>, $dist)
-      }
+     for $y in $x(4)
+       let $y_buffer := geo:buffer($y(3), xs:double($warnRadius div 111319.9))
+
+       where geo:intersects($x_buffer, $y_buffer)
+       let $dist := round-half-to-even(geo:distance($x(3), $y(3)) * 111319.9, 2)
+
+       return map {
+         "marks": (5),
+         "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $y(1), <span class="iedreg nowrap">{$y(2)}</span>, $dist)
+       }
 
   let $blue :=
-  for $x at $i in $data
-    for $y in subsequence($data, $i + 1)
-      let $dist := round-half-to-even(geo:distance($x(3), $y(3)) * 111319.9, 2)
+  for $x in $data
+    where not(empty($x(4)))
 
-      where count($data) gt 2
+    let $x_buffer := geo:buffer($x(3), xs:double($infoRadius div 111319.9))
 
+    for $y in $x(4)
+      let $seen :=
       for $z in $yellow
-      where not($z('data')[1] = $x(1) and $z('data')[2]/text() = $x(2) and $z('data')[3] = $y(1) and $z('data')[4]/text() = $y(2) and $z('data')[5] = $dist)
+        return [$z('data')[2]/text(), $z('data')[4]/text()]
 
-      where geo:intersects($x(5), $y(5))
+      where not([$x(2), $y(2)] = $seen)
+
+      let $y_buffer := geo:buffer($y(3), xs:double($infoRadius div 111319.9))
+
+      where geo:intersects($x_buffer, $y_buffer)
+      let $dist := round-half-to-even(geo:distance($x(3), $y(3)) * 111319.9, 2)
       return map {
         "marks": (5),
         "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $y(1), <span class="iedreg nowrap">{$y(2)}</span>, $dist)
@@ -1661,7 +1678,6 @@ declare function scripts:checkActivityUniqueness(
         (:let $inspireId := scripts:getInspireId($parent):)
         let $activity := $node/descendant::*[local-name() = $activityName]
         let $acts := $activity/descendant-or-self::*[not(*)]
-
 
         let $id := scripts:getGmlId($parent)
 
@@ -3612,7 +3628,7 @@ declare function scripts:check2018year(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := 'ASD QWE ARARSAR'
+    let $msg := 'The following attributes must be reported for an IED installation'
     let $type := 'error'
     let $iedVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/IED'
 
@@ -3680,7 +3696,7 @@ declare function scripts:checkFacilityType(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := 'ASD QWE ARARSAR'
+    let $msg := 'The following attributes must be reported'
     let $type := 'error'
     let $eprtrVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FaciltyTypeValue/EPRTR'
 
@@ -3738,7 +3754,7 @@ declare function scripts:checkInstallationType(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := 'ASD QWE ARARSAR'
+    let $msg := 'The following attributes must be reported'
     let $type := 'error'
     let $installationVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/IED'
 
