@@ -17,7 +17,7 @@ xquery version "3.1" encoding "utf-8";
 
  :)
 
-module namespace scripts3 = "iedreg-scripts-qa3";
+module namespace scripts3 = "iedreg-qa3-scripts";
 
 import module namespace scripts = "iedreg-scripts" at "iedreg-scripts.xq";
 import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
