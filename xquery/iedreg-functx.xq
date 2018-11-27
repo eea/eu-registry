@@ -67,6 +67,13 @@ declare function functx:index-of-match-first
     else ()
 };
 
+declare function functx:index-of-node($seq as node()*, $search as node()) as xs:integer* {
+    fn:filter(
+            1 to fn:count($seq),
+            function($i as xs:integer) as xs:boolean {$seq[$i] is $search}
+    )
+};
+
 declare function functx:non-distinct-values
 ($seq as xs:anyAtomicType*) as xs:anyAtomicType* {
 
@@ -95,14 +102,6 @@ declare function functx:value-except
         $arg2 as xs:anyAtomicType* ) as xs:anyAtomicType* {
 
     distinct-values($arg1[not(.=$arg2)])
-};
-
-declare function functx:index-of-node($seq as node()*, $search as node()) as xs:integer*
-{
-    fn:filter(
-      1 to fn:count($seq),
-      function($i as xs:integer) as xs:boolean {$seq[$i] is $search}
-    )
 };
 
 declare function functx:if-empty(

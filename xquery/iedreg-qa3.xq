@@ -25,6 +25,7 @@ declare namespace xlink = "http://www.w3.org/1999/xlink";
 import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 import module namespace iedreg = "http://cdrtest.eionet.europa.eu/help/ied_registry" at "iedreg.xq";
 import module namespace scripts3 = "iedreg-scripts-qa3" at "iedreg-scripts-qa3.xq";
+import module namespace common = "iedreg-common" at "iedreg-common.xq";
 
 (:~
  : 13. OTHER CHECKS
@@ -55,27 +56,26 @@ declare function iedreg-qa3:runChecks13($root as element()) as element()* {
     }</div>
 };
 
-declare function iedreg-qa3:runChecks($url as xs:string) as element()*
-{
+declare function iedreg-qa3:runChecks($url as xs:string) as element()* {
     let $doc := doc($url)
     let $root := $doc/child::gml:FeatureCollection
 
     let $envelopeURL := functx:substring-before-last-match($url, '/') || '/xml'
 
     let $add-envelope-url := %updating function ($root, $url ) {
-insert node <gml:metaDataProperty xlink:href="{$url}"></gml:metaDataProperty> as first into $root
-}
+        insert node <gml:metaDataProperty xlink:href="{$url}"></gml:metaDataProperty> as first into $root
+    }
 
-let $root := $root update (
-updating $add-envelope-url(., $envelopeURL)
-)
+    let $root := $root update (
+        updating $add-envelope-url(., $envelopeURL)
+    )
 
-return (
-iedreg-qa3:runChecks13($root)
-)
-} ;
+    return common:feedback((
+            common:header(),
+            iedreg-qa3:runChecks13($root)
+        ))
+};
 
-declare function iedreg-qa3:check($url as xs:string) as element ()*
-{
-iedreg:css(), iedreg-qa3:runChecks($url)
+declare function iedreg-qa3:check($url as xs:string) as element ()* {
+    iedreg-qa3:runChecks($url)
 };

@@ -25,6 +25,7 @@ declare namespace xlink = "http://www.w3.org/1999/xlink";
 import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 import module namespace scripts = "iedreg-scripts" at "iedreg-scripts.xq";
 import module namespace scripts3 = "iedreg-scripts-qa3" at "iedreg-scripts-qa3.xq";
+import module namespace common = "iedreg-common" at "iedreg-common.xq";
 
 declare variable $iedreg:checks2018 := (
     'C1.1',

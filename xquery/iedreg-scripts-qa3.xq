@@ -12,8 +12,8 @@ xquery version "3.1" encoding "utf-8";
  :
  : THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
- : Author: Spyros Ligouras <spyros@ligouras.com>
- : Date: October - December 2017
+ : Author: Claudia Ifrim
+ : Date: December 2017
 
  :)
 
@@ -24,6 +24,40 @@ import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 
 declare namespace xlink = "http://www.w3.org/1999/xlink";
 declare namespace gml = "http://www.opengis.net/gml/3.2";
+
+declare variable $scripts3:MSG_LIMIT as xs:integer := 1000;
+
+declare function scripts3:checkActivity(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element(),
+        $featureName as xs:string,
+        $activityName as xs:string,
+        $activityType as xs:string,
+        $seq as element()*
+) as element()* {
+    let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " || scripts:makePlural($featureName) ||" is not recognised. Please use an activity listed in the " || $activityName || "Value code list"
+    let $type := "error"
+    let $value := $activityName || "Value"
+    let $valid := scripts:getValidConcepts($value)
+    let $data :=
+        (for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getGmlId($parent)
+        let $activity := replace($x/@xlink:href, '/+$', '')
+        let $p := scripts:getPath($x)
+        let $v := scripts:normalize($activity)
+        where not(scripts:is-empty($activity)) and not($activity = $valid)
+        return map {
+        "marks": (4),
+        "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+        })[position() = 1 to $scripts3:MSG_LIMIT]
+    let $hdrs := ("Feature", "GML ID", "Path", $activityName || "Value")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
 
 (:~
  : 13.12+
@@ -44,7 +78,7 @@ declare function scripts3:checkOtherRelevantChapters(
     let $activityType := "otherRelevantChapters"
     let $seq := $root/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (: C13.13 pf:status consistency
@@ -63,7 +97,7 @@ declare function scripts3:checkStatusType(
     let $activityType := "statusType"
     let $seq := $root/descendant::*[local-name() = "status"]/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (: C13.14 plantType consistency
@@ -82,7 +116,7 @@ declare function scripts3:checkPlantType(
     let $activityType := "plantType"
     let $seq := $root/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (: C13.15 derogations consistency
@@ -101,7 +135,7 @@ declare function scripts3:checkDerogations(
     let $activityType := "derogations"
     let $seq := $root/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (: C13.16 specificConditions consistency
@@ -120,7 +154,7 @@ declare function scripts3:checkSpecificConditions(
     let $activityType := "specificConditions"
     let $seq := $root/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (:
@@ -434,7 +468,7 @@ declare function scripts3:checkActCoreActivity(
     let $activityType := "activity"
     let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (: 13.8 pf:groupedInstallationPart validity

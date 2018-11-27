@@ -102,20 +102,24 @@ declare function db:getReportingCountries(
 declare function db:getReportingYearsByCountry(
         $c as xs:string
 ) as xs:string* {
-    for $file in doc($db:master)/rest:database/rest:resource/text()
-    let $file := $db:master || "/" || $file
-    let $doc := doc($file)
-    let $root := $doc/child::gml:FeatureCollection
+    try {
+        for $file in doc($db:master)/rest:database/rest:resource/text()
+        let $file := $db:master || "/" || $file
+        let $doc := doc($file)
+        let $root := $doc/child::gml:FeatureCollection
 
-    let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
-    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
-    where $cntry = $c
+        let $country := $root/descendant::EUReg:ReportData/EUReg:countryId
+        let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+        where $cntry = $c
 
-    let $year := $root/descendant::EUReg:ReportData/EUReg:reportingYear
-    let $yr := $year/text()
+        let $year := $root/descendant::EUReg:ReportData/EUReg:reportingYear
+        let $yr := $year/text()
 
-    order by xs:integer($yr)
-    return $yr
+        order by xs:integer($yr)
+        return $yr
+    } catch * {
+        ()
+    }
 };
 
 declare function db:query(
