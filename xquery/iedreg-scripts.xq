@@ -1334,9 +1334,9 @@ declare function scripts:checkCountryBoundary(
     let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/child::*
 
     let $seq := (
-        $root/descendant::EUReg:location,
-        $root/descendant::act-core:geometry,
-        $root/descendant::pf:pointGeometry
+        $root//*:location,
+        $root//act-core:geometry,
+        $root//pf:pointGeometry
     )
 
     let $data :=
@@ -3226,13 +3226,13 @@ declare function scripts:checkConfidentialityOveruse(
     let $valid := scripts:getValidConcepts($value)
 
     let $seq := (
-        $root/descendant::EUReg:AddressDetails,
-        $root/descendant::EUReg:FeatureName,
-        $root/descendant::EUReg:ParentCompanyDetails
+        $root//*:AddressDetails,
+        $root//*:FeatureName,
+        $root//*:ParentCompanyDetails
     )
 
     let $data :=
-        for $r in $seq/child::EUReg:confidentialityReason
+        for $r in $seq//*:confidentialityReason
         let $parent := scripts:getParent($r)
         let $feature := $parent/local-name()
 
