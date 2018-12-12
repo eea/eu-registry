@@ -74,7 +74,7 @@ declare function scripts:getParent($e as element()) as element() {
 
 declare function scripts:getInspireId($e as element()) as element()* {
     let $parent := scripts:getParent($e)
-    return $parent/child::*:inspireId/descendant::*:localId
+    return $parent/*:inspireId//*:localId
 };
 
 declare function scripts:getGmlId($e as element()) as xs:string {
@@ -261,7 +261,7 @@ declare function scripts:checkActivity(
     let $value := $activityName || "Value"
     let $valid := scripts:getValidConcepts($value)
 
-    (:let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]:)
+    (:let $seq := $root//*[local-name() = $featureName]//*[local-name() = $activityType]:)
 
     let $data :=
         for $x in $seq
@@ -300,7 +300,7 @@ declare function scripts:checkMainEPRTRAnnexIActivity(
     let $featureName := "ProductionFacility"
     let $activityName := "EPRTRAnnexIActivity"
     let $activityType := "mainActivity"
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $activityName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -317,7 +317,7 @@ declare function scripts:checkOtherEPRTRAnnexIActivity(
     let $featureName := "ProductionFacility"
     let $activityName := "EPRTRAnnexIActivity"
     let $activityType := "otherActivity"
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $activityName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -334,7 +334,7 @@ declare function scripts:checkMainIEDAnnexIActivity(
     let $featureName := "ProductionInstallation"
     let $activityName := "IEDAnnexIActivity"
     let $activityType := "mainActivity"
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $activityName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -351,7 +351,7 @@ declare function scripts:checkOtherIEDAnnexIActivity(
     let $featureName := "ProductionInstallation"
     let $activityName := "IEDAnnexIActivity"
     let $activityType := "otherActivity"
-    let $seq := $root/descendant::*[local-name() = $activityName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $activityName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -371,14 +371,14 @@ declare function scripts:checkCountryId(
     let $value := "CountryCodeValue"
     let $valid := scripts:getValidConcepts($value)
 
-    let $seq := $root/descendant::EUReg:ReportData
+    let $seq := $root//*:ReportData
 
     let $data :=
         for $rd in $seq
         let $feature := $rd/local-name()
         let $id := scripts:getGmlId($rd)
 
-        let $countries := $rd/descendant::*:countryId
+        let $countries := $rd//*:countryId
 
         for $x in $countries
         let $country := replace($x/attribute::xlink:href, '/+$', '')
@@ -415,7 +415,7 @@ declare function scripts:checkReasonValue(
     let $value := "ReasonValue"
     let $valid := scripts:getValidConcepts($value)
 
-    let $seq := $root/descendant::*:confidentialityReason
+    let $seq := $root//*:confidentialityReason
 
     let $data :=
         for $r in $seq
@@ -453,7 +453,7 @@ declare function scripts:checkFacilityTypeVocab(
     let $featureName := "ProductionFacility"
     let $activityName := "FacilityType"
     let $activityType := "facilityType"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $featureName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -469,7 +469,7 @@ declare function scripts:checkInstallationTypeVocab(
     let $featureName := "ProductionInstallation"
     let $activityName := "InstallationType"
     let $activityType := "installationType"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $featureName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -485,7 +485,7 @@ declare function scripts:checkBaselineReportTypeVocab(
     let $featureName := "ProductionInstallation"
     let $activityName := "BaselineReport"
     let $activityType := "baselineReportIndicator"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $featureName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -501,7 +501,7 @@ declare function scripts:checkBATConclusionTypeVocab(
     let $featureName := "ProductionInstallation"
     let $activityName := "BATConclusion"
     let $activityType := "BATConclusion"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $featureName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -517,7 +517,7 @@ declare function scripts:checkBATAELTypeVocab(
     let $featureName := "ProductionInstallation"
     let $activityName := "BATAEL"
     let $activityType := "BATAEL"
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
+    let $seq := $root//*[local-name() = $featureName]//*[local-name() = $activityType]
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
@@ -538,7 +538,7 @@ declare function scripts:checkInspireIdUniqueness(
     let $msg := "All inspireIds for " || scripts:makePlural($feature) || " should be unique. Please ensure all inspireIds are different"
     let $type := "error"
 
-    let $seq := $root/descendant::*[local-name() = $feature]
+    let $seq := $root//*[local-name() = $feature]
 
     let $dups := functx:non-distinct-values($seq/scripts:getInspireId(.))
 
@@ -581,14 +581,14 @@ declare function scripts:checkAmountOfInspireIds(
 
     let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-    let $seq := $root/descendant::pf:inspireId
+    let $seq := $root//pf:inspireId
 
     let $fromDB := database:query($cntry, $lastReportingYear, (
      "pf:inspireId", "act-core:inspireId"
    ))
 
-    let $xIDs := $seq/descendant::base:localId
-    let $yIDs := $fromDB/descendant::base:localId
+    let $xIDs := $seq//base:localId
+    let $yIDs := $fromDB//base:localId
 
     let $data :=
         for $id in $xIDs
@@ -691,7 +691,7 @@ declare function scripts:checkDuplicates(
         || scripts:makePlural($featureNames) => fn:string-join(', ') ||
         ". Please ammend the XML submission to ensure that there is no duplication"
 
-    let $seq := $root/descendant::*[local-name() = $featureNames]
+    let $seq := $root//*[local-name() = $featureNames]
     let $norm := ft:normalize(? , map {'stemming' : true()})
 
     let $data :=
@@ -817,7 +817,7 @@ declare function scripts:checkDatabaseDuplicates(
     let $msg := "The similarity threshold has been exceeded, for the following " || scripts:makePlural($featureName) || ". These " || scripts:makePlural($featureName) || " have similar " || scripts:makePlural($featureName) || " already present in the master database. Please ensure that there is no duplication."
     let $type := "warning"
 
-    let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $nameName]/descendant::*:nameOfFeature
+    let $seq := $root//*[local-name() = $featureName]//*[local-name() = $nameName]//*:nameOfFeature
 
     (: this is where we get the data from the database :)
     let $fromDB := database:getFeatureNames($featureName, $nameName)
@@ -932,21 +932,21 @@ declare function scripts:checkMissing(
 
     let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-    let $seq := $root/descendant::*:inspireId
+    let $seq := $root//*:inspireId
     let $fromDB := database:query($cntry, $lastReportingYear, (
         "pf:inspireId", "act-core:inspireId"
     ))
 
     let $data :=
         for $id in $fromDB
-        where not($id/descendant::*:localId = $seq/descendant::*:localId)
+        where not($id//*:localId = $seq//*:localId)
 
         let $p := scripts:getParent($id)
         where $p/local-name() = $featureName
 
-        let $id := $id/descendant::*:localId/text()
+        let $id := $id//*:localId/text()
 
-        let $status := $p/pf:status/descendant::pf:statusType
+        let $status := $p/pf:status//pf:statusType
         let $status := replace($status/@xlink:href, '/+$', '')
         let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
 
@@ -985,7 +985,7 @@ declare function scripts:checkMissingSites(
         || scripts:makePlural($featureName) || " have been missed."
     let $type := "warning"
 
-    let $country := $root//EUReg:ReportData/EUReg:countryId
+    let $country := $root//*:ReportData/*:countryId
     let $cntry := tokenize($country/@xlink:href, '/+')[last()]
 
     let $lastYear := max(database:getReportingYearsByCountry($cntry))
@@ -1020,7 +1020,7 @@ declare function scripts:checkMissingSites(
             let $inspireIdFromDb := $fromDbfacility/*:inspireId//*:localId
             let $inspireId := $root/*[local-name() = $featureName]/*:inspireId//*:localId
 
-            let $status := $fromDbfacility/pf:status/descendant::pf:statusType
+            let $status := $fromDbfacility/pf:status//pf:statusType
             let $status := replace($status/@xlink:href, '/+$', '')
             let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
 
@@ -1185,19 +1185,19 @@ declare function scripts:checkProdutionSiteRadius(
     let $upperLimit := 10.0
 
     let $data :=
-        for $x in $root/descendant::EUReg:ProductionSite
+        for $x in $root//*:ProductionSite
         let $x_id := scripts:getGmlId($x)
-        let $x_location := $x/EUReg:location
+        let $x_location := $x/*:location
 
-        for $x_coords in $x_location/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $x_coords in $x_location//gml:*/descendant-or-self::*[not(*)]
         let $x_long := substring-before($x_coords, ' ')
         let $x_lat := substring-after($x_coords, ' ')
 
-        for $y in $root/descendant::EUReg:ProductionFacility[pf:hostingSite[@xlink:href = '#' || $x_id]]
+        for $y in $root//*:ProductionFacility[pf:hostingSite[@xlink:href = '#' || $x_id]]
         let $y_id := scripts:getGmlId($y)
         let $y_geometry := $y/act-core:geometry
 
-        for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
         let $y_long := substring-before($y_coords, ' ')
         let $y_lat := substring-after($y_coords, ' ')
 
@@ -1230,21 +1230,21 @@ declare function scripts:checkProdutionFacilityRadius(
     let $upperLimit := 5.0
 
     let $data :=
-        for $x in $root/descendant::EUReg:ProductionFacility
+        for $x in $root//*:ProductionFacility
         let $x_id := scripts:getGmlId($x)
         let $x_geometry := $x/act-core:geometry
 
-        for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $x_coords in $x_geometry//gml:*/descendant-or-self::*[not(*)]
         let $x_long := substring-before($x_coords, ' ')
         let $x_lat := substring-after($x_coords, ' ')
 
         for $y_id in $x/pf:groupedInstallation/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallation[@gml:id = $y_id]
+        for $y in $root//*:ProductionInstallation[@gml:id = $y_id]
         let $y_geometry := $y/pf:pointGeometry
 
-        for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
         let $y_long := substring-before($y_coords, ' ')
         let $y_lat := substring-after($y_coords, ' ')
 
@@ -1277,21 +1277,21 @@ declare function scripts:checkProdutionInstallationRadius(
     let $upperLimit := 3.0
 
     let $data :=
-        for $x in $root/descendant::EUReg:ProductionInstallation
+        for $x in $root//*:ProductionInstallation
         let $x_id := scripts:getGmlId($x)
         let $x_geometry := $x/pf:pointGeometry
 
-        for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $x_coords in $x_geometry//gml:*/descendant-or-self::*[not(*)]
         let $x_long := substring-before($x_coords, ' ')
         let $x_lat := substring-after($x_coords, ' ')
 
         for $y_id in $x/pf:groupedInstallationPart/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id = $y_id]
+        for $y in $root//*:ProductionInstallationPart[@gml:id = $y_id]
         let $y_geometry := $y/pf:pointGeometry
 
-        for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
         let $y_long := substring-before($y_coords, ' ')
         let $y_lat := substring-after($y_coords, ' ')
 
@@ -1324,14 +1324,14 @@ declare function scripts:checkCountryBoundary(
     let $type := 'warning'
 
     let $srsName :=
-        for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
+        for $srs in distinct-values($root//gml:*/attribute::srsName)
         return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
 
     let $country := $root//*:ReportData/*:countryId/attribute::xlink:href
     let $cntry := tokenize($country, '/+')[last()]
     let $boundary := "boundary-" || lower-case($cntry) || ".gml"
     let $doc := doc("https://converterstest.eionet.europa.eu/xmlfile/" || $boundary)
-    let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/child::*
+    let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/*
 
     let $seq := (
         $root//*:location,
@@ -1344,7 +1344,7 @@ declare function scripts:checkCountryBoundary(
         let $parent := scripts:getParent($g)
         let $feature := $parent/local-name()
 
-        for $coords in $g/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $coords in $g//gml:*/descendant-or-self::*[not(*)]
         let $id := scripts:getGmlId($coords/parent::*)
 
         let $p := scripts:getPath($coords)
@@ -1381,9 +1381,9 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
     let $type := 'warning'
 
     let $seq := (
-        $root/descendant::EUReg:location,
-        $root/descendant::act-core:geometry,
-        $root/descendant::pf:pointGeometry
+        $root//*:location,
+        $root//act-core:geometry,
+        $root//pf:pointGeometry
     )
 
     let $data :=
@@ -1391,7 +1391,7 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
         let $parent := scripts:getParent($g)
         let $feature := $parent/local-name()
 
-        for $coords in $g/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $coords in $g//gml:*/descendant-or-self::*[not(*)]
         let $id := scripts:getGmlId($coords/parent::*)
 
         let $p := scripts:getPath($coords)
@@ -1428,7 +1428,7 @@ declare function scripts:checkCoordinateContinuity(
     let $info := "The coordinates, for the following spatial objects, have changed by 10 -30m compared to the master database. Distance changes between 10-30m may represent coordinate refinement, however please verify the coordinates and ensure that they have been inputted correctly."
 
     let $srsName :=
-        for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
+        for $srs in distinct-values($root//gml:*/attribute::srsName)
         return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
 
     let $country := $root//*:ReportData/*:countryId
@@ -1438,9 +1438,9 @@ declare function scripts:checkCoordinateContinuity(
     let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
     let $seq := (
-        $root//descendant::EUReg:location,
-        $root//descendant::act-core:geometry,
-        $root//descendant::pf:pointGeometry
+        $root//*:location,
+        $root//act-core:geometry,
+        $root//pf:pointGeometry
     )
 
     (:let $asd:= trace('lastReportingYear: ', $lastReportingYear):)
@@ -1452,12 +1452,12 @@ declare function scripts:checkCoordinateContinuity(
     ))
 
     let $data :=
-        for $x_coords in $seq/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $x_coords in $seq//gml:*/descendant-or-self::*[not(*)]
         let $p := scripts:getParent($x_coords)
         let $id := scripts:getInspireId($p)/text()
 
         let $y_coords :=
-            for $y in $fromDB/descendant::gml:*/descendant-or-self::*[not(*)]
+            for $y in $fromDB//gml:*/descendant-or-self::*[not(*)]
             let $q := scripts:getParent($y)
             let $ic := scripts:getInspireId($q)/text()
 
@@ -1549,26 +1549,26 @@ declare function scripts:checkProdutionSiteBuffers(
     Please verify the coordinates and ensure that they have been inputted correctly."
 
   let $srsName :=
-  for $srs in distinct-values($root/descendant::gml:*/attribute::srsName)
+  for $srs in distinct-values($root//gml:*/attribute::srsName)
     return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
 
   let $data :=
-  for $x in $root/descendant::EUReg:ProductionSite
+  for $x in $root//*:ProductionSite
     let $x_id := scripts:getGmlId($x)
-    let $x_location := $x/EUReg:location
+    let $x_location := $x/*:location
 
-    for $x_coords in $x_location/descendant::gml:*/descendant-or-self::*[not(*)]
+    for $x_coords in $x_location//gml:*/descendant-or-self::*[not(*)]
       let $x_lat := substring-before($x_coords, ' ')
       let $x_long := substring-after($x_coords, ' ')
 
       let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_long},{$x_lat}</GML:coordinates></GML:Point>
 
       let $facilities :=
-      for $y in $root/descendant::EUReg:ProductionFacility[pf:hostingSite[@xlink:href='#' || $x_id]]
+      for $y in $root//*:ProductionFacility[pf:hostingSite[@xlink:href='#' || $x_id]]
         let $y_id := scripts:getGmlId($y)
         let $y_geometry := $y/act-core:geometry
 
-        for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
           let $y_long := substring-before($y_coords, ' ')
           let $y_lat := substring-after($y_coords, ' ')
 
@@ -1644,20 +1644,20 @@ declare function scripts:checkProdutionInstallationPartCoords(
     let $type := "warning"
 
     let $data :=
-        for $x in $root/descendant::EUReg:ProductionInstallation
+        for $x in $root//*:ProductionInstallation
         let $x_id := scripts:getGmlId($x)
         let $x_geometry := $x/pf:pointGeometry
 
         where count($x/pf:groupedInstallationPart) gt 1
 
-        for $x_coords in $x_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $x_coords in $x_geometry//gml:*/descendant-or-self::*[not(*)]
         for $y_id in $x/pf:groupedInstallationPart/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id = $y_id]
+        for $y in $root//*:ProductionInstallationPart[@gml:id = $y_id]
         let $y_geometry := $y/pf:pointGeometry
 
-        for $y_coords in $y_geometry/descendant::gml:*/descendant-or-self::*[not(*)]
+        for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
 
         where $x_coords/text() = $y_coords/text()
         return map {
@@ -1687,13 +1687,13 @@ declare function scripts:checkActivityUniqueness(
     let $msg := "Each " || $activityName || " should be unique, the following " || scripts:makePlural($featureName) || " share the same main and other Activity. Please evaluate and ensure the inputs for these fields are unique to one another"
     let $type := "error"
 
-    let $seq := $root/descendant::*[local-name() = $featureName]
+    let $seq := $root//*[local-name() = $featureName]
 
     let $data :=
         for $node in $seq
         let $parent := scripts:getParent($node)
         (:let $inspireId := scripts:getInspireId($parent):)
-        let $activity := $node/descendant::*[local-name() = $activityName]
+        let $activity := $node//*[local-name() = $activityName]
         let $acts := $activity/descendant-or-self::*[not(*)]
 
         let $id := scripts:getGmlId($parent)
@@ -1738,7 +1738,7 @@ declare function scripts:checkActivityContinuity(
 
   let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-  let $seq := $root/descendant::*[local-name()=$featureName]
+  let $seq := $root//*[local-name()=$featureName]
 
   let $fromDB := database:query($cntry, $lastReportingYear, (
     "EUReg:" || $featureName
@@ -1753,8 +1753,8 @@ declare function scripts:checkActivityContinuity(
 
       where $idFeature = $idFeatureDB
 
-      let $featureActivity := $feature/descendant::*[local-name()=$activityName]
-      let $featureDBActivity := $featureDB/descendant::*[local-name()=$activityName]
+      let $featureActivity := $feature//*[local-name()=$activityName]
+      let $featureDBActivity := $featureDB//*[local-name()=$activityName]
 
       for $act in $featureActivity/descendant-or-self::*[not(*)]
         let $pathFeature := scripts:getPath($feature)
@@ -1884,10 +1884,10 @@ declare function scripts:checkStatus(
     let $valid := scripts:getValidConcepts($value)
 
     let $data :=
-        for $x in $root/descendant::*[local-name() = $parentName]
+        for $x in $root//*[local-name() = $parentName]
         let $x_id := scripts:getGmlId($x)
 
-        let $x_status := $x/pf:status/descendant::pf:statusType
+        let $x_status := $x/pf:status//pf:statusType
         let $p := scripts:getPath($x_status)
 
         let $x_status := replace($x_status/@xlink:href, '/+$', '')
@@ -1897,11 +1897,11 @@ declare function scripts:checkStatus(
         where $x_status = $parentStatus
 
         let $children :=
-            for $y_id in $x/child::*[local-name() = $groupName]/@xlink:href
+            for $y_id in $x/*[local-name() = $groupName]/@xlink:href
             let $y_id := replace(data($y_id), "^#", "")
 
-            for $y in $root/descendant::*[local-name() = $childName][@gml:id = $y_id]
-            let $y_status := replace($y/pf:status/descendant::pf:statusType/@xlink:href, '/+$', '')
+            for $y in $root//*[local-name() = $childName][@gml:id = $y_id]
+            let $y_status := replace($y/pf:status//pf:statusType/@xlink:href, '/+$', '')
             where $y_status = $valid
 
             let $y_status := scripts:normalize($y_status)
@@ -2018,7 +2018,7 @@ declare function scripts:checkFunctionalStatusType(
 
   let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-  let $seq := $root/descendant::pf:statusType
+  let $seq := $root//pf:statusType
 
   let $fromDB := database:query($cntry, $lastReportingYear, (
     "pf:statusType"
@@ -2075,18 +2075,18 @@ declare function scripts:queryDate(
         $groupName as xs:string,
         $dateName as xs:string
 ) as (map(*))* {
-    for $x in $root/descendant::*[local-name() = $parentName]
+    for $x in $root//*[local-name() = $parentName]
     let $x_id := scripts:getGmlId($x)
-    let $x_date := $x/child::*[local-name() = $dateName]
+    let $x_date := $x/*[local-name() = $dateName]
 
     where not(scripts:is-empty($x_date))
     let $x_date := xs:date($x_date/text())
 
-    for $y_id in $x/child::*[local-name() = $groupName]/@xlink:href
+    for $y_id in $x/*[local-name() = $groupName]/@xlink:href
     let $y_id := replace(data($y_id), "^#", "")
 
-    for $y in $root/descendant::*[local-name() = $childName][@gml:id = $y_id]
-    let $y_date := $y/child::*[local-name() = $dateName]
+    for $y in $root//*[local-name() = $childName][@gml:id = $y_id]
+    let $y_date := $y/*[local-name() = $dateName]
 
     where not(scripts:is-empty($y_date))
     let $y_date := xs:date($y_date/text())
@@ -2143,7 +2143,7 @@ declare function scripts:checkDateOfStartOfOperationLCP(
     let $value := "PlantTypeValue"
     let $valid := scripts:getValidConcepts($value)
 
-    let $seq := $root/descendant::*:ProductionInstallationPart/child::*:plantType
+    let $seq := $root//*:ProductionInstallationPart/*:plantType
 
     let $data :=
         for $x in $seq
@@ -2152,7 +2152,7 @@ declare function scripts:checkDateOfStartOfOperationLCP(
         let $id := scripts:getGmlId($parent)
 
         let $plant := $x/attribute::*:href
-        let $date := $parent/child::*[local-name() = $dateName]
+        let $date := $parent/*[local-name() = $dateName]
 
         let $p := scripts:getPath($x)
         let $v := scripts:normalize($plant)
@@ -2180,7 +2180,7 @@ declare function scripts:checkDateOfGranting(
     let $msg := "The dateOfGranting does not precede dateOfStartOfOperation for the following ProductionInstallations. It is anticipated that a valid permit will be granted prior to operation, especially when a new ProductionInstallation is reported. Please verify dates and ensure they are correct."
     let $type := "warning"
 
-    let $seq := $root/descendant::*:ProductionInstallation/EUReg:permit/EUReg:PermitDetails
+    let $seq := $root//*:ProductionInstallation/*:permit/*:PermitDetails
 
     let $asd:= trace($seq, 'seq: ')
 
@@ -2191,8 +2191,8 @@ declare function scripts:checkDateOfGranting(
         let $id := scripts:getGmlId($parent)
 
         let $p := scripts:getPath($permit)
-        let $dateOfGranting := $permit/EUReg:dateOfGranting/text() => xs:date()
-        let $dateOfLastUpdate := $parent/EUReg:dateOfLastUpdate/text() => xs:date()
+        let $dateOfGranting := $permit/*:dateOfGranting/text() => xs:date()
+        let $dateOfLastUpdate := $parent/*:dateOfLastUpdate/text() => xs:date()
 
         let $asd:= trace($dateOfGranting, 'dateOfGranting: ')
         let $asd:= trace($dateOfLastUpdate , 'dateOfLastUpdate : ')
@@ -2238,8 +2238,8 @@ declare function scripts:checkPermitDates(
         let $id := scripts:getGmlId($parent)
 
         let $p := scripts:getPath($permit)
-        let $d1 := $permit/child::*[local-name() = $date1]/text() => xs:date()
-        let $d2 := $permit/child::*[local-name() = $date2]/text() => xs:date()
+        let $d1 := $permit/*[local-name() = $date1]/text() => xs:date()
+        let $d2 := $permit/*[local-name() = $date2]/text() => xs:date()
 
         where (not(scripts:is-empty($d1)) and not(scripts:is-empty($d2)))
 
@@ -2338,15 +2338,15 @@ declare function scripts:checkPermit(
     let $msg := "The competentAuthorityPermits field has not been filled out for the following ProductionInstallations where a permit action has been detailed. Please verify and ensure that the competent authority for these permits actions is specified."
     let $type := "info"
 
-    let $seq := $root/descendant::*:ProductionInstallation
+    let $seq := $root//*:ProductionInstallation
 
     let $data :=
         for $x in $seq
         let $feature := $x/local-name()
         let $id := scripts:getGmlId($x)
 
-        let $permit := $x/EUReg:permit
-        let $authPermits := $x/EUReg:competentAuthorityPermits
+        let $permit := $x/*:permit
+        let $authPermits := $x/*:competentAuthorityPermits
 
         where not(scripts:is-empty($permit)) and scripts:is-empty($authPermits)
         return map {
@@ -2379,7 +2379,7 @@ declare function scripts:checkDateOfGrantingPermitURL(
 
   let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-  let $seq := $root/descendant::EUReg:ProductionInstallation
+  let $seq := $root//*:ProductionInstallation
 
   let $fromDB := database:query($cntry, $lastReportingYear, (
     "EUReg:ProductionInstallation"
@@ -2389,16 +2389,16 @@ declare function scripts:checkDateOfGrantingPermitURL(
   for $x in $seq
     let $id := scripts:getInspireId($x)
 
-    let $xDate := $x/EUReg:permit/descendant::EUReg:dateOfGranting
-    let $xUrl := $x/EUReg:permit/descendant::EUReg:permitURL
+    let $xDate := $x/*:permit//*:dateOfGranting
+    let $xUrl := $x/*:permit//*:permitURL
 
     for $y in $fromDB
       let $ic := scripts:getInspireId($y)
 
       where $id = $ic
 
-      let $yDate := $y/EUReg:permit/descendant::EUReg:dateOfGranting
-      let $yUrl := $y/EUReg:permit/descendant::EUReg:permitURL
+      let $yDate := $y/*:permit//*:dateOfGranting
+      let $yUrl := $y/*:permit//*:permitURL
 
       where not($xDate = $yDate)
       where ($xUrl = $yUrl) or (empty($xUrl) and empty($yUrl))
@@ -2514,14 +2514,14 @@ declare function scripts:checkBATPermit(
     let $msg := "When the BATDerogationIndicator Boolean is 'true', the Boolean for permitGranted should also be 'true'. The Boolean fields within the following ProductionInstallations are not consistent with this rule. Please verify and ensure all information is correct."
     let $type := "info"
 
-    let $seq := $root/descendant::*:ProductionInstallation
+    let $seq := $root//*:ProductionInstallation
 
     let $data :=
         for $x in $seq
         let $id := scripts:getGmlId($x)
 
-        let $bat := $x/EUReg:BATDerogationIndicator
-        let $permit := $x/EUReg:permit/descendant::EUReg:permitGranted
+        let $bat := $x/*:BATDerogationIndicator
+        let $permit := $x/*:permit//*:permitGranted
 
         let $bat := $bat = true()
         let $permit := not(scripts:is-empty($permit)) and $permit = true()
@@ -2603,9 +2603,9 @@ declare function scripts:checkArticle32(
     let $valid := scripts:getValidConcepts($value)
 
     let $data :=
-        for $x in $root/descendant::EUReg:ProductionInstallation
+        for $x in $root//*:ProductionInstallation
         let $x_id := scripts:getGmlId($x)
-        let $dateOfGranting := $x/EUReg:permit/descendant::EUReg:dateOfGranting
+        let $dateOfGranting := $x/*:permit//*:dateOfGranting
 
         where not(scripts:is-empty($dateOfGranting))
         let $dateOfGranting := xs:date($dateOfGranting/text())
@@ -2613,8 +2613,8 @@ declare function scripts:checkArticle32(
         for $y_id in $x/pf:groupedInstallationPart/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
 
-        for $y in $root/descendant::EUReg:ProductionInstallationPart[@gml:id = $y_id]
-        let $derogations := replace($y/EUReg:derogations/@xlink:href, '/+$', '')
+        for $y in $root//*:ProductionInstallationPart[@gml:id = $y_id]
+        let $derogations := replace($y/*:derogations/@xlink:href, '/+$', '')
 
         where not(scripts:is-empty($derogations)) and $derogations = $valid
         let $derogations := scripts:normalize($derogations)
@@ -2647,12 +2647,12 @@ declare function scripts:checkDerogationsYear(
 
     let $valid := scripts:getValidConcepts($value)
 
-    let $reportingYear := $root/descendant::EUReg:ReportData/EUReg:reportingYear
+    let $reportingYear := $root//*:ReportData/*:reportingYear
 
     let $data :=
-        for $x in $root/descendant::EUReg:ProductionInstallationPart
+        for $x in $root//*:ProductionInstallationPart
         let $id := scripts:getGmlId($x)
-        let $derogations := replace($x/EUReg:derogations/@xlink:href, '/+$', '')
+        let $derogations := replace($x/*:derogations/@xlink:href, '/+$', '')
 
         where not(scripts:is-empty($derogations)) and $derogations = $valid
         let $derogations := scripts:normalize($derogations)
@@ -2716,7 +2716,7 @@ declare function scripts:checkDerogationsContinuity(
 
   let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-  let $seq := $root/descendant::EUReg:derogations
+  let $seq := $root//*:derogations
 
   let $fromDB := database:query($cntry, $lastReportingYear, (
     "EUReg:derogations"
@@ -2913,12 +2913,12 @@ declare function scripts:checkLCP(
 
     let $valid := scripts:getValidConcepts("PlantTypeValue")
 
-    let $seq := $root/descendant::EUReg:ProductionInstallationPart
+    let $seq := $root//*:ProductionInstallationPart
 
     let $data :=
         for $part in $seq
             let $id := scripts:getGmlId($part)
-            let $plant := replace($part/EUReg:plantType/@xlink:href, '/+$', '')
+            let $plant := replace($part/*:plantType/@xlink:href, '/+$', '')
 
             let $neededFound :=
                 for $node in $needed
@@ -2971,7 +2971,7 @@ declare function scripts:checkRatedThermalInput(
     let $msg := "The totalRatedThermalInput fields in this submission contain an integer less than or equal to 50 or an integer greater than 8500, meaning the spatial object is no longer considered an LCP. Please verify and ensure the values entered are correct."
     let $type := "warning"
 
-    let $seq := $root/descendant::EUReg:ProductionInstallationPart/EUReg:totalRatedThermalInput
+    let $seq := $root//*:ProductionInstallationPart/*:totalRatedThermalInput
 
     let $data :=
         for $x in $seq
@@ -3004,7 +3004,7 @@ declare function scripts:checkWI(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $reportingYear := $root//EUReg:reportingYear/data()
+    let $reportingYear := $root//*:reportingYear/data()
     let $needed2017 := ('nominalCapacity', 'specificConditions')
     let $needed2018 := ('heatReleaseHazardousWaste', 'untreatedMunicipalWaste',
         'publicDisclosure', 'publicDisclosureURL')
@@ -3185,12 +3185,12 @@ declare function scripts:checkConfidentialityRestriction(
     let $msg := "The following ProductionFacilities and/or ProductionInstallations, have claims for confidentiality for the competent authority address. The address details of a competent authority cannot be claimed as confidential. Please leave the confidentialityReason field unpopulated"
     let $type := "error"
 
-    let $seq := $root/descendant::*:CompetentAuthority
+    let $seq := $root//*:CompetentAuthority
 
     let $data :=
         for $s in $seq
         let $feature := $s/parent::*/parent::*
-        let $reason := $s/descendant::*:AddressDetails/child::*:confidentialityReason
+        let $reason := $s//*:AddressDetails/*:confidentialityReason
 
         let $id := scripts:getGmlId($feature)
         let $p := scripts:getPath($reason)
@@ -3275,9 +3275,9 @@ declare function scripts:getIdentifier(
 ) as element()* {
     let $url := "https://converterstest.eionet.europa.eu/xmlfile/" || $file
     return if (doc-available($url)) then
-        doc($url)/descendant::*[local-name() = $identifier]
+        doc($url)//*[local-name() = $identifier]
     else if (doc-available($file)) then
-            doc($file)/descendant::*[local-name() = $identifier]
+            doc($file)//*[local-name() = $identifier]
         else
             ()
 };
@@ -3293,7 +3293,7 @@ declare function scripts:checkIdentifier(
     let $msg := "The following " || scripts:makePlural($feature) || " have " || $identifier || " values that are not valid. Please verify an ensure all IDs are correct."
     let $type := "warning"
 
-    let $seq := $root/descendant::*[local-name() = $feature]/child::*[local-name() = $identifier]
+    let $seq := $root//*[local-name() = $feature]/*[local-name() = $identifier]
 
     let $data :=
         for $identifier in $seq
@@ -3360,13 +3360,13 @@ declare function scripts:checkFacilityName(
     let $msg := "The facilityName fields and parentCompany fields are the same for the following ProductionFacilities. Please verify and consider refining either name so that each name is distinct."
     let $type := "info"
 
-    let $seq := $root/descendant::EUReg:ProductionFacility
+    let $seq := $root//*:ProductionFacility
 
     let $data :=
         for $x in $seq
         let $id := scripts:getGmlId($x)
-        let $facilityName := $x/EUReg:facilityName/descendant::EUReg:nameOfFeature
-        let $companyName := $x/EUReg:parentCompany/descendant::EUReg:parentCompanyName
+        let $facilityName := $x/*:facilityName//*:nameOfFeature
+        let $companyName := $x/*:parentCompany//*:parentCompanyName
 
         where not(scripts:is-empty($facilityName)) and not(scripts:is-empty($companyName))
         where ($facilityName/text() = $companyName/text())
@@ -3400,7 +3400,7 @@ declare function scripts:checkNameOfFeatureContinuity(
 
   let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
 
-  let $seq := $root/descendant::EUReg:nameOfFeature
+  let $seq := $root//*:nameOfFeature
 
   let $fromDB := database:query($cntry, $lastReportingYear, (
     "EUReg:nameOfFeature"
@@ -3459,14 +3459,14 @@ declare function scripts:checkReportingYear(
     where not(scripts:is-empty($envelopeYear))
     let $envelopeYear := xs:integer($envelopeYear/text())
 
-    let $seq := $root/descendant::EUReg:ReportData
+    let $seq := $root//*:ReportData
 
     let $data :=
         for $x in $seq
         let $feature := $x/local-name()
         let $id := scripts:getGmlId($x)
 
-        let $reportingYear := $x/EUReg:reportingYear
+        let $reportingYear := $x/*:reportingYear
         let $p := scripts:getPath($reportingYear)
 
         where not(scripts:is-empty($reportingYear))
@@ -3497,7 +3497,7 @@ declare function scripts:checkElectronicMailAddressFormat(
     let $msg := "The email address specified in the electronicMailAddress field, for the following ProductionFacility/ProductionInstallation, does not contain the at (@) symbol and at least one dot (.) after it (e.g. emailaddress@test.com). Please verify and ensure all email addresses are inputted correctly"
     let $type := "info"
 
-    let $seq := $root/descendant::*:electronicMailAddress
+    let $seq := $root//*:electronicMailAddress
 
     let $data :=
         for $r in $seq
@@ -3534,7 +3534,7 @@ declare function scripts:checkFacilityAddress(
     let $warn := "The number of ProductionFacilities without the address field populated equals PERC, which exceeds threshold limit 0.7%. Please verify and populate the required address fields."
     let $info := "The number of ProductionFacilities without the address field populated equals PERC, which exceeds recommended limit 0.1%. Please verify and populate the required address fields."
 
-    let $seq := $root/descendant::*:ProductionFacility
+    let $seq := $root//*:ProductionFacility
 
     let $data :=
         for $f in $seq
@@ -3543,7 +3543,7 @@ declare function scripts:checkFacilityAddress(
         let $p := scripts:getPath($f)
         let $id := scripts:getGmlId($f)
 
-        where (string-length(string-join($f/child::*:address/child::*:AddressDetails/child::*, '')) = 0)
+        where (string-length(string-join($f/*:address/*:AddressDetails/*, '')) = 0)
         return map {
         "marks" : (2),
         "data" : ($p, <span class="iedreg nowrap">{$id}</span>)
@@ -3625,7 +3625,7 @@ declare function scripts:checkWhitespaces(
     let $msg := "The first character, of the following spatial objects' characterStrings, represents a space. Please verify and ensure the CharacterString has been inputted correctly to prevent duplication"
     let $type := "warning"
 
-    let $seq := $root/descendant::*
+    let $seq := $root//*
 
     let $data :=
         for $e in $seq
