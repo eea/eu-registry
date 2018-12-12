@@ -180,7 +180,7 @@ declare function iedreg:failsafeWrapper(
         $checkFunc as function(xs:string, xs:string, element()) as element()*
 ) as element()* {
     try {
-        let $asd := trace($refcode, '- ')
+        (:let $asd := trace($refcode, '- '):)
         let $reportingYear := $root//*:reportingYear/xs:float(.)
         let $countryCode := tokenize($root//*:countryId/@xlink:href, '/+')[last()]
         return
@@ -499,18 +499,18 @@ declare function iedreg:runChecks($url as xs:string) as element()*
 
     return common:feedback((
         common:header(),
-        (:iedreg:runChecks01($root),:)
-        (:iedreg:runChecks02($root),:)
-        (:iedreg:runChecks03($root),:)
-        (:iedreg:runChecks04($root),:)
-        (:iedreg:runChecks05($root),:)
-        (:iedreg:runChecks06($root),:)
-        (:iedreg:runChecks07($root),:)
-        (:iedreg:runChecks08($root),:)
-        (:iedreg:runChecks09($root),:)
-        (:iedreg:runChecks10($root),:)
+        iedreg:runChecks01($root),
+        iedreg:runChecks02($root),
+        iedreg:runChecks03($root),
+        iedreg:runChecks04($root),
+        iedreg:runChecks05($root),
+        iedreg:runChecks06($root),
+        iedreg:runChecks07($root),
+        iedreg:runChecks08($root),
+        iedreg:runChecks09($root),
+        iedreg:runChecks10($root),
         iedreg:runChecks11($root),
-        (:iedreg:runChecks12($root),:)
+        iedreg:runChecks12($root),
         iedreg:runChecks13($root)
         (:iedreg:runChecks14($root):)
     ))
