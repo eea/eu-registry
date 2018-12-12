@@ -1330,7 +1330,7 @@ declare function scripts:checkCountryBoundary(
     let $country := $root//*:ReportData/*:countryId/attribute::xlink:href
     let $cntry := tokenize($country, '/+')[last()]
     let $boundary := "boundary-" || lower-case($cntry) || ".gml"
-    let $doc := doc("http://converterstest.eionet.europa.eu/xmlfile/" || $boundary)
+    let $doc := doc("https://converterstest.eionet.europa.eu/xmlfile/" || $boundary)
     let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/child::*
 
     let $seq := (
@@ -3273,7 +3273,7 @@ declare function scripts:getIdentifier(
         $file as xs:string,
         $identifier as xs:string
 ) as element()* {
-    let $url := "http://converterstest.eionet.europa.eu/xmlfile/" || $file
+    let $url := "https://converterstest.eionet.europa.eu/xmlfile/" || $file
     return if (doc-available($url)) then
         doc($url)/descendant::*[local-name() = $identifier]
     else if (doc-available($file)) then
