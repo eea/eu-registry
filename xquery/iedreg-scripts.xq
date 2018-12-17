@@ -606,16 +606,19 @@ declare function scripts:checkAmountOfInspireIds(
     let $hdrs := ("Feature", "Inspire ID")
 
     return
-        if ($ratio gt 0.5) then
-            let $msg := replace($warn, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
-        else if ($ratio gt 0.2) then
-            let $msg := replace($info, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "info", $hdrs, $data)
-            return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+        if (not(database:dbExists())) then
+            scripts:noDbWarning($refcode, $rulename)
         else
-            scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
+            if ($ratio gt 0.5) then
+                let $msg := replace($warn, 'PERC', $perc)
+                let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+                return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+            else if ($ratio gt 0.2) then
+                let $msg := replace($info, 'PERC', $perc)
+                let $details := scripts:getDetails($msg, "info", $hdrs, $data)
+                return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+            else
+                scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
 };
 
 (:~
@@ -1799,7 +1802,10 @@ declare function scripts:checkActivityContinuity(
     }</div>
 
   return
-    scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
+    if (not(database:dbExists())) then
+        scripts:noDbWarning($refcode, $rulename)
+    else
+        scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
 };
 
 (:~
@@ -2061,7 +2067,10 @@ declare function scripts:checkFunctionalStatusType(
   let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
   return
-    scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+    if (not(database:dbExists())) then
+        scripts:noDbWarning($refcode, $rulename)
+    else
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
@@ -2417,7 +2426,10 @@ declare function scripts:checkDateOfGrantingPermitURL(
   let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
   return
-    scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+    if (not(database:dbExists())) then
+        scripts:noDbWarning($refcode, $rulename)
+    else
+        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 
 (:~
@@ -2759,11 +2771,14 @@ declare function scripts:checkDerogationsContinuity(
   let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
 
   return
-    scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+    if (not(database:dbExists())) then
+        scripts:noDbWarning($refcode, $rulename)
+    else
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
- : C10.5 Limited life time derogation continuity
+ : C10.6 Limited life time derogation continuity
  :)
 
 declare function scripts:checkArticle33Continuity(
@@ -2778,7 +2793,7 @@ declare function scripts:checkArticle33Continuity(
 };
 
 (:~
- : C10.6 District heat plant derogation continuity
+ : C10.7 District heat plant derogation continuity
  :)
 
 declare function scripts:checkArticle35Continuity(
@@ -2793,7 +2808,7 @@ declare function scripts:checkArticle35Continuity(
 };
 
 (:~
- : C10.7 Transitional National Plan derogation continuity
+ : C10.8 Transitional National Plan derogation continuity
  :)
 
 declare function scripts:checkArticle32Continuity(
@@ -3431,7 +3446,10 @@ declare function scripts:checkNameOfFeatureContinuity(
   let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
   return
-    scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+    if (not(database:dbExists())) then
+        scripts:noDbWarning($refcode, $rulename)
+    else
+        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 
 (:~

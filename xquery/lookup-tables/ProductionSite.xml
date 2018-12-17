@@ -1,0 +1,18 @@
+<data>
+    <ProductionSite>
+        <reportingYear></reportingYear>
+        <!-- 3.1 -->
+        <inspireId>
+            <localId></localId>
+            <namespace></namespace>
+        </inspireId>
+        <!-- 4.5, 13.4 -->
+        <siteName>
+            <nameOfFeature></nameOfFeature>
+        </siteName>
+        <!-- 5.6 -->
+        <location></location>
+        <!-- 7.5 -->
+        <statusType></statusType>
+    </ProductionSite>
+</data>
