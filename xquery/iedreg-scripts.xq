@@ -1355,12 +1355,19 @@ declare function scripts:checkCountryBoundary(
         let $long := substring-before($coords, ' ')
         let $lat := substring-after($coords, ' ')
 
-        let $point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$long},{$lat}</GML:coordinates></GML:Point>
+        let $point :=
+            <GML:Point srsName="{$srsName[1]}">
+                <GML:coordinates>{$lat},{$long}</GML:coordinates>
+            </GML:Point>
 
         where not(geo:within($point, $geom))
         return map {
         'marks' : (3, 4),
-        'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, replace($coords/text(), ' ', ', '), $cntry)
+        'data' : (
+            $feature,
+            <span class="iedreg nowrap">{$id}</span>,
+            replace($coords/text(), ' ', ', '),
+            $cntry)
         }
 
     let $hdrs := ("Feature", "GML ID", "Coordinates", "Country")
@@ -3019,6 +3026,7 @@ declare function scripts:checkWI(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $plantTypes := ('WI', 'co-WI')
     let $reportingYear := $root//*:reportingYear/data()
     let $needed2017 := ('nominalCapacity', 'specificConditions')
     let $needed2018 := ('heatReleaseHazardousWaste', 'untreatedMunicipalWaste',
@@ -3028,7 +3036,7 @@ declare function scripts:checkWI(
         then $needed2017
         else ($needed2017, $needed2018)
 
-    let $msg := "When PlantTypeValue is 'WI' " || fn:string-join($needed, ', ') ||
+    let $msg := "When PlantTypeValue is 'WI' or 'co-WI' " || fn:string-join($needed, ', ') ||
         " fields should be populated, and " || fn:string-join($notNeeded, ', ') ||
         " fields should not be populated. The populated fields for the following
         ProductionInstallationParts do not meet the above criteria. Please verify
@@ -3047,7 +3055,7 @@ declare function scripts:checkWI(
             let $neededFound :=
                 for $node in $needed
                     let $valuesCount := $part//*[local-name() = $node
-                        and (string-length(data()) > 0 or string-length(./@xlink:href))]
+                        and (string-length(data()) > 0 or string-length(./@xlink:href) > 0)]
                             => fn:count()
                     return if($valuesCount > 0)
                         then 1
@@ -3056,7 +3064,7 @@ declare function scripts:checkWI(
             let $notNeededFound :=
                 for $node in $notNeeded
                     let $valuesCount := $part//*[local-name() = $node
-                        and (string-length(data()) > 0 or string-length(./@xlink:href))]
+                        and (string-length(data()) > 0 or string-length(./@xlink:href) > 0)]
                             => fn:count()
                     return if($valuesCount > 0)
                         then 1
@@ -3065,7 +3073,7 @@ declare function scripts:checkWI(
             where $plant = $valid
             let $plant := scripts:normalize($plant)
 
-            where $plant = "WI"
+            where $plant = $plantTypes
                 and
                 (
                     $neededFound => fn:count() != $needed => fn:count()
@@ -3879,7 +3887,7 @@ declare function scripts:checkInstallationType(
                 for $featureSub in $featureSubList
                     let $batDerogInd := $featureSub//*:BATDerogationIndicator
                     where $feature != 'BATDerogation' or
-                        ($feature = 'BATDerogation' and $batDerogInd)
+                        ($feature = 'BATDerogation' and $batDerogInd = 'true')
 
                     for $attr in $mapAttrs2018?($feature)
 
@@ -3888,6 +3896,7 @@ declare function scripts:checkInstallationType(
 
                         where $attrCount = 0
                         return map {
+                            "sort": 2,
                             "marks" : (3),
                             "data" : ($featureMain, $gmlid, $feature, $attr)
                         }
