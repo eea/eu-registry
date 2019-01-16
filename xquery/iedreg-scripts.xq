@@ -2669,9 +2669,10 @@ declare function scripts:checkDerogationsYear(
     let $reportingYear := $root//*:ReportData/*:reportingYear
 
     let $data :=
-        for $x in $root//*:ProductionInstallationPart
-        let $id := scripts:getGmlId($x)
-        let $derogations := replace($x/*:derogations/@xlink:href, '/+$', '')
+        for $derogation in $root//*:ProductionInstallationPart/*:derogations
+        let $installationPart := scripts:getParent($derogation)
+        let $id := scripts:getGmlId($installationPart)
+        let $derogations := replace($derogation/@xlink:href, '/+$', '')
 
         where not(scripts:is-empty($derogations)) and $derogations = $valid
         let $derogations := scripts:normalize($derogations)
@@ -2682,7 +2683,7 @@ declare function scripts:checkDerogationsYear(
         where ($derogations = $article) and ($reportingYear gt $year)
         return map {
         "marks" : (4),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$id}</span>, $derogations, $reportingYear)
+        "data" : ($installationPart/local-name(), <span class="iedreg nowrap">{$id}</span>, $derogations, $reportingYear)
         }
 
     let $hdrs := ("Feature", "GML ID", "DerogationValue", "reportingYear")
@@ -3028,7 +3029,7 @@ declare function scripts:checkWI(
 ) as element()* {
     let $plantTypes := ('WI', 'co-WI')
     let $reportingYear := $root//*:reportingYear/data()
-    let $needed2017 := ('nominalCapacity', 'specificConditions')
+    let $needed2017 := ('nominalCapacity')
     let $needed2018 := ('heatReleaseHazardousWaste', 'untreatedMunicipalWaste',
         'publicDisclosure', 'publicDisclosureURL')
     let $notNeeded := ('totalRatedThermalInput', 'derogations')
