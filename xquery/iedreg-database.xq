@@ -51,7 +51,7 @@ declare function db:getFeatureNames(
         $nameName as xs:string
 ) as element()* {
     let $seq :=
-        for $file in doc($db:master)/rest:database/rest:resource/text()
+        for $file in db:getMasterDb()
         let $file := $db:master || "/" || $file
         let $doc := doc($file)
         let $root := $doc/child::gml:FeatureCollection

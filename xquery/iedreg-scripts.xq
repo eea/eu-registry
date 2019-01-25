@@ -579,7 +579,9 @@ declare function scripts:checkAmountOfInspireIds(
     let $country := $root//*:ReportData/*:countryId
     let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-    let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+    let $reportingYear := $root//*:reportingYear/data()
+    (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
+    let $lastReportingYear := xs:string($reportingYear - 1)
 
     let $seq := $root//pf:inspireId
 
@@ -724,6 +726,7 @@ declare function scripts:checkDuplicates(
                 where $levRatio >= 0.9
 
                 return map {
+                (:"sort": (7),:)
                 "marks" : (5, 6, 7),
                 "data" : (
                     $featureName,
@@ -824,7 +827,6 @@ declare function scripts:checkDatabaseDuplicates(
 
     (: this is where we get the data from the database :)
     let $fromDB := database:getFeatureNames($featureName, $nameName)
-
     let $norm := ft:normalize(?, map {'stemming' : true()})
 
     let $data :=
@@ -933,7 +935,9 @@ declare function scripts:checkMissing(
     let $country := $root//*:ReportData/*:countryId
     let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-    let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+    let $reportingYear := $root//*:reportingYear/data()
+    (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
+    let $lastReportingYear := xs:string($reportingYear - 1)
 
     let $seq := $root//*:inspireId
     let $fromDB := database:query($cntry, $lastReportingYear, (
@@ -991,7 +995,9 @@ declare function scripts:checkMissingSites(
     let $country := $root//*:ReportData/*:countryId
     let $cntry := tokenize($country/@xlink:href, '/+')[last()]
 
-    let $lastYear := max(database:getReportingYearsByCountry($cntry))
+    let $reportingYear := $root//*:reportingYear/data()
+    (:let $lastYear := max(database:getReportingYearsByCountry($cntry)):)
+    let $lastYear := xs:string($reportingYear - 1)
 
     let $seq := $root//*[local-name() = $featureName]
     let $fromDB := database:query($cntry, $lastYear, (
@@ -1445,7 +1451,9 @@ declare function scripts:checkCoordinateContinuity(
 
     let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-    let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+    let $reportingYear := $root//*:reportingYear/data()
+    (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
+    let $lastReportingYear := xs:string($reportingYear - 1)
 
     let $seq := (
         $root//*:location,
@@ -1746,7 +1754,9 @@ declare function scripts:checkActivityContinuity(
   let $country := $root//*:ReportData/*:countryId
   let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+  let $reportingYear := $root//*:reportingYear/data()
+  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
+  let $lastReportingYear := xs:string($reportingYear - 1)
 
   let $seq := $root//*[local-name()=$featureName]
 
@@ -2029,7 +2039,9 @@ declare function scripts:checkFunctionalStatusType(
   let $country := $root//*:ReportData/*:countryId
   let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+  let $reportingYear := $root//*:reportingYear/data()
+  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
+  let $lastReportingYear := xs:string($reportingYear - 1)
 
   let $seq := $root//pf:statusType
 
@@ -2393,7 +2405,9 @@ declare function scripts:checkDateOfGrantingPermitURL(
   let $country := $root//*:ReportData/*:countryId
   let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+  let $reportingYear := $root//*:reportingYear/data()
+  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
+  let $lastReportingYear := xs:string($reportingYear - 1)
 
   let $seq := $root//*:ProductionInstallation
 
@@ -2734,7 +2748,9 @@ declare function scripts:checkDerogationsContinuity(
   let $country := $root//*:ReportData/*:countryId
   let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+  let $reportingYear := $root//*:reportingYear/data()
+  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
+  let $lastReportingYear := xs:string($reportingYear - 1)
 
   let $seq := $root//*:derogations
 
@@ -2786,7 +2802,7 @@ declare function scripts:checkDerogationsContinuity(
 };
 
 (:~
- : C10.6 Limited life time derogation continuity
+ : C10.5 Limited life time derogation continuity
  :)
 
 declare function scripts:checkArticle33Continuity(
@@ -2801,7 +2817,7 @@ declare function scripts:checkArticle33Continuity(
 };
 
 (:~
- : C10.7 District heat plant derogation continuity
+ : C10.6 District heat plant derogation continuity
  :)
 
 declare function scripts:checkArticle35Continuity(
@@ -2816,7 +2832,7 @@ declare function scripts:checkArticle35Continuity(
 };
 
 (:~
- : C10.8 Transitional National Plan derogation continuity
+ : C10.7 Transitional National Plan derogation continuity
  :)
 
 declare function scripts:checkArticle32Continuity(
@@ -3422,7 +3438,9 @@ declare function scripts:checkNameOfFeatureContinuity(
   let $country := $root//*:ReportData/*:countryId
   let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
 
-  let $lastReportingYear := max(database:getReportingYearsByCountry($cntry))
+  let $reportingYear := $root//*:reportingYear/data() =>fn:number()
+  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
+  let $lastReportingYear := xs:string($reportingYear - 1)
 
   let $seq := $root//*:nameOfFeature
 
