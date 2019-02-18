@@ -112,3 +112,10 @@ declare function functx:if-empty(
     then data($arg)
     else $value
 };
+
+declare function functx:value-intersect
+  ( $arg1 as xs:anyAtomicType* ,
+    $arg2 as xs:anyAtomicType* )  as xs:anyAtomicType* {
+
+  distinct-values($arg1[.=$arg2])
+ } ;

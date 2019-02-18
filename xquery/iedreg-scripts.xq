@@ -2863,7 +2863,7 @@ declare function scripts:checkRelevantChapters(
     PlantTypeValues that is consistent with the chapter specified
     in the otherRelevantChapters field.
     Please verify and ensure where 'Chapter III' is referred to the PlantTypeValue is 'LCP',
-    and where 'Chapter IV' is referred the PlantTypeValue is 'WI'."
+    and where 'Chapter IV' is referred the PlantTypeValue is 'WI' or 'co-WI'."
     let $type := "warning"
 
     let $validChapters := scripts:getValidConcepts("RelevantChapterValue")
@@ -2897,25 +2897,26 @@ declare function scripts:checkRelevantChapters(
                         return $plant
 
             let $partType := if($chapter = "ChapterIII")
-                then 'LCP'
+                then ('LCP')
                 else if($chapter = "ChapterIV")
-                then 'WI'
+                then ('WI', 'co-WI')
                 else ''
 
             where ((
                     $chapter = "ChapterIII"
-                    and fn:index-of($partTypes, $partType) => fn:count() = 0)
+                    and functx:value-intersect($partTypes, $partType) => fn:count() = 0)
                 or (
                     $chapter = "ChapterIV"
-                    and fn:index-of($partTypes, $partType) => fn:count() = 0))
+                    and functx:value-intersect($partTypes, $partType) => fn:count() = 0))
             return map {
+            "sort" : (2),
             "marks" : (3, 4),
             "data" : (
                 $node/local-name(),
                 <span class="iedreg nowrap">{$gmlid}</span>,
                 (:<span class="iedreg nowrap">{$partid}</span>,:)
                 $chapter,
-                $partType
+                fn:string-join($partType, ', ')
                 )
             }
 
