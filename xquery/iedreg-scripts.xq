@@ -1361,12 +1361,17 @@ declare function scripts:checkCountryBoundary(
         let $long := substring-before($coords, ' ')
         let $lat := substring-after($coords, ' ')
 
-        let $point :=
+        let $pointA :=
             <GML:Point srsName="{$srsName[1]}">
                 <GML:coordinates>{$lat},{$long}</GML:coordinates>
             </GML:Point>
 
-        where not(geo:within($point, $geom))
+        let $pointB :=
+            <GML:Point srsName="{$srsName[1]}">
+                <GML:coordinates>{$long},{$lat}</GML:coordinates>
+            </GML:Point>
+
+        where not(geo:within($pointA, $geom) or geo:within($pointB, $geom))
         return map {
         'marks' : (3, 4),
         'data' : (
