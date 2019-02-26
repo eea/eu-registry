@@ -1,0 +1,23 @@
+<data>
+    <ProductionInstallationPart>
+        <countryId></countryId>
+        <reportingYear></reportingYear>
+        <!-- 3.1, 4.12 -->
+        <inspireId>
+            <localId></localId>
+            <namespace></namespace>
+        </inspireId>
+        <!-- 4.8, 13.4 -->
+        <installationPartName>
+            <nameOfFeature></nameOfFeature>
+        </installationPartName>
+        <!-- 4.8 -->
+        <plantType></plantType>
+        <!-- 5.6 -->
+        <pointGeometry></pointGeometry>
+        <!-- 7.5 -->
+        <statusType></statusType>
+        <!-- 10.5, 10.6, 10.7 -->
+        <derogations></derogations>
+    </ProductionInstallationPart>
+</data>

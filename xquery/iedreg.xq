@@ -180,7 +180,7 @@ declare function iedreg:failsafeWrapper(
         $checkFunc as function(xs:string, xs:string, element()) as element()*
 ) as element()* {
     try {
-        (:let $asd := trace($refcode, '- '):)
+        let $asd := trace($refcode, '- ')
         let $reportingYear := $root//*:reportingYear/xs:float(.)
         let $countryCode := tokenize($root//*:countryId/@xlink:href, '/+')[last()]
         return

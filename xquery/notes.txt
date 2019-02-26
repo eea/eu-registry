@@ -1,0 +1,21 @@
+- need the countryId for all look-up tables
+
+3.1 - compares currently reported inspire Ids with Ids from previous reported year,
+  for all four feature types
+
+4.5-4.8 - compares currently reported names with names from previous reported year,
+  for the specific feature type
+
+4.9-4.12 - compares with previous reported year
+
+5.6 - previous reported year
+
+6.2, 6.4 - previous reported year
+
+7.5 - previous reported year
+
+9.3 - previous reported year
+
+10.5-10.7 - previous reported year
+
+13.4 - previous reported year

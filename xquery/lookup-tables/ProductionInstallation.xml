@@ -1,25 +1,158 @@
-<data>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites"
+      xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0"
+      xmlns:gml="http://www.opengis.net/gml/3.2">
     <ProductionInstallation>
-        <reportingYear></reportingYear>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
         <!-- 3.1 -->
         <inspireId>
-            <localId></localId>
-            <namespace></namespace>
+            <localId>0001.INSTALLATION</localId>
+            <namespace>CY.CAED</namespace>
         </inspireId>
         <!-- 4.7, 13.4 -->
         <installationName>
-            <nameOfFeature></nameOfFeature>
+            <nameOfFeature>Dhekelia Power Station</nameOfFeature>
         </installationName>
         <!-- 5.6 -->
-        <pointGeometry></pointGeometry>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-8277db33-4dd1-4191-ade1-41a483a2521f-0" srsDimension="2">
+                <gml:pos>33.746236 34.980143</gml:pos>
+            </gml:Point>
+        </pointGeometry>
         <!-- 6.4 -->
-        <IEDAnnexIActivity></IEDAnnexIActivity>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/1.1"></EUReg:mainActivity>
+                <EUReg:otherActivity xlink:href=""></EUReg:otherActivity>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
         <!-- 4.11, 7.5 -->
-        <statusType></statusType>
+        <statusType>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </statusType>
         <!-- 9.3 -->
         <permit>
-            <dateOfGranting></dateOfGranting>
-            <permitURL></permitURL>
+            <dateOfGranting>2001-02-01+00:00</dateOfGranting>
+            <permitURL>http://installationpermit0001.com</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1 -->
+        <inspireId>
+            <localId>0007.INSTALLATION</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.7, 13.4 -->
+        <installationName>
+            <nameOfFeature>Moni Power Station A</nameOfFeature>
+        </installationName>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-84dada8e-f1b6-46a7-ae0d-5516de688f83-0" srsDimension="2">
+                <gml:pos>33.1825 34.71</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 6.4 -->
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/1.1"></EUReg:mainActivity>
+                <EUReg:otherActivity xlink:href=""></EUReg:otherActivity>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <!-- 4.11, 7.5 -->
+        <statusType>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </statusType>
+        <!-- 9.3 -->
+        <permit>
+            <dateOfGranting>2005-07-06+00:00</dateOfGranting>
+            <permitURL>http://installationpermit0007.com</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1 -->
+        <inspireId>
+            <localId>0013.INSTALLATION</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.7, 13.4 -->
+        <installationName>
+            <nameOfFeature>Vassilikos Power Station A</nameOfFeature>
+        </installationName>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-c5a7b4cf-e09c-4a9a-b8af-c53d58ae752e-0" srsDimension="2">
+                <gml:pos>33.289753 34.728469</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 6.4 -->
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/1.1"></EUReg:mainActivity>
+                <EUReg:otherActivity xlink:href=""></EUReg:otherActivity>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <!-- 4.11, 7.5 -->
+        <statusType>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </statusType>
+        <!-- 9.3 -->
+        <permit>
+            <dateOfGranting>2001-02-01+00:00</dateOfGranting>
+            <permitURL>http://installationpermit0013.com</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1 -->
+        <inspireId>
+            <localId>0014.INSTALLATION</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.7, 13.4 -->
+        <installationName>
+            <nameOfFeature>Vassilikos Power Station A</nameOfFeature>
+        </installationName>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-c5a7b4cf-e09c-4a9a-b8af-c53d58ae752e-0" srsDimension="2">
+                <gml:pos>33.289753 34.728469</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 6.4 -->
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/1.1"></EUReg:mainActivity>
+                <EUReg:otherActivity xlink:href=""></EUReg:otherActivity>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <!-- 4.11, 7.5 -->
+        <statusType>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </statusType>
+        <!-- 9.3 -->
+        <permit>
+            <dateOfGranting>2001-02-01+00:00</dateOfGranting>
+            <permitURL>http://installationpermit0013.com</permitURL>
         </permit>
     </ProductionInstallation>
 </data>

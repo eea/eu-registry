@@ -38,6 +38,18 @@ declare function db:dbExists() as xs:boolean {
   }
 };
 
+declare function db:dbAvailable(
+    $doc as document-node()
+) as xs:boolean {
+  try {
+    if(count($doc/data/*) > 0) then true()
+    else false()
+  } catch * {
+    false()
+  }
+};
+
+
 declare function db:getMasterDb() as xs:string* {
   try {
     doc($db:master)/rest:database/rest:resource/text()
@@ -144,6 +156,39 @@ declare function db:query(
         where $yr = $lastYear
 
         let $seq := $root/descendant::*[name() = $name]
+
+        return $seq
+};
+
+declare function db:queryByYear(
+        $country as xs:string,
+        $Year as xs:string*,
+        $doc as document-node(),
+        $element-name as xs:string
+) as element()* {
+    if (empty($Year)) then
+        ()
+    else
+        let $root := $doc/data
+
+        let $seq := $root/*[countryId/@xlink:href = $country
+                and reportingYear = $Year]//*[local-name() = $element-name]
+
+        return $seq
+};
+
+declare function db:queryAll(
+        $country as xs:string,
+        $doc as document-node(),
+        $element-name as xs:string
+) as element()* {
+    if (empty($country)) then
+        ()
+    else
+        let $root := $doc/data
+
+        let $seq := $root/*[countryId/@xlink:href = $country]
+                //*[local-name() = $element-name]
 
         return $seq
 };

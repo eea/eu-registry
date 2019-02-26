@@ -38,11 +38,35 @@ import module namespace database = "iedreg-database" at "iedreg-database.xq";
 import module namespace geo = "http://expath.org/ns/geo";
 
 declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
+
+declare variable $scripts:docProdFac as document-node() := fn:doc('./lookup-tables/ProductionFacility.xml');
+declare variable $scripts:docProdInstall as document-node() := fn:doc('./lookup-tables/ProductionInstallation.xml');
+declare variable $scripts:docProdInstallPart as document-node() := fn:doc('./lookup-tables/ProductionInstallationPart.xml');
+declare variable $scripts:docProdSite as document-node() := fn:doc('./lookup-tables/ProductionSite.xml');
+
 (:~
  : --------------
  : Util functions
  : --------------
  :)
+
+declare function scripts:getCountry(
+        $root as element()
+) as xs:string{
+    let $country := $root//*:ReportData/*:countryId
+    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+
+    return $cntry
+};
+
+declare function scripts:getLastYear(
+        $root as element()
+) as xs:string{
+    let $reportingYear := $root//*:reportingYear/data()
+    let $lastReportingYear := xs:string($reportingYear - 1)
+
+    return $lastReportingYear
+};
 
 declare function scripts:normalize($url as xs:string) as xs:string {
 (: replace($url, 'http://dd\.eionet\.europa\.eu/vocabulary[a-z]*/euregistryonindustrialsites/', '') :)
@@ -576,21 +600,20 @@ declare function scripts:checkAmountOfInspireIds(
         which exceeds the ideal threshold of 20%, please verify to ensure these are
         new entities reported for the first time."
 
-    let $country := $root//*:ReportData/*:countryId
-    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
-
-    let $reportingYear := $root//*:reportingYear/data()
-    (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
-    let $lastReportingYear := xs:string($reportingYear - 1)
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
 
     let $seq := $root//pf:inspireId
 
-    let $fromDB := database:query($cntry, $lastReportingYear, (
-     "pf:inspireId", "act-core:inspireId"
-   ))
+    let $fromDB := (
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdSite, 'inspireId')
+    )
 
     let $xIDs := $seq//base:localId
-    let $yIDs := $fromDB//base:localId
+    let $yIDs := $fromDB//*:localId
 
     let $data :=
         for $id in $xIDs
@@ -606,9 +629,8 @@ declare function scripts:checkAmountOfInspireIds(
     let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
     let $hdrs := ("Feature", "Inspire ID")
-
     return
-        if (not(database:dbExists())) then
+        if (not(database:dbAvailable($scripts:docProdFac))) then
             scripts:noDbWarning($refcode, $rulename)
         else
             if ($ratio gt 0.5) then
@@ -815,10 +837,13 @@ declare function scripts:checkDatabaseDuplicates(
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
-        $feature as xs:string
+        $feature as xs:string,
+        $docDB as document-node()
 ) as element()* {
     let $nameName := $feature || 'Name'
     let $featureName := 'Production' || functx:capitalize-first($feature)
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
 
     let $msg := "The similarity threshold has been exceeded, for the following " || scripts:makePlural($featureName) || ". These " || scripts:makePlural($featureName) || " have similar " || scripts:makePlural($featureName) || " already present in the master database. Please ensure that there is no duplication."
     let $type := "warning"
@@ -826,7 +851,7 @@ declare function scripts:checkDatabaseDuplicates(
     let $seq := $root//*[local-name() = $featureName]//*[local-name() = $nameName]//*:nameOfFeature
 
     (: this is where we get the data from the database :)
-    let $fromDB := database:getFeatureNames($featureName, $nameName)
+    let $fromDB := database:queryByYear($cntry, $lastReportingYear, $docDB, $nameName)
     let $norm := ft:normalize(?, map {'stemming' : true()})
 
     let $data :=
@@ -841,7 +866,7 @@ declare function scripts:checkDatabaseDuplicates(
         where $id != $ic
 
         let $z := strings:levenshtein($norm($x/data()), $norm($y/data()))
-        where $z >= 0.5
+        where $z >= 0.9
         return map {
         "marks" : (4, 5, 6),
         "data" : (
@@ -858,7 +883,7 @@ declare function scripts:checkDatabaseDuplicates(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        if (not(database:dbExists())) then
+        if (not(database:dbAvailable($docDB))) then
             scripts:noDbWarning($refcode, $rulename)
         else
             scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -874,8 +899,9 @@ declare function scripts:checkProductionSiteDatabaseDuplicates(
         $root as element()
 ) as element()* {
     let $feature := 'site'
+    let $docDB := $scripts:docProdSite
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
+    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature, $docDB)
 };
 
 (:~
@@ -888,8 +914,9 @@ declare function scripts:checkProductionFacilityDatabaseDuplicates(
         $root as element()
 ) as element()* {
     let $feature := 'facility'
+    let $docDB := $scripts:docProdFac
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
+    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature, $docDB)
 };
 
 (:~
@@ -902,8 +929,9 @@ declare function scripts:checkProductionInstallationDatabaseDuplicates(
         $root as element()
 ) as element()* {
     let $feature := 'installation'
+    let $docDB := $scripts:docProdInstall
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
+    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature, $docDB)
 };
 
 (:~
@@ -916,8 +944,9 @@ declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
         $root as element()
 ) as element()* {
     let $feature := 'installationPart'
+    let $docDB := $scripts:docProdInstallPart
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature)
+    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature, $docDB)
 };
 
 declare function scripts:checkMissing(
@@ -925,24 +954,20 @@ declare function scripts:checkMissing(
         $rulename as xs:string,
         $root as element(),
         $feature as xs:string,
-        $allowed as xs:string*
+        $allowed as xs:string*,
+        $docDB as document-node()
 ) as element()* {
     let $featureName := 'Production' || functx:capitalize-first($feature)
 
     let $msg := "There are inspireIDs for " || scripts:makePlural($featureName) || " missing from this submission. Please verify to ensure that no " || scripts:makePlural($featureName) || " have been missed."
     let $type := "error"
 
-    let $country := $root//*:ReportData/*:countryId
-    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
-
-    let $reportingYear := $root//*:reportingYear/data()
-    (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
-    let $lastReportingYear := xs:string($reportingYear - 1)
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
 
     let $seq := $root//*:inspireId
-    let $fromDB := database:query($cntry, $lastReportingYear, (
-        "pf:inspireId", "act-core:inspireId"
-    ))
+    let $fromDB := database:queryByYear($cntry, $lastReportingYear,
+        $docDB, 'inspireId')
 
     let $data :=
         for $id in $fromDB
@@ -953,7 +978,7 @@ declare function scripts:checkMissing(
 
         let $id := $id//*:localId/text()
 
-        let $status := $p/pf:status//pf:statusType
+        let $status := $p//pf:statusType
         let $status := replace($status/@xlink:href, '/+$', '')
         let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
 
@@ -972,7 +997,7 @@ declare function scripts:checkMissing(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        if (not(database:dbExists())) then
+        if (not(database:dbAvailable($docDB))) then
             scripts:noDbWarning($refcode, $rulename)
         else if (empty($lastReportingYear)) then
             scripts:noPreviousYearWarning($refcode, $rulename)
@@ -980,29 +1005,26 @@ declare function scripts:checkMissing(
             scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
+(: TODO needs testing :)
 declare function scripts:checkMissingSites(
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
         $featureName as xs:string,
-        $allowed as xs:string*
+        $allowed as xs:string*,
+        $docDB as document-node()
 ) as element()* {
     let $msg := "There are inspireIDs for " || scripts:makePlural($featureName)
         || " missing from this submission. Please verify to ensure that no "
         || scripts:makePlural($featureName) || " have been missed."
     let $type := "warning"
 
-    let $country := $root//*:ReportData/*:countryId
-    let $cntry := tokenize($country/@xlink:href, '/+')[last()]
-
-    let $reportingYear := $root//*:reportingYear/data()
-    (:let $lastYear := max(database:getReportingYearsByCountry($cntry)):)
-    let $lastYear := xs:string($reportingYear - 1)
+    let $country := scripts:getCountry($root)
+    let $lastYear := scripts:getLastYear($root)
 
     let $seq := $root//*[local-name() = $featureName]
-    let $fromDB := database:query($cntry, $lastYear, (
-        "ProductionSite"
-    ))
+    let $fromDB := database:queryByYear($country, $lastYear,
+            $docDB, "ProductionSite")
 
     let $data1 :=
         for $facility in $seq
@@ -1055,7 +1077,7 @@ declare function scripts:checkMissingSites(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        if (not(database:dbExists())) then
+        if (not(database:dbAvailable($docDB))) then
             scripts:noDbWarning($refcode, $rulename)
         else if (empty($lastYear)) then
             scripts:noPreviousYearWarning($refcode, $rulename)
@@ -1074,8 +1096,9 @@ declare function scripts:checkMissingProductionSites(
 ) as element()* {
     let $feature := 'ProductionSite'
     let $allowed := ("decommissioned")
+    let $docDB := $scripts:docProdSite
 
-    return scripts:checkMissingSites($refcode, $rulename, $root, $feature, $allowed)
+    return scripts:checkMissingSites($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1089,8 +1112,9 @@ declare function scripts:checkMissingProductionFacilities(
 ) as element()* {
     let $feature := 'facility'
     let $allowed := ("decommissioned", "Not regulated")
+    let $docDB := $scripts:docProdFac
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
+    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1104,8 +1128,9 @@ declare function scripts:checkMissingProductionInstallations(
 ) as element()* {
     let $feature := 'installation'
     let $allowed := ("decommissioned", "Not regulated")
+    let $docDB := $scripts:docProdInstall
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
+    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1119,8 +1144,9 @@ declare function scripts:checkMissingProductionInstallationParts(
 ) as element()* {
     let $feature := 'installationPart'
     let $allowed := ("decommissioned")
+    let $docDB := $scripts:docProdInstallPart
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed)
+    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1413,17 +1439,17 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
 
         let $p := scripts:getPath($coords)
 
-        let $long := substring-before($coords, ' ')
-        let $lat := substring-after($coords, ' ')
-        let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (4) else ()
-        let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (5) else ()
+        let $lat := substring-before($coords, ' ')
+        let $long := substring-after($coords, ' ')
+        let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (4) else ()
+        let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (5) else ()
         where (string-length(substring-after($long, '.')) lt 4) or (string-length(substring-after($lat, '.')) lt 4)
         return map {
         'marks' : ($errLong, $errLat),
-        'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $long, $lat)
+        'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $lat, $long)
         }
 
-    let $hdrs := ("Feature", "GML ID", "Path", "Longitude", "Latitude")
+    let $hdrs := ("Feature", "GML ID", "Path", "Latitude", "Longitude")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1448,13 +1474,8 @@ declare function scripts:checkCoordinateContinuity(
         for $srs in distinct-values($root//gml:*/attribute::srsName)
         return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
 
-    let $country := $root//*:ReportData/*:countryId
-
-    let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
-
-    let $reportingYear := $root//*:reportingYear/data()
-    (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
-    let $lastReportingYear := xs:string($reportingYear - 1)
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
 
     let $seq := (
         $root//*:location,
@@ -1462,14 +1483,12 @@ declare function scripts:checkCoordinateContinuity(
         $root//pf:pointGeometry
     )
 
-    (:let $asd:= trace('lastReportingYear: ', $lastReportingYear):)
-
-    let $fromDB := database:query($cntry, $lastReportingYear, (
-        "EUReg:location",
-        "act-core:geometry",
-        "pf:pointGeometry"
-    ))
-
+    let $fromDB := (
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, 'geometry'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, 'pointGeometry'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, 'pointGeometry'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdSite, 'location')
+    )
     let $data :=
         for $x_coords in $seq//gml:*/descendant-or-self::*[not(*)]
         let $p := scripts:getParent($x_coords)
@@ -1540,7 +1559,7 @@ declare function scripts:checkCoordinateContinuity(
         }</div>
 
     return
-        if (not(database:dbExists()))
+        if (not(database:dbAvailable($scripts:docProdSite)))
         then scripts:noDbWarning($refcode, $rulename)
         else if (empty($lastReportingYear))
         then scripts:noPreviousYearWarning($refcode, $rulename)
@@ -1736,48 +1755,44 @@ declare function scripts:checkActivityUniqueness(
 };
 
 declare function scripts:checkActivityContinuity(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element(),
-  $featureName as xs:string,
-  $activityName as xs:string
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element(),
+        $featureName as xs:string,
+        $activityName as xs:string,
+        $docDB as document-node()
 ) as element()* {
-  let $warn := "There have been changes in the " || $activityName || " field,
+    let $warn := "There have been changes in the " || $activityName || " field,
       compared to the master database - this field should remain constant over time
       and seldom change, particularly between activity groups. Changes have been noticed
       in the following " || scripts:makePlural($featureName) || ".
       Please ensure all inputs are correct."
-  let $info := "There have been changes in the " || $activityName || " field,
+    let $info := "There have been changes in the " || $activityName || " field,
       compared to the master database - this field should remain constant over time
       and seldom change. Changes have been noticed in the following "
-      || scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
+    || scripts:makePlural($featureName) || ". Please ensure all inputs are correct."
 
-  let $country := $root//*:ReportData/*:countryId
-  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
 
-  let $reportingYear := $root//*:reportingYear/data()
-  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
-  let $lastReportingYear := xs:string($reportingYear - 1)
+    let $seq := $root//*[local-name() = $featureName]
 
-  let $seq := $root//*[local-name()=$featureName]
+    let $fromDB := database:queryByYear($cntry, $lastReportingYear,
+            $docDB, $featureName)
 
-  let $fromDB := database:query($cntry, $lastReportingYear, (
-    "EUReg:" || $featureName
-  ))
+    let $data :=
+        for $feature in $seq
+        let $idFeature := scripts:getInspireId($feature)
 
-  let $data :=
-  for $feature in $seq
-    let $idFeature := scripts:getInspireId($feature)
+        for $featureDB in $fromDB
+        let $idFeatureDB := scripts:getInspireId($featureDB)
 
-    for $featureDB in $fromDB
-      let $idFeatureDB := scripts:getInspireId($featureDB)
+        where $idFeature = $idFeatureDB
 
-      where $idFeature = $idFeatureDB
+        let $featureActivity := $feature//*[local-name() = $activityName]
+        let $featureDBActivity := $featureDB//*[local-name() = $activityName]
 
-      let $featureActivity := $feature//*[local-name()=$activityName]
-      let $featureDBActivity := $featureDB//*[local-name()=$activityName]
-
-      for $act in $featureActivity/descendant-or-self::*[not(*)]
+        for $act in $featureActivity/descendant-or-self::*[not(*)]
         let $pathFeature := scripts:getPath($feature)
         let $pathAct := scripts:getPath($act)
 
@@ -1785,45 +1800,45 @@ declare function scripts:checkActivityContinuity(
         let $yAct := replace($featureDBActivity/descendant-or-self::*[not(*) and local-name() = $act/local-name()]/@xlink:href, '/+$', '')
 
         let $xAct :=
-          if (scripts:is-empty($xAct)) then
-            " "
-          else $xAct
+            if (scripts:is-empty($xAct)) then
+                " "
+            else $xAct
 
-        where not (scripts:is-empty($yAct))
-        where not ($xAct = $yAct)
+        where not(scripts:is-empty($yAct))
+        where not($xAct = $yAct)
         where $activityName != 'EPRTRAnnexIActivity'
-            or ($activityName = 'EPRTRAnnexIActivity' and $act/local-name() = 'mainActivity')
+                or ($activityName = 'EPRTRAnnexIActivity' and $act/local-name() = 'mainActivity')
         return [$feature/local-name(), $idFeature/text(), $act/local-name(), scripts:normalize($xAct), scripts:normalize($yAct)]
 
-  let $yellow :=
-  for $x in $data
-    where not(tokenize($x(4), "[.()]+")[1] = tokenize($x(5), "[.()]+")[1])
-    return map {
-      "marks": (4, 5),
-      "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $x(3), $x(4), $x(5))
-    }
+    let $yellow :=
+        for $x in $data
+        where not(tokenize($x(4), "[.()]+")[1] = tokenize($x(5), "[.()]+")[1])
+        return map {
+        "marks" : (4, 5),
+        "data" : ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $x(3), $x(4), $x(5))
+        }
 
-  let $blue :=
-  for $x in $data
-    where tokenize($x(4), "[.()]+")[1] = tokenize($x(5), "[.()]+")[1]
-    return map {
-      "marks": (4, 5),
-      "data": ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $x(3), $x(4), $x(5))
-    }
+    let $blue :=
+        for $x in $data
+        where tokenize($x(4), "[.()]+")[1] = tokenize($x(5), "[.()]+")[1]
+        return map {
+        "marks" : (4, 5),
+        "data" : ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $x(3), $x(4), $x(5))
+        }
 
-  let $hdrs := ("Feature", "Inspire ID", $activityName, "Value", "Value (DB)")
+    let $hdrs := ("Feature", "Inspire ID", $activityName, "Value", "Value (DB)")
 
-  let $details :=
-    <div class="iedreg">{
-    if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
-    if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
-    }</div>
+    let $details :=
+        <div class="iedreg">{
+            if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
+            if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
+        }</div>
 
-  return
-    if (not(database:dbExists())) then
-        scripts:noDbWarning($refcode, $rulename)
-    else
-        scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
+    return
+        if (not(database:dbAvailable($docDB))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, 0, count($yellow), count($blue), $details)
 };
 
 (:~
@@ -1852,8 +1867,10 @@ declare function scripts:checkEPRTRAnnexIActivityContinuity(
 ) as element()* {
   let $featureName := "ProductionFacility"
   let $activityName := "EPRTRAnnexIActivity"
+  let $docDB := $scripts:docProdFac
 
-  return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName, $activityName)
+  return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName,
+            $activityName, $docDB)
 };
 
 (:~
@@ -1882,8 +1899,10 @@ declare function scripts:checkIEDAnnexIActivityContinuity(
 ) as element()* {
   let $featureName := "ProductionInstallation"
   let $activityName := "IEDAnnexIActivity"
+  let $docDB := $scripts:docProdInstall
 
-  return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName, $activityName)
+  return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName,
+          $activityName, $docDB)
 };
 
 (:~
@@ -2030,67 +2049,65 @@ declare function scripts:checkProductionInstallationDisusedStatus(
  :)
 
 declare function scripts:checkFunctionalStatusType(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
 ) as element()* {
-  let $msg := "The StatusType, of the following spatial objects, has changed from 'decomissioned' in the previous submission to 'functional' in this current submission. Please verify inputs and ensure consistency with the previous report."
-  let $type := "error"
+    let $msg := "The StatusType, of the following spatial objects, has changed from 'decomissioned' in the previous submission to 'functional' in this current submission. Please verify inputs and ensure consistency with the previous report."
+    let $type := "error"
 
-  let $country := $root//*:ReportData/*:countryId
-  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
 
-  let $reportingYear := $root//*:reportingYear/data()
-  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
-  let $lastReportingYear := xs:string($reportingYear - 1)
+    let $seq := $root//pf:statusType
 
-  let $seq := $root//pf:statusType
+    let $fromDB := (
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, "pf:statusType"),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, "pf:statusType"),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, "pf:statusType")
+    )
 
-  let $fromDB := database:query($cntry, $lastReportingYear, (
-    "pf:statusType"
-  ))
+    let $value := "ConditionOfFacilityValue"
+    let $valid := scripts:getValidConcepts($value)
 
-  let $value := "ConditionOfFacilityValue"
-  let $valid := scripts:getValidConcepts($value)
+    let $data :=
+        for $x in $seq
+        let $p := scripts:getParent($x)
+        let $id := scripts:getInspireId($p)
 
-  let $data :=
-  for $x in $seq
-    let $p := scripts:getParent($x)
-    let $id := scripts:getInspireId($p)
+        let $xStatus := replace($x/@xlink:href, '/+$', '')
 
-    let $xStatus := replace($x/@xlink:href, '/+$', '')
+        where not(scripts:is-empty($xStatus)) and $xStatus = $valid
+        let $xStat := scripts:normalize($xStatus)
 
-    where not(scripts:is-empty($xStatus)) and $xStatus = $valid
-    let $xStat := scripts:normalize($xStatus)
+        for $y in $fromDB
+        let $q := scripts:getParent($y)
+        let $ic := scripts:getInspireId($q)
 
-    for $y in $fromDB
-      let $q := scripts:getParent($y)
-      let $ic := scripts:getInspireId($q)
+        where $id = $ic
 
-      where $id = $ic
+        let $yStatus := replace($y/@xlink:href, '/+$', '')
 
-      let $yStatus := replace($y/@xlink:href, '/+$', '')
+        where not(scripts:is-empty($yStatus)) and $yStatus = $valid
+        let $yStat := scripts:normalize($yStatus)
 
-      where not(scripts:is-empty($yStatus)) and $yStatus = $valid
-      let $yStat := scripts:normalize($yStatus)
+        where $xStat = "functional"
+        where $yStat = "decommissioned"
 
-      where $xStat = "functional"
-      where $yStat = "decommissioned"
+        return map {
+        "marks" : (4, 5),
+        "data" : ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, scripts:getPath($x), $yStat, $xStat)
+        }
 
-      return map {
-        "marks": (4, 5),
-        "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, scripts:getPath($x), $yStat, $xStat)
-      }
+    let $hdrs := ("Feature", "Inspire ID", "Path", "StatusType (DB)", "StatusType")
 
-  let $hdrs := ("Feature", "Inspire ID", "Path", "StatusType (DB)", "StatusType")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-  return
-    if (not(database:dbExists())) then
-        scripts:noDbWarning($refcode, $rulename)
-    else
-        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+    return
+        if (not(database:dbAvailable($scripts:docProdFac))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
@@ -2396,62 +2413,59 @@ declare function scripts:checkPermit(
  :)
 
 declare function scripts:checkDateOfGrantingPermitURL(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
 ) as element()* {
-  let $msg := "The dateofGranting, for the following ProductionInstallations, has changed from the previous submission, but the PermitURL has remained the same. Please verify and ensure all required changes in the PermitURL field have been made."
-  let $type := "info"
+    let $msg := "The dateofGranting, for the following ProductionInstallations, has changed from the previous submission, but the PermitURL has remained the same. Please verify and ensure all required changes in the PermitURL field have been made."
+    let $type := "info"
 
-  let $country := $root//*:ReportData/*:countryId
-  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+    let $docDB := $scripts:docProdInstall
+    let $cntry := scripts:getCountry($root)
 
-  let $reportingYear := $root//*:reportingYear/data()
-  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
-  let $lastReportingYear := xs:string($reportingYear - 1)
+    let $lastReportingYear := scripts:getLastYear($root)
 
-  let $seq := $root//*:ProductionInstallation
+    let $seq := $root//*:ProductionInstallation
 
-  let $fromDB := database:query($cntry, $lastReportingYear, (
-    "EUReg:ProductionInstallation"
-  ))
+    let $fromDB := database:queryByYear($cntry, $lastReportingYear,
+            $docDB, "ProductionInstallation")
 
-  let $data :=
-  for $x in $seq
-    let $id := scripts:getInspireId($x)
+    let $data :=
+        for $x in $seq
+        let $id := scripts:getInspireId($x)
 
-    let $xDate := $x/*:permit//*:dateOfGranting
-    let $xUrl := $x/*:permit//*:permitURL
+        let $xDate := $x/*:permit//*:dateOfGranting
+        let $xUrl := $x/*:permit//*:permitURL
 
-    for $y in $fromDB
-      let $ic := scripts:getInspireId($y)
+        for $y in $fromDB
+        let $ic := scripts:getInspireId($y)
 
-      where $id = $ic
+        where $id = $ic
 
-      let $yDate := $y/*:permit//*:dateOfGranting
-      let $yUrl := $y/*:permit//*:permitURL
+        let $yDate := $y/*:permit//*:dateOfGranting
+        let $yUrl := $y/*:permit//*:permitURL
 
-      where not($xDate = $yDate)
-      where ($xUrl = $yUrl) or (empty($xUrl) and empty($yUrl))
+        where not($xDate = $yDate)
+        where ($xUrl = $yUrl) or (empty($xUrl) and empty($yUrl))
 
-      let $url := if (scripts:is-empty($xUrl)) then " " else $xUrl/text()
-      let $oldDate := if (scripts:is-empty($yDate/text())) then " " else xs:date($yDate/text())
-      let $newDate := if (scripts:is-empty($xDate/text())) then " " else xs:date($xDate/text())
+        let $url := if (scripts:is-empty($xUrl)) then " " else $xUrl/text()
+        let $oldDate := if (scripts:is-empty($yDate/text())) then " " else xs:date($yDate/text())
+        let $newDate := if (scripts:is-empty($xDate/text())) then " " else xs:date($xDate/text())
 
-      return map {
-        "marks": (4, 5),
-        "data": ($x/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, $oldDate, $newDate, $url)
-      }
+        return map {
+        "marks" : (4, 5),
+        "data" : ($x/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, $oldDate, $newDate, $url)
+        }
 
-  let $hdrs := ("Feature", "Inspire ID", "dateofGranting (DB)", "dateofGranting", "permitURL")
+    let $hdrs := ("Feature", "Inspire ID", "dateofGranting (DB)", "dateofGranting", "permitURL")
 
-  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-  return
-    if (not(database:dbExists())) then
-        scripts:noDbWarning($refcode, $rulename)
-    else
-        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+    return
+        if (not(database:dbAvailable($docDB))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 
 (:~
@@ -2740,66 +2754,61 @@ declare function scripts:checkArticle35(
 };
 
 declare function scripts:checkDerogationsContinuity(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element(),
-  $msg as xs:string,
-  $article as xs:string
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element(),
+        $msg as xs:string,
+        $article as xs:string
 ) as element()* {
-  let $country := $root//*:ReportData/*:countryId
-  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
+    let $docDB := $scripts:docProdInstallPart
+    let $seq := $root//*:derogations
 
-  let $reportingYear := $root//*:reportingYear/data()
-  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
-  let $lastReportingYear := xs:string($reportingYear - 1)
+    let $fromDB := database:queryByYear($cntry, $lastReportingYear,
+            $docDB, "derogations")
 
-  let $seq := $root//*:derogations
+    let $value := "DerogationValue"
+    let $valid := scripts:getValidConcepts($value)
 
-  let $fromDB := database:query($cntry, $lastReportingYear, (
-    "EUReg:derogations"
-  ))
+    let $data :=
+        for $x in $seq
+        let $p := scripts:getParent($x)
+        let $id := scripts:getInspireId($p)
 
-  let $value := "DerogationValue"
-  let $valid := scripts:getValidConcepts($value)
+        let $xderogations := replace($x/@xlink:href, '/+$', '')
 
-  let $data :=
-  for $x in $seq
-    let $p := scripts:getParent($x)
-    let $id := scripts:getInspireId($p)
+        where not(scripts:is-empty($xderogations)) and $xderogations = $valid
+        let $xder := scripts:normalize($xderogations)
 
-    let $xderogations := replace($x/@xlink:href, '/+$', '')
+        for $y in $fromDB
+        let $q := scripts:getParent($y)
+        let $ic := scripts:getInspireId($q)
 
-    where not(scripts:is-empty($xderogations)) and $xderogations = $valid
-    let $xder := scripts:normalize($xderogations)
+        where $id = $ic
 
-    for $y in $fromDB
-      let $q := scripts:getParent($y)
-      let $ic := scripts:getInspireId($q)
+        let $yderogations := replace($y/@xlink:href, '/+$', '')
 
-      where $id = $ic
+        where not(scripts:is-empty($yderogations)) and $yderogations = $valid
+        let $yder := scripts:normalize($yderogations)
 
-      let $yderogations := replace($y/@xlink:href, '/+$', '')
+        where $yder = $article
+        where not($xder = $article)
 
-      where not(scripts:is-empty($yderogations)) and $yderogations = $valid
-      let $yder := scripts:normalize($yderogations)
+        return map {
+        "marks" : (3, 4),
+        "data" : ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, $xder, $yder)
+        }
 
-      where $yder = $article
-      where not($xder = $article)
+    let $hdrs := ("Feature", "Inspire ID", "DerogationValue", "DerogationValue (DB)")
 
-      return map {
-        "marks": (3, 4),
-        "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, $xder, $yder)
-      }
+    let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
 
-  let $hdrs := ("Feature", "Inspire ID", "DerogationValue", "DerogationValue (DB)")
-
-  let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
-
-  return
-    if (not(database:dbExists())) then
-        scripts:noDbWarning($refcode, $rulename)
-    else
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+    return
+        if (not(database:dbAvailable($docDB))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
@@ -2807,14 +2816,14 @@ declare function scripts:checkDerogationsContinuity(
  :)
 
 declare function scripts:checkArticle33Continuity(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
 ) as element()* {
-  let $msg := "Under certain limited lifetime derogations, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
-  let $article := "Article33"
+    let $msg := "Under certain limited lifetime derogations, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
+    let $article := "Article33"
 
-  return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+    return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
 };
 
 (:~
@@ -2822,14 +2831,15 @@ declare function scripts:checkArticle33Continuity(
  :)
 
 declare function scripts:checkArticle35Continuity(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
 ) as element()* {
-  let $msg := "Under the district heat plant derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following Installation Parts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
-  let $article := "Article35"
+    let $msg := "Under the district heat plant derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following Installation Parts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
+    let $article := "Article35"
 
-  return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+
+    return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
 };
 
 (:~
@@ -2837,14 +2847,14 @@ declare function scripts:checkArticle35Continuity(
  :)
 
 declare function scripts:checkArticle32Continuity(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
 ) as element()* {
-  let $msg := "Under Transitional National Plan derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
-  let $article := "Article32"
+    let $msg := "Under Transitional National Plan derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
+    let $article := "Article32"
 
-  return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+    return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
 };
 
 (:~
@@ -3430,55 +3440,54 @@ declare function scripts:checkFacilityName(
  :)
 
 declare function scripts:checkNameOfFeatureContinuity(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
 ) as element()* {
-  let $msg := "The names, provided in this XML submission, for the following spatial objects are not the same as the names within the master database. Please verify and ensure that all names have been inputted correctly."
-  let $type := "info"
+    let $msg := "The names, provided in this XML submission, for the following spatial objects are not the same as the names within the master database. Please verify and ensure that all names have been inputted correctly."
+    let $type := "info"
 
-  let $country := $root//*:ReportData/*:countryId
-  let $cntry := tokenize($country/attribute::xlink:href, '/+')[last()]
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
 
-  let $reportingYear := $root//*:reportingYear/data() =>fn:number()
-  (:let $lastReportingYear := max(database:getReportingYearsByCountry($cntry)):)
-  let $lastReportingYear := xs:string($reportingYear - 1)
+    let $seq := $root//*:nameOfFeature
 
-  let $seq := $root//*:nameOfFeature
+    let $fromDB := (
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdSite, 'nameOfFeature')
+    )
 
-  let $fromDB := database:query($cntry, $lastReportingYear, (
-    "EUReg:nameOfFeature"
-  ))
+    let $data :=
+        for $x in $seq
+        let $p := scripts:getParent($x)
+        let $id := scripts:getInspireId($p)
 
-  let $data :=
-  for $x in $seq
-    let $p := scripts:getParent($x)
-    let $id := scripts:getInspireId($p)
+        for $y in $fromDB
+        let $q := scripts:getParent($y)
+        let $ic := scripts:getInspireId($q)
 
-    for $y in $fromDB
-      let $q := scripts:getParent($y)
-      let $ic := scripts:getInspireId($q)
+        where $id = $ic
 
-      where $id = $ic
+        let $xName := normalize-space($x/text())
+        let $yName := normalize-space($y/text())
 
-      let $xName := normalize-space($x/text())
-      let $yName := normalize-space($y/text())
+        where not($xName = $yName)
+        return map {
+        "marks" : (4, 5),
+        "data" : ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, <span class="iedreg nowrap">{$xName}</span>, <span class="iedreg nowrap">{$yName}</span>)
+        }
 
-      where not($xName = $yName)
-      return map {
-        "marks": (4, 5),
-        "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>, <span class="iedreg nowrap">{$xName}</span>, <span class="iedreg nowrap">{$yName}</span>)
-      }
+    let $hdrs := ("Feature", "Inspire ID", "nameOfFeature", "nameOfFeature (DB)")
 
-  let $hdrs := ("Feature", "Inspire ID", "nameOfFeature", "nameOfFeature (DB)")
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
-  let $details := scripts:getDetails($msg, $type, $hdrs, $data)
-
-  return
-    if (not(database:dbExists())) then
-        scripts:noDbWarning($refcode, $rulename)
-    else
-        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+    return
+        if (not(database:dbAvailable($scripts:docProdFac))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 
 (:~

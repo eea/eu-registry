@@ -1,0 +1,25 @@
+<data>
+    <ProductionFacility>
+        <countryId></countryId>
+        <reportingYear></reportingYear>
+        <!-- 3.1, 4.10-->
+        <inspireId>
+            <localId></localId>
+            <namespace></namespace>
+        </inspireId>
+        <!-- 4.6, 13.4-->
+        <facilityName >
+            <nameOfFeature></nameOfFeature>
+        </facilityName>
+        <!-- 4.6 -->
+        <parentCompanyName></parentCompanyName>
+        <!-- 4.9 -->
+        <hostingSite></hostingSite>
+        <!-- 4.6, 5.6 -->
+        <geometry></geometry>
+        <!-- 4.6, 6.2 -->
+        <EPRTRAnnexIActivity></EPRTRAnnexIActivity>
+        <!-- 7.5, 4.10 -->
+        <statusType></statusType>
+    </ProductionFacility>
+</data>
