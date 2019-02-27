@@ -1,4 +1,11 @@
 - need the countryId for all look-up tables
+- ProductionInstallation.xml: changed the order of elements, pointGeometry
+  moved before installationName
+- ProductionFacility.xml: * moved geometry before facilityName
+  * removed parentCompanyName, added parentCompany (which includes parentCompanyName and
+    parentCompanyURL)
+
+previous reported year = reporting year from xml minus 1 (for reporting year 2018 previous year is 2017)
 
 3.1 - compares currently reported inspire Ids with Ids from previous reported year,
   for all four feature types

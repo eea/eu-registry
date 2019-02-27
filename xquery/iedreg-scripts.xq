@@ -833,7 +833,7 @@ declare function scripts:checkProductionInstallationPartDuplicates(
     return scripts:checkDuplicates($refcode, $rulename, $root, $features, $nodes, $attrs)
 };
 
-declare function scripts:checkDatabaseDuplicates(
+declare function scripts:checkDatabaseDuplicates_old(
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
@@ -845,7 +845,10 @@ declare function scripts:checkDatabaseDuplicates(
     let $cntry := scripts:getCountry($root)
     let $lastReportingYear := scripts:getLastYear($root)
 
-    let $msg := "The similarity threshold has been exceeded, for the following " || scripts:makePlural($featureName) || ". These " || scripts:makePlural($featureName) || " have similar " || scripts:makePlural($featureName) || " already present in the master database. Please ensure that there is no duplication."
+    let $msg := "The similarity threshold has been exceeded, for the following "
+        || scripts:makePlural($featureName) || ". These " || scripts:makePlural($featureName)
+        || " have similar " || scripts:makePlural($featureName) ||
+        " already present in the master database. Please ensure that there is no duplication."
     let $type := "warning"
 
     let $seq := $root//*[local-name() = $featureName]//*[local-name() = $nameName]//*:nameOfFeature
@@ -889,6 +892,81 @@ declare function scripts:checkDatabaseDuplicates(
             scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
+declare function scripts:checkDatabaseDuplicates(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element(),
+        $featureName as xs:string,
+        $nodeNames as xs:string*,
+        $attrs as xs:string*,
+        $docDB as document-node()
+) as element()* {
+    let $type := "warning"
+    let $pluralNames := scripts:makePlural($featureName) => fn:string-join(', ')
+
+    let $msg := "The similarity threshold has been exceeded, for the following "
+        || $pluralNames || ". These " || $pluralNames
+        || " have similar " || $pluralNames ||
+        " already present in the master database. Please ensure that there is no duplication."
+    let $country := scripts:getCountry($root)
+    let $lastYear := scripts:getLastYear($root)
+
+    let $seq := $root//*[local-name() = $featureName]
+    let $fromDB := database:queryByYearFeature($country, $lastYear, $docDB)
+    let $norm := ft:normalize(? , map {'stemming' : true()})
+
+    let $data :=
+        for $node in $seq
+            let $stringMain := $node/*[local-name() = $nodeNames]/data()
+                => fn:string-join(' / ')
+            let $stringMainAttrs := $node/*[local-name() = $attrs]
+                    //fn:tokenize(@xlink:href/data(), '/')[last()]
+
+            let $stringMain := ($stringMain, $stringMainAttrs) => fn:string-join(' / ')
+
+            let $featureName := $node/local-name()
+            let $p := scripts:getParent($node)
+            let $id := scripts:getInspireId($p)
+
+
+            for $sub in $fromDB
+                let $q := scripts:getParent($sub)
+                let $ic := scripts:getInspireId($q)
+
+                where $id != $ic
+                let $stringSub := $sub/*[local-name() = $nodeNames]/data()
+                    => fn:string-join(' / ')
+                let $stringSubAttrs := $sub/*[local-name() = $attrs]
+                    //fn:tokenize(@xlink:href/data(), '/')[last()]
+                let $stringSub := ($stringSub, $stringSubAttrs) => fn:string-join(' / ')
+
+                let $levRatio := strings:levenshtein(
+                        $norm(fn:replace($stringMain, ' / ', '')),
+                        $norm(fn:replace($stringSub, ' / ', '')))
+
+                where $levRatio >= 0.9
+
+                return map {
+                (:"sort": (7),:)
+                "marks" : (5, 6, 7),
+                "data" : (
+                    $featureName,
+                    ($nodeNames, $attrs) => fn:string-join(' / '),
+                    <span class="iedreg nowrap">{$id}</span>,
+                    <span class="iedreg nowrap">{$ic}</span>,
+                    '"' || $stringMain || '"',
+                    '"' || $stringSub || '"',
+                    round-half-to-even($levRatio * 100, 1) || '%'
+                )
+                }
+
+    let $hdrs := ('Feature', 'Attribute names', 'Inspire ID', 'Inspire ID (DB)', 'Attribute values', 'Attribute values (DB)', 'Similarity')
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+};
 (:~
  : C4.5 Identification of ProductionSite duplicates within the database
  :)
@@ -898,10 +976,13 @@ declare function scripts:checkProductionSiteDatabaseDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'site'
+    let $feature := 'ProductionSite'
+    let $nodes := ('siteName', 'location')
+    let $attrs := ()
     let $docDB := $scripts:docProdSite
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature, $docDB)
+    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,
+            $nodes, $attrs, $docDB)
 };
 
 (:~
@@ -913,10 +994,13 @@ declare function scripts:checkProductionFacilityDatabaseDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'facility'
+    let $feature := 'ProductionFacility'
+    let $nodes := ('geometry', 'facilityName', 'parentCompany')
+    let $attrs := ('EPRTRAnnexIActivity')
     let $docDB := $scripts:docProdFac
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature, $docDB)
+    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,
+            $nodes, $attrs, $docDB)
 };
 
 (:~
@@ -928,10 +1012,13 @@ declare function scripts:checkProductionInstallationDatabaseDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'installation'
+    let $feature := 'ProductionInstallation'
+    let $nodes := ('pointGeometry', 'installationName')
+    let $attrs := ('IEDAnnexIActivity')
     let $docDB := $scripts:docProdInstall
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature, $docDB)
+    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,
+            $nodes, $attrs, $docDB)
 };
 
 (:~
@@ -943,10 +1030,13 @@ declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'installationPart'
+    let $feature := 'ProductionInstallationPart'
+    let $nodes := ('installationPartName')
+    let $attrs := ('plantType')
     let $docDB := $scripts:docProdInstallPart
 
-    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature, $docDB)
+    return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,
+            $nodes, $attrs, $docDB)
 };
 
 declare function scripts:checkMissing(
@@ -1014,7 +1104,8 @@ declare function scripts:checkMissingSites(
         $allowed as xs:string*,
         $docDB as document-node()
 ) as element()* {
-    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName)
+    let $msg1 := 'ProductionFacility associated with ProductionSite changed in comparison with the previous year'
+    let $msg2 := "There are inspireIDs for " || scripts:makePlural($featureName)
         || " missing from this submission. Please verify to ensure that no "
         || scripts:makePlural($featureName) || " have been missed."
     let $type := "warning"
@@ -1023,58 +1114,66 @@ declare function scripts:checkMissingSites(
     let $lastYear := scripts:getLastYear($root)
 
     let $seq := $root//*[local-name() = $featureName]
-    let $fromDB := database:queryByYear($country, $lastYear,
-            $docDB, "ProductionSite")
+    let $fromDB := database:queryByYearFeature($country, $lastYear, $docDB)
 
     let $data1 :=
         for $facility in $seq
-            let $inspireId := $facility/*:inspireId//*:localId
-            let $hostingSite := $facility/*[local-name() = 'hostingSite']/@xlink:href
-            let $fromDBhostingSite := $fromDB/*:ProductionFacility[*:inspireId//*:localId = $inspireId]
+            let $inspireId := $facility/*:inspireId//*:localId/data()
+            let $hostingSite := $facility/*[local-name() = 'hostingSite']
+                    /@xlink:href/data() => functx:if-empty('')
+            let $fromDBhostingSite := $fromDB/descendant-or-self::*:ProductionFacility
+                [*:inspireId//*:localId = $inspireId]/hostingSite
+                    /@xlink:href/data() => functx:if-empty('')
 
-            where $hostingSite != $fromDBhostingSite
+            where not($hostingSite = $fromDBhostingSite)
 
             return map {
-            "marks" : (2),
+            "marks" : (4),
             "data" : (
-                'ProductionFacility associated with ProductionSite changed
-                in comparison with the previous year',
                 $featureName,
                 $inspireId,
                 $hostingSite,
-                $fromDBhostingSite
+                $fromDBhostingSite (:'bla':)
             )
             }
 
+    let $fromDBSite := database:queryByYearFeature($country, $lastYear, $scripts:docProdSite)
     let $data2 :=
-        for $fromDbfacility in $fromDB
-            let $inspireIdFromDb := $fromDbfacility/*:inspireId//*:localId
-            let $inspireId := $root/*[local-name() = $featureName]/*:inspireId//*:localId
+        for $fromDbsite in $fromDBSite
+            let $inspireIdFromDb := $fromDbsite/*:inspireId//*:localId
+            let $inspireId := $root//*:ProductionSite/*:inspireId//*:localId
 
-            let $status := $fromDbfacility/pf:status//pf:statusType
+            let $status := $fromDbsite//pf:statusType
             let $status := replace($status/@xlink:href, '/+$', '')
-            let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
+            let $status := if (scripts:is-empty($status))
+                then " "
+                else scripts:normalize($status)
+
 
             where not($status = $allowed)
-            where $inspireId != $inspireIdFromDb
+            where not($inspireIdFromDb = $inspireId)
 
             return map {
             "marks" : (2),
             "data" : (
                 'InspireId is not found in the XML submission',
-                $featureName,
-                $inspireId,
-                '-',
-                '-'
+                'ProductionSite',
+                $inspireIdFromDb
             )
             }
 
+    (:let $data := ($data1, $data2):)
+    let $data := $data1
 
-    let $data := ($data1, $data2)
+    let $hdrs1 := ('Feature type', 'Inspire ID', 'Associated site', 'DB Associated site')
+    let $hdrs2 := ('Message', 'Feature type', 'Inspire ID')
 
-    let $hdrs := ('Message', 'Feature type', 'Inspire ID', 'Associated site', 'DB Associated site')
-
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details :=
+        <div class="iedreg">{
+            if (count($data1) gt 0) then scripts:getDetails($msg1, $type, $hdrs1, $data1) else ()
+            (:if (count($data2) gt 0) then scripts:getDetails($msg2, $type, $hdrs2, $data2) else ():)
+        }</div>
+    (:let $details := ():)
 
     return
         if (not(database:dbAvailable($docDB))) then
@@ -1094,9 +1193,9 @@ declare function scripts:checkMissingProductionSites(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $feature := 'ProductionSite'
+    let $feature := 'ProductionFacility'
     let $allowed := ("decommissioned")
-    let $docDB := $scripts:docProdSite
+    let $docDB := $scripts:docProdFac
 
     return scripts:checkMissingSites($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
@@ -1777,8 +1876,7 @@ declare function scripts:checkActivityContinuity(
 
     let $seq := $root//*[local-name() = $featureName]
 
-    let $fromDB := database:queryByYear($cntry, $lastReportingYear,
-            $docDB, $featureName)
+    let $fromDB := database:queryByYearFeature($cntry, $lastReportingYear, $docDB)
 
     let $data :=
         for $feature in $seq
@@ -2062,9 +2160,9 @@ declare function scripts:checkFunctionalStatusType(
     let $seq := $root//pf:statusType
 
     let $fromDB := (
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, "pf:statusType"),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, "pf:statusType"),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, "pf:statusType")
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, "statusType"),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, "statusType"),
+        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, "statusType")
     )
 
     let $value := "ConditionOfFacilityValue"
@@ -2427,8 +2525,7 @@ declare function scripts:checkDateOfGrantingPermitURL(
 
     let $seq := $root//*:ProductionInstallation
 
-    let $fromDB := database:queryByYear($cntry, $lastReportingYear,
-            $docDB, "ProductionInstallation")
+    let $fromDB := database:queryByYearFeature($cntry, $lastReportingYear, $docDB)
 
     let $data :=
         for $x in $seq

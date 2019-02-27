@@ -177,6 +177,22 @@ declare function db:queryByYear(
         return $seq
 };
 
+declare function db:queryByYearFeature(
+        $country as xs:string,
+        $Year as xs:string*,
+        $doc as document-node()
+) as element()* {
+    if (empty($Year)) then
+        ()
+    else
+        let $root := $doc/data
+
+        let $seq := $root/*[countryId/@xlink:href = $country
+                and reportingYear = $Year]
+
+        return $seq
+};
+
 declare function db:queryAll(
         $country as xs:string,
         $doc as document-node(),

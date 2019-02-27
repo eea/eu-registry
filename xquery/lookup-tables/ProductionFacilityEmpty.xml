@@ -7,16 +7,21 @@
             <localId></localId>
             <namespace></namespace>
         </inspireId>
+        <!-- 4.6, 5.6 -->
+        <geometry></geometry>
         <!-- 4.6, 13.4-->
-        <facilityName >
+        <facilityName>
             <nameOfFeature></nameOfFeature>
         </facilityName>
         <!-- 4.6 -->
-        <parentCompanyName></parentCompanyName>
+        <parentCompany>
+            <ParentCompanyDetails>
+                <parentCompanyName></parentCompanyName>
+                <parentCompanyURL></parentCompanyURL>
+            </ParentCompanyDetails>
+        </parentCompany>
         <!-- 4.9 -->
         <hostingSite></hostingSite>
-        <!-- 4.6, 5.6 -->
-        <geometry></geometry>
         <!-- 4.6, 6.2 -->
         <EPRTRAnnexIActivity></EPRTRAnnexIActivity>
         <!-- 7.5, 4.10 -->

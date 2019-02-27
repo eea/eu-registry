@@ -27,6 +27,25 @@
         <reportingYear>2017</reportingYear>
         <!-- 3.1 -->
         <inspireId>
+            <localId>00011.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.5, 13.4 -->
+        <siteName>
+            <nameOfFeature>Dhekelia Power Station</nameOfFeature>
+        </siteName>
+        <!-- 5.6 -->
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-4ccb7ff7-5008-425a-9269-86aabd8fe515-0" srsDimension="2">
+                <gml:pos>33.746236 34.980143</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1 -->
+        <inspireId>
             <localId>0007.SITE</localId>
             <namespace>CY.CAED</namespace>
         </inspireId>
@@ -37,7 +56,7 @@
         <!-- 5.6 -->
         <location>
             <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-5655a49d-4bf0-4ee7-b17c-4b6c40409796-0" srsDimension="2">
-                <gml:pos>33.1825 34.71</gml:pos>
+                <gml:pos>33.1826 34.71</gml:pos>
             </gml:Point>
         </location>
     </ProductionSite>
@@ -56,7 +75,26 @@
         <!-- 5.6 -->
         <location>
             <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-a661d7bd-4cd0-46cd-b769-f8e5644dc26e-0" srsDimension="2">
-                <gml:pos>33.289753 34.728469</gml:pos>
+                <gml:pos>33.287753 34.728469</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1 -->
+        <inspireId>
+            <localId>10029.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.5, 13.4 -->
+        <siteName>
+            <nameOfFeature>Vassilikos Power Station</nameOfFeature>
+        </siteName>
+        <!-- 5.6 -->
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-a661d7bd-4cd0-46cd-b769-f8e5644dc26e-0" srsDimension="2">
+                <gml:pos>35.085400 32.965755</gml:pos>
             </gml:Point>
         </location>
     </ProductionSite>
