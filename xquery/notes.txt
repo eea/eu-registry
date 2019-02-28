@@ -7,22 +7,168 @@
 
 previous reported year = reporting year from xml minus 1 (for reporting year 2018 previous year is 2017)
 
-3.1 - compares currently reported inspire Ids with Ids from previous reported year,
-  for all four feature types
+3.1
+Text from QA/QC document: "All inspireIds within a single XML submission will be compared to the inspireIds in the master
+database, for the same reporting country. The amount of inspireIds, found in both the submission
+and the master database, will be evaluated in the context of the total amount of inspireIds
+in the XML submission. The number of new IDs within a single XML submission should not
+exceed 50% of the total number of inspireIds, and ideally be less than 20%."
 
-4.5-4.8 - compares currently reported names with names from previous reported year,
-  for the specific feature type
+Current implementation:
+compares currently reported inspire Ids with Ids from previous reported year,
+for all four feature types
 
-4.9-4.12 - compares with previous reported year
+4.5
+Fuzzy matching will be performed between the XML submission and the master database
+on the location and siteName attributes independently for each ProductionSite with different
+InspireIds. An appropriate matching algorithm will be chosen relative to the data considered
+in each respective attribute (e.g. Levenshtein distance for attributes which contain a
+character string). Such algorithms need to be geared towards identifying not only similarity
+but also potential typing errors. The average similarity across the attributes considered
+will be compared to an appropriate total similarity threshold, representing a non-acceptable
+degree of similarity. Such testing will exclude exact duplicates due to the pre-requisite of
+different InspireIds (e.g. the same facility being reported between years).
+The exact algorithms chosen and the thresholds will be evaluated for effectiveness in
+testing phases of the EU Registry.
 
-5.6 - previous reported year
+Current implementation:
+compares currently reported location+siteName with location+siteName with different
+InspireIds from previous reported year
 
-6.2, 6.4 - previous reported year
+4.6 - same as 4.5 but compares geometry, parentCompanyName, EPRTRAnnexIActivity and facilityName
 
-7.5 - previous reported year
+4.7 - same as 4.5 but compares pointGeometry, IEDAnnexIActivity and installationName
 
-9.3 - previous reported year
+4.8 - same as 4.5 but compares plantType and installationPartName
 
-10.5-10.7 - previous reported year
+4.9
+The check will analyse existing reported inspireIds for ProductionFacilities reported within
+the submission, if reported in the previous year. These will be compared to the facility’s
+associated site in the master database and the current associated site within the submission.
+The ProdunctionFaciltiy should reference the same site as the previous reporting year,
+as indicated by the continuity of the same InspireId for the associated site.
+All inspireIds present in the master database must also be found in the XML submission
+except where the corresponding inspireIds for all associated production facilities have
+the value ‘decommissioned’ for the attribute status in the previous reporting year.
 
-13.4 - previous reported year
+Current implementation:
+For ProductionFacilities we check if hostingSite attribute is the same in the reporting xml
+and previous reporting year
+
+Note:
+"All inspireIds present in the master database must also be found in the XML submission
+except where the corresponding inspireIds for all associated production facilities have
+the value ‘decommissioned’ for the attribute status in the previous reporting year."
+
+This is checked in 4.10, should we verify this here too?
+
+4.10
+The check will compare existing reported inspireIds contained in the master database
+with newly reported inspireIds. All inspireIds present in the master database should also
+be found in the XML submission except where the corresponding inspireId for the
+ProductionFacility has the value ‘decommissioned’ or ‘not regulated’ for the attribute
+status in the previous reporting year.
+
+Current implementation:
+inspireIds from database from previous reporting year are checked if they exists in the
+current report. If they do not exists, we check the statusType attribute and if it has other
+value than ‘decommissioned’ or ‘not regulated’ it is flagged as blocking error.
+
+4.11 - same as 4.10 but for ProductionInstallation
+
+4.12 - same as 4.10 but for ProductionInstallationPart
+
+5.6
+The coordinates for all spatial objects within an XML submission will be compared to the
+spatial object of the same InspireId within the master database. Coordinates should remain
+constant over time, but it is recognised that coordinates may seldom change in relation to
+improved accuracy. The differences in coordinates between the XML submission and the master
+database will be evaluated based on the linear distance invoked by the change. A distance
+between the two coordinates of 10-30 m may be considered as coordinate refinement, however
+distances above the upper bound of this range but less than a distance of 100 m are considered
+as unlikely and represent significant change. A distance above 100 m is deemed as introducing
+nonsensical data into the master database
+
+Current implementation:
+We calculate the distance (in meters) between the coordinates from previous reported year
+and from current report (see criterias from above)
+for ProductionFacility the act-core:geometry attribute,
+for ProductionInstallation the pf:pointGeometry, for ProductionInstallationPart the pf:pointGeometry
+and for ProductionSite the location attribute
+
+6.2
+The EPRTRAnnexIActivity ‘mainActivity’ attribute of for all ProductionFacilities within
+an XML submission will be compared to the ProductionFacility of the same InspireId within
+the master database. The EPRTRAnnexIActivityType ‘mainActivity’should remain constant over
+time and seldom change, particularly between activity group (the activity group is denoted
+by the first digit of the EPRTRAnnexIActivityType Id)
+
+Current implementation:
+Compares mainActivity atribute for ProductionFacilities, previous reporting year
+and current report
+
+6.4
+The IEDAnnexIActivity attribute of for all ProductionInstallations within an XML
+submission will be compared to the ProductionInstallation of the same InspireId
+within the master database. The IEDAnnexIActivityType should remain constant over time,
+and seldom change, particularly between activity group (the activity group is denoted by
+the first digit of the IEDAnnexIActivityType Id).
+
+Current implementation:
+Compares IEDAnnexIActivity atribute for ProductionInstallations, previous reporting year
+and current report
+
+7.5
+In a single XML submission the StatusType of all spatial objects will be queried.
+If the StatusType is populated with the term ‘functional’, the StatusType for the
+same spatial object in the previous report year must not be ‘decommissioned’.
+
+Current implementation:
+compares statusType attribute for ProductionFacilities, ProductionInstallations and
+ProductionInstallationParts, previous reporting year with the current report
+
+9.3
+The dateOfGranting attribute will be compared against a lookup table detailing the
+previous dateOfGranting for all ProductionInstallations. If a change in this date is
+identified, the permitURL attributes will also be compared. The permitURL should be
+different to one another.
+
+Current implementation:
+dateOfGranting and permitURL are compared with previous reporting year.
+
+10.5
+The derogation attribute of for all ProductionInstallationParts within an XML submission
+will be compared to the ProductionInstallationPart of the same InspireId within the master
+database. If ‘Article 33’ is given within the master database, the attribute value should
+also be ‘Article 33’.  Once the period described above has passed, this check will be made
+obsolete.
+
+Current implementation:
+compares derogations attribute, previous year with current report
+
+10.6
+he derogation attribute for all ProductionInstallationParts within an XML submission will
+be compared to the ProductionInstallationPart of the same InspireId within the master database.
+If ‘Article 35’ is given within the master database, the attribute value should also
+be ‘Article 35’.  Once the period described above has passed, this check will be made obsolete.
+
+Current implementation:
+compares derogations attribute, previous year with current report
+
+10.7
+The derogation attribute of for all ProductionInstallationParts within an XML submission
+will be compared to the ProductionInstallationPart of the same InspireId within the master
+database. If ‘Article 32’ is given within the master database, the attribute value should
+also be ‘Article 32’. This check will be made obsolete once the period described above has passed
+
+Current implementation:
+compares derogations attribute, previous year with current report
+
+
+13.4
+The nameOfFeature attribute within the FeatureName data type of all spatial objects within
+an XML submission will be compared to the name of the spatial object of the same inspireId
+within the master database. Names should remain constant over time
+
+Current implementation:
+compares nameOfFeature attribute (for all four feature types), previous year with current report
