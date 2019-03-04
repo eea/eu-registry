@@ -27,16 +27,21 @@ import module namespace scripts = "iedreg-scripts" at "iedreg-scripts.xq";
 import module namespace scripts3 = "iedreg-qa3-scripts" at "iedreg-qa3-scripts.xq";
 import module namespace common = "iedreg-common" at "iedreg-common.xq";
 
-declare variable $iedreg:checks2018 := (
-    'C1.1',
+declare variable $iedreg:checksHistoricalData := (
     'C3.1',
     'C4.5', 'C4.6', 'C4.7','C4.8', 'C4.9', 'C4.10', 'C4.11', 'C4.12',
     'C5.6',
     'C6.2', 'C6.4',
     'C7.5',
-    'C9.3', 'C9.5', 'C9.6',
-    'C10.2', 'C10.5', 'C10.6', 'C10.7',
+    'C9.3',
+    'C10.5', 'C10.6', 'C10.7',
     'C13.4'
+);
+
+declare variable $iedreg:checks2018 := (
+    'C1.1',
+    'C9.5', 'C9.6',
+    'C10.2'
 );
 declare variable $iedreg:skipCountries := map {
     'CH': ('C4.9', 'C4.10', 'C4.11', 'C4.12')
@@ -186,10 +191,12 @@ declare function iedreg:failsafeWrapper(
         return
             if($countryCode = map:keys($iedreg:skipCountries)
                     and $refcode = $iedreg:skipCountries?($countryCode))
-            then iedreg:notApplicable($refcode, $rulename, $root)
+                then iedreg:notApplicable($refcode, $rulename, $root)
+            else if ($refcode = $iedreg:checksHistoricalData)
+                then iedreg:notActive($refcode, $rulename, $root)
             else if($iedreg:skip2018 and $refcode = $iedreg:checks2018 and $reportingYear < 2018)
-            then iedreg:notActive($refcode, $rulename, $root)
-            else $checkFunc($refcode, $rulename, $root)
+                then iedreg:notActive($refcode, $rulename, $root)
+                else $checkFunc($refcode, $rulename, $root)
     } catch * {
         let $details := iedreg:getErrorDetails($err:code, $err:description)
         return iedreg:renderResult($refcode, $rulename, 'failed', $details)
