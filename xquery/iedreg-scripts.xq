@@ -3968,7 +3968,7 @@ declare function scripts:checkInstallationType(
     let $data2017 :=
         for $installation in $seq
             let $featureMain := $installation/local-name()
-            let $gmlid := scripts:getGmlId($installation)
+            let $inspireId := scripts:getInspireId($installation)
             let $installationType := $installation//*:installationType/@xlink:href
             where $installationType = $installationVocab
 
@@ -3990,8 +3990,8 @@ declare function scripts:checkInstallationType(
                         where $attrCount = 0
                         return map {
                             "sort": 2,
-                            "marks" : (3),
-                            "data" : ($featureMain, $gmlid, $feature, $attr)
+                            "marks" : (4),
+                            "data" : ($featureMain, $inspireId, $feature, $attr)
                         }
 
     let $data2018 := if($reportingYear < 2018)
@@ -3999,7 +3999,7 @@ declare function scripts:checkInstallationType(
         else
         for $installation in $seq
             let $featureMain := $installation/local-name()
-            let $gmlid := scripts:getGmlId($installation)
+            let $inspireId := scripts:getInspireId($installation)
             let $installationType := $installation//*:installationType/@xlink:href
             where $installationType = $installationVocab
 
@@ -4025,12 +4025,12 @@ declare function scripts:checkInstallationType(
                         return map {
                             "sort": 2,
                             "marks" : (3),
-                            "data" : ($featureMain, $gmlid, $feature, $attr)
+                            "data" : ($featureMain, $inspireId, $feature, $attr)
                         }
 
     let $data := ($data2017, $data2018)
 
-    let $hdrs := ('Feature main', 'GML ID', 'Feature sub', 'Attribute')
+    let $hdrs := ('Feature main', 'Inspire ID', 'Feature sub', 'Attribute')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 

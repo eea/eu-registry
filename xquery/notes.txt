@@ -147,7 +147,7 @@ Current implementation:
 compares derogations attribute, previous year with current report
 
 10.6
-he derogation attribute for all ProductionInstallationParts within an XML submission will
+The derogation attribute for all ProductionInstallationParts within an XML submission will
 be compared to the ProductionInstallationPart of the same InspireId within the master database.
 If ‘Article 35’ is given within the master database, the attribute value should also
 be ‘Article 35’.  Once the period described above has passed, this check will be made obsolete.
