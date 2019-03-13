@@ -10,9 +10,19 @@ div.iedreg.header { font-size: 16px; font-weight: 500; margin: 0.8em 0 0.4em 0 }
 
 div.iedreg.table { display: table; width: 100%; border-collapse: collapse }
 div.iedreg.row { display: table-row; }
-div.iedreg.col { display: table-cell; padding: 0.4em; border: 1pt solid #aaa }
+div.iedreg.col {
+    min-width: 150px;
+    display: table-cell;
+    padding: 0.4em;
+    border: 1pt solid #aaa
+}
 
-div.iedreg.inner { width: 80%; margin-left: 10%; margin-top: 0.4em; margin-bottom: 0.6em }
+div.iedreg.inner {
+    width: 90%;
+    //margin-left: 2%;
+    margin-top: 0.4em;
+    margin-bottom: 0.6em
+}
 div.iedreg.outer { padding-bottom: 0; border: 1pt solid #888 }
 div.iedreg.inner { border: 1pt solid #aaa }
 div.iedreg.parent { margin-bottom: 1.5em }
@@ -55,7 +65,10 @@ input[type=checkbox].iedreg:checked + div.iedreg { display: block }
 
 span.iedreg { display:inline-block }
 
-span.iedreg.nowrap { white-space: nowrap }
+span.iedreg.nowrap {
+    //white-space: nowrap
+}
+span.iedreg.top { vertical-align: top}
 span.iedreg.link { cursor: pointer; cursor: hand; text-decoration: underline }
 
 span.iedreg.big { padding: 0.1em 0.9em }
@@ -71,6 +84,7 @@ span.iedreg.info { color: #fff; background-color: #5bc0de }
 span.iedreg.pass { color: #fff; background-color: #5cb85c }
 span.iedreg.none { color: #fff; background-color: #999 }
 
+ul.iedreg.error-summary {margin: 0}
 ]]>
     </style>
 };
@@ -79,11 +93,23 @@ declare function common:header() as element()* {
     <h5>Please note that where an individual check identifies more than 1,000 errors, only the first 1,000 messages are shown in the results below.</h5>
 };
 
+declare function common:createSummaryRow(
+        $allTypes as xs:string*,
+        $errType as xs:string
+) as element()? {
+    let $countTypes := fn:count($allTypes[. = $errType])
+
+    return if($countTypes > 0)
+        then <li>
+            <span style="font-weight:bold">{$countTypes}</span> checks are producing <span class="iedreg small {$errType}">{$errType}</span>
+        </li>
+        else ()
+};
+
 declare function common:feedback($records as element()*) as element(div) {
+    let $all := $records//@class[starts-with(., 'iedreg medium')]/string()
+    let $all := for $i in $all return tokenize($i, "\s+")
     let $status :=
-        let $all := $records//@class/string()
-        let $all := for $i in $all return tokenize($i, "\s+")
-        return
             if ($all = "failed") then "failed"
             else if ($all = "blocker") then "blocker"
             else if ($all = "error") then "error"
@@ -108,10 +134,24 @@ declare function common:feedback($records as element()*) as element(div) {
             "QA completed without errors"
         else
             "QA status is unknown"
+
+    let $errorSummary := (
+        <div class="iedreg header">QA RESULT SUMMARY</div>,
+        <ul class="iedreg error-summary">{
+            common:createSummaryRow($all, 'failed'),
+            common:createSummaryRow($all, 'blocker'),
+            common:createSummaryRow($all, 'error'),
+            common:createSummaryRow($all, 'warning'),
+            common:createSummaryRow($all, 'info')
+        }
+        </ul>
+    )
+
     return
         <div class="feedbacktext">
             {common:css()}
             <span id="feedbackStatus" class="{$status => upper-case()}" style="display:none">{$feedbackMessage}</span>
+            {$errorSummary}
             {$records}
         </div>
 };
