@@ -46,7 +46,7 @@ declare variable $iedreg:checks2018 := (
 declare variable $iedreg:skipCountries := map {
     'CH': ('C4.9', 'C4.10', 'C4.11', 'C4.12')
 };
-declare variable $iedreg:skip2018 := true();
+declare variable $iedreg:run2018checks := false();
 
 (:~
  : --------------
@@ -192,11 +192,10 @@ declare function iedreg:failsafeWrapper(
             if($countryCode = map:keys($iedreg:skipCountries)
                     and $refcode = $iedreg:skipCountries?($countryCode))
                 then iedreg:notApplicable($refcode, $rulename, $root)
-            else if ($refcode = $iedreg:checksHistoricalData)
+            else if(($refcode = $iedreg:checks2018 or $refcode = $iedreg:checksHistoricalData)
+                    and (not($iedreg:run2018checks) or $reportingYear < 2018))
                 then iedreg:notActive($refcode, $rulename, $root)
-            else if($iedreg:skip2018 and $refcode = $iedreg:checks2018 and $reportingYear < 2018)
-                then iedreg:notActive($refcode, $rulename, $root)
-                else $checkFunc($refcode, $rulename, $root)
+            else $checkFunc($refcode, $rulename, $root)
     } catch * {
         let $details := iedreg:getErrorDetails($err:code, $err:description)
         return iedreg:renderResult($refcode, $rulename, 'failed', $details)
