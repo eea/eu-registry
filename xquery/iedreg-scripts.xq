@@ -794,9 +794,12 @@ declare function scripts:checkDuplicates2(
         for $node at $ind in $seq
             let $stringMain := $node//*[local-name() = $stringNodes]/data()
                 => fn:string-join(' / ')
-            let $codelistMain := $node/*[local-name() = $codelistNode]
+            let $codelistMain := $node//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
+            let $codelistMainLev := fn:replace($codelistMain, '[\(\)\.]', '')
             let $locationMain := $node/*[local-name() = $locationNode]//gml:pos
+            let $stringMainLev := (fn:replace($stringMain, ' / ', ''), $codelistMainLev)
+                    => fn:string-join('')
             let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
             let $featureName := $node/local-name()
@@ -805,15 +808,19 @@ declare function scripts:checkDuplicates2(
             for $sub in subsequence($seq, $ind + 1)
                 let $inspireIdSub := scripts:getInspireId($sub)
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
-                => fn:string-join(' / ')
-                let $codelistSub := $sub/*[local-name() = $codelistNode]
+                    => fn:string-join(' / ')
+                let $codelistSub := $sub//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
+                let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', '')
                 let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
+                let $stringSubLev := (fn:replace($stringSub, ' / ', ''), $codelistSubLev)
+                        => fn:string-join('')
                 let $stringSub := ($stringSub, $codelistSub) => fn:string-join(' / ')
 
                 let $levRatio := strings:levenshtein(
-                        $norm(fn:replace($stringMain, ' / ', '')),
-                        $norm(fn:replace($stringSub, ' / ', '')))
+                        $norm($stringMainLev),
+                        $norm($stringSubLev)
+                )
 
                 let $stringFlagged := $levRatio >= 0.9
                 where $stringFlagged
@@ -905,7 +912,7 @@ declare function scripts:checkProductionFacilityDuplicates(
 
     let $stringNodes := ('facilityName', 'parentCompanyName')
     let $locationNode := ('geometry')
-    let $codelistNode := ('EPRTRAnnexIActivity')
+    let $codelistNode := ('mainActivity')
 
     return scripts:checkDuplicates2($refcode, $rulename, $root, $features,
             $stringNodes, $locationNode, $codelistNode)
@@ -928,7 +935,7 @@ declare function scripts:checkProductionInstallationDuplicates(
 
     let $stringNodes := ('installationName')
     let $locationNode := ('pointGeometry')
-    let $codelistNode := ('IEDAnnexIActivity')
+    let $codelistNode := ('mainActivity')
 
     return scripts:checkDuplicates2($refcode, $rulename, $root, $features,
             $stringNodes, $locationNode, $codelistNode)
@@ -1127,9 +1134,12 @@ declare function scripts:checkDatabaseDuplicates2(
         for $node in $seq
             let $stringMain := $node//*[local-name() = $stringNodes]/data()
                 => fn:string-join(' / ')
-            let $codelistMain := $node/*[local-name() = $codelistNode]
+            let $codelistMain := $node//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
+            let $codelistMainLev := fn:replace($codelistMain, '[\(\)\.]', '')
             let $locationMain := $node/*[local-name() = $locationNode]//gml:pos
+            let $stringMainLev := (fn:replace($stringMain, ' / ', ''), $codelistMainLev)
+                    => fn:string-join('')
             let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
             let $featureName := $node/local-name()
@@ -1142,15 +1152,18 @@ declare function scripts:checkDatabaseDuplicates2(
 
                 where $id != $ic
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
-                => fn:string-join(' / ')
-                let $codelistSub := $sub/*[local-name() = $codelistNode]
+                    => fn:string-join(' / ')
+                let $codelistSub := $sub//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
+                let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', '')
                 let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
+                let $stringSubLev := (fn:replace($stringSub, ' / ', ''), $codelistSubLev)
+                        => fn:string-join('')
                 let $stringSub := ($stringSub, $codelistSub) => fn:string-join(' / ')
 
                 let $levRatio := strings:levenshtein(
-                    $norm(fn:replace($stringMain, ' / ', '')),
-                    $norm(fn:replace($stringSub, ' / ', ''))
+                    $norm($stringMainLev),
+                    $norm($stringSubLev)
                 )
 
                 let $stringFlagged := $levRatio >= 0.9
@@ -1182,6 +1195,7 @@ declare function scripts:checkDatabaseDuplicates2(
                         if($distance < 100) then true() else false()
 
                 where $locationFlagged
+                (:where $ic = '0014.FACILITY' and $id = ('0013.FACILITY', '10029.FACILITY', '10125.FACILITY'):)
                 return map {
                 (:"sort": (7),:)
                 "marks" : (5, 6, 7),
@@ -1241,7 +1255,7 @@ declare function scripts:checkProductionFacilityDatabaseDuplicates(
     (:let $attrs := ('EPRTRAnnexIActivity'):)
     let $stringNodes := ('facilityName', 'parentCompanyName')
     let $locationNode := ('geometry')
-    let $codelistNode := ('EPRTRAnnexIActivity')
+    let $codelistNode := ('mainActivity')
     let $docDB := $scripts:docProdFac
 
     (:return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,:)
@@ -1264,7 +1278,7 @@ declare function scripts:checkProductionInstallationDatabaseDuplicates(
     (:let $attrs := ('IEDAnnexIActivity'):)
     let $stringNodes := ('installationName')
     let $locationNode := ('pointGeometry')
-    let $codelistNode := ('IEDAnnexIActivity')
+    let $codelistNode := ('mainActivity')
 
     let $docDB := $scripts:docProdInstall
 
