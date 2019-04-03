@@ -46,7 +46,7 @@ declare variable $iedreg:checks2018 := (
 declare variable $iedreg:skipCountries := map {
     'CH': ('C4.9', 'C4.10', 'C4.11', 'C4.12')
 };
-declare variable $iedreg:run2018checks := false();
+declare variable $iedreg:run2018checks := true();
 
 (:~
  : --------------
