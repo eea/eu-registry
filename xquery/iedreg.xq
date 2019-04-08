@@ -244,7 +244,8 @@ declare function iedreg:runChecks02($root as element()) as element()* {
         (: QA3 :) iedreg:failsafeWrapper("C2.13", "ConditionOfFacility consistency", $root, scripts3:checkStatusType#3),
         (: QA3 :) iedreg:failsafeWrapper("C2.14", "Derogation consistency", $root, scripts3:checkDerogations#3),
         (: QA3 :) iedreg:failsafeWrapper("C2.15", "PlantType consistency", $root, scripts3:checkPlantType#3),
-        (: QA3 :) iedreg:failsafeWrapper("C2.16", "RelevantChapter consistency", $root, scripts3:checkOtherRelevantChapters#3)
+        (: QA3 :) iedreg:failsafeWrapper("C2.16", "RelevantChapter consistency", $root, scripts3:checkOtherRelevantChapters#3),
+        (: QA3 :) iedreg:failsafeWrapper("C2.17", "Activity consistency", $root, scripts3:checkActCoreActivity#3)
     }</div>
 };
 
@@ -262,7 +263,8 @@ declare function iedreg:runChecks03($root as element()) as element()* {
         iedreg:failsafeWrapper("C3.2", "ProductionSite inspireId uniqueness", $root, scripts:checkProductionSiteUniqueness#3),
         iedreg:failsafeWrapper("C3.3", "ProductionFacility inspireId uniqueness", $root, scripts:checkProductionFacilityUniqueness#3),
         iedreg:failsafeWrapper("C3.4", "ProductionInstallation inspireId uniqueness", $root, scripts:checkProductionInstallationUniqueness#3),
-        iedreg:failsafeWrapper("C3.5", "ProductionInstallationPart inspireId uniqueness", $root, scripts:checkProductionInstallationPartUniqueness#3)
+        iedreg:failsafeWrapper("C3.5", "ProductionInstallationPart inspireId uniqueness", $root, scripts:checkProductionInstallationPartUniqueness#3),
+        iedreg:failsafeWrapper("C3.6", "InspireId blank check", $root, scripts:checkInspireIdBlank#3)
     }</div>
 };
 
@@ -454,8 +456,9 @@ declare function iedreg:runChecks13($root as element()) as element()* {
         iedreg:failsafeWrapper("C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#3),
         iedreg:failsafeWrapper("C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#3),
         iedreg:failsafeWrapper("C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#3),
-        (: new DONE :) iedreg:failsafeWrapper("C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#3)
+        (: new DONE :) iedreg:failsafeWrapper("C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#3),
         (: removed :) (:iedreg:failsafeWrapper("C13.8", "Character string space identification", $root, scripts:checkWhitespaces#3):)
+        (: new :) iedreg:failsafeWrapper("C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#3)
     }</div>
 };
 
@@ -475,7 +478,7 @@ declare function iedreg:runChecks14($root as element()) as element()* {
         iedreg:failsafeWrapper("C14.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#3),
         iedreg:failsafeWrapper("C14.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#3),
         (: removed :)(:iedreg:failsafeWrapper("C14.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),:)
-        iedreg:failsafeWrapper("C14.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),
+        (: 2.17 :) (:iedreg:failsafeWrapper("C14.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),:)
         iedreg:failsafeWrapper("C14.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#3),
         iedreg:failsafeWrapper("C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#3)
         (: removed :)(:iedreg:failsafeWrapper("C14.10", "pf:status validity", $root, scripts3:checkStatusNil#3),:)

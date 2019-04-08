@@ -97,7 +97,7 @@ declare function scripts3:checkStatusType(
     let $activityType := "statusType"
     let $seq := $root/descendant::*[local-name() = "status"]/descendant::*[local-name() = $activityType]
 
-    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (: C13.14 plantType consistency
@@ -116,7 +116,7 @@ declare function scripts3:checkPlantType(
     let $activityType := "plantType"
     let $seq := $root/descendant::*[local-name() = $activityType]
 
-    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (: C13.15 derogations consistency
@@ -468,7 +468,7 @@ declare function scripts3:checkActCoreActivity(
     let $activityType := "activity"
     let $seq := $root/descendant::*[local-name() = $featureName]/descendant::*[local-name() = $activityType]
 
-    return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
 (: 13.8 pf:groupedInstallationPart validity

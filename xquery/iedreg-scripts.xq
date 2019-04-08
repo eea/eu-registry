@@ -44,11 +44,38 @@ declare variable $scripts:docProdInstall as document-node() := fn:doc('https://s
 declare variable $scripts:docProdInstallPart as document-node() := fn:doc('https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/ProductionInstallationPart.xml');
 declare variable $scripts:docProdSite as document-node() := fn:doc('https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/ProductionSite.xml');
 
+(:
+--------------------
+:   Global variables
+--------------------
+:)
+
+(: The following checks will flag if the value is empty :)
+declare variable $scripts:checksToFlagEmpty as xs:string+ := (
+    'C2.5', 'C2.7', 'C2.8', 'C2.13', 'C2.15', 'C2.17', 'C3.6', 'C13.9'
+);
+
 (:~
  : --------------
  : Util functions
  : --------------
  :)
+
+(: Flag empty/blank fields :)
+declare function scripts:flagForEmpty(
+    $refcode as xs:string,
+    $node as element()?,
+    $attribute as xs:string
+) as xs:boolean {
+    let $val :=
+        if(functx:if-empty($attribute, '') = '')
+        then $node/text()
+        else $node/attribute::*[local-name() = $attribute]
+
+    return $refcode = $scripts:checksToFlagEmpty
+            and functx:if-empty($val, '') = ''
+};
+
 
 declare function scripts:getCountry(
         $root as element()
@@ -298,13 +325,20 @@ declare function scripts:checkActivity(
         let $p := scripts:getPath($x)
         let $v := scripts:normalize($activity)
 
-        where not(scripts:is-empty($activity)) and not($activity = $valid)
+        let $errMsg :=
+            if(scripts:flagForEmpty($refcode, $x, 'href'))
+            then 'Field cannot be empty'
+            else if(not($activity = $valid) and not(functx:if-empty($activity, '') = ''))
+            then 'Code is not valid'
+            else ''
+
+        where not($errMsg = '')
         return map {
-        "marks" : (4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+        "marks" : (1, 5),
+        "data" : ($errMsg, $feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", $activityName || "Value")
+    let $hdrs := ("Message", "Feature", "Inspire ID", "Path", $activityName || "Value")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -389,11 +423,19 @@ declare function scripts:checkCountryId(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := "The CountryCodeValue specified in the countryId field is not recognised. Please use a CountryId listed in the CountryCodeValue code list"
+    let $msg := "The CountryCodeValue specified in the CountryId field is not recognised. "
     let $type := "error"
+
+    let $msgA := "Value is empty, please complete the CountryId."
+    let $msgB := "Value must match the CountryId of the envelope."
+    let $msgC := "Please use a valid CountryId listed in the CountryCodeValue code list."
 
     let $value := "CountryCodeValue"
     let $valid := scripts:getValidConcepts($value)
+
+    let $url := data($root/gml:metaDataProperty/attribute::xlink:href)
+    let $envelope := doc($url)/envelope
+    let $envelopeCountry := $envelope/*:countrycode
 
     let $seq := $root//*:ReportData
 
@@ -405,18 +447,28 @@ declare function scripts:checkCountryId(
         let $countries := $rd//*:countryId
 
         for $x in $countries
-        let $country := replace($x/attribute::xlink:href, '/+$', '')
+        let $country := $x/@xlink:href
+        let $countryCode := scripts:getCountry($root)
 
         let $p := scripts:getPath($x)
         let $v := scripts:normalize(data($country))
 
-        where not(scripts:is-empty($country)) and not($country = $valid)
+        let $errorMsg :=
+            if(functx:if-empty($country, '') = '')
+                then $msgA
+            else if(not($countryCode = $envelopeCountry))
+                then $msgB
+            else if(not($country = $valid))
+                then $msgC
+            else ()
+
+        where not(functx:if-empty($errorMsg, '') = '')
         return map {
-        "marks" : (4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+        "marks" : (1, 5),
+        "data" : ($errorMsg, $feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
         }
 
-    let $hdrs := ("Feature", "GML ID", "Path", "CountryId")
+    let $hdrs := ("Message", "Feature", "GML ID", "Path", "CountryId")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -479,7 +531,8 @@ declare function scripts:checkFacilityTypeVocab(
     let $activityType := "facilityType"
     let $seq := $root//*[local-name() = $featureName]//*[local-name() = $activityType]
 
-    return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
+    return scripts:checkActivity($refcode, $rulename, $root, $featureName,
+            $activityName, $activityType, $seq)
 };
 
 (:~
@@ -545,8 +598,6 @@ declare function scripts:checkBATAELTypeVocab(
 
     return scripts:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
-
-
 
 (:~
  : 3. INSPIRE ID CHECKS
@@ -699,6 +750,54 @@ declare function scripts:checkProductionInstallationPartUniqueness(
     let $feature := "ProductionInstallationPart"
 
     return scripts:checkInspireIdUniqueness($root, $refcode, $feature)
+};
+
+(:~
+ : C3.6 InspireId blank check
+ :)
+
+declare function scripts:checkInspireIdBlank(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $features := ('ProductionSite', 'ProductionFacility', 'ProductionInstallation',
+        'ProductionInstallationPart')
+    let $msg := "All inspireIds for " || fn:string-join($features, ', ')
+        || " feature types should be filled in. Please ensure all inspireIds are completed."
+    let $type := "error"
+
+    let $seq := $root//*[local-name() = $features]
+
+    let $data :=
+        for $f in $seq
+        let $localId := $f/*:inspireId//*:localId
+        let $namespace := $f/*:inspireId//*:namespace
+
+        let $gmlId := scripts:getGmlId($f)
+        let $feature := $f/local-name()
+
+        where functx:if-empty($localId, '') = '' or functx:if-empty($namespace, '') = ''
+
+        return map {
+        "marks" : (
+            if(functx:if-empty($localId, '') = '') then 3 else (),
+            if(functx:if-empty($namespace, '') = '') then 4 else ()
+        ),
+        "data" : (
+            $feature,
+            $gmlId,
+            <span class="iedreg nowrap">{$localId}</span>,
+            $namespace
+        )}
+
+    let $hdrs := ("Feature", "GML Id", "localId", "namespace")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+
 };
 
 (:~
@@ -1764,7 +1863,7 @@ declare function scripts:checkCountryBoundary(
     let $msg := "The following respective fields for spatial objects contain coordinates
     that fall outside of the country's boundary (including territorial waters).
     Please verify and correct coordinates in these fields."
-    let $type := 'warning'
+    let $type := 'error'
 
     let $srsName :=
         for $srs in distinct-values($root//gml:*/attribute::srsName)
@@ -1817,7 +1916,7 @@ declare function scripts:checkCountryBoundary(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+        scripts:renderResult($refcode, $rulename,count($data), 0, 0, $details)
 };
 
 (:~
@@ -4046,19 +4145,19 @@ declare function scripts:checkReportingYear(
         $root as element()
 ) as element()* {
     let $msg := "The XML submission has a different reportingYear to that of Reportnet's envelope year. Please verify and ensure the correct year has been inputted."
-    let $type := "warning"
+    let $type := "error"
 
     let $url := data($root/gml:metaDataProperty/attribute::xlink:href)
     let $envelope := doc($url)/envelope
 
+(:
     let $error :=
         if (scripts:is-empty($envelope)) then
             error(xs:QName('err:FOER0000'), 'Failed to retrieve envelope metadata')
         else
             ()
-
-    let $envelopeYear := $envelope/year
-    where not(scripts:is-empty($envelopeYear))
+:)
+    let $envelopeYear := $envelope/*:year
     let $envelopeYear := xs:integer($envelopeYear/text())
 
     let $seq := $root//*:ReportData
@@ -4066,24 +4165,28 @@ declare function scripts:checkReportingYear(
     let $data :=
         for $x in $seq
         let $feature := $x/local-name()
-        let $id := scripts:getInspireId($x)
-
+        let $id := scripts:getGmlId($x)
+        let $p := scripts:getPath($x/*:reportingYear)
         let $reportingYear := xs:integer($x/*:reportingYear/text())
-        let $p := scripts:getPath($reportingYear)
 
         where not($reportingYear = $envelopeYear)
 
         return map {
         "marks" : (4, 5),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $reportingYear, $envelopeYear)
-        }
+        "data" : (
+            $feature,
+            <span class="iedreg nowrap">{$id}</span>,
+            $p,
+            $reportingYear,
+            $envelopeYear
+        )}
 
     let $hdrs := ("Feature", "Inspire ID", "Path", "reportingYear", "envelopeYear")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
@@ -4246,6 +4349,45 @@ declare function scripts:checkWhitespaces(
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+};
+
+(:~
+ : C13.9 FeatureName blank check
+ :)
+
+declare function scripts:checkFeatureNameBlank(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $features := ('site', 'facility', 'installation', 'installationPart')
+    let $msg := "For the following ProductionSite, ProductionFacility, ProductionInstallation
+and ProductionInstallationPart feature types the nameOfFeature attribute is empty.
+Please ensure all mandatory inputs are completed."
+    let $type := "error"
+
+    let $data :=
+        for $feat in $features
+        let $featureName := 'Production' || functx:capitalize-first($feat)
+        let $name := $feat || 'Name'
+        let $seq := $root//*[local-name() = $featureName]
+        for $feature in $seq
+            let $id := scripts:getInspireId($feature)
+            let $nameOfFeature := $feature/*[local-name() = $name]//*:nameOfFeature
+                => functx:if-empty('')
+            where $nameOfFeature = ''
+
+            return map {
+            "marks" : (3),
+            "data" : ($featureName, $id, $nameOfFeature)
+            }
+
+    let $hdrs := ("Feature", 'Inspire ID', "Name of feature")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
