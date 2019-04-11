@@ -8,10 +8,10 @@ pre.iedreg { display: inline }
 div.iedreg { box-sizing: border-box; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px; color: #333 }
 div.iedreg.header { font-size: 16px; font-weight: 500; margin: 0.8em 0 0.4em 0 }
 
-div.iedreg.table { display: table; width: 100%; border-collapse: collapse }
+div.iedreg.table { display: table; width: 100%; border-collapse: collapse; }
 div.iedreg.row { display: table-row; }
 div.iedreg.col {
-    min-width: 150px;
+    min-width: 100px;
     display: table-cell;
     padding: 0.4em;
     border: 1pt solid #aaa
@@ -66,7 +66,10 @@ input[type=checkbox].iedreg:checked + div.iedreg { display: block }
 span.iedreg { display:inline-block }
 
 span.iedreg.nowrap {
-    //white-space: nowrap
+    white-space: nowrap
+}
+span.iedreg.break {
+    word-wrap: break-word
 }
 span.iedreg.top { vertical-align: top}
 span.iedreg.link { cursor: pointer; cursor: hand; text-decoration: underline }

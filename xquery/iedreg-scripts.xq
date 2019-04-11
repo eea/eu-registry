@@ -116,7 +116,7 @@ declare function scripts:makePlural($names as xs:string*) as xs:string {
 };
 
 declare function scripts:getPath($e as element()) as xs:string {
-    $e/string-join(ancestor-or-self::*[not(fn:matches(local-name(), '^(FeatureCollection)|(featureMember)$'))]/local-name(.), '/')
+    $e/string-join(ancestor-or-self::*[not(fn:matches(local-name(), '^(FeatureCollection)|(featureMember)$'))]/local-name(.), ' / ')
 };
 
 declare function scripts:getParent($e as element()) as element() {
@@ -335,10 +335,10 @@ declare function scripts:checkActivity(
         where not($errMsg = '')
         return map {
         "marks" : (1, 5),
-        "data" : ($errMsg, $feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+        "data" : ($errMsg, $feature, $id, <span class="iedreg break">{$p}</span>, $v)
         }
 
-    let $hdrs := ("Message", "Feature", "Inspire ID", "Path", $activityName || "Value")
+    let $hdrs := ("Message", "Feature", "Local ID", "Path", "Code list value")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -510,7 +510,7 @@ declare function scripts:checkReasonValue(
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "ReasonValue")
+    let $hdrs := ("Feature", "Local ID", "Path", "ReasonValue")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -627,7 +627,7 @@ declare function scripts:checkInspireIdUniqueness(
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $d)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Inspire ID")
+    let $hdrs := ("Feature", "Local ID", "Local ID")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -679,7 +679,7 @@ declare function scripts:checkAmountOfInspireIds(
     let $ratio := count($data) div count($xIDs)
     let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
-    let $hdrs := ("Feature", "Inspire ID")
+    let $hdrs := ("Feature", "Local ID")
     return
         if (not(database:dbAvailable($scripts:docProdFac))) then
             scripts:noDbWarning($refcode, $rulename)
@@ -764,7 +764,7 @@ declare function scripts:checkInspireIdBlank(
     let $features := ('ProductionSite', 'ProductionFacility', 'ProductionInstallation',
         'ProductionInstallationPart')
     let $msg := "All inspireIds for " || fn:string-join($features, ', ')
-        || " feature types should be filled in. Please ensure all inspireIds are completed."
+        || " feature types must be filled in. Please ensure all inspireIds are completed."
     let $type := "error"
 
     let $seq := $root//*[local-name() = $features]
@@ -860,7 +860,7 @@ declare function scripts:checkDuplicates(
                 )
                 }
 
-    let $hdrs := ('Feature', 'Attribute names', 'Inspire IDs', ' ', 'Attribute values', ' ', 'Similarity')
+    let $hdrs := ('Feature', 'Attribute names', 'Local ID', ' ', 'Attribute values', ' ', 'Similarity')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -952,21 +952,21 @@ declare function scripts:checkDuplicates2(
                 where $locationFlagged
                 return map {
                 (:"sort": (7),:)
-                "marks" : (5, 6, 7),
+                "marks" : (7),
                 "data" : (
                     $featureName,
-                    <span class="iedreg nowrap">{$inspireId}</span>,
-                    <span class="iedreg nowrap">{$inspireIdSub}</span>,
+                    $inspireId,
+                    $inspireIdSub,
                     ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
-                    ($stringMain, $locationMain) => fn:string-join(' / '),
-                    ($stringSub, $locationSub) => fn:string-join(' / '),
+                    <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
+                    <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>,
                     concat(round-half-to-even($levRatio * 100, 1) || '%', ' / ',
-                            (if(xs:string($distance) = '-') then $distance else $distance || 'm')
+                            (if(xs:string($distance) = '-') then $distance else $distance || ' m')
                     )
                 )
                 }
 
-    let $hdrs := ('Feature', 'Inspire IDs', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity / Distance (in meters)')
+    let $hdrs := ('Feature', 'Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity/Distance')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1664,8 +1664,8 @@ declare function scripts:checkRadius(
         where $dist le $upperLimit and $dist gt $lowerLimit
         return $m
 
-    let $hdrs := ("Path", "Inspire ID", "Coordinate",
-                "Path", "Inspire ID", "Coordinate", "Distance (km)")
+    let $hdrs := ("Path", "Local ID", "Coordinate",
+                "Path", "Local ID", "Coordinate", "Distance (km)")
 
     let $details :=
         <div class="iedreg">{
@@ -1880,7 +1880,48 @@ declare function scripts:checkCountryBoundary(
         $root//act-core:geometry,
         $root//pf:pointGeometry
     )
+    let $distinct_coords := distinct-values($seq//gml:*/descendant-or-self::*[not(*)]/data())
+    let $asd:= trace(count($distinct_coords), 'distinct_coords:')
 
+    let $data :=
+        for $coord in $distinct_coords
+        let $lat := substring-before($coord, ' ')
+        let $long := substring-after($coord, ' ')
+
+        let $point :=
+            <GML:Point srsName="{$srsName[1]}">
+                <GML:coordinates>{$long},{$lat}</GML:coordinates>
+            </GML:Point>
+
+        where not(geo:within($point, $geom))
+
+        let $coords := $seq//gml:pos[./text() = $coord]
+        order by $coord descending
+
+        for $c in $coords
+        let $parent := scripts:getParent($c)
+        let $feature := $parent/local-name()
+
+        let $id := scripts:getInspireId($c/parent::*)
+
+        let $p := scripts:getPath($c)
+
+        count $count
+        let $asd:= trace($count, 'cnt: ')
+        where $count < 1001
+        (:where not(geo:contains($geom, $point)):)
+
+        return map {
+        'marks' : (4, 5),
+        'data' : (
+            $feature,
+            <span class="iedreg nowrap">{$id}</span>,
+            $p,
+            replace($c/text(), ' ', ', '),
+            $cntry)
+        }
+
+(:
     let $data :=
         for $g in $seq
         let $parent := scripts:getParent($g)
@@ -1900,7 +1941,9 @@ declare function scripts:checkCountryBoundary(
             </GML:Point>
 
         where not(geo:within($point, $geom))
-        (:where not(geo:contains($geom, $point)):)
+
+        let $asd:= trace($count, 'cnt: ')
+        where not(geo:contains($geom, $point))
         return map {
         'marks' : (4, 5),
         'data' : (
@@ -1910,8 +1953,9 @@ declare function scripts:checkCountryBoundary(
             replace($coords/text(), ' ', ', '),
             $cntry)
         }
+:)
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "Coordinates", "Country")
+    let $hdrs := ("Feature", "Local ID", "Path", "Coordinates", "Country")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1952,12 +1996,14 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
         let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (4) else ()
         let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (5) else ()
         where (string-length(substring-after($long, '.')) lt 4) or (string-length(substring-after($lat, '.')) lt 4)
+
+        order by $coords descending
         return map {
         'marks' : ($errLong, $errLat),
         'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $lat, $long)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "Latitude", "Longitude")
+    let $hdrs := ("Feature", "Local ID", "Path", "Latitude", "Longitude")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -2078,7 +2124,7 @@ declare function scripts:checkCoordinateContinuity(
         )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "Coordinates", "Previous coordinates (DB)", "Difference (meters)")
+    let $hdrs := ("Feature", "Local ID", "Path", "Coordinates", "Previous coordinates (DB)", "Difference (meters)")
 
     let $details :=
         <div class="iedreg">{
@@ -2217,8 +2263,8 @@ declare function scripts:checkProdutionSiteBuffers(
         )
         }
 
-    let $hdrs := ("Path", "Inspire ID", "Coordinate",
-                    "Path", "Inspire ID", "Coordinate", "Distance (meters)")
+    let $hdrs := ("Path", "Local ID", "Coordinate",
+                    "Path", "Local ID", "Coordinate", "Distance (meters)")
 
     let $details :=
         <div class="iedreg">{
@@ -2274,8 +2320,8 @@ declare function scripts:checkProdutionInstallationPartCoords(
         )
         }
 
-    let $hdrs := ("Path", "Inspire ID",
-                    "Path", "Inspire ID", "Coordinates")
+    let $hdrs := ("Path", "Local ID",
+                    "Path", "Local ID", "Coordinates")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -2318,7 +2364,7 @@ declare function scripts:checkActivityUniqueness(
         "data" : ($featureName, <span class="iedreg nowrap">{$id}</span>, $act)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", $activityName)
+    let $hdrs := ("Feature", "Local ID", $activityName)
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -2386,7 +2432,7 @@ declare function scripts:checkActivityContinuity(
         where not(tokenize($x(4), "[.()]+")[1] = tokenize($x(5), "[.()]+")[1])
         return map {
         "marks" : (4, 5),
-        "data" : ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $x(3), $x(4), $x(5))
+        "data" : ($x(1), $x(2), $x(3), $x(4), $x(5))
         }
 
     let $blue :=
@@ -2394,10 +2440,10 @@ declare function scripts:checkActivityContinuity(
         where tokenize($x(4), "[.()]+")[1] = tokenize($x(5), "[.()]+")[1]
         return map {
         "marks" : (4, 5),
-        "data" : ($x(1), <span class="iedreg nowrap">{$x(2)}</span>, $x(3), $x(4), $x(5))
+        "data" : ($x(1), $x(2), $x(3), $x(4), $x(5))
         }
 
-    let $hdrs := ("Feature", "Inspire ID", $activityName, "Value", "Value (DB)")
+    let $hdrs := ("Feature", "Local ID", $activityName, "Value", "Value (DB)")
 
     let $details :=
         <div class="iedreg">{
@@ -2535,7 +2581,7 @@ declare function scripts:checkStatus(
                 }
             else ()
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "Status")
+    let $hdrs := ("Feature", "Local ID", "Path", "Status")
 
     return
         if ($type = "warning") then
@@ -2674,14 +2720,14 @@ declare function scripts:checkFunctionalStatusType(
         "marks" : (4, 5),
         "data" : (
             $p/local-name(),
-            <span class="iedreg nowrap">{$id/text()}</span>,
+            $id/text(),
             scripts:getPath($x),
             $xStat,
             $yStat
         )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "StatusType", "StatusType (DB)")
+    let $hdrs := ("Feature", "Local ID", "Path", "StatusType", "StatusType (DB)")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -2728,7 +2774,7 @@ declare function scripts:queryDate(
     "data" : (
         (:$x/local-name(),:)
         $x_path,
-        <span class="iedreg nowrap">{$x_id}</span>,
+        $x_id,
         $x_date,
         (:$y/local-name(),:)
         $y_path,
@@ -2757,7 +2803,7 @@ declare function scripts:checkDateOfStartOfOperation(
         scripts:queryDate($root, "ProductionInstallation", "ProductionInstallationPart", "groupedInstallationPart", $dateName)
     )
 
-    let $hdrs := ("Path feature", "Inspire ID", "Feature date",
+    let $hdrs := ("Path feature", "Local ID", "Feature date",
                    "Path feature child", "Inspire ID child", "Feature child date")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
@@ -2803,14 +2849,14 @@ declare function scripts:checkDateOfStartOfOperationLCP(
         "marks" : (4),
         "data" : (
             $feature,
-            <span class="iedreg nowrap">{$id}</span>,
+            $id,
             $path,
             $date/data(),
             $v
         )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", 'Date of start of operation', "Plant type")
+    let $hdrs := ("Feature", "Local ID", "Path", 'Date of start of operation', "Plant type")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -2853,7 +2899,7 @@ declare function scripts:checkDateOfGranting(
             $dateOfGranting, $dateOfLastUpdate)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "dateOfGranting", "dateOfStartOfOperation")
+    let $hdrs := ("Feature", "Local ID", "dateOfGranting", "dateOfStartOfOperation")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -2893,10 +2939,10 @@ declare function scripts:checkPermitDates(
         where $d1 gt $d2
         return map {
         "marks" : (4, 5),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $d1, $d2)
+        "data" : ($feature, $id, $p, $d1, $d2)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", $date1, $date2)
+    let $hdrs := ("Feature", "Local ID", "Path", $date1, $date2)
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -2970,7 +3016,7 @@ declare function scripts:checkInspections(
             )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Competent authority inspections", "Site visits")
+    let $hdrs := ("Feature", "Local ID", "Competent authority inspections", "Site visits")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3010,7 +3056,7 @@ declare function scripts:checkPermit(
         )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Competent authority permits")
+    let $hdrs := ("Feature", "Local ID", "Competent authority permits")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3065,14 +3111,14 @@ declare function scripts:checkDateOfGrantingPermitURL(
         "marks" : (3, 5),
         "data" : (
             $x/local-name(),
-            <span class="iedreg nowrap">{$id/text()}</span>,
+            $id/text(),
             $newDate,
             $oldDate,
             $url
         )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "dateofGranting", "dateofGranting (DB)", "permitURL")
+    let $hdrs := ("Feature", "Local ID", "dateofGranting", "dateofGranting (DB)", "permitURL")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3119,7 +3165,7 @@ declare function scripts:checkEnforcementAction(
                 )
             }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "Enforcement action", "Permit granted")
+    let $hdrs := ("Feature", "Local ID", "Path", "Enforcement action", "Permit granted")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3162,7 +3208,7 @@ declare function scripts:checkStricterPermitConditions(
                 )
             }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "BATAEL", "Stricter permit conditions indicator")
+    let $hdrs := ("Feature", "Local ID", "Path", "BATAEL", "Stricter permit conditions indicator")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3210,7 +3256,7 @@ declare function scripts:checkBATPermit(
 )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "permitGranted", "BATDerogationIndicator")
+    let $hdrs := ("Feature", "Local ID", "Path", "permitGranted", "BATDerogationIndicator")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3258,7 +3304,7 @@ declare function scripts:checkBATDerogation(
                 )
             }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "Attribute")
+    let $hdrs := ("Feature", "Local ID", "Path", "Attribute")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3304,7 +3350,7 @@ declare function scripts:checkArticle32(
         "data" : ($y/local-name(), <span class="iedreg nowrap">{$y_id}</span>, $derogations, $dateOfGranting)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "DerogationValue", "dateOfGranting")
+    let $hdrs := ("Feature", "Local ID", "DerogationValue", "dateOfGranting")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3346,7 +3392,7 @@ declare function scripts:checkDerogationsYear(
         "data" : ($installationPart/local-name(), <span class="iedreg nowrap">{$id}</span>, $derogations, $reportingYear)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "DerogationValue", "reportingYear")
+    let $hdrs := ("Feature", "Local ID", "DerogationValue", "reportingYear")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3431,14 +3477,14 @@ declare function scripts:checkDerogationsContinuity(
         "marks" : (3, 4),
         "data" : (
             $p/local-name(),
-            <span class="iedreg nowrap">{$id/text()}</span>,
+            $id/text(),
             $path,
             $xder,
             $yder
         )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "DerogationValue", "DerogationValue (DB)")
+    let $hdrs := ("Feature", "Local ID", "Path", "DerogationValue", "DerogationValue (DB)")
 
     let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
 
@@ -3562,14 +3608,13 @@ declare function scripts:checkRelevantChapters(
             "marks" : (3, 4),
             "data" : (
                 $node/local-name(),
-                <span class="iedreg nowrap">{$gmlid}</span>,
-                (:<span class="iedreg nowrap">{$partid}</span>,:)
+                $gmlid,
                 $chapter,
                 fn:string-join($partType, ', ')
                 )
             }
 
-    let $hdrs := ("Feature", "Inspire ID", "Relevant Chapter", "Plant Type")
+    let $hdrs := ("Feature", "Local ID", "Relevant Chapter", "Plant Type")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3640,7 +3685,7 @@ declare function scripts:checkLCP(
             "data" : ($part/local-name(), <span class="iedreg nowrap">{$id}</span>)
             }
 
-    let $hdrs := ("Feature", "Inspire ID")
+    let $hdrs := ("Feature", "Local ID")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3676,7 +3721,7 @@ declare function scripts:checkRatedThermalInput(
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "totalRatedThermalInput")
+    let $hdrs := ("Feature", "Local ID", "totalRatedThermalInput")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3757,7 +3802,7 @@ declare function scripts:checkWI(
             "data" : ($part/local-name(), <span class="iedreg nowrap">{$id}</span>)
             }
 
-    let $hdrs := ("Feature", "Inspire ID")
+    let $hdrs := ("Feature", "Local ID")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3806,7 +3851,7 @@ declare function scripts:checkNominalCapacity(
             "marks" : (3, 4, 5),
             "data" : (
                 $feature,
-                <span class="iedreg nowrap">{$id}</span>,
+                $id,
                 $hazardous,
                 $nonHazardous,
                 $totalAnyWaste
@@ -3845,7 +3890,7 @@ declare function scripts:checkNominalCapacity(
             "data" : $m("data")
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "permittedCapacityHazardous",
+    let $hdrs := ("Feature", "Local ID", "permittedCapacityHazardous",
         "permittedCapacityNonHazardous", "totalNominalCapacityAnyWasteType")
 
     let $details :=
@@ -3892,7 +3937,7 @@ declare function scripts:checkConfidentialityRestriction(
         "data" : ($feature/local-name(), <span class="iedreg nowrap">{$id}</span>, $p, $rsn)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "Confidentiality reason")
+    let $hdrs := ("Feature", "Local ID", "Path", "Confidentiality reason")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3940,7 +3985,7 @@ declare function scripts:checkConfidentialityOveruse(
     let $ratio := count($data) div count($seq)
     let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "confidentialityReason")
+    let $hdrs := ("Feature", "Local ID", "Path", "confidentialityReason")
 
     return
         if ($ratio gt 0.1) then
@@ -3998,7 +4043,7 @@ declare function scripts:checkIdentifier(
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $value)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", $identifier)
+    let $hdrs := ("Feature", "Local ID", $identifier)
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -4062,10 +4107,10 @@ declare function scripts:checkFacilityName(
         where ($facilityName/text() = $companyName/text())
         return map {
         "marks" : (3),
-        "data" : ($x/local-name(), <span class="iedreg nowrap">{$id}</span>, $facilityName/text())
+        "data" : ($x/local-name(), $id, <span class="iedreg nowrap">{$facilityName/text()}</span>)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "facilityName")
+    let $hdrs := ("Feature", "Local ID", "facilityName")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -4117,14 +4162,14 @@ declare function scripts:checkNameOfFeatureContinuity(
         "marks" : (3, 4),
         "data" : (
             $p/local-name(),
-            <span class="iedreg nowrap">{$id/text()}</span>,
+            $id/text(),
             $path,
-            <span class="iedreg nowrap">{$xName}</span>,
-            <span class="iedreg nowrap">{$yName}</span>
+            $xName,
+            $yName
         )
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "nameOfFeature", "nameOfFeature (DB)")
+    let $hdrs := ("Feature", "Local ID", "Path", "nameOfFeature", "nameOfFeature (DB)")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -4181,7 +4226,7 @@ declare function scripts:checkReportingYear(
             $envelopeYear
         )}
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "reportingYear", "envelopeYear")
+    let $hdrs := ("Feature", "GML ID", "Path", "reportingYear", "envelopeYear")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -4218,7 +4263,7 @@ declare function scripts:checkElectronicMailAddressFormat(
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $email)
         }
 
-    let $hdrs := ("Feature", "Inspire ID", "Path", "E-mail address")
+    let $hdrs := ("Feature", "Local ID", "Path", "E-mail address")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -4256,7 +4301,7 @@ declare function scripts:checkFacilityAddress(
     let $ratio := count($data) div count($seq)
     let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
-    let $hdrs := ("Path", "Inspire ID")
+    let $hdrs := ("Path", "Local ID")
 
     return
         if ($ratio <= 0.001) then
@@ -4309,7 +4354,7 @@ declare function scripts:checkDateOfStartOfOperationFuture(
                 )
             }
 
-    let $hdrs := ("Feature", "Inspire ID", "Date of start of operation", "Reporting year")
+    let $hdrs := ("Feature", "Local ID", "Date of start of operation", "Reporting year")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
