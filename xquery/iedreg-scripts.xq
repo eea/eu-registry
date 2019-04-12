@@ -169,7 +169,7 @@ declare function scripts:getDetails(
                     <div class="iedreg row">
                         {for $h in $hdrs
                         return
-                            <div class="iedreg col inner th"><span class="iedreg nowrap">{$h}</span></div>
+                            <div class="iedreg col inner th"><span class="iedreg break">{$h}</span></div>
                         }
                     </div>
                     {for $d in $data
@@ -442,7 +442,6 @@ declare function scripts:checkCountryId(
     let $data :=
         for $rd in $seq
         let $feature := $rd/local-name()
-        let $id := scripts:getGmlId($rd)
 
         let $countries := $rd//*:countryId
 
@@ -465,10 +464,10 @@ declare function scripts:checkCountryId(
         where not(functx:if-empty($errorMsg, '') = '')
         return map {
         "marks" : (1, 5),
-        "data" : ($errorMsg, $feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+        "data" : ($errorMsg, $feature, $p, $v)
         }
 
-    let $hdrs := ("Message", "Feature", "GML ID", "Path", "CountryId")
+    let $hdrs := ("Message", "Feature", "Path", "CountryId")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -676,7 +675,7 @@ declare function scripts:checkAmountOfInspireIds(
         "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>)
         }
 
-    let $ratio := count($data) div count($xIDs)
+    let $ratio := count($data) div count($yIDs)
     let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
     let $hdrs := ("Feature", "Local ID")
@@ -763,8 +762,8 @@ declare function scripts:checkInspireIdBlank(
 ) as element()* {
     let $features := ('ProductionSite', 'ProductionFacility', 'ProductionInstallation',
         'ProductionInstallationPart')
-    let $msg := "All inspireIds for " || fn:string-join($features, ', ')
-        || " feature types must be filled in. Please ensure all inspireIds are completed."
+    let $msg := "All local ID and namespace attributes for " || fn:string-join($features, ', ')
+        || " feature types must be filled in. Please ensure all local ID and namespace attributes are completed."
     let $type := "error"
 
     let $seq := $root//*[local-name() = $features]
@@ -809,9 +808,14 @@ declare function scripts:checkDuplicates(
         $rulename as xs:string,
         $root as element(),
         $featureNames as xs:string*,
-        $nodeNames as xs:string*,
-        $attrs as xs:string*
+        $stringNodes as xs:string+,
+        $locationNode as xs:string?,
+        $codelistNode as xs:string?
 ) as element()* {
+    let $srsName :=
+        for $srs in distinct-values($root//gml:*/attribute::srsName)
+        return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
+
     let $type := "warning"
     let $msg := "The similarity threshold has been exceeded, for the following "
         || scripts:makePlural($featureNames) => fn:string-join(', ') ||
@@ -820,47 +824,102 @@ declare function scripts:checkDuplicates(
     let $seq := $root//*[local-name() = $featureNames]
     let $norm := ft:normalize(? , map {'stemming' : true()})
 
-    let $data :=
-        for $node at $ind in $seq
-            let $stringMain := $node//*[local-name() = $nodeNames]/data()
+    let $items :=
+        for $node in $seq
+            let $stringMain := $node//*[local-name() = $stringNodes]/data()
                 => fn:string-join(' / ')
-            let $stringMainAttrs := $node/*[local-name() = $attrs]
+            let $codelistMain := $node//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
+            let $codelistMainLev := fn:replace($codelistMain, '[\(\)\.]', '')
+            let $locationMain := $node/*[local-name() = $locationNode]//gml:pos
+            let $stringMainLev := (fn:replace($stringMain, ' / ', ''), $codelistMainLev)
+                    => fn:string-join('')
+            let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
-            let $stringMain := ($stringMain, $stringMainAttrs) => fn:string-join(' / ')
+            return
+                <item>
+                    <string>{$stringMain}</string>
+                    <location>{$locationMain/data()}</location>
+                </item>
 
-            let $featureName := $node/local-name()
-            let $inspireId := scripts:getInspireId($node)
+    let $distinct_items := functx:distinct-deep($items)
 
-            for $sub in subsequence($seq, $ind + 1)
-                let $inspireIdSub := scripts:getInspireId($sub)
-                let $stringSub := $sub//*[local-name() = $nodeNames]/data()
-                    => fn:string-join(' / ')
-                let $stringSubAttrs := $sub/*[local-name() = $attrs]
-                    //fn:tokenize(@xlink:href/data(), '/')[last()]
-                let $stringSub := ($stringSub, $stringSubAttrs) => fn:string-join(' / ')
+    let $data :=
+        for $item at $ind in $distinct_items
+            (:let $featureName := $node/local-name():)
+            (:let $inspireId := scripts:getInspireId($node):)
+            let $stringMain := $item/string => xs:string()
+            let $stringLev := fn:replace($stringMain, ' / ', '')
+            let $locationMain := $item/location => xs:string()
+
+            for $sub in subsequence($distinct_items, $ind + 1)
+                (:let $inspireIdSub := scripts:getInspireId($sub):)
+                let $stringSub := $sub/string => xs:string()
+                let $stringSubLev := fn:replace($stringSub, ' / ', '')
+                let $locationSub := $sub/location => xs:string()
 
                 let $levRatio := strings:levenshtein(
-                        $norm(fn:replace($stringMain, ' / ', '')),
-                        $norm(fn:replace($stringSub, ' / ', '')))
-
-                where $levRatio >= 0.9
-
-                return map {
-                (:"sort": (7),:)
-                "marks" : (5, 6, 7),
-                "data" : (
-                    $featureName,
-                    ($nodeNames, $attrs) => fn:string-join(' / '),
-                    <span class="iedreg nowrap">{$inspireId}</span>,
-                    <span class="iedreg nowrap">{$inspireIdSub}</span>,
-                    '"' || $stringMain || '"',
-                    '"' || $stringSub || '"',
-                    round-half-to-even($levRatio * 100, 1) || '%'
+                        $norm($stringLev),
+                        $norm($stringSubLev)
                 )
-                }
 
-    let $hdrs := ('Feature', 'Attribute names', 'Local ID', ' ', 'Attribute values', ' ', 'Similarity')
+                let $stringFlagged := $levRatio >= 0.9
+                where $stringFlagged
+                (:let $codelistFlagged := if(exists($codelistNode)):)
+                    (:then $codelistMain = $codelistSub:)
+                    (:else true():)
+                (:where $codelistFlagged:)
+                let $distance := if(exists($locationNode))
+                    then
+                        let $main_lat := substring-before($locationMain, ' ')
+                        let $main_long := substring-after($locationMain, ' ')
+                        let $main_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$main_long},{$main_lat}</GML:coordinates></GML:Point>
+
+                        let $sub_lat := substring-before($locationSub, ' ')
+                        let $sub_long := substring-after($locationSub, ' ')
+                        let $sub_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$sub_long},{$sub_lat}</GML:coordinates></GML:Point>
+
+                        let $dist := round-half-to-even(geo:distance($main_point, $sub_point) * 111319.9, 2)
+
+                        return $dist
+                    else
+                        '-'
+
+                let $locationFlagged := if(xs:string($distance) = '-')
+                    then
+                        true()
+                    else
+                        if($distance < 100) then true() else false()
+
+                where $locationFlagged
+
+                for $feat in $seq[fn:string-join(.//*[local-name() = $stringNodes]/data(),' / ')
+                        = $stringMain and .//gml:pos/text() = $locationMain]
+                    let $featureName := $feat/local-name()
+                    let $inspireId := scripts:getInspireId($feat)
+
+                    for $sub in $seq[fn:string-join(.//*[local-name() = $stringNodes]/data(),' / ')
+                        = $stringSub and .//gml:pos/text() = $locationSub]
+
+                    let $inspireIdSub := scripts:getInspireId($sub)
+
+                    return map {
+                    (:"sort": (7),:)
+                    "marks" : (7),
+                    "data" : (
+                        $featureName,
+                        $inspireId,
+                        $inspireIdSub,
+                        ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
+                        <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
+                        <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>,
+                        concat(round-half-to-even($levRatio * 100, 1) || '%', ' / ',
+                                (if(xs:string($distance) = '-') then $distance else $distance || ' m')
+                        )
+                    )
+                    }
+
+    let $hdrs := ('Feature', 'Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity / Distance')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -901,11 +960,7 @@ declare function scripts:checkDuplicates2(
                     => fn:string-join('')
             let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
-            let $featureName := $node/local-name()
-            let $inspireId := scripts:getInspireId($node)
-
             for $sub in subsequence($seq, $ind + 1)
-                let $inspireIdSub := scripts:getInspireId($sub)
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
                     => fn:string-join(' / ')
                 let $codelistSub := $sub//*[local-name() = $codelistNode]
@@ -923,10 +978,7 @@ declare function scripts:checkDuplicates2(
 
                 let $stringFlagged := $levRatio >= 0.9
                 where $stringFlagged
-                (:let $codelistFlagged := if(exists($codelistNode)):)
-                    (:then $codelistMain = $codelistSub:)
-                    (:else true():)
-                (:where $codelistFlagged:)
+
                 let $distance := if(exists($locationNode))
                     then
                         let $main_lat := substring-before($locationMain, ' ')
@@ -937,7 +989,10 @@ declare function scripts:checkDuplicates2(
                         let $sub_long := substring-after($locationSub, ' ')
                         let $sub_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$sub_long},{$sub_lat}</GML:coordinates></GML:Point>
 
-                        let $dist := round-half-to-even(geo:distance($main_point, $sub_point) * 111319.9, 2)
+                        let $dist :=
+                            if($main_point = $sub_point)
+                            then 0
+                            else round-half-to-even(geo:distance($main_point, $sub_point) * 111319.9, 2)
 
                         return $dist
                     else
@@ -950,6 +1005,11 @@ declare function scripts:checkDuplicates2(
                         if($distance < 100) then true() else false()
 
                 where $locationFlagged
+
+                let $featureName := $node/local-name()
+                let $inspireId := scripts:getInspireId($node)
+                let $inspireIdSub := scripts:getInspireId($sub)
+
                 return map {
                 (:"sort": (7),:)
                 "marks" : (7),
@@ -966,7 +1026,7 @@ declare function scripts:checkDuplicates2(
                 )
                 }
 
-    let $hdrs := ('Feature', 'Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity/Distance')
+    let $hdrs := ('Feature', 'Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity / Distance')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1114,7 +1174,7 @@ declare function scripts:checkDatabaseDuplicates_old(
         )
         }
 
-    let $hdrs := ('Feature', 'Inspire ID', 'Inspire ID (DB)', 'Feature name', 'Feature name (DB)', 'Similarity')
+    let $hdrs := ('Feature', 'Local ID', 'Local ID (DB)', 'Feature name', 'Feature name (DB)', 'Similarity')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1193,7 +1253,7 @@ declare function scripts:checkDatabaseDuplicates(
                 )
                 }
 
-    let $hdrs := ('Feature', 'Inspire ID', 'Inspire ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)', 'Similarity')
+    let $hdrs := ('Feature', 'Local ID', 'Local ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)', 'Similarity')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1297,21 +1357,21 @@ declare function scripts:checkDatabaseDuplicates2(
                 (:where $ic = '0014.FACILITY' and $id = ('0013.FACILITY', '10029.FACILITY', '10125.FACILITY'):)
                 return map {
                 (:"sort": (7),:)
-                "marks" : (5, 6, 7),
+                "marks" : (7),
                 "data" : (
                     $featureName,
-                    <span class="iedreg nowrap">{$id}</span>,
-                    <span class="iedreg nowrap">{$ic}</span>,
+                    $id,
+                    $ic,
                     ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
-                    ($stringMain, $locationMain) => fn:string-join(' / '),
-                    ($stringSub, $locationSub) => fn:string-join(' / '),
+                    <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
+                    <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>,
                     concat(round-half-to-even($levRatio * 100, 1) || '%', ' / ',
                             (if(xs:string($distance) = '-') then $distance else $distance || 'm')
                     )
                 )
                 }
 
-    let $hdrs := ('Feature', 'Inspire ID', 'Inspire ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)', 'Similarity / Distance (in meters)')
+    let $hdrs := ('Feature', 'Local ID', 'Local ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)', 'Similarity / Distance')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1454,7 +1514,7 @@ declare function scripts:checkMissing(
         )
         }
 
-    let $hdrs := ('Feature', 'Inspire ID', 'Status')
+    let $hdrs := ('Feature', 'Local ID', 'Status')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1537,8 +1597,8 @@ declare function scripts:checkMissingSites(
     (:let $data := ($data1, $data2):)
     let $data := $data1
 
-    let $hdrs1 := ('Feature type', 'Inspire ID', 'Associated site', 'DB Associated site')
-    let $hdrs2 := ('Message', 'Feature type', 'Inspire ID')
+    let $hdrs1 := ('Feature type', 'Local ID', 'Associated site', 'DB Associated site')
+    let $hdrs2 := ('Message', 'Feature type', 'Local ID')
 
     let $details :=
         <div class="iedreg">{
@@ -1718,11 +1778,9 @@ declare function scripts:checkProdutionSiteRadius(
         return map {
         "marks" : (7),
         "data" : (
-            (:$x/local-name(),:)
             $x_path,
             <span class="iedreg nowrap">{$x_id}</span>,
             $x_coords,
-            (:$y/local-name(),:)
             $y_path,
             <span class="iedreg nowrap">{$y_id}</span>,
             $y_coords,
@@ -1881,7 +1939,6 @@ declare function scripts:checkCountryBoundary(
         $root//pf:pointGeometry
     )
     let $distinct_coords := distinct-values($seq//gml:*/descendant-or-self::*[not(*)]/data())
-    let $asd:= trace(count($distinct_coords), 'distinct_coords:')
 
     let $data :=
         for $coord in $distinct_coords
@@ -1899,17 +1956,15 @@ declare function scripts:checkCountryBoundary(
         order by $coord descending
 
         for $c in $coords
-        let $parent := scripts:getParent($c)
-        let $feature := $parent/local-name()
-
-        let $id := scripts:getInspireId($c/parent::*)
-
-        let $p := scripts:getPath($c)
 
         count $count
-        let $asd:= trace($count, 'cnt: ')
         where $count < 1001
         (:where not(geo:contains($geom, $point)):)
+
+        let $parent := scripts:getParent($c)
+        let $feature := $parent/local-name()
+        let $id := scripts:getInspireId($c/parent::*)
+        let $p := scripts:getPath($c)
 
         return map {
         'marks' : (4, 5),
@@ -1942,7 +1997,6 @@ declare function scripts:checkCountryBoundary(
 
         where not(geo:within($point, $geom))
 
-        let $asd:= trace($count, 'cnt: ')
         where not(geo:contains($geom, $point))
         return map {
         'marks' : (4, 5),
@@ -2804,7 +2858,7 @@ declare function scripts:checkDateOfStartOfOperation(
     )
 
     let $hdrs := ("Path feature", "Local ID", "Feature date",
-                   "Path feature child", "Inspire ID child", "Feature child date")
+                   "Path feature child", "Local ID child", "Feature child date")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -3198,13 +3252,13 @@ declare function scripts:checkStricterPermitConditions(
             where $indicator = 'true' and string-length($batael/@xlink:href) = 0
 
             return map {
-                "marks": (3, 4),
+                "marks": (5),
                 "data": (
                     $parent/local-name(),
                     $id,
                     $path,
-                    $batael/@xlink:href,
-                    $indicator
+                    $indicator,
+                    $batael/@xlink:href
                 )
             }
 
@@ -3246,13 +3300,13 @@ declare function scripts:checkBATPermit(
         let $path := scripts:getPath($permit)
 
         return map {
-            "marks" : (3, 4),
+            "marks" : (5),
             "data" : (
                 $x/local-name(),
                 $id,
                 $path,
-                $permit,
-                $bat
+                $bat,
+                $permit
 )
         }
 
@@ -3295,7 +3349,7 @@ declare function scripts:checkBATDerogation(
             let $path := scripts:getPath($batDerogation//*[local-name() = $attr])
 
             return map {
-                "marks" : (3),
+                "marks" : (4),
                 "data" : (
                     $parent/local-name(),
                     $id,
@@ -3474,7 +3528,7 @@ declare function scripts:checkDerogationsContinuity(
         where not($xder = $article)
 
         return map {
-        "marks" : (3, 4),
+        "marks" : (4),
         "data" : (
             $p/local-name(),
             $id/text(),
@@ -3890,8 +3944,8 @@ declare function scripts:checkNominalCapacity(
             "data" : $m("data")
         }
 
-    let $hdrs := ("Feature", "Local ID", "permittedCapacityHazardous",
-        "permittedCapacityNonHazardous", "totalNominalCapacityAnyWasteType")
+    let $hdrs := ("Feature", "Local ID", "Permitted hazardous capacity",
+        "Permitted non-hazardous capacity", "Total nominal capacity AnyWasteType")
 
     let $details :=
         <div class="iedreg">{
@@ -4159,7 +4213,7 @@ declare function scripts:checkNameOfFeatureContinuity(
 
         where not($xName = $yName)
         return map {
-        "marks" : (3, 4),
+        "marks" : (4),
         "data" : (
             $p/local-name(),
             $id/text(),
@@ -4427,7 +4481,7 @@ Please ensure all mandatory inputs are completed."
             "data" : ($featureName, $id, $nameOfFeature)
             }
 
-    let $hdrs := ("Feature", 'Inspire ID', "Name of feature")
+    let $hdrs := ("Feature", 'Local ID', "Name of feature")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -4497,7 +4551,7 @@ declare function scripts:check2018year(
                             "data" : ($featureMain, $inspireId, $feature, $attr)
                         }
 
-    let $hdrs := ('Feature main', 'Inspire ID', 'Feature sub', 'Attribute')
+    let $hdrs := ('Feature main', 'Local ID', 'Feature sub', 'Attribute')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -4557,7 +4611,7 @@ declare function scripts:checkFacilityType(
                             "data" : ($featureMain, $inspireId, $feature, $attr)
                         }
 
-    let $hdrs := ('Feature main', 'Inspire ID', 'Feature sub', 'Attribute')
+    let $hdrs := ('Feature main', 'Local ID', 'Feature sub', 'Attribute')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -4665,7 +4719,7 @@ declare function scripts:checkInstallationType(
 
     let $data := ($data2017, $data2018)
 
-    let $hdrs := ('Feature main', 'Inspire ID', 'Feature sub', 'Attribute')
+    let $hdrs := ('Feature main', 'Local ID', 'Feature sub', 'Attribute')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
