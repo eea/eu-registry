@@ -971,28 +971,31 @@ declare function scripts:checkDuplicates2(
                         => fn:string-join('')
                 let $stringSub := ($stringSub, $codelistSub) => fn:string-join(' / ')
 
-                let $levRatio := strings:levenshtein(
-                        $norm($stringMainLev),
-                        $norm($stringSubLev)
-                )
+                let $levRatio :=
+                    if($stringMainLev = $stringSubLev)
+                    then 1
+                    else strings:levenshtein($norm($stringMainLev), $norm($stringSubLev))
 
                 let $stringFlagged := $levRatio >= 0.9
                 where $stringFlagged
 
                 let $distance := if(exists($locationNode))
                     then
-                        let $main_lat := substring-before($locationMain, ' ')
-                        let $main_long := substring-after($locationMain, ' ')
-                        let $main_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$main_long},{$main_lat}</GML:coordinates></GML:Point>
-
-                        let $sub_lat := substring-before($locationSub, ' ')
-                        let $sub_long := substring-after($locationSub, ' ')
-                        let $sub_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$sub_long},{$sub_lat}</GML:coordinates></GML:Point>
-
                         let $dist :=
-                            if($main_point = $sub_point)
+                            if($locationMain = $locationSub)
                             then 0
-                            else round-half-to-even(geo:distance($main_point, $sub_point) * 111319.9, 2)
+                            else
+                                let $main_lat := substring-before($locationMain, ' ')
+                                let $main_long := substring-after($locationMain, ' ')
+                                let $main_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$main_long},{$main_lat}</GML:coordinates></GML:Point>
+
+                                let $sub_lat := substring-before($locationSub, ' ')
+                                let $sub_long := substring-after($locationSub, ' ')
+                                let $sub_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$sub_long},{$sub_lat}</GML:coordinates></GML:Point>
+
+                                return round-half-to-even(
+                                        geo:distance($main_point, $sub_point) * 111319.9, 2
+                                )
 
                         return $dist
                     else
@@ -1006,17 +1009,16 @@ declare function scripts:checkDuplicates2(
 
                 where $locationFlagged
 
-                let $featureName := $node/local-name()
+                (:let $featureName := $node/local-name():)
                 let $inspireId := scripts:getInspireId($node)
                 let $inspireIdSub := scripts:getInspireId($sub)
 
                 return map {
                 (:"sort": (7),:)
-                "marks" : (7),
+                "marks" : (6),
                 "data" : (
-                    $featureName,
-                    $inspireId,
-                    $inspireIdSub,
+                    replace($inspireId, '\.', ' '),
+                    replace($inspireIdSub, '\.', ' '),
                     ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
                     <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
                     <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>,
@@ -1026,7 +1028,7 @@ declare function scripts:checkDuplicates2(
                 )
                 }
 
-    let $hdrs := ('Feature', 'Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity / Distance')
+    let $hdrs := ('Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity / Distance')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1301,7 +1303,7 @@ declare function scripts:checkDatabaseDuplicates2(
                     => fn:string-join('')
             let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
-            let $featureName := $node/local-name()
+            (:let $featureName := $node/local-name():)
             let $p := scripts:getParent($node)
             let $id := scripts:getInspireId($p)
 
@@ -1357,11 +1359,10 @@ declare function scripts:checkDatabaseDuplicates2(
                 (:where $ic = '0014.FACILITY' and $id = ('0013.FACILITY', '10029.FACILITY', '10125.FACILITY'):)
                 return map {
                 (:"sort": (7),:)
-                "marks" : (7),
+                "marks" : (6),
                 "data" : (
-                    $featureName,
-                    $id,
-                    $ic,
+                    replace($id, '\.', ' '),
+                    replace($ic, '\.', ' '),
                     ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
                     <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
                     <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>,
@@ -1837,11 +1838,11 @@ declare function scripts:checkProdutionFacilityRadius(
         "data" : (
             (:$x/local-name(),:)
             $x_path,
-            <span class="iedreg nowrap">{$x_id}</span>,
+            <span class="iedreg break">{replace($x_id, '\.', ' ')}</span>,
             $x_coords,
             (:$y/local-name(),:)
             $y_path,
-            <span class="iedreg nowrap">{replace($y_id, '^_', '')}</span>,
+            <span class="iedreg break">{replace(replace($y_id, '\.', ' '), '^_', '')}</span>,
             $y_coords,
             $dist)
         }
@@ -1895,11 +1896,11 @@ declare function scripts:checkProdutionInstallationRadius(
         "data" : (
             (:$x/local-name(), :)
             $x_path,
-            <span class="iedreg nowrap">{$x_id}</span>,
+            replace($x_id, '\.', ' '),
             $x_coords,
             (:$y/local-name(), :)
             $y_path,
-            <span class="iedreg nowrap">{$y_id}</span>,
+            replace(replace($y_id, '\.', ' '), '^_', ''),
             $y_coords,
             $dist
         )
