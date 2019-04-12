@@ -188,6 +188,7 @@ declare function scripts3:checkReportData(
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
+        let $ins_id := scripts:getInspireId($parent)
 
         let $p := scripts:getPath($x)
         let $v := data($x/@xlink:href)
@@ -199,11 +200,11 @@ declare function scripts3:checkReportData(
         )
         where not($ok)
             return map {
-            "marks" : (4),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+            "marks" : (5),
+            "data" : ($feature, $ins_id, $id, $p, $v)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, " xlink:href"))
+    let $hdrs := ("Feature", "Local ID", "GML ID", "Path", concat($activityType, " xlink:href"))
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -234,7 +235,7 @@ declare function scripts3:checkeHostingSite(
         for $x in $seq
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+        let $id := scripts:getInspireId($parent)
         let $indexOfStatus :=
             if (exists($x/child::*[local-name() = "status"]))
             then
@@ -255,10 +256,10 @@ declare function scripts3:checkeHostingSite(
         where not($ok)
         return map {
         "marks" : (5),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $indexOfStatus, $indexOfHostingSite)
+        "data" : ($feature, $id, $p, $indexOfStatus, $indexOfHostingSite)
         }
 
-    let $hdrs := ("Feature", "GML ID", "Path", "position of pf:status", "position of pf:hostingSite")
+    let $hdrs := ("Feature", "Local ID", "Path", "position of pf:status", "position of pf:hostingSite")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -291,7 +292,8 @@ declare function scripts3:checkeHostingSiteHref(
         for $x in $seq
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+        let $id := scripts:getInspireId($parent)
+        let $gml_id := scripts:getGmlId($parent)
 
         let $p := scripts:getPath($x)
 
@@ -304,11 +306,11 @@ declare function scripts3:checkeHostingSiteHref(
         )
         where not($ok)
             return map {
-            "marks" : (4),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+            "marks" : (5),
+            "data" : ($feature, $id, $gml_id, $p, $v)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path", concat($activityType, " xlink:href"))
+    let $hdrs := ("Feature", "Local ID", "GML ID", "Path", concat($activityType, " xlink:href"))
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -343,7 +345,8 @@ declare function scripts3:checkGroupedInstallation(
         for $x in $seq
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+        let $id := scripts:getInspireId($parent)
+        let $gml_id := scripts:getGmlId($parent)
 
         let $p := scripts:getPath($x)
         let $v := data($x/@gml:id)
@@ -352,11 +355,11 @@ declare function scripts3:checkGroupedInstallation(
 
         where not($ok)
             return map {
-            "marks" : (3),
-            "data" : ($feature, $p, <span class="iedreg nowrap">{$id}</span>)
+            "marks" : (4),
+            "data" : ($feature, $id, $p, $gml_id)
             }
 
-    let $hdrs := ("Feature", "Path", "GML ID" )
+    let $hdrs := ("Feature", "Local ID", "Path", "GML ID")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -389,6 +392,7 @@ declare function scripts3:checkGroupedInstallationHref(
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
+        let $ins_id := scripts:getInspireId($parent)
 
         let $p := scripts:getPath($x)
         let $v := data($x/@xlink:href)
@@ -400,11 +404,11 @@ declare function scripts3:checkGroupedInstallationHref(
         )
         where not($ok)
             return map {
-            "marks" : (4),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+            "marks" : (5),
+            "data" : ($feature, $ins_id,$id, $p, $v)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path", "groupedInstallation/@xlink:href")
+    let $hdrs := ("Feature", "Local ID", "GML ID", "Path", "groupedInstallation / @xlink:href")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -434,6 +438,7 @@ declare function scripts3:checkActCoreGeometry(
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
+        let $ins_id := scripts:getInspireId($parent)
 
         let $p := scripts:getPath($x)
 
@@ -442,11 +447,11 @@ declare function scripts3:checkActCoreGeometry(
         )
         where not($ok)
             return map {
-            "marks" : (3),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p)
+            "marks" : (4),
+            "data" : ($feature, $ins_id, $id, $p)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path")
+    let $hdrs := ("Feature", "Local ID", "GML ID", "Path")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -500,6 +505,7 @@ declare function scripts3:checkGroupedInstallationPart(
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
+        let $ins_id := scripts:getInspireId($parent)
 
         let $p := scripts:getPath($x)
         let $v := data($x/@gml:id)
@@ -507,11 +513,11 @@ declare function scripts3:checkGroupedInstallationPart(
         let $ok := count(fn:index-of($gmlIDs, concat("#", $v))) >= 1
         where not($ok)
             return map {
-            "marks" : (3),
-            "data" : ($feature, $p, <span class="iedreg nowrap">{$id}</span>)
+            "marks" : (4),
+            "data" : ($feature, $ins_id, $p, <span class="iedreg nowrap">{$id}</span>)
             }
 
-    let $hdrs := ("Feature", "Path", "GML ID")
+    let $hdrs := ("Feature", "Local ID","Path", "GML ID")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -544,6 +550,7 @@ declare function scripts3:checkGroupedInstallationPartHref(
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
+        let $ins_id := scripts:getInspireId($parent)
 
         let $p := scripts:getPath($x)
         let $v := data($x/@xlink:href)
@@ -555,11 +562,11 @@ declare function scripts3:checkGroupedInstallationPartHref(
         )
         where not($ok)
             return map {
-            "marks" : (4),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+            "marks" : (5),
+            "data" : ($feature, $ins_id, <span class="iedreg nowrap">{$id}</span>, $p, $v)
             }
 
-    let $hdrs := ("Feature", "GML ID", "Path", "groupedInstallationPart/@xlink:href")
+    let $hdrs := ("Feature", "Local ID", "GML ID", "Path", "groupedInstallationPart / @xlink:href")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -595,6 +602,7 @@ declare function scripts3:checkStatusNil(
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
+        let $ins_id := scripts:getInspireId($parent)
 
         let $p := scripts:getPath($x)
 
@@ -610,10 +618,10 @@ declare function scripts3:checkStatusNil(
                         "two or more consecutive elements found"
         where not($ok)
             return map {
-            "marks" : (4),
-            "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
+            "marks" : (5),
+            "data" : ($feature, $ins_id, <span class="iedreg nowrap">{$id}</span>, $p, $v)
             }
-    let $hdrs := ("Feature", "GML ID", "Path", "status")
+    let $hdrs := ("Feature", "Local ID", "GML ID", "Path", "status")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -646,6 +654,7 @@ declare function scripts3:checkePointGeometry(
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
         let $id := scripts:getGmlId($parent)
+        let $ins_id := scripts:getInspireId($parent)
 
         let $p := scripts:getPath($x)
         let $following := $x/following-sibling::*[1]/local-name()
@@ -653,11 +662,11 @@ declare function scripts3:checkePointGeometry(
         let $ok := $following = "pointGeometry"
         where not($ok)
         return map {
-        "marks" : (4),
-        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $following)
+        "marks" : (5),
+        "data" : ($feature, $ins_id, <span class="iedreg nowrap">{$id}</span>, $p, $following)
         }
 
-    let $hdrs := ("Feature", "GML ID", "Path", "element after inspireId")
+    let $hdrs := ("Feature", "Local ID", "GML ID", "Path", "element after inspireId")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
