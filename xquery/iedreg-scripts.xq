@@ -3757,7 +3757,10 @@ declare function scripts:checkRatedThermalInput(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := "The totalRatedThermalInput fields in this submission contain an integer less than or equal to 50 or an integer greater than 8500, meaning the spatial object is no longer considered an LCP. Please verify and ensure the values entered are correct."
+    let $msg := "The totalRatedThermalInput fields in this submission contain an integer
+    less than 50 or an integer greater than 8500,
+    meaning the spatial object is no longer considered an LCP.
+    Please verify and ensure the values entered are correct."
     let $type := "warning"
 
     let $seq := $root//*:ProductionInstallationPart/*:totalRatedThermalInput
@@ -3769,7 +3772,7 @@ declare function scripts:checkRatedThermalInput(
         let $id := scripts:getInspireId($parent)
 
         let $v := xs:float($x => functx:if-empty(0))
-        where $v le 50 or $v gt 8500
+        where $v lt 50 or $v gt 8500
 
         return map {
         "marks" : (3),
