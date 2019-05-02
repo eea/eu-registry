@@ -780,17 +780,16 @@ declare function scripts:checkInspireIdBlank(
 
         return map {
         "marks" : (
-            if(functx:if-empty($localId, '') = '') then 3 else (),
-            if(functx:if-empty($namespace, '') = '') then 4 else ()
+            if(functx:if-empty($localId, '') = '') then 2 else (),
+            if(functx:if-empty($namespace, '') = '') then 3 else ()
         ),
         "data" : (
             $feature,
-            $gmlId,
             <span class="iedreg nowrap">{$localId}</span>,
             $namespace
         )}
 
-    let $hdrs := ("Feature", "GML Id", "localId", "namespace")
+    let $hdrs := ("Feature", "localId", "namespace")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1372,7 +1371,7 @@ declare function scripts:checkDatabaseDuplicates2(
                 )
                 }
 
-    let $hdrs := ('Feature', 'Local ID', 'Local ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)', 'Similarity / Distance')
+    let $hdrs := ('Local ID', 'Local ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)', 'Similarity / Distance')
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1913,7 +1912,6 @@ declare function scripts:checkProdutionInstallationRadius(
 (:~
  : C5.4 Coordinates to country comparison
  :)
-
 declare function scripts:checkCountryBoundary(
         $refcode as xs:string,
         $rulename as xs:string,
@@ -1943,6 +1941,8 @@ declare function scripts:checkCountryBoundary(
 
     let $data :=
         for $coord in $distinct_coords
+        order by $coord ascending
+
         let $lat := substring-before($coord, ' ')
         let $long := substring-after($coord, ' ')
 
@@ -1954,13 +1954,13 @@ declare function scripts:checkCountryBoundary(
         where not(geo:within($point, $geom))
 
         let $coords := $seq//gml:pos[./text() = $coord]
-        order by $coord descending
+
 
         for $c in $coords
 
         count $count
+        (:let $asd:= trace($count, 'count: '):)
         where $count < 1001
-        (:where not(geo:contains($geom, $point)):)
 
         let $parent := scripts:getParent($c)
         let $feature := $parent/local-name()
@@ -1977,7 +1977,7 @@ declare function scripts:checkCountryBoundary(
             $cntry)
         }
 
-(:
+(: OLD
     let $data :=
         for $g in $seq
         let $parent := scripts:getParent($g)
@@ -4272,16 +4272,15 @@ declare function scripts:checkReportingYear(
         where not($reportingYear = $envelopeYear)
 
         return map {
-        "marks" : (4, 5),
+        "marks" : (3, 4),
         "data" : (
             $feature,
-            <span class="iedreg nowrap">{$id}</span>,
             $p,
             $reportingYear,
             $envelopeYear
         )}
 
-    let $hdrs := ("Feature", "GML ID", "Path", "reportingYear", "envelopeYear")
+    let $hdrs := ("Feature", "Path", "reportingYear", "envelopeYear")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 

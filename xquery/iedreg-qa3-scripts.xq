@@ -40,20 +40,23 @@ declare function scripts3:checkActivity(
     let $type := "error"
     let $value := $activityName || "Value"
     let $valid := scripts:getValidConcepts($value)
-    let $data :=
-        (for $x in $seq
+    let $data :=(
+        for $x in $seq
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
-        let $id := scripts:getGmlId($parent)
+        let $id := scripts:getInspireId($parent)
         let $activity := replace($x/@xlink:href, '/+$', '')
         let $p := scripts:getPath($x)
         let $v := scripts:normalize($activity)
+
         where not(scripts:is-empty($activity)) and not($activity = $valid)
+
         return map {
         "marks": (4),
         "data": ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $v)
         })[position() = 1 to $scripts3:MSG_LIMIT]
-    let $hdrs := ("Feature", "GML ID", "Path", $activityName || "Value")
+
+    let $hdrs := ("Feature", "Local ID", "Path", $activityName || "Value")
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -138,7 +141,7 @@ declare function scripts3:checkDerogations(
     return scripts3:checkActivity($refcode, $rulename, $root, $featureName, $activityName, $activityType, $seq)
 };
 
-(: C13.16 specificConditions consistency
+(: 2.12 specificConditions consistency
 
     <EUReg:specificConditions  xlink:href> shall contain values
     from codelist  http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/Article51Value
