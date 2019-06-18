@@ -946,6 +946,7 @@ declare function scripts:checkDuplicates2(
 
     let $seq := $root//*[local-name() = $featureNames]
     let $norm := ft:normalize(? , map {'stemming' : true()})
+    let $countFeatures := fn:count($seq)
 
     let $data :=
         for $node at $ind in $seq
@@ -962,6 +963,9 @@ declare function scripts:checkDuplicates2(
             for $sub in subsequence($seq, $ind + 1)
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
                     => fn:string-join(' / ')
+                (: compare only if the first character is the same:)
+                where substring($stringMain, 1, 1) = substring($stringSub, 1, 1)
+
                 let $codelistSub := $sub//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
                 let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', '')
@@ -970,10 +974,13 @@ declare function scripts:checkDuplicates2(
                         => fn:string-join('')
                 let $stringSub := ($stringSub, $codelistSub) => fn:string-join(' / ')
 
+                (: compare with levenshtein only if there are less than 500 features :)
                 let $levRatio :=
                     if($stringMainLev = $stringSubLev)
                     then 1
-                    else strings:levenshtein($norm($stringMainLev), $norm($stringSubLev))
+                    else if($countFeatures gt 500)
+                        then 0
+                        else strings:levenshtein($norm($stringMainLev), $norm($stringSubLev))
 
                 let $stringFlagged := $levRatio >= 0.9
                 where $stringFlagged
@@ -983,18 +990,20 @@ declare function scripts:checkDuplicates2(
                         let $dist :=
                             if($locationMain = $locationSub)
                             then 0
-                            else
-                                let $main_lat := substring-before($locationMain, ' ')
-                                let $main_long := substring-after($locationMain, ' ')
-                                let $main_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$main_long},{$main_lat}</GML:coordinates></GML:Point>
+                            else if($countFeatures gt 500)
+                                then 1000
+                                else
+                                    let $main_lat := substring-before($locationMain, ' ')
+                                    let $main_long := substring-after($locationMain, ' ')
+                                    let $main_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$main_long},{$main_lat}</GML:coordinates></GML:Point>
 
-                                let $sub_lat := substring-before($locationSub, ' ')
-                                let $sub_long := substring-after($locationSub, ' ')
-                                let $sub_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$sub_long},{$sub_lat}</GML:coordinates></GML:Point>
+                                    let $sub_lat := substring-before($locationSub, ' ')
+                                    let $sub_long := substring-after($locationSub, ' ')
+                                    let $sub_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$sub_long},{$sub_lat}</GML:coordinates></GML:Point>
 
-                                return round-half-to-even(
-                                        geo:distance($main_point, $sub_point) * 111319.9, 2
-                                )
+                                    return round-half-to-even(
+                                            geo:distance($main_point, $sub_point) * 111319.9, 2
+                                    )
 
                         return $dist
                     else
@@ -1758,8 +1767,8 @@ declare function scripts:checkProdutionSiteRadius(
         let $x_path := scripts:getPath($x_location)
 
         for $x_coords in $x_location//gml:*/descendant-or-self::*[not(*)]
-        let $x_long := substring-before($x_coords, ' ')
-        let $x_lat := substring-after($x_coords, ' ')
+        let $x_lat := substring-before($x_coords, ' ')
+        let $x_long := substring-after($x_coords, ' ')
 
         for $y in $root//*:ProductionFacility[pf:hostingSite[@xlink:href = '#_' || $x_id]]
         let $y_id := scripts:getInspireId($y)
@@ -1767,8 +1776,8 @@ declare function scripts:checkProdutionSiteRadius(
         let $y_path := scripts:getPath($y_geometry)
 
         for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
-        let $y_long := substring-before($y_coords, ' ')
-        let $y_lat := substring-after($y_coords, ' ')
+        let $y_lat := substring-before($y_coords, ' ')
+        let $y_long := substring-after($y_coords, ' ')
 
         let $dist := scripts:haversine(
                 xs:float($x_lat), xs:float($x_long),
@@ -1813,8 +1822,8 @@ declare function scripts:checkProdutionFacilityRadius(
         let $x_path := scripts:getPath($x_geometry)
 
         for $x_coords in $x_geometry//gml:*/descendant-or-self::*[not(*)]
-        let $x_long := substring-before($x_coords, ' ')
-        let $x_lat := substring-after($x_coords, ' ')
+        let $x_lat := substring-before($x_coords, ' ')
+        let $x_long := substring-after($x_coords, ' ')
 
         for $y_id in $x/pf:groupedInstallation/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
@@ -1824,8 +1833,8 @@ declare function scripts:checkProdutionFacilityRadius(
         let $y_path := scripts:getPath($y_geometry)
 
         for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
-        let $y_long := substring-before($y_coords, ' ')
-        let $y_lat := substring-after($y_coords, ' ')
+        let $y_lat := substring-before($y_coords, ' ')
+        let $y_long := substring-after($y_coords, ' ')
 
         let $dist := scripts:haversine(
                 xs:float($x_lat), xs:float($x_long),
@@ -1871,8 +1880,8 @@ declare function scripts:checkProdutionInstallationRadius(
         let $x_path := scripts:getPath($x_geometry)
 
         for $x_coords in $x_geometry//gml:*/descendant-or-self::*[not(*)]
-        let $x_long := substring-before($x_coords, ' ')
-        let $x_lat := substring-after($x_coords, ' ')
+        let $x_lat := substring-before($x_coords, ' ')
+        let $x_long := substring-after($x_coords, ' ')
 
         for $y_id in $x/pf:groupedInstallationPart/@xlink:href
         let $y_id := replace(data($y_id), "^#", "")
@@ -1882,8 +1891,8 @@ declare function scripts:checkProdutionInstallationRadius(
         let $y_path := scripts:getPath($y_geometry)
 
         for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
-        let $y_long := substring-before($y_coords, ' ')
-        let $y_lat := substring-after($y_coords, ' ')
+        let $y_lat := substring-before($y_coords, ' ')
+        let $y_long := substring-after($y_coords, ' ')
 
         let $dist := scripts:haversine(
                 xs:float($x_lat), xs:float($x_long),
@@ -1920,7 +1929,7 @@ declare function scripts:checkCountryBoundary(
     let $msg := "The following respective fields for spatial objects contain coordinates
     that fall outside of the country's boundary (including territorial waters).
     Please verify and correct coordinates in these fields."
-    let $type := 'error'
+    let $type := 'warning'
 
     let $srsName :=
         for $srs in distinct-values($root//gml:*/attribute::srsName)
@@ -2117,11 +2126,11 @@ declare function scripts:checkCoordinateContinuity(
 
         let $x_lat := substring-before($x_coords, ' ')
         let $x_long := substring-after($x_coords, ' ')
-        let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_long},{$x_lat}</GML:coordinates></GML:Point>
+        let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_lat},{$x_long}</GML:coordinates></GML:Point>
 
         let $y_lat := substring-before($y_coords, ' ')
         let $y_long := substring-after($y_coords, ' ')
-        let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_long},{$y_lat}</GML:coordinates></GML:Point>
+        let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_lat},{$y_long}</GML:coordinates></GML:Point>
 
         let $dist := round-half-to-even(geo:distance($x_point, $y_point) * 111319.9, 2)
 
@@ -2227,10 +2236,10 @@ declare function scripts:checkProdutionSiteBuffers(
         let $x_path := scripts:getPath($x_location)
 
         for $x_coords in $x_location//gml:*/descendant-or-self::*[not(*)]
-        let $x_long := substring-before($x_coords, ' ')
-        let $x_lat := substring-after($x_coords, ' ')
+        let $x_lat := substring-before($x_coords, ' ')
+        let $x_long := substring-after($x_coords, ' ')
 
-        let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_long},{$x_lat}</GML:coordinates></GML:Point>
+        let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_lat},{$x_long}</GML:coordinates></GML:Point>
 
         let $facilities :=
             for $y in $root//*:ProductionFacility[pf:hostingSite[@xlink:href = '#_' || $x_id]]
@@ -2239,10 +2248,10 @@ declare function scripts:checkProdutionSiteBuffers(
             let $y_path := scripts:getPath($y_geometry)
 
             for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
-            let $y_long := substring-before($y_coords, ' ')
-            let $y_lat := substring-after($y_coords, ' ')
+            let $y_lat := substring-before($y_coords, ' ')
+            let $y_long := substring-after($y_coords, ' ')
 
-            let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_long},{$y_lat}</GML:coordinates></GML:Point>
+            let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_lat},{$y_long}</GML:coordinates></GML:Point>
 
             return [
                 $y/local-name(),
