@@ -947,6 +947,7 @@ declare function scripts:checkDuplicates2(
     let $seq := $root//*[local-name() = $featureNames]
     let $norm := ft:normalize(? , map {'stemming' : true()})
     let $countFeatures := fn:count($seq)
+    let $maxNrOfFeatures := 500
 
     let $data :=
         for $node at $ind in $seq
@@ -978,7 +979,7 @@ declare function scripts:checkDuplicates2(
                 let $levRatio :=
                     if($stringMainLev = $stringSubLev)
                     then 1
-                    else if($countFeatures gt 500)
+                    else if($ind gt $maxNrOfFeatures)
                         then 0
                         else strings:levenshtein($norm($stringMainLev), $norm($stringSubLev))
 
@@ -990,7 +991,7 @@ declare function scripts:checkDuplicates2(
                         let $dist :=
                             if($locationMain = $locationSub)
                             then 0
-                            else if($countFeatures gt 500)
+                            else if($ind gt $maxNrOfFeatures)
                                 then 1000
                                 else
                                     let $main_lat := substring-before($locationMain, ' ')
