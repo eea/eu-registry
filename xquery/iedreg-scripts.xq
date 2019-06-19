@@ -2025,7 +2025,7 @@ declare function scripts:checkCountryBoundary(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        scripts:renderResult($refcode, $rulename,count($data), 0, 0, $details)
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
 (:~
