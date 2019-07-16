@@ -28,7 +28,7 @@ div.iedreg.inner { border: 1pt solid #aaa }
 div.iedreg.parent { margin-bottom: 1.5em }
 
 div.iedreg.th { border-bottom: 2pt solid #000; font-weight: 600 }
-div.iedreg.error { background-color: #fdf7f7; border-bottom: 2pt solid #d9534f }
+div.iedreg.blocker { background-color: #fdf7f7; border-bottom: 2pt solid #d9534f }
 div.iedreg.warning { background-color: #faf8f0; border-bottom: 2pt solid #f0ad4e }
 div.iedreg.info { background-color: #f4f8fa; border-bottom: 2pt solid #5bc0de }
 
@@ -38,7 +38,7 @@ div.iedreg.blue { background-color: #f4f8fa; color: #34789a }
 div.iedreg.gray { background-color: #eee; color: #555 }
 
 div.iedreg.msg { margin-top: 1em; margin-bottom: 1em; padding: 1em 2em }
-div.iedreg.msg.merror { border-color: #d9534f }
+div.iedreg.msg.mblocker { border-color: #d9534f }
 div.iedreg.msg.mwarning { border-color: #f0ad4e }
 div.iedreg.msg.minfo { border-color: #5bc0de }
 div.iedreg.msg.mnone { border-color: #ccc }
@@ -81,7 +81,7 @@ span.iedreg.small { padding: 0.1em }
 span.iedreg.header { display: block; font-size: 16px; font-weight: 600 }
 
 span.iedreg.failed { color: #fff; background-color: #000000 }
-span.iedreg.error { color: #fff; background-color: #d9534f }
+span.iedreg.blocker { color: #fff; background-color: #d9534f }
 span.iedreg.warning { color: #fff; background-color: #f0ad4e }
 span.iedreg.info { color: #fff; background-color: #5bc0de }
 span.iedreg.pass { color: #fff; background-color: #5cb85c }

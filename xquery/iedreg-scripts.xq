@@ -152,7 +152,7 @@ declare function scripts:getDetails(
         $data as (map(*))*
 ) as element(div)* {
     let $msgClass := concat('inner msg',
-            if ($type = 'error') then ' red merror'
+            if ($type = 'blocker') then ' red mblocker'
             else if ($type = 'warning') then ' yellow mwarning'
             else if ($type = 'info') then ' blue minfo'
                 else ()
@@ -238,7 +238,7 @@ declare function scripts:renderResult(
 
     let $type :=
         if ($errors > 0) then
-            'error'
+            'blocker'
         else if ($warnings > 0) then
             'warning'
         else if ($messages > 0) then
@@ -266,7 +266,7 @@ declare function scripts:renderResult(
                         </div>
 
                         <div class="iedreg col quarter right middle">
-                            <span class="iedreg nowrap">{$errors} errors</span>
+                            <span class="iedreg nowrap">{$errors} blockers</span>
                             <span class="iedreg nowrap">{$warnings} warnings</span>
                             {if ($messages > 0) then
                                 <span class="iedreg nowrap">{$messages} messages</span>
@@ -307,7 +307,7 @@ declare function scripts:checkActivity(
     let $msg := "The " || $activityName || " specified in the " || $activityType || " field for the following " ||
                 scripts:makePlural($featureName) || " is not recognised. Please use an activity listed in the " ||
                 $activityName || "Value code list"
-    let $type := "error"
+    let $type := "blocker"
 
     let $value := $activityName || "Value"
     let $valid := scripts:getValidConcepts($value)
@@ -424,7 +424,7 @@ declare function scripts:checkCountryId(
         $root as element()
 ) as element()* {
     let $msg := "The CountryCodeValue specified in the CountryId field is not recognised. "
-    let $type := "error"
+    let $type := "blocker"
 
     let $msgA := "Value is empty, please complete the CountryId."
     let $msgB := "Value must match the CountryId of the envelope."
@@ -485,7 +485,7 @@ declare function scripts:checkReasonValue(
         $root as element()
 ) as element()* {
     let $msg := "The ReasonValue supplied in the confidentialityReason field for the following spatial objects is not recognised. Please use a reason listed in the ReasonValue code list"
-    let $type := "error"
+    let $type := "blocker"
 
     let $value := "ReasonValue"
     let $valid := scripts:getValidConcepts($value)
@@ -610,7 +610,7 @@ declare function scripts:checkInspireIdUniqueness(
     let $rulename := $feature || " inspireId uniqueness"
 
     let $msg := "All inspireIds for " || scripts:makePlural($feature) || " should be unique. Please ensure all inspireIds are different"
-    let $type := "error"
+    let $type := "blocker"
 
     let $seq := $root//*[local-name() = $feature]
 
@@ -764,7 +764,7 @@ declare function scripts:checkInspireIdBlank(
         'ProductionInstallationPart')
     let $msg := "All local ID and namespace attributes for " || fn:string-join($features, ', ')
         || " feature types must be filled in. Please ensure all local ID and namespace attributes are completed."
-    let $type := "error"
+    let $type := "blocker"
 
     let $seq := $root//*[local-name() = $features]
 
@@ -1492,7 +1492,7 @@ declare function scripts:checkMissing(
     let $featureName := 'Production' || functx:capitalize-first($feature)
 
     let $msg := "There are inspireIDs for " || scripts:makePlural($featureName) || " missing from this submission. Please verify to ensure that no " || scripts:makePlural($featureName) || " have been missed."
-    let $type := "error"
+    let $type := "blocker"
 
     let $cntry := scripts:getCountry($root)
     let $lastReportingYear := scripts:getLastYear($root)
@@ -2085,7 +2085,7 @@ declare function scripts:checkCoordinateContinuity(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $error := "The coordinates, for the following spatial objects, have changed by over 100m when compared to the master database. Changes in excess of 100m are considered as introducing poor quality data to the master database, please verify the coordinates and ensure they have been inputted correctly."
+    let $blocker := "The coordinates, for the following spatial objects, have changed by over 100m when compared to the master database. Changes in excess of 100m are considered as introducing poor quality data to the master database, please verify the coordinates and ensure they have been inputted correctly."
     let $warn := "The coordinates, for the following spatial objects, have changed by 30-100m compared to the master database. Please verify the coordinates and ensure that they have been inputted correctly."
     let $info := "The coordinates, for the following spatial objects, have changed by 10 -30m compared to the master database. Distance changes between 10-30m may represent coordinate refinement, however please verify the coordinates and ensure that they have been inputted correctly."
 
@@ -2193,7 +2193,7 @@ declare function scripts:checkCoordinateContinuity(
 
     let $details :=
         <div class="iedreg">{
-            if (empty($red)) then () else scripts:getDetails($error, "error", $hdrs, $red),
+            if (empty($red)) then () else scripts:getDetails($blocker, "blocker", $hdrs, $red),
             if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
             if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
         }</div>
@@ -2406,7 +2406,7 @@ declare function scripts:checkActivityUniqueness(
         $activityName as xs:string
 ) as element()* {
     let $msg := "Each " || $activityName || " should be unique, the following " || scripts:makePlural($featureName) || " share the same main and other Activity. Please evaluate and ensure the inputs for these fields are unique to one another"
-    let $type := "error"
+    let $type := "blocker"
 
     let $seq := $root//*[local-name() = $featureName]
 
@@ -2652,7 +2652,7 @@ declare function scripts:checkStatus(
         if ($type = "warning") then
             let $details := scripts:getDetails($warn, $type, $hdrs, $data)
             return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
-        else if ($type = "error") then
+        else if ($type = "blocker") then
             let $details := scripts:getDetails($error, $type, $hdrs, $data)
             return scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
         else
@@ -2710,7 +2710,7 @@ declare function scripts:checkProductionFacilityDisusedStatus(
     let $parentStatus := "disused"
     let $childStatus := ("disused", "decommissioned")
 
-    return scripts:checkStatus($refcode, $rulename, $root, "error", $parentName, $childName, $groupName, $parentStatus, $childStatus)
+    return scripts:checkStatus($refcode, $rulename, $root, "blocker", $parentName, $childName, $groupName, $parentStatus, $childStatus)
 };
 
 (:~
@@ -2728,7 +2728,7 @@ declare function scripts:checkProductionInstallationDisusedStatus(
     let $parentStatus := "disused"
     let $childStatus := ("disused", "decommissioned")
 
-    return scripts:checkStatus($refcode, $rulename, $root, "error", $parentName, $childName, $groupName, $parentStatus, $childStatus)
+    return scripts:checkStatus($refcode, $rulename, $root, "blocker", $parentName, $childName, $groupName, $parentStatus, $childStatus)
 };
 
 (:~
@@ -2741,7 +2741,7 @@ declare function scripts:checkFunctionalStatusType(
         $root as element()
 ) as element()* {
     let $msg := "The StatusType, of the following spatial objects, has changed from 'decomissioned' in the previous submission to 'functional' in this current submission. Please verify inputs and ensure consistency with the previous report."
-    let $type := "error"
+    let $type := "blocker"
 
     let $cntry := scripts:getCountry($root)
     let $lastReportingYear := scripts:getLastYear($root)
@@ -2889,7 +2889,7 @@ declare function scripts:checkDateOfStartOfOperationLCP(
     let $dateName := "dateOfStartOfOperation"
 
     let $msg := "The " || $dateName || " field for the following LCPs are blank. This is a mandatory requirement when reporting an LCP."
-    let $type := "error"
+    let $type := "blocker"
 
     let $value := "PlantTypeValue"
     let $valid := scripts:getValidConcepts($value)
@@ -3248,7 +3248,7 @@ declare function scripts:checkStricterPermitConditions(
 ) as element()* {
     let $msg := "The BATAEL attribute within the stricterPermitConditions data type
         must be populated for the following ProductionInstallations."
-    let $type := "error"
+    let $type := "blocker"
     let $seq := $root//*:ProductionInstallation//*[local-name() = 'stricterPermitConditions']
 
     let $data :=
@@ -3340,7 +3340,7 @@ declare function scripts:checkBATDerogation(
 ) as element()* {
     let $msg := "For the following ProductionInstallations the BATAEL or publicReasonURL
         attributes, within the BATDerogationType data type, must be populated."
-    let $type := "error"
+    let $type := "blocker"
 
     let $seq := $root//*:ProductionInstallation/*:BATDerogation
     let $attrs := ('BATAEL', 'publicReasonURL')
@@ -3433,7 +3433,7 @@ declare function scripts:checkDerogationsYear(
     let $value := "DerogationValue"
 
     let $msg := "The " || $value || " indicates '" || $article || "' has been reported, however the reporting year is greater than " || $year || ". The derogation in the following fields is no longer valid in respect to the reporting year. Please verify and correct the inputs for these fields."
-    let $type := "error"
+    let $type := "blocker"
 
     let $valid := scripts:getValidConcepts($value)
 
@@ -3986,7 +3986,7 @@ declare function scripts:checkConfidentialityRestriction(
         $root as element()
 ) as element()* {
     let $msg := "The following ProductionFacilities and/or ProductionInstallations, have claims for confidentiality for the competent authority address. The address details of a competent authority cannot be claimed as confidential. Please leave the confidentialityReason field unpopulated"
-    let $type := "error"
+    let $type := "blocker"
 
     let $seq := $root//*:CompetentAuthority
 
@@ -4258,7 +4258,7 @@ declare function scripts:checkReportingYear(
         $root as element()
 ) as element()* {
     let $msg := "The XML submission has a different reportingYear to that of Reportnet's envelope year. Please verify and ensure the correct year has been inputted."
-    let $type := "error"
+    let $type := "blocker"
 
     let $url := data($root/gml:metaDataProperty/attribute::xlink:href)
     let $envelope := doc($url)/envelope
@@ -4396,7 +4396,7 @@ declare function scripts:checkDateOfStartOfOperationFuture(
         , ProductionInstallationParts the dateOfStartOfOperation attribute is
         referring to a year which is a future year relative to the year specified
         in the reportingYear attribute."
-    let $type := "error"
+    let $type := "blocker"
     let $reportingYear := $root//*:reportingYear/xs:float(.)
 
     let $seq := $root//*:dateOfStartOfOperation
@@ -4476,7 +4476,7 @@ declare function scripts:checkFeatureNameBlank(
     let $msg := "For the following ProductionSite, ProductionFacility, ProductionInstallation
 and ProductionInstallationPart feature types the nameOfFeature attribute is empty.
 Please ensure all mandatory inputs are completed."
-    let $type := "error"
+    let $type := "blocker"
 
     let $data :=
         for $feat in $features
@@ -4512,7 +4512,7 @@ declare function scripts:check2018year(
         $root as element()
 ) as element()* {
     let $msg := 'The following attributes must be reported for an IED installation'
-    let $type := 'error'
+    let $type := 'blocker'
     let $iedVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/IED'
 
     let $mapAttrs := map {
@@ -4582,7 +4582,7 @@ declare function scripts:checkFacilityType(
         $root as element()
 ) as element()* {
     let $msg := 'The following attributes must be reported'
-    let $type := 'error'
+    let $type := 'blocker'
     let $eprtrVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FaciltyTypeValue/EPRTR'
 
     let $mapAttrs := map {
@@ -4642,7 +4642,7 @@ declare function scripts:checkInstallationType(
         $root as element()
 ) as element()* {
     let $msg := 'The following attributes must be reported'
-    let $type := 'error'
+    let $type := 'blocker'
     let $installationVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/IED'
 
     let $mapAttrs2017 := map {

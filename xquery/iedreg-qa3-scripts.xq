@@ -184,7 +184,7 @@ declare function scripts3:checkReportData(
     let $msg := "The gml:ID specified in the " || $activityType || " field for the following " ||
                 scripts:makePlural($featureName) || " is not recognised.
                 Please verify and ensure the correct gml:ID has been inputted"
-    let $type := "error"
+    let $type := "blocker"
 
     let $data :=
         for $x in $seq
@@ -232,7 +232,7 @@ declare function scripts3:checkeHostingSite(
 
     let $msg := "The status element is not followed by hostingSite element in the following " ||
                 scripts:makePlural($featureName)||". Please verify and ensure the correct order of elements"
-    let $type := "error"
+    let $type := "blocker"
 
     let $data :=
         for $x in $seq
@@ -288,7 +288,7 @@ declare function scripts3:checkeHostingSiteHref(
     let $msg := "The gml:ID specified in the " || $activityType || " xlink:href field for the following " ||
                 scripts:makePlural($featureName) || " is not recognised.
                 Please verify and ensure the correct gml:ID has been inputted"
-    let $type := "error"
+    let $type := "blocker"
 
 
     let $data :=
@@ -342,7 +342,7 @@ declare function scripts3:checkGroupedInstallation(
     let $msg := "The gml:id specified in the following " || scripts:makePlural("ProductionInstallation") ||
                 " does not have a relevant " || $activityType || ".
                 Please verify and ensure the correct gml:ID has been inputted"
-    let $type := "error"
+    let $type := "blocker"
 
     let $data :=
         for $x in $seq
@@ -388,7 +388,7 @@ declare function scripts3:checkGroupedInstallationHref(
     let $msg := "The gml:id specified in the following " || scripts:makePlural($activityType) ||
                 " does not have a relevant ProductionInstallation.
                 Please verify and ensure the correct gml:ID has been inputted"
-    let $type := "error"
+    let $type := "blocker"
 
     let $data :=
         for $x in $seq
@@ -501,7 +501,7 @@ declare function scripts3:checkGroupedInstallationPart(
     let $msg := "The gml:id specified in the following " || scripts:makePlural($featureName) ||
                 " does not have a relevant " || $activityType || ".
                 Please verify and ensure the correct gml:ID has been inputted"
-    let $type := "error"
+    let $type := "blocker"
 
     let $data :=
         for $x in $seq
@@ -546,7 +546,7 @@ declare function scripts3:checkGroupedInstallationPartHref(
     let $msg := "The gml:id specified in the following " || scripts:makePlural($activityType) ||
                 " does not have a relevant ProductionInstallationPart.
                 Please verify and ensure the correct gml:ID has been inputted"
-    let $type := "error"
+    let $type := "blocker"
 
     let $data :=
         for $x in $seq
