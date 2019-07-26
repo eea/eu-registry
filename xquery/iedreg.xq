@@ -48,6 +48,9 @@ declare variable $iedreg:skipCountries := map {
 };
 declare variable $iedreg:run2018checks := true();
 
+declare variable $iedreg:envelopeChecks := ('C2.5', 'C13.5');
+
+
 (:~
  : --------------
  : Util functions
@@ -83,6 +86,17 @@ declare function iedreg:getNotApplicable(
             <span class="iedreg nowrap header">Not applicable</span>
             <br/>
             <span class="iedreg">This check is not applicable for your country</span>
+        </div>
+    </div>
+};
+
+declare function iedreg:getNotAvailableEnvelope(
+) as element(div)* {
+    <div class="iedreg">
+        <div class="iedreg inner msg gray mnone">
+            <span class="iedreg nowrap header">Envelope not available</span>
+            <br/>
+            <span class="iedreg">This check is not applicable because envelope XML is not available.</span>
         </div>
     </div>
 };
@@ -178,6 +192,15 @@ declare function iedreg:notApplicable(
     return iedreg:renderResult($refcode, $rulename, 'none', $details)
 };
 
+declare function iedreg:notAvailableEnvelope(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $details := iedreg:getNotAvailableEnvelope()
+    return iedreg:renderResult($refcode, $rulename, 'none', $details)
+};
+
 declare function iedreg:failsafeWrapper(
         $refcode as xs:string,
         $rulename as xs:string,
@@ -188,8 +211,15 @@ declare function iedreg:failsafeWrapper(
         (:let $asd := trace($refcode, '- '):)
         let $reportingYear := $root//*:reportingYear/xs:float(.)
         let $countryCode := tokenize($root//*:countryId/@xlink:href, '/+')[last()]
+
+        let $envelope-url := data($root/gml:metaDataProperty/attribute::xlink:href)
+        let $envelope-available := fn:doc-available($envelope-url)
+                and fn:not(fn:contains($envelope-url, 'converters'))
+
         return
-            if($countryCode = map:keys($iedreg:skipCountries)
+            if($refcode = $iedreg:envelopeChecks and fn:not($envelope-available))
+                then iedreg:notAvailableEnvelope($refcode, $rulename, $root)
+            else if($countryCode = map:keys($iedreg:skipCountries)
                     and $refcode = $iedreg:skipCountries?($countryCode))
                 then iedreg:notApplicable($refcode, $rulename, $root)
             else if(($refcode = $iedreg:checks2018 or $refcode = $iedreg:checksHistoricalData)
