@@ -4503,6 +4503,44 @@ Please ensure all mandatory inputs are completed."
 };
 
 (:~
+ : C13.10 All fields blank check
+ :)
+
+declare function scripts:checkAllFieldsBlank(
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $features := ('ProductionSite', 'ProductionInstallation',
+        'ProductionFacility', 'ProductionInstallationPart')
+    let $seq := $root//*[local-name() = $features]//*[not(*)]
+    let $msg := "For following reported fields are empty. Please ensure all mandatory inputs are completed."
+    let $type := "warning"
+
+    let $data :=
+        for $elem in $seq
+        let $feature := scripts:getParent($elem)
+        let $id := scripts:getInspireId($feature)
+        let $path := scripts:getPath($elem)
+        let $value := $elem/data() => functx:if-empty('')
+        let $attrValue := $elem/@xlink:href/data() => functx:if-empty('')
+
+        where $value = '' and $attrValue = '' and not($elem/@xsi:nil = "true")
+
+        return map {
+        "marks" : (4),
+        "data" : ($id, $path, $elem/local-name(), $value)
+        }
+
+    let $hdrs := ('Local ID', "Path", "Element", "Value")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+};
+
+(:~
     C1.1 2017 reporting year versus 2018 and later reporting years
 :)
 
