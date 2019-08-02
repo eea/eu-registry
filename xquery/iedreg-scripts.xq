@@ -4559,8 +4559,7 @@ declare function scripts:check2018year(
         'ProductionInstallation': ('baselineReportIndicator', 'publicEmissionMonitoring',
             'BATConclusion'),
         'siteVisits': ('siteVisitURL'),
-        'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate',
-            'derogationDurationEndDate'),
+        'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate'), (: 'derogationDurationEndDate':)
         'stricterPermitConditions': ('stricterPermitConditionsIndicator', 'article18',
             'article14.4', 'BATAEL')
     }
@@ -4699,8 +4698,7 @@ declare function scripts:checkInstallationType(
         'stricterPermitConditions': ('stricterPermitConditionsIndicator', 'article18',
             'article14.4'),
         'siteVisits': ('siteVisitURL'),
-        'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate',
-            'derogationDurationEndDate')
+        'BATDerogation': ('publicReasonURL', 'BATAEL', 'derogationDurationStartDate') (: 'derogationDurationEndDate' :)
     }
 
     let $reportingYear := $root//*:reportingYear/xs:float(.)
