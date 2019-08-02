@@ -4464,7 +4464,7 @@ declare function scripts:checkWhitespaces(
 };
 
 (:~
- : C13.9 FeatureName blank check
+ : C13.9 FeatureName blank check(replaced by ALL fields blank check)
  :)
 
 declare function scripts:checkFeatureNameBlank(
@@ -4503,7 +4503,7 @@ Please ensure all mandatory inputs are completed."
 };
 
 (:~
- : C13.10 All fields blank check
+ : C13.9 All fields blank check
  :)
 
 declare function scripts:checkAllFieldsBlank(
@@ -4516,6 +4516,7 @@ declare function scripts:checkAllFieldsBlank(
     let $seq := $root//*[local-name() = $features]//*[not(*)]
     let $msg := "For following reported fields are empty. Please ensure all mandatory inputs are completed."
     let $type := "warning"
+    let $regex := '[0-9a-zA-Z]'
 
     let $data :=
         for $elem in $seq
@@ -4525,7 +4526,8 @@ declare function scripts:checkAllFieldsBlank(
         let $value := $elem/data() => functx:if-empty('')
         let $attrValue := $elem/@xlink:href/data() => functx:if-empty('')
 
-        where $value = '' and $attrValue = '' and not($elem/@xsi:nil = "true")
+        where not(fn:matches($value, $regex) or fn:matches($attrValue, $regex)
+                or $elem/@xsi:nil = "true")
 
         return map {
         "marks" : (4),
