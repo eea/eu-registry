@@ -4464,8 +4464,8 @@ declare function scripts:checkWhitespaces(
 };
 
 (:~
- : C13.9 FeatureName blank check(replaced by ALL fields blank check)
- :)
+ : C13.9 FeatureName blank check
+:)
 
 declare function scripts:checkFeatureNameBlank(
         $refcode as xs:string,
@@ -4503,7 +4503,7 @@ Please ensure all mandatory inputs are completed."
 };
 
 (:~
- : C13.9 All fields blank check
+ : C13.10 All fields blank check
  :)
 
 declare function scripts:checkAllFieldsBlank(

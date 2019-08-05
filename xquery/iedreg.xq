@@ -488,8 +488,8 @@ declare function iedreg:runChecks13($root as element()) as element()* {
         iedreg:failsafeWrapper("C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#3),
         (: new DONE :) iedreg:failsafeWrapper("C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#3),
         (: removed :) (:iedreg:failsafeWrapper("C13.8", "Character string space identification", $root, scripts:checkWhitespaces#3):)
-        (: new :)(: iedreg:failsafeWrapper("C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#3),:)
-        (: new :) iedreg:failsafeWrapper("C13.9", "All fields blank check", $root, scripts:checkAllFieldsBlank#3)
+        (: new :)iedreg:failsafeWrapper("C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#3),
+        (: new :) iedreg:failsafeWrapper("C13.10", "All fields blank check", $root, scripts:checkAllFieldsBlank#3)
     }</div>
 };
 
