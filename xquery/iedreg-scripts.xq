@@ -4513,7 +4513,8 @@ declare function scripts:checkAllFieldsBlank(
 ) as element()* {
     let $features := ('ProductionSite', 'ProductionInstallation',
         'ProductionFacility', 'ProductionInstallationPart')
-    let $seq := $root//*[local-name() = $features]//*[not(*)]
+    let $exclude := ('nameOfFeature')
+    let $seq := $root//*[local-name() = $features]//*[not(local-name() = $exclude) and not(*)]
     let $msg := "For following reported fields are empty. Please ensure all mandatory inputs are completed."
     let $type := "warning"
     let $regex := '[0-9a-zA-Z]'
