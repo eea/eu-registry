@@ -39,10 +39,13 @@ import module namespace geo = "http://expath.org/ns/geo";
 
 declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
 
-declare variable $scripts:docProdFac as document-node() := fn:doc('https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/ProductionFacility.xml');
-declare variable $scripts:docProdInstall as document-node() := fn:doc('https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/ProductionInstallation.xml');
-declare variable $scripts:docProdInstallPart as document-node() := fn:doc('https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/ProductionInstallationPart.xml');
-declare variable $scripts:docProdSite as document-node() := fn:doc('https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/ProductionSite.xml');
+declare variable $scripts:location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery';
+(:declare variable $scripts:location := '.';:)
+
+declare variable $scripts:docProdFac as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionFacility.xml'));
+declare variable $scripts:docProdInstall as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionInstallation.xml'));
+declare variable $scripts:docProdInstallPart as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionInstallationPart.xml'));
+declare variable $scripts:docProdSite as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionSite.xml'));
 
 (:
 --------------------

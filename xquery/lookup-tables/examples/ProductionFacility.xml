@@ -1,0 +1,217 @@
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites"
+      xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0"
+      xmlns:gml="http://www.opengis.net/gml/3.2"
+    >
+    <ProductionFacility>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.10-->
+        <inspireId>
+            <localId>0001.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.6, 5.6 -->
+        <geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-3c1c7a5c-950b-4f1a-b774-b2c7a78ec02b-0" srsDimension="2">
+                <gml:pos>33.746236 34.980143</gml:pos>
+            </gml:Point>
+        </geometry>
+        <!-- 4.6, 13.4-->
+        <facilityName >
+            <nameOfFeature>Aether Power Station</nameOfFeature>
+        </facilityName>
+        <!-- 4.6 -->
+        <EUReg:parentCompany>
+            <EUReg:ParentCompanyDetails>
+                <EUReg:parentCompanyName>Dhekelia parent company</EUReg:parentCompanyName>
+                <EUReg:parentCompanyURL>http://Dhekeliaparentcompany</EUReg:parentCompanyURL>
+                <EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/Article4(2)(a)"></EUReg:confidentialityReason>
+            </EUReg:ParentCompanyDetails>
+        </EUReg:parentCompany>
+        <!-- 4.9 -->
+        <hostingSite xlink:href="#_0001.SITE"></hostingSite>
+        <!-- 4.6, 6.2 -->
+        <EPRTRAnnexIActivity>
+            <EUReg:EPRTRAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"></EUReg:mainActivity>
+            </EUReg:EPRTRAnnexIActivityType>
+        </EPRTRAnnexIActivity>
+        <!-- 7.5, 4.10 -->
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.10-->
+        <inspireId>
+            <localId>0007.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.6, 5.6 -->
+        <geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-6334c4ac-98ed-4b58-b14b-d337345b96cb-0" srsDimension="2">
+                <gml:pos>33.1825 34.71</gml:pos>
+            </gml:Point>
+        </geometry>
+        <!-- 4.6, 13.4-->
+        <facilityName >
+            <nameOfFeature>Moni Power Station</nameOfFeature>
+        </facilityName>
+        <!-- 4.6 -->
+        <EUReg:parentCompany>
+            <EUReg:ParentCompanyDetails>
+                <EUReg:parentCompanyName>Moni parent company</EUReg:parentCompanyName>
+                <EUReg:parentCompanyURL>http://Moniparentcompany</EUReg:parentCompanyURL>
+                <EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/Article4(2)(a)"></EUReg:confidentialityReason>
+            </EUReg:ParentCompanyDetails>
+        </EUReg:parentCompany>
+        <!-- 4.9 -->
+        <hostingSite xlink:href="#_0007.SITE"></hostingSite>
+        <!-- 4.6, 6.2 -->
+        <EPRTRAnnexIActivity>
+            <EUReg:EPRTRAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(c)"></EUReg:mainActivity>
+            </EUReg:EPRTRAnnexIActivityType>
+        </EPRTRAnnexIActivity>
+        <!-- 7.5, 4.10 -->
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.10-->
+        <inspireId>
+            <localId>0013.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.6, 5.6 -->
+        <geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-adb34ef6-6f00-469f-b281-f717030dcc1d-0" srsDimension="2">
+                <gml:pos>33.289753 34.728469</gml:pos>
+            </gml:Point>
+        </geometry>
+        <!-- 4.6, 13.4-->
+        <facilityName >
+            <nameOfFeature>Vassilikos Power Station</nameOfFeature>
+        </facilityName>
+        <!-- 4.6 -->
+        <EUReg:parentCompany>
+            <EUReg:ParentCompanyDetails>
+                <EUReg:parentCompanyName>Vassilikos parent company</EUReg:parentCompanyName>
+                <EUReg:parentCompanyURL>http://Vassilikosparentcompany</EUReg:parentCompanyURL>
+                <EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/Article4(2)(a)"></EUReg:confidentialityReason>
+            </EUReg:ParentCompanyDetails>
+        </EUReg:parentCompany>
+        <!-- 4.9 -->
+        <hostingSite xlink:href="#_0017.SITE"></hostingSite>
+        <!-- 4.6, 6.2 -->
+        <EPRTRAnnexIActivity>
+            <EUReg:EPRTRAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(a)"></EUReg:mainActivity>
+            </EUReg:EPRTRAnnexIActivityType>
+        </EPRTRAnnexIActivity>
+        <!-- 7.5, 4.10 -->
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.10-->
+        <inspireId>
+            <localId>0014.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.6, 5.6 -->
+        <geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-adb34ef6-6f00-469f-b281-f717030dcc1d-0" srsDimension="2">
+                <gml:pos>33.289753 34.728469</gml:pos>
+            </gml:Point>
+        </geometry>
+        <!-- 4.6, 13.4-->
+        <facilityName >
+            <nameOfFeature>Vassilikos Power Station</nameOfFeature>
+        </facilityName>
+        <!-- 4.6 -->
+        <EUReg:parentCompany>
+            <EUReg:ParentCompanyDetails>
+                <EUReg:parentCompanyName>Vassilikos parent company</EUReg:parentCompanyName>
+                <EUReg:parentCompanyURL>http://Vassilikosparentcompany</EUReg:parentCompanyURL>
+                <EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/Article4(2)(a)"></EUReg:confidentialityReason>
+            </EUReg:ParentCompanyDetails>
+        </EUReg:parentCompany>
+        <!-- 4.9 -->
+        <hostingSite xlink:href="#_0007.SITE"></hostingSite>
+        <!-- 4.6, 6.2 -->
+        <EPRTRAnnexIActivity>
+            <EUReg:EPRTRAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(a)"></EUReg:mainActivity>
+            </EUReg:EPRTRAnnexIActivityType>
+        </EPRTRAnnexIActivity>
+        <!-- 7.5, 4.10 -->
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.10-->
+        <inspireId>
+            <localId>10029.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.6, 5.6 -->
+        <geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-adb34ef6-6f00-469f-b281-f717030dcc1d-0" srsDimension="2">
+                <gml:pos>35.085103 33.965755</gml:pos>
+            </gml:Point>
+        </geometry>
+
+        <!-- 4.6, 13.4-->
+        <facilityName >
+            <nameOfFeature>Kousparos Farm Ltd s</nameOfFeature>
+        </facilityName>
+        <!-- 4.6 -->
+        <EUReg:parentCompany>
+            <EUReg:ParentCompanyDetails>
+                <EUReg:parentCompanyName>Ioannis Georgiou Piggery Ltd</EUReg:parentCompanyName>
+                <EUReg:parentCompanyURL>http://IoannisGeorgiouPiggeryLtd</EUReg:parentCompanyURL>
+            </EUReg:ParentCompanyDetails>
+        </EUReg:parentCompany>
+        <!-- 4.9 -->
+        <hostingSite xlink:href="#_10029.SITE"></hostingSite>
+        <!-- 4.6, 6.2 -->
+        <EPRTRAnnexIActivity>
+            <EUReg:EPRTRAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)(i)"></EUReg:mainActivity>
+            </EUReg:EPRTRAnnexIActivityType>
+        </EPRTRAnnexIActivity>
+        <!-- 7.5, 4.10 -->
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </status>
+    </ProductionFacility>
+</data>

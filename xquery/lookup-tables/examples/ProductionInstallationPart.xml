@@ -1,0 +1,202 @@
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites"
+      xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0"
+      xmlns:gml="http://www.opengis.net/gml/3.2">
+    <ProductionInstallationPart>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.12 -->
+        <inspireId>
+            <localId>0001.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.8, 13.4 -->
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 1</nameOfFeature>
+        </installationPartName>
+        <!-- 4.8 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"></plantType>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-e0f5e04f-6a7d-409f-858b-07366d629936-0" srsDimension="2">
+                <gml:pos>33.746236 34.980143</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 7.5 -->
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
+            <pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <!-- 10.5, 10.6, 10.7 -->
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Art72.4.b"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.12 -->
+        <inspireId>
+            <localId>0002.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.8, 13.4 -->
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 2</nameOfFeature>
+        </installationPartName>
+        <!-- 4.8 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"></plantType>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-78ea6dae-1976-467d-be6a-e9cf10abecb9-0" srsDimension="2">
+                <gml:pos>33.746236 34.980143</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 7.5 -->
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+            <pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <!-- 10.5, 10.6, 10.7 -->
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Art72.4.b"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.12 -->
+        <inspireId>
+            <localId>0003.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.8, 13.4 -->
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 3</nameOfFeature>
+        </installationPartName>
+        <!-- 4.8 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-6386dd87-8f14-44bd-9fd3-cc533370887e-0" srsDimension="2">
+                <gml:pos>33.746236 34.980143</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 7.5 -->
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+            <pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <!-- 10.5, 10.6, 10.7 -->
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.12 -->
+        <inspireId>
+            <localId>0017.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.8, 13.4 -->
+        <installationPartName>
+            <nameOfFeature>Vassilikos Power Station - Plant 4</nameOfFeature>
+        </installationPartName>
+        <!-- 4.8 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-3151bac6-c97f-4e28-ae5f-34d4b2d840a6-0" srsDimension="2">
+                <gml:pos>33.289753 34.728469</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 7.5 -->
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+            <pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <!-- 10.5, 10.6, 10.7 -->
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.12 -->
+        <inspireId>
+            <localId>0012.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.8, 13.4 -->
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Plant 6</nameOfFeature>
+        </installationPartName>
+        <!-- 4.8 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-d708fced-bc7a-4a33-8bda-82e5c4a7224e-0" srsDimension="2">
+                <gml:pos>33.1825 34.71</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 7.5 -->
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+            <pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <!-- 10.5, 10.6, 10.7 -->
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.12 -->
+        <inspireId>
+            <localId>00033.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.8, 13.4 -->
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 3</nameOfFeature>
+        </installationPartName>
+        <!-- 4.8 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-6386dd87-8f14-44bd-9fd3-cc533370887e-0" srsDimension="2">
+                <gml:pos>33.746236 34.980143</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 7.5 -->
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
+            <pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <!-- 10.5, 10.6, 10.7 -->
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="CY"></countryId>
+        <reportingYear>2017</reportingYear>
+        <!-- 3.1, 4.12 -->
+        <inspireId>
+            <localId>00044.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <!-- 4.8, 13.4 -->
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 3</nameOfFeature>
+        </installationPartName>
+        <!-- 4.8 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
+        <!-- 5.6 -->
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-6386dd87-8f14-44bd-9fd3-cc533370887e-0" srsDimension="2">
+                <gml:pos>33.746236 34.980143</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <!-- 7.5 -->
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+            <pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <!-- 10.5, 10.6, 10.7 -->
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
+    </ProductionInstallationPart>
+</data>

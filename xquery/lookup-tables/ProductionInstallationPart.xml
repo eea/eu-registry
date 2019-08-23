@@ -1,202 +1,235 @@
-<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites"
-      xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0"
-      xmlns:gml="http://www.opengis.net/gml/3.2">
+﻿<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:gml="http://www.opengis.net/gml/3.2">
     <ProductionInstallationPart>
-        <countryId xlink:href="CY"></countryId>
-        <reportingYear>2017</reportingYear>
-        <!-- 3.1, 4.12 -->
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
         <inspireId>
-            <localId>0001.PART</localId>
-            <namespace>CY.CAED</namespace>
+            <localId>DE.01-10-51006506691_4.INSTALLATION_1.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
         </inspireId>
-        <!-- 4.8, 13.4 -->
         <installationPartName>
-            <nameOfFeature>Dhekelia Power Station - Plant 1</nameOfFeature>
+            <nameOfFeature>Kai Thomsen - Mastschweinehaltung</nameOfFeature>
         </installationPartName>
-        <!-- 4.8 -->
-        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"></plantType>
-        <!-- 5.6 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
         <pointGeometry>
-            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-e0f5e04f-6a7d-409f-858b-07366d629936-0" srsDimension="2">
-                <gml:pos>33.746236 34.980143</gml:pos>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_41051f76-2249-4f63-bbc1-7a4261116e03" srsDimension="2">
+                <gml:pos>9.03645930999 54.0155555756</gml:pos>
             </gml:Point>
         </pointGeometry>
-        <!-- 7.5 -->
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/notRegulated"></pf:statusType>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
+        <inspireId>
+            <localId>DE.01-10-51006506691_4.INSTALLATION_2.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Kai Thomsen - Mastschweinehaltung</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"></plantType>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_e8c9e02b-1b5c-440c-b1b4-8cc8cbfe2a32" srsDimension="2">
+                <gml:pos>9.03645930999 54.0155555756</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
+        <inspireId>
+            <localId>DE.01-10-51006506691_3.INSTALLATION_0.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Kai Thomsen - Mastschweinehaltung</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"></plantType>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_08f7fc70-bf50-4171-94ac-11e6e15b28b6" srsDimension="2">
+                <gml:pos>9.03645930999 54.0155555756</gml:pos>
+            </gml:Point>
+        </pointGeometry>
         <status>
             <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
-            <pf:validFrom xsi:nil="true"></pf:validFrom>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
         </status>
-        <!-- 10.5, 10.6, 10.7 -->
-        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Art72.4.b"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
     </ProductionInstallationPart>
     <ProductionInstallationPart>
-        <countryId xlink:href="CY"></countryId>
-        <reportingYear>2017</reportingYear>
-        <!-- 3.1, 4.12 -->
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
         <inspireId>
-            <localId>0002.PART</localId>
-            <namespace>CY.CAED</namespace>
+            <localId>DE.01-10-51006506691_3.INSTALLATION_1.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
         </inspireId>
-        <!-- 4.8, 13.4 -->
         <installationPartName>
-            <nameOfFeature>Dhekelia Power Station - Plant 2</nameOfFeature>
+            <nameOfFeature>Kai Thomsen - Mastschweinehaltung</nameOfFeature>
         </installationPartName>
-        <!-- 4.8 -->
         <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"></plantType>
-        <!-- 5.6 -->
         <pointGeometry>
-            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-78ea6dae-1976-467d-be6a-e9cf10abecb9-0" srsDimension="2">
-                <gml:pos>33.746236 34.980143</gml:pos>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_2b24f80b-2bfe-4062-ad1a-7530039da0c8" srsDimension="2">
+                <gml:pos>9.03645930999 54.0155555756</gml:pos>
             </gml:Point>
         </pointGeometry>
-        <!-- 7.5 -->
         <status>
-            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
-            <pf:validFrom xsi:nil="true"></pf:validFrom>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
         </status>
-        <!-- 10.5, 10.6, 10.7 -->
         <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Art72.4.b"></derogations>
-    </ProductionInstallationPart>
-    <ProductionInstallationPart>
-        <countryId xlink:href="CY"></countryId>
-        <reportingYear>2017</reportingYear>
-        <!-- 3.1, 4.12 -->
-        <inspireId>
-            <localId>0003.PART</localId>
-            <namespace>CY.CAED</namespace>
-        </inspireId>
-        <!-- 4.8, 13.4 -->
-        <installationPartName>
-            <nameOfFeature>Dhekelia Power Station - Plant 3</nameOfFeature>
-        </installationPartName>
-        <!-- 4.8 -->
-        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
-        <!-- 5.6 -->
-        <pointGeometry>
-            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-6386dd87-8f14-44bd-9fd3-cc533370887e-0" srsDimension="2">
-                <gml:pos>33.746236 34.980143</gml:pos>
-            </gml:Point>
-        </pointGeometry>
-        <!-- 7.5 -->
-        <status>
-            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
-            <pf:validFrom xsi:nil="true"></pf:validFrom>
-        </status>
-        <!-- 10.5, 10.6, 10.7 -->
-        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"></derogations>
-    </ProductionInstallationPart>
-    <ProductionInstallationPart>
-        <countryId xlink:href="CY"></countryId>
-        <reportingYear>2017</reportingYear>
-        <!-- 3.1, 4.12 -->
-        <inspireId>
-            <localId>0017.PART</localId>
-            <namespace>CY.CAED</namespace>
-        </inspireId>
-        <!-- 4.8, 13.4 -->
-        <installationPartName>
-            <nameOfFeature>Vassilikos Power Station - Plant 4</nameOfFeature>
-        </installationPartName>
-        <!-- 4.8 -->
-        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
-        <!-- 5.6 -->
-        <pointGeometry>
-            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-3151bac6-c97f-4e28-ae5f-34d4b2d840a6-0" srsDimension="2">
-                <gml:pos>33.289753 34.728469</gml:pos>
-            </gml:Point>
-        </pointGeometry>
-        <!-- 7.5 -->
-        <status>
-            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
-            <pf:validFrom xsi:nil="true"></pf:validFrom>
-        </status>
-        <!-- 10.5, 10.6, 10.7 -->
         <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"></derogations>
     </ProductionInstallationPart>
     <ProductionInstallationPart>
-        <countryId xlink:href="CY"></countryId>
-        <reportingYear>2017</reportingYear>
-        <!-- 3.1, 4.12 -->
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
         <inspireId>
-            <localId>0012.PART</localId>
-            <namespace>CY.CAED</namespace>
+            <localId>DE.01-10-51006506691_3.INSTALLATION_2.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
         </inspireId>
-        <!-- 4.8, 13.4 -->
         <installationPartName>
-            <nameOfFeature>Moni Power Station - Plant 6</nameOfFeature>
+            <nameOfFeature>Kai Thomsen - Mastschweinehaltung</nameOfFeature>
         </installationPartName>
-        <!-- 4.8 -->
-        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
-        <!-- 5.6 -->
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"></plantType>
         <pointGeometry>
-            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-d708fced-bc7a-4a33-8bda-82e5c4a7224e-0" srsDimension="2">
-                <gml:pos>33.1825 34.71</gml:pos>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_5cd25891-baca-4b9f-8713-9fd97c68739f" srsDimension="2">
+                <gml:pos>9.03645930999 54.0155555756</gml:pos>
             </gml:Point>
         </pointGeometry>
-        <!-- 7.5 -->
-        <status>
-            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
-            <pf:validFrom xsi:nil="true"></pf:validFrom>
-        </status>
-        <!-- 10.5, 10.6, 10.7 -->
-        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
-    </ProductionInstallationPart>
-    <ProductionInstallationPart>
-        <countryId xlink:href="CY"></countryId>
-        <reportingYear>2017</reportingYear>
-        <!-- 3.1, 4.12 -->
-        <inspireId>
-            <localId>00033.PART</localId>
-            <namespace>CY.CAED</namespace>
-        </inspireId>
-        <!-- 4.8, 13.4 -->
-        <installationPartName>
-            <nameOfFeature>Dhekelia Power Station - Plant 3</nameOfFeature>
-        </installationPartName>
-        <!-- 4.8 -->
-        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
-        <!-- 5.6 -->
-        <pointGeometry>
-            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-6386dd87-8f14-44bd-9fd3-cc533370887e-0" srsDimension="2">
-                <gml:pos>33.746236 34.980143</gml:pos>
-            </gml:Point>
-        </pointGeometry>
-        <!-- 7.5 -->
         <status>
             <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
-            <pf:validFrom xsi:nil="true"></pf:validFrom>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
         </status>
-        <!-- 10.5, 10.6, 10.7 -->
-        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"></derogations>
     </ProductionInstallationPart>
     <ProductionInstallationPart>
-        <countryId xlink:href="CY"></countryId>
-        <reportingYear>2017</reportingYear>
-        <!-- 3.1, 4.12 -->
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
         <inspireId>
-            <localId>00044.PART</localId>
-            <namespace>CY.CAED</namespace>
+            <localId>DE.01-10-51006506691_3.INSTALLATION_3.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
         </inspireId>
-        <!-- 4.8, 13.4 -->
         <installationPartName>
-            <nameOfFeature>Dhekelia Power Station - Plant 3</nameOfFeature>
+            <nameOfFeature>Kai Thomsen - Mastschweinehaltung</nameOfFeature>
         </installationPartName>
-        <!-- 4.8 -->
         <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
-        <!-- 5.6 -->
         <pointGeometry>
-            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="id-6386dd87-8f14-44bd-9fd3-cc533370887e-0" srsDimension="2">
-                <gml:pos>33.746236 34.980143</gml:pos>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_c9144b80-3b0f-429a-bcae-2d9b601e47f0" srsDimension="2">
+                <gml:pos>9.03645930999 54.0155555756</gml:pos>
             </gml:Point>
         </pointGeometry>
-        <!-- 7.5 -->
         <status>
-            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"></pf:statusType>
-            <pf:validFrom xsi:nil="true"></pf:validFrom>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
         </status>
-        <!-- 10.5, 10.6, 10.7 -->
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Art72.4.b"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article34"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
+        <inspireId>
+            <localId>DE.01-10-51006506691_4.INSTALLATION_0.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Kai Thomsen - Mastschweinehaltung</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_e4c494a0-aba9-42a3-8638-9114adc2e8bc" srsDimension="2">
+                <gml:pos>9.03645930999 54.0155555756</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/notRegulated"></pf:statusType>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
         <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Art72.4.b"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article34"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
+        <inspireId>
+            <localId>DE.01-10-51011005501_0.INSTALLATION_0.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sasol Germany GmbH</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"></plantType>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_05109e0a-c984-4ff3-aa9d-b0d359aa42eb" srsDimension="2">
+                <gml:pos>9.15796289791 53.9128774995</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
+        <inspireId>
+            <localId>DE.01-10-51011005501_0.INSTALLATION_1.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sasol Germany GmbH</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"></plantType>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_d5ce68d1-cdab-483f-89ae-700a45f354a5" srsDimension="2">
+                <gml:pos>9.15796289791 53.9128774995</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article34"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"></derogations>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart>
+        <countryId xlink:href="DE"></countryId>
+        <reportingYear>2016</reportingYear>
+        <inspireId>
+            <localId>DE.01-10-51011005501_0.INSTALLATION_2.INSTALLATION_PART</localId>
+            <namespace>DE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sasol Germany GmbH</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"></plantType>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_6dee96b2-3197-4202-9f59-1ee5112464ac" srsDimension="2">
+                <gml:pos>9.15796289791 53.9128774995</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"></pf:statusType>
+			<pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Art72.4.b"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"></derogations>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"></derogations>
     </ProductionInstallationPart>
 </data>
