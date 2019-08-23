@@ -675,7 +675,7 @@ declare function scripts:checkAmountOfInspireIds(
         "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>)
         }
 
-    let $ratio := count($data) div count($yIDs)
+    let $ratio := if(count($yIDs) = 0) then 1 else count($data) div count($yIDs)
     let $perc := round-half-to-even($ratio * 100, 1) || '%'
 
     let $hdrs := ("Feature", "Local ID")
