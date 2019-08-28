@@ -1771,6 +1771,7 @@ declare function scripts:checkProdutionSiteRadius(
         let $x_path := scripts:getPath($x_location)
 
         for $x_coords in $x_location//gml:*/descendant-or-self::*[not(*)]
+        let $x_coords := fn:normalize-space($x_coords)
         let $x_lat := substring-before($x_coords, ' ')
         let $x_long := substring-after($x_coords, ' ')
 
@@ -1780,6 +1781,7 @@ declare function scripts:checkProdutionSiteRadius(
         let $y_path := scripts:getPath($y_geometry)
 
         for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
+        let $y_coords := fn:normalize-space($y_coords)
         let $y_lat := substring-before($y_coords, ' ')
         let $y_long := substring-after($y_coords, ' ')
 
@@ -1826,6 +1828,7 @@ declare function scripts:checkProdutionFacilityRadius(
         let $x_path := scripts:getPath($x_geometry)
 
         for $x_coords in $x_geometry//gml:*/descendant-or-self::*[not(*)]
+        let $x_coords := fn:normalize-space($x_coords)
         let $x_lat := substring-before($x_coords, ' ')
         let $x_long := substring-after($x_coords, ' ')
 
@@ -1837,6 +1840,7 @@ declare function scripts:checkProdutionFacilityRadius(
         let $y_path := scripts:getPath($y_geometry)
 
         for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
+        let $y_coords := fn:normalize-space($y_coords)
         let $y_lat := substring-before($y_coords, ' ')
         let $y_long := substring-after($y_coords, ' ')
 
@@ -1884,6 +1888,7 @@ declare function scripts:checkProdutionInstallationRadius(
         let $x_path := scripts:getPath($x_geometry)
 
         for $x_coords in $x_geometry//gml:*/descendant-or-self::*[not(*)]
+        let $x_coords := fn:normalize-space($x_coords)
         let $x_lat := substring-before($x_coords, ' ')
         let $x_long := substring-after($x_coords, ' ')
 
@@ -1895,6 +1900,7 @@ declare function scripts:checkProdutionInstallationRadius(
         let $y_path := scripts:getPath($y_geometry)
 
         for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
+        let $y_coords := fn:normalize-space($y_coords)
         let $y_lat := substring-before($y_coords, ' ')
         let $y_long := substring-after($y_coords, ' ')
 
@@ -1956,8 +1962,9 @@ declare function scripts:checkCountryBoundary(
         for $coord in $distinct_coords
         order by $coord ascending
 
-        let $lat := substring-before($coord, ' ')
-        let $long := substring-after($coord, ' ')
+        let $coords_norm := fn:normalize-space($coord)
+        let $lat := substring-before($coords_norm, ' ')
+        let $long := substring-after($coords_norm, ' ')
 
         let $point :=
             <GML:Point srsName="{$srsName[1]}">
@@ -2059,8 +2066,9 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
 
         let $p := scripts:getPath($coords)
 
-        let $lat := substring-before($coords, ' ')
-        let $long := substring-after($coords, ' ')
+        let $coords_norm := fn:normalize-space($coords)
+        let $lat := substring-before($coords_norm, ' ')
+        let $long := substring-after($coords_norm, ' ')
         let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (4) else ()
         let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (5) else ()
         where (string-length(substring-after($long, '.')) lt 4) or (string-length(substring-after($lat, '.')) lt 4)
@@ -2113,6 +2121,7 @@ declare function scripts:checkCoordinateContinuity(
     )
     let $data :=
         for $x_coords in $seq//gml:*/descendant-or-self::*[not(*)]
+        let $x_coords_norm := fn:normalize-space($x_coords)
         let $p := scripts:getParent($x_coords)
         let $id := scripts:getInspireId($p)/text()
         let $path := scripts:getPath($x_coords)
@@ -2128,12 +2137,13 @@ declare function scripts:checkCoordinateContinuity(
 
         where not(empty($y_coords))
 
-        let $x_lat := substring-before($x_coords, ' ')
-        let $x_long := substring-after($x_coords, ' ')
+        let $x_lat := substring-before($x_coords_norm, ' ')
+        let $x_long := substring-after($x_coords_norm, ' ')
         let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_lat},{$x_long}</GML:coordinates></GML:Point>
 
-        let $y_lat := substring-before($y_coords, ' ')
-        let $y_long := substring-after($y_coords, ' ')
+        let $y_coords_norm := fn:normalize-space($y_coords)
+        let $y_lat := substring-before($y_coords_norm, ' ')
+        let $y_long := substring-after($y_coords_norm, ' ')
         let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_lat},{$y_long}</GML:coordinates></GML:Point>
 
         let $dist := round-half-to-even(geo:distance($x_point, $y_point) * 111319.9, 2)
@@ -2240,8 +2250,9 @@ declare function scripts:checkProdutionSiteBuffers(
         let $x_path := scripts:getPath($x_location)
 
         for $x_coords in $x_location//gml:*/descendant-or-self::*[not(*)]
-        let $x_lat := substring-before($x_coords, ' ')
-        let $x_long := substring-after($x_coords, ' ')
+        let $x_coords_norm := fn:normalize-space($x_coords)
+        let $x_lat := substring-before($x_coords_norm, ' ')
+        let $x_long := substring-after($x_coords_norm, ' ')
 
         let $x_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$x_lat},{$x_long}</GML:coordinates></GML:Point>
 
@@ -2252,8 +2263,9 @@ declare function scripts:checkProdutionSiteBuffers(
             let $y_path := scripts:getPath($y_geometry)
 
             for $y_coords in $y_geometry//gml:*/descendant-or-self::*[not(*)]
-            let $y_lat := substring-before($y_coords, ' ')
-            let $y_long := substring-after($y_coords, ' ')
+            let $y_coords_norm := fn:normalize-space($y_coords)
+            let $y_lat := substring-before($y_coords_norm, ' ')
+            let $y_long := substring-after($y_coords_norm, ' ')
 
             let $y_point := <GML:Point srsName="{$srsName[1]}"><GML:coordinates>{$y_lat},{$y_long}</GML:coordinates></GML:Point>
 
