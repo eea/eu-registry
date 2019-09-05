@@ -2490,11 +2490,12 @@ declare function scripts:checkActivityContinuity(
         let $featureDBActivity := $featureDB//*[local-name() = $activityName]
 
         for $act in $featureActivity/descendant-or-self::*[not(*)]
+
         let $pathFeature := scripts:getPath($feature)
         let $pathAct := scripts:getPath($act)
 
         let $xAct := replace($act/@xlink:href, '/+$', '')
-        let $yAct := replace($featureDBActivity/descendant-or-self::*[not(*) and local-name() = $act/local-name()]/@xlink:href, '/+$', '')
+        let $yAct := $featureDBActivity/descendant-or-self::*[not(*) and local-name() = $act/local-name()]/replace(@xlink:href, '/+$', '')
 
         let $xAct :=
             if (scripts:is-empty($xAct)) then
@@ -2505,7 +2506,8 @@ declare function scripts:checkActivityContinuity(
         where not($xAct = $yAct)
         where $activityName != 'EPRTRAnnexIActivity'
                 or ($activityName = 'EPRTRAnnexIActivity' and $act/local-name() = 'mainActivity')
-        return [$feature/local-name(), $idFeature/text(), $act/local-name(), scripts:normalize($xAct), scripts:normalize($yAct)]
+        return [$feature/local-name(), $idFeature/text(), $act/local-name(),
+            scripts:normalize($xAct), scripts:normalize(fn:string-join($yAct, ', '))]
 
     let $yellow :=
         for $x in $data
