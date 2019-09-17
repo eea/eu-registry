@@ -3338,7 +3338,7 @@ declare function scripts:checkBATPermit(
 )
         }
 
-    let $hdrs := ("Feature", "Local ID", "Path", "permitGranted", "BATDerogationIndicator")
+    let $hdrs := ("Feature", "Local ID", "Path", "BATDerogationIndicator", "permitGranted")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
