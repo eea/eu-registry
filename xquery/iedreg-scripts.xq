@@ -128,7 +128,8 @@ declare function scripts:getParent($e as element()) as element() {
 
 declare function scripts:getInspireId($e as element()) as element()* {
     let $parent := scripts:getParent($e)
-    return $parent/*:inspireId//*:localId
+(:    return $parent/*:inspireId//*:localId :)
+    return element IID { $parent/*:inspireId//*:namespace || "/" || $parent/*:inspireId//*:localId } 
 };
 
 declare function scripts:getGmlId($e as element()) as xs:string {
