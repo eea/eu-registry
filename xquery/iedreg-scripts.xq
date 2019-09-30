@@ -2175,21 +2175,22 @@ declare function scripts:checkCoordinateContinuity(
         $root//pf:pointGeometry
     )
 
-    let $fromDB := (
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'geometry'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'pointGeometry'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'pointGeometry'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'location')
-    )
+    let $fromDB := map {
+        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'geometry' ),
+        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'pointGeometry'),
+        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'pointGeometry'),
+        "ProductionSite": database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'location')
+    }
     let $data :=
         for $x_coords in $seq//gml:*/descendant-or-self::*[not(*)]
         let $x_coords_norm := fn:normalize-space($x_coords)
         let $p := scripts:getParent($x_coords)
+        let $featureName := $p/local-name()
         let $id := scripts:getInspireId($p)/text()
         let $path := scripts:getPath($x_coords)
 
         let $y_coords :=
-            for $y in $fromDB//gml:*/descendant-or-self::*[not(*)]
+            for $y in $fromDB($featureName)//gml:*/descendant-or-self::*[not(*)]
             let $q := scripts:getParent($y)
             let $ic := scripts:getInspireId($q)/text()
 
@@ -2211,7 +2212,7 @@ declare function scripts:checkCoordinateContinuity(
         let $dist := round-half-to-even(geo:distance($x_point, $y_point) * 111319.9, 2)
 
         return [
-            $p/local-name(),
+            $featureName,
             $id,
             $path,
             string-join(($x_lat, $x_long), ", "),
