@@ -2829,11 +2829,11 @@ declare function scripts:checkFunctionalStatusType(
 
     let $seq := $root//pf:statusType
 
-    let $fromDB := (
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), "statusType"),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), "statusType"),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), "statusType")
-    )
+    let $fromDB := map {
+        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), "statusType" ),
+        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), "statusType"),
+        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), "statusType")
+    }
 
     let $value := "ConditionOfFacilityValue"
     let $valid := scripts:getValidConcepts($value)
@@ -2842,13 +2842,14 @@ declare function scripts:checkFunctionalStatusType(
         for $x in $seq
         let $p := scripts:getParent($x)
         let $id := scripts:getInspireId($p)
+        let $featureName := $p/local-name()
 
         let $xStatus := replace($x/@xlink:href, '/+$', '')
 
         where not(scripts:is-empty($xStatus)) and $xStatus = $valid
         let $xStat := scripts:normalize($xStatus)
 
-        for $y in $fromDB
+        for $y in $fromDB($featureName)
         let $q := scripts:getParent($y)
         let $ic := scripts:getInspireId($q)
 
@@ -2865,7 +2866,7 @@ declare function scripts:checkFunctionalStatusType(
         return map {
         "marks" : (4, 5),
         "data" : (
-            $p/local-name(),
+            $featureName,
             $id/text(),
             scripts:getPath($x),
             $xStat,
