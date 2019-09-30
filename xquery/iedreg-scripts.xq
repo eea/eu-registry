@@ -42,10 +42,63 @@ declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
 declare variable $scripts:location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery';
 (:declare variable $scripts:location := '.';:)
 
-declare variable $scripts:docProdFac as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionFacility.xml'));
-declare variable $scripts:docProdInstall as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionInstallation.xml'));
-declare variable $scripts:docProdInstallPart as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionInstallationPart.xml'));
-declare variable $scripts:docProdSite as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionSite.xml'));
+(:declare variable $scripts:docProdFac as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionFacility.xml'));:)
+(:declare variable $scripts:docProdInstall as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionInstallation.xml'));:)
+(:declare variable $scripts:docProdInstallPart as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionInstallationPart.xml'));:)
+(:declare variable $scripts:docProdSite as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionSite.xml'));:)
+
+declare function scripts:docProdFac(
+    $countryCode as xs:string
+) as document-node() {
+    fn:doc(
+        concat(
+            $scripts:location,
+            '/lookup-tables/ProductionFacility/',
+            $countryCode,
+            '_ProductionFacility.xml'
+        )
+    )
+};
+
+declare function scripts:docProdInstall(
+    $countryCode as xs:string
+) as document-node() {
+    fn:doc(
+        concat(
+            $scripts:location,
+            '/lookup-tables/ProductionInstallation/',
+            $countryCode,
+            '_ProductionInstallation.xml'
+        )
+    )
+};
+
+declare function scripts:docProdSite(
+    $countryCode as xs:string
+) as document-node() {
+    fn:doc(
+        concat(
+            $scripts:location,
+            '/lookup-tables/ProductionSite/',
+            $countryCode,
+            '_ProductionSite.xml'
+        )
+    )
+};
+
+declare function scripts:docProdInstallPart(
+    $countryCode as xs:string
+) as document-node() {
+    fn:doc(
+        concat(
+            $scripts:location,
+            '/lookup-tables/ProductionInstallationPart/',
+            $countryCode,
+            '_ProductionInstallationPart.xml'
+        )
+    )
+};
+
 
 (:
 --------------------
@@ -660,10 +713,10 @@ declare function scripts:checkAmountOfInspireIds(
     let $seq := $root//*:inspireId
 
     let $fromDB := (
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, 'inspireId'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, 'inspireId'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, 'inspireId'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdSite, 'inspireId')
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'inspireId')
     )
 
     let $xIDs := $seq//base:localId
@@ -684,7 +737,7 @@ declare function scripts:checkAmountOfInspireIds(
 
     let $hdrs := ("Feature", "Local ID")
     return
-        if (not(database:dbAvailable($scripts:docProdFac))) then
+        if (not(database:dbAvailable(scripts:docProdFac($cntry)))) then
             scripts:noDbWarning($refcode, $rulename)
         else
             if ($ratio gt 0.5) then
@@ -1402,13 +1455,14 @@ declare function scripts:checkProductionSiteDatabaseDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
     let $feature := 'ProductionSite'
     (:let $nodes := ('siteName', 'location'):)
     (:let $attrs := ():)
     let $stringNodes := ('siteName')
     let $locationNode := ('location')
     let $codelistNode := ()
-    let $docDB := $scripts:docProdSite
+    let $docDB := scripts:docProdSite($cntry)
 
     return scripts:checkDatabaseDuplicates2($refcode, $rulename, $root, $feature,
             $stringNodes, $locationNode, $codelistNode, $docDB)
@@ -1423,13 +1477,14 @@ declare function scripts:checkProductionFacilityDatabaseDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
     let $feature := 'ProductionFacility'
     (:let $nodes := ('geometry', 'facilityName', 'parentCompanyName'):)
     (:let $attrs := ('EPRTRAnnexIActivity'):)
     let $stringNodes := ('facilityName', 'parentCompanyName')
     let $locationNode := ('geometry')
     let $codelistNode := ('mainActivity')
-    let $docDB := $scripts:docProdFac
+    let $docDB := scripts:docProdFac($cntry)
 
     (:return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,:)
             (:$nodes, $attrs, $docDB):)
@@ -1446,6 +1501,7 @@ declare function scripts:checkProductionInstallationDatabaseDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
     let $feature := 'ProductionInstallation'
     (:let $nodes := ('pointGeometry', 'installationName'):)
     (:let $attrs := ('IEDAnnexIActivity'):)
@@ -1453,7 +1509,7 @@ declare function scripts:checkProductionInstallationDatabaseDuplicates(
     let $locationNode := ('pointGeometry')
     let $codelistNode := ('mainActivity')
 
-    let $docDB := $scripts:docProdInstall
+    let $docDB := scripts:docProdInstall($cntry)
 
     (:return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,:)
             (:$nodes, $attrs, $docDB):)
@@ -1470,6 +1526,7 @@ declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
     let $feature := 'ProductionInstallationPart'
     (:let $nodes := ('installationPartName'):)
     (:let $attrs := ('plantType'):)
@@ -1477,7 +1534,7 @@ declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
     let $locationNode := ()
     let $codelistNode := ('plantType')
 
-    let $docDB := $scripts:docProdInstallPart
+    let $docDB := scripts:docProdInstallPart($cntry)
 
     (:return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,:)
             (:$nodes, $attrs, $docDB):)
@@ -1583,8 +1640,8 @@ declare function scripts:checkMissingSites(
             )
             }
 
-    let $fromDBSite := database:queryByYearFeature($country, $lastYear, $scripts:docProdSite)
-    let $data2 :=
+    let $fromDBSite := database:queryByYearFeature($country, $lastYear, scripts:docProdSite($country))
+    (: let $data2 :=
         for $fromDbsite in $fromDBSite
             let $inspireIdFromDb := $fromDbsite/*:inspireId//*:localId
             let $inspireId := $root//*:ProductionSite/*:inspireId//*:localId
@@ -1606,7 +1663,7 @@ declare function scripts:checkMissingSites(
                 'ProductionSite',
                 $inspireIdFromDb
             )
-            }
+            } :)
 
     (:let $data := ($data1, $data2):)
     let $data := $data1
@@ -1639,9 +1696,10 @@ declare function scripts:checkMissingProductionSites(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
     let $feature := 'ProductionFacility'
     let $allowed := ("decommissioned")
-    let $docDB := $scripts:docProdFac
+    let $docDB := scripts:docProdFac($cntry)
 
     return scripts:checkMissingSites($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
@@ -1655,9 +1713,10 @@ declare function scripts:checkMissingProductionFacilities(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
     let $feature := 'facility'
     let $allowed := ("decommissioned", "notRegulated")
-    let $docDB := $scripts:docProdFac
+    let $docDB := scripts:docProdFac($cntry)
 
     return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
@@ -1671,9 +1730,10 @@ declare function scripts:checkMissingProductionInstallations(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
     let $feature := 'installation'
     let $allowed := ("decommissioned", "notRegulated")
-    let $docDB := $scripts:docProdInstall
+    let $docDB := scripts:docProdInstall($cntry)
 
     return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
@@ -1687,9 +1747,10 @@ declare function scripts:checkMissingProductionInstallationParts(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
     let $feature := 'installationPart'
     let $allowed := ("decommissioned", 'notRegulated')
-    let $docDB := $scripts:docProdInstallPart
+    let $docDB := scripts:docProdInstallPart($cntry)
 
     return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
@@ -2115,10 +2176,10 @@ declare function scripts:checkCoordinateContinuity(
     )
 
     let $fromDB := (
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, 'geometry'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, 'pointGeometry'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, 'pointGeometry'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdSite, 'location')
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'geometry'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'pointGeometry'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'pointGeometry'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'location')
     )
     let $data :=
         for $x_coords in $seq//gml:*/descendant-or-self::*[not(*)]
@@ -2207,18 +2268,18 @@ declare function scripts:checkCoordinateContinuity(
 
     let $details :=
         <div class="iedreg">{
-            if (empty($red)) then () else scripts:getDetails($blocker, "blocker", $hdrs, $red),
+            if (empty($red)) then () else scripts:getDetails($blocker, "warning", $hdrs, $red),
             if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
             if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
         }</div>
 
     return
-        if (not(database:dbAvailable($scripts:docProdSite)))
+        if (not(database:dbAvailable(scripts:docProdSite($cntry))))
         then scripts:noDbWarning($refcode, $rulename)
         else if (empty($lastReportingYear))
         then scripts:noPreviousYearWarning($refcode, $rulename)
         else
-            scripts:renderResult($refcode, $rulename, count($red), count($yellow), count($blue), $details)
+            scripts:renderResult($refcode, $rulename, 0, count($red) + count($yellow), count($blue), $details)
 };
 
 (:~
@@ -2565,9 +2626,10 @@ declare function scripts:checkEPRTRAnnexIActivityContinuity(
   $rulename as xs:string,
   $root as element()
 ) as element()* {
+  let $cntry := scripts:getCountry($root)
   let $featureName := "ProductionFacility"
   let $activityName := "EPRTRAnnexIActivity"
-  let $docDB := $scripts:docProdFac
+  let $docDB := scripts:docProdFac($cntry)
 
   return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName,
             $activityName, $docDB)
@@ -2597,9 +2659,10 @@ declare function scripts:checkIEDAnnexIActivityContinuity(
   $rulename as xs:string,
   $root as element()
 ) as element()* {
+    let $cntry := scripts:getCountry($root)
   let $featureName := "ProductionInstallation"
   let $activityName := "IEDAnnexIActivity"
-  let $docDB := $scripts:docProdInstall
+  let $docDB := scripts:docProdInstall($cntry)
 
   return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName,
           $activityName, $docDB)
@@ -2767,9 +2830,9 @@ declare function scripts:checkFunctionalStatusType(
     let $seq := $root//pf:statusType
 
     let $fromDB := (
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, "statusType"),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, "statusType"),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, "statusType")
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), "statusType"),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), "statusType"),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), "statusType")
     )
 
     let $value := "ConditionOfFacilityValue"
@@ -2815,7 +2878,7 @@ declare function scripts:checkFunctionalStatusType(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        if (not(database:dbAvailable($scripts:docProdFac))) then
+        if (not(database:dbAvailable(scripts:docProdFac($cntry)))) then
             scripts:noDbWarning($refcode, $rulename)
         else
             scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -3159,7 +3222,8 @@ declare function scripts:checkDateOfGrantingPermitURL(
     let $msg := "The dateofGranting, for the following ProductionInstallations, has changed from the previous submission, but the PermitURL has remained the same. Please verify and ensure all required changes in the PermitURL field have been made."
     let $type := "info"
 
-    let $docDB := $scripts:docProdInstall
+    let $cntry := scripts:getCountry($root)
+    let $docDB := scripts:docProdInstall($cntry)
     let $cntry := scripts:getCountry($root)
 
     let $lastReportingYear := scripts:getLastYear($root)
@@ -3522,7 +3586,7 @@ declare function scripts:checkDerogationsContinuity(
 ) as element()* {
     let $cntry := scripts:getCountry($root)
     let $lastReportingYear := scripts:getLastYear($root)
-    let $docDB := $scripts:docProdInstallPart
+    let $docDB := scripts:docProdInstallPart($cntry)
     let $seq := $root//*:derogations
 
     let $fromDB := database:queryByYear($cntry, $lastReportingYear,
@@ -4222,10 +4286,10 @@ declare function scripts:checkNameOfFeatureContinuity(
     let $seq := $root//*:nameOfFeature
 
     let $fromDB := (
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdFac, 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstall, 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdInstallPart, 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, $scripts:docProdSite, 'nameOfFeature')
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'nameOfFeature')
     )
 
     let $data :=
@@ -4260,7 +4324,7 @@ declare function scripts:checkNameOfFeatureContinuity(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        if (not(database:dbAvailable($scripts:docProdFac))) then
+        if (not(database:dbAvailable(scripts:docProdFac($cntry)))) then
             scripts:noDbWarning($refcode, $rulename)
         else
             scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
