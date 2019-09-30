@@ -2890,12 +2890,12 @@ declare function scripts:checkFunctionalStatusType(
 
 declare function scripts:queryDate(
         $root as element(),
-        $parentName as xs:string,
-        $childName as xs:string,
+        $parentSeq as element()*,
+        $childSeq as element()*,
         $groupName as xs:string,
         $dateName as xs:string
 ) as (map(*))* {
-    for $x in $root//*[local-name() = $parentName]
+    for $x in $parentSeq
     let $x_id := scripts:getInspireId($x)
     let $x_date := $x/*[local-name() = $dateName]
     let $x_path := scripts:getPath($x_date)
@@ -2906,7 +2906,7 @@ declare function scripts:queryDate(
     for $y_id in $x/*[local-name() = $groupName]/@xlink:href
     let $y_id := replace(data($y_id), "^#", "")
 
-    for $y in $root//*[local-name() = $childName][@gml:id = $y_id]
+    for $y in $childSeq[@gml:id = $y_id]
     let $y_date := $y/*[local-name() = $dateName]
     let $y_path := scripts:getPath($y_date)
 
@@ -2945,8 +2945,18 @@ declare function scripts:checkDateOfStartOfOperation(
     let $type := "warning"
 
     let $data := (
-        scripts:queryDate($root, "ProductionFacility", "ProductionInstallation", "groupedInstallation", $dateName),
-        scripts:queryDate($root, "ProductionInstallation", "ProductionInstallationPart", "groupedInstallationPart", $dateName)
+        scripts:queryDate(
+                $root,
+                $root//*:ProductionFacility,
+                $root//*:ProductionInstallation,
+                "groupedInstallation",
+                $dateName),
+        scripts:queryDate(
+                $root,
+                $root//*:ProductionInstallation,
+                $root//*:ProductionInstallationPart,
+                "groupedInstallationPart",
+                $dateName)
     )
 
     let $hdrs := ("Path feature", "Local ID", "Feature date",
@@ -4285,20 +4295,28 @@ declare function scripts:checkNameOfFeatureContinuity(
 
     let $seq := $root//*:nameOfFeature
 
-    let $fromDB := (
+    let $fromDBB := (
         database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'nameOfFeature'),
         database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'nameOfFeature'),
         database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'nameOfFeature'),
         database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'nameOfFeature')
     )
 
+    let $fromDB := map {
+        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'nameOfFeature' ),
+        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'nameOfFeature'),
+        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'nameOfFeature'),
+        "ProductionSite": database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'nameOfFeature')
+    }
+
     let $data :=
         for $x in $seq
         let $p := scripts:getParent($x)
+        let $featureName := $p/local-name()
         let $id := scripts:getInspireId($p)
         let $path := scripts:getPath($x)
 
-        for $y in $fromDB
+        for $y in $fromDB($featureName)
         let $q := scripts:getParent($y)
         let $ic := scripts:getInspireId($q)
 
@@ -4311,7 +4329,7 @@ declare function scripts:checkNameOfFeatureContinuity(
         return map {
         "marks" : (4),
         "data" : (
-            $p/local-name(),
+            $featureName,
             $id/text(),
             $path,
             $xName,
