@@ -1,0 +1,536 @@
+<data><ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020107.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - ICE 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020107.PART" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020108.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - ICE 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020108.PART" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0030030105.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Vassilikos Power Station - Plant 5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0030030105.PART" srsDimension="2">
+                <gml:pos>34.7285 33.2898</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0030030106.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Vassilikos Power Station - Gas Turbine 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0030030106.PART" srsDimension="2">
+                <gml:pos>34.7285 33.2898</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0060500101.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>VASSILIKO CEMENT WORKS PUBLIC COMPANY LTD, Vassilikos Plant</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0060500101.PART" srsDimension="2">
+                <gml:pos>34.7217 33.3164</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010101.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Plant 1 </nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010101.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010102.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Plant 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010102.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010103.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Plant 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010103.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010104.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Plant 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010104.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010105.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Plant 5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010105.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010106.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Plant 6</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010106.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010107.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Gas Turbine 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010107.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010108.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Gas Turbine 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010108.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010109.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Gas Turbine 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010109.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010110.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moni Power Station - Gas Turbine 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010110.PART" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020105.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020105.PART" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020106.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 6</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020106.PART" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0030030101.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Vassilikos Power Station - Plant 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0030030101.PART" srsDimension="2">
+                <gml:pos>34.7285 33.2898</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article34"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0030030102.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Vassilikos Power Station - Plant 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0030030102.PART" srsDimension="2">
+                <gml:pos>34.7285 33.2898</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article34"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0030030103.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Vassilikos Power Station - Plant 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0030030103.PART" srsDimension="2">
+                <gml:pos>34.7285 33.2898</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article34"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0030030104.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Vassilikos Power Station - Plant 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0030030104.PART" srsDimension="2">
+                <gml:pos>34.7285 33.2898</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article34"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020101.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020101.PART" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020102.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020102.PART" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020103.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020103.PART" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020104.PART</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dhekelia Power Station - Plant 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020104.PART" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    </data>

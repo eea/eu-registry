@@ -1,0 +1,673 @@
+<data><ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002000000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production aluminium Lentzweiler</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002000000.SITE" srsDimension="2">
+                <gml:pos>50.06361 5.9902</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002100000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production polymers Contern</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002100000.SITE" srsDimension="2">
+                <gml:pos>49.59843 6.20358</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002400000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Cog&#233;n&#233;ration Kirchberg/Luxembourg</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002400000.SITE" srsDimension="2">
+                <gml:pos>49.6225 6.15299</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002500000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Compostage Mondercange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002500000.SITE" srsDimension="2">
+                <gml:pos>49.51994 5.99789</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003000000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Traitement d&#233;chets dangereux Bettembourg</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003000000.SITE" srsDimension="2">
+                <gml:pos>49.50874 6.08941</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003100000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Centrale &#233;nerg&#233;tique Bissen</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003100000.SITE" srsDimension="2">
+                <gml:pos>49.80454 6.09422</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002900000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rev&#234;tement coil Dudelange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002900000.SITE" srsDimension="2">
+                <gml:pos>49.50236 6.08119</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002200000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production composites Echternach</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002200000.SITE" srsDimension="2">
+                <gml:pos>49.8062 6.44352</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003300000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Nommern</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003300000.SITE" srsDimension="2">
+                <gml:pos>49.79539 6.16324</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003400000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Beyren</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003400000.SITE" srsDimension="2">
+                <gml:pos>49.62567 6.33014</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003500000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Niederfeulen</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003500000.SITE" srsDimension="2">
+                <gml:pos>49.86094 6.01169</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003600000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Heffingen</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003600000.SITE" srsDimension="2">
+                <gml:pos>49.7754 6.23773</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003700000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Landscheid</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003700000.SITE" srsDimension="2">
+                <gml:pos>49.92563 6.12786</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003900000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Traitement eaux us&#233;es Beggen</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003900000.SITE" srsDimension="2">
+                <gml:pos>49.65108 6.13114</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003800000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Allerborn</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003800000.SITE" srsDimension="2">
+                <gml:pos>50.03881 5.8704</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004000000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production panneaux bois Sanem</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004000000.SITE" srsDimension="2">
+                <gml:pos>49.53106 5.92264</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004300000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Traitement eaux us&#233;es Bettendorf</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004300000.SITE" srsDimension="2">
+                <gml:pos>49.87164 6.1908</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004500000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Laiterie Roost</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004500000.SITE" srsDimension="2">
+                <gml:pos>49.77855 6.08066</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004600000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Poulailler Flebour</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004600000.SITE" srsDimension="2">
+                <gml:pos>49.91366 6.10468</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004700000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production polymers Contern</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004700000.SITE" srsDimension="2">
+                <gml:pos>49.5984 6.20355</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004800000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production substances inorganiques Niedercorn</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004800000.SITE" srsDimension="2">
+                <gml:pos>49.54374 5.89715</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004900000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Abattoir Ettelbruck</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004900000.SITE" srsDimension="2">
+                <gml:pos>49.83939 6.09473</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>005000000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Cog&#233;n&#233;ration Bissen</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_005000000.SITE" srsDimension="2">
+                <gml:pos>49.78877 6.09022</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>005200000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Neidhausen</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_005200000.SITE" srsDimension="2">
+                <gml:pos>50.02664 6.07115</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>005100000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Lieler</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_005100000.SITE" srsDimension="2">
+                <gml:pos>50.11908 6.11246</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>005300000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Knaphoscheid</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_005300000.SITE" srsDimension="2">
+                <gml:pos>50.01194 5.96843</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>005400000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Porcherie Hostert</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_005400000.SITE" srsDimension="2">
+                <gml:pos>49.81157 5.85638</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002600000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production de papiers adh&#233;sifs Rodange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002600000.SITE" srsDimension="2">
+                <gml:pos>49.5559 5.85172</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000700000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Incin&#233;ration d&#233;chets Leudelange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000700000.SITE" srsDimension="2">
+                <gml:pos>49.55385 6.07016</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000800000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Imprimerie Rodange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000800000.SITE" srsDimension="2">
+                <gml:pos>49.55535 5.84556</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000900000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rev&#234;tement fils Bissen</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000900000.SITE" srsDimension="2">
+                <gml:pos>49.78471 6.05207</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001000000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Laminoir Rodange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001000000.SITE" srsDimension="2">
+                <gml:pos>49.55193 5.83505</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001100000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production feuilles cuivre Wiltz</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001100000.SITE" srsDimension="2">
+                <gml:pos>49.96135 5.91073</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000200000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Sid&#233;rugie Differdange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000200000.SITE" srsDimension="2">
+                <gml:pos>49.53028 5.89931</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000300000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Sid&#233;rugie Belval</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000300000.SITE" srsDimension="2">
+                <gml:pos>49.50141 5.95596</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000400000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Cimenterie Rumelange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000400000.SITE" srsDimension="2">
+                <gml:pos>49.46587 6.00691</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000600000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production verre Dudelange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000600000.SITE" srsDimension="2">
+                <gml:pos>49.50449 6.08293</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000500000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production verre Bascharage</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000500000.SITE" srsDimension="2">
+                <gml:pos>49.56474 5.9332</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001200000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>D&#233;charge Diekirch</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001200000.SITE" srsDimension="2">
+                <gml:pos>49.88111 6.13204</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001300000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>D&#233;charge Grevenmacher</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001300000.SITE" srsDimension="2">
+                <gml:pos>49.66814 6.37012</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001600000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production aluminium Dudelange</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001600000.SITE" srsDimension="2">
+                <gml:pos>49.49235 6.11367</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001900000.SITE</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Production aluminium Eselborn</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001900000.SITE" srsDimension="2">
+                <gml:pos>50.06392 5.9881</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    </data>

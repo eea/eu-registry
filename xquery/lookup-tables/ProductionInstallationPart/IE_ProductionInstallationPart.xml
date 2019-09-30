@@ -1,0 +1,1282 @@
+<data><ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0694.CPU00026.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SSE Rhode U1A</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0694.CPU00026.PART" srsDimension="2">
+                <gml:pos>53.3589 -7.21144</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0694.CPU00027.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SSE Rhode U1B</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0694.CPU00027.PART" srsDimension="2">
+                <gml:pos>53.3589 -7.21144</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0694.CPU00028.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SSE Rhode U2A</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0694.CPU00028.PART" srsDimension="2">
+                <gml:pos>53.3589 -7.21144</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0694.CPU00029.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SSE Rhode U2B</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0694.CPU00029.PART" srsDimension="2">
+                <gml:pos>53.3589 -7.21144</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0700.CPU00037.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tynagh Energy</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0700.CPU00037.PART" srsDimension="2">
+                <gml:pos>53.1666 -8.3822</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0777.CPU00038.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Viridian Power (Huntstown Phase II)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0777.CPU00038.PART" srsDimension="2">
+                <gml:pos>53.4116 -6.3261</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0830.CPU00041.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Whitegate Power Station</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0830.CPU00041.PART" srsDimension="2">
+                <gml:pos>51.8149 -8.2503</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>W0167.WI000013.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A1-1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_W0167.WI000013.PART" srsDimension="2">
+                <gml:pos>53.6765 -6.3922</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>W0232.WI000014.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A2-1 &amp; A2-2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_W0232.WI000014.PART" srsDimension="2">
+                <gml:pos>53.3406 -6.2008</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0561.CPU00006.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aghada CT14-U4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0561.CPU00006.PART" srsDimension="2">
+                <gml:pos>51.8351 -8.2329</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0561.CPU00042.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aghada CCGT</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0561.CPU00042.PART" srsDimension="2">
+                <gml:pos>51.8351 -8.2329</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0566.CPU00019.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SSE Killala U1A</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0566.CPU00019.PART" srsDimension="2">
+                <gml:pos>54.1943 -9.22019</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0566.CPU00020.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SSE Killala U1B</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0566.CPU00020.PART" srsDimension="2">
+                <gml:pos>54.1943 -9.22019</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0566.CPU00021.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SSE Killala U3A</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0566.CPU00021.PART" srsDimension="2">
+                <gml:pos>54.1943 -9.22019</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0566.CPU00022.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SSE Killala U3B</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0566.CPU00022.PART" srsDimension="2">
+                <gml:pos>54.1943 -9.22019</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0577.CPU00012.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Poolbeg U4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0577.CPU00012.PART" srsDimension="2">
+                <gml:pos>53.3391 -6.1865</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0577.CPU00017.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Poolbeg U5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0577.CPU00017.PART" srsDimension="2">
+                <gml:pos>53.3391 -6.1865</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0578.CPU00007.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Marina</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0578.CPU00007.PART" srsDimension="2">
+                <gml:pos>51.8999 -8.4455</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0579.CPU00008.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>North Wall 5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0579.CPU00008.PART" srsDimension="2">
+                <gml:pos>53.3495 -6.2103</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0605.CPU00009.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moneypoint U2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0605.CPU00009.PART" srsDimension="2">
+                <gml:pos>52.6075 -9.4227</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0605.CPU00010.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moneypoint U1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0605.CPU00010.PART" srsDimension="2">
+                <gml:pos>52.6075 -9.4227</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0605.CPU00011.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Moneypoint U3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0605.CPU00011.PART" srsDimension="2">
+                <gml:pos>52.6075 -9.4227</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0606.CPU00043.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Great Island CCGT</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0606.CPU00043.PART" srsDimension="2">
+                <gml:pos>52.2812 -6.9912</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0607.CPU00001.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tarbert 1 and 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0607.CPU00001.PART" srsDimension="2">
+                <gml:pos>52.5884 -9.3643</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0607.CPU00002.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tarbert 3 and 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0607.CPU00002.PART" srsDimension="2">
+                <gml:pos>52.5884 -9.3643</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0610.CPU00030.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Lough Ree Power</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0610.CPU00030.PART" srsDimension="2">
+                <gml:pos>53.6744 -7.9837</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0611.CPU00031.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>West Offaly Power</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0611.CPU00031.PART" srsDimension="2">
+                <gml:pos>53.2953 -7.957</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0004.WI000001.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Incinerator No. 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0004.WI000001.PART" srsDimension="2">
+                <gml:pos>51.8165 -8.3154</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0004.WI000002.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Incinerator No. 3A</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0004.WI000002.PART" srsDimension="2">
+                <gml:pos>51.8165 -8.3154</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0006.WI000003.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>No. 3 - Solid</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0006.WI000003.PART" srsDimension="2">
+                <gml:pos>51.8234 -8.3414</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0006.WI000004.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>No. 4 - Liquid</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0006.WI000004.PART" srsDimension="2">
+                <gml:pos>51.8234 -8.3414</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0007.WI000017.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>EP-IN-001</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0007.WI000017.PART" srsDimension="2">
+                <gml:pos>53.4129 -6.4227</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0009.WI000005.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A2-2 -Incinerator 1 (KEU)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0009.WI000005.PART" srsDimension="2">
+                <gml:pos>51.7254 -8.5802</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0009.WI000006.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A2-3 - Incinerator 2 (Thermall)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0009.WI000006.PART" srsDimension="2">
+                <gml:pos>51.7254 -8.5802</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0012.WI000007.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>No. 16 Liquid Vapour Incinerator</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0012.WI000007.PART" srsDimension="2">
+                <gml:pos>52.8112 -8.9643</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0015.WI000016.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Vnt-4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0015.WI000016.PART" srsDimension="2">
+                <gml:pos>52.9498 -6.2433</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0030.WI000008.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A2-01 / A2-08</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0030.WI000008.PART" srsDimension="2">
+                <gml:pos>53.6853 -6.3887</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0035.CPU00032.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aughinish Alumina 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0035.CPU00032.PART" srsDimension="2">
+                <gml:pos>52.6243 -9.0593</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0035.CPU00033.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aughinish Alumina 2-GT1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0035.CPU00033.PART" srsDimension="2">
+                <gml:pos>52.6243 -9.0593</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0035.CPU00034.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aughinish Alumina 3-GT2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0035.CPU00034.PART" srsDimension="2">
+                <gml:pos>52.6243 -9.0593</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0035.CPU00035.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aughinish Alumina 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0035.CPU00035.PART" srsDimension="2">
+                <gml:pos>52.6243 -9.0593</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0035.CPU00036.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aughinish Alumina 5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0035.CPU00036.PART" srsDimension="2">
+                <gml:pos>52.6243 -9.0593</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0052.WI000009.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Modified Boiler 4 /Modified Boiler 5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0052.WI000009.PART" srsDimension="2">
+                <gml:pos>51.8979 -8.3791</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0089.WI000018.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A1-7</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0089.WI000018.PART" srsDimension="2">
+                <gml:pos>52.8047 -6.1754</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0136.WI000010.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Boiler A (V1)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0136.WI000010.PART" srsDimension="2">
+                <gml:pos>51.9013 -8.3741</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0301.CPU00013.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Diageo Ireland GT 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0301.CPU00013.PART" srsDimension="2">
+                <gml:pos>53.3427 -6.2868</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0301.CPU00014.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Diageo Ireland GT 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0301.CPU00014.PART" srsDimension="2">
+                <gml:pos>53.3427 -6.2868</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0301.CPU00015.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Diageo Ireland GT 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0301.CPU00015.PART" srsDimension="2">
+                <gml:pos>53.3427 -6.2868</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0301.CPU00016.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Diageo Ireland B4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0301.CPU00016.PART" srsDimension="2">
+                <gml:pos>53.3427 -6.2868</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0378.WI000011.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A2-01</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0378.WI000011.PART" srsDimension="2">
+                <gml:pos>54.1329 -7.58</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0442.CPU00018.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Irish Distillers Limited</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0442.CPU00018.PART" srsDimension="2">
+                <gml:pos>51.9165 -8.16112</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0482.CPU00023.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Edenderry Power</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0482.CPU00023.PART" srsDimension="2">
+                <gml:pos>53.2898 -7.0848</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0482.CPU00039.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Edenderry Power GT1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0482.CPU00039.PART" srsDimension="2">
+                <gml:pos>53.2898 -7.08477</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0482.CPU00040.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Edenderry Power GT2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0482.CPU00040.PART" srsDimension="2">
+                <gml:pos>53.2898 -7.08477</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0483.CPU00025.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Huntstown Power Station (Huntstown Phase I)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0483.CPU00025.PART" srsDimension="2">
+                <gml:pos>53.4126 -6.3252</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0486.CPU00024.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Synergen (Dublin Bay Power Plant)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0486.CPU00024.PART" srsDimension="2">
+                <gml:pos>53.3397 -6.204</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0487.WI000012.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A2-01</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0487.WI000012.PART" srsDimension="2">
+                <gml:pos>53.434292 -7.143411</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0552.WI000015.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>A2-1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0552.WI000015.PART" srsDimension="2">
+                <gml:pos>53.4149 -6.373</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0561.CPU00003.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aghada U1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0561.CPU00003.PART" srsDimension="2">
+                <gml:pos>51.8351 -8.2329</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0561.CPU00004.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aghada CT11-U2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0561.CPU00004.PART" srsDimension="2">
+                <gml:pos>51.8351 -8.2329</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>P0561.CPU00005.PART</localId>
+            <namespace>IE.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Aghada CT12-U3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_P0561.CPU00005.PART" srsDimension="2">
+                <gml:pos>51.8351 -8.2329</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    </data>

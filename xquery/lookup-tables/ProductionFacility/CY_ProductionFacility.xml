@@ -1,0 +1,2509 @@
+<data><ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010010000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010010000.FACILITY" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Electricity Authority of Cyprus, Moni Power Station</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Electricity Authority of Cyprus</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.eac.com.cy</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0010000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020020000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020020000.FACILITY" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Electricity Authority of Cyprus, Dhekelia Power Station</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Electricity Authority of Cyprus</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.eac.com.cy</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0020000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0030030000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0030030000.FACILITY" srsDimension="2">
+                <gml:pos>34.7285 33.2898</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Electricity Authority of Cyprus, Vassilikos Power Station</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Electricity Authority of Cyprus</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.eac.com.cy</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0030000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0040710000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0040710000.FACILITY" srsDimension="2">
+                <gml:pos>35.0881 32.8942</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>HELLENIC COPPER MINES LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>HELLENIC COPPER MINES LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.hcm.com.cy</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0040000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0050760000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0050760000.FACILITY" srsDimension="2">
+                <gml:pos>34.6702 32.9956</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>MUSKITA ALUMINIUM INDUSTRIES PLC</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>MUSKITA ALUMINIUM INDUSTRIES PLC</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://muskita.com.cy</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0050000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0060500000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0060500000.FACILITY" srsDimension="2">
+                <gml:pos>34.7217 33.3164</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>VASSILIKO CEMENT WORKS PUBLIC COMPANY LTD, Vassilikos Plant</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>VASSILIKO CEMENT WORKS PUBLIC COMPANY LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.vassiliko.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0060000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(c)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0075060000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0075060000.FACILITY" srsDimension="2">
+                <gml:pos>34.9075 33.5583</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Chrysafis Ceramics Ltd </nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Chrysafis Ceramics Ltd </EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.chrysafisbricks.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0070000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0085070000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0085070000.FACILITY" srsDimension="2">
+                <gml:pos>35.0647 33.3981</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Gigas Palekithrou Brick factory Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Gigas Palekithrou Brick factory Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0080000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0095080000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0095080000.FACILITY" srsDimension="2">
+                <gml:pos>35.0564 33.3939</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Gigas Palekithrou Tiles factory Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Gigas Palekithrou Tiles factory Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0090000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0105090000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0105090000.FACILITY" srsDimension="2">
+                <gml:pos>35.0419 33.3903</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Kakoyiannis Brick factory Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Kakoyiannis Brick factory Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.kakoyiannisbricks.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0100000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0115100000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0115100000.FACILITY" srsDimension="2">
+                <gml:pos>34.9861 33.3619</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Ledra Brick Factory Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Ledra Brick Factory Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.bricks-rooftiles.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0110000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0125110000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0125110000.FACILITY" srsDimension="2">
+                <gml:pos>35.0956 33.3936</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Melios &amp; Paphitis Enterprises Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Melios &amp; Paphitis Enterprises Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.meliospaphitis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0120000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0135120000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0135120000.FACILITY" srsDimension="2">
+                <gml:pos>35.0808 33.4089</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Palekithrou Roof Tiles &amp; Bricks (KAPA) Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Palekithrou Roof Tiles &amp; Bricks (KAPA) Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.brickskapa.eu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0130000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0145130000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0145130000.FACILITY" srsDimension="2">
+                <gml:pos>35.0478 33.3886</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>United Brickworks Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>United Brickworks Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.bricks.com.cy</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0140000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0150730000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0150730000.FACILITY" srsDimension="2">
+                <gml:pos>34.7219 33.3139</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>ECOFUEL (CYPRUS) Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ECOFUEL (CYPRUS) Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0150000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0165270000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0165270000.FACILITY" srsDimension="2">
+                <gml:pos>34.7353 32.9453</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>INTEREFINE FUELS LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>INTEREFINE FUELS LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0160000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0175460000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0175460000.FACILITY" srsDimension="2">
+                <gml:pos>34.7311 32.945</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Advance Medical Waste Management Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ADVANCE HOLDINGS LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.advanceholdings.com.cy</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0170000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0185470000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0185470000.FACILITY" srsDimension="2">
+                <gml:pos>34.7369 32.9428</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Innovating Environmental Solutions Center Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Innovating Environmental Solutions Center Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0180000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0195500000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0195500000.FACILITY" srsDimension="2">
+                <gml:pos>34.7264 32.9475</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>CBp Cyprus Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>CBp Cyprus Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.cbpcyprus.eu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0190000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0205510000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0205510000.FACILITY" srsDimension="2">
+                <gml:pos>34.7463 33.2704</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Epiphaniou Scrap Metals Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Epiphaniou Scrap Metals Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0200000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/8(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0210720000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0210720000.FACILITY" srsDimension="2">
+                <gml:pos>34.7711 32.5031</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Council for the Exploitation or/and Utilisation of Solid Domestic Waste</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Council for the Exploitation or/and Utilisation of Solid Domestic Waste</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0210000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0225290000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0225290000.FACILITY" srsDimension="2">
+                <gml:pos>34.9664 33.5056</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>MANAGEMENT BOARD OF THE INTERGRATED INSTALLATION FOR THE MANAGEMENT OF SOLID DOMESTIC WASTE FOR THE LARNACA-FAMAGUSTA DISTRICTS</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>MANAGEMENT BOARD OF THE INTERGRATED INSTALLATION FOR THE MANAGEMENT OF SOLID DOMESTIC WASTE FOR THE LARNACA-FAMAGUSTA DISTRICTS</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0220000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0230810000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0230810000.FACILITY" srsDimension="2">
+                <gml:pos>35.0793 33.1429</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A &amp; A Sfageia Limited</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A &amp; A Sfageia Limited</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0230000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/8(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0245210000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0245210000.FACILITY" srsDimension="2">
+                <gml:pos>35.0703 33.1072</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>CYPRA LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>CYPRA LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0240000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/8(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0255200000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0255200000.FACILITY" srsDimension="2">
+                <gml:pos>34.855 33.4206</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>SIGAN MANAGEMENT LIMITED-Incinerator of animal wastes</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>SIGAN MANAGEMENT LIMITED</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0250000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0260750000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0260750000.FACILITY" srsDimension="2">
+                <gml:pos>34.8535 33.4158</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>SIGAN MANAGEMENT LIMITED-Rendering Plant</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>SIGAN MANAGEMENT LIMITED</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0260000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0275180000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0275180000.FACILITY" srsDimension="2">
+                <gml:pos>34.85 33.4</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A.T.I. ENVIRO INDUSTRIALS LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A.T.I. ENVIRO INDUSTRIALS LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0270000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0280360000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0280360000.FACILITY" srsDimension="2">
+                <gml:pos>35.1656 33.1883</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (A)</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>NELI EMPORIO KREATON LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.nefelifarm.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0280000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0290370000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0290370000.FACILITY" srsDimension="2">
+                <gml:pos>35.1633 33.18</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (B)</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>NELI EMPORIO KREATON LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.nefelifarm.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0290000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0300380000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0300380000.FACILITY" srsDimension="2">
+                <gml:pos>35.1781 33.1753</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD [C]</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>NELI EMPORIO KREATON LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.nefelifarm.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0300000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0310390000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0310390000.FACILITY" srsDimension="2">
+                <gml:pos>35.1694 33.1747</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (D)</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>NELI EMPORIO KREATON LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.nefelifarm.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0310000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0320400000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0320400000.FACILITY" srsDimension="2">
+                <gml:pos>35.1708 33.1669</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (E)</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>NELI EMPORIO KREATON LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.nefelifarm.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0320000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0330410000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0330410000.FACILITY" srsDimension="2">
+                <gml:pos>35.1756 33.1672</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (F)</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>NELI EMPORIO KREATON LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.nefelifarm.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0330000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0340440000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0340440000.FACILITY" srsDimension="2">
+                <gml:pos>35.0391 33.5469</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Tzionis Farm Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Tzionis Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0340000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0350450000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0350450000.FACILITY" srsDimension="2">
+                <gml:pos>35.0431 34.0036</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>E.G. Kouzali Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>E.G. Kouzali Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0350000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0360460000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0360460000.FACILITY" srsDimension="2">
+                <gml:pos>35.0653 33.2933</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Mintikkis &amp; Nikolaidis Bros Ltd-Psimolophou</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A. Mintikkis Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.mintikkis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0360000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0370470000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0370470000.FACILITY" srsDimension="2">
+                <gml:pos>35.0675 33.2955</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A. Mintikkis Farm Ltd-Psimolophou</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A. Mintikkis Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.mintikkis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0370000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0380490000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0380490000.FACILITY" srsDimension="2">
+                <gml:pos>35.0081 33.3175</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A. Mintikkis Farm Ltd-Margi</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A. Mintikkis Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.mintikkis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0380000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0390780000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0390780000.FACILITY" srsDimension="2">
+                <gml:pos>35.0071 33.314</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A. Mintikkis Farm Ltd-Analiontas</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A. Mintikkis Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.mintikkis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0390000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0405160000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0405160000.FACILITY" srsDimension="2">
+                <gml:pos>35.0925 33.1969</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Mintikkis Chicken Farm Ltd-Agios Ioannis Malountas</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A. Mintikkis Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.mintikkis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0400000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0415340000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0415340000.FACILITY" srsDimension="2">
+                <gml:pos>35.1742 33.1669</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A. Mintikkis Farm Ltd-Deneia</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A. Mintikkis Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.mintikkis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0410000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0420590000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0420590000.FACILITY" srsDimension="2">
+                <gml:pos>34.7679 33.2038</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>G &amp; G Emporio Farm Ltd </nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>G &amp; G Emporio Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0420000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0430640000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0430640000.FACILITY" srsDimension="2">
+                <gml:pos>34.9697 33.4225</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>PARADISIOTIS LTD-Mosfiloti</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>PARADISIOTIS LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.paradisiotis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0430000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0440700000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0440700000.FACILITY" srsDimension="2">
+                <gml:pos>35.1138 33.0616</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>PARADISIOTIS LTD-Peristerona</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>PARADISIOTIS LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.paradisiotis.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0440000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0450770000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0450770000.FACILITY" srsDimension="2">
+                <gml:pos>35.1026 33.2314</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>G.C.E. Farmtech Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>G.C.E. Farmtech Ltd </EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0450000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0465170000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0465170000.FACILITY" srsDimension="2">
+                <gml:pos>35.0133 33.3253</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>NAVARRO FARMS LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>NAVARRO FARMS LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0460000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0470040000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0470040000.FACILITY" srsDimension="2">
+                <gml:pos>35.1532 33.2523</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Andreas Neophytou Andronikou and Sons Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Andreas Neophytou Andronikou and Sons Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0470000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0480070000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0480070000.FACILITY" srsDimension="2">
+                <gml:pos>35.0562 33.0877</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Panagiotis Hadjikyriacos &amp; Son Farm Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Panagiotis Hadjikyriacos &amp; Son Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0480000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0490080000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0490080000.FACILITY" srsDimension="2">
+                <gml:pos>35.1575 33.1439</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Kyriakos Tsingis Chirotrophiki Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Kyriakos Tsingis Chirotrophiki Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0490000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0500100000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0500100000.FACILITY" srsDimension="2">
+                <gml:pos>35.0929 33.1649</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>C.K. ECONOMOU LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>C.K. ECONOMOU LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0500000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0510130000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0510130000.FACILITY" srsDimension="2">
+                <gml:pos>35.1158 33.1</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Gyros Farm Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Gyros Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0510000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0520160000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0520160000.FACILITY" srsDimension="2">
+                <gml:pos>35.0725 33.4259</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>S. P. Lagos Farm Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>S. P. Lagos Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0520000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0530170000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0530170000.FACILITY" srsDimension="2">
+                <gml:pos>35.1482 33.2515</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Farm Georgios Neophytou Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Farm Georgios Neophytou Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0530000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0540180000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0540180000.FACILITY" srsDimension="2">
+                <gml:pos>35.1519 33.2522</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>ZOE'S FARM LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ZOE'S FARM LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0540000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0550200000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0550200000.FACILITY" srsDimension="2">
+                <gml:pos>35.0117 33.3171</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>NEOBORN BIOTECHNOLOGY LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>NEOBORN BIOTECHNOLOGY LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0550000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0555490000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0555490000.FACILITY" srsDimension="2">
+                <gml:pos>35.0115 33.3152</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Animalia Genetics Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Animalia Genetics Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0550000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0560220000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0560220000.FACILITY" srsDimension="2">
+                <gml:pos>34.7708 33.3722</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>D &amp; F Afxentiou Bros Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>D &amp; F Afxentiou Bros Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0560000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0570230000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0570230000.FACILITY" srsDimension="2">
+                <gml:pos>35.1017 33.1081</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>The Concorde Piggery Farm Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>The Concorde Piggery Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0570000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0580240000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0580240000.FACILITY" srsDimension="2">
+                <gml:pos>35.1133 33.1064</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Philippos Panagiotou Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Philippos Panagiotou Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0580000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0590250000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0590250000.FACILITY" srsDimension="2">
+                <gml:pos>35.0039 33.3167</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>L.A. Top Genetics Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>L.A. Top Genetics Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0590000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0600060000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0600060000.FACILITY" srsDimension="2">
+                <gml:pos>35.0746 33.4219</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A/foi Andreou Chirostasia Ltd - Dali farm</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A/foi Andreou Chirostasia Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0600000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0610260000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0610260000.FACILITY" srsDimension="2">
+                <gml:pos>34.8467 33.5325</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A/foi Andreou Chirostasia Ltd - Tersephanou farm</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A/foi Andreou Chirostasia Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0610000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0620270000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0620270000.FACILITY" srsDimension="2">
+                <gml:pos>35.0364 33.7367</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A/foi Andreou Chirostasia Ltd - Xylotympou farm</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A/foi Andreou Chirostasia Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.andreou.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0620000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0630280000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0630280000.FACILITY" srsDimension="2">
+                <gml:pos>35.0433 33.543</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Andreas Kailas &amp; Sons Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Andreas Kailas &amp; Sons Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0630000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0640290000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0640290000.FACILITY" srsDimension="2">
+                <gml:pos>35.0474 33.5155</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Georgios Pantziaros Farming Company Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Georgios Pantziaros Farming Company Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0640000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0650300000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0650300000.FACILITY" srsDimension="2">
+                <gml:pos>35.0664 33.0978</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Ioannis Georgiou Piggery Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Ioannis Georgiou Piggery Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0650000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0660310000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0660310000.FACILITY" srsDimension="2">
+                <gml:pos>34.76 33.2097</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Nicos Armenis &amp; Sons Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Nicos Armenis &amp; Sons Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0660000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0670340000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0670340000.FACILITY" srsDimension="2">
+                <gml:pos>35.1468 33.1399</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>K. K. E. Piggery Farm Ltd (A)</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>K. K. E. Piggery Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0670000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0680350000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0680350000.FACILITY" srsDimension="2">
+                <gml:pos>35.1093 33.1168</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>K. K. E. Piggery Farm Ltd (B)</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>K. K. E. Piggery Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0680000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(iii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0690520000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0690520000.FACILITY" srsDimension="2">
+                <gml:pos>35.0851 32.9658</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Kousparos Farm Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Kousparos Farm Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0690000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0700540000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0700540000.FACILITY" srsDimension="2">
+                <gml:pos>35.0547 33.0882</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Ch. Nikodimou &amp; Sia Ltd-Kato Moni</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Ch. Nikodimou &amp; Sia Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0700000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0710550000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0710550000.FACILITY" srsDimension="2">
+                <gml:pos>35.0897 33.1267</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>S. Kastros Farm Ltd </nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>S. Kastros Farm Ltd </EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0710000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0720580000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0720580000.FACILITY" srsDimension="2">
+                <gml:pos>35.1108 33.1053</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Ch. Nikodimou &amp; Sia Ltd-Orounta</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Ch. Nikodimou &amp; Sia Ltd </EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0720000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0735320000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0735320000.FACILITY" srsDimension="2">
+                <gml:pos>34.7689 33.3714</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>G. &amp; AF. Energy Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>G. &amp; AF. Energy Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0730000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0745420000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0745420000.FACILITY" srsDimension="2">
+                <gml:pos>35.0336 33.5325</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>A.F. Athienou Farmers Gas Ltd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>A.F. Athienou Farmers Gas Ltd</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0740000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0755440000.FACILITY</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0755440000.FACILITY" srsDimension="2">
+                <gml:pos>35.1525 33.25</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>CHRISTAKIS N.NEOFYTOU BIOGAS LTD</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>CHRISTAKIS N.NEOFYTOU BIOGAS LTD</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL/>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_0750000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(g)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    </data>

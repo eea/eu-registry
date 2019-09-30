@@ -1,0 +1,742 @@
+<data><ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000002.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sladorana d.o.o. (CCT 1099, CCT 1112)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000002.PART" srsDimension="2">
+                <gml:pos>45.09082 18.71068</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000003.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>VIRO tvornica &#353;e&#263;era d.d. (5569, 5570, 5122)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000003.PART" srsDimension="2">
+                <gml:pos>45.85631 17.39696</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000004.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Toplana Osijek</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000004.PART" srsDimension="2">
+                <gml:pos>45.56169 18.69588</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000006.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tvornica za proizvodnju vapna</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000006.PART" srsDimension="2">
+                <gml:pos>43.86382 16.12626</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000007.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Proizvodnja cementa Koroma&#269;no</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000007.PART" srsDimension="2">
+                <gml:pos>44.96822 14.12688</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000008.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TVORNICA CEMENTA "SVETI KAJO"</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000008.PART" srsDimension="2">
+                <gml:pos>43.54236 16.44268</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/notRegulated"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000009.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TVORNICA CEMENTA "SVETI JURAJ"</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000009.PART" srsDimension="2">
+                <gml:pos>43.54236 16.44268</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000010.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Na&#353;icecement d.d.</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000010.PART" srsDimension="2">
+                <gml:pos>45.45298 18.03984</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000011.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SA&#352;A PROMET CIGLANA BLATU&#352;A d.o.o.</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000011.PART" srsDimension="2">
+                <gml:pos>45.33539 15.90112</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000012.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>HEP-proizvodnja d.o.o. (TE Plomin 1)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000012.PART" srsDimension="2">
+                <gml:pos>45.13672 14.16277</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000013.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>DS SMITH BELI&#352;&#262;E CROATIA d.o.o. (K4)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000013.PART" srsDimension="2">
+                <gml:pos>45.68839 18.4165</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000014.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>DS SMITH BELI&#352;&#262;E CROATIA d.o.o. (K3)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000014.PART" srsDimension="2">
+                <gml:pos>45.68761 18.41708</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000015.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>INA d.d. Rafinerija nafte Rijeka - Urinj (G4, G5)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000015.PART" srsDimension="2">
+                <gml:pos>45.28563 14.53381</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000016.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>INA d.d. Rafinerija nafte Rijeka - Urinj (F1 Topping III)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000016.PART" srsDimension="2">
+                <gml:pos>45.28563 14.53381</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000017.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>INA d.d. Rafinerija nafte Sisak (K1, K2)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000017.PART" srsDimension="2">
+                <gml:pos>45.4628 16.38717</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000018.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>INA d.d. Rafinerija nafte Sisak (FCC H6101, H6301)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000018.PART" srsDimension="2">
+                <gml:pos>45.4628 16.38717</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000019.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>PETROKEMIJA (T 50101, T 50101)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000019.PART" srsDimension="2">
+                <gml:pos>45.46647 16.79739</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000020.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>PETROKEMIJA (T 51101)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000020.PART" srsDimension="2">
+                <gml:pos>45.46647 16.79739</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000023.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Zagreb (K3, PK3, VK3, VK4, VK5, VK6)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000023.PART" srsDimension="2">
+                <gml:pos>45.78359 16.0113</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000024.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Zagreb (PT3)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000024.PART" srsDimension="2">
+                <gml:pos>45.78359 16.0113</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000025.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Zagreb (PT1)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000025.PART" srsDimension="2">
+                <gml:pos>45.78206 16.01647</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000026.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Zagreb (PT2)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000026.PART" srsDimension="2">
+                <gml:pos>45.78217 16.01626</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000027.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>INA d.d. Rafinerija nafte Rijeka (H001)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000027.PART" srsDimension="2">
+                <gml:pos>45.28621 14.53229</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000030.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>EL-TO Zagreb (K3, K4, K5, K2, WK3, WK4)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000030.PART" srsDimension="2">
+                <gml:pos>45.80675 15.94495</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000031.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Sisak (Kombi Blok C PLT)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000031.PART" srsDimension="2">
+                <gml:pos>45.4556 16.41378</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000032.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE Rijeka</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000032.PART" srsDimension="2">
+                <gml:pos>45.28635 14.52011</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000033.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Sisak (KA1, KA2)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000033.PART" srsDimension="2">
+                <gml:pos>45.4556 16.41378</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000034.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Sisak (KB1, KB2)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000034.PART" srsDimension="2">
+                <gml:pos>45.4556 16.41378</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000035.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE Plomin d.o.o. (TE Plomin 2)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000035.PART" srsDimension="2">
+                <gml:pos>45.13676 14.16267</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000001.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tvornica &#352;e&#263;era Osijek d.o.o. (560, 5568)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000001.PART" srsDimension="2">
+                <gml:pos>45.54946 18.72529</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000005.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Gradska toplana d.o.o. (VKLM-25, VKLM-50)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000005.PART" srsDimension="2">
+                <gml:pos>45.49053 15.547</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000021.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Osijek (WBK1, WBK2)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000021.PART" srsDimension="2">
+                <gml:pos>45.54198 18.74523</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000022.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>TE-TO Osijek (PTA2)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000022.PART" srsDimension="2">
+                <gml:pos>45.5424 18.74326</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000028.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>EL-TO Zagreb (PTA 1)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000028.PART" srsDimension="2">
+                <gml:pos>45.82826 16.00983</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HR"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>000000029.PART</localId>
+            <namespace>HR.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>EL-TO Zagreb (PTA 2)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000000029.PART" srsDimension="2">
+                <gml:pos>45.73579 16.01258</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    </data>

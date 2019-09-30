@@ -1,0 +1,453 @@
+<data><ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>194.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>AS Utilitas Tallinn, Kristiine katlamaja</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_194.PART" srsDimension="2">
+                <gml:pos>59.4229197402 24.6935649708</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>155.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>AS Utilitas Tallinn, Mustam&#228;e katlamaja</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_155.PART" srsDimension="2">
+                <gml:pos>59.400913 24.652169</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>13.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>VKG Soojus AS, Tipu- ja reservkatlamaja</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_13.PART" srsDimension="2">
+                <gml:pos>59.3150402024 27.4633084046</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>30B.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Enefit Green AS, Iru Elektrijaam</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_30B.PART" srsDimension="2">
+                <gml:pos>59.4519 24.9258</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>67.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Kunda Nordic Tsement AS, Kunda tsemenditehas</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_67.PART" srsDimension="2">
+                <gml:pos>59.4977 26.5298</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>53.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Anne Soojus AS, Anne katlamaja</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_53.PART" srsDimension="2">
+                <gml:pos>58.369796 26.791158</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>125.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Anne Soojus AS, Anne koostootmisjaam</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_125.PART" srsDimension="2">
+                <gml:pos>58.369467076 26.790324745</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>86.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Fortum Eesti AS, P&#228;rnu tsentraalkatlamaja</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_86.PART" srsDimension="2">
+                <gml:pos>58.378354 24.539108</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>156.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Fortum Eesti AS, P&#228;rnu koostootmisjaam</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_156.PART" srsDimension="2">
+                <gml:pos>58.399156751 24.544061933</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>88.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Horizon Tselluloosi ja Paberi AS, Kehra paberivabrik</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_88.PART" srsDimension="2">
+                <gml:pos>59.340585498 25.340158231</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>74C.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Enefit Energiatootmine AS, Balti Elektrijaam, reserve boiler house</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_74C.PART" srsDimension="2">
+                <gml:pos>59.352964441 28.125814776</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>135.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Utilitas Tallinna Elektrijaam O&#220;, Tallinna Elektrijaam</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_135.PART" srsDimension="2">
+                <gml:pos>59.437378884 24.905395083</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>97.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>AS Utilitas Tallinn, &#220;lemiste katlamaja</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_97.PART" srsDimension="2">
+                <gml:pos>59.424975 24.7772</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>41.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>VKG Energia O&#220;, Kohtla-J&#228;rve P&#245;hja soojuselektrijaam</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_41.PART" srsDimension="2">
+                <gml:pos>59.3949971 27.2415407</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>192.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Enefit Energiatootmine AS, Auvere elektrijaam</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_192.PART" srsDimension="2">
+                <gml:pos>59.270467278017 27.893565896368</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>30A.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Enefit Green AS, Iru Elektrijaam</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_30A.PART" srsDimension="2">
+                <gml:pos>59.451968171 24.925828955</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>74A.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Enefit Energiatootmine AS, Balti Elektrijaam, fluidised bed combustion</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_74A.PART" srsDimension="2">
+                <gml:pos>59.352964441 28.125814776</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>74B.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Enefit Energiatootmine AS, Balti Elektrijaam, pulverised combustion</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_74B.PART" srsDimension="2">
+                <gml:pos>59.352964441 28.125814776</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>75A.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Enefit Energiatootmine AS, Eesti Elektrijaam, fluidised bed combustion</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_75A.PART" srsDimension="2">
+                <gml:pos>59.274375381 27.901230208</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>75B.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Enefit Energiatootmine AS, Eesti Elektrijaam, pulverised combustion</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_75B.PART" srsDimension="2">
+                <gml:pos>59.274375381 27.901230208</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>38.PART</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Silpower AS, Sillam&#228;e soojuselektrijaam</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_38.PART" srsDimension="2">
+                <gml:pos>59.4037404 27.745149104</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    </data>

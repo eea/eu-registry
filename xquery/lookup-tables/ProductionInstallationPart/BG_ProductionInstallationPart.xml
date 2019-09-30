@@ -1,0 +1,1201 @@
+<data><ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002011017.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Lukoil Energia I gaz BG power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002011017.PART" srsDimension="2">
+                <gml:pos>0.0 0.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002013008.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Lukoil waste incineration plant - Incinerator 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002013008.PART" srsDimension="2">
+                <gml:pos>42.54544 27.336508</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002021017.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Lukoil Energia I gaz BG power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002021017.PART" srsDimension="2">
+                <gml:pos>0.0 0.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002023008.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Lukoil waste incineration plant - Incinerator 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002023008.PART" srsDimension="2">
+                <gml:pos>42.54544 27.336508</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003011005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Devnia Ciment waste incineration plant - Incinerator 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003011005.PART" srsDimension="2">
+                <gml:pos>43.234803 27.594412</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003012003.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Varna power station - Plant 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003012003.PART" srsDimension="2">
+                <gml:pos>43.19477 27.765472</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003021001.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Deven power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003021001.PART" srsDimension="2">
+                <gml:pos>43.196917 27.63275</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003021005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Devnia Ciment waste incineration plant - Incinerator 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003021005.PART" srsDimension="2">
+                <gml:pos>43.234803 27.594412</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003031005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Devnia Ciment waste incineration plant - Incinerator 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003031005.PART" srsDimension="2">
+                <gml:pos>43.234803 27.594412</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003041005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Devnia Ciment waste incineration plant - Incinerator 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003041005.PART" srsDimension="2">
+                <gml:pos>43.234803 27.594412</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004013019.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Zaharni zavodi power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004013019.PART" srsDimension="2">
+                <gml:pos>43.137361 25.704833</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>010000064.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Greenbarn Razgrad waste incineration plant - Incinerator 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_010000064.PART" srsDimension="2">
+                <gml:pos>0.0 0.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012011005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012011005.PART" srsDimension="2">
+                <gml:pos>42.719167 23.3225</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012012011.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia Zemliane power station - Plant  6</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012012011.PART" srsDimension="2">
+                <gml:pos>0.0 0.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012021011.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia Zemliane power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012021011.PART" srsDimension="2">
+                <gml:pos>0.0 0.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012031004.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia East power station - Plant 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012031004.PART" srsDimension="2">
+                <gml:pos>42.65044 23.41428</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012031005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia power station - Plant  3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012031005.PART" srsDimension="2">
+                <gml:pos>42.719167 23.3225</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012041004.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia East power station - Plant 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012041004.PART" srsDimension="2">
+                <gml:pos>42.65044 23.41428</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013010017.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sliven power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013010017.PART" srsDimension="2">
+                <gml:pos>42.654762 26.325853</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>005001005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Holsim waste incineration plant - Incinerator 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_005001005.PART" srsDimension="2">
+                <gml:pos>43.28318 23.46396</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>007000021.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Greenbarn Pestera waste incineration plant - Incinerator 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_007000021.PART" srsDimension="2">
+                <gml:pos>42.0149 24.1837</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>008011002.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Zlatna Panega waste incineration plant - Incinerator 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_008011002.PART" srsDimension="2">
+                <gml:pos>43.08818 24.17093</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>008020006.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Pleven power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_008020006.PART" srsDimension="2">
+                <gml:pos>43.42139 24.62472</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/decommissioned"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>008021002.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Zlatna Panega waste incineration plant - Incinerator 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_008021002.PART" srsDimension="2">
+                <gml:pos>43.08818 24.17093</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>008030006.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Pleven power station - Plant  3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_008030006.PART" srsDimension="2">
+                <gml:pos>43.42139 24.62472</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>009010013.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Plovdiv South power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_009010013.PART" srsDimension="2">
+                <gml:pos>42.117306 24.769916</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>009020012.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Plovdiv North power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_009020012.PART" srsDimension="2">
+                <gml:pos>42.183806 24.740972</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>017010005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Republika power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_017010005.PART" srsDimension="2">
+                <gml:pos>42.606667 23.078333</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>017011006.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Bobov dol power station - Plant 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_017011006.PART" srsDimension="2">
+                <gml:pos>42.0 23.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>017020005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Republika power station - Plant  2A</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_017020005.PART" srsDimension="2">
+                <gml:pos>42.606667 23.078333</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>017021006.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Bobov dol power station - Plant  2A</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_017021006.PART" srsDimension="2">
+                <gml:pos>42.0 23.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>017031006.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Bobov dol power station - Plant  3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_017031006.PART" srsDimension="2">
+                <gml:pos>42.0 23.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>003011001.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Deven power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_003011001.PART" srsDimension="2">
+                <gml:pos>43.196917 27.63275</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>004011017.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sviloza power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_004011017.PART" srsDimension="2">
+                <gml:pos>43.641945 25.304722</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>010100011.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Ruse East power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_010100011.PART" srsDimension="2">
+                <gml:pos>43.52 26.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>010200011.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Ruse East power station - Plant  3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_010200011.PART" srsDimension="2">
+                <gml:pos>43.52 26.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012011004.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia East power station - Plant 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012011004.PART" srsDimension="2">
+                <gml:pos>42.65044 23.41428</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012011010.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia Lulin power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012011010.PART" srsDimension="2">
+                <gml:pos>42.75155 23.25249</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012011011.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia Zemliane power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012011011.PART" srsDimension="2">
+                <gml:pos>0.0 0.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012012010.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia Lulin power station - Plant  5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012012010.PART" srsDimension="2">
+                <gml:pos>42.75155 23.25249</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012021004.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia East power station - Plant 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012021004.PART" srsDimension="2">
+                <gml:pos>42.65044 23.41428</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>012021005.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sofia power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_012021005.PART" srsDimension="2">
+                <gml:pos>42.719167 23.3225</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013010041.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa East 1 power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013010041.PART" srsDimension="2">
+                <gml:pos>42.159083 25.908917</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013011001.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa East 3 Kontur Global power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013011001.PART" srsDimension="2">
+                <gml:pos>42.144905 26.002517</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013011002.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa East 2 power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013011002.PART" srsDimension="2">
+                <gml:pos>42.25642 26.132015</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013011004.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Brikel power station - Plant  1/2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013011004.PART" srsDimension="2">
+                <gml:pos>42.154472 25.90614</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>006011001.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Vidahim power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_006011001.PART" srsDimension="2">
+                <gml:pos>43.947945 22.850779</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>008010006.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Pleven power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_008010006.PART" srsDimension="2">
+                <gml:pos>43.42139 24.62472</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>009010012.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Plovdiv North power station - Plant  1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_009010012.PART" srsDimension="2">
+                <gml:pos>42.183806 24.740972</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>009013022.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Mondi Stamboliiski power station - Plant 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_009013022.PART" srsDimension="2">
+                <gml:pos>42.134639 24.52225</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013021001.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa East 3 Kontur Global power station - Plant  3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013021001.PART" srsDimension="2">
+                <gml:pos>42.144905 26.002517</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013021002.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa East 2 power station - Plant  2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013021002.PART" srsDimension="2">
+                <gml:pos>42.25642 26.132015</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013031002.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa East 2 power station - Plant  3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013031002.PART" srsDimension="2">
+                <gml:pos>42.25642 26.132015</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013041002.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa East 2 power station - Plant  4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013041002.PART" srsDimension="2">
+                <gml:pos>42.25642 26.132015</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>013051002.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa East 2 power station - Plant  5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_013051002.PART" srsDimension="2">
+                <gml:pos>42.25642 26.132015</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="BG"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>014010008.PART</localId>
+            <namespace>BG.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Maritsa 3 power station - Plant 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_014010008.PART" srsDimension="2">
+                <gml:pos>42.052722 25.624778</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article31"/>
+    </ProductionInstallationPart>
+    </data>

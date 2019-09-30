@@ -1,0 +1,2545 @@
+<data><ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>32.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>BLRT t&#246;&#246;stuspiirkond</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_32.SITE" srsDimension="2">
+                <gml:pos>59.4631823826 24.6581397134</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>38.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Sillam&#228;e t&#246;&#246;stuspiirkond</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_38.SITE" srsDimension="2">
+                <gml:pos>59.4036557852 27.7449635041</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>53.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Anne energiatootmine</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_53.SITE" srsDimension="2">
+                <gml:pos>58.3697904084 26.7911542146</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>75.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Auvere p&#245;levkivit&#246;&#246;stus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_75.SITE" srsDimension="2">
+                <gml:pos>59.2743753804 27.9012302078</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>135.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tallinna elektrijaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_135.SITE" srsDimension="2">
+                <gml:pos>59.4373788831 24.9053950825</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>185.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kohtla-J&#228;rve t&#246;&#246;stuspiirkond</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_185.SITE" srsDimension="2">
+                <gml:pos>59.3867080255 27.2380242422</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>120.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>R&#228;msi seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_120.SITE" srsDimension="2">
+                <gml:pos>58.3671229849 26.3824590712</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>129.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Jaanika k&#252;la naftabaasi ohtlike j&#228;&#228;tmete k&#228;itluskoht</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_129.SITE" srsDimension="2">
+                <gml:pos>59.1256057027 24.3209020871</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>164.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>V&#228;&#228;na keemiliste valmististe tehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_164.SITE" srsDimension="2">
+                <gml:pos>59.3913243953 24.4105793548</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>215.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rannu vineeritehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_215.SITE" srsDimension="2">
+                <gml:pos>59.4345519665 26.8434240192</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>1.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>J&#245;geva vanametallipunkt</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_1.SITE" srsDimension="2">
+                <gml:pos>58.7361287647 26.4061570072</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>2.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tartu vanametallipunkt</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_2.SITE" srsDimension="2">
+                <gml:pos>58.3415340823 26.7286430156</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>3.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Paljassaare j&#228;&#228;tmek&#228;itluskoht</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_3.SITE" srsDimension="2">
+                <gml:pos>59.4624862205 24.7025696446</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>6.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tallinna vanametallipunkt</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_6.SITE" srsDimension="2">
+                <gml:pos>59.422909481 24.8554919784</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>7.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>M&#228;epere j&#228;&#228;tmejaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_7.SITE" srsDimension="2">
+                <gml:pos>58.9929849186 24.852972979</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>9.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Suur-S&#245;jam&#228;e 48/50 sorteerimisjaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_9.SITE" srsDimension="2">
+                <gml:pos>59.4163071138 24.8366042209</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>13.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ahtme soojuselektrijaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_13.SITE" srsDimension="2">
+                <gml:pos>59.3142281579 27.4651252326</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>14.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tartu reoveepuhastusjaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_14.SITE" srsDimension="2">
+                <gml:pos>58.3404241101 26.7359905809</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>15.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Paljassaare reoveepuhastusjaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_15.SITE" srsDimension="2">
+                <gml:pos>59.4689948349 24.7058258339</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>16.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rakvere reoveepuhasti</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_16.SITE" srsDimension="2">
+                <gml:pos>59.3661922371 26.3467863373</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>18.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Estonia p&#245;levkivikaevandus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_18.SITE" srsDimension="2">
+                <gml:pos>59.2013928418 27.3959205521</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>19.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Narva p&#245;levkivikarj&#228;&#228;r</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_19.SITE" srsDimension="2">
+                <gml:pos>59.2642692534 27.7341376811</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>20.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Viru p&#245;levkivikaevandus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_20.SITE" srsDimension="2">
+                <gml:pos>59.3015422935 27.3617123378</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>21.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tondi-V&#228;o lubjakivikarj&#228;&#228;r</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_21.SITE" srsDimension="2">
+                <gml:pos>59.4305502266 24.9101831281</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>22.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Harku lubjakivikarj&#228;&#228;r</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_22.SITE" srsDimension="2">
+                <gml:pos>59.3979199295 24.5701022382</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>23.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Peterburi tee 94 lubjakivikarj&#228;&#228;r</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_23.SITE" srsDimension="2">
+                <gml:pos>59.4339828552 24.8873304442</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>24.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Maardu-2 lubjakivikarj&#228;&#228;r</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_24.SITE" srsDimension="2">
+                <gml:pos>59.4496274892 25.0420922176</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>25.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Aru-L&#245;una lubjakivikarj&#228;&#228;r</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_25.SITE" srsDimension="2">
+                <gml:pos>59.4435127603 26.4831431898</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>26.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>S&#245;najala 11h j&#228;&#228;tmek&#228;itluskoht</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_26.SITE" srsDimension="2">
+                <gml:pos>58.9903681977 22.7262571873</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>28.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Vaivara l&#245;hkematerjalitehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_28.SITE" srsDimension="2">
+                <gml:pos>59.310274713 27.8377692652</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>29.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Paikuse pr&#252;gila</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_29.SITE" srsDimension="2">
+                <gml:pos>58.3632845225 24.7171715321</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>30.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Iru elektrijaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_30.SITE" srsDimension="2">
+                <gml:pos>59.4519681701 24.9258289552</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>33.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>T&#246;&#246;stuse 48 t&#246;&#246;stuspark</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_33.SITE" srsDimension="2">
+                <gml:pos>59.4501046148 24.7262564083</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>34.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rakvere lihat&#246;&#246;stus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_34.SITE" srsDimension="2">
+                <gml:pos>59.37045916 26.3950360394</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>35.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#252;ssi puitlaastplaaditehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_35.SITE" srsDimension="2">
+                <gml:pos>59.3547276495 27.0456140571</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>36.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#228;hkla seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_36.SITE" srsDimension="2">
+                <gml:pos>58.3190504433 22.4680877864</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>37.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>N&#245;lva 13 mobiilne tehnoloogiline k&#228;itluskeskus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_37.SITE" srsDimension="2">
+                <gml:pos>59.4562039064 24.7123501755</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>39.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tabasalu lihat&#246;&#246;stus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_39.SITE" srsDimension="2">
+                <gml:pos>59.4165169133 24.5496299105</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>40.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tallinna pr&#252;gila</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_40.SITE" srsDimension="2">
+                <gml:pos>59.4738915106 25.0746971732</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>43.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Valga m&#246;&#246;blitehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_43.SITE" srsDimension="2">
+                <gml:pos>57.7834626857 26.0550541244</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>44.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Sakla seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_44.SITE" srsDimension="2">
+                <gml:pos>58.3590273392 22.8777289759</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>45.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tagavere seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_45.SITE" srsDimension="2">
+                <gml:pos>58.5164237575 22.9048918204</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>46.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Galvaanikatehas Vasar</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_46.SITE" srsDimension="2">
+                <gml:pos>59.4607976025 24.9289430834</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>48.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kivi&#245;li keemiat&#246;&#246;stus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_48.SITE" srsDimension="2">
+                <gml:pos>59.3549029624 26.9413822406</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>50.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>V&#228;&#228;tsa pr&#252;gila</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_50.SITE" srsDimension="2">
+                <gml:pos>58.8877790777 25.3431994642</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>52.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Laiuse seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_52.SITE" srsDimension="2">
+                <gml:pos>58.793125731 26.4940406331</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>55.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>M&#228;eltk&#252;la seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_55.SITE" srsDimension="2">
+                <gml:pos>58.3363452018 25.6556870649</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>58.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tallinna ohtlike j&#228;&#228;tmete kogumiskeskus (TOJK)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_58.SITE" srsDimension="2">
+                <gml:pos>59.4164562737 24.8730668424</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>59.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Vaivara ohtlike j&#228;&#228;tmete k&#228;itluskeskus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_59.SITE" srsDimension="2">
+                <gml:pos>59.2803753821 27.9035646168</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>60.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>L&#245;una regiooni Ohtlike J&#228;&#228;tmete K&#228;itluskeskus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_60.SITE" srsDimension="2">
+                <gml:pos>58.4042372954 26.670832092</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>61.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rapla viimistlusmaterjalitehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_61.SITE" srsDimension="2">
+                <gml:pos>58.9944031366 24.7993519726</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>62.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Lutsu seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_62.SITE" srsDimension="2">
+                <gml:pos>58.0515455253 27.1465997198</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>63.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kunda haavapuitmassitehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_63.SITE" srsDimension="2">
+                <gml:pos>59.5020872173 26.5508570935</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>65.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>J&#228;rvakandi klaasitehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_65.SITE" srsDimension="2">
+                <gml:pos>58.7779690483 24.8139052532</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>67.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kunda tsemenditehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_67.SITE" srsDimension="2">
+                <gml:pos>59.4964408669 26.5310907995</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>68.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Linnam&#228;e seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_68.SITE" srsDimension="2">
+                <gml:pos>59.0040158195 23.7352501191</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>70.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>V&#228;ike-Maarja loomsete j&#228;&#228;tmete k&#228;itlemise tehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_70.SITE" srsDimension="2">
+                <gml:pos>59.1146616762 26.2309911911</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>72.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tehas Fibo ExClay</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_72.SITE" srsDimension="2">
+                <gml:pos>58.0638545547 24.518210132</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>73.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Narva masinaehitustehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_73.SITE" srsDimension="2">
+                <gml:pos>59.3589746714 28.1771851179</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>74.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Balti elektrijaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_74.SITE" srsDimension="2">
+                <gml:pos>59.3529644401 28.1258147762</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>78.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Metalltoodete tehas Norma</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_78.SITE" srsDimension="2">
+                <gml:pos>59.420484654 24.6819956144</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>82.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Haapsalu ohtlike j&#228;&#228;tmete kogumispunkt</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_82.SITE" srsDimension="2">
+                <gml:pos>58.9227122314 23.5464952791</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>83.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Uikala pr&#252;gila</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_83.SITE" srsDimension="2">
+                <gml:pos>59.403252256 27.3926941665</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>85.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Nurme seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_85.SITE" srsDimension="2">
+                <gml:pos>58.137238106 25.7938819906</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>86.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#228;rnu tsentraalkatlamaja</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_86.SITE" srsDimension="2">
+                <gml:pos>58.3783471601 24.5391083375</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>88.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kehra paberivabrik</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_88.SITE" srsDimension="2">
+                <gml:pos>59.3405854971 25.3401582309</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>90.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Loo broilerifarmid ja lihat&#246;&#246;stus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_90.SITE" srsDimension="2">
+                <gml:pos>59.4296656874 24.9527297434</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>91.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>V&#245;ru juustutehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_91.SITE" srsDimension="2">
+                <gml:pos>57.8292275364 27.0344555916</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>93.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#228;rnu ehitusmaterjalide divisjon</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_93.SITE" srsDimension="2">
+                <gml:pos>58.3879436303 24.528791323</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>94.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#228;rnu m&#246;&#246;blidivisjon</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_94.SITE" srsDimension="2">
+                <gml:pos>58.3830006969 24.5299138104</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>95.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Otep&#228;&#228; vineeritehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_95.SITE" srsDimension="2">
+                <gml:pos>58.0588298082 26.4729334516</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>96.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tarmeko Lohkva tootmiskompleks</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_96.SITE" srsDimension="2">
+                <gml:pos>58.3713419575 26.7912942742</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>97.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>&#220;lemiste katlamaja</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_97.SITE" srsDimension="2">
+                <gml:pos>59.4249749845 24.7771995718</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>100.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rakke lubjatehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100.SITE" srsDimension="2">
+                <gml:pos>58.9852864284 26.2452045939</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Betooni puiduimmutustehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101.SITE" srsDimension="2">
+                <gml:pos>59.4247825842 24.8937862113</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>104.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#228;rnu reoveepuhastusjaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_104.SITE" srsDimension="2">
+                <gml:pos>58.3872235206 24.4520985561</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>105.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#245;lva piimat&#246;&#246;stus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_105.SITE" srsDimension="2">
+                <gml:pos>58.0678073381 27.0819069951</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>106.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ropka tipu katlamaja</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_106.SITE" srsDimension="2">
+                <gml:pos>58.3441824579 26.7274978986</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>110.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Vajangu seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_110.SITE" srsDimension="2">
+                <gml:pos>59.107550463 25.9976676084</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>111.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#252;ssi puitkiudplaaditehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_111.SITE" srsDimension="2">
+                <gml:pos>59.3570480168 27.0524906516</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>113.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Paldiski kuumtsinkimistehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_113.SITE" srsDimension="2">
+                <gml:pos>59.3442800253 24.0728638795</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>114.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tellivere noorlinnukasvatus ja Kulli munejate kanade kasvatus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_114.SITE" srsDimension="2">
+                <gml:pos>59.4058579854 25.0232734046</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>116.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Aseri tellisetehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_116.SITE" srsDimension="2">
+                <gml:pos>59.4558288511 26.8644682342</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>117.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Hinnu seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_117.SITE" srsDimension="2">
+                <gml:pos>59.4638699005 25.4260356047</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>118.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kureoja seafarm ja j&#245;us&#246;&#246;datehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_118.SITE" srsDimension="2">
+                <gml:pos>58.6983554083 26.3671680058</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>119.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Merem&#228;e seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_119.SITE" srsDimension="2">
+                <gml:pos>57.7573542832 27.4560911901</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>121.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Laabi broilerifarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_121.SITE" srsDimension="2">
+                <gml:pos>59.4044239865 24.5668831196</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>122.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rannam&#245;isa broilerifarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_122.SITE" srsDimension="2">
+                <gml:pos>59.417388349 24.5184871649</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>123.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Suur-S&#245;jam&#228;e 31a/33 j&#228;&#228;tmek&#228;itluskeskus</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_123.SITE" srsDimension="2">
+                <gml:pos>59.4175527542 24.8592329172</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>124.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Paikuse ohtlike j&#228;&#228;tmete vaheladu</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_124.SITE" srsDimension="2">
+                <gml:pos>58.3594382652 24.6698548991</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>126.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Betooni 17 j&#228;&#228;tmete kogumiskoht</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_126.SITE" srsDimension="2">
+                <gml:pos>59.4284607406 24.8740959189</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>127.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kiiu kuumtsinkimistehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_127.SITE" srsDimension="2">
+                <gml:pos>59.4511045259 25.4016269143</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>128.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Haameri talu seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_128.SITE" srsDimension="2">
+                <gml:pos>57.9934704915 27.3462069847</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>136.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kiiu elektroonikaromu k&#228;itlemise tehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_136.SITE" srsDimension="2">
+                <gml:pos>59.4505087793 25.4036126254</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>137.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Palamuse seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_137.SITE" srsDimension="2">
+                <gml:pos>58.6953273928 26.5979313806</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>138.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Linnu talu kanafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_138.SITE" srsDimension="2">
+                <gml:pos>57.8557879085 26.3902221621</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>139.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Narva reoveepuhastusjaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_139.SITE" srsDimension="2">
+                <gml:pos>59.396806356 28.1733985416</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>140.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Torma pr&#252;gila</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_140.SITE" srsDimension="2">
+                <gml:pos>58.8531825453 26.8764009427</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>143.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tartu plastpakenditehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_143.SITE" srsDimension="2">
+                <gml:pos>58.360959729 26.734182704</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>148.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ilmatsalu sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_148.SITE" srsDimension="2">
+                <gml:pos>58.3875575895 26.5523625977</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>149.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Laeva sigalakompleks</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_149.SITE" srsDimension="2">
+                <gml:pos>58.4878827658 26.3961437253</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>151.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rosma kanalad</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_151.SITE" srsDimension="2">
+                <gml:pos>58.0412021414 27.0848882634</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>152.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tiidu kanala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_152.SITE" srsDimension="2">
+                <gml:pos>57.9305822012 26.307211416</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>153.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kehtna-Nurme seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_153.SITE" srsDimension="2">
+                <gml:pos>58.9124221212 24.9059453668</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>155.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Mustam&#228;e katlamaja</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_155.SITE" srsDimension="2">
+                <gml:pos>59.4009138832 24.6521707066</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>156.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#228;rnu koostootmisjaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_156.SITE" srsDimension="2">
+                <gml:pos>58.3991567504 24.5440619332</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>157.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tallinna alumiiniumisulamite tehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_157.SITE" srsDimension="2">
+                <gml:pos>59.4195262923 24.8084469555</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>158.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Veepuhastusjaam Pumer 1</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_158.SITE" srsDimension="2">
+                <gml:pos>59.4611731613 24.7113957177</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>160.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Aidu seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_160.SITE" srsDimension="2">
+                <gml:pos>58.2448579591 25.6219018525</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>161.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>R&#245;stla seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_161.SITE" srsDimension="2">
+                <gml:pos>58.6286405924 25.8238046041</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>163.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kohila vineeritehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_163.SITE" srsDimension="2">
+                <gml:pos>59.1793183582 24.7373003964</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>165.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kopli ladestusala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_165.SITE" srsDimension="2">
+                <gml:pos>59.4594979421 24.6887883203</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>166.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>S&#245;meru sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_166.SITE" srsDimension="2">
+                <gml:pos>59.0217657971 25.5911309992</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>167.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kihlepa seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_167.SITE" srsDimension="2">
+                <gml:pos>58.3905825323 24.2394321874</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>168.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Veskimetsa sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_168.SITE" srsDimension="2">
+                <gml:pos>58.8303386213 22.7399983344</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>169.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Pandivere sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_169.SITE" srsDimension="2">
+                <gml:pos>59.1627366443 26.2997005973</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>170.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tsooru seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_170.SITE" srsDimension="2">
+                <gml:pos>57.7473731851 26.6692310895</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>171.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Metsa seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_171.SITE" srsDimension="2">
+                <gml:pos>58.0685715764 27.0313098943</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>172.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>S&#228;kna seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_172.SITE" srsDimension="2">
+                <gml:pos>58.1438807718 27.2723635015</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>173.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Vooru seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_173.SITE" srsDimension="2">
+                <gml:pos>58.1322803632 25.9618428429</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>174.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Veelikse sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_174.SITE" srsDimension="2">
+                <gml:pos>58.1131348283 25.2426359896</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>175.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Pahi sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_175.SITE" srsDimension="2">
+                <gml:pos>58.3371568332 22.54329374</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>176.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kupna seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_176.SITE" srsDimension="2">
+                <gml:pos>59.2554766956 26.5011530221</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>177.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Lillev&#228;lja sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_177.SITE" srsDimension="2">
+                <gml:pos>58.56117105 26.2981049473</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>178.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ulvi sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_178.SITE" srsDimension="2">
+                <gml:pos>59.3206780488 26.643913375</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>179.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>K&#245;psta seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_179.SITE" srsDimension="2">
+                <gml:pos>58.9521406884 26.182538993</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>180.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Luuka sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_180.SITE" srsDimension="2">
+                <gml:pos>58.9382603026 24.7699878212</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>182.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kasumetsa seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_182.SITE" srsDimension="2">
+                <gml:pos>58.5918076998 27.1428416136</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>183.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Mustametsa seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_183.SITE" srsDimension="2">
+                <gml:pos>59.4749682978 25.5906802122</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>186.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kaarma broilerifarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_186.SITE" srsDimension="2">
+                <gml:pos>59.1101305583 26.2422248982</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>187.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Termoil terminal</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_187.SITE" srsDimension="2">
+                <gml:pos>59.4588072596 24.9672631367</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>188.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Teedla seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_188.SITE" srsDimension="2">
+                <gml:pos>58.1816612162 26.2713369177</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>191.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kumna broilerifarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_191.SITE" srsDimension="2">
+                <gml:pos>59.3252034511 24.4564051328</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>193.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kiisa avariireservelektrijaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_193.SITE" srsDimension="2">
+                <gml:pos>59.2436879674 24.70619195</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>194.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kristiine katlamaja</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_194.SITE" srsDimension="2">
+                <gml:pos>59.4229197402 24.6935649708</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>195.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Nuki seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_195.SITE" srsDimension="2">
+                <gml:pos>58.2047520665 25.8863782366</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>196.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Uudek&#252;la broilerifarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_196.SITE" srsDimension="2">
+                <gml:pos>59.1772147091 26.1319273364</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>197.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#245;ltsamaa Meierei</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_197.SITE" srsDimension="2">
+                <gml:pos>58.6545165848 25.9834551615</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>198.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Lauk&#252;la kanala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_198.SITE" srsDimension="2">
+                <gml:pos>57.9122264693 26.3635338703</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>199.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>J&#245;el&#228;htme madratsitehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_199.SITE" srsDimension="2">
+                <gml:pos>59.4863339571 24.9981714089</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>200.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#228;rnu tehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_200.SITE" srsDimension="2">
+                <gml:pos>58.4086948706 24.5062468684</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>201.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tallinna kergmetalltaara tehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_201.SITE" srsDimension="2">
+                <gml:pos>59.4201911208 24.8242807947</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>202.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Triigi seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_202.SITE" srsDimension="2">
+                <gml:pos>59.0954203416 25.2592096335</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>203.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Lasnam&#228;e tr&#252;kikoda</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_203.SITE" srsDimension="2">
+                <gml:pos>59.4254817014 24.842219795</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>204.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Laeva Meierei</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_204.SITE" srsDimension="2">
+                <gml:pos>58.468920253 26.3577774408</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>205.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>P&#228;rnu elektroonikatehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_205.SITE" srsDimension="2">
+                <gml:pos>58.3950427566 24.467384771</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>206.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Loksa sadam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_206.SITE" srsDimension="2">
+                <gml:pos>59.5849122192 25.7084738569</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>216.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rakvere ukse- ja lengitehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_216.SITE" srsDimension="2">
+                <gml:pos>59.3578666704 26.3532700955</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>217.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Lao ohtlike j&#228;&#228;tmete vaheladu</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_217.SITE" srsDimension="2">
+                <gml:pos>59.4614234412 24.9885188976</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>218.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kopli metallit&#246;&#246;tlustehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_218.SITE" srsDimension="2">
+                <gml:pos>59.4463822953 24.7191612972</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>219.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Vinni biogaasijaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_219.SITE" srsDimension="2">
+                <gml:pos>59.2991050773 26.4339768204</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>220.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>V&#228;&#228;tsa seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_220.SITE" srsDimension="2">
+                <gml:pos>58.8951403642 25.5067054201</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>221.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ilmatsalu biogaasi- ja koostootmisjaam</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_221.SITE" srsDimension="2">
+                <gml:pos>58.3862199048 26.5514101847</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>222.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>J&#246;&#246;ri sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_222.SITE" srsDimension="2">
+                <gml:pos>58.4298501386 22.7825406857</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>224.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Neanurme seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_224.SITE" srsDimension="2">
+                <gml:pos>58.6249277988 26.1176005857</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>226.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Saiakopli plasttoodete tehas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_226.SITE" srsDimension="2">
+                <gml:pos>59.2207337113 26.0565401824</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>181.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>N&#245;mme sigala</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_181.SITE" srsDimension="2">
+                <gml:pos>58.6628764208 26.0016001579</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>144.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>L&#245;pe seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_144.SITE" srsDimension="2">
+                <gml:pos>58.5689191785 23.9999828144</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="EE"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>225.SITE</localId>
+            <namespace>EE.KAUR.TTR</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kuula seafarm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_225.SITE" srsDimension="2">
+                <gml:pos>58.1165501921 26.7317324506</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    </data>

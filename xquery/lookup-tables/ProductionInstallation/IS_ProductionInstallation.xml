@@ -1,0 +1,1737 @@
+<data><ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>430700-2270.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_430700-2270.INSTALLATION" srsDimension="2">
+                <gml:pos>64.856 -22.275</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Alur &#225;lvinnsla</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2013-11-12</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/verksmidjur/kratus/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>471103-2330x.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330x.INSTALLATION" srsDimension="2">
+                <gml:pos>64.411082 -21.754301</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Matfugl Hur&#240;arbak</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-12-18</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>471103-2330y.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330y.INSTALLATION" srsDimension="2">
+                <gml:pos>64.267923 -21.857205</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Matfugl Melavellir</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-12-18</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>471103-2330.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330.INSTALLATION" srsDimension="2">
+                <gml:pos>65.95225 -18.55598333</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Matfugl Ytra-Holt</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-12-18</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>471103-2330z.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330z.INSTALLATION" srsDimension="2">
+                <gml:pos>64.2133833333 -21.7837</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Matfugl M&#243;ar</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2003-11-14</dateOfGranting>
+            <permitURL>https://reykjavik.is/thjonusta/heilbrigdiseftirlit-reykjavikur</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>500412-0540.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_500412-0540.INSTALLATION" srsDimension="2">
+                <gml:pos>63.833589 -22.496957</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Matorka ehf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2014-09-10</dateOfGranting>
+            <permitURL>https://reykjavik.is/sites/default/files/ymis_skjol/Heilbrigdiseftirlit/Umhverfiseftirlit/Skilyrdi/sertaek_skilyrdi_skolphreinsistodava_or_vid_ananaust_og_klettagarda.pdf</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>501213-1870.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_501213-1870.INSTALLATION" srsDimension="2">
+                <gml:pos>64.153086 -21.95526</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fr&#225;veita - Veitur, &#193;nanaust</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2007-11-27</dateOfGranting>
+            <permitURL>https://reykjavik.is/sites/default/files/ymis_skjol/Heilbrigdiseftirlit/Umhverfiseftirlit/Skilyrdi/sertaek_skilyrdi_skolphreinsistodava_or_vid_ananaust_og_klettagarda.pdf</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>501213-1870x.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_501213-1870x.INSTALLATION" srsDimension="2">
+                <gml:pos>64.150226 -21.889062</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fr&#225;veita - Veitur, Klettag&#246;r&#240;um</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2007-11-27</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>530697-2829.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_530697-2829.INSTALLATION" srsDimension="2">
+                <gml:pos>64.696 -22.144</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Ur&#240;unarsta&#240;ur F&#237;flholti</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.4"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2014-02-05</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>531278-0469.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_531278-0469.INSTALLATION" srsDimension="2">
+                <gml:pos>64.027079 -22.571978</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Kalka</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.2(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2010-04-08</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>560206-0620.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_560206-0620.INSTALLATION" srsDimension="2">
+                <gml:pos>65.712241 -20.266375</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Nor&#240;ur&#225; bs.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.4"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2010-11-26</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>570269-7479.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479.INSTALLATION" srsDimension="2">
+                <gml:pos>65.142675 -13.733939</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fiskimj&#246;lsverksmi&#240;ja Neskaupssta&#240;</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2003-09-23</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>570297-2609.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570297-2609.INSTALLATION" srsDimension="2">
+                <gml:pos>64.363836 -21.773782</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Nor&#240;ur&#225;l Grundartanga</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2003-02-24</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>580310-0600.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_580310-0600.INSTALLATION" srsDimension="2">
+                <gml:pos>65.702 -23.655</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Arnarlax</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2012-02-29</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>510588-1189.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_510588-1189.INSTALLATION" srsDimension="2">
+                <gml:pos>64.18864 -21.745897</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Ur&#240;unarsta&#240;ur &#193;lfsnesi</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.4"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>1990-12-31</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>520199-3149.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520199-3149.INSTALLATION" srsDimension="2">
+                <gml:pos>66.0202 -22.592</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>H&#225;afell ehf. sj&#243;kv&#237;aeldi &#237; &#193;lfta- og Sey&#240;isfir&#240;i</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2006-08-29</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>520303-4210.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520303-4210.INSTALLATION" srsDimension="2">
+                <gml:pos>65.033756 -14.099652</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Alcoa Fjar&#240;a&#225;l</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2007-01-25</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>520412-0930.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520412-0930.INSTALLATION" srsDimension="2">
+                <gml:pos>64.798 -14.452</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fiskeldi Austfjar&#240;a - Gl&#237;meyri, Berufir&#240;i</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2012-10-03</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>590183-0249.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590183-0249.INSTALLATION" srsDimension="2">
+                <gml:pos>65.76056 -19.65151</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Steinull hf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/3.3"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-04-28</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>590207-0120.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590207-0120.INSTALLATION" srsDimension="2">
+                <gml:pos>65.70213 -18.11546</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Becromal Iceland ehf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.6"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2009-07-14</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>600407-0580.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600407-0580.INSTALLATION" srsDimension="2">
+                <gml:pos>65.67783 -17.723</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Molta ehf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2009-07-06</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>600667-0179.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600667-0179.INSTALLATION" srsDimension="2">
+                <gml:pos>64.406309 -22.02563</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Stj&#246;rnugr&#237;s hf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2003-10-29</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>610406-1060.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060.INSTALLATION" srsDimension="2">
+                <gml:pos>64.016265 -22.209781</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Samherji fiskeldi ehf., Vatnsleysu</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2011-03-31</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>610406-1060x.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060x.INSTALLATION" srsDimension="2">
+                <gml:pos>63.816497 -22.530642</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Samherji fiskeldi ehf., Sta&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2011-03-31</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>570269-7479y.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479y.INSTALLATION" srsDimension="2">
+                <gml:pos>65.2722 -13.981213</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fiskimj&#246;lsverksmi&#240;ja Sey&#240;isfj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2014-10-29</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>700269-3299.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_700269-3299.INSTALLATION" srsDimension="2">
+                <gml:pos>63.443535 -20.278911</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Vinnslust&#246;&#240;in &#237; Vestmannaeyjum Fiskimj&#246;lsverksmi&#240;ja</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2002-03-04</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>580169-7249.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_580169-7249.INSTALLATION" srsDimension="2">
+                <gml:pos>63.945292 -20.834719</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Orkuger&#240;in ehf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2007-02-27</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>681197-2819.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_681197-2819.INSTALLATION" srsDimension="2">
+                <gml:pos>66.15093 -18.902417</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Primex ehf. Siglufj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/4.1(k)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-06-03</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>500210-1250.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_500210-1250.INSTALLATION" srsDimension="2">
+                <gml:pos>64.02723 -22.560742</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Thorsil ehf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2017-02-06</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>610911-0480.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610911-0480.INSTALLATION" srsDimension="2">
+                <gml:pos>64.01 -22.3</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Stolt Sea Farm S.A. Reykjanesi</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2012-06-22</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>630191-1579.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_630191-1579.INSTALLATION" srsDimension="2">
+                <gml:pos>64.237045 -21.814935</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Eggjab&#250; Vall&#225;</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2013-11-15</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>640675-0209.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_640675-0209.INSTALLATION" srsDimension="2">
+                <gml:pos>64.357596 -21.785483</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Elkem &#205;sland ehf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>1975-06-24</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>641109-1770.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_641109-1770.INSTALLATION" srsDimension="2">
+                <gml:pos>65.65 -23.67116667</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fjar&#240;alax ehf. Fossfj&#246;r&#240;ur(Arnarfj&#246;r&#240;ur)</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2012-02-29</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>650603-3030.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_650603-3030.INSTALLATION" srsDimension="2">
+                <gml:pos>66.035 -23.0</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>&#205;S47 ehf. Fiskeldi &#237; &#214;nundarfir&#240;i</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-03-11</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>650903-2180.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_650903-2180.INSTALLATION" srsDimension="2">
+                <gml:pos>63.87139 -20.578631</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>&#193;smundarsta&#240;ir</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2010-09-23</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>660214-1190.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660214-1190.INSTALLATION" srsDimension="2">
+                <gml:pos>64.02425 -22.56357</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Sameina&#240; S&#237;likon hf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2014-07-03</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>680466-0179.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_680466-0179.INSTALLATION" srsDimension="2">
+                <gml:pos>64.046185 -22.02865</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Alcan &#225; &#205;slandi hf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>1969-07-01</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>680601-2670.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_680601-2670.INSTALLATION" srsDimension="2">
+                <gml:pos>65.685227 -23.597201</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>&#205;slenska Kalk&#254;&#246;rungaf&#233;lagi&#240;</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/3.1(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2001-07-01</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>700807-0450.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_700807-0450.INSTALLATION" srsDimension="2">
+                <gml:pos>65.890984 -23.603896</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Arctic Sea Farm D&#253;rafj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2013-02-13</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>711203-2140.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_711203-2140.INSTALLATION" srsDimension="2">
+                <gml:pos>64.002217 -22.21349</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Nesb&#250;egg ehf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2013-05-06</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>610406-1060y.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060y.INSTALLATION" srsDimension="2">
+                <gml:pos>66.188947 -16.489556</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Samherji fiskeldi N&#250;psm&#253;ri &#214;xarfj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2005-06-14</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>590398-2099.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590398-2099.INSTALLATION" srsDimension="2">
+                <gml:pos>64.213034 -21.472948</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Alur &#225;lvinnsla</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2011-09-01</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>530306-0540.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_530306-0540.INSTALLATION" srsDimension="2">
+                <gml:pos>63.8783122 -22.4371722</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>CRI hf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/4.1(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2010-01-29</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>630169-4299.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_630169-4299.INSTALLATION" srsDimension="2">
+                <gml:pos>65.4517 -14.1734</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Eskja hf. Eskifj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2003-09-23</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>470698-2099.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_470698-2099.INSTALLATION" srsDimension="2">
+                <gml:pos>64.9874432 -13.8949545</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Sorpst&#246;&#240; Fjar&#240;abygg&#240;ar &#222;ernunes</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.4"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-02-27</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>540610-1930.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_540610-1930.INSTALLATION" srsDimension="2">
+                <gml:pos>64.213034 -21.472948</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>GMR Endurvinnslan ehf.</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.2"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2014-02-27</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>541185-0389.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_541185-0389.INSTALLATION" srsDimension="2">
+                <gml:pos>64.313897 -22.085689</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>HB Grandi Fiskimj&#246;lsverksmi&#240;ja Akranes</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2002-03-04</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>541185-0389x.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_541185-0389x.INSTALLATION" srsDimension="2">
+                <gml:pos>65.755212 -14.825019</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>HB Grandi Fiskimj&#246;lsverksmi&#240;ja Vopnafj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2010-04-29</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>660169-1219.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660169-1219.INSTALLATION" srsDimension="2">
+                <gml:pos>63.442985 -20.271279</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fiskimj&#246;lsverksmi&#240;ja Vestmannaeyjum - FES</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2002-03-04</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>660169-1219x.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660169-1219x.INSTALLATION" srsDimension="2">
+                <gml:pos>66.197413 -15.337052</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fiskimj&#246;lsverksmi&#240;ja &#222;&#243;rsh&#246;fn</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2002-10-07</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>581201-2650.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_581201-2650.INSTALLATION" srsDimension="2">
+                <gml:pos>64.929892 -14.011421</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Lo&#240;nuvinnslan hf. F&#225;skr&#250;&#240;sfj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2014-09-17</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>480169-2989.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_480169-2989.INSTALLATION" srsDimension="2">
+                <gml:pos>64.24714 -15.196106</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Skinney-&#222;inganes Fiskimj&#246;lsverksmi&#240;ja Hornafj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2010-06-10</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>570269-7479x.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479x.INSTALLATION" srsDimension="2">
+                <gml:pos>64.023303 -22.559746</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fiskimj&#246;lsverksmi&#240;ja Helguv&#237;k</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2002-03-04</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>600893-2469.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600893-2469.INSTALLATION" srsDimension="2">
+                <gml:pos>63.808456 -20.313404</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Ur&#240;unarsta&#240;ur Str&#246;nd</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.4"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-03-16</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>420481-0719.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_420481-0719.INSTALLATION" srsDimension="2">
+                <gml:pos>63.942038 -21.132567</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Ur&#240;unarsta&#240;ur Kirkjuferjuhj&#225;leiga</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.4"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2009-07-13</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>621205-1370.INSTALLATION</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_621205-1370.INSTALLATION" srsDimension="2">
+                <gml:pos>65.016 -13.966278</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Fiskeldi Rey&#240;arfj&#246;r&#240;ur</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2012-02-19</dateOfGranting>
+            <permitURL>https://ust.is/atvinnulif/mengandi-starfsemi/starfsleyfi/</permitURL>
+        </permit>
+    </ProductionInstallation>
+    </data>

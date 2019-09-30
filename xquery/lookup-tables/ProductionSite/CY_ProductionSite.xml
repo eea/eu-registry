@@ -1,0 +1,1201 @@
+<data><ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0010000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Electricity Authority of Cyprus, Moni Power Station</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0010000000.SITE" srsDimension="2">
+                <gml:pos>34.71 33.1825</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0020000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Electricity Authority of Cyprus, Dhekelia Power Station</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0020000000.SITE" srsDimension="2">
+                <gml:pos>34.9801 33.7462</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0030000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Electricity Authority of Cyprus, Vassilikos Power Station</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0030000000.SITE" srsDimension="2">
+                <gml:pos>34.7285 33.2898</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0040000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>HELLENIC COPPER MINES LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0040000000.SITE" srsDimension="2">
+                <gml:pos>35.0881 32.8942</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0050000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>MUSKITA ALUMINIUM INDUSTRIES PLC</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0050000000.SITE" srsDimension="2">
+                <gml:pos>34.6702 32.9956</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0060000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>VASSILIKO CEMENT WORKS PUBLIC COMPANY LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0060000000.SITE" srsDimension="2">
+                <gml:pos>34.7217 33.3164</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0070000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Chrysafis Ceramics Ltd </nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0070000000.SITE" srsDimension="2">
+                <gml:pos>34.9075 33.5583</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0080000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Gigas Palekithrou Brick factory Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0080000000.SITE" srsDimension="2">
+                <gml:pos>35.0647 33.3981</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0090000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Gigas Palekithrou Tiles factory Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0090000000.SITE" srsDimension="2">
+                <gml:pos>35.0564 33.3939</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0100000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kakoyiannis Brick factory Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0100000000.SITE" srsDimension="2">
+                <gml:pos>35.0419 33.3903</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0110000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ledra Brick Factory Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0110000000.SITE" srsDimension="2">
+                <gml:pos>34.9861 33.3619</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0120000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Melios &amp; Paphitis Enterprises Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0120000000.SITE" srsDimension="2">
+                <gml:pos>35.0956 33.3936</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0130000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Palekithrou Roof Tiles &amp; Bricks (KAPA) Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0130000000.SITE" srsDimension="2">
+                <gml:pos>35.0808 33.4089</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0140000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>United Brickworks Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0140000000.SITE" srsDimension="2">
+                <gml:pos>35.0478 33.3886</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0150000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>ECOFUEL (CYPRUS) Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0150000000.SITE" srsDimension="2">
+                <gml:pos>34.7219 33.3139</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0160000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>INTEREFINE FUELS LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0160000000.SITE" srsDimension="2">
+                <gml:pos>34.7353 32.9453</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0170000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Advance Medical Waste Management Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0170000000.SITE" srsDimension="2">
+                <gml:pos>34.7311 32.945</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0180000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Innovating Environmental Solutions Center Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0180000000.SITE" srsDimension="2">
+                <gml:pos>34.7369 32.9428</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0190000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>CBp Cyprus Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0190000000.SITE" srsDimension="2">
+                <gml:pos>34.7264 32.9475</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0200000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Epiphaniou Scrap Metals Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0200000000.SITE" srsDimension="2">
+                <gml:pos>34.7463 33.2704</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0210000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Paphos Domestic Waste Management Site</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0210000000.SITE" srsDimension="2">
+                <gml:pos>34.7711 32.5031</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0220000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Larnaka Integrated Waste Management and Disposal Site</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0220000000.SITE" srsDimension="2">
+                <gml:pos>34.9664 33.5056</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0230000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A &amp; A Sfageia Limited</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0230000000.SITE" srsDimension="2">
+                <gml:pos>35.0793 33.1429</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0240000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>CYPRA LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0240000000.SITE" srsDimension="2">
+                <gml:pos>35.0703 33.1072</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0250000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>SIGAN MANAGEMENT LIMITED-Incinerator of animal wastes</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0250000000.SITE" srsDimension="2">
+                <gml:pos>34.855 33.4206</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0260000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>SIGAN MANAGEMENT LIMITED-Rendering Plant</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0260000000.SITE" srsDimension="2">
+                <gml:pos>34.8535 33.4158</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0270000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A.T.I. ENVIRO INDUSTRIALS LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0270000000.SITE" srsDimension="2">
+                <gml:pos>34.85 33.4</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0280000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (A)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0280000000.SITE" srsDimension="2">
+                <gml:pos>35.1656 33.1883</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0290000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (B)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0290000000.SITE" srsDimension="2">
+                <gml:pos>35.1633 33.18</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0300000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD [C]</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0300000000.SITE" srsDimension="2">
+                <gml:pos>35.1781 33.1753</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0310000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (D)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0310000000.SITE" srsDimension="2">
+                <gml:pos>35.1694 33.1747</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0320000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (E)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0320000000.SITE" srsDimension="2">
+                <gml:pos>35.1708 33.1669</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0330000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>NELI EMPORIO KREATON LTD (F)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0330000000.SITE" srsDimension="2">
+                <gml:pos>35.1756 33.1672</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0340000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Tzionis Farm Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0340000000.SITE" srsDimension="2">
+                <gml:pos>35.0391 33.5469</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0350000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>E.G. Kouzali Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0350000000.SITE" srsDimension="2">
+                <gml:pos>35.0431 34.0036</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0360000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Mintikkis &amp; Nikolaidis Bros Ltd-Psimolophou</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0360000000.SITE" srsDimension="2">
+                <gml:pos>35.0653 33.2933</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0370000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A. Mintikkis Farm Ltd-Psimolophou</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0370000000.SITE" srsDimension="2">
+                <gml:pos>35.0675 33.2955</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0380000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A. Mintikkis Farm Ltd-Margi</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0380000000.SITE" srsDimension="2">
+                <gml:pos>35.0081 33.3175</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0390000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A. Mintikkis Farm Ltd-Analiontas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0390000000.SITE" srsDimension="2">
+                <gml:pos>35.0071 33.314</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0400000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Mintikkis Chicken Farm Ltd-Agios Ioannis Malountas</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0400000000.SITE" srsDimension="2">
+                <gml:pos>35.0925 33.1969</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0410000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A. Mintikkis Farm Ltd-Deneia</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0410000000.SITE" srsDimension="2">
+                <gml:pos>35.1742 33.1669</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0420000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>G &amp; G Emporio Farm Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0420000000.SITE" srsDimension="2">
+                <gml:pos>34.7679 33.2038</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0430000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>PARADISIOTIS LTD-Mosfiloti</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0430000000.SITE" srsDimension="2">
+                <gml:pos>34.9697 33.4225</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0440000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>PARADISIOTIS LTD-Peristerona</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0440000000.SITE" srsDimension="2">
+                <gml:pos>35.1138 33.0616</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0450000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>G.C.E. Farmtech Ltd </nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0450000000.SITE" srsDimension="2">
+                <gml:pos>35.1026 33.2314</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0460000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>NAVARRO FARMS LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0460000000.SITE" srsDimension="2">
+                <gml:pos>35.0133 33.3253</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0470000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Andreas Neophytou Andronikou and Sons Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0470000000.SITE" srsDimension="2">
+                <gml:pos>35.1532 33.2523</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0480000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Panagiotis Hadjikyriacos &amp; Son Farm Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0480000000.SITE" srsDimension="2">
+                <gml:pos>35.0562 33.0877</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0490000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kyriakos Tsingis Chirotrophiki Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0490000000.SITE" srsDimension="2">
+                <gml:pos>35.1575 33.1439</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0500000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>C.K. ECONOMOU LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0500000000.SITE" srsDimension="2">
+                <gml:pos>35.0929 33.1649</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0510000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Gyros Farm Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0510000000.SITE" srsDimension="2">
+                <gml:pos>35.1158 33.1</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0520000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>S. P. Lagos Farm Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0520000000.SITE" srsDimension="2">
+                <gml:pos>35.0725 33.4259</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0530000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Farm Georgios Neophytou Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0530000000.SITE" srsDimension="2">
+                <gml:pos>35.1482 33.2515</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0540000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>ZOE'S FARM LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0540000000.SITE" srsDimension="2">
+                <gml:pos>35.1519 33.2522</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0550000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>ANIMALIA-NEOBORN SITE</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0550000000.SITE" srsDimension="2">
+                <gml:pos>35.0117 33.3171</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0560000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>D &amp; F Afxentiou Bros Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0560000000.SITE" srsDimension="2">
+                <gml:pos>34.7708 33.3722</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0570000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>The Concorde Piggery Farm Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0570000000.SITE" srsDimension="2">
+                <gml:pos>35.1017 33.1081</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0580000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Philippos Panagiotou Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0580000000.SITE" srsDimension="2">
+                <gml:pos>35.1133 33.1064</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0590000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>L.A. Top Genetics Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0590000000.SITE" srsDimension="2">
+                <gml:pos>35.0039 33.3167</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0600000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A/foi Andreou Chirostasia Ltd - Dali farm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0600000000.SITE" srsDimension="2">
+                <gml:pos>35.0746 33.4219</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0610000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A/foi Andreou Chirostasia Ltd - Tersephanou farm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0610000000.SITE" srsDimension="2">
+                <gml:pos>34.8467 33.5325</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0620000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A/foi Andreou Chirostasia Ltd - Xylotympou farm</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0620000000.SITE" srsDimension="2">
+                <gml:pos>35.0364 33.7367</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0630000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Andreas Kailas &amp; Sons Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0630000000.SITE" srsDimension="2">
+                <gml:pos>35.0433 33.543</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0640000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Georgios Pantziaros Farming Company Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0640000000.SITE" srsDimension="2">
+                <gml:pos>35.0474 33.5155</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0650000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ioannis Georgiou Piggery Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0650000000.SITE" srsDimension="2">
+                <gml:pos>35.0664 33.0978</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0660000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Nicos Armenis &amp; Sons Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0660000000.SITE" srsDimension="2">
+                <gml:pos>34.76 33.2097</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0670000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>K. K. E. Piggery Farm Ltd (A)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0670000000.SITE" srsDimension="2">
+                <gml:pos>35.1468 33.1399</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0680000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>K. K. E. Piggery Farm Ltd (B)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0680000000.SITE" srsDimension="2">
+                <gml:pos>35.1093 33.1168</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0690000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kousparos Farm Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0690000000.SITE" srsDimension="2">
+                <gml:pos>35.0851 32.9658</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0700000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ch. Nikodimou &amp; Sia Ltd-Kato Moni</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0700000000.SITE" srsDimension="2">
+                <gml:pos>35.0547 33.0882</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0710000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>S. Kastros Farm Ltd </nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0710000000.SITE" srsDimension="2">
+                <gml:pos>35.0897 33.1267</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0720000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ch. Nikodimou &amp; Sia Ltd-Orounta</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0720000000.SITE" srsDimension="2">
+                <gml:pos>35.1108 33.1053</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0730000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>G. &amp; AF. Energy Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0730000000.SITE" srsDimension="2">
+                <gml:pos>34.7689 33.3714</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0740000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>A.F. Athienou Farmers Gas Ltd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0740000000.SITE" srsDimension="2">
+                <gml:pos>35.0336 33.5325</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="CY"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>0750000000.SITE</localId>
+            <namespace>CY.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>CHRISTAKIS N.NEOFYTOU BIOGAS LTD</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_0750000000.SITE" srsDimension="2">
+                <gml:pos>35.1525 33.25</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    </data>

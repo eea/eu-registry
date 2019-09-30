@@ -1,0 +1,2269 @@
+<data><ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>106BH0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC HOLCIM (Romania) SA - Ciment Alesd - co-WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_106BH0111.PART" srsDimension="2">
+                <gml:pos>47.03868 22.33187</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>107PH0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC VEOLIA ENERGIE PRAHOVA S.R.L - LCP: IMA nr. 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_107PH0411.PART" srsDimension="2">
+                <gml:pos>44.88462 26.01097</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>107PH0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC VEOLIA ENERGIE PRAHOVA S.R.L - LCP: IMA nr. 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_107PH0111.PART" srsDimension="2">
+                <gml:pos>44.88217 26.00886</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>110TL0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ENERGOTERM SA - LCP: Cos evacuare gaze de ardere</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_110TL0111.PART" srsDimension="2">
+                <gml:pos>45.17883 28.76569</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BT0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC MODERN CALOR SA - LCP: Cos 11</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BT0111.PART" srsDimension="2">
+                <gml:pos>47.74906 26.63587</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BT0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC MODERN CALOR SA - LCP: Cos 12</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BT0211.PART" srsDimension="2">
+                <gml:pos>47.74903 26.63681</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101CV0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC BIO ELECTRICA TRANSILVANIA SRL - Punct de lucru RECI - LCP: Cos centrala termica biomasa- BIO ELECTRICA Transilvania</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101CV0111.PART" srsDimension="2">
+                <gml:pos>45.84861 25.94804</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102DJ0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SOCIETATEA COMPLEXUL ENERGETIC OLTENIA SA - Sucursala Electrocentrale Craiova II - LCP: cos nr. 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102DJ0211.PART" srsDimension="2">
+                <gml:pos>44.34288 23.81656</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>105CT0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC CRH CIMENT (ROMANIA) SA - PUNCT DE LUCRU MEDGIDIA - co-WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_105CT0111.PART" srsDimension="2">
+                <gml:pos>44.24184 28.30791</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101SV0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC BIOENERGY SUCEAVA SRL - LCP: SC Bioenergy Suceva IMA nr.2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101SV0211.PART" srsDimension="2">
+                <gml:pos>47.65124 26.98588</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101SV0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC BIOENERGY SUCEAVA SRL - LCP: SC Bioenergy Suceva IMA nr.1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101SV0111.PART" srsDimension="2">
+                <gml:pos>47.65213 26.29476</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>103BB0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Vest - LCP: SC ELCEN Bucuresti Vest nr.9</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_103BB0411.PART" srsDimension="2">
+                <gml:pos>44.42197 25.97757</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>104AG0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC HOLCIM ROMANIA SA - co-WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_104AG0111.PART" srsDimension="2">
+                <gml:pos>45.29011 25.11102</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>105BB0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC CET GRIVITA SRL - LCP: cos 2(cazan nr. 3 + cazan nr. 4)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_105BB0111.PART" srsDimension="2">
+                <gml:pos>44.46336 26.05379</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101GJ0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SUCURSALA ELECTROCENTRALE TURCENI - LCP: cos de fum-bloc energetic nr 5 FDG</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101GJ0311.PART" srsDimension="2">
+                <gml:pos>44.66851 23.40679</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101GJ0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SUCURSALA ELECTROCENTRALE TURCENI - LCP: cos de fum-bloc energetic nr.7 FGD</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101GJ0411.PART" srsDimension="2">
+                <gml:pos>44.66808 23.40715</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102GJ0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COMPLEXUL ENERGETIC ROVINARI SA (SUCURSALA ELECTROCENTRALE ROVINARI) - LCP: Cos de fum cazan energetic nr.5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102GJ0311.PART" srsDimension="2">
+                <gml:pos>44.90586 23.13561</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102GJ0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COMPLEXUL ENERGETIC ROVINARI SA (SUCURSALA ELECTROCENTRALE ROVINARI) - LCP: Cos de fum instalatie de desulfurare cazan energetic nr.6</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102GJ0411.PART" srsDimension="2">
+                <gml:pos>44.90573 23.13578</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>103PH0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC LUKOIL ENERGY &amp; GAS ROMANIA SRL - LCP: Cos de fum nr.1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_103PH0111.PART" srsDimension="2">
+                <gml:pos>44.94887 26.08019</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>138BH0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC Electrocentrale Oradea SA - LCP: cosul nr. 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_138BH0211.PART" srsDimension="2">
+                <gml:pos>47.08464 21.89286</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101DB0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC TERMOELECTRICA SA - LCP: Cos nr. 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101DB0111.PART" srsDimension="2">
+                <gml:pos>45.00074 25.39713</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101HD0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC Complexul Energetic Hunedoara S.A. Sucursala Electrocentrale Deva S.A. - LCP: IMA1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101HD0111.PART" srsDimension="2">
+                <gml:pos>45.91324 22.82705</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101VN0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ENET SA Focsani - LCP: cos CAF 50 Gcal /h nr. 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101VN0211.PART" srsDimension="2">
+                <gml:pos>45.68558 27.18165</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102NT0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>HEIDELBERGCEMENT ROMANIA S.A - FABRICA DE CIMENT TASCA - co-WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102NT0111.PART" srsDimension="2">
+                <gml:pos>46.89786 26.02958</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>108BV0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC CRH CIMENT (ROMANIA) SA - co-WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_108BV0111.PART" srsDimension="2">
+                <gml:pos>45.95165 25.28185</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>103PH0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC LUKOIL ENERGY &amp; GAS ROMANIA SRL - LCP: Cos de fum nr.2 CT</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_103PH0211.PART" srsDimension="2">
+                <gml:pos>44.94878 26.07871</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>104SV0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC AMBRO SA - co-WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_104SV0111.PART" srsDimension="2">
+                <gml:pos>47.66257 26.27125</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>108DB0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>HEIDELBERGCEMENT ROMANIA SA -Sucursala Fieni - co-WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_108DB0111.PART" srsDimension="2">
+                <gml:pos>45.12266 25.41758</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>125BH0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC Zaharul SA - LCP: CF2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_125BH0111.PART" srsDimension="2">
+                <gml:pos>47.07846 21.90254</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101AR0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC CET Arad SA - LCP: C2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101AR0211.PART" srsDimension="2">
+                <gml:pos>46.22234 21.32614</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101TM0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COLTERM SA - CET SUD - LCP: COS 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101TM0111.PART" srsDimension="2">
+                <gml:pos>45.70883 21.19781</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>104PH0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC OMV Petrom SA Brazi (cogenerare) - LCP: HRSG-GT1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_104PH0111.PART" srsDimension="2">
+                <gml:pos>44.87989 25.99908</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>104PH0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC OMV Petrom SA Brazi (cogenerare) - LCP: HRSG-GT2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_104PH0211.PART" srsDimension="2">
+                <gml:pos>44.88019 25.99933</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>108HD0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>FABRICA DE CIMENT CHISCADAGA - co-WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_108HD0111.PART" srsDimension="2">
+                <gml:pos>45.95495 22.86643</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>119BB0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Centrala Termica Zonala Casa Presei Libere - LCP: C3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_119BB0111.PART" srsDimension="2">
+                <gml:pos>44.48481 26.06625</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102HD0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SUCURSALA ELECTROCENTRALE PARO&#197;&#382;ENI S.A. - LCP: Cos de evacuare nr. 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102HD0111.PART" srsDimension="2">
+                <gml:pos>45.36615 23.26131</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102TM0511.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COLTERM SA - CET CENTRU - LCP: COS 7</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102TM0511.PART" srsDimension="2">
+                <gml:pos>45.75547 21.24651</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>110AG0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>ENVISAN NV, Belgia Sucursala Pitesti - WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_110AG0111.PART" srsDimension="2">
+                <gml:pos>44.79175 24.94727</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BH0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Termoficare Oradea SA - LCP: SC Termoficare Oradea nr.1 -ITG</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BH0111.PART" srsDimension="2">
+                <gml:pos>47.08211 21.89651</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BH0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Termoficare Oradea SA - LCP: SC Termoficare Oradea nr.3 -CAF 30</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BH0311.PART" srsDimension="2">
+                <gml:pos>47.08182 21.89685</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BH0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Termoficare Oradea SA - LCP: SC Termoficare Oradea nr.2 -CAF 20</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BH0211.PART" srsDimension="2">
+                <gml:pos>47.08172 21.89677</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102VL0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC OLTCHIM SA - WI:</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102VL0111.PART" srsDimension="2">
+                <gml:pos>45.04596 24.29695</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>107PH0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC VEOLIA ENERGIE PRAHOVA S.R.L - LCP: IMA nr.2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_107PH0211.PART" srsDimension="2">
+                <gml:pos>44.88259 26.01083</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>107PH0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC VEOLIA ENERGIE PRAHOVA S.R.L - LCP: IMA nr. 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_107PH0311.PART" srsDimension="2">
+                <gml:pos>44.88192 26.00759</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101CT0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC UZINA TERMOELECTRICA MIDIA S.A. - LCP: PE3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101CT0111.PART" srsDimension="2">
+                <gml:pos>44.34672 28.64892</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101CT0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC UZINA TERMOELECTRICA MIDIA S.A. - LCP: PE4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101CT0211.PART" srsDimension="2">
+                <gml:pos>44.34643 28.64866</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101MS0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SNGN ROMGAZ SA MEDIAS - Sucursala de Productie Energie Electrica Iernut - LCP: 2 tubulaturi de exhaustare - patrate - pentru IMA4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101MS0211.PART" srsDimension="2">
+                <gml:pos>46.46833 24.18457</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101MS0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SNGN ROMGAZ SA MEDIAS - Sucursala de Productie Energie Electrica Iernut - LCP: cos de fum - trunchi de con</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101MS0311.PART" srsDimension="2">
+                <gml:pos>46.46814 24.18269</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>126AR0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>CET Hidrocarburi ARAD - LCP: C6</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_126AR0311.PART" srsDimension="2">
+                <gml:pos>46.18253 21.33392</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>126CJ0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>REGIA AUTONOMA DE TERMOFICARE CLUJ-NAPOCA - LCP: cos evacuare gaze arse</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_126CJ0111.PART" srsDimension="2">
+                <gml:pos>46.78693 23.63281</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102DJ0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SOCIETATEA COMPLEXUL ENERGETIC OLTENIA SA - Sucursala Electrocentrale Craiova II - LCP: cos nr. 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102DJ0111.PART" srsDimension="2">
+                <gml:pos>44.34532 23.81427</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101MS0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SNGN ROMGAZ SA MEDIAS - Sucursala de Productie Energie Electrica Iernut - LCP: 2 tubulaturi de exhaustare - patrate -pentru IMA1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101MS0111.PART" srsDimension="2">
+                <gml:pos>46.46816 24.18389</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101VL0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC CET GOVORA SA - LCP: COS NR4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101VL0311.PART" srsDimension="2">
+                <gml:pos>45.03989 24.28938</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101VL0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC CET GOVORA SA - LCP: COS NR2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101VL0111.PART" srsDimension="2">
+                <gml:pos>45.03885 24.28731</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101VL0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC CET GOVORA SA - LCP: COS NR3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101VL0211.PART" srsDimension="2">
+                <gml:pos>45.03951 24.28809</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102BC0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC THERMOENERGY GROUP SA - LCP: Cos 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102BC0111.PART" srsDimension="2">
+                <gml:pos>46.53026 26.93876</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>106AG0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC OLTCHIM SA Divizia Petrochimica Bradu - LCP: cos comun pentru C121 si C 121 A</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_106AG0111.PART" srsDimension="2">
+                <gml:pos>44.81643 24.92334</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>125IL0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC LEMARCO CRISTAL SRL - LCP: Cos evacuare</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_125IL0111.PART" srsDimension="2">
+                <gml:pos>44.72024 26.59551</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101IS0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>VEOLIA ENERGIE IA&#200;&#732;I SA CET I - LCP: cos fum nr. 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101IS0111.PART" srsDimension="2">
+                <gml:pos>47.14957 27.60403</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101IS0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>VEOLIA ENERGIE IA&#200;&#732;I SA CET I - LCP: cos fum nr. 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101IS0211.PART" srsDimension="2">
+                <gml:pos>47.14935 27.60503</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102TL0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ALUM SA - LCP: Cos evacuare gaze</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102TL0111.PART" srsDimension="2">
+                <gml:pos>45.17891 28.76822</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>103BB0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Vest - LCP: SC ELCEN Bucuresti Vest nr.1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_103BB0111.PART" srsDimension="2">
+                <gml:pos>44.42368 25.97846</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>103BB0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Vest - LCP: SC ELCEN Bucuresti Vest nr.7</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_103BB0211.PART" srsDimension="2">
+                <gml:pos>44.42436 25.97641</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>103BB0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Vest - LCP: SC ELCEN Bucuresti Vest nr.8</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_103BB0311.PART" srsDimension="2">
+                <gml:pos>44.42438 25.97663</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101GJ0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SUCURSALA ELECTROCENTRALE TURCENI - LCP: cos de fum-bloc energetic nr 3 FDG</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101GJ0111.PART" srsDimension="2">
+                <gml:pos>44.66964 23.40592</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101GJ0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SUCURSALA ELECTROCENTRALE TURCENI - LCP: cos de fum-bloc energetic nr 4 FDG</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101GJ0211.PART" srsDimension="2">
+                <gml:pos>44.66924 23.40623</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102CT0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Societatea ELECTROCENTRALE CONSTANTA S.A.-Centrala Termoelectrica Palas - LCP: PALAS 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102CT0311.PART" srsDimension="2">
+                <gml:pos>44.15834 28.60759</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102CT0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Societatea ELECTROCENTRALE CONSTANTA S.A.-Centrala Termoelectrica Palas - LCP: PALAS 1,4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102CT0111.PART" srsDimension="2">
+                <gml:pos>44.15868 28.60748</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102CT0511.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Societatea ELECTROCENTRALE CONSTANTA S.A.-Centrala Termoelectrica Palas - LCP: PALAS 7</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102CT0511.PART" srsDimension="2">
+                <gml:pos>44.15861 28.60783</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102CT0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Societatea ELECTROCENTRALE CONSTANTA S.A.-Centrala Termoelectrica Palas - LCP: PALAS 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102CT0211.PART" srsDimension="2">
+                <gml:pos>44.15825 28.60751</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102CT0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Societatea ELECTROCENTRALE CONSTANTA S.A.-Centrala Termoelectrica Palas - LCP: PALAS 5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102CT0411.PART" srsDimension="2">
+                <gml:pos>44.15847 28.60708</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102GJ0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COMPLEXUL ENERGETIC ROVINARI SA (SUCURSALA ELECTROCENTRALE ROVINARI) - LCP: Cos de fum instalatie de desulfurare cazan energetic nr.3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102GJ0111.PART" srsDimension="2">
+                <gml:pos>44.90692 23.13439</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102GJ0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COMPLEXUL ENERGETIC ROVINARI SA (SUCURSALA ELECTROCENTRALE ROVINARI) - LCP: Cos de fum instalatie de desulfurare cazan energetic nr.4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102GJ0211.PART" srsDimension="2">
+                <gml:pos>44.90676 23.13455</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102IS0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>VEOLIA ENERGIE IA&#200;&#732;I SA CET II - LCP: cos fum nr. 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102IS0111.PART" srsDimension="2">
+                <gml:pos>47.14733 27.71712</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>138BH0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC Electrocentrale Oradea SA - LCP: cosul nr. 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_138BH0111.PART" srsDimension="2">
+                <gml:pos>47.08414 21.89386</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101HD0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC Complexul Energetic Hunedoara S.A. Sucursala Electrocentrale Deva S.A. - LCP: IMA 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101HD0211.PART" srsDimension="2">
+                <gml:pos>45.91279 22.82596</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101HD0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC Complexul Energetic Hunedoara S.A. Sucursala Electrocentrale Deva S.A. - LCP: IMA 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101HD0311.PART" srsDimension="2">
+                <gml:pos>45.91234 22.82482</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101VN0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ENET SA Focsani - LCP: Cos CAF 50 Gcal/h nr. 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101VN0111.PART" srsDimension="2">
+                <gml:pos>45.68604 27.18152</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>130BC0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Thermoenergy Group SA Bacau-CAF - LCP: Cos 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_130BC0111.PART" srsDimension="2">
+                <gml:pos>46.54191 26.91939</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>126AR0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>CET Hidrocarburi ARAD - LCP: C2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_126AR0211.PART" srsDimension="2">
+                <gml:pos>46.18229 21.33274</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>126AR0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>CET Hidrocarburi ARAD - LCP: C7</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_126AR0411.PART" srsDimension="2">
+                <gml:pos>46.18244 21.33411</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>126AR0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>CET Hidrocarburi ARAD - LCP: C1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_126AR0111.PART" srsDimension="2">
+                <gml:pos>46.18234 21.33253</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101AR0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC CET Arad SA - LCP: C1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101AR0111.PART" srsDimension="2">
+                <gml:pos>46.22244 21.32869</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101GL0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE SA GALATI - LCP: SC Electrocentrale Galati SA nr. 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101GL0211.PART" srsDimension="2">
+                <gml:pos>45.43507 27.98291</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101GL0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE SA GALATI - LCP: SC Electrocentrale Galati SA nr. 2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101GL0111.PART" srsDimension="2">
+                <gml:pos>45.43512 27.98118</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101TM0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COLTERM SA - CET SUD - LCP: COS 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101TM0211.PART" srsDimension="2">
+                <gml:pos>45.70978 21.19859</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102BB0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Sud - LCP: SC ELCEN Bucuresti Sud nr.1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102BB0111.PART" srsDimension="2">
+                <gml:pos>44.40535 26.15257</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102TM0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COLTERM SA - CET CENTRU - LCP: COS 3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102TM0111.PART" srsDimension="2">
+                <gml:pos>45.75542 21.24737</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102TM0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COLTERM SA - CET CENTRU - LCP: COS 4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102TM0211.PART" srsDimension="2">
+                <gml:pos>45.75531 21.24734</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102TM0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COLTERM SA - CET CENTRU - LCP: COS 5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102TM0311.PART" srsDimension="2">
+                <gml:pos>45.75536 21.24759</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102TM0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC COLTERM SA - CET CENTRU - LCP: COS 6</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102TM0411.PART" srsDimension="2">
+                <gml:pos>45.75551 21.24627</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>117NT0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC AGRANA ROMANIA SA - LCP: Cos nr 1 CET</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_117NT0111.PART" srsDimension="2">
+                <gml:pos>46.93984 26.91625</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>104BB0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Grozavesti - LCP: SC ELCEN Bucuresti Grozavesti nr.1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_104BB0111.PART" srsDimension="2">
+                <gml:pos>44.43958 26.06343</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BB0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Progresu - LCP: SC ELCEN Bucuresti Progresu nr.2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BB0211.PART" srsDimension="2">
+                <gml:pos>44.37052 26.11006</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BB0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Progresu - LCP: SC ELCEN Bucuresti Progresu nr.3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BB0311.PART" srsDimension="2">
+                <gml:pos>44.37068 26.11011</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BB0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Progresu - LCP: SC ELCEN Bucuresti Progresu nr.4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BB0411.PART" srsDimension="2">
+                <gml:pos>44.37084 26.11015</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BB0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Progresu - LCP: SC ELCEN Bucuresti Progresu nr.1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BB0111.PART" srsDimension="2">
+                <gml:pos>44.37175 26.10846</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101BR0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SOCIETATEA COMPLEXUL ENERGETIC OLTENIA SA-SUCURSALA ELECTROCENTRALE CHISCANI - LCP: cos de evacuare gaze de ardere nr. 1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101BR0111.PART" srsDimension="2">
+                <gml:pos>45.16585 27.92417</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101DJ0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SOCIETATEA COMPLEXUL ENERGETIC OLTENIA SA - SUCURSALA ELECTROCENTRALE ISALNITA - LCP: cos nr.2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101DJ0211.PART" srsDimension="2">
+                <gml:pos>44.38764 23.71711</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101DJ0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SOCIETATEA COMPLEXUL ENERGETIC OLTENIA SA - SUCURSALA ELECTROCENTRALE ISALNITA - LCP: cos nr.1</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101DJ0111.PART" srsDimension="2">
+                <gml:pos>44.38742 23.71726</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>101PH0111.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC Rompetrol Rafinare SA - Rafinaria Vega - LCP: COS CENTRALA TERMICA</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101PH0111.PART" srsDimension="2">
+                <gml:pos>44.96033 26.02395</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102BB0311.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Sud - LCP: SC ELCEN Bucuresti Sud nr.3</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102BB0311.PART" srsDimension="2">
+                <gml:pos>44.40546 26.15442</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102BB0411.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Sud - LCP: SC ELCEN Bucuresti Sud nr.4</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102BB0411.PART" srsDimension="2">
+                <gml:pos>44.40533 26.15464</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102BB0511.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Sud - LCP: SC ELCEN Bucuresti Sud nr.5</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102BB0511.PART" srsDimension="2">
+                <gml:pos>44.40546 26.15469</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="RO"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>102BB0211.PART</localId>
+            <namespace>RO.CAED</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SC ELECTROCENTRALE BUCURESTI SA - Cet Bucuresti Sud - LCP: SC ELCEN Bucuresti Sud nr.2</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102BB0211.PART" srsDimension="2">
+                <gml:pos>44.40502 26.15404</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    </data>
