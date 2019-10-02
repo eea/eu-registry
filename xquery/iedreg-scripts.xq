@@ -153,7 +153,7 @@ declare function scripts:getLastYear(
 
 declare function scripts:normalize($url as xs:string) as xs:string {
 (: replace($url, 'http://dd\.eionet\.europa\.eu/vocabulary[a-z]*/euregistryonindustrialsites/', '') :)
-    replace($url, 'http://dd\.eionet\.europa\.eu/vocabulary[a-z]*/euregistryonindustrialsites/[a-zA-Z0-9]+/', '')
+    replace($url, 'http://dd\.eionet\.europa\.eu/vocabulary[a-z]*/euregistryonindustrialsites/[a-zA-Z0-9]+/?', '')
 };
 
 declare function scripts:is-empty($item as item()*) as xs:boolean {
@@ -2566,9 +2566,11 @@ declare function scripts:checkActivityContinuity(
             else $xAct
 
         where not(scripts:is-empty($yAct))
+        where not(scripts:normalize(fn:string-join($yAct, ', ')) = '')
         where not($xAct = $yAct)
         where $activityName != 'EPRTRAnnexIActivity'
                 or ($activityName = 'EPRTRAnnexIActivity' and $act/local-name() = 'mainActivity')
+
         return [$feature/local-name(), $idFeature/text(), $act/local-name(),
             scripts:normalize($xAct), scripts:normalize(fn:string-join($yAct, ', '))]
 
