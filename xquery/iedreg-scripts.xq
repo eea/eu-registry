@@ -179,10 +179,17 @@ declare function scripts:getParent($e as element()) as element() {
     $e/ancestor-or-self::*[fn:matches(local-name(), '^Production[a-zA-Z]')]
 };
 
+declare function scripts:prettyFormatInspireId(
+    $inspireId as element()
+) as xs:string {
+    $inspireId//*:namespace || "/" || $inspireId//*:localId
+};
+
 declare function scripts:getInspireId($e as element()) as element()* {
     let $parent := scripts:getParent($e)
+    let $inspireId := $parent/*:inspireId
 (:    return $parent/*:inspireId//*:localId :)
-    return element IID { $parent/*:inspireId//*:namespace || "/" || $parent/*:inspireId//*:localId } 
+    return element IID { scripts:prettyFormatInspireId($inspireId) }
 };
 
 declare function scripts:getGmlId($e as element()) as xs:string {
@@ -719,8 +726,11 @@ declare function scripts:checkAmountOfInspireIds(
         database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'inspireId')
     )
 
-    let $xIDs := $seq//base:localId
-    let $yIDs := $fromDB//*:localId
+    (:let $xIDs := $seq//base:localId:)
+    (:let $yIDs := $fromDB//*:localId:)
+
+    let $xIDs := $seq
+    let $yIDs := $fromDB
 
     let $data :=
         for $id in $xIDs
@@ -729,7 +739,9 @@ declare function scripts:checkAmountOfInspireIds(
         where not($id = $yIDs)
         return map {
         "marks": (2),
-        "data": ($p/local-name(), <span class="iedreg nowrap">{$id/text()}</span>)
+        "data": (
+            $p/local-name(),
+            <span class="iedreg nowrap">{scripts:prettyFormatInspireId($id)}</span>)
         }
 
     let $ratio := if(count($yIDs) = 0) then 1 else count($data) div count($yIDs)
@@ -830,7 +842,7 @@ declare function scripts:checkInspireIdBlank(
         let $localId := $f/*:inspireId//*:localId
         let $namespace := $f/*:inspireId//*:namespace
 
-        let $gmlId := scripts:getGmlId($f)
+        (:let $gmlId := scripts:getGmlId($f):)
         let $feature := $f/local-name()
 
         where functx:if-empty($localId, '') = '' or functx:if-empty($namespace, '') = ''
@@ -1564,12 +1576,10 @@ declare function scripts:checkMissing(
 
     let $data :=
         for $id in $fromDB
-        where not($id//*:localId = $seq//*:localId)
+        where not($id = $seq)
 
         let $p := scripts:getParent($id)
         where $p/local-name() = $featureName
-
-        let $id := $id//*:localId/text()
 
         let $status := $p//pf:statusType
         let $status := replace($status/@xlink:href, '/+$', '')
@@ -1580,7 +1590,7 @@ declare function scripts:checkMissing(
         "marks" : (2),
         "data" : (
             $featureName,
-            <span class="iedreg nowrap">{$id}</span>,
+            <span class="iedreg nowrap">{$id/scripts:prettyFormatInspireId(.)}</span>,
             $status
         )
         }
@@ -1621,11 +1631,11 @@ declare function scripts:checkMissingSites(
 
     let $data1 :=
         for $facility in $seq
-            let $inspireId := $facility/*:inspireId//*:localId/data()
+            let $inspireId := $facility/*:inspireId
             let $hostingSite := $facility/*[local-name() = 'hostingSite']
                     /@xlink:href/data() => functx:if-empty('')
             let $fromDBhostingSite := $fromDB/descendant-or-self::*:ProductionFacility
-                [*:inspireId//*:localId = $inspireId]/hostingSite
+                [*:inspireId = $inspireId]/hostingSite
                     /@xlink:href/data() => functx:if-empty('')
 
             where not($hostingSite = $fromDBhostingSite)
@@ -1634,7 +1644,7 @@ declare function scripts:checkMissingSites(
             "marks" : (4),
             "data" : (
                 $featureName,
-                $inspireId,
+                $inspireId/scripts:prettyFormatInspireId(.),
                 $hostingSite,
                 $fromDBhostingSite (:'bla':)
             )
