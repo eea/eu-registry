@@ -1978,4 +1978,2017 @@
 			<pf:validFrom xsi:nil="true"/>
         </status>
     </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>520303-4210</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520303-4210" srsDimension="2">
+                <gml:pos>65.033756 -14.099652</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Alcoa Fjar&#240;a&#225;l</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Alcoa inc.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>alcoa.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_520303-4210.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>520412-0930</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520412-0930" srsDimension="2">
+                <gml:pos>64.798 -14.452</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Fiskeldi Austfjar&#240;a</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Fiskeldi Austfjar&#240;a</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.icefishfarm.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_520412-0930.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>530697-2829</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_530697-2829" srsDimension="2">
+                <gml:pos>64.696 -22.144</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sorpur&#240;un Vesturlands hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sorpur&#240;un Vesturlands hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://ssv.is/sorpurdun-vesturlands/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_530697-2829.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>531278-0469</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_531278-0469" srsDimension="2">
+                <gml:pos>64.027079 -22.571978</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Kalka</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sorpey&#240;ingarst&#246;&#240; Su&#240;urnesja</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://kalka.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_531278-0469.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>560206-0620</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_560206-0620" srsDimension="2">
+                <gml:pos>65.712241 -20.266375</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Nor&#240;ur&#225; bs.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Nor&#240;ur&#225; bs.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.stekkjarvik.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_560206-0620.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>570269-7479</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479" srsDimension="2">
+                <gml:pos>65.142675 -13.733939</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>S&#237;ldarvinnslan hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>S&#237;ldarvinnslan hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.svn.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_570269-7479.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>570297-2609</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570297-2609" srsDimension="2">
+                <gml:pos>64.363836 -21.773782</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Nor&#240;ur&#225;l Grundartangi ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Nor&#240;ur&#225;l ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://nordural.is/en/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_570297-2609.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>580310-0600</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_580310-0600" srsDimension="2">
+                <gml:pos>65.702 -23.655</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Arnarlax hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Arnarlax hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.arnarlax.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_580310-0600.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>590183-0249</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590183-0249" srsDimension="2">
+                <gml:pos>65.76056 -19.65151</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Steinull hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Steinull hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://steinull.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_590183-0249.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>590207-0120</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590207-0120" srsDimension="2">
+                <gml:pos>65.70213 -18.11546</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Becromal Iceland ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Becromal Iceland ehf</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.becromal.eu/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_590207-0120.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>541185-0389</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_541185-0389" srsDimension="2">
+                <gml:pos>64.313897 -22.085689</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>HB Grandi hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>HB Grandi hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.hbgrandi.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_541185-0389.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>541185-0389x</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_541185-0389x" srsDimension="2">
+                <gml:pos>65.755212 -14.825019</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>HB Grandi hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>HB Grandi hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.hbgrandi.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_541185-0389x.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>660169-1219</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660169-1219" srsDimension="2">
+                <gml:pos>63.442985 -20.271279</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>&#205;sf&#233;lag Vestmannaeyja hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>&#205;sf&#233;lag Vestmannaeyja hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://isfelag.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_660169-1219.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>660169-1219x</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660169-1219x" srsDimension="2">
+                <gml:pos>66.197413 -15.337052</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>&#205;sf&#233;lag Vestmannaeyja hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>&#205;sf&#233;lag Vestmannaeyja hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://isfelag.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_660169-1219x.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>581201-2650</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_581201-2650" srsDimension="2">
+                <gml:pos>64.929892 -14.011421</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Lo&#240;nuvinnslan hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Lo&#240;nuvinnslan hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://http://lvf.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_581201-2650.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>480169-2989</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_480169-2989" srsDimension="2">
+                <gml:pos>64.24714 -15.196106</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Skinney-&#222;inganes hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Skinney-&#222;inganes hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.sth.is/EN/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_480169-2989.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>570269-7479x</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479x" srsDimension="2">
+                <gml:pos>64.023303 -22.559746</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>S&#237;ldarvinnslan hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>S&#237;ldarvinnslan hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.svn.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_570269-7479x.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>430700-2270</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_430700-2270" srsDimension="2">
+                <gml:pos>64.856 -22.275</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Alur &#225;lvinnsla</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Alur &#225;lvinnsla</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.alur.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_430700-2270.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>471103-2330x</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330x" srsDimension="2">
+                <gml:pos>64.411082 -21.754301</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Matfugl ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Matfugl ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>matfugl.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_471103-2330x.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>471103-2330y</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330y" srsDimension="2">
+                <gml:pos>64.267923 -21.857205</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Matfugl ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Matfugl ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>matfugl.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_471103-2330y.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>471103-2330</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330" srsDimension="2">
+                <gml:pos>65.95225 -18.55598333</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Matfugl ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Matfugl ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>matfugl.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_471103-2330.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>471103-2330z</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330z" srsDimension="2">
+                <gml:pos>64.21338333333 -21.7837</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Matfugl ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Matfugl ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>matfugl.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_471103-2330z.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>500412-0540</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_500412-0540" srsDimension="2">
+                <gml:pos>63.833589 -22.496957</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Matorka ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Matorka ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>matorka.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_500412-0540.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>501213-1870</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_501213-1870" srsDimension="2">
+                <gml:pos>64.153086 -21.95526</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Orkuveita Reykjav&#237;kur</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Orkuveita Reykjav&#237;kur</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>or.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_501213-1870.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>501213-1870x</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_501213-1870x" srsDimension="2">
+                <gml:pos>64.150226 -21.889062</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Orkuveita Reykjav&#237;kur</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Orkuveita Reykjav&#237;kur</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>or.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_501213-1870x.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>510588-1189</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_510588-1189" srsDimension="2">
+                <gml:pos>64.18864 -21.745897</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sorpa bs.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sorpa bs.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>sorpa.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_510588-1189.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>520199-3149</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520199-3149" srsDimension="2">
+                <gml:pos>66.0202 -22.592</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>H&#225;afell ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Hra&#240;frystih&#250;si&#240; - Gunnv&#246;r hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.frosti.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_520199-3149.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>630169-4299</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_630169-4299" srsDimension="2">
+                <gml:pos>65.4517 -14.1734</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Eskja hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Eskja hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://eskja.is/en/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_630169-4299.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>470698-2099</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_470698-2099" srsDimension="2">
+                <gml:pos>64.9874432 -13.8949545</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sorpst&#246;&#240; Fjar&#240;abygg&#240;ar</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sorpst&#246;&#240; Fjar&#240;abygg&#240;ar</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.fjardabyggd.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_470698-2099.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>540610-1930</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_540610-1930" srsDimension="2">
+                <gml:pos>64.213034 -21.472948</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>GMR Endurvinnslan ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>GMR Endurvinnslan ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>ust.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_540610-1930.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>570269-7479y</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479y" srsDimension="2">
+                <gml:pos>65.2722 -13.981213</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>S&#237;ldarvinnslan hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>S&#237;ldarvinnslan hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.svn.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_570269-7479y.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>700269-3299</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_700269-3299" srsDimension="2">
+                <gml:pos>63.443535 -20.278911</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Vinnslust&#246;&#240;in &#237; Vestmannaeyjum</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Vinnslust&#246;&#240;in hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://vsv.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_700269-3299.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>580169-7249</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_580169-7249" srsDimension="2">
+                <gml:pos>63.945292 -20.834719</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Orkuger&#240;in ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Orkuger&#240;in ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>ust.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_580169-7249.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>681197-2819</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_681197-2819" srsDimension="2">
+                <gml:pos>66.15093 -18.902417</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Primex ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Primex ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.primex.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_681197-2819.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/4(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>500210-1250</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_500210-1250" srsDimension="2">
+                <gml:pos>64.02723 -22.560742</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Thorsil ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Thorsil ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>ust.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_500210-1250.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>600407-0580</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600407-0580" srsDimension="2">
+                <gml:pos>65.67783 -17.723</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Molta ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Molta ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.molta.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_600407-0580.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>600667-0179</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600667-0179" srsDimension="2">
+                <gml:pos>64.406309 -22.02563</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Stj&#246;rnugr&#237;s hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Stj&#246;rnugr&#237;s hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.stjornugris.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_600667-0179.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610406-1060</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060" srsDimension="2">
+                <gml:pos>64.016265 -22.209781</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Samherji fiskeldi ehf., Vatnsleysa</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Samherji ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.samherji.is/en</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_610406-1060.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610406-1060x</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060x" srsDimension="2">
+                <gml:pos>63.816497 -22.530642</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>&#205;slandsbleikja ehf.,Sta&#240;ur</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Samherji ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.samherji.is/en</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_610406-1060x.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610911-0480</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610911-0480" srsDimension="2">
+                <gml:pos>64.01 -22.3</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Stolt Sea Farm S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Stolt Sea Farm Iceland Holdings hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.stolt-nielsen.com/en/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_610911-0480.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>630191-1579</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_630191-1579" srsDimension="2">
+                <gml:pos>64.237045 -21.814935</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Stj&#246;rnuegg hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Stj&#246;rnuegg hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://egg.is/vorur/egg/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_630191-1579.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>640675-0209</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_640675-0209" srsDimension="2">
+                <gml:pos>64.357596 -21.785483</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Elkem &#205;sland ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>China National Blue Star - Elkem ASA</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>elkem.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_640675-0209.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>641109-1770</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_641109-1770" srsDimension="2">
+                <gml:pos>65.65 -23.67116667</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Fjar&#240;alax ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Fjar&#240;alax ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.arnarlax.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_641109-1770.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>650603-3030</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_650603-3030" srsDimension="2">
+                <gml:pos>66.035 -23.0</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>&#205;S47 ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>&#205;S 47 ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>ust.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_650603-3030.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>650903-2180</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_650903-2180" srsDimension="2">
+                <gml:pos>63.87139 -20.578631</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Reykjagar&#240;ur hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Reykjagar&#240;ur hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.holta.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_650903-2180.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>660214-1190</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660214-1190" srsDimension="2">
+                <gml:pos>64.02425 -22.56357</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sameina&#240; S&#237;l&#237;kon hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sameina&#240; S&#237;likon hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>ust.is</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_660214-1190.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>680466-0179</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_680466-0179" srsDimension="2">
+                <gml:pos>64.046185 -22.02865</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Rio Tinto &#225; &#205;slandi hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Rio Tinto Alcan inc.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://riotinto.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_680466-0179.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>680601-2670</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_680601-2670" srsDimension="2">
+                <gml:pos>65.685227 -23.597201</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>&#205;slenska Kalk&#254;&#246;rungaf&#233;lagi&#240;</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Celtic Sea Minerals Ltd.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://iskalk.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_680601-2670.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>700807-0450</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_700807-0450" srsDimension="2">
+                <gml:pos>65.890984 -23.603896</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Arctic Sea Farm D&#253;rafj&#246;r&#240;ur</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Arctic Sea Farm</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.arcticfish.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_700807-0450.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>711203-2140</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_711203-2140" srsDimension="2">
+                <gml:pos>64.002217 -22.21349</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Nesb&#250;egg ehf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Nesb&#250;egg ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.nesbu.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_711203-2140.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610406-1060y</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060y" srsDimension="2">
+                <gml:pos>66.188947 -16.489556</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>amherji fiskeldi N&#250;psm&#253;ri &#214;xarfj&#246;r&#240;ur</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Samherji ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.samherji.is/en</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_610406-1060y.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>430894-2349</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_430894-2349" srsDimension="2">
+                <gml:pos>65.485 -18.048</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>&#205;slandslax hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>&#205;slandslax hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.islandslax.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_430894-2349.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>440400-3430</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_440400-3430" srsDimension="2">
+                <gml:pos>65.205861 -13.872667</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Samherji ehf. Mj&#243;ifj&#246;r&#240;ur</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Samherji ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.samherji.is/en</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_440400-3430.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610406-1060z</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060z" srsDimension="2">
+                <gml:pos>65.748889 -18.143056</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Samherji ehf. Eyjafj&#246;r&#240;ur</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Samherji ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.samherji.is/en</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_610406-1060z.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>590398-2099</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590398-2099" srsDimension="2">
+                <gml:pos>64.213034 -21.472948</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Alur &#225;lvinnsla hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Alur &#225;lvinnsla</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.alur.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_590398-2099.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>530306-0540</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_530306-0540" srsDimension="2">
+                <gml:pos>63.8783122 -22.4371722</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>CRI hf.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>CRI hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.carbonrecycling.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_530306-0540.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/4(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>600893-2469</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600893-2469" srsDimension="2">
+                <gml:pos>63.808456 -20.313404</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sorpst&#246;&#240; Rang&#225;rvallars&#253;slu Str&#246;nd</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sorpst&#246;&#240; Rang&#225;rvallars&#253;slu</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.ry.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_600893-2469.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>420481-0719</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_420481-0719" srsDimension="2">
+                <gml:pos>63.942038 -21.132567</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sorpst&#246;&#240; Su&#240;urlands Kirkjuferjuhj&#225;leiga</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sorpst&#246;&#240; Su&#240;urlands bs.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.sorpstodsudurlands.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_420481-0719.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>621205-1370</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_621205-1370" srsDimension="2">
+                <gml:pos>65.016 -13.966278</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Laxar Fiskeldi ehf. Rey&#240;arfj&#246;r&#240;ur</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Laxar fiskeldi ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://laxar.is/en/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_621205-1370.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>421111-1380</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_421111-1380" srsDimension="2">
+                <gml:pos>63.845644 -21.404275</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>N&#225;tt&#250;ra fiskir&#230;kt ehf. &#222;orl&#225;ksh&#246;fn</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>N&#225;tt&#250;ra fiskir&#230;kt ehf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.arcticcharr.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_421111-1380.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>450612-0140</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_450612-0140" srsDimension="2">
+                <gml:pos>66.066959 -17.34345</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>PCC BakkiSilicon</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>PCC BakkiSilicon hf.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.pcc.is/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_450612-0140.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
     </data>

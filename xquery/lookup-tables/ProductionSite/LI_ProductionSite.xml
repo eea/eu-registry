@@ -1,0 +1,33 @@
+<data><ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LI"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001.SITE</localId>
+            <namespace>LI.LLV.AU</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Herbert Ospelt Anstalt</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001.SITE" srsDimension="2">
+                <gml:pos>47.198841623587 9.50222206176153</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="LI"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002.SITE</localId>
+            <namespace>LI.LLV.AU</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>ThyssenKrupp Presta AG</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002.SITE" srsDimension="2">
+                <gml:pos>47.207611061 9.528736737</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    </data>

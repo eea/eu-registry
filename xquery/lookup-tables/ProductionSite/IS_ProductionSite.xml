@@ -958,4 +958,980 @@
             </gml:Point>
         </location>
     </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610406-1060z.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Samherji ehf. Eyjafj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060z.SITE" srsDimension="2">
+                <gml:pos>65.748889 -18.143056</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>590398-2099.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Alur &#225;lvinnsla ehf.</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590398-2099.SITE" srsDimension="2">
+                <gml:pos>64.213034 -21.472948</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>530306-0540.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>CRI hf. Svartsengi</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_530306-0540.SITE" srsDimension="2">
+                <gml:pos>63.8783122 -22.4371722</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>630169-4299.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Eskja hf. Eskifj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_630169-4299.SITE" srsDimension="2">
+                <gml:pos>65.4517 -14.1734</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>470698-2099.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Fjar&#240;abygg&#240; ur&#240;unarsta&#240;ur &#222;ernunesi</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_470698-2099.SITE" srsDimension="2">
+                <gml:pos>64.9874432 -13.8949545</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>540610-1930.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>GMR Endurvinnslan ehf. Grundartangi</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_540610-1930.SITE" srsDimension="2">
+                <gml:pos>64.213034 -21.472948</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>541185-0389.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>HB Grandi hf. Fiskimj&#246;lsverksmi&#240;ja Akranes</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_541185-0389.SITE" srsDimension="2">
+                <gml:pos>64.313897 -22.085689</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>541185-0389x.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>HB Grandi hf. Fiskimj&#246;lsverksmi&#240;ja Vopnafj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_541185-0389x.SITE" srsDimension="2">
+                <gml:pos>65.755212 -14.825019</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>660169-1219.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>&#205;sf&#233;lag Vestmannaeyja Fiskimj&#246;lsverksmi&#240;ja</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660169-1219.SITE" srsDimension="2">
+                <gml:pos>63.442985 -20.271279</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>660169-1219x.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>&#205;sf&#233;lag Vestmannaeyja Fiskimj&#246;lsverksmi&#240;ja &#222;&#243;rsh&#246;fn</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660169-1219x.SITE" srsDimension="2">
+                <gml:pos>66.197413 -15.337052</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>581201-2650.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Lo&#240;nuvinnslan hf. F&#225;skr&#250;&#240;sfj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_581201-2650.SITE" srsDimension="2">
+                <gml:pos>64.929892 -14.011421</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>480169-2989.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Skinney &#222;inganes Fiskimj&#246;lsverksmi&#240;ja Hornafj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_480169-2989.SITE" srsDimension="2">
+                <gml:pos>64.24714 -15.196106</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>570269-7479x.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>S&#237;ldarvinnslan - Fiskimj&#246;lsverksmi&#240;ja Helguv&#237;k</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479x.SITE" srsDimension="2">
+                <gml:pos>64.023303 -22.559746</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>570269-7479y.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>S&#237;ldarvinnslan - Fiskimj&#246;lsverksmi&#240;ja Sey&#240;isfj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479y.SITE" srsDimension="2">
+                <gml:pos>65.2722 -13.981213</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>700269-3299.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Vinnslust&#246;&#240;in hf. Vestmannaeyjar</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_700269-3299.SITE" srsDimension="2">
+                <gml:pos>63.443535 -20.278911</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>580169-7249.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Orkuger&#240;in ehf.</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_580169-7249.SITE" srsDimension="2">
+                <gml:pos>63.945292 -20.834719</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>681197-2819.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Primex ehf. Siglufj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_681197-2819.SITE" srsDimension="2">
+                <gml:pos>66.15093 -18.902417</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>500210-1250.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Thorsil ehf. Helguv&#237;k</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_500210-1250.SITE" srsDimension="2">
+                <gml:pos>64.02723 -22.560742</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>600893-2469.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ur&#240;unarsta&#240;ur Str&#246;nd</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600893-2469.SITE" srsDimension="2">
+                <gml:pos>63.808456 -20.313404</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>420481-0719.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Ur&#240;unarsta&#240;ur Kirkjuferjuhj&#225;leiga</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_420481-0719.SITE" srsDimension="2">
+                <gml:pos>63.942038 -21.132567</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>621205-1370.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Laxar Fiskeldi Rey&#240;arfj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_621205-1370.SITE" srsDimension="2">
+                <gml:pos>65.016 -13.966278</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>421111-1380.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Fiskeldi &#222;orl&#225;ksh&#246;fn</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_421111-1380.SITE" srsDimension="2">
+                <gml:pos>63.845644 -21.404275</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>450612-0140.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>PCC Bakki</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_450612-0140.SITE" srsDimension="2">
+                <gml:pos>66.066959 -17.34345</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>430700-2270.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Alur &#225;lvinnsla</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_430700-2270.SITE" srsDimension="2">
+                <gml:pos>64.856 -22.275</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>471103-2330x.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Matfugl Hur&#240;arbak</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330x.SITE" srsDimension="2">
+                <gml:pos>64.411082 -21.754301</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>471103-2330y.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Matfugl Melavellir</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330y.SITE" srsDimension="2">
+                <gml:pos>64.267923 -21.857205</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>471103-2330.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Matfugl Ytra-Holti</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330.SITE" srsDimension="2">
+                <gml:pos>65.95225 -18.55598333</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>471103-2330z.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Matfugl M&#243;ar</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_471103-2330z.SITE" srsDimension="2">
+                <gml:pos>64.21338333333 -21.7837</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>500412-0540.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Matorka ehf.</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_500412-0540.SITE" srsDimension="2">
+                <gml:pos>63.833589 -22.496957</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>501213-1870.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Fr&#225;veita - Veitur, &#193;nanaust</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_501213-1870.SITE" srsDimension="2">
+                <gml:pos>64.153086 -21.95526</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>501213-1870x.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Fr&#225;veita - Veitur, Klettag&#246;r&#240;um</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_501213-1870x.SITE" srsDimension="2">
+                <gml:pos>64.150226 -21.889062</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>510588-1189.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Sorpa &#193;lfsnes</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_510588-1189.SITE" srsDimension="2">
+                <gml:pos>64.18864 -21.745897</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>520199-3149.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>H&#225;afell ehf. sj&#243;kv&#237;aeldi &#237; &#193;lfta- og Sey&#240;isfir&#240;i</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520199-3149.SITE" srsDimension="2">
+                <gml:pos>66.0202 -22.592</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>520303-4210.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Alcoa Fjar&#240;a&#225;l</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520303-4210.SITE" srsDimension="2">
+                <gml:pos>65.033756 -14.099652</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>520412-0930.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Fiskeldi Austfjar&#240;a - Gl&#237;meyri, Berufir&#240;i</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_520412-0930.SITE" srsDimension="2">
+                <gml:pos>64.798 -14.452</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>530697-2829.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Sorpur&#240;un Vesturlands F&#237;flholt</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_530697-2829.SITE" srsDimension="2">
+                <gml:pos>64.696 -22.144</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>531278-0469.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Kalka</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_531278-0469.SITE" srsDimension="2">
+                <gml:pos>64.027079 -22.571978</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>560206-0620.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Nor&#240;ur&#225; bs.</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_560206-0620.SITE" srsDimension="2">
+                <gml:pos>65.712241 -20.266375</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>570269-7479.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>S&#237;ldarvinnslan - Fiskimj&#246;lsverksmi&#240;ja Neskaupsta&#240;</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570269-7479.SITE" srsDimension="2">
+                <gml:pos>65.142675 -13.733939</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>570297-2609.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Nor&#240;ur&#225;l Grundartangi</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_570297-2609.SITE" srsDimension="2">
+                <gml:pos>64.363836 -21.773782</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>580310-0600.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Arnarlax</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_580310-0600.SITE" srsDimension="2">
+                <gml:pos>65.702 -23.655</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>590183-0249.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Steinull hf.</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590183-0249.SITE" srsDimension="2">
+                <gml:pos>65.76056 -19.65151</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>590207-0120.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Becromal Iceland ehf.</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_590207-0120.SITE" srsDimension="2">
+                <gml:pos>65.70213 -18.11546</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>600407-0580.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Molta ehf.</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600407-0580.SITE" srsDimension="2">
+                <gml:pos>65.67783 -17.723</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>600667-0179.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Stj&#246;rnugr&#237;s Melar, Melasveit</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_600667-0179.SITE" srsDimension="2">
+                <gml:pos>64.406309 -22.02563</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610406-1060.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Samherji fiskeldi ehf., Vatnsleysa</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060.SITE" srsDimension="2">
+                <gml:pos>64.016265 -22.209781</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610406-1060x.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Samherji fiskeldi ehf., Sta&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060x.SITE" srsDimension="2">
+                <gml:pos>63.816497 -22.530642</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610911-0480.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Stolt Sea Farm S.A. Reykjanesi</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610911-0480.SITE" srsDimension="2">
+                <gml:pos>64.01 -22.3</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>630191-1579.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Stj&#246;rnuegg Vall&#225;</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_630191-1579.SITE" srsDimension="2">
+                <gml:pos>64.237045 -21.814935</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>640675-0209.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Elkem Grundartangi</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_640675-0209.SITE" srsDimension="2">
+                <gml:pos>64.357596 -21.785483</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>641109-1770.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Fjar&#240;alax Fossfj&#246;r&#240;ur(Arnarfj&#246;r&#240;ur)</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_641109-1770.SITE" srsDimension="2">
+                <gml:pos>65.65 -23.67116667</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>650603-3030.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>&#205;S47 ehf. &#214;nundarfj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_650603-3030.SITE" srsDimension="2">
+                <gml:pos>66.035 -23.0</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>650903-2180.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Reykjagar&#240;ur hf. &#193;smundarsta&#240;ir</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_650903-2180.SITE" srsDimension="2">
+                <gml:pos>63.87139 -20.578631</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>660214-1190.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Sameina&#240; S&#237;likon hf. Reykjanesb&#230;r</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_660214-1190.SITE" srsDimension="2">
+                <gml:pos>64.02425 -22.56357</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>680466-0179.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Rio Tinto &#225; &#205;slandi Straumsv&#237;k</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_680466-0179.SITE" srsDimension="2">
+                <gml:pos>64.046185 -22.02865</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>680601-2670.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>&#205;slenska Kalk&#254;&#246;rungaf&#233;lagi&#240; B&#237;ldudalur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_680601-2670.SITE" srsDimension="2">
+                <gml:pos>65.685227 -23.597201</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>700807-0450.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Arctic Sea Farm D&#253;rafj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_700807-0450.SITE" srsDimension="2">
+                <gml:pos>65.890984 -23.603896</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>711203-2140.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Nesb&#250;egg ehf. Vogar</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_711203-2140.SITE" srsDimension="2">
+                <gml:pos>64.002217 -22.21349</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>610406-1060y.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Samherji fiskeldi N&#250;psm&#253;ri &#214;xarfj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_610406-1060y.SITE" srsDimension="2">
+                <gml:pos>66.188947 -16.489556</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>430894-2349.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>&#205;slandslax hf. Eyjafj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_430894-2349.SITE" srsDimension="2">
+                <gml:pos>65.485 -18.048</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+    <ProductionSite xmlns:xlink="http://www.w3.org/1999/xlink">
+        <countryId xlink:href="IS"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>440400-3430.SITE</localId>
+            <namespace>IS.CAED</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>Samherji ehf. Mj&#243;ifj&#246;r&#240;ur</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_440400-3430.SITE" srsDimension="2">
+                <gml:pos>65.205861 -13.872667</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
     </data>

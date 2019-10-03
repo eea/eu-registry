@@ -1,0 +1,67 @@
+<data><ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LI"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001.FACILITY</localId>
+            <namespace>LI.LLV.AU</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001.FACILITY" srsDimension="2">
+                <gml:pos>47.198841623587 9.50222206176153</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Herbert Ospelt Anstalt</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Herbert Ospelt Anstalt</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.ospelt.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_001.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/8(b)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LI"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002.FACILITY</localId>
+            <namespace>LI.LLV.AU</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002.FACILITY" srsDimension="2">
+                <gml:pos>47.207611061 9.528736737</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>ThyssenKrupp Presta AG</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ThyssenKrupp Presta AG</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.thyssenkrupp.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_002.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    </data>

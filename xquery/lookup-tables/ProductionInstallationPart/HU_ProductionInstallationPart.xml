@@ -1008,6 +1008,1035 @@
     </ProductionInstallationPart>
     <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>102144241T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Hamburger Hung&#225;ria KFT. - 2. G&#337;z &#233;s villamos energia el&#337;&#225;ll&#237;t&#225;s (CFBC kaz&#225;n)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102144241T2.PART" srsDimension="2">
+                <gml:pos>46.92113 18.940022</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100452988T3.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Hungrana Kft. - 3. g&#225;zturbin&#225;s &#252;zemi er&#337;m&#369;</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100452988T3.PART" srsDimension="2">
+                <gml:pos>47.08588 18.719982</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101537691T4.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>LAFARGE Magyarorsz&#225;g Kft. - 4. klinkergy&#225;rt&#225;s m&#225;sodlagos nyers- &#233;s t&#252;zel&#337;anyagok felhaszn&#225;l&#225;s&#225;val</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101537691T4.PART" srsDimension="2">
+                <gml:pos>46.016013 17.98419</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100354501T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Magyar Cukor Zrt. - 1. G&#336;Z &#201;S VILLAMOSENERGIA TERMEL&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100354501T1.PART" srsDimension="2">
+                <gml:pos>46.356176 17.811303</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100327538T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>M&#225;trai Er&#337;m&#369; Zrt. - 2. Barnak&#337;sz&#233;n b&#225;zis&#250; villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100327538T2.PART" srsDimension="2">
+                <gml:pos>47.788452 20.067043</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100327538T3.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>M&#225;trai Er&#337;m&#369; Zrt. - 3. G&#225;zb&#225;zis&#250;  villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100327538T3.PART" srsDimension="2">
+                <gml:pos>47.788452 20.067043</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368313T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MOL Magyar Olaj- &#233;s G&#225;zipari Nyrt. - 1. H&#336;ERMEL&#201;S G&#193;ZT&#220;ZEL&#201;S&#368; CS&#336;KEMENC&#201;BEN</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368313T1.PART" srsDimension="2">
+                <gml:pos>47.288829 18.896743</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368313T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MOL Magyar Olaj- &#233;s G&#225;zipari Nyrt. - 2. H&#336;TERMEL&#201;S VEGYES T&#220;ZEL&#201;S&#368; CS&#336;KEMENC&#201;BEN</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368313T2.PART" srsDimension="2">
+                <gml:pos>47.288829 18.896743</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368313T4.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MOL Magyar Olaj- &#233;s G&#225;zipari Nyrt. - 4. HULLAD&#201;K&#201;GET&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368313T4.PART" srsDimension="2">
+                <gml:pos>47.288829 18.896743</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100354914T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MVM GTER Zrt. - 1. Villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100354914T1.PART" srsDimension="2">
+                <gml:pos>47.104997 18.018205</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100378910T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MVM GTER Zrt. - 1. VILLAMOSENERGIA TERMEL&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100378910T1.PART" srsDimension="2">
+                <gml:pos>47.720891 19.67961</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100327480T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MVM GTER Zrt. - 1. villamosenergiatermel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100327480T1.PART" srsDimension="2">
+                <gml:pos>47.939747 20.968425</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101628357T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MVM GTER Zrt. - 1. Villamosenergia-termel&#233;s g&#225;zt&#252;zel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101628357T1.PART" srsDimension="2">
+                <gml:pos>47.094797 17.556253</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101811638T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MVM MIF&#368; Kft. - 1. T&#225;vf&#369;t&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101811638T1.PART" srsDimension="2">
+                <gml:pos>48.095204 20.747455</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100392651T6.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Nitrog&#233;nm&#369;vek Zrt. - 6. f&#246;ldg&#225;zt&#252;zel&#233;s&#369; kaz&#225;n&#252;zem</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100392651T6.PART" srsDimension="2">
+                <gml:pos>47.158499 18.139487</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100318695T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Pannon H&#337;er&#337;m&#369; Zrt. - 2. F&#369;t&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100318695T2.PART" srsDimension="2">
+                <gml:pos>46.064103 18.263048</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100284965T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Pannongreen Kft. - 1. h&#337; &#233;s villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100284965T1.PART" srsDimension="2">
+                <gml:pos>47.518647 21.630453</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101437494T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Pannongreen Kft. - 1. Villamosenergia &#233;s h&#337;termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101437494T1.PART" srsDimension="2">
+                <gml:pos>47.957081 21.699013</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101716090T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Pannon-H&#337; Kft. - 1. F&#369;t&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101716090T1.PART" srsDimension="2">
+                <gml:pos>46.064781 18.263555</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100391724T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SARPI Dorog Kft. - 1. vesz. hull. &#233;get&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100391724T1.PART" srsDimension="2">
+                <gml:pos>47.729471 18.708842</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101996360T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Sinergy Kft. - 1. G&#337;ztermel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101996360T1.PART" srsDimension="2">
+                <gml:pos>48.242833 20.664146</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101544183T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Star Power Kft. - 1. gumihullad&#233;k energetikai hasznos&#237;t&#225;sa</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101544183T1.PART" srsDimension="2">
+                <gml:pos>47.843162 21.138819</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101380972T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SZ&#201;PH&#336; ZRT. - 2. Melegv&#237;z el&#337;&#225;ll&#237;t&#225;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101380972T2.PART" srsDimension="2">
+                <gml:pos>47.182435 18.398487</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101281761T5.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tatab&#225;nya Er&#337;m&#369; Kft - 5. Villamos &#233;s h&#337;energia termel&#233;s faapr&#237;t&#233;kb&#243;l</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101281761T5.PART" srsDimension="2">
+                <gml:pos>47.560344 18.426762</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100327295T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tisza Er&#337;m&#369; Kft. - 1. Villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100327295T1.PART" srsDimension="2">
+                <gml:pos>47.916826 21.075933</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100327295T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tisza Er&#337;m&#369; Kft. - 2. Villamosenergia el&#337;&#225;ll&#237;t&#225;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100327295T2.PART" srsDimension="2">
+                <gml:pos>47.916826 21.075933</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100327295T3.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tisza Er&#337;m&#369; Kft. - 3. Villamosenergia el&#337;&#225;ll&#237;t&#225;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100327295T3.PART" srsDimension="2">
+                <gml:pos>47.916826 21.075933</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100327295T4.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tisza Er&#337;m&#369; Kft. - 4. Villamosenergia el&#337;&#225;ll&#237;t&#225;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100327295T4.PART" srsDimension="2">
+                <gml:pos>47.916826 21.075933</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/disused"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100501563T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tvk-Er&#337;m&#369; Kft. - 1. Villamos energia termel&#233;s g&#225;zturbina p&#243;tt&#252;zel&#233;ssel</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100501563T1.PART" srsDimension="2">
+                <gml:pos>47.91439 21.02302</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100501563T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Tvk-Er&#337;m&#369; Kft. - 2. G&#337;ztermel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100501563T2.PART" srsDimension="2">
+                <gml:pos>47.91439 21.02302</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101690594T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Uniper Hungary Kft. - 1. Kombin&#225;lt ciklus&#250; egys&#233;g- G&#225;zturbina. Vegyes t&#252;zel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101690594T1.PART" srsDimension="2">
+                <gml:pos>47.73823 17.802561</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100376880T11.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Zoltek Zrt. - 11. Energiaszolg&#225;ltat&#225;s-g&#337;zell&#225;t&#225;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100376880T11.PART" srsDimension="2">
+                <gml:pos>47.760262 18.573961</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>102188784T6.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>AUDI HUNGARIA Zrt. - 6. H&#337;termel&#233;s - g&#225;zkaz&#225;nok</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_102188784T6.PART" srsDimension="2">
+                <gml:pos>47.69829 17.702022</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100985361T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Bakonyi Bioenergia Kft. - 2. Villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100985361T2.PART" srsDimension="2">
+                <gml:pos>47.0956 17.558444</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100431466T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Bc-Er&#337;m&#369; Kft - 1. G&#337;z &#233;s villamos energia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100431466T1.PART" srsDimension="2">
+                <gml:pos>48.247852 20.647105</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100352666T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti Er&#337;m&#369; Zrt. - 1. 9.10. FORR&#211;V&#205;ZKAZ&#193;N</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100352666T1.PART" srsDimension="2">
+                <gml:pos>47.553512 19.103282</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100400015T4.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti Er&#337;m&#369; Zrt. - 4. 1.G&#193;ZTURBINA</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100400015T4.PART" srsDimension="2">
+                <gml:pos>47.458005 19.164244</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100379364T5.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti Er&#337;m&#369; Zrt. - 5. 5. FORR&#211;VIZ KAZ&#193;N</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100379364T5.PART" srsDimension="2">
+                <gml:pos>47.463478 19.055637</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100379364T7.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti Er&#337;m&#369; Zrt. - 7. 15. g&#337;zkaz&#225;n</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100379364T7.PART" srsDimension="2">
+                <gml:pos>47.463478 19.055637</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100326726T4.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Bunge Zrt. - 4. energiatermel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100326726T4.PART" srsDimension="2">
+                <gml:pos>47.040111 20.29166</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368298T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Csepeli Er&#337;m&#369; Kft. - 1. H&#336;TERMEL&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368298T1.PART" srsDimension="2">
+                <gml:pos>47.430755 19.059092</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101626353T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dbm Zrt. - 1. Biomassza t&#252;zel&#233;ssel biztos&#237;tott villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101626353T1.PART" srsDimension="2">
+                <gml:pos>47.737169 21.906</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100329299T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Duna-Dr&#225;va Cement Kft. - 2. HULLAD&#201;K &#201;GET&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100329299T2.PART" srsDimension="2">
+                <gml:pos>45.811201 18.398833</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100401517T5.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Duna-Dr&#225;va Cement Kft. - 5. Klinker&#233;get&#233;s (BAT)</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/co-WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100401517T5.PART" srsDimension="2">
+                <gml:pos>47.811315 19.104605</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368276T4.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dunamenti Er&#337;m&#369; Zrt. - 4. G&#193;ZTURBINA T&#220;ZEL&#201;S TECHNIKA</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368276T4.PART" srsDimension="2">
+                <gml:pos>47.328165 18.918461</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368276T5.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dunamenti Er&#337;m&#369; Zrt. - 5. G&#193;ZTURBINA T&#220;ZEL&#201;S TECHNIKA</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368276T5.PART" srsDimension="2">
+                <gml:pos>47.328165 18.918461</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368276T7.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Dunamenti Er&#337;m&#369; Zrt. - 7. G&#193;ZTURBINA T&#220;ZEL&#201;STECHNIKA</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368276T7.PART" srsDimension="2">
+                <gml:pos>47.328165 18.918461</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100345783T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>&#201;MK &#201;szak-magyarorsz&#225;gi K&#246;rnyezetv&#233;delmi Kft. - 1. Vesz&#233;lyes hullad&#233;k &#233;get&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100345783T1.PART" srsDimension="2">
+                <gml:pos>48.162247 20.707661</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100392330T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>FKF Nonprofit Zrt. - 1. HULLAD&#201;K&#201;GET&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/WI"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100392330T1.PART" srsDimension="2">
+                <gml:pos>47.582716 19.135098</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
         <reportingYear>2017</reportingYear>
         <inspireId>
             <localId>100392259T1.PART</localId>
@@ -1600,4 +2629,532 @@
         </status>
         <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
     </ProductionInstallationPart>
-</data>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100312660T6.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Gy&#337;r-Szol Zrt. - 6. Forr&#243;v&#237;ztermel&#233;s III.</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100312660T6.PART" srsDimension="2">
+                <gml:pos>47.682044 17.671426</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100372804T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>ISD POWER Kft. - 1. H&#337;termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100372804T1.PART" srsDimension="2">
+                <gml:pos>46.944216 18.943049</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101722426T5.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MVM &#201;szak-Budai Kogener&#225;ci&#243;s F&#369;t&#337;er&#337;m&#369; Kft. - 5. G&#193;ZTURBINA</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101722426T5.PART" srsDimension="2">
+                <gml:pos>47.563797 19.037777</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101662085T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MVM MIF&#368; Kft. - 1. Villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101662085T1.PART" srsDimension="2">
+                <gml:pos>48.094274 20.750164</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>101662085T3.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>MVM MIF&#368; Kft. - 3. T&#225;vf&#369;t&#233;s &#233;s haszn&#225;lati melegv&#237;z ell&#225;t&#225;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_101662085T3.PART" srsDimension="2">
+                <gml:pos>48.094274 20.750164</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100318695T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Pannon H&#337;er&#337;m&#369; Zrt. - 1. F&#369;t&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100318695T1.PART" srsDimension="2">
+                <gml:pos>46.064103 18.263048</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100345130T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>SZ&#201;PH&#336; ZRT. - 2. Forr&#243;v&#237;z el&#337;&#225;ll&#237;t&#225;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100345130T2.PART" srsDimension="2">
+                <gml:pos>47.194156 18.422641</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100239482T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Veolia Energia Magyarorsz&#225;g Zrt. - 1. h&#337; &#233;s villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100239482T1.PART" srsDimension="2">
+                <gml:pos>47.517625 21.629474</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100276535T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Veolia Energia Magyarorsz&#225;g Zrt. - 1. H&#337; &#233;s villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100276535T1.PART" srsDimension="2">
+                <gml:pos>47.956706 21.698886</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100276535T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Veolia Energia Magyarorsz&#225;g Zrt. - 2. Forr&#243;v&#237;z h&#337; termel&#233;s 50 MWth k&#246;z&#246;tti forr&#243;v&#237;zkaz&#225;nokban</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100276535T2.PART" srsDimension="2">
+                <gml:pos>47.956706 21.698886</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100239482T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Veolia Energia Magyarorsz&#225;g Zrt. - 2. forr&#243;v&#237;z termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100239482T2.PART" srsDimension="2">
+                <gml:pos>47.517625 21.629474</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368287T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Alpiq Csepel Kft. - 1. kombin&#225;lt ciklus&#250; villamos energia- &#233;s h&#337;termel&#233;s - g&#225;zt&#252;zel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368287T1.PART" srsDimension="2">
+                <gml:pos>47.428174 19.051854</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368287T3.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Alpiq Csepel Kft. - 3. FORR&#211;V&#205;Z TERMEL&#201;S-G&#193;ZT&#220;ZEL&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368287T3.PART" srsDimension="2">
+                <gml:pos>47.428174 19.051854</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100368287T4.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Alpiq Csepel Kft. - 4. kombin&#225;lt ciklus&#250; villamos energia- &#233;s h&#337;termel&#233;s - olajt&#252;zel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100368287T4.PART" srsDimension="2">
+                <gml:pos>47.428174 19.051854</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article33"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100351304T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Bakonyi Er&#337;m&#369; Zrt. - 2. H&#337;- &#233;s villamosenergia termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100351304T2.PART" srsDimension="2">
+                <gml:pos>47.0956 17.558444</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100400015T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti Er&#337;m&#369; Zrt. - 1. 9. FORR&#211;VIZ KAZ&#193;N</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100400015T1.PART" srsDimension="2">
+                <gml:pos>47.458005 19.164244</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100352666T3.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti Er&#337;m&#369; Zrt. - 3. 1.G&#193;ZTURBINA</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100352666T3.PART" srsDimension="2">
+                <gml:pos>47.553512 19.103282</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100379364T3.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti Er&#337;m&#369; Zrt. - 3. G&#225;zturbina</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100379364T3.PART" srsDimension="2">
+                <gml:pos>47.463478 19.055637</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article32"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100352666T4.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti Er&#337;m&#369; Zrt. - 4. 1. G&#337;zkaz&#225;n</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100352666T4.PART" srsDimension="2">
+                <gml:pos>47.553512 19.103282</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100325877T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti T&#225;vh&#337;szolg&#225;ltat&#243; Zrt. - 1. H&#336;TERMEL&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100325877T1.PART" srsDimension="2">
+                <gml:pos>47.564219 19.037458</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100392259T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti T&#225;vh&#337;szolg&#225;ltat&#243; Zrt. - 1. H&#336;TERMEL&#201;S</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100392259T1.PART" srsDimension="2">
+                <gml:pos>47.536778 19.139047</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100401399T1.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Budapesti T&#225;vh&#337;szolg&#225;ltat&#243; Zrt. - 1. H&#337;termel&#233;s</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100401399T1.PART" srsDimension="2">
+                <gml:pos>47.512716 19.150238</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100312660T2.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Gy&#337;r-Szol Zrt. - 2. Forr&#243;v&#237;ztermel&#233;s I.</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100312660T2.PART" srsDimension="2">
+                <gml:pos>47.682044 17.671426</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    <ProductionInstallationPart xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="HU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>100312660T5.PART</localId>
+            <namespace>HU.OKIR</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>Gy&#337;r-Szol Zrt. - 5. Forr&#243;v&#237;ztermel&#233;s II.</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/LCP"/>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_100312660T5.PART" srsDimension="2">
+                <gml:pos>47.682044 17.671426</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/Article35"/>
+    </ProductionInstallationPart>
+    </data>

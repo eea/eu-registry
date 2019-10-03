@@ -1,0 +1,61 @@
+<data><ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LI"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>001.INSTALLATION</localId>
+            <namespace>LI.LLV.AU</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_001.INSTALLATION" srsDimension="2">
+                <gml:pos>47.198841623587 9.50222206176153</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>Herbert Ospelt Anstalt</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.4(b)(iii)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2000-01-01</dateOfGranting>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LI"/>
+        <reportingYear>2017</reportingYear>
+        <inspireId>
+            <localId>002.INSTALLATION</localId>
+            <namespace>LI.LLV.AU</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_002.INSTALLATION" srsDimension="2">
+                <gml:pos>47.207611061 9.528736737</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>ThyssenKrupp Presta Anstalt</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.4(b)(iii)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2000-01-01</dateOfGranting>
+        </permit>
+    </ProductionInstallation>
+    </data>

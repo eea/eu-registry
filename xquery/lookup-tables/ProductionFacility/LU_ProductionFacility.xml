@@ -1384,4 +1384,1390 @@
 			<pf:validFrom xsi:nil="true"/>
         </status>
     </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000002000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000002000.FACILITY" srsDimension="2">
+                <gml:pos>49.52597 5.89753</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>ArcelorMittal Belval &amp; Differdange S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ArcelorMittal</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://luxembourg.arcelormittal.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_000200000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000003000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000003000.FACILITY" srsDimension="2">
+                <gml:pos>49.5019 5.95579</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>ArcelorMittal Belval &amp; Differdange S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ArcelorMittal</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://luxembourg.arcelormittal.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_000300000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000005000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000005000.FACILITY" srsDimension="2">
+                <gml:pos>49.56496 5.93165</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Guardian Luxguard I S.&#224; r.l.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Koch Industries, inc.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.guardian.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_000500000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000006000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000006000.FACILITY" srsDimension="2">
+                <gml:pos>49.50434 6.08293</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Guardian Luxguard II S.&#224; r.l.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Koch Industries, inc.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.guardian.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_000600000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(e)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000007000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000007000.FACILITY" srsDimension="2">
+                <gml:pos>49.55374 6.06991</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sidor</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sidor</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://sidor.lu/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_000700000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000008000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000008000.FACILITY" srsDimension="2">
+                <gml:pos>49.55517 5.8455</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Saica Flex Luxembourg S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Saica Flex</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.saica.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_000800000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/9(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000009000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000009000.FACILITY" srsDimension="2">
+                <gml:pos>49.78548 6.0537</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>ArcelorMittal Bissen S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ArcelorMittal</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://luxembourg.arcelormittal.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_000900000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(c)(iii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000010000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000010000.FACILITY" srsDimension="2">
+                <gml:pos>49.55134 5.83648</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>ArcelorMittal Rodange S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ArcelorMittal</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://luxembourg.arcelormittal.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_001000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(c)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000011000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000011000.FACILITY" srsDimension="2">
+                <gml:pos>49.96129 5.91048</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Circuit Foil Luxembourg</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Circuit Foil Luxembourg</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.circuitfoil.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_001100000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000012000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000012000.FACILITY" srsDimension="2">
+                <gml:pos>49.87799 6.13071</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sidec</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sidec</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.sidec.lu/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_001200000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000013000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000013000.FACILITY" srsDimension="2">
+                <gml:pos>49.66814 6.37012</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Sigre</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Sigre</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.sigre.lu/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_001300000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(d)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000016000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000016000.FACILITY" srsDimension="2">
+                <gml:pos>49.49249 6.11413</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Eurofoil Luxembourg S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Eurofoil Luxembourg S.A.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.eurofoil.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_001600000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000019000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000019000.FACILITY" srsDimension="2">
+                <gml:pos>50.06394 5.9877</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Hydro Aluminium Clervaux S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Hydro</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.hydro.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_001900000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000020000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000020000.FACILITY" srsDimension="2">
+                <gml:pos>50.06407 5.99002</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Alcuilux Desox S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Gottschol Alcuilux S.A.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>www.alcuilux.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_002000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(e)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000021000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000021000.FACILITY" srsDimension="2">
+                <gml:pos>49.59663 6.2032</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>DuPont de Nemours (Luxembourg) s. &#224; r. l.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>DuPont de Nemours</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.dupont.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_002100000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/4(a)(vii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000022000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000022000.FACILITY" srsDimension="2">
+                <gml:pos>49.80598 6.44394</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Euro-composites S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Euro-composites</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.euro-composites.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_002200000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/9(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000024000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000024000.FACILITY" srsDimension="2">
+                <gml:pos>49.6225 6.15299</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>LuxEnergie S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>LuxEnergie S.A.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.luxenergie.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_002400000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000025000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000025000.FACILITY" srsDimension="2">
+                <gml:pos>49.51994 5.99789</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Minett-Kompost</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Minett-Kompost</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://minett-kompost.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_002500000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000029000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000029000.FACILITY" srsDimension="2">
+                <gml:pos>49.5023 6.08062</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>ArcelorMittal Dudelange</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>ArcelorMittal Dudelange</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://flateurope.arcelormittal.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_002900000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/2(c)(iii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000030000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000030000.FACILITY" srsDimension="2">
+                <gml:pos>49.50864 6.09015</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Suez</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>J. Lamesch Exploitation</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://lamesch.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000031000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000031000.FACILITY" srsDimension="2">
+                <gml:pos>49.80454 6.0937</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Cegyco S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Cegyco S.A.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003100000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/1(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000033000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000033000.FACILITY" srsDimension="2">
+                <gml:pos>49.7961 6.16334</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Miny Michel</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Miny Michel</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003300000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000034000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000034000.FACILITY" srsDimension="2">
+                <gml:pos>49.62567 6.33014</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Rollinger</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Rollinger</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003400000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000035000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000035000.FACILITY" srsDimension="2">
+                <gml:pos>49.86098 6.01139</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Klein</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Klein</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003500000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000036000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000036000.FACILITY" srsDimension="2">
+                <gml:pos>49.7754 6.23773</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Fr&#228;nk Faber &amp; Fils</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Fr&#228;nk Faber &amp; Fils</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003600000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000037000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000037000.FACILITY" srsDimension="2">
+                <gml:pos>49.92563 6.12786</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Weiler</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Weiler</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003700000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000038000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000038000.FACILITY" srsDimension="2">
+                <gml:pos>50.03906 5.87017</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Franck-Huberty</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Franck-Huberty</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003800000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000039000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000039000.FACILITY" srsDimension="2">
+                <gml:pos>49.6512 6.13118</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Station d'&#233;puration de Beggen</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Ville de Luxembourg</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.vdl.lu/fr/la-ville/les-services-a-votre-ecoute/service-canalisation</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_003900000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000040000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000040000.FACILITY" srsDimension="2">
+                <gml:pos>49.53107 5.92356</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Kronospan Luxembourg S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Kronospan</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://kronospan-luxembourg.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_004000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/6(b)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000043000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000043000.FACILITY" srsDimension="2">
+                <gml:pos>49.87164 6.1908</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Siden</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Siden</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.siden.lu/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_004300000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(f)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000045000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000045000.FACILITY" srsDimension="2">
+                <gml:pos>49.7786 6.08043</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Luxlait</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Luxlait</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.luxlait.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_004500000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/8(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000046000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000046000.FACILITY" srsDimension="2">
+                <gml:pos>49.91381 6.10446</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Mathay</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Mathay</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>www.fermemathay.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_004600000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000047000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000047000.FACILITY" srsDimension="2">
+                <gml:pos>49.59785 6.20691</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>DuPont Teijin Films Luxembourg  S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>DuPont Teijin Films Luxembourg  S.A.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.dupont.com/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_004700000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/4(a)(vii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000048000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000048000.FACILITY" srsDimension="2">
+                <gml:pos>49.54347 5.89764</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>CERATUNGSTEN S.&#224; r.l</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Ceratizit</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_004800000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/4(b)(v)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000049000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000049000.FACILITY" srsDimension="2">
+                <gml:pos>49.83936 6.09471</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Abattoir Ettelbruck S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Abattoir Ettelbruck S.A.</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.abattoirettelbruck.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_004900000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/8(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000050000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000050000.FACILITY" srsDimension="2">
+                <gml:pos>49.78821 6.09046</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Kiowatt S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Kiowatt</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://kiowatt.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_005000000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/5(a)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000051000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000051000.FACILITY" srsDimension="2">
+                <gml:pos>50.11908 6.11246</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Marco Kamesch</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Kamesch</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>www.mklagrar.lu</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_005100000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000052000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000052000.FACILITY" srsDimension="2">
+                <gml:pos>50.02664 6.07115</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Romain Wester</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Romain Wester</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_005200000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000054000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000054000.FACILITY" srsDimension="2">
+                <gml:pos>49.81157 5.85638</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Alphonse &amp; Jos Kohl</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Alphonse &amp; Jos Kohl</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_005400000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000053000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000053000.FACILITY" srsDimension="2">
+                <gml:pos>50.01194 5.96843</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Rossler Daniel</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Rossler Daniel</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>-</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_005300000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/7(a)(ii)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000004000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000004000.FACILITY" srsDimension="2">
+                <gml:pos>49.46619 6.00588</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Cimalux S.A.</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Cimalux</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>http://www.cimalux.lu/</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_000400000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/3(c)(i)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
+    <ProductionFacility xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000026000.FACILITY</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+		<geometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000026000.FACILITY" srsDimension="2">
+                <gml:pos>49.556 5.85156</gml:pos>
+            </gml:Point>
+        </geometry>
+        <facilityName>
+            <nameOfFeature>Avery Dennison SARL</nameOfFeature>
+        </facilityName>
+		<EUReg:parentCompany>
+			<EUReg:ParentCompanyDetails>
+				<EUReg:parentCompanyName>Avery Dennison Business Materials Europe</EUReg:parentCompanyName>
+				<EUReg:parentCompanyURL>https://www.averydennison.com</EUReg:parentCompanyURL>
+				<EUReg:confidentialityReason xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ReasonValue/"/>
+			</EUReg:ParentCompanyDetails>
+		</EUReg:parentCompany>
+\		<hostingSite xlink:href="#_002600000.SITE"/>
+		<EPRTRAnnexIActivity>
+			<EUReg:EPRTRAnnexIActivityType>
+				<EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/EPRTRAnnexIActivityValue/9(c)"/>
+			</EUReg:EPRTRAnnexIActivityType>
+		</EPRTRAnnexIActivity>
+		<status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+			<pf:validFrom xsi:nil="true"/>
+        </status>
+    </ProductionFacility>
     </data>

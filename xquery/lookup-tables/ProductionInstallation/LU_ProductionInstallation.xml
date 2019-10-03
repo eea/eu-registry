@@ -930,6 +930,967 @@
     </ProductionInstallation>
     <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000010010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000010010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.55125 5.83647</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-10-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.3(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-09-30</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000012010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000012010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.8823 6.13406</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-12-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.3(b)(i)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2007-11-21</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000005010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000005010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.56536 5.93206</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-05-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/3.3"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-03-08</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000006010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000006010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.50425 6.0818</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-06-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/3.3"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-03-08</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000007010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000007010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.55358 6.07059</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-07-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.2(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-10-10</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000008010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000008010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.55494 5.84558</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-08-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.7"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2014-02-20</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000002010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000002010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.52575 5.89832</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-02-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.2"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-07-28</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000003010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000003010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.50153 5.95433</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-03-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.2"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-07-28</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000024010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000024010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.6225 6.15299</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-24-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/1.1"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-07-11</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000025010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000025010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.51994 5.99789</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-25-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.3(b)(i)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2009-05-19</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000013010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000013010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.66882 6.37107</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-13-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.4"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-09-29</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000016010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000016010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.49235 6.11448</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-16-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-01-28</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000019010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000019010.INSTALLATION" srsDimension="2">
+                <gml:pos>50.06396 5.98766</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-19-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-07-30</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000020010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000020010.INSTALLATION" srsDimension="2">
+                <gml:pos>50.06421 5.99028</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-20-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.5(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2006-05-15</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000022010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000022010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.80541 6.44274</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-22-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.7"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2013-11-06</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000033010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000033010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.7961 6.16334</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-33-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-09-02</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000034010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000034010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.62567 6.33014</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-34-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-09-21</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000035010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000035010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.86098 6.01139</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-35-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2012-07-06</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000036010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000036010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.7754 6.23773</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-36-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-03-20</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000037010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000037010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.92563 6.12786</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-37-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-03-20</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000038010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000038010.INSTALLATION" srsDimension="2">
+                <gml:pos>50.03906 5.87017</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-38-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-03-20</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000040010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000040010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.53135 5.92354</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-40-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.1(c)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2017-03-06</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000045010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000045010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.7786 6.08043</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-45-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.4(c)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2008-01-28</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000046010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000046010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.91381 6.10446</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-46-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2018-11-30</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000047010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000047010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.59767 6.20693</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-47-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/4.1(h)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-08-06</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000048010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000048010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.54319 5.89768</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-48-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/4.2(e)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-07-14</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000051010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000051010.INSTALLATION" srsDimension="2">
+                <gml:pos>50.11908 6.11246</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-51-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2013-02-11</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000052010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000052010.INSTALLATION" srsDimension="2">
+                <gml:pos>50.02664 6.07115</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-52-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2010-10-28</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000054010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000054010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.81157 5.85638</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-54-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2012-01-26</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000053010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000053010.INSTALLATION" srsDimension="2">
+                <gml:pos>50.01194 5.96843</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-53-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.6(b)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-10-02</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000004010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000004010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.466 6.00565</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-04-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/3.1(a)"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2017-04-14</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
         <reportingYear>2017</reportingYear>
         <inspireId>
             <localId>000009010.INSTALLATION</localId>
@@ -1233,6 +2194,326 @@
         </status>
         <permit>
             <dateOfGranting>2015-09-30</dateOfGranting>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000009010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000009010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.78553 6.05386</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-09-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.3(c)"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.11"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-09-30</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000011010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000011010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.96106 5.91085</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-11-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.6"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.11"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2017-06-29</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000002020.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000002020.INSTALLATION" srsDimension="2">
+                <gml:pos>49.52635 5.89635</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-02-2</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.3(a)"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.11"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-07-29</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000003020.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000003020.INSTALLATION" srsDimension="2">
+                <gml:pos>49.50038 5.95691</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-03-2</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.3(a)"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.11"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2016-07-29</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000021010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000021010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.59645 6.20319</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-21-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/4.1(h)"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.11"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>1983-04-21</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000029010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000029010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.50222 6.07718</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-29-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.3(c)"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.11"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-09-30</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000029020.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000029020.INSTALLATION" srsDimension="2">
+                <gml:pos>49.50246 6.08271</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-29-2</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/2.6"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.11"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2015-09-30</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000030010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000030010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.50867 6.09005</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-30-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.1(b)"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2007-12-05</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000049010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000049010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.83938 6.09465</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-49-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.4(a)"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/6.11"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2011-12-21</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
+        </permit>
+    </ProductionInstallation>
+    <ProductionInstallation xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <countryId xlink:href="LU"/>
+        <reportingYear>2018</reportingYear>
+        <inspireId>
+            <localId>000050010.INSTALLATION</localId>
+            <namespace>LU.CAED</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="_000050010.INSTALLATION" srsDimension="2">
+                <gml:pos>49.78821 6.09046</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>LU-50-1</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.2(b)"/>
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/5.5"/>
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/functional"/>
+                <pf:validFrom xsi:nil="true"/>
+            </pf:StatusType>
+        </status>
+        <permit>
+            <dateOfGranting>2012-05-10</dateOfGranting>
+            <permitURL>https://environnement.public.lu/fr/emweltprozeduren/Autorisations/Etablissements_classes/IED/arretes-ied.html</permitURL>
         </permit>
     </ProductionInstallation>
     </data>
