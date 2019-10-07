@@ -1031,6 +1031,13 @@ declare function scripts:checkDuplicates2(
             let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
             for $sub in subsequence($seq, $ind + 1)
+                let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
+                where substring-before($locationSub, ' ') => substring-before('.')
+                        = substring-before($locationMain, ' ') => substring-before('.')
+                    and
+                    substring-after($locationSub, ' ') => substring-before('.')
+                        = substring-after($locationMain, ' ') => substring-before('.')
+
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
                     => fn:string-join(' / ')
                 (: compare only if the first character is the same:)
@@ -1039,7 +1046,6 @@ declare function scripts:checkDuplicates2(
                 let $codelistSub := $sub//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
                 let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', '')
-                let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
                 let $stringSubLev := (fn:replace($stringSub, ' / ', ''), $codelistSubLev)
                         => fn:string-join('')
                 let $stringSub := ($stringSub, $codelistSub) => fn:string-join(' / ')
@@ -1390,6 +1396,13 @@ declare function scripts:checkDatabaseDuplicates2(
                 let $ic := scripts:getInspireId($q)
 
                 where $id != $ic
+                let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
+                where substring-before($locationSub, ' ') => substring-before('.')
+                        = substring-before($locationMain, ' ') => substring-before('.')
+                    and
+                    substring-after($locationSub, ' ') => substring-before('.')
+                        = substring-after($locationMain, ' ') => substring-before('.')
+
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
                     => fn:string-join(' / ')
                 let $codelistSub := $sub//*[local-name() = $codelistNode]
@@ -1633,12 +1646,13 @@ declare function scripts:checkMissingSites(
         for $facility in $seq
             let $inspireId := $facility/*:inspireId
             let $hostingSite := $facility/*[local-name() = 'hostingSite']
-                    /@xlink:href/data() => functx:if-empty('')
+                    /@xlink:href/data() => functx:if-empty('') => replace('^#_', '')
             let $fromDBhostingSite := $fromDB/descendant-or-self::*:ProductionFacility
-                [*:inspireId = $inspireId]/hostingSite
-                    /@xlink:href/data() => functx:if-empty('')
+                [*:inspireId = $inspireId]/hostingSite/@xlink:href/data()
+                    => functx:if-empty('') => replace('^#_', '')
 
             where not($hostingSite = $fromDBhostingSite)
+            where not(functx:if-empty($fromDBhostingSite, '') = '')
 
             return map {
             "marks" : (4),
