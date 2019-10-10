@@ -1030,13 +1030,25 @@ declare function scripts:checkDuplicates2(
                     => fn:string-join('')
             let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
+            let $x_lat := substring-before($locationMain, ' ')
+            let $x_long := substring-after($locationMain, ' ')
+
             for $sub in subsequence($seq, $ind + 1)
                 let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
-                where substring-before($locationSub, ' ') => substring-before('.')
-                        = substring-before($locationMain, ' ') => substring-before('.')
-                    and
-                    substring-after($locationSub, ' ') => substring-before('.')
-                        = substring-after($locationMain, ' ') => substring-before('.')
+                (:where substring-before($locationSub, ' ') => substring-before('.'):)
+                        (:= substring-before($locationMain, ' ') => substring-before('.'):)
+                    (:and:)
+                    (:substring-after($locationSub, ' ') => substring-before('.'):)
+                        (:= substring-after($locationMain, ' ') => substring-before('.'):)
+
+                let $y_lat := substring-before($locationSub, ' ')
+                let $y_long := substring-after($locationSub, ' ')
+
+                let $dist := scripts:haversine(
+                        xs:float($x_lat), xs:float($x_long),
+                        xs:float($y_lat), xs:float($y_long)
+                )
+                where $dist < 10
 
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
                     => fn:string-join(' / ')
@@ -1202,7 +1214,7 @@ declare function scripts:checkProductionInstallationPartDuplicates(
     (:let $attrs := ('plantType'):)
 
     let $stringNodes := ('installationPartName')
-    let $locationNode := ()
+    let $locationNode := ('pointGeometry')
     let $codelistNode := ('plantType')
 
     return scripts:checkDuplicates2($refcode, $rulename, $root, $features,
@@ -1391,17 +1403,30 @@ declare function scripts:checkDatabaseDuplicates2(
             let $p := scripts:getParent($node)
             let $id := scripts:getInspireId($p)
 
+            let $x_lat := substring-before($locationMain, ' ')
+            let $x_long := substring-after($locationMain, ' ')
+
             for $sub in $fromDB
                 let $q := scripts:getParent($sub)
                 let $ic := scripts:getInspireId($q)
 
                 where $id != $ic
                 let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
-                where substring-before($locationSub, ' ') => substring-before('.')
-                        = substring-before($locationMain, ' ') => substring-before('.')
-                    and
-                    substring-after($locationSub, ' ') => substring-before('.')
-                        = substring-after($locationMain, ' ') => substring-before('.')
+
+                (:where substring-before($locationSub, ' ') => substring-before('.'):)
+                        (:= substring-before($locationMain, ' ') => substring-before('.'):)
+                    (:and:)
+                    (:substring-after($locationSub, ' ') => substring-before('.'):)
+                        (:= substring-after($locationMain, ' ') => substring-before('.'):)
+
+                let $y_lat := substring-before($locationSub, ' ')
+                let $y_long := substring-after($locationSub, ' ')
+
+                let $dist := scripts:haversine(
+                        xs:float($x_lat), xs:float($x_long),
+                        xs:float($y_lat), xs:float($y_long)
+                )
+                where $dist < 10
 
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
                     => fn:string-join(' / ')
@@ -1556,7 +1581,7 @@ declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
     (:let $nodes := ('installationPartName'):)
     (:let $attrs := ('plantType'):)
     let $stringNodes := ('installationPartName')
-    let $locationNode := ()
+    let $locationNode := ('pointGeometry')
     let $codelistNode := ('plantType')
 
     let $docDB := scripts:docProdInstallPart($cntry)
