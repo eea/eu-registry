@@ -48,8 +48,60 @@ declare variable $iedreg:skipCountries := map {
 };
 declare variable $iedreg:run2018checks := true();
 
-declare variable $iedreg:envelopeChecks := ('C2.5', 'C13.5');
+(: These checks are active when the script is triggered inside an envelope :)
+declare variable $iedreg:envelopeChecks := (
+    'C2.5',
+    'C4.1', 'C4.2', 'C4.3','C4.4',
+    'C4.5', 'C4.6', 'C4.7','C4.8', 'C4.9', 'C4.10', 'C4.11', 'C4.12',
+    'C5.1', 'C5.2', 'C5.3', 'C5.4', 'C5.6', 'C5.7', 'C5.8',
+    'C6.2', 'C6.4',
+    'C7.1', 'C7.5',
+    'C8.1',
+    'C9.3',
+    'C13.4', 'C13.5'
+);
+(:
 
+:)
+
+(:
+-----------------------------
+ : Lookup tables functions
+-----------------------------
+:)
+
+declare function iedreg:getLookupTable(
+    $countryCode as xs:string,
+    $featureName as xs:string
+) as document-node() {
+    let $location := 'https://staging-datashare.devel5cph.eionet.europa.eu/remote.php/dav/files/'
+    let $userEnv := 'XQueryUser'
+    let $passwordEnv := 'XQueryPassword'
+
+    let $user := environment-variable($userEnv)
+    let $password := environment-variable($passwordEnv)
+    let $fileName := concat($countryCode, '_', $featureName, '.xml')
+    let $url := concat($location, $user, '/', $fileName)
+
+    let $response := http:send-request(
+            <http:request method='get'
+                auth-method='Basic'
+                send-authorization='true'
+                username='{$user}'
+                password='{$password}'
+                override-media-type='text/xml'/>,
+            $url
+    )
+
+    return $response[2]
+
+    (:let $status_code := $response[1]/@status:)
+
+    (:return:)
+        (:if($status_code = '200'):)
+        (:then $response[2]:)
+        (:else ():)
+};
 
 (:~
  : --------------
@@ -202,10 +254,11 @@ declare function iedreg:notAvailableEnvelope(
 };
 
 declare function iedreg:failsafeWrapper(
+        $lookupTables as map(*),
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
-        $checkFunc as function(xs:string, xs:string, element()) as element()*
+        $checkFunc as function(map(*), xs:string, xs:string, element()) as element()*
 ) as element()* {
     try {
         (:let $asd := trace($refcode, '- '):)
@@ -225,7 +278,7 @@ declare function iedreg:failsafeWrapper(
             else if(($refcode = $iedreg:checks2018 or $refcode = $iedreg:checksHistoricalData)
                     and (not($iedreg:run2018checks) or $reportingYear < 2018))
                 then iedreg:notActive($refcode, $rulename, $root)
-            else $checkFunc($refcode, $rulename, $root)
+            else $checkFunc($lookupTables, $refcode, $rulename, $root)
     } catch * {
         let $details := iedreg:getErrorDetails($err:code, $err:description)
         return iedreg:renderResult($refcode, $rulename, 'failed', $details)
@@ -236,15 +289,15 @@ declare function iedreg:failsafeWrapper(
    1. DATA CONTROL CHECKS
 :)
 
-declare function iedreg:runChecks01($root as element()) as element()* {
+declare function iedreg:runChecks01($root as element(), $lookupTables) as element()* {
     let $rulename := '1. DATA CONTROL CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: new DONE :) iedreg:failsafeWrapper("C1.1", "2017 reporting year versus 2018 and later reporting years", $root, scripts:check2018year#3),
-        (: new DONE :) iedreg:failsafeWrapper("C1.2", "Facility Type", $root, scripts:checkFacilityType#3),
-        (: new DONE :) iedreg:failsafeWrapper("C1.3", "Installation Type", $root, scripts:checkInstallationType#3)
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C1.1", "2017 reporting year versus 2018 and later reporting years", $root, scripts:check2018year#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C1.2", "Facility Type", $root, scripts:checkFacilityType#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C1.3", "Installation Type", $root, scripts:checkInstallationType#4)
     }</div>
 };
 
@@ -253,29 +306,29 @@ declare function iedreg:runChecks01($root as element()) as element()* {
  : 2. CODE LIST CHECKS
 :)
 
-declare function iedreg:runChecks02($root as element()) as element()* {
+declare function iedreg:runChecks02($root as element(), $lookupTables) as element()* {
     let $rulename := '2. CODE LIST CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C2.1", "EPRTRAnnexIActivity mainActivity consistency", $root, scripts:checkMainEPRTRAnnexIActivity#3),
-        iedreg:failsafeWrapper("C2.2", "EPRTRAnnexIActivity otherActivity consistency", $root, scripts:checkOtherEPRTRAnnexIActivity#3),
-        iedreg:failsafeWrapper("C2.3", "IEDAnnexIActivity mainActivity consistency", $root, scripts:checkMainIEDAnnexIActivity#3),
-        iedreg:failsafeWrapper("C2.4", "IEDAnnexIActivity otherActivity consistency", $root, scripts:checkOtherIEDAnnexIActivity#3),
-        iedreg:failsafeWrapper("C2.5", "CountryId consistency", $root, scripts:checkCountryId#3),
-        iedreg:failsafeWrapper("C2.6", "reasonValue consistency", $root, scripts:checkReasonValue#3),
-        (: new DONE :) iedreg:failsafeWrapper("C2.7", "FacilityType consistency", $root, scripts:checkFacilityTypeVocab#3),
-        (: new DONE :) iedreg:failsafeWrapper("C2.8", "InstallationType consistency", $root, scripts:checkInstallationTypeVocab#3),
-        (: new DONE :) iedreg:failsafeWrapper("C2.9", "BaselineReport consistency", $root, scripts:checkBaselineReportTypeVocab#3),
-        (: new DONE :) iedreg:failsafeWrapper("C2.10", "BATConclusion consistency", $root, scripts:checkBATConclusionTypeVocab#3),
-        (: new DONE :) iedreg:failsafeWrapper("C2.11", "BATAEL consistency", $root, scripts:checkBATAELTypeVocab#3),
-        (: QA3 :) iedreg:failsafeWrapper("C2.12", "Article51 consistency", $root, scripts3:checkSpecificConditions#3),
-        (: QA3 :) iedreg:failsafeWrapper("C2.13", "ConditionOfFacility consistency", $root, scripts3:checkStatusType#3),
-        (: QA3 :) iedreg:failsafeWrapper("C2.14", "Derogation consistency", $root, scripts3:checkDerogations#3),
-        (: QA3 :) iedreg:failsafeWrapper("C2.15", "PlantType consistency", $root, scripts3:checkPlantType#3),
-        (: QA3 :) iedreg:failsafeWrapper("C2.16", "RelevantChapter consistency", $root, scripts3:checkOtherRelevantChapters#3),
-        (: QA3 :) iedreg:failsafeWrapper("C2.17", "Activity consistency", $root, scripts3:checkActCoreActivity#3)
+        iedreg:failsafeWrapper($lookupTables, "C2.1", "EPRTRAnnexIActivity mainActivity consistency", $root, scripts:checkMainEPRTRAnnexIActivity#4),
+        iedreg:failsafeWrapper($lookupTables, "C2.2", "EPRTRAnnexIActivity otherActivity consistency", $root, scripts:checkOtherEPRTRAnnexIActivity#4),
+        iedreg:failsafeWrapper($lookupTables, "C2.3", "IEDAnnexIActivity mainActivity consistency", $root, scripts:checkMainIEDAnnexIActivity#4),
+        iedreg:failsafeWrapper($lookupTables, "C2.4", "IEDAnnexIActivity otherActivity consistency", $root, scripts:checkOtherIEDAnnexIActivity#4),
+        iedreg:failsafeWrapper($lookupTables, "C2.5", "CountryId consistency", $root, scripts:checkCountryId#4),
+        iedreg:failsafeWrapper($lookupTables, "C2.6", "reasonValue consistency", $root, scripts:checkReasonValue#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C2.7", "FacilityType consistency", $root, scripts:checkFacilityTypeVocab#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C2.8", "InstallationType consistency", $root, scripts:checkInstallationTypeVocab#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C2.9", "BaselineReport consistency", $root, scripts:checkBaselineReportTypeVocab#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C2.10", "BATConclusion consistency", $root, scripts:checkBATConclusionTypeVocab#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C2.11", "BATAEL consistency", $root, scripts:checkBATAELTypeVocab#4),
+        (: QA3 :) iedreg:failsafeWrapper($lookupTables, "C2.12", "Article51 consistency", $root, scripts3:checkSpecificConditions#4),
+        (: QA3 :) iedreg:failsafeWrapper($lookupTables, "C2.13", "ConditionOfFacility consistency", $root, scripts3:checkStatusType#4),
+        (: QA3 :) iedreg:failsafeWrapper($lookupTables, "C2.14", "Derogation consistency", $root, scripts3:checkDerogations#4),
+        (: QA3 :) iedreg:failsafeWrapper($lookupTables, "C2.15", "PlantType consistency", $root, scripts3:checkPlantType#4),
+        (: QA3 :) iedreg:failsafeWrapper($lookupTables, "C2.16", "RelevantChapter consistency", $root, scripts3:checkOtherRelevantChapters#4),
+        (: QA3 :) iedreg:failsafeWrapper($lookupTables, "C2.17", "Activity consistency", $root, scripts3:checkActCoreActivity#4)
     }</div>
 };
 
@@ -283,18 +336,18 @@ declare function iedreg:runChecks02($root as element()) as element()* {
  : 3. INSPIRE ID CHECKS
  :)
 
-declare function iedreg:runChecks03($root as element()) as element()* {
+declare function iedreg:runChecks03($root as element(), $lookupTables) as element()* {
     let $rulename := '3. INSPIRE ID CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C3.1", "High proportion of new inspireIds", $root, scripts:checkAmountOfInspireIds#3),
-        iedreg:failsafeWrapper("C3.2", "ProductionSite inspireId uniqueness", $root, scripts:checkProductionSiteUniqueness#3),
-        iedreg:failsafeWrapper("C3.3", "ProductionFacility inspireId uniqueness", $root, scripts:checkProductionFacilityUniqueness#3),
-        iedreg:failsafeWrapper("C3.4", "ProductionInstallation inspireId uniqueness", $root, scripts:checkProductionInstallationUniqueness#3),
-        iedreg:failsafeWrapper("C3.5", "ProductionInstallationPart inspireId uniqueness", $root, scripts:checkProductionInstallationPartUniqueness#3),
-        iedreg:failsafeWrapper("C3.6", "InspireId blank check", $root, scripts:checkInspireIdBlank#3)
+        iedreg:failsafeWrapper($lookupTables, "C3.1", "High proportion of new inspireIds", $root, scripts:checkAmountOfInspireIds#4),
+        iedreg:failsafeWrapper($lookupTables, "C3.2", "ProductionSite inspireId uniqueness", $root, scripts:checkProductionSiteUniqueness#4),
+        iedreg:failsafeWrapper($lookupTables, "C3.3", "ProductionFacility inspireId uniqueness", $root, scripts:checkProductionFacilityUniqueness#4),
+        iedreg:failsafeWrapper($lookupTables, "C3.4", "ProductionInstallation inspireId uniqueness", $root, scripts:checkProductionInstallationUniqueness#4),
+        iedreg:failsafeWrapper($lookupTables, "C3.5", "ProductionInstallationPart inspireId uniqueness", $root, scripts:checkProductionInstallationPartUniqueness#4),
+        iedreg:failsafeWrapper($lookupTables, "C3.6", "InspireId blank check", $root, scripts:checkInspireIdBlank#4)
     }</div>
 };
 
@@ -302,24 +355,24 @@ declare function iedreg:runChecks03($root as element()) as element()* {
  : 4. DUPLICATE IDENTIFICATION CHECKS
  :)
 
-declare function iedreg:runChecks04($root as element()) as element()* {
+declare function iedreg:runChecks04($root as element(), $lookupTables) as element()* {
     let $rulename := '4. DUPLICATE IDENTIFICATION CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: upd DONE:) iedreg:failsafeWrapper("C4.1", "Identification of ProductionSite duplicates", $root, scripts:checkProductionSiteDuplicates#3),
-        (: upd DONE:) iedreg:failsafeWrapper("C4.2", "Identification of ProductionFacility duplicates", $root, scripts:checkProductionFacilityDuplicates#3),
-        (: upd DONE:) iedreg:failsafeWrapper("C4.3", "Identification of ProductionInstallation duplicates", $root, scripts:checkProductionInstallationDuplicates#3),
-        (: upd DONE:) iedreg:failsafeWrapper("C4.4", "Identification of ProductionInstallationPart duplicates", $root, scripts:checkProductionInstallationPartDuplicates#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C4.5", "Identification of ProductionSite duplicates within the database", $root, scripts:checkProductionSiteDatabaseDuplicates#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C4.6", "Identification of ProductionFacility duplicates within the database", $root, scripts:checkProductionFacilityDatabaseDuplicates#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C4.7", "Identification of ProductionInstallation duplicates within the database", $root, scripts:checkProductionInstallationDatabaseDuplicates#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C4.8", "Identification of ProductionInstallationPart duplicates within the database", $root, scripts:checkProductionInstallationPartDatabaseDuplicates#3),
-        (: upd :) iedreg:failsafeWrapper("C4.9", "ProductionSite and Facility Continuity", $root, scripts:checkMissingProductionSites#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C4.10", "Missing ProductionFacilities, previous submissions", $root, scripts:checkMissingProductionFacilities#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C4.11", "Missing ProductionInstallations, previous submissions", $root, scripts:checkMissingProductionInstallations#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C4.12", "Missing ProductionInstallationsParts, previous submissions", $root, scripts:checkMissingProductionInstallationParts#3)
+        (: upd DONE:) iedreg:failsafeWrapper($lookupTables, "C4.1", "Identification of ProductionSite duplicates", $root, scripts:checkProductionSiteDuplicates#4),
+        (: upd DONE:) iedreg:failsafeWrapper($lookupTables, "C4.2", "Identification of ProductionFacility duplicates", $root, scripts:checkProductionFacilityDuplicates#4),
+        (: upd DONE:) iedreg:failsafeWrapper($lookupTables, "C4.3", "Identification of ProductionInstallation duplicates", $root, scripts:checkProductionInstallationDuplicates#4),
+        (: upd DONE:) iedreg:failsafeWrapper($lookupTables, "C4.4", "Identification of ProductionInstallationPart duplicates", $root, scripts:checkProductionInstallationPartDuplicates#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C4.5", "Identification of ProductionSite duplicates within the database", $root, scripts:checkProductionSiteDatabaseDuplicates#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C4.6", "Identification of ProductionFacility duplicates within the database", $root, scripts:checkProductionFacilityDatabaseDuplicates#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C4.7", "Identification of ProductionInstallation duplicates within the database", $root, scripts:checkProductionInstallationDatabaseDuplicates#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C4.8", "Identification of ProductionInstallationPart duplicates within the database", $root, scripts:checkProductionInstallationPartDatabaseDuplicates#4),
+        (: upd :) iedreg:failsafeWrapper($lookupTables, "C4.9", "ProductionSite and Facility Continuity", $root, scripts:checkMissingProductionSites#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C4.10", "Missing ProductionFacilities, previous submissions", $root, scripts:checkMissingProductionFacilities#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C4.11", "Missing ProductionInstallations, previous submissions", $root, scripts:checkMissingProductionInstallations#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C4.12", "Missing ProductionInstallationsParts, previous submissions", $root, scripts:checkMissingProductionInstallationParts#4)
     }</div>
 };
 
@@ -327,20 +380,20 @@ declare function iedreg:runChecks04($root as element()) as element()* {
  : 5. GEOGRAPHICAL AND COORDINATE CHECKS
  :)
 
-declare function iedreg:runChecks05($root as element()) as element()* {
+declare function iedreg:runChecks05($root as element(), $lookupTables) as element()* {
     let $rulename := '5. GEOGRAPHICAL AND COORDINATE CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C5.1", "ProductionSite radius", $root, scripts:checkProdutionSiteRadius#3),
-        iedreg:failsafeWrapper("C5.2", "ProductionFacility radius", $root, scripts:checkProdutionFacilityRadius#3),
-        iedreg:failsafeWrapper("C5.3", "ProductionInstallation radius", $root, scripts:checkProdutionInstallationRadius#3),
-        iedreg:failsafeWrapper("C5.4", "Coordinates to country comparison", $root, scripts:checkCountryBoundary#3),
-        iedreg:failsafeWrapper("C5.5", "Coordinate precision completeness", $root, scripts:checkCoordinatePrecisionCompleteness#3),
-        iedreg:failsafeWrapper("C5.6", "Coordinate continuity", $root, scripts:checkCoordinateContinuity#3),
-        iedreg:failsafeWrapper("C5.7", "ProductionSite to ProductionFacility coordinate comparison", $root, scripts:checkProdutionSiteBuffers#3),
-        iedreg:failsafeWrapper("C5.8", "ProductionInstallation to ProductionInstallationPart coordinate comparison", $root, scripts:checkProdutionInstallationPartCoords#3)
+        iedreg:failsafeWrapper($lookupTables, "C5.1", "ProductionSite radius", $root, scripts:checkProdutionSiteRadius#4),
+        iedreg:failsafeWrapper($lookupTables, "C5.2", "ProductionFacility radius", $root, scripts:checkProdutionFacilityRadius#4),
+        iedreg:failsafeWrapper($lookupTables, "C5.3", "ProductionInstallation radius", $root, scripts:checkProdutionInstallationRadius#4),
+        iedreg:failsafeWrapper($lookupTables, "C5.4", "Coordinates to country comparison", $root, scripts:checkCountryBoundary#4),
+        iedreg:failsafeWrapper($lookupTables, "C5.5", "Coordinate precision completeness", $root, scripts:checkCoordinatePrecisionCompleteness#4),
+        iedreg:failsafeWrapper($lookupTables, "C5.6", "Coordinate continuity", $root, scripts:checkCoordinateContinuity#4),
+        iedreg:failsafeWrapper($lookupTables, "C5.7", "ProductionSite to ProductionFacility coordinate comparison", $root, scripts:checkProdutionSiteBuffers#4),
+        iedreg:failsafeWrapper($lookupTables, "C5.8", "ProductionInstallation to ProductionInstallationPart coordinate comparison", $root, scripts:checkProdutionInstallationPartCoords#4)
     }</div>
 };
 
@@ -348,16 +401,16 @@ declare function iedreg:runChecks05($root as element()) as element()* {
  : 6. ACTIVITY CHECKS
  :)
 
-declare function iedreg:runChecks06($root as element()) as element()* {
+declare function iedreg:runChecks06($root as element(), $lookupTables) as element()* {
     let $rulename := '6. ACTIVITY CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: upd DONE :) iedreg:failsafeWrapper("C6.1", "EPRTRAnnexIActivity uniqueness", $root, scripts:checkEPRTRAnnexIActivityUniqueness#3),
-        iedreg:failsafeWrapper("C6.2", "EPRTRAnnexIActivity continuity", $root, scripts:checkEPRTRAnnexIActivityContinuity#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C6.3", "IEDAnnexIActivity uniqueness", $root, scripts:checkIEDAnnexIActivityUniqueness#3),
-        iedreg:failsafeWrapper("C6.4", "IEDAnnexIActivity continuity", $root, scripts:checkIEDAnnexIActivityContinuity#3)
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C6.1", "EPRTRAnnexIActivity uniqueness", $root, scripts:checkEPRTRAnnexIActivityUniqueness#4),
+        iedreg:failsafeWrapper($lookupTables, "C6.2", "EPRTRAnnexIActivity continuity", $root, scripts:checkEPRTRAnnexIActivityContinuity#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C6.3", "IEDAnnexIActivity uniqueness", $root, scripts:checkIEDAnnexIActivityUniqueness#4),
+        iedreg:failsafeWrapper($lookupTables, "C6.4", "IEDAnnexIActivity continuity", $root, scripts:checkIEDAnnexIActivityContinuity#4)
     }</div>
 };
 
@@ -365,17 +418,17 @@ declare function iedreg:runChecks06($root as element()) as element()* {
  : 7. STATUS CHECKS
  :)
 
-declare function iedreg:runChecks07($root as element()) as element()* {
+declare function iedreg:runChecks07($root as element(), $lookupTables) as element()* {
     let $rulename := '7. STATUS CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C7.1", "Decommissioned StatusType comparison ProductionFacility and ProductionInstallation", $root, scripts:checkProductionFacilityDecommissionedStatus#3),
-        iedreg:failsafeWrapper("C7.2", "Decommissioned StatusType comparison ProductionInstallations and ProductionInstallationParts", $root, scripts:checkProductionInstallationDecommissionedStatus#3),
-        iedreg:failsafeWrapper("C7.3", "Disused StatusType comparison ProductionFacility and ProductionInstallation", $root, scripts:checkProductionFacilityDisusedStatus#3),
-        iedreg:failsafeWrapper("C7.4", "Disused StatusType comparison ProductionInstallations and ProductionInstallationParts", $root, scripts:checkProductionInstallationDisusedStatus#3),
-        iedreg:failsafeWrapper("C7.5", "Decommissioned to functional plausibility", $root, scripts:checkFunctionalStatusType#3)
+        iedreg:failsafeWrapper($lookupTables, "C7.1", "Decommissioned StatusType comparison ProductionFacility and ProductionInstallation", $root, scripts:checkProductionFacilityDecommissionedStatus#4),
+        iedreg:failsafeWrapper($lookupTables, "C7.2", "Decommissioned StatusType comparison ProductionInstallations and ProductionInstallationParts", $root, scripts:checkProductionInstallationDecommissionedStatus#4),
+        iedreg:failsafeWrapper($lookupTables, "C7.3", "Disused StatusType comparison ProductionFacility and ProductionInstallation", $root, scripts:checkProductionFacilityDisusedStatus#4),
+        iedreg:failsafeWrapper($lookupTables, "C7.4", "Disused StatusType comparison ProductionInstallations and ProductionInstallationParts", $root, scripts:checkProductionInstallationDisusedStatus#4),
+        iedreg:failsafeWrapper($lookupTables, "C7.5", "Decommissioned to functional plausibility", $root, scripts:checkFunctionalStatusType#4)
     }</div>
 };
 
@@ -383,17 +436,17 @@ declare function iedreg:runChecks07($root as element()) as element()* {
  : 8. DATE CHECKS
  :)
 
-declare function iedreg:runChecks08($root as element()) as element()* {
+declare function iedreg:runChecks08($root as element(), $lookupTables) as element()* {
     let $rulename := '8. DATE CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C8.1", "dateOfStartOfOperation comparison", $root, scripts:checkDateOfStartOfOperation#3),
-        iedreg:failsafeWrapper("C8.2", "dateOfStartOfOperation LCP restriction", $root, scripts:checkDateOfStartOfOperationLCP#3),
-        (: removed :) (:iedreg:failsafeWrapper("C8.3", "dateOfStartOfOperation to dateOfGranting comparison", $root, scripts:checkDateOfGranting#3),:)
-        (: upd DONE :) iedreg:failsafeWrapper("C8.3", "dateOfGranting plausibility", $root, scripts:checkDateOfLastReconsideration#3)
-        (: removed :) (:iedreg:failsafeWrapper("C8.4", "dateOfLastReconsideration plausibility", $root, scripts:checkDateOfLastUpdate#3):)
+        iedreg:failsafeWrapper($lookupTables, "C8.1", "dateOfStartOfOperation comparison", $root, scripts:checkDateOfStartOfOperation#4),
+        iedreg:failsafeWrapper($lookupTables, "C8.2", "dateOfStartOfOperation LCP restriction", $root, scripts:checkDateOfStartOfOperationLCP#4),
+        (: removed :) (:iedreg:failsafeWrapper($lookupTables, "C8.3", "dateOfStartOfOperation to dateOfGranting comparison", $root, scripts:checkDateOfGranting#4),:)
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C8.3", "dateOfGranting plausibility", $root, scripts:checkDateOfLastReconsideration#4)
+        (: removed :) (:iedreg:failsafeWrapper($lookupTables, "C8.4", "dateOfLastReconsideration plausibility", $root, scripts:checkDateOfLastUpdate#4):)
     }</div>
 };
 
@@ -401,17 +454,17 @@ declare function iedreg:runChecks08($root as element()) as element()* {
  : 9. PERMITS & COMPETENT AUTHORITY CHECKS
  :)
 
-declare function iedreg:runChecks09($root as element()) as element()* {
+declare function iedreg:runChecks09($root as element(), $lookupTables) as element()* {
     let $rulename := '9. PERMITS &amp; COMPETENT AUTHORITY CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: upd DONE :) iedreg:failsafeWrapper("C9.1", "competentAuthorityInspections to inspections comparison", $root, scripts:checkInspections#3),
-        iedreg:failsafeWrapper("C9.2", "competentAuthorityPermits and permit field comparison", $root, scripts:checkPermit#3),
-        iedreg:failsafeWrapper("C9.3", "permitURL to dateOfGranting comparison", $root, scripts:checkDateOfGrantingPermitURL#3),
-        (: new DONE :) iedreg:failsafeWrapper("C9.5", "enforcementAction to permitGranted comparison", $root, scripts:checkEnforcementAction#3),
-        (: new DONE :) iedreg:failsafeWrapper("C9.6", "StricterPermitConditions", $root, scripts:checkStricterPermitConditions#3)
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C9.1", "competentAuthorityInspections to inspections comparison", $root, scripts:checkInspections#4),
+        iedreg:failsafeWrapper($lookupTables, "C9.2", "competentAuthorityPermits and permit field comparison", $root, scripts:checkPermit#4),
+        iedreg:failsafeWrapper($lookupTables, "C9.3", "permitURL to dateOfGranting comparison", $root, scripts:checkDateOfGrantingPermitURL#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C9.5", "enforcementAction to permitGranted comparison", $root, scripts:checkEnforcementAction#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C9.6", "StricterPermitConditions", $root, scripts:checkStricterPermitConditions#4)
     }</div>
 };
 
@@ -419,20 +472,20 @@ declare function iedreg:runChecks09($root as element()) as element()* {
  : 10. DEROGATION CHECKS
  :)
 
-declare function iedreg:runChecks10($root as element()) as element()* {
+declare function iedreg:runChecks10($root as element(), $lookupTables) as element()* {
     let $rulename := '10. DEROGATION CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C10.1", "BATDerogationIndicator to permitGranted comparison", $root, scripts:checkBATPermit#3),
-        (: new DONE :) iedreg:failsafeWrapper("C10.2", "BATDerogation", $root, scripts:checkBATDerogation#3),
-        (: removed :) (:iedreg:failsafeWrapper("C10.2", "dateOfGranting to Transitional National Plan comparison", $root, scripts:checkArticle32#3),:)
-        iedreg:failsafeWrapper("C10.3", "Limited lifetime derogation to reportingYear comparison", $root, scripts:checkArticle33#3),
-        iedreg:failsafeWrapper("C10.4", "District heating plants derogation to reportingYear comparison", $root, scripts:checkArticle35#3),
-        iedreg:failsafeWrapper("C10.5", "Limited life time derogation continuity", $root, scripts:checkArticle33Continuity#3),
-        iedreg:failsafeWrapper("C10.6", "District heat plant derogation continuity", $root, scripts:checkArticle35Continuity#3),
-        iedreg:failsafeWrapper("C10.7", "Transitional National Plan derogation continuity", $root, scripts:checkArticle32Continuity#3)
+        iedreg:failsafeWrapper($lookupTables, "C10.1", "BATDerogationIndicator to permitGranted comparison", $root, scripts:checkBATPermit#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C10.2", "BATDerogation", $root, scripts:checkBATDerogation#4),
+        (: removed :) (:iedreg:failsafeWrapper($lookupTables, "C10.2", "dateOfGranting to Transitional National Plan comparison", $root, scripts:checkArticle32#4),:)
+        iedreg:failsafeWrapper($lookupTables, "C10.3", "Limited lifetime derogation to reportingYear comparison", $root, scripts:checkArticle33#4),
+        iedreg:failsafeWrapper($lookupTables, "C10.4", "District heating plants derogation to reportingYear comparison", $root, scripts:checkArticle35#4),
+        iedreg:failsafeWrapper($lookupTables, "C10.5", "Limited life time derogation continuity", $root, scripts:checkArticle33Continuity#4),
+        iedreg:failsafeWrapper($lookupTables, "C10.6", "District heat plant derogation continuity", $root, scripts:checkArticle35Continuity#4),
+        iedreg:failsafeWrapper($lookupTables, "C10.7", "Transitional National Plan derogation continuity", $root, scripts:checkArticle32Continuity#4)
     }</div>
 };
 
@@ -440,17 +493,17 @@ declare function iedreg:runChecks10($root as element()) as element()* {
  : 11. LCP & WASTE INCINERATOR CHECKS
  :)
 
-declare function iedreg:runChecks11($root as element()) as element()* {
+declare function iedreg:runChecks11($root as element(), $lookupTables) as element()* {
     let $rulename := '11. LCP &amp; WASTE INCINERATOR CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: upd DONE :) iedreg:failsafeWrapper("C11.1", "otherRelevantChapters to plantType comparison", $root, scripts:checkRelevantChapters#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C11.2", "LCP plantType", $root, scripts:checkLCP#3),
-        iedreg:failsafeWrapper("C11.3", "totalRatedThermalInput plausibility", $root, scripts:checkRatedThermalInput#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C11.4", "WI plantType", $root, scripts:checkWI#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C11.5", "nominalCapacity plausibility", $root, scripts:checkNominalCapacity#3)
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C11.1", "otherRelevantChapters to plantType comparison", $root, scripts:checkRelevantChapters#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C11.2", "LCP plantType", $root, scripts:checkLCP#4),
+        iedreg:failsafeWrapper($lookupTables, "C11.3", "totalRatedThermalInput plausibility", $root, scripts:checkRatedThermalInput#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C11.4", "WI plantType", $root, scripts:checkWI#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C11.5", "nominalCapacity plausibility", $root, scripts:checkNominalCapacity#4)
     }</div>
 };
 
@@ -458,14 +511,14 @@ declare function iedreg:runChecks11($root as element()) as element()* {
  : 12. CONFIDENTIALITY CHECKS
  :)
 
-declare function iedreg:runChecks12($root as element()) as element()* {
+declare function iedreg:runChecks12($root as element(), $lookupTables) as element()* {
     let $rulename := "12. CONFIDENTIALITY CHECKS"
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C12.1", "Confidentiality restriction", $root, scripts:checkConfidentialityRestriction#3),
-        iedreg:failsafeWrapper("C12.2", "Confidentiality overuse", $root, scripts:checkConfidentialityOveruse#3)
+        iedreg:failsafeWrapper($lookupTables, "C12.1", "Confidentiality restriction", $root, scripts:checkConfidentialityRestriction#4),
+        iedreg:failsafeWrapper($lookupTables, "C12.2", "Confidentiality overuse", $root, scripts:checkConfidentialityOveruse#4)
     }</div>
 };
 
@@ -473,23 +526,23 @@ declare function iedreg:runChecks12($root as element()) as element()* {
  : 13. OTHER IDENTIFIERS & MISCELLANEOUS CHECKS
  :)
 
-declare function iedreg:runChecks13($root as element()) as element()* {
+declare function iedreg:runChecks13($root as element(), $lookupTables) as element()* {
     let $rulename := '13. OTHER IDENTIFIERS &amp; MISCELLANEOUS CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        (: upd DONE :) iedreg:failsafeWrapper("C13.1", "ETSIdentifier validity", $root, scripts:checkETSIdentifier#3),
-        (: upd DONE :) iedreg:failsafeWrapper("C13.2", "eSPIRSId validity", $root, scripts:checkeSPIRSIdentifier#3),
-        iedreg:failsafeWrapper("C13.3", "ProductionFacility facilityName to parentCompanyName comparison", $root, scripts:checkFacilityName#3),
-        iedreg:failsafeWrapper("C13.4", "nameOfFeature", $root, scripts:checkNameOfFeatureContinuity#3),
-        iedreg:failsafeWrapper("C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#3),
-        iedreg:failsafeWrapper("C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#3),
-        iedreg:failsafeWrapper("C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#3),
-        (: new DONE :) iedreg:failsafeWrapper("C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#3),
-        (: removed :) (:iedreg:failsafeWrapper("C13.8", "Character string space identification", $root, scripts:checkWhitespaces#3):)
-        (: new :) iedreg:failsafeWrapper("C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#3),
-        (: new :) iedreg:failsafeWrapper("C13.10", "All fields blank check", $root, scripts:checkAllFieldsBlank#3)
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C13.1", "ETSIdentifier validity", $root, scripts:checkETSIdentifier#4),
+        (: upd DONE :) iedreg:failsafeWrapper($lookupTables, "C13.2", "eSPIRSId validity", $root, scripts:checkeSPIRSIdentifier#4),
+        iedreg:failsafeWrapper($lookupTables, "C13.3", "ProductionFacility facilityName to parentCompanyName comparison", $root, scripts:checkFacilityName#4),
+        iedreg:failsafeWrapper($lookupTables, "C13.4", "nameOfFeature", $root, scripts:checkNameOfFeatureContinuity#4),
+        iedreg:failsafeWrapper($lookupTables, "C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#4),
+        iedreg:failsafeWrapper($lookupTables, "C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#4),
+        iedreg:failsafeWrapper($lookupTables, "C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#4),
+        (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#4),
+        (: removed :) (:iedreg:failsafeWrapper($lookupTables, "C13.8", "Character string space identification", $root, scripts:checkWhitespaces#4):)
+        (: new :) iedreg:failsafeWrapper($lookupTables, "C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#4),
+        (: new :) iedreg:failsafeWrapper($lookupTables, "C13.10", "All fields blank check", $root, scripts:checkAllFieldsBlank#4)
     }</div>
 };
 
@@ -497,28 +550,28 @@ declare function iedreg:runChecks13($root as element()) as element()* {
  : 14. OTHER CHECKS QA3
  :)
 
-declare function iedreg:runChecks14($root as element()) as element()* {
+declare function iedreg:runChecks14($root as element(), $lookupTables) as element()* {
     let $rulename := '14. GML Validation Checks'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C14.1", "reportData validity", $root, scripts3:checkReportData#3),
-        iedreg:failsafeWrapper("C14.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #3),
-        iedreg:failsafeWrapper("C14.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#3),
-        iedreg:failsafeWrapper("C14.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#3),
-        iedreg:failsafeWrapper("C14.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#3),
-        (: removed :)(:iedreg:failsafeWrapper("C14.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),:)
-        (: 2.17 :) (:iedreg:failsafeWrapper("C14.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),:)
-        iedreg:failsafeWrapper("C14.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#3),
-        iedreg:failsafeWrapper("C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#3)
-        (: removed :)(:iedreg:failsafeWrapper("C14.10", "pf:status validity", $root, scripts3:checkStatusNil#3),:)
-        (: removed :)(:iedreg:failsafeWrapper("C14.11", "pf:pointGeometry validity", $root, scripts3:checkePointGeometry#3):)
-        (: 2.16 :) (:iedreg:failsafeWrapper("C14.12", "otherRelevantChapters consistency", $root, scripts3:checkOtherRelevantChapters#3),:)
-        (: 2.13 :) (:iedreg:failsafeWrapper("C14.13", "statusType consistency", $root, scripts3:checkStatusType#3),:)
-        (: 2.15 :) (:iedreg:failsafeWrapper("C14.14", "plantType consistency", $root, scripts3:checkPlantType#3),:)
-        (: 2.14 :) (:iedreg:failsafeWrapper("C14.15", "derogations consistency", $root, scripts3:checkDerogations#3),:)
-        (: 2.12 :) (:iedreg:failsafeWrapper("C14.16", "specificConditions consistency", $root, scripts3:checkSpecificConditions#3):)
+        iedreg:failsafeWrapper($lookupTables, "C14.1", "reportData validity", $root, scripts3:checkReportData#4),
+        iedreg:failsafeWrapper($lookupTables, "C14.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #4),
+        iedreg:failsafeWrapper($lookupTables, "C14.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#4),
+        iedreg:failsafeWrapper($lookupTables, "C14.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#4),
+        iedreg:failsafeWrapper($lookupTables, "C14.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#4),
+        (: removed :)(:iedreg:failsafeWrapper($lookupTables, "C14.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#4),:)
+        (: 2.17 :) (:iedreg:failsafeWrapper($lookupTables, "C14.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#4),:)
+        iedreg:failsafeWrapper($lookupTables, "C14.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#4),
+        iedreg:failsafeWrapper($lookupTables, "C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#4)
+        (: removed :)(:iedreg:failsafeWrapper($lookupTables, "C14.10", "pf:status validity", $root, scripts3:checkStatusNil#4),:)
+        (: removed :)(:iedreg:failsafeWrapper($lookupTables, "C14.11", "pf:pointGeometry validity", $root, scripts3:checkePointGeometry#4):)
+        (: 2.16 :) (:iedreg:failsafeWrapper($lookupTables, "C14.12", "otherRelevantChapters consistency", $root, scripts3:checkOtherRelevantChapters#4),:)
+        (: 2.13 :) (:iedreg:failsafeWrapper($lookupTables, "C14.13", "statusType consistency", $root, scripts3:checkStatusType#4),:)
+        (: 2.15 :) (:iedreg:failsafeWrapper($lookupTables, "C14.14", "plantType consistency", $root, scripts3:checkPlantType#4),:)
+        (: 2.14 :) (:iedreg:failsafeWrapper($lookupTables, "C14.15", "derogations consistency", $root, scripts3:checkDerogations#4),:)
+        (: 2.12 :) (:iedreg:failsafeWrapper($lookupTables, "C14.16", "specificConditions consistency", $root, scripts3:checkSpecificConditions#4):)
     }</div>
 };
 
@@ -537,21 +590,31 @@ declare function iedreg:runChecks($url as xs:string) as element()*
     updating $add-envelope-url(., $envelopeURL)
     )
 
+    (:let $asd:= trace('Getting lookup tables'):)
+
+    let $countryCode := scripts:getCountry($root)
+    let $lookupTables := map {
+        'ProductionFacility': iedreg:getLookupTable($countryCode, 'ProductionFacility'),
+        'ProductionInstallation': iedreg:getLookupTable($countryCode, 'ProductionInstallation'),
+        'ProductionSite': iedreg:getLookupTable($countryCode, 'ProductionSite'),
+        'ProductionInstallationPart': iedreg:getLookupTable($countryCode, 'ProductionInstallationPart')
+    }
+
     return common:feedback((
         common:header(),
-        iedreg:runChecks01($root),
-        iedreg:runChecks02($root),
-        iedreg:runChecks03($root),
-        iedreg:runChecks04($root),
-        iedreg:runChecks05($root),
-        iedreg:runChecks06($root),
-        iedreg:runChecks07($root),
-        iedreg:runChecks08($root),
-        iedreg:runChecks09($root),
-        iedreg:runChecks10($root),
-        iedreg:runChecks11($root),
-        iedreg:runChecks12($root),
-        iedreg:runChecks13($root)
+        iedreg:runChecks01($root, $lookupTables),
+        iedreg:runChecks02($root, $lookupTables),
+        iedreg:runChecks03($root, $lookupTables),
+        iedreg:runChecks04($root, $lookupTables),
+        iedreg:runChecks05($root, $lookupTables),
+        iedreg:runChecks06($root, $lookupTables),
+        iedreg:runChecks07($root, $lookupTables),
+        iedreg:runChecks08($root, $lookupTables),
+        iedreg:runChecks09($root, $lookupTables),
+        iedreg:runChecks10($root, $lookupTables),
+        iedreg:runChecks11($root, $lookupTables),
+        iedreg:runChecks12($root, $lookupTables),
+        iedreg:runChecks13($root, $lookupTables)
         (:iedreg:runChecks14($root):)
     ))
 };

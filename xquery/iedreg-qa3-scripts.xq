@@ -72,6 +72,7 @@ declare function scripts3:checkActivity(
     http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/RelevantChapterValue
 :)
 declare function scripts3:checkOtherRelevantChapters(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -91,6 +92,7 @@ declare function scripts3:checkOtherRelevantChapters(
 :)
 
 declare function scripts3:checkStatusType(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -110,6 +112,7 @@ declare function scripts3:checkStatusType(
 :)
 
 declare function scripts3:checkPlantType(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -129,6 +132,7 @@ declare function scripts3:checkPlantType(
 :)
 
 declare function scripts3:checkDerogations(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -148,6 +152,7 @@ declare function scripts3:checkDerogations(
 :)
 
 declare function scripts3:checkSpecificConditions(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -172,6 +177,7 @@ declare function scripts3:checkSpecificConditions(
 :)
 
 declare function scripts3:checkReportData(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -223,6 +229,7 @@ declare function scripts3:checkReportData(
 :)
 
 declare function scripts3:checkeHostingSite(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -276,6 +283,7 @@ declare function scripts3:checkeHostingSite(
 :)
 
 declare function scripts3:checkeHostingSiteHref(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -329,6 +337,7 @@ declare function scripts3:checkeHostingSiteHref(
 :)
 
 declare function scripts3:checkGroupedInstallation(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -376,6 +385,7 @@ Example: <pf:groupedInstallation xlink:href=""#_010101011.INSTALLATION""/> is co
 :)
 
 declare function scripts3:checkGroupedInstallationHref(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -467,6 +477,7 @@ declare function scripts3:checkActCoreGeometry(
 :)
 
 declare function scripts3:checkActCoreActivity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -489,6 +500,7 @@ declare function scripts3:checkActCoreActivity(
 :)
 
 declare function scripts3:checkGroupedInstallationPart(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -534,6 +546,7 @@ declare function scripts3:checkGroupedInstallationPart(
 :)
 
 declare function scripts3:checkGroupedInstallationPartHref(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()

@@ -39,66 +39,8 @@ import module namespace geo = "http://expath.org/ns/geo";
 
 declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
 
-declare variable $scripts:location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery';
+(:declare variable $scripts:location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery';:)
 (:declare variable $scripts:location := '.';:)
-
-(:declare variable $scripts:docProdFac as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionFacility.xml'));:)
-(:declare variable $scripts:docProdInstall as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionInstallation.xml'));:)
-(:declare variable $scripts:docProdInstallPart as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionInstallationPart.xml'));:)
-(:declare variable $scripts:docProdSite as document-node() := fn:doc(concat($scripts:location, '/lookup-tables/ProductionSite.xml'));:)
-
-declare function scripts:docProdFac(
-    $countryCode as xs:string
-) as document-node() {
-    fn:doc(
-        concat(
-            $scripts:location,
-            '/lookup-tables/ProductionFacility/',
-            $countryCode,
-            '_ProductionFacility.xml'
-        )
-    )
-};
-
-declare function scripts:docProdInstall(
-    $countryCode as xs:string
-) as document-node() {
-    fn:doc(
-        concat(
-            $scripts:location,
-            '/lookup-tables/ProductionInstallation/',
-            $countryCode,
-            '_ProductionInstallation.xml'
-        )
-    )
-};
-
-declare function scripts:docProdSite(
-    $countryCode as xs:string
-) as document-node() {
-    fn:doc(
-        concat(
-            $scripts:location,
-            '/lookup-tables/ProductionSite/',
-            $countryCode,
-            '_ProductionSite.xml'
-        )
-    )
-};
-
-declare function scripts:docProdInstallPart(
-    $countryCode as xs:string
-) as document-node() {
-    fn:doc(
-        concat(
-            $scripts:location,
-            '/lookup-tables/ProductionInstallationPart/',
-            $countryCode,
-            '_ProductionInstallationPart.xml'
-        )
-    )
-};
-
 
 (:
 --------------------
@@ -415,6 +357,7 @@ declare function scripts:checkActivity(
  :)
 
 declare function scripts:checkMainEPRTRAnnexIActivity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -432,6 +375,7 @@ declare function scripts:checkMainEPRTRAnnexIActivity(
  :)
 
 declare function scripts:checkOtherEPRTRAnnexIActivity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -449,6 +393,7 @@ declare function scripts:checkOtherEPRTRAnnexIActivity(
  :)
 
 declare function scripts:checkMainIEDAnnexIActivity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -466,6 +411,7 @@ declare function scripts:checkMainIEDAnnexIActivity(
  :)
 
 declare function scripts:checkOtherIEDAnnexIActivity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -483,6 +429,7 @@ declare function scripts:checkOtherIEDAnnexIActivity(
  :)
 
 declare function scripts:checkCountryId(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -544,6 +491,7 @@ declare function scripts:checkCountryId(
  :)
 
 declare function scripts:checkReasonValue(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -585,6 +533,7 @@ declare function scripts:checkReasonValue(
     2.7 FacilityType consistency
 :)
 declare function scripts:checkFacilityTypeVocab(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -602,6 +551,7 @@ declare function scripts:checkFacilityTypeVocab(
     2.8 InstallationType consistency
 :)
 declare function scripts:checkInstallationTypeVocab(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -618,6 +568,7 @@ declare function scripts:checkInstallationTypeVocab(
     2.9 BaselineReport consistency
 :)
 declare function scripts:checkBaselineReportTypeVocab(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -634,6 +585,7 @@ declare function scripts:checkBaselineReportTypeVocab(
     2.10 BATConclusion consistency
 :)
 declare function scripts:checkBATConclusionTypeVocab(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -650,6 +602,7 @@ declare function scripts:checkBATConclusionTypeVocab(
     2.11 BATAEL consistency
 :)
 declare function scripts:checkBATAELTypeVocab(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -703,6 +656,7 @@ declare function scripts:checkInspireIdUniqueness(
  :)
 
 declare function scripts:checkAmountOfInspireIds(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -720,10 +674,10 @@ declare function scripts:checkAmountOfInspireIds(
     let $seq := $root//*:inspireId
 
     let $fromDB := (
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'inspireId'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'inspireId'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'inspireId'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'inspireId')
+        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallation'), 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), 'inspireId'),
+        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionSite'), 'inspireId')
     )
 
     (:let $xIDs := $seq//base:localId:)
@@ -749,7 +703,7 @@ declare function scripts:checkAmountOfInspireIds(
 
     let $hdrs := ("Feature", "Local ID")
     return
-        if (not(database:dbAvailable(scripts:docProdFac($cntry)))) then
+        if (not(database:dbAvailable($lookupTables?('ProductionFacility')))) then
             scripts:noDbWarning($refcode, $rulename)
         else
             if ($ratio gt 0.5) then
@@ -769,6 +723,7 @@ declare function scripts:checkAmountOfInspireIds(
  :)
 
 declare function scripts:checkProductionSiteUniqueness(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -783,6 +738,7 @@ declare function scripts:checkProductionSiteUniqueness(
  :)
 
 declare function scripts:checkProductionFacilityUniqueness(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -797,6 +753,7 @@ declare function scripts:checkProductionFacilityUniqueness(
  :)
 
 declare function scripts:checkProductionInstallationUniqueness(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -811,6 +768,7 @@ declare function scripts:checkProductionInstallationUniqueness(
  :)
 
 declare function scripts:checkProductionInstallationPartUniqueness(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -825,6 +783,7 @@ declare function scripts:checkProductionInstallationPartUniqueness(
  :)
 
 declare function scripts:checkInspireIdBlank(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1137,6 +1096,7 @@ declare function scripts:checkDuplicates2(
  :)
 
 declare function scripts:checkProductionSiteDuplicates(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1159,6 +1119,7 @@ declare function scripts:checkProductionSiteDuplicates(
  :)
 
 declare function scripts:checkProductionFacilityDuplicates(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1182,6 +1143,7 @@ declare function scripts:checkProductionFacilityDuplicates(
  :)
 
 declare function scripts:checkProductionInstallationDuplicates(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1205,6 +1167,7 @@ declare function scripts:checkProductionInstallationDuplicates(
  :)
 
 declare function scripts:checkProductionInstallationPartDuplicates(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1360,6 +1323,7 @@ declare function scripts:checkDatabaseDuplicates(
 };
 
 declare function scripts:checkDatabaseDuplicates2(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
@@ -1501,6 +1465,7 @@ declare function scripts:checkDatabaseDuplicates2(
  :)
 
 declare function scripts:checkProductionSiteDatabaseDuplicates(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1512,10 +1477,14 @@ declare function scripts:checkProductionSiteDatabaseDuplicates(
     let $stringNodes := ('siteName')
     let $locationNode := ('location')
     let $codelistNode := ()
-    let $docDB := scripts:docProdSite($cntry)
+    let $docDB := $lookupTables?('ProductionSite')
 
-    return scripts:checkDatabaseDuplicates2($refcode, $rulename, $root, $feature,
-            $stringNodes, $locationNode, $codelistNode, $docDB)
+    return
+        if (not(database:dbAvailable($docDB))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:checkDatabaseDuplicates2($lookupTables, $refcode, $rulename, $root, $feature,
+                $stringNodes, $locationNode, $codelistNode, $docDB)
 };
 
 (:~
@@ -1523,6 +1492,7 @@ declare function scripts:checkProductionSiteDatabaseDuplicates(
  :)
 
 declare function scripts:checkProductionFacilityDatabaseDuplicates(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1534,12 +1504,14 @@ declare function scripts:checkProductionFacilityDatabaseDuplicates(
     let $stringNodes := ('facilityName', 'parentCompanyName')
     let $locationNode := ('geometry')
     let $codelistNode := ('mainActivity')
-    let $docDB := scripts:docProdFac($cntry)
+    let $docDB := $lookupTables?('ProductionFacility')
 
-    (:return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,:)
-            (:$nodes, $attrs, $docDB):)
-    return scripts:checkDatabaseDuplicates2($refcode, $rulename, $root, $feature,
-            $stringNodes, $locationNode, $codelistNode, $docDB)
+    return
+        if (not(database:dbAvailable($docDB))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:checkDatabaseDuplicates2($lookupTables, $refcode, $rulename, $root, $feature,
+                $stringNodes, $locationNode, $codelistNode, $docDB)
 };
 
 (:~
@@ -1547,6 +1519,7 @@ declare function scripts:checkProductionFacilityDatabaseDuplicates(
  :)
 
 declare function scripts:checkProductionInstallationDatabaseDuplicates(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1559,12 +1532,14 @@ declare function scripts:checkProductionInstallationDatabaseDuplicates(
     let $locationNode := ('pointGeometry')
     let $codelistNode := ('mainActivity')
 
-    let $docDB := scripts:docProdInstall($cntry)
+    let $docDB := $lookupTables?('ProductionInstallation')
 
-    (:return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,:)
-            (:$nodes, $attrs, $docDB):)
-    return scripts:checkDatabaseDuplicates2($refcode, $rulename, $root, $feature,
-            $stringNodes, $locationNode, $codelistNode, $docDB)
+    return
+        if (not(database:dbAvailable($docDB))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:checkDatabaseDuplicates2($lookupTables, $refcode, $rulename, $root, $feature,
+                $stringNodes, $locationNode, $codelistNode, $docDB)
 };
 
 (:~
@@ -1572,6 +1547,7 @@ declare function scripts:checkProductionInstallationDatabaseDuplicates(
  :)
 
 declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1584,15 +1560,18 @@ declare function scripts:checkProductionInstallationPartDatabaseDuplicates(
     let $locationNode := ('pointGeometry')
     let $codelistNode := ('plantType')
 
-    let $docDB := scripts:docProdInstallPart($cntry)
+    let $docDB := $lookupTables?('ProductionInstallationPart')
 
-    (:return scripts:checkDatabaseDuplicates($refcode, $rulename, $root, $feature,:)
-            (:$nodes, $attrs, $docDB):)
-    return scripts:checkDatabaseDuplicates2($refcode, $rulename, $root, $feature,
-            $stringNodes, $locationNode, $codelistNode, $docDB)
+    return
+        if (not(database:dbAvailable($docDB))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else
+            scripts:checkDatabaseDuplicates2($lookupTables, $refcode, $rulename, $root, $feature,
+                $stringNodes, $locationNode, $codelistNode, $docDB)
 };
 
 declare function scripts:checkMissing(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
@@ -1648,6 +1627,7 @@ declare function scripts:checkMissing(
 
 (: TODO needs testing :)
 declare function scripts:checkMissingSites(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
@@ -1689,7 +1669,7 @@ declare function scripts:checkMissingSites(
             )
             }
 
-    let $fromDBSite := database:queryByYearFeature($country, $lastYear, scripts:docProdSite($country))
+    let $fromDBSite := database:queryByYearFeature($country, $lastYear, $lookupTables?('ProductionSite'))
     (: let $data2 :=
         for $fromDbsite in $fromDBSite
             let $inspireIdFromDb := $fromDbsite/*:inspireId//*:localId
@@ -1741,6 +1721,7 @@ declare function scripts:checkMissingSites(
  :)
 
 declare function scripts:checkMissingProductionSites(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1748,9 +1729,9 @@ declare function scripts:checkMissingProductionSites(
     let $cntry := scripts:getCountry($root)
     let $feature := 'ProductionFacility'
     let $allowed := ("decommissioned")
-    let $docDB := scripts:docProdFac($cntry)
+    let $docDB := $lookupTables?('ProductionFacility')
 
-    return scripts:checkMissingSites($refcode, $rulename, $root, $feature, $allowed, $docDB)
+    return scripts:checkMissingSites($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1758,6 +1739,7 @@ declare function scripts:checkMissingProductionSites(
  :)
 
 declare function scripts:checkMissingProductionFacilities(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1765,9 +1747,9 @@ declare function scripts:checkMissingProductionFacilities(
     let $cntry := scripts:getCountry($root)
     let $feature := 'facility'
     let $allowed := ("decommissioned", "notRegulated")
-    let $docDB := scripts:docProdFac($cntry)
+    let $docDB := $lookupTables?('ProductionFacility')
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
+    return scripts:checkMissing($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1775,6 +1757,7 @@ declare function scripts:checkMissingProductionFacilities(
  :)
 
 declare function scripts:checkMissingProductionInstallations(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1782,9 +1765,9 @@ declare function scripts:checkMissingProductionInstallations(
     let $cntry := scripts:getCountry($root)
     let $feature := 'installation'
     let $allowed := ("decommissioned", "notRegulated")
-    let $docDB := scripts:docProdInstall($cntry)
+    let $docDB := $lookupTables?('ProductionInstallation')
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
+    return scripts:checkMissing($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1792,6 +1775,7 @@ declare function scripts:checkMissingProductionInstallations(
  :)
 
 declare function scripts:checkMissingProductionInstallationParts(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1799,9 +1783,9 @@ declare function scripts:checkMissingProductionInstallationParts(
     let $cntry := scripts:getCountry($root)
     let $feature := 'installationPart'
     let $allowed := ("decommissioned", 'notRegulated')
-    let $docDB := scripts:docProdInstallPart($cntry)
+    let $docDB := $lookupTables?('ProductionInstallationPart')
 
-    return scripts:checkMissing($refcode, $rulename, $root, $feature, $allowed, $docDB)
+    return scripts:checkMissing($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1866,6 +1850,7 @@ declare function scripts:checkRadius(
  :)
 
 declare function scripts:checkProdutionSiteRadius(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1923,6 +1908,7 @@ declare function scripts:checkProdutionSiteRadius(
  :)
 
 declare function scripts:checkProdutionFacilityRadius(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -1983,6 +1969,7 @@ declare function scripts:checkProdutionFacilityRadius(
  :)
 
 declare function scripts:checkProdutionInstallationRadius(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2043,6 +2030,7 @@ declare function scripts:checkProdutionInstallationRadius(
  : C5.4 Coordinates to country comparison
  :)
 declare function scripts:checkCountryBoundary(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2154,6 +2142,7 @@ declare function scripts:checkCountryBoundary(
  :)
 
 declare function scripts:checkCoordinatePrecisionCompleteness(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2203,6 +2192,7 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
  :)
 
 declare function scripts:checkCoordinateContinuity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2225,10 +2215,10 @@ declare function scripts:checkCoordinateContinuity(
     )
 
     let $fromDB := map {
-        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'geometry' ),
-        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'pointGeometry'),
-        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'pointGeometry'),
-        "ProductionSite": database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'location')
+        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), 'geometry' ),
+        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallation'), 'pointGeometry'),
+        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), 'pointGeometry'),
+        "ProductionSite": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionSite'), 'location')
     }
     let $data :=
         for $x_coords in $seq//gml:*/descendant-or-self::*[not(*)]
@@ -2324,7 +2314,7 @@ declare function scripts:checkCoordinateContinuity(
         }</div>
 
     return
-        if (not(database:dbAvailable(scripts:docProdSite($cntry))))
+        if (not(database:dbAvailable($lookupTables?('ProductionSite'))))
         then scripts:noDbWarning($refcode, $rulename)
         else if (empty($lastReportingYear))
         then scripts:noPreviousYearWarning($refcode, $rulename)
@@ -2337,6 +2327,7 @@ declare function scripts:checkCoordinateContinuity(
  :)
 
 declare function scripts:checkProdutionSiteBuffers(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2473,6 +2464,7 @@ declare function scripts:checkProdutionSiteBuffers(
  :)
 
 declare function scripts:checkProdutionInstallationPartCoords(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2565,6 +2557,7 @@ declare function scripts:checkActivityUniqueness(
 };
 
 declare function scripts:checkActivityContinuity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
@@ -2659,6 +2652,7 @@ declare function scripts:checkActivityContinuity(
  :)
 
 declare function scripts:checkEPRTRAnnexIActivityUniqueness(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2674,16 +2668,17 @@ declare function scripts:checkEPRTRAnnexIActivityUniqueness(
  :)
 
 declare function scripts:checkEPRTRAnnexIActivityContinuity(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+    $lookupTables,
+    $refcode as xs:string,
+    $rulename as xs:string,
+    $root as element()
 ) as element()* {
   let $cntry := scripts:getCountry($root)
   let $featureName := "ProductionFacility"
   let $activityName := "EPRTRAnnexIActivity"
-  let $docDB := scripts:docProdFac($cntry)
+  let $docDB := $lookupTables?('ProductionFacility')
 
-  return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName,
+  return scripts:checkActivityContinuity($lookupTables, $refcode, $rulename, $root, $featureName,
             $activityName, $docDB)
 };
 
@@ -2692,6 +2687,7 @@ declare function scripts:checkEPRTRAnnexIActivityContinuity(
  :)
 
 declare function scripts:checkIEDAnnexIActivityUniqueness(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2707,16 +2703,17 @@ declare function scripts:checkIEDAnnexIActivityUniqueness(
  :)
 
 declare function scripts:checkIEDAnnexIActivityContinuity(
-  $refcode as xs:string,
-  $rulename as xs:string,
-  $root as element()
+    $lookupTables,
+    $refcode as xs:string,
+    $rulename as xs:string,
+    $root as element()
 ) as element()* {
     let $cntry := scripts:getCountry($root)
   let $featureName := "ProductionInstallation"
   let $activityName := "IEDAnnexIActivity"
-  let $docDB := scripts:docProdInstall($cntry)
+  let $docDB := $lookupTables?('ProductionInstallation')
 
-  return scripts:checkActivityContinuity($refcode, $rulename, $root, $featureName,
+  return scripts:checkActivityContinuity($lookupTables, $refcode, $rulename, $root, $featureName,
           $activityName, $docDB)
 };
 
@@ -2754,11 +2751,14 @@ declare function scripts:checkStatus(
         let $x_status := scripts:normalize($x_status)
         where $x_status = $parentStatus
 
+        let $x_seq := $x/*[local-name() = $groupName]/@xlink:href
+
         let $children :=
-            for $y_id in $x/*[local-name() = $groupName]/@xlink:href
+            for $y_id in $x_seq
             let $y_id := replace(data($y_id), "^#", "")
 
-            for $y in $root//*[local-name() = $childName][@gml:id = $y_id]
+            let $y_seq := $root//*[local-name() = $childName][@gml:id = $y_id]
+            for $y in $y_seq
             let $y_status := replace($y/pf:status//pf:statusType/@xlink:href, '/+$', '')
             where $y_status = $valid
 
@@ -2797,6 +2797,7 @@ declare function scripts:checkStatus(
  :)
 
 declare function scripts:checkProductionFacilityDecommissionedStatus(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2815,6 +2816,7 @@ declare function scripts:checkProductionFacilityDecommissionedStatus(
  :)
 
 declare function scripts:checkProductionInstallationDecommissionedStatus(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2833,6 +2835,7 @@ declare function scripts:checkProductionInstallationDecommissionedStatus(
  :)
 
 declare function scripts:checkProductionFacilityDisusedStatus(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2851,6 +2854,7 @@ declare function scripts:checkProductionFacilityDisusedStatus(
  :)
 
 declare function scripts:checkProductionInstallationDisusedStatus(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2869,6 +2873,7 @@ declare function scripts:checkProductionInstallationDisusedStatus(
  :)
 
 declare function scripts:checkFunctionalStatusType(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -2882,9 +2887,9 @@ declare function scripts:checkFunctionalStatusType(
     let $seq := $root//pf:statusType
 
     let $fromDB := map {
-        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), "statusType" ),
-        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), "statusType"),
-        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), "statusType")
+        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), "statusType" ),
+        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallation'), "statusType"),
+        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), "statusType")
     }
 
     let $value := "ConditionOfFacilityValue"
@@ -2931,7 +2936,7 @@ declare function scripts:checkFunctionalStatusType(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        if (not(database:dbAvailable(scripts:docProdFac($cntry)))) then
+        if (not(database:dbAvailable($lookupTables?('ProductionFacility')))) then
             scripts:noDbWarning($refcode, $rulename)
         else
             scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -2988,6 +2993,7 @@ declare function scripts:queryDate(
  :)
 
 declare function scripts:checkDateOfStartOfOperation(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3026,6 +3032,7 @@ declare function scripts:checkDateOfStartOfOperation(
  :)
 
 declare function scripts:checkDateOfStartOfOperationLCP(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3164,6 +3171,7 @@ declare function scripts:checkPermitDates(
  :)
 
 declare function scripts:checkDateOfLastReconsideration(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3176,6 +3184,7 @@ declare function scripts:checkDateOfLastReconsideration(
  :)
 
 declare function scripts:checkDateOfLastUpdate(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3192,6 +3201,7 @@ declare function scripts:checkDateOfLastUpdate(
  :)
 
 declare function scripts:checkInspections(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3238,6 +3248,7 @@ declare function scripts:checkInspections(
  :)
 
 declare function scripts:checkPermit(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3278,6 +3289,7 @@ declare function scripts:checkPermit(
  :)
 
 declare function scripts:checkDateOfGrantingPermitURL(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3286,7 +3298,7 @@ declare function scripts:checkDateOfGrantingPermitURL(
     let $type := "info"
 
     let $cntry := scripts:getCountry($root)
-    let $docDB := scripts:docProdInstall($cntry)
+    let $docDB := $lookupTables?('ProductionInstallation')
     let $cntry := scripts:getCountry($root)
 
     let $lastReportingYear := scripts:getLastYear($root)
@@ -3344,6 +3356,7 @@ declare function scripts:checkDateOfGrantingPermitURL(
 :)
 
 declare function scripts:checkEnforcementAction(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3387,6 +3400,7 @@ declare function scripts:checkEnforcementAction(
 :)
 
 declare function scripts:checkStricterPermitConditions(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3436,6 +3450,7 @@ declare function scripts:checkStricterPermitConditions(
  :)
 
 declare function scripts:checkBATPermit(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3479,6 +3494,7 @@ declare function scripts:checkBATPermit(
 :)
 
 declare function scripts:checkBATDerogation(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3527,6 +3543,7 @@ declare function scripts:checkBATDerogation(
  :)
 
 declare function scripts:checkArticle32(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3615,6 +3632,7 @@ declare function scripts:checkDerogationsYear(
  :)
 
 declare function scripts:checkArticle33(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3630,6 +3648,7 @@ declare function scripts:checkArticle33(
  :)
 
 declare function scripts:checkArticle35(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3641,6 +3660,7 @@ declare function scripts:checkArticle35(
 };
 
 declare function scripts:checkDerogationsContinuity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element(),
@@ -3649,7 +3669,7 @@ declare function scripts:checkDerogationsContinuity(
 ) as element()* {
     let $cntry := scripts:getCountry($root)
     let $lastReportingYear := scripts:getLastYear($root)
-    let $docDB := scripts:docProdInstallPart($cntry)
+    let $docDB := $lookupTables?('ProductionInstallationPart')
     let $seq := $root//*:derogations
 
     let $fromDB := database:queryByYear($cntry, $lastReportingYear,
@@ -3710,6 +3730,7 @@ declare function scripts:checkDerogationsContinuity(
  :)
 
 declare function scripts:checkArticle33Continuity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3717,7 +3738,7 @@ declare function scripts:checkArticle33Continuity(
     let $msg := "Under certain limited lifetime derogations, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
     let $article := "Article33"
 
-    return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+    return scripts:checkDerogationsContinuity($lookupTables, $refcode, $rulename, $root, $msg, $article)
 };
 
 (:~
@@ -3725,6 +3746,7 @@ declare function scripts:checkArticle33Continuity(
  :)
 
 declare function scripts:checkArticle35Continuity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3733,7 +3755,7 @@ declare function scripts:checkArticle35Continuity(
     let $article := "Article35"
 
 
-    return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+    return scripts:checkDerogationsContinuity($lookupTables, $refcode, $rulename, $root, $msg, $article)
 };
 
 (:~
@@ -3741,6 +3763,7 @@ declare function scripts:checkArticle35Continuity(
  :)
 
 declare function scripts:checkArticle32Continuity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3748,7 +3771,7 @@ declare function scripts:checkArticle32Continuity(
     let $msg := "Under Transitional National Plan derogation, the derogation field for all ProductionInstallationParts within the XML submission are anticipated to be the same as ProductionInstallationPart, of the same InspireID, within the master database. The following ProductionInstallationParts do not have the same DerogationValue in the XML submission and the master database. Please verify and ensure all values are inputted correctly."
     let $article := "Article32"
 
-    return scripts:checkDerogationsContinuity($refcode, $rulename, $root, $msg, $article)
+    return scripts:checkDerogationsContinuity($lookupTables, $refcode, $rulename, $root, $msg, $article)
 };
 
 (:~
@@ -3760,6 +3783,7 @@ declare function scripts:checkArticle32Continuity(
  :)
 
 declare function scripts:checkRelevantChapters(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3837,6 +3861,7 @@ declare function scripts:checkRelevantChapters(
  :)
 
 declare function scripts:checkLCP(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3908,6 +3933,7 @@ declare function scripts:checkLCP(
  :)
 
 declare function scripts:checkRatedThermalInput(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -3947,6 +3973,7 @@ declare function scripts:checkRatedThermalInput(
  :)
 
 declare function scripts:checkWI(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4028,6 +4055,7 @@ declare function scripts:checkWI(
  :)
 
 declare function scripts:checkNominalCapacity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4126,6 +4154,7 @@ declare function scripts:checkNominalCapacity(
  :)
 
 declare function scripts:checkConfidentialityRestriction(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4163,6 +4192,7 @@ declare function scripts:checkConfidentialityRestriction(
  :)
 
 declare function scripts:checkConfidentialityOveruse(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4269,6 +4299,7 @@ declare function scripts:checkIdentifier(
  :)
 
 declare function scripts:checkETSIdentifier(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4285,6 +4316,7 @@ declare function scripts:checkETSIdentifier(
  :)
 
 declare function scripts:checkeSPIRSIdentifier(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4301,6 +4333,7 @@ declare function scripts:checkeSPIRSIdentifier(
  :)
 
 declare function scripts:checkFacilityName(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4336,6 +4369,7 @@ declare function scripts:checkFacilityName(
  :)
 
 declare function scripts:checkNameOfFeatureContinuity(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4349,17 +4383,17 @@ declare function scripts:checkNameOfFeatureContinuity(
     let $seq := $root//*:nameOfFeature
 
     let $fromDBB := (
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'nameOfFeature')
+        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallation'), 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), 'nameOfFeature'),
+        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionSite'), 'nameOfFeature')
     )
 
     let $fromDB := map {
-        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, scripts:docProdFac($cntry), 'nameOfFeature' ),
-        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstall($cntry), 'nameOfFeature'),
-        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, scripts:docProdInstallPart($cntry), 'nameOfFeature'),
-        "ProductionSite": database:queryByYear($cntry, $lastReportingYear, scripts:docProdSite($cntry), 'nameOfFeature')
+        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), 'nameOfFeature' ),
+        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallation'), 'nameOfFeature'),
+        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), 'nameOfFeature'),
+        "ProductionSite": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionSite'), 'nameOfFeature')
     }
 
     let $data :=
@@ -4395,7 +4429,7 @@ declare function scripts:checkNameOfFeatureContinuity(
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
     return
-        if (not(database:dbAvailable(scripts:docProdFac($cntry)))) then
+        if (not(database:dbAvailable($lookupTables?('ProductionFacility')))) then
             scripts:noDbWarning($refcode, $rulename)
         else
             scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
@@ -4406,6 +4440,7 @@ declare function scripts:checkNameOfFeatureContinuity(
  :)
 
 declare function scripts:checkReportingYear(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4459,6 +4494,7 @@ declare function scripts:checkReportingYear(
  :)
 
 declare function scripts:checkElectronicMailAddressFormat(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4496,6 +4532,7 @@ declare function scripts:checkElectronicMailAddressFormat(
  :)
 
 declare function scripts:checkFacilityAddress(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4541,6 +4578,7 @@ declare function scripts:checkFacilityAddress(
 :)
 
 declare function scripts:checkDateOfStartOfOperationFuture(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4587,6 +4625,7 @@ declare function scripts:checkDateOfStartOfOperationFuture(
  :)
 
 declare function scripts:checkWhitespaces(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4621,6 +4660,7 @@ declare function scripts:checkWhitespaces(
 :)
 
 declare function scripts:checkFeatureNameBlank(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4660,6 +4700,7 @@ Please ensure all mandatory inputs are completed."
  :)
 
 declare function scripts:checkAllFieldsBlank(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4701,6 +4742,7 @@ declare function scripts:checkAllFieldsBlank(
 :)
 
 declare function scripts:check2018year(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4770,6 +4812,7 @@ declare function scripts:check2018year(
 :)
 
 declare function scripts:checkFacilityType(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
@@ -4830,6 +4873,7 @@ declare function scripts:checkFacilityType(
 :)
 
 declare function scripts:checkInstallationType(
+        $lookupTables,
         $refcode as xs:string,
         $rulename as xs:string,
         $root as element()
