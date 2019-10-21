@@ -684,18 +684,19 @@ declare function scripts:checkAmountOfInspireIds(
     (:let $yIDs := $fromDB//*:localId:)
 
     let $xIDs := $seq
-    let $yIDs := $fromDB
+    let $yIDs := $fromDB/scripts:prettyFormatInspireId(.)
 
     let $data :=
         for $id in $xIDs
+        let $xID := scripts:prettyFormatInspireId($id)
         let $p := scripts:getParent($id)
 
-        where not($id = $yIDs)
+        where not($xID = $yIDs)
         return map {
         "marks": (2),
         "data": (
             $p/local-name(),
-            <span class="iedreg nowrap">{scripts:prettyFormatInspireId($id)}</span>)
+            <span class="iedreg nowrap">{$xID}</span>)
         }
 
     let $ratio := if(count($yIDs) = 0) then 1 else count($data) div count($yIDs)
@@ -1587,13 +1588,14 @@ declare function scripts:checkMissing(
     let $cntry := scripts:getCountry($root)
     let $lastReportingYear := scripts:getLastYear($root)
 
-    let $seq := $root//*:inspireId
+    let $seq := $root//*:inspireId/scripts:prettyFormatInspireId(.)
     let $fromDB := database:queryByYear($cntry, $lastReportingYear,
         $docDB, 'inspireId')
 
     let $data :=
         for $id in $fromDB
-        where not($id = $seq)
+        let $yID := scripts:prettyFormatInspireId($id)
+        where not($yID = $seq)
 
         let $p := scripts:getParent($id)
         where $p/local-name() = $featureName

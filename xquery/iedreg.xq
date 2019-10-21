@@ -103,6 +103,18 @@ declare function iedreg:getLookupTable(
         (:else ():)
 };
 
+declare function iedreg:getLookupTableSNV(
+    $countryCode as xs:string,
+    $featureName as xs:string
+) as document-node() {
+    let $location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/'
+
+    let $fileName := concat($countryCode, '_', $featureName, '.xml')
+    let $url := concat($location, $featureName, '/', $fileName)
+
+    return fn:doc($url)
+};
+
 (:~
  : --------------
  : Util functions
@@ -594,10 +606,10 @@ declare function iedreg:runChecks($url as xs:string) as element()*
 
     let $countryCode := scripts:getCountry($root)
     let $lookupTables := map {
-        'ProductionFacility': iedreg:getLookupTable($countryCode, 'ProductionFacility'),
-        'ProductionInstallation': iedreg:getLookupTable($countryCode, 'ProductionInstallation'),
-        'ProductionSite': iedreg:getLookupTable($countryCode, 'ProductionSite'),
-        'ProductionInstallationPart': iedreg:getLookupTable($countryCode, 'ProductionInstallationPart')
+        'ProductionFacility': iedreg:getLookupTableSNV($countryCode, 'ProductionFacility'),
+        'ProductionInstallation': iedreg:getLookupTableSNV($countryCode, 'ProductionInstallation'),
+        'ProductionSite': iedreg:getLookupTableSNV($countryCode, 'ProductionSite'),
+        'ProductionInstallationPart': iedreg:getLookupTableSNV($countryCode, 'ProductionInstallationPart')
     }
 
     return common:feedback((
