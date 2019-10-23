@@ -31,21 +31,21 @@ import module namespace common = "iedreg-common" at "iedreg-common.xq";
  : 14. OTHER CHECKS
  :)
 
-declare function iedreg-qa3:runChecks13($root as element()) as element()* {
+declare function iedreg-qa3:runChecks13($root as element(), $lookupTables) as element()* {
     let $rulename := '14. GML VALIDATION CHECKS'
 
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper("C14.1", "reportData validity", $root, scripts3:checkReportData#3),
-        iedreg:failsafeWrapper("C14.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #3),
-        iedreg:failsafeWrapper("C14.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#3),
-        iedreg:failsafeWrapper("C14.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#3),
-        iedreg:failsafeWrapper("C14.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#3),
+        iedreg:failsafeWrapper($lookupTables, "C14.1", "reportData validity", $root, scripts3:checkReportData#4),
+        iedreg:failsafeWrapper($lookupTables, "C14.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #4),
+        iedreg:failsafeWrapper($lookupTables, "C14.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#4),
+        iedreg:failsafeWrapper($lookupTables, "C14.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#4),
+        iedreg:failsafeWrapper($lookupTables, "C14.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#4),
         (:iedreg:failsafeWrapper("C14.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),:)
         (:iedreg:failsafeWrapper("C14.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),:)
-        iedreg:failsafeWrapper("C14.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#3),
-        iedreg:failsafeWrapper("C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#3)
+        iedreg:failsafeWrapper($lookupTables, "C14.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#4),
+        iedreg:failsafeWrapper($lookupTables, "C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#4)
         (:iedreg:failsafeWrapper("C14.10", "pf:status validity", $root, scripts3:checkStatusNil#3),:)
         (:iedreg:failsafeWrapper("C14.11", "pf:pointGeometry validity", $root, scripts3:checkePointGeometry#3),:)
         (:iedreg:failsafeWrapper("C14.12", "otherRelevantChapters consistency", $root, scripts3:checkOtherRelevantChapters#3),:)
@@ -66,13 +66,15 @@ declare function iedreg-qa3:runChecks($url as xs:string) as element()* {
         insert node <gml:metaDataProperty xlink:href="{$url}"></gml:metaDataProperty> as first into $root
     }
 
+    let $lookupTables := map {}
+
     let $root := $root update (
         updating $add-envelope-url(., $envelopeURL)
     )
 
     return common:feedback((
             common:header(),
-            iedreg-qa3:runChecks13($root)
+            iedreg-qa3:runChecks13($root, $lookupTables)
         ))
 };
 
