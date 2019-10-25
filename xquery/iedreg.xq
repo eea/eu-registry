@@ -74,14 +74,14 @@ declare function iedreg:getLookupTable(
     $countryCode as xs:string,
     $featureName as xs:string
 ) as document-node() {
-    let $location := 'https://staging-datashare.devel5cph.eionet.europa.eu/remote.php/dav/files/'
+    let $location := 'https://databridge.eionet.europa.eu/remote.php/dav/files/'
     let $userEnv := 'XQueryUser'
     let $passwordEnv := 'XQueryPassword'
 
     let $user := environment-variable($userEnv)
     let $password := environment-variable($passwordEnv)
     let $fileName := concat($countryCode, '_', $featureName, '.xml')
-    let $url := concat($location, $user, '/', $fileName)
+    let $url := concat($location, $user, '/721/', $fileName)
 
     let $response := http:send-request(
             <http:request method='get'
@@ -94,13 +94,6 @@ declare function iedreg:getLookupTable(
     )
 
     return $response[2]
-
-    (:let $status_code := $response[1]/@status:)
-
-    (:return:)
-        (:if($status_code = '200'):)
-        (:then $response[2]:)
-        (:else ():)
 };
 
 declare function iedreg:getLookupTableSNV(
@@ -606,10 +599,10 @@ declare function iedreg:runChecks($url as xs:string) as element()*
 
     let $countryCode := scripts:getCountry($root)
     let $lookupTables := map {
-        'ProductionFacility': iedreg:getLookupTableSNV($countryCode, 'ProductionFacility'),
-        'ProductionInstallation': iedreg:getLookupTableSNV($countryCode, 'ProductionInstallation'),
-        'ProductionSite': iedreg:getLookupTableSNV($countryCode, 'ProductionSite'),
-        'ProductionInstallationPart': iedreg:getLookupTableSNV($countryCode, 'ProductionInstallationPart')
+        'ProductionFacility': iedreg:getLookupTable($countryCode, 'ProductionFacility'),
+        'ProductionInstallation': iedreg:getLookupTable($countryCode, 'ProductionInstallation'),
+        'ProductionSite': iedreg:getLookupTable($countryCode, 'ProductionSite'),
+        'ProductionInstallationPart': iedreg:getLookupTable($countryCode, 'ProductionInstallationPart')
     }
 
     return common:feedback((

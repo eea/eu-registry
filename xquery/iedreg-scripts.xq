@@ -1387,10 +1387,16 @@ declare function scripts:checkDatabaseDuplicates2(
                 let $y_lat := substring-before($locationSub, ' ')
                 let $y_long := substring-after($locationSub, ' ')
 
-                let $dist := scripts:haversine(
-                        xs:float($x_lat), xs:float($x_long),
-                        xs:float($y_lat), xs:float($y_long)
-                )
+                let $dist := if($x_lat castable as xs:float and
+                        $x_long castable as xs:float and
+                        $y_lat castable as xs:float and
+                        $y_long castable as xs:float)
+                    then
+                        scripts:haversine(
+                            xs:float($x_lat), xs:float($x_long),
+                            xs:float($y_lat), xs:float($y_long)
+                        )
+                    else 0
                 where $dist < 10
 
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
