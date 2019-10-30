@@ -598,12 +598,18 @@ declare function iedreg:runChecks($url as xs:string) as element()*
     (:let $asd:= trace('Getting lookup tables'):)
 
     let $countryCode := scripts:getCountry($root)
-    let $lookupTables := map {
-        'ProductionFacility': iedreg:getLookupTable($countryCode, 'ProductionFacility'),
-        'ProductionInstallation': iedreg:getLookupTable($countryCode, 'ProductionInstallation'),
-        'ProductionSite': iedreg:getLookupTable($countryCode, 'ProductionSite'),
-        'ProductionInstallationPart': iedreg:getLookupTable($countryCode, 'ProductionInstallationPart')
-    }
+    let $reportingYear := $root//*:ReportData/*:reportingYear => fn:number()
+
+    let $lookupTables := if($reportingYear ge 2018)
+        then
+            map {
+                'ProductionFacility': iedreg:getLookupTable($countryCode, 'ProductionFacility'),
+                'ProductionInstallation': iedreg:getLookupTable($countryCode, 'ProductionInstallation'),
+                'ProductionSite': iedreg:getLookupTable($countryCode, 'ProductionSite'),
+                'ProductionInstallationPart': iedreg:getLookupTable($countryCode, 'ProductionInstallationPart')
+            }
+        else
+            map {}
 
     return common:feedback((
         common:header(),
