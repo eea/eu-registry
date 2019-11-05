@@ -603,10 +603,10 @@ declare function iedreg:runChecks($url as xs:string) as element()*
     let $lookupTables := if($reportingYear ge 2018)
         then
             map {
-                'ProductionFacility': iedreg:getLookupTableSNV($countryCode, 'ProductionFacility'),
-                'ProductionInstallation': iedreg:getLookupTableSNV($countryCode, 'ProductionInstallation'),
-                'ProductionSite': iedreg:getLookupTableSNV($countryCode, 'ProductionSite'),
-                'ProductionInstallationPart': iedreg:getLookupTableSNV($countryCode, 'ProductionInstallationPart')
+                'ProductionFacility': iedreg:getLookupTable($countryCode, 'ProductionFacility'),
+                'ProductionInstallation': iedreg:getLookupTable($countryCode, 'ProductionInstallation'),
+                'ProductionSite': iedreg:getLookupTable($countryCode, 'ProductionSite'),
+                'ProductionInstallationPart': iedreg:getLookupTable($countryCode, 'ProductionInstallationPart')
             }
         else
             map {}
