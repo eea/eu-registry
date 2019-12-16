@@ -2056,7 +2056,7 @@ declare function scripts:checkCountryBoundary(
     let $cntry := tokenize($country, '/+')[last()]
     let $boundary := "boundary-" || lower-case($cntry) || ".gml"
     let $doc := doc("https://converterstest.eionet.europa.eu/xmlfile/" || $boundary)
-    let $geom := $doc//GML:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/*
+    let $geom := $doc//*:FeatureCollection/GML:featureMember/ogr:boundary/ogr:geometryProperty/*
 
     let $seq := (
         $root//*:location,
