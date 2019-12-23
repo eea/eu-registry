@@ -124,7 +124,7 @@ declare function scripts:getParent($e as element()) as element() {
 declare function scripts:prettyFormatInspireId(
     $inspireId as element()
 ) as xs:string {
-    $inspireId//*:namespace || "/" || $inspireId//*:localId
+    $inspireId//*:namespace/fn:normalize-space(.) || "/" || $inspireId//*:localId/fn:normalize-space(.)
 };
 
 declare function scripts:getInspireId($e as element()) as element()* {
