@@ -547,7 +547,8 @@ declare function iedreg:runChecks13($root as element(), $lookupTables) as elemen
         (: new DONE :) iedreg:failsafeWrapper($lookupTables, "C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#4),
         (: removed :) (:iedreg:failsafeWrapper($lookupTables, "C13.8", "Character string space identification", $root, scripts:checkWhitespaces#4):)
         (: new :) iedreg:failsafeWrapper($lookupTables, "C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#4),
-        (: new :) iedreg:failsafeWrapper($lookupTables, "C13.10", "All fields blank check", $root, scripts:checkAllFieldsBlank#4)
+        (: new :) iedreg:failsafeWrapper($lookupTables, "C13.10", "All fields blank check", $root, scripts:checkAllFieldsBlank#4),
+        (: new :) iedreg:failsafeWrapper($lookupTables, "C13.11", "ETSIdentifier format check", $root, scripts:checkETSFormat#4)
     }</div>
 };
 

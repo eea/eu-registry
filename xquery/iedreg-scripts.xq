@@ -4320,6 +4320,45 @@ declare function scripts:checkETSIdentifier(
 };
 
 (:~
+ : C13.11 ETSIdentifier validity
+ :)
+
+declare function scripts:checkETSFormat(
+        $lookupTables,
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) {
+let $msg := "The following ETSIdentifiers have invalid format. Please verify an ensure all IDs are correct."
+    let $type := "warning"
+    let $seq := $root//*:ProductionInstallation/*:ETSIdentifier
+    let $regex := '[A-Z]{2}[0-9]{15}'
+    let $countryCode := scripts:getCountry($root)
+    let $countryCode := if($countryCode = 'GB') then 'UK' else $countryCode
+
+    let $data :=
+        for $elem in $seq
+        let $feature := scripts:getParent($elem)
+        let $id := scripts:getInspireId($feature)
+        let $path := scripts:getPath($elem)
+        let $value := $elem/data() => functx:if-empty('')
+
+        where not(fn:matches($value, $regex)
+                and fn:starts-with($value, $countryCode))
+
+        return map {
+            "marks" : (4),
+            "data" : ($id, $path, $value)
+        }
+
+    let $hdrs := ('Local ID', "Path", "ETSIdentifier")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)};
+
+(:~
  : C13.2 eSPIRSId validity
  :)
 
