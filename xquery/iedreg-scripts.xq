@@ -4347,7 +4347,7 @@ let $msg := "The following ETSIdentifiers have invalid format. Please verify an 
                 and fn:starts-with($value, $countryCode))
 
         return map {
-            "marks" : (4),
+            "marks" : (3),
             "data" : ($id, $path, $value)
         }
 
@@ -4782,6 +4782,37 @@ declare function scripts:checkAllFieldsBlank(
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+};
+
+(:~
+ : C13.12 Namespace check
+ :)
+
+declare function scripts:checkNamespaces(
+        $lookupTables,
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element()
+) as element()* {
+    let $namespaces := $root//*:inspireId//*:namespace
+    let $msg := "The following namespaces are reported."
+    let $type := "info"
+
+    let $data :=
+        for $namespace in fn:distinct-values($namespaces)
+        let $countNamespace := count($namespaces[. = $namespace])
+
+        return map {
+            "marks" : (1),
+            "data" : ($namespace, $countNamespace)
+        }
+
+    let $hdrs := ('Namespace', "Number of uses")
+
+    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+
+    return
+        scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
 };
 
 (:~
