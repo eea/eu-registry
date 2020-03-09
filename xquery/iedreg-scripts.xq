@@ -995,12 +995,13 @@ declare function scripts:checkDuplicates2(
 
             for $sub in subsequence($seq, $ind + 1)
                 let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
-                (:where substring-before($locationSub, ' ') => substring-before('.'):)
-                        (:= substring-before($locationMain, ' ') => substring-before('.'):)
-                    (:and:)
-                    (:substring-after($locationSub, ' ') => substring-before('.'):)
-                        (:= substring-after($locationMain, ' ') => substring-before('.'):)
+                where substring-before($locationSub, ' ') => substring-before('.')
+                        = substring-before($locationMain, ' ') => substring-before('.')
+                    and
+                    substring-after($locationSub, ' ') => substring-before('.')
+                        = substring-after($locationMain, ' ') => substring-before('.')
 
+(:
                 let $y_lat := substring-before($locationSub, ' ')
                 let $y_long := substring-after($locationSub, ' ')
 
@@ -1009,6 +1010,7 @@ declare function scripts:checkDuplicates2(
                         xs:float($y_lat), xs:float($y_long)
                 )
                 where $dist < 10
+:)
 
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
                     => fn:string-join(' / ')
@@ -1378,12 +1380,13 @@ declare function scripts:checkDatabaseDuplicates2(
                 where $id != $ic
                 let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
 
-                (:where substring-before($locationSub, ' ') => substring-before('.'):)
-                        (:= substring-before($locationMain, ' ') => substring-before('.'):)
-                    (:and:)
-                    (:substring-after($locationSub, ' ') => substring-before('.'):)
-                        (:= substring-after($locationMain, ' ') => substring-before('.'):)
+                where substring-before($locationSub, ' ') => substring-before('.')
+                        = substring-before($locationMain, ' ') => substring-before('.')
+                    and
+                    substring-after($locationSub, ' ') => substring-before('.')
+                        = substring-after($locationMain, ' ') => substring-before('.')
 
+(:
                 let $y_lat := substring-before($locationSub, ' ')
                 let $y_long := substring-after($locationSub, ' ')
 
@@ -1398,6 +1401,7 @@ declare function scripts:checkDatabaseDuplicates2(
                         )
                     else 0
                 where $dist < 10
+:)
 
                 let $stringSub := $sub//*[local-name() = $stringNodes]/data()
                     => fn:string-join(' / ')
@@ -2034,6 +2038,28 @@ declare function scripts:checkProdutionInstallationRadius(
         scripts:checkRadius($refcode, $rulename, $root, $data, $parentFeature, $childFeature, $lowerLimit, $upperLimit)
 };
 
+declare function scripts:isWithinMinMax(
+    $docMinMaxCoords,
+    $countryCode as xs:string,
+    $long as xs:string,
+    $lat as xs:string
+) as xs:boolean {
+    (: y = lat; x = long :)
+    let $long := xs:double($long)
+    let $lat := xs:double($lat)
+
+    let $nodes := $docMinMaxCoords//row[ISO_2DIGIT = $countryCode]
+    let $found :=
+        for $node in $nodes
+        where $lat ge xs:double($node/miny) and $lat le xs:double($node/maxy)
+            and $long ge xs:double($node/minx) and $long le xs:double($node/maxx)
+
+        return 'found'
+
+    return fn:count($found) > 0
+
+};
+
 (:~
  : C5.4 Coordinates to country comparison
  :)
@@ -2047,6 +2073,7 @@ declare function scripts:checkCountryBoundary(
     that fall outside of the country's boundary (including territorial waters).
     Please verify and correct coordinates in these fields."
     let $type := 'warning'
+    let $docMinMaxCoords := fn:doc('https://converters.eionet.europa.eu/xmlfile/stations-min-max.xml')
 
     let $srsName :=
         for $srs in distinct-values($root//gml:*/attribute::srsName)
@@ -2078,7 +2105,8 @@ declare function scripts:checkCountryBoundary(
                 <GML:coordinates>{$long},{$lat}</GML:coordinates>
             </GML:Point>
 
-        where not(geo:within($point, $geom))
+        (:where not(geo:within($point, $geom)):)
+        where not(scripts:isWithinMinMax($docMinMaxCoords, $cntry, $long, $lat))
 
         let $coords := $seq//gml:pos[./text() = $coord]
 
@@ -2228,16 +2256,19 @@ declare function scripts:checkCoordinateContinuity(
         "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), 'pointGeometry'),
         "ProductionSite": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionSite'), 'location')
     }
+    let $allXcoords := $seq//gml:*/descendant-or-self::*[not(*)]
+
     let $data :=
-        for $x_coords in $seq//gml:*/descendant-or-self::*[not(*)]
+        for $x_coords in $allXcoords
         let $x_coords_norm := fn:normalize-space($x_coords)
         let $p := scripts:getParent($x_coords)
         let $featureName := $p/local-name()
         let $id := scripts:getInspireId($p)/text()
         let $path := scripts:getPath($x_coords)
+        let $allYcoords := $fromDB($featureName)//gml:*/descendant-or-self::*[not(*)]
 
         let $y_coords :=
-            for $y in $fromDB($featureName)//gml:*/descendant-or-self::*[not(*)]
+            for $y in $allYcoords
             let $q := scripts:getParent($y)
             let $ic := scripts:getInspireId($q)/text()
 
@@ -2716,7 +2747,7 @@ declare function scripts:checkIEDAnnexIActivityContinuity(
     $rulename as xs:string,
     $root as element()
 ) as element()* {
-    let $cntry := scripts:getCountry($root)
+  let $cntry := scripts:getCountry($root)
   let $featureName := "ProductionInstallation"
   let $activityName := "IEDAnnexIActivity"
   let $docDB := $lookupTables?('ProductionInstallation')
@@ -2745,9 +2776,10 @@ declare function scripts:checkStatus(
 
     let $value := "ConditionOfFacilityValue"
     let $valid := scripts:getValidConcepts($value)
+    let $rootSeq := $root//*[local-name() = $parentName]
 
     let $data :=
-        for $x in $root//*[local-name() = $parentName]
+        for $x in $rootSeq
         let $x_id := scripts:getInspireId($x)
 
         let $x_status := $x/pf:status//pf:statusType
@@ -2914,7 +2946,8 @@ declare function scripts:checkFunctionalStatusType(
         where not(scripts:is-empty($xStatus)) and $xStatus = $valid
         let $xStat := scripts:normalize($xStatus)
 
-        for $y in $fromDB($featureName)
+        let $fromDBfeatureName := $fromDB($featureName)
+        for $y in $fromDBfeatureName
         let $q := scripts:getParent($y)
         let $ic := scripts:getInspireId($q)
 
@@ -2968,11 +3001,13 @@ declare function scripts:queryDate(
 
     where not(scripts:is-empty($x_date))
     let $x_date := xs:date($x_date/text())
+    let $allYids := $x/*[local-name() = $groupName]/@xlink:href
 
-    for $y_id in $x/*[local-name() = $groupName]/@xlink:href
+    for $y_id in $allYids
     let $y_id := replace(data($y_id), "^#", "")
 
-    for $y in $childSeq[@gml:id = $y_id]
+    let $yChildSeq := $childSeq[@gml:id = $y_id]
+    for $y in $yChildSeq
     let $y_date := $y/*[local-name() = $dateName]
     let $y_path := scripts:getPath($y_date)
 
@@ -4449,8 +4484,9 @@ declare function scripts:checkNameOfFeatureContinuity(
         let $featureName := $p/local-name()
         let $id := scripts:getInspireId($p)
         let $path := scripts:getPath($x)
+        let $fromDBfeatureName := $fromDB($featureName)
 
-        for $y in $fromDB($featureName)
+        for $y in $fromDBfeatureName
         let $q := scripts:getParent($y)
         let $ic := scripts:getInspireId($q)
 
