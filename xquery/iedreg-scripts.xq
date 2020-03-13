@@ -3543,13 +3543,14 @@ declare function scripts:checkBATDerogation(
         $root as element()
 ) as element()* {
     let $msg := "For the following ProductionInstallations the BATAEL or publicReasonURL
-        attributes, within the BATDerogationType data type, must be populated."
+        attributes, within the BATDerogationType data type, must be populated,
+        or BATDerogationIndicator must be true"
     let $type := "blocker"
 
     let $seq := $root//*:ProductionInstallation/*:BATDerogation
     let $attrs := ('BATAEL', 'publicReasonURL')
 
-    let $data :=
+    let $data1 :=
         for $batDerogation in $seq
         let $batDerogInd := $batDerogation//*:BATDerogationIndicator/data()
 
@@ -3564,8 +3565,9 @@ declare function scripts:checkBATDerogation(
             let $path := scripts:getPath($batDerogation//*[local-name() = $attr])
 
             return map {
-                "marks" : (4),
+                "marks" : (1, 5),
                 "data" : (
+                    $attr || " must be populated",
                     $parent/local-name(),
                     $id,
                     $path,
@@ -3573,7 +3575,39 @@ declare function scripts:checkBATDerogation(
                 )
             }
 
-    let $hdrs := ("Feature", "Local ID", "Path", "Attribute")
+    let $data2 :=
+        for $batDerogation in $seq
+        let $batDerogInd := $batDerogation//*:BATDerogationIndicator/data()
+
+        where $batDerogInd = 'false'
+        let $parent := scripts:getParent($batDerogation)
+        let $id := scripts:getInspireId($parent)
+        let $attrValue := (
+            for $attr in $attrs
+            let $value := if($attr = 'BATAEL')
+                then $batDerogation//*[local-name() = $attr]/@xlink:href
+                else $batDerogation//*[local-name() = $attr]/data()
+            return $value
+        ) => fn:string-join()
+
+        let $path := scripts:getPath($batDerogation//*:BATDerogationIndicator)
+
+        where $attrValue => fn:string-length() gt 0
+
+        return map {
+            "marks" : (1, 5),
+            "data" : (
+                "BATDerogationIndicator must be 'true'",
+                $parent/local-name(),
+                $id,
+                $path,
+                "BATDerogationIndicator"
+            )
+        }
+
+    let $data := ($data1, $data2)
+
+    let $hdrs := ("Additional info", "Feature", "Local ID", "Path", "Attribute")
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
