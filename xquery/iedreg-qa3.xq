@@ -23,7 +23,7 @@ declare namespace gml = "http://www.opengis.net/gml/3.2";
 declare namespace xlink = "http://www.w3.org/1999/xlink";
 
 import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
-import module namespace iedreg = "http://cdrtest.eionet.europa.eu/help/ied_registry" at "iedreg.xq";
+import module namespace utils = "iedreg-utils" at "iedreg-utils.xq";
 import module namespace scripts3 = "iedreg-qa3-scripts" at "iedreg-qa3-scripts.xq";
 import module namespace common = "iedreg-common" at "iedreg-common.xq";
 
@@ -37,22 +37,22 @@ declare function iedreg-qa3:runChecks13($root as element(), $lookupTables) as el
     return
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
-        iedreg:failsafeWrapper($lookupTables, "C14.1", "reportData validity", $root, scripts3:checkReportData#4),
-        iedreg:failsafeWrapper($lookupTables, "C14.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #4),
-        iedreg:failsafeWrapper($lookupTables, "C14.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#4),
-        iedreg:failsafeWrapper($lookupTables, "C14.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#4),
-        iedreg:failsafeWrapper($lookupTables, "C14.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#4),
-        (:iedreg:failsafeWrapper("C14.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),:)
-        (:iedreg:failsafeWrapper("C14.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),:)
-        iedreg:failsafeWrapper($lookupTables, "C14.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#4),
-        iedreg:failsafeWrapper($lookupTables, "C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#4)
-        (:iedreg:failsafeWrapper("C14.10", "pf:status validity", $root, scripts3:checkStatusNil#3),:)
-        (:iedreg:failsafeWrapper("C14.11", "pf:pointGeometry validity", $root, scripts3:checkePointGeometry#3),:)
-        (:iedreg:failsafeWrapper("C14.12", "otherRelevantChapters consistency", $root, scripts3:checkOtherRelevantChapters#3),:)
-        (:iedreg:failsafeWrapper("C14.13", "statusType consistency", $root, scripts3:checkStatusType#3),:)
-        (:iedreg:failsafeWrapper("C14.14", "plantType consistency", $root, scripts3:checkPlantType#3),:)
-        (:iedreg:failsafeWrapper("C14.15", "derogations consistency", $root, scripts3:checkDerogations#3),:)
-        (:iedreg:failsafeWrapper("C14.16", "specificConditions consistency", $root, scripts3:checkSpecificConditions#3):)
+        utils:failsafeWrapper($lookupTables, "C14.1", "reportData validity", $root, scripts3:checkReportData#4),
+        utils:failsafeWrapper($lookupTables, "C14.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #4),
+        utils:failsafeWrapper($lookupTables, "C14.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#4),
+        utils:failsafeWrapper($lookupTables, "C14.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#4),
+        utils:failsafeWrapper($lookupTables, "C14.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#4),
+        (:utils:failsafeWrapper("C14.6", "act-core:geometry validity", $root, scripts3:checkActCoreGeometry#3),:)
+        (:utils:failsafeWrapper("C14.7", "act-core:activity validity", $root, scripts3:checkActCoreActivity#3),:)
+        utils:failsafeWrapper($lookupTables, "C14.8", "ProductionInstallationPart gml:id validity", $root, scripts3:checkGroupedInstallationPart#4),
+        utils:failsafeWrapper($lookupTables, "C14.9", "pf:groupedInstallationPart xlink:href validity", $root, scripts3:checkGroupedInstallationPartHref#4)
+        (:utils:failsafeWrapper("C14.10", "pf:status validity", $root, scripts3:checkStatusNil#3),:)
+        (:utils:failsafeWrapper("C14.11", "pf:pointGeometry validity", $root, scripts3:checkePointGeometry#3),:)
+        (:utils:failsafeWrapper("C14.12", "otherRelevantChapters consistency", $root, scripts3:checkOtherRelevantChapters#3),:)
+        (:utils:failsafeWrapper("C14.13", "statusType consistency", $root, scripts3:checkStatusType#3),:)
+        (:utils:failsafeWrapper("C14.14", "plantType consistency", $root, scripts3:checkPlantType#3),:)
+        (:utils:failsafeWrapper("C14.15", "derogations consistency", $root, scripts3:checkDerogations#3),:)
+        (:utils:failsafeWrapper("C14.16", "specificConditions consistency", $root, scripts3:checkSpecificConditions#3):)
     }</div>
 };
 
