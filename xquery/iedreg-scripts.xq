@@ -4967,7 +4967,7 @@ declare function scripts:checkFacilityType(
 ) as element()* {
     let $msg := 'The following attributes must be reported'
     let $type := 'blocker'
-    let $eprtrVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FaciltyTypeValue/EPRTR'
+    let $eprtrVocab := 'http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FacilityTypeValue/EPRTR'
 
     let $mapAttrs := map {
         'CompetentAuthority': ('organisationName', 'individualName',
