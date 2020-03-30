@@ -38,7 +38,7 @@ declare function iedreg-qa3:runChecks13($root as element(), $lookupTables) as el
         <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
         utils:failsafeWrapper($lookupTables, "C14.1", "reportData validity", $root, scripts3:checkReportData#4),
-        utils:failsafeWrapper($lookupTables, "C14.2", "hostingSite position validity", $root, scripts3:checkeHostingSite #4),
+        utils:failsafeWrapper($lookupTables, "C14.2", "hostingSite position validity", $root, scripts3:checkeHostingSite#4),
         utils:failsafeWrapper($lookupTables, "C14.3", "hostingSite xlink:href validity", $root, scripts3:checkeHostingSiteHref#4),
         utils:failsafeWrapper($lookupTables, "C14.4", "ProductionInstallation gml:id validity", $root, scripts3:checkGroupedInstallation#4),
         utils:failsafeWrapper($lookupTables, "C14.5", "groupedInstallation xlink:href validity", $root, scripts3:checkGroupedInstallationHref#4),
