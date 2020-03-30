@@ -2948,42 +2948,25 @@ declare function scripts:checkFunctionalStatusType(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := "The StatusType, of the following spatial objects, has changed from 'decomissioned' in the previous submission to 'functional' in this current submission. Please verify inputs and ensure consistency with the previous report."
-    let $type := "blocker"
-
-    let $cntry := scripts:getCountry($root)
-    let $lastReportingYear := scripts:getLastYear($root)
-
-    let $seq := $root//pf:statusType
-
-    let $fromDB := map {
-        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), "statusType" ),
-        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallation'), "statusType"),
-        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), "statusType")
-    }
-
-    let $value := "ConditionOfFacilityValue"
-    let $valid := scripts:getValidConcepts($value)
-
-    let $data :=
-        for $x in $seq
-        let $p := scripts:getParent($x)
-        let $id := scripts:getInspireId($p)
-        let $featureName := $p/local-name()
-
-        let $xStatus := replace($x/@xlink:href, '/+$', '')
+    let $getDataForFeaturetype := function (
+        $seq,
+        $featureName,
+        $country,
+        $Year,
+        $lookupTable,
+        $valid
+    ) {
+        for $feature in $seq
+        let $id := scripts:getInspireId($feature)
+        let $status := $feature//pf:statusType
+        let $xStatus := replace($status/@xlink:href, '/+$', '')
 
         where not(scripts:is-empty($xStatus)) and $xStatus = $valid
         let $xStat := scripts:normalize($xStatus)
 
-        let $fromDBfeatureName := $fromDB($featureName)
-        for $y in $fromDBfeatureName
-        let $q := scripts:getParent($y)
-        let $ic := scripts:getInspireId($q)
-
-        where $id = $ic
-
-        let $yStatus := replace($y/@xlink:href, '/+$', '')
+        let $fromDBstatus := $lookupTable/data/*[scripts:prettyFormatInspireId(inspireId) = $id
+            and countryId/@xlink:href = $country and reportingYear = $Year]//*:statusType
+        let $yStatus := replace($fromDBstatus/@xlink:href, '/+$', '')
 
         where not(scripts:is-empty($yStatus)) and $yStatus = $valid
         let $yStat := scripts:normalize($yStatus)
@@ -2996,11 +2979,50 @@ declare function scripts:checkFunctionalStatusType(
         "data" : (
             $featureName,
             $id/text(),
-            scripts:getPath($x),
+            scripts:getPath($status),
             $xStat,
             $yStat
         )
         }
+    }
+
+    let $msg := "The StatusType, of the following spatial objects, has changed from 'decomissioned' in the previous submission to 'functional' in this current submission. Please verify inputs and ensure consistency with the previous report."
+    let $type := "blocker"
+
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
+
+    let $value := "ConditionOfFacilityValue"
+    let $valid := scripts:getValidConcepts($value)
+
+    let $dataFacility := $getDataForFeaturetype(
+        $root//*:ProductionFacility,
+        'ProductionFacility',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionFacility'),
+        $valid
+    )
+
+    let $dataInstallation := $getDataForFeaturetype(
+        $root//*:ProductionInstallation,
+        'ProductionInstallation',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionInstallation'),
+        $valid
+    )
+
+    let $dataInstallationPart := $getDataForFeaturetype(
+        $root//*:ProductionInstallationPart,
+        'ProductionInstallationPart',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionInstallationPart'),
+        $valid
+    )
+
+    let $data := ($dataFacility, $dataInstallation, $dataInstallationPart)
 
     let $hdrs := ("Feature", "Local ID", "Path", "StatusType", "StatusType (DB)")
 
