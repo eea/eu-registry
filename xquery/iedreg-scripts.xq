@@ -2233,50 +2233,25 @@ declare function scripts:checkCoordinateContinuity(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $blocker := "The coordinates, for the following spatial objects, have changed by over 100m when compared to the master database. Changes in excess of 100m are considered as introducing poor quality data to the master database, please verify the coordinates and ensure they have been inputted correctly."
-    let $warn := "The coordinates, for the following spatial objects, have changed by 30-100m compared to the master database. Please verify the coordinates and ensure that they have been inputted correctly."
-    let $info := "The coordinates, for the following spatial objects, have changed by 10 -30m compared to the master database. Distance changes between 10-30m may represent coordinate refinement, however please verify the coordinates and ensure that they have been inputted correctly."
-
-    let $srsName :=
-        for $srs in distinct-values($root//gml:*/attribute::srsName)
-        return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
-
-    let $cntry := scripts:getCountry($root)
-    let $lastReportingYear := scripts:getLastYear($root)
-
-    let $seq := (
-        $root//*:location,
-        $root//act-core:geometry,
-        $root//pf:pointGeometry
-    )
-
-    let $fromDB := map {
-        "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), 'geometry' ),
-        "ProductionInstallation": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallation'), 'pointGeometry'),
-        "ProductionInstallationPart": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), 'pointGeometry'),
-        "ProductionSite": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionSite'), 'location')
-    }
-    let $allXcoords := $seq//gml:*/descendant-or-self::*[not(*)]
-
-    let $data :=
-        for $x_coords in $allXcoords
+    let $getDataForFeaturetype := function(
+        $seq,
+        $featureName,
+        $country,
+        $Year,
+        $lookupTable,
+        $geomName,
+        $srsName
+    ) {
+        for $feature in $seq
+        let $x_coords := $feature//*[local-name() = $geomName]//gml:*/descendant-or-self::*[not(*)]
         let $x_coords_norm := fn:normalize-space($x_coords)
-        let $p := scripts:getParent($x_coords)
-        let $featureName := $p/local-name()
-        let $id := scripts:getInspireId($p)/text()
+        let $id := scripts:getInspireId($feature)/text()
         let $path := scripts:getPath($x_coords)
-        let $allYcoords := $fromDB($featureName)//gml:*/descendant-or-self::*[not(*)]
+        let $y_coords := $lookupTable/data/*[scripts:prettyFormatInspireId(inspireId) = $id
+            and countryId/@xlink:href = $country and reportingYear = $Year]
+                //*[local-name() = $geomName]
 
-        let $y_coords :=
-            for $y in $allYcoords
-            let $q := scripts:getParent($y)
-            let $ic := scripts:getInspireId($q)/text()
-
-            where $id = $ic
-
-            return $y
-
-        where not(empty($y_coords))
+        where string-length($y_coords) gt 0
 
         let $x_lat := substring-before($x_coords_norm, ' ')
         let $x_long := substring-after($x_coords_norm, ' ')
@@ -2297,6 +2272,61 @@ declare function scripts:checkCoordinateContinuity(
             string-join(($y_lat, $y_long), ", "),
             $dist
         ]
+
+    }
+
+    let $blocker := "The coordinates, for the following spatial objects, have changed by over 100m when compared to the master database. Changes in excess of 100m are considered as introducing poor quality data to the master database, please verify the coordinates and ensure they have been inputted correctly."
+    let $warn := "The coordinates, for the following spatial objects, have changed by 30-100m compared to the master database. Please verify the coordinates and ensure that they have been inputted correctly."
+    let $info := "The coordinates, for the following spatial objects, have changed by 10 -30m compared to the master database. Distance changes between 10-30m may represent coordinate refinement, however please verify the coordinates and ensure that they have been inputted correctly."
+
+    let $srsName :=
+        for $srs in distinct-values($root//gml:*/attribute::srsName)
+        return replace($srs, '^.*EPSG:+', 'http://www.opengis.net/def/crs/EPSG/0/')
+
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
+
+    let $dataFacility := $getDataForFeaturetype(
+        $root//*:ProductionFacility,
+        'ProductionFacility',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionFacility'),
+        'geometry',
+        $srsName
+    )
+
+    let $dataInstallation := $getDataForFeaturetype(
+        $root//*:ProductionInstallation,
+        'ProductionInstallation',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionInstallation'),
+        'pointGeometry',
+        $srsName
+    )
+
+    let $dataInstallationPart := $getDataForFeaturetype(
+        $root//*:ProductionInstallationPart,
+        'ProductionInstallationPart',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionInstallationPart'),
+        'pointGeometry',
+        $srsName
+    )
+
+    let $dataSite := $getDataForFeaturetype(
+        $root//*:ProductionSite,
+        'ProductionSite',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionSite'),
+        'location',
+        $srsName
+    )
+
+    let $data := ($dataFacility, $dataInstallation, $dataInstallationPart, $dataSite)
 
     let $red :=
         for $x in $data
