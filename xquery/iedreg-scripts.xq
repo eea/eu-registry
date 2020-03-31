@@ -4542,20 +4542,77 @@ declare function scripts:checkNameOfFeatureContinuity(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
+    let $getDataForFeaturetype := function(
+        $seq,
+        $featureName,
+        $country,
+        $Year,
+        $lookupTable
+    ) {
+        for $feature in $seq
+        let $id := scripts:getInspireId($feature)
+        let $x := $feature//*:nameOfFeature
+        let $path := scripts:getPath($x)
+        let $y := $lookupTable/data/*[scripts:prettyFormatInspireId(inspireId) = $id
+            and countryId/@xlink:href = $country and reportingYear = $Year]//*:nameOfFeature
+
+        let $xName := normalize-space($x/text())
+        let $yName := normalize-space($y/text())
+
+        where not($xName = $yName)
+        return map {
+        "marks" : (4),
+        "data" : (
+            $featureName,
+            $id/text(),
+            $path,
+            $xName,
+            $yName
+        )
+        }
+
+    }
     let $msg := "The names, provided in this XML submission, for the following spatial objects are not the same as the names within the master database. Please verify and ensure that all names have been inputted correctly."
     let $type := "info"
 
     let $cntry := scripts:getCountry($root)
     let $lastReportingYear := scripts:getLastYear($root)
 
-    let $seq := $root//*:nameOfFeature
-
-    let $fromDBB := (
-        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallation'), 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionInstallationPart'), 'nameOfFeature'),
-        database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionSite'), 'nameOfFeature')
+    let $dataFacility := $getDataForFeaturetype(
+        $root//*:ProductionFacility,
+        'ProductionFacility',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionFacility')
     )
+
+    let $dataInstallation := $getDataForFeaturetype(
+        $root//*:ProductionInstallation,
+        'ProductionInstallation',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionInstallation')
+    )
+
+    let $dataInstallationPart := $getDataForFeaturetype(
+        $root//*:ProductionInstallationPart,
+        'ProductionInstallationPart',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionInstallationPart')
+    )
+
+    let $dataSite := $getDataForFeaturetype(
+        $root//*:ProductionSite,
+        'ProductionSite',
+        $cntry,
+        $lastReportingYear,
+        $lookupTables?('ProductionSite')
+    )
+
+    let $data := ($dataFacility, $dataInstallation, $dataInstallationPart, $dataSite)
+(:
+    let $seq := $root//*:nameOfFeature
 
     let $fromDB := map {
         "ProductionFacility": database:queryByYear($cntry, $lastReportingYear, $lookupTables?('ProductionFacility'), 'nameOfFeature' ),
@@ -4592,6 +4649,7 @@ declare function scripts:checkNameOfFeatureContinuity(
             $yName
         )
         }
+:)
 
     let $hdrs := ("Feature", "Local ID", "Path", "nameOfFeature", "nameOfFeature (DB)")
 
