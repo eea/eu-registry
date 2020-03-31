@@ -984,14 +984,14 @@ declare function scripts:checkDuplicates2(
                 => fn:string-join(' / ')
             let $codelistMain := $node//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
-            let $codelistMainLev := fn:replace($codelistMain, '[\(\)\.]', '')
+            (:let $codelistMainLev := fn:replace($codelistMain, '[\(\)\.]', ''):)
             let $locationMain := $node/*[local-name() = $locationNode]//gml:pos
-            let $stringMainLev := (fn:replace($stringMain, ' / ', ''), $codelistMainLev)
-                    => fn:string-join('')
+            (:let $stringMainLev := (fn:replace($stringMain, ' / ', ''), $codelistMainLev):)
+                    (:=> fn:string-join(''):)
             let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
-            let $x_lat := substring-before($locationMain, ' ')
-            let $x_long := substring-after($locationMain, ' ')
+            (:let $x_lat := substring-before($locationMain, ' '):)
+            (:let $x_long := substring-after($locationMain, ' '):)
 
             for $sub in subsequence($seq, $ind + 1)
                 let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
@@ -1019,12 +1019,13 @@ declare function scripts:checkDuplicates2(
 
                 let $codelistSub := $sub//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
-                let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', '')
-                let $stringSubLev := (fn:replace($stringSub, ' / ', ''), $codelistSubLev)
-                        => fn:string-join('')
+                (:let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', ''):)
+                (:let $stringSubLev := (fn:replace($stringSub, ' / ', ''), $codelistSubLev):)
+                        (:=> fn:string-join(''):)
                 let $stringSub := ($stringSub, $codelistSub) => fn:string-join(' / ')
 
                 (: compare with levenshtein only if there are less than 500 features :)
+(:
                 let $levRatio :=
                     if($stringMainLev = $stringSubLev)
                     then 1
@@ -1033,8 +1034,11 @@ declare function scripts:checkDuplicates2(
                         else strings:levenshtein($norm($stringMainLev), $norm($stringSubLev))
 
                 let $stringFlagged := $levRatio >= 0.9
+:)
+                let $stringFlagged := $stringMain = $stringSub
                 where $stringFlagged
 
+(:
                 let $distance := if(exists($locationNode))
                     then
                         let $dist :=
@@ -1066,6 +1070,7 @@ declare function scripts:checkDuplicates2(
                         if($distance < 100) then true() else false()
 
                 where $locationFlagged
+:)
 
                 (:let $featureName := $node/local-name():)
                 let $inspireId := scripts:getInspireId($node)
@@ -1079,14 +1084,16 @@ declare function scripts:checkDuplicates2(
                     replace($inspireIdSub, '\.', ' '),
                     ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
                     <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
-                    <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>,
+                    <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>
+(:
                     concat(round-half-to-even($levRatio * 100, 1) || '%', ' / ',
                             (if(xs:string($distance) = '-') then $distance else $distance || ' m')
                     )
+:)
                 )
                 }
 
-    let $hdrs := ('Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity / Distance')
+    let $hdrs := ('Local ID', ' ', 'Attribute names', 'Attribute values', ' ')(:, 'Similarity / Distance':)
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
@@ -1360,9 +1367,9 @@ declare function scripts:checkDatabaseDuplicates2(
                 => fn:string-join(' / ')
             let $codelistMain := $node//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
-            let $codelistMainLev := fn:replace($codelistMain, '[\(\)\.]', '')
+            (:let $codelistMainLev := fn:replace($codelistMain, '[\(\)\.]', ''):)
             let $locationMain := $node/*[local-name() = $locationNode]//gml:pos
-            let $stringMainLev := (fn:replace($stringMain, ' / ', ''), $codelistMainLev)
+            (:let $stringMainLev := (fn:replace($stringMain, ' / ', ''), $codelistMainLev):)
                     => fn:string-join('')
             let $stringMain := ($stringMain, $codelistMain) => fn:string-join(' / ')
 
@@ -1370,8 +1377,8 @@ declare function scripts:checkDatabaseDuplicates2(
             let $p := scripts:getParent($node)
             let $id := scripts:getInspireId($p)
 
-            let $x_lat := substring-before($locationMain, ' ')
-            let $x_long := substring-after($locationMain, ' ')
+            (:let $x_lat := substring-before($locationMain, ' '):)
+            (:let $x_long := substring-after($locationMain, ' '):)
 
             for $sub in $fromDB
                 let $q := scripts:getParent($sub)
@@ -1407,23 +1414,29 @@ declare function scripts:checkDatabaseDuplicates2(
                     => fn:string-join(' / ')
                 let $codelistSub := $sub//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
-                let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', '')
+                (:let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', ''):)
                 let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
-                let $stringSubLev := (fn:replace($stringSub, ' / ', ''), $codelistSubLev)
-                        => fn:string-join('')
+                (:let $stringSubLev := (fn:replace($stringSub, ' / ', ''), $codelistSubLev):)
+                        (:=> fn:string-join(''):)
                 let $stringSub := ($stringSub, $codelistSub) => fn:string-join(' / ')
 
+                (:
                 let $levRatio := strings:levenshtein(
                     $norm($stringMainLev),
                     $norm($stringSubLev)
                 )
+                :)
 
-                let $stringFlagged := $levRatio >= 0.9
+                (:let $stringFlagged := $levRatio >= 0.9:)
+                let $stringFlagged := $stringMain = $stringSub
                 where $stringFlagged
+
                 (:let $codelistFlagged := if(exists($codelistNode)):)
                     (:then $codelistMain = $codelistSub:)
                     (:else true():)
                 (:where $codelistFlagged:)
+
+(:
                 let $distance := if(exists($locationNode))
                     then
                         let $main_lat := substring-before($locationMain, ' ')
@@ -1447,7 +1460,8 @@ declare function scripts:checkDatabaseDuplicates2(
                         if($distance < 100) then true() else false()
 
                 where $locationFlagged
-                (:where $ic = '0014.FACILITY' and $id = ('0013.FACILITY', '10029.FACILITY', '10125.FACILITY'):)
+:)
+
                 return map {
                 (:"sort": (7),:)
                 "marks" : (6),
@@ -1456,14 +1470,16 @@ declare function scripts:checkDatabaseDuplicates2(
                     replace($ic, '\.', ' '),
                     ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
                     <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
-                    <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>,
+                    <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>
+(:
                     concat(round-half-to-even($levRatio * 100, 1) || '%', ' / ',
                             (if(xs:string($distance) = '-') then $distance else $distance || 'm')
                     )
+:)
                 )
                 }
 
-    let $hdrs := ('Local ID', 'Local ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)', 'Similarity / Distance')
+    let $hdrs := ('Local ID', 'Local ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)')(:, 'Similarity / Distance':)
 
     let $details := scripts:getDetails($msg, $type, $hdrs, $data)
 
