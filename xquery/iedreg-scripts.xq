@@ -1080,8 +1080,10 @@ declare function scripts:checkDuplicates2(
                 (:"sort": (7),:)
                 "marks" : (6),
                 "data" : (
-                    replace($inspireId, '\.', ' '),
-                    replace($inspireIdSub, '\.', ' '),
+                    (:replace($inspireId, '\.', ' '),:)
+                    (:replace($inspireIdSub, '\.', ' '),:)
+                    $inspireId,
+                    $inspireIdSub,
                     ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
                     <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
                     <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>
@@ -1384,9 +1386,8 @@ declare function scripts:checkDatabaseDuplicates2(
                 let $q := scripts:getParent($sub)
                 let $ic := scripts:getInspireId($q)
 
-                where $id != $ic
-                let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
-
+                where not($id = $ic)
+                let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos/functx:trim(.)
                 where substring-before($locationSub, ' ') => substring-before('.')
                         = substring-before($locationMain, ' ') => substring-before('.')
                     and
@@ -1410,12 +1411,12 @@ declare function scripts:checkDatabaseDuplicates2(
                 where $dist < 10
 :)
 
-                let $stringSub := $sub//*[local-name() = $stringNodes]/data()
+                let $stringSub := $sub//*[local-name() = $stringNodes]/functx:trim(.)
                     => fn:string-join(' / ')
+                where substring($stringMain, 1, 1) = substring($stringSub, 1, 1)
                 let $codelistSub := $sub//*[local-name() = $codelistNode]
                     //fn:tokenize(@xlink:href/data(), '/')[last()]
                 (:let $codelistSubLev := fn:replace($codelistSub, '[\(\)\.]', ''):)
-                let $locationSub := $sub/*[local-name() = $locationNode]//gml:pos
                 (:let $stringSubLev := (fn:replace($stringSub, ' / ', ''), $codelistSubLev):)
                         (:=> fn:string-join(''):)
                 let $stringSub := ($stringSub, $codelistSub) => fn:string-join(' / ')
@@ -1466,8 +1467,10 @@ declare function scripts:checkDatabaseDuplicates2(
                 (:"sort": (7),:)
                 "marks" : (6),
                 "data" : (
-                    replace($id, '\.', ' '),
-                    replace($ic, '\.', ' '),
+                    (:replace($id, '\.', ' '),:)
+                    (:replace($ic, '\.', ' '),:)
+                    $id,
+                    $ic,
                     ($stringNodes, $codelistNode, $locationNode) => fn:string-join(' / '),
                     <span class="iedreg break">{($stringMain, $locationMain) => fn:string-join(' / ')}</span>,
                     <span class="iedreg break">{($stringSub, $locationSub) => fn:string-join(' / ')}</span>

@@ -134,3 +134,9 @@ declare function functx:distinct-deep
     return $nodes[$seq][not(functx:is-node-in-sequence-deep-equal(
                           .,$nodes[position() < $seq]))]
  } ;
+
+declare function functx:trim
+  ( $arg as xs:string? )  as xs:string {
+
+   replace(replace($arg,'\s+$',''),'^\s+','')
+ } ;
