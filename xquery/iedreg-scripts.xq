@@ -35,6 +35,7 @@ declare namespace xlink = "http://www.w3.org/1999/xlink";
 
 import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 import module namespace database = "iedreg-database" at "iedreg-database.xq";
+import module namespace utils = "iedreg-utils" at "iedreg-utils.xq";
 import module namespace geo = "http://expath.org/ns/geo";
 
 declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
@@ -4454,7 +4455,8 @@ declare function scripts:checkETSIdentifier(
 ) {
     let $feature := "ProductionInstallation"
     let $identifier := "ETSIdentifier"
-    let $ids := scripts:getIdentifier('iedreg-ets.xml', $identifier)/text()
+    (:let $ids := scripts:getIdentifier('iedreg-ets.xml', $identifier)/text():)
+    let $ids := utils:getLookupTableByFilename('iedreg-ets.xml')//*[local-name() = $identifier]/text()
 
     return scripts:checkIdentifier($refcode, $rulename, $root, $feature, $identifier, $ids)
 };
