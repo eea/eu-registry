@@ -70,9 +70,8 @@ declare variable $utils:envelopeChecks := (
 -----------------------------
 :)
 
-declare function utils:getLookupTable(
-    $countryCode as xs:string,
-    $featureName as xs:string
+declare function utils:getLookupTableByFilename(
+    $fileName as xs:string
 ) as document-node() {
     let $location := 'https://databridge.eionet.europa.eu/remote.php/dav/files/'
     let $userEnv := 'XQueryUser'
@@ -80,7 +79,6 @@ declare function utils:getLookupTable(
 
     let $user := environment-variable($userEnv)
     let $password := environment-variable($passwordEnv)
-    let $fileName := concat($countryCode, '_', $featureName, '.xml')
     let $url := concat($location, $user, '/721/', $fileName)
 
     let $response := http:send-request(
@@ -96,11 +94,21 @@ declare function utils:getLookupTable(
     return $response[2]
 };
 
+declare function utils:getLookupTable(
+    $countryCode as xs:string,
+    $featureName as xs:string
+) as document-node() {
+    let $fileName := concat($countryCode, '_', $featureName, '.xml')
+
+    return utils:getLookupTableByFilename($fileName)
+};
+
 declare function utils:getLookupTableSNV(
     $countryCode as xs:string,
     $featureName as xs:string
 ) as document-node() {
-    let $location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/'
+    (:let $location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery/lookup-tables/':)
+    let $location := './lookup-tables/'
 
     let $fileName := concat($countryCode, '_', $featureName, '.xml')
     let $url := concat($location, $featureName, '/', $fileName)
