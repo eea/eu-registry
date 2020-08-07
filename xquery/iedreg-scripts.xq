@@ -4476,7 +4476,7 @@ let $msg := "The following ETSIdentifiers have invalid format. Please verify an 
     let $seq := $root//*:ProductionInstallation/*:ETSIdentifier
     let $regex := '[A-Z]{2}[0-9]{15}'
     let $countryCode := scripts:getCountry($root)
-    let $countryCode := if($countryCode = 'GB') then 'UK' else $countryCode
+    let $countryCode := if($countryCode = 'UK') then 'GB' else $countryCode
 
     let $data :=
         for $elem in $seq
