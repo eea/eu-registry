@@ -4087,34 +4087,48 @@ declare function scripts:checkRatedThermalInput(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $msg := "The totalRatedThermalInput fields in this submission contain an integer
-    less than 50 or an integer greater than 8500,
-    meaning the spatial object is no longer considered an LCP.
-    Please verify and ensure the values entered are correct."
-    let $type := "warning"
+    let $warnMsg := "The size of the LCP is too large. Please check reported data."
+    let $blockMsg := "LCP must have a totalRatedThermalInput equal or greater than 50MW."
+    let $hdrs := ("Feature", "Local ID", "totalRatedThermalInput")
 
     let $seq := $root//*:ProductionInstallationPart/*:totalRatedThermalInput
 
-    let $data :=
+    let $warn :=
         for $x in $seq
         let $parent := scripts:getParent($x)
         let $feature := $parent/local-name()
         let $id := scripts:getInspireId($parent)
 
         let $v := xs:float($x => functx:if-empty(0))
-        where $v lt 50 or $v gt 8500
+        where $v gt 8500
 
         return map {
         "marks" : (3),
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
         }
 
-    let $hdrs := ("Feature", "Local ID", "totalRatedThermalInput")
+    let $block :=
+        for $x in $seq
+        let $parent := scripts:getParent($x)
+        let $feature := $parent/local-name()
+        let $id := scripts:getInspireId($parent)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+        let $v := xs:float($x => functx:if-empty(0))
+        where $v lt 50
+
+        return map {
+        "marks" : (3),
+        "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $v)
+        }
+
+    let $details :=
+        <div class="iedreg">{
+            if (empty($warn)) then () else scripts:getDetails($warnMsg, "warning", $hdrs, $warn),
+            if (empty($block)) then () else scripts:getDetails($blockMsg, "blocker", $hdrs, $block)
+        }</div>
 
     return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+        scripts:renderResult($refcode, $rulename, count($block), count($warn), 0, $details)
 };
 
 (:~
@@ -4209,19 +4223,9 @@ declare function scripts:checkNominalCapacity(
         $rulename as xs:string,
         $root as element()
 ) as element()* {
-    let $warn1 := "The integer supplied in the permittedCapacityHazardous
-        or permittedCapacityNonHazardous field
-        is greater than the integer supplied in the totalNominalCapacityAnyWasteType field,
-        for the following ProductionInstallationParts.
-        Please review and amend so the permittedCapacityHazardous/permittedCapacityNonHazardous
-        field represents an integer less than or equal to the totalNominalCapacityAnyWasteType."
-
-    let $warn2 := "The integer specified in the totalNominalCapacityAnyWasteType field
-        exceeds the anticipated maximum threshold of 60. Please verify and ensure the integer
-        supplied is correct."
-    let $info := "The integer specified in the totalNominalCapacityAnyWasteType field
-        is greater than the ideal threshold of 30.
-        Please verify and ensure the integer supplied is correct."
+    let $blockMsg := "The reported TotalNominalCapacityAnyWasteType is greater than 300t/h (2.628.000 t/y)."
+    let $warnMsg := "The size of the WI/co-WI is very close to the high limit. Check the reported number."
+    let $infoMsg := "The reported totalNominalCapacityAnyWasteType is greater than the ideal threshold of 30."
 
     let $seq := $root//*:ProductionInstallationPart/*:nominalCapacity
 
@@ -4231,67 +4235,70 @@ declare function scripts:checkNominalCapacity(
             let $hazardous := $node//*:permittedCapacityHazardous/xs:float(.)
             let $nonHazardous := $node//*:permittedCapacityNonHazardous/xs:float(.)
             where $totalAnyWaste >= 30
-                or $hazardous > $totalAnyWaste
-                or $nonHazardous > $totalAnyWaste
+(:                or $hazardous > $totalAnyWaste:)
+(:                or $nonHazardous > $totalAnyWaste:)
             let $parent := scripts:getParent($node)
             let $feature := $parent/local-name()
             let $id := scripts:getInspireId($parent)
 
             return map {
-            "marks" : (3, 4, 5),
+            "marks" : (3),
             "data" : (
                 $feature,
                 $id,
-                $hazardous,
-                $nonHazardous,
+(:                $hazardous,:)
+(:                $nonHazardous,:)
                 $totalAnyWaste
             )
             }
 
-    let $yellow1 :=
+    let $block :=
         for $m in $data
-        let $hazardous := $m("data")[3]
-        let $nonHazardous := $m("data")[4]
-        let $totalAnyWaste := $m("data")[5]
-        where $hazardous > $totalAnyWaste or $nonHazardous > $totalAnyWaste
-        let $mark1 := if($hazardous > $totalAnyWaste) then (3) else ()
-        let $mark2 := if($nonHazardous > $totalAnyWaste) then (4) else ()
+(:        let $hazardous := $m("data")[3]:)
+(:        let $nonHazardous := $m("data")[4]:)
+        let $totalAnyWaste := $m("data")[3]
+        where $totalAnyWaste ge 300
+(:        let $mark1 := if($hazardous > $totalAnyWaste) then (3) else ():)
+(:        let $mark2 := if($nonHazardous > $totalAnyWaste) then (4) else ():)
 
         return map {
-            "marks" : ($mark1, $mark2),
+(:            "marks" : ($mark1, $mark2),:)
+            "marks" : (3),
             "data" : $m("data")
         }
 
-    let $yellow2 :=
+    let $warn :=
         for $m in $data
-        let $totalAnyWaste := $m("data")[5]
-        where $totalAnyWaste gt 60
+        let $totalAnyWaste := $m("data")[3]
+        where $totalAnyWaste ge 100 and $totalAnyWaste lt 300
         return map {
-            "marks" : (5),
+            "marks" : (3),
             "data" : $m("data")
         }
 
     let $blue :=
         for $m in $data
-        let $totalAnyWaste := $m("data")[5]
-        where $totalAnyWaste gt 30 and $totalAnyWaste le 60
+        let $totalAnyWaste := $m("data")[3]
+        where $totalAnyWaste ge 30 and $totalAnyWaste lt 100
         return map {
-            "marks" : (5),
+            "marks" : (3),
             "data" : $m("data")
         }
 
-    let $hdrs := ("Feature", "Local ID", "Permitted hazardous capacity",
-        "Permitted non-hazardous capacity", "Total nominal capacity AnyWasteType")
+    let $hdrs := ("Feature", "Local ID",
+(:        "Permitted hazardous capacity",:)
+(:        "Permitted non-hazardous capacity", :)
+        "Total nominal capacity AnyWasteType")
 
     let $details :=
         <div class="iedreg">{
-            if (empty($yellow1)) then () else scripts:getDetails($warn1, "warning", $hdrs, $yellow1),
-            if (empty($yellow2)) then () else scripts:getDetails($warn2, "warning", $hdrs, $yellow2),
-            if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
+            if (empty($block)) then () else scripts:getDetails($blockMsg, "blocker", $hdrs, $block),
+            if (empty($warn)) then () else scripts:getDetails($warnMsg, "warning", $hdrs, $warn),
+            if (empty($blue)) then () else scripts:getDetails($infoMsg, "info", $hdrs, $blue)
         }</div>
 
     return
-        scripts:renderResult($refcode, $rulename, 0, count(($yellow1, $yellow2)), count($blue), $details)
+        scripts:renderResult($refcode, $rulename, count($block), count($warn), count($blue), $details)
 };
 
 (:~
