@@ -2204,7 +2204,7 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
         $root as element()
 ) as element()* {
     let $msg := "The coordinates are not consistent to 4 decimal places for the following fields. Please ensure all coordinates have been inputted correctly."
-    let $type := 'warning'
+    let $blockMsg := "Incorrect coordinates. Please ensure all coordinates have been inputted correctly"
 
     let $seq := (
         $root//*:location,
@@ -2227,20 +2227,53 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
         let $long := substring-after($coords_norm, ' ')
         let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (4) else ()
         let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (5) else ()
-        where (string-length(substring-after($long, '.')) lt 4) or (string-length(substring-after($lat, '.')) lt 4)
+        let $blockLat := if (fn:number($lat) lt -90 or fn:number($lat) gt 90) then (4) else ()
+        let $blockLong := if (fn:number($long) lt -180 or fn:number($long) gt 180) then (5) else ()
+
+        where $errLat or $errLong or $blockLat or $blockLong
+
+        let $errType := if ($blockLat or $blockLong)
+            then 'blocker'
+            else 'warning'
 
         order by $coords descending
+
         return map {
+        'errType': $errType,
         'marks' : ($errLong, $errLat),
         'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $lat, $long)
         }
 
+    let $block :=
+        for $m in $data
+        let $errType := $m("errType")
+        where $errType = 'blocker'
+
+        return map {
+            "marks" : $m('marks'),
+            "data" : $m("data")
+        }
+
+    let $warn :=
+        for $m in $data
+        let $errType := $m("errType")
+        where $errType = 'warning'
+
+        return map {
+            "marks" : $m('marks'),
+            "data" : $m("data")
+        }
+
     let $hdrs := ("Feature", "Local ID", "Path", "Latitude", "Longitude")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details :=
+        <div class="iedreg">{
+            if (empty($block)) then () else scripts:getDetails($blockMsg, "blocker", $hdrs, $block),
+            if (empty($warn)) then () else scripts:getDetails($msg, "warning", $hdrs, $warn)
+        }</div>
 
     return
-        scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
+        scripts:renderResult($refcode, $rulename, count($block), count($warn), 0, $details)
 };
 
 (:~
