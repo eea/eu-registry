@@ -274,13 +274,13 @@ declare function utils:failsafeWrapper(
         $checkFunc as function(map(*), xs:string, xs:string, element()) as element()*
 ) as element()* {
     try {
-        (:let $asd := trace($refcode, '- '):)
+        (:~ let $asd := trace($refcode, '- ') ~:)
         let $reportingYear := $root//*:reportingYear/xs:float(.)
         let $countryCode := tokenize($root//*:countryId/@xlink:href, '/+')[last()]
 
         let $envelope-url := data($root/gml:metaDataProperty/attribute::xlink:href)
         let $envelope-available := fn:doc-available($envelope-url)
-                and fn:not(fn:contains($envelope-url, 'converters'))
+                (:~ and fn:not(fn:contains($envelope-url, 'converters')) ~:)
 
         return
             if($refcode = $utils:envelopeChecks and fn:not($envelope-available))
