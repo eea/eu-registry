@@ -2227,21 +2227,28 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
         let $long := substring-after($coords_norm, ' ')
         let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (4) else ()
         let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (5) else ()
-        let $blockLat := if (fn:number($lat) lt -90 or fn:number($lat) gt 90) then (4) else ()
-        let $blockZero := if (fn:number($lat) = 0 or fn:number($long) = 0 or $coords_norm = '0;0')
-        let $blockLong := if (fn:number($long) lt -180 or fn:number($long) gt 180) then (5) else ()
+        let $blockLat := if (fn:number($lat) lt -90 or fn:number($lat) gt 90 or fn:round($lat cast as xs:float) = 0) then (4) else ()
+        let $blockLong := if (fn:number($long) lt -180 or fn:number($long) gt 180 or fn:round($long cast as xs:float) = 0) then (5) else ()
 
         where $errLat or $errLong or $blockLat or $blockLong
 
-        let $errType := if ($blockLat or $blockLong or $blockZero)
+        let $errType := if ($blockLat or $blockLong)
             then 'blocker'
             else 'warning'
+        
+        let $markLong := if ($blockLong)
+            then $blockLong
+            else $errLong
+
+        let $markLat := if ($blockLat)
+            then $blockLat
+            else $errLat
 
         order by $coords descending
 
         return map {
         'errType': $errType,
-        'marks' : ($errLong, $errLat),
+        'marks' : ($markLong, $markLat),
         'data' : ($feature, <span class="iedreg nowrap">{$id}</span>, $p, $lat, $long)
         }
 
