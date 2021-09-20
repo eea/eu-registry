@@ -2228,11 +2228,12 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
         let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (4) else ()
         let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (5) else ()
         let $blockLat := if (fn:number($lat) lt -90 or fn:number($lat) gt 90) then (4) else ()
+        let $blockZero := if (fn:number($lat) = 0 or fn:number($long) = 0 or $coords_norm = '0;0')
         let $blockLong := if (fn:number($long) lt -180 or fn:number($long) gt 180) then (5) else ()
 
         where $errLat or $errLong or $blockLat or $blockLong
 
-        let $errType := if ($blockLat or $blockLong)
+        let $errType := if ($blockLat or $blockLong or $blockZero)
             then 'blocker'
             else 'warning'
 
