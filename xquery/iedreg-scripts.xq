@@ -2227,8 +2227,8 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
         let $long := substring-after($coords_norm, ' ')
         let $errLat := if (string-length(substring-after($lat, '.')) lt 4) then (4) else ()
         let $errLong := if (string-length(substring-after($long, '.')) lt 4) then (5) else ()
-        let $blockLat := if (fn:number($lat) lt -90 or fn:number($lat) gt 90 or fn:round($lat cast as xs:float) = 0) then (4) else ()
-        let $blockLong := if (fn:number($long) lt -180 or fn:number($long) gt 180 or fn:round($long cast as xs:float) = 0) then (5) else ()
+        let $blockLat := if (fn:number($lat) lt -90 or fn:number($lat) gt 90 or $lat cast as xs:float = 0) then (4) else ()
+        let $blockLong := if (fn:number($long) lt -180 or fn:number($long) gt 180 or $long cast as xs:float = 0) then (5) else ()
 
         where $errLat or $errLong or $blockLat or $blockLong
 
