@@ -1,0 +1,51 @@
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:gml="http://www.opengis.net/gml/3.2">
+{%- for f in features %}
+    <ProductionInstallation>
+        <countryId xlink:href="{{ f.countryId }}"></countryId>
+        <reportingYear>{{ f.reportingYear }}</reportingYear>
+        <inspireId>
+            <localId>{{ f.inspireId_localId }}</localId>
+            <namespace>{{ f.inspireId_namespace }}</namespace>
+        </inspireId>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="{{ f.gmlId }}" srsDimension="2">
+                <gml:pos>{{ f.latitude }} {{ f.longitude }}</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <installationName>
+            <nameOfFeature>{{ f.installationName }}</nameOfFeature>
+        </installationName>
+        <IEDAnnexIActivity>
+            <EUReg:IEDAnnexIActivityType>
+                <EUReg:mainActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/{{ f.mainActivity }}"></EUReg:mainActivity>
+                {%- if f.otherActivities %}
+                {%- for oa in f.otherActivities.split(',') %}
+                <EUReg:otherActivity xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/IEDAnnexIActivityValue/{{ oa }}"></EUReg:otherActivity>
+                {%- endfor %}
+                {%- endif %}
+            </EUReg:IEDAnnexIActivityType>
+        </IEDAnnexIActivity>
+        <status>
+            <pf:StatusType>
+                <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/{{ f.status }}"></pf:statusType>
+                <pf:validFrom xsi:nil="true"></pf:validFrom>
+            </pf:StatusType>
+        </status>
+        {%- set dateOfGrantings_list = f.dateOfGrantings.split(',') %}
+        {%- set permitURLs_list = f.permitURLs.split(',') %}
+        {%- for i in range(dateOfGrantings_list | length) %}
+        <permit>
+            {%- if dateOfGrantings_list[i] != 'NULL' %}
+            {%- set dog_y = dateOfGrantings_list[i][0:4] %}
+            {%- set dog_m = dateOfGrantings_list[i][4:6] %}
+            {%- set dog_d = dateOfGrantings_list[i][6:]  %}      
+                <dateOfGranting>{{ dog_y }}-{{ dog_m }}-{{ dog_d }}</dateOfGranting>
+            {%- endif %}
+            {%- if permitURLs_list[i] != 'NULL' %}
+                <permitURL>{{ permitURLs_list[i] }}</permitURL>
+            {%- endif %}
+        </permit>
+        {%- endfor %}
+    </ProductionInstallation>
+{%- endfor %}
+</data>

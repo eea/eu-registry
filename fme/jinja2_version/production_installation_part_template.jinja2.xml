@@ -1,0 +1,30 @@
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:gml="http://www.opengis.net/gml/3.2">
+{%- for f in features %}
+    <ProductionInstallationPart>
+        <countryId xlink:href="{{ f.countryId }}"></countryId>
+        <reportingYear>{{ f.reportingYear }}</reportingYear>
+        <inspireId>
+            <localId>{{ f.inspireId_localId }}</localId>
+            <namespace>{{ f.inspireId_namespace }}</namespace>
+        </inspireId>
+        <installationPartName>
+            <nameOfFeature>{{ f.installationPartName }}</nameOfFeature>
+        </installationPartName>
+        <plantType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/PlantTypeValue/{{ f.plantType }}"></plantType>
+        <pointGeometry>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="{{ f.gmlId }}" srsDimension="2">
+                <gml:pos>{{ f.latitude }} {{ f.longitude }}</gml:pos>
+            </gml:Point>
+        </pointGeometry>
+        <status>
+            <pf:statusType xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/ConditionOfFacilityValue/{{ f.status }}"></pf:statusType>
+            <pf:validFrom xsi:nil="true"></pf:validFrom>
+        </status>
+        {%- if f.derogations %}
+        {%- for d in f.derogations.split(',') %}
+        <derogations xlink:href="http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/DerogationValue/{{ d }}"></derogations>
+        {%- endfor %}
+        {%- endif %}
+    </ProductionInstallationPart>
+{%- endfor %}
+</data>

@@ -57,9 +57,7 @@
 			<xs:element name="derogationDurationStartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="BATAEL" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:appinfo>
-						<gml:defaultCodeSpace>http://dd.eionet.europa.eu/euregistryonindustrialsites/CodeList_BATAELValue.xml#BATAELValue</gml:defaultCodeSpace>
-					</xs:appinfo>
+					<xs:documentation>http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/BATAELValue/</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			
@@ -252,9 +250,7 @@
 			<xs:element name="conditionsInformation" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="specificConditions" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:appinfo>
-						<gml:defaultCodeSpace>http://dd.eionet.europa.eu/euregistryonindustrialsites/CodeList_Article51Value.xml#Article51Value</gml:defaultCodeSpace>
-					</xs:appinfo>
+					<xs:documentation>http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/Article51Value/</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -275,9 +271,7 @@
 			<xs:element name="article14.4" type="xs:boolean"> </xs:element>
 			<xs:element name="BATAEL" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:appinfo>
-						<gml:defaultCodeSpace>http://dd.eionet.europa.eu/euregistryonindustrialsites/CodeList_BATAELValue.xml#BATAELValue</gml:defaultCodeSpace>
-					</xs:appinfo>
+					<xs:documentation>http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/BATAELValue/</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 
@@ -312,9 +306,7 @@
 
 					<xs:element name="facilityType" type="gml:ReferenceType">
 						<xs:annotation>
-							<xs:appinfo>
-								<gml:defaultCodeSpace>http://dd.eionet.europa.eu/euregistryonindustrialsites/CodeList_FacilityTypeValue.xml#FacilityTypeValue</gml:defaultCodeSpace>
-							</xs:appinfo>
+							<xs:documentation>http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/FacilityTypeValue/</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 
@@ -363,9 +355,7 @@
 					<xs:element name="installationName" type="EUReg:FeatureNamePropertyType"/>
 					<xs:element name="baselineReportIndicator" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:appinfo>
-								<gml:defaultCodeSpace>http://dd.eionet.europa.eu/euregistryonindustrialsites/CodeList_BaselineReportValue.xml#BaselineReportValue</gml:defaultCodeSpace>
-							</xs:appinfo>
+							<xs:documentation>http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/BaselineReportValue/</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 
@@ -397,16 +387,12 @@
 					<xs:element name="publicEmissionMonitoringURL" type="xs:string" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="BATConclusion" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:appinfo>
-								<gml:defaultCodeSpace>http://dd.eionet.europa.eu/euregistryonindustrialsites/CodeList_BATConclusionValue.xml#BATConclusionValue</gml:defaultCodeSpace>
-							</xs:appinfo>
+							<xs:documentation>http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/BATConclusionValue/</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="installationType" type="gml:ReferenceType">
 						<xs:annotation>
-							<xs:appinfo>
-								<gml:defaultCodeSpace>http://dd.eionet.europa.eu/euregistryonindustrialsites/CodeList_InstallationTypeValue.xml#InstallationTypeValue</gml:defaultCodeSpace>
-							</xs:appinfo>
+							<xs:documentation>http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/InstallationTypeValue/</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 

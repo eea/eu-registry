@@ -1,0 +1,20 @@
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:EUReg="http://dd.eionet.europa.eu/schemaset/euregistryonindustrialsites" xmlns:pf="http://inspire.ec.europa.eu/schemas/pf/4.0" xmlns:gml="http://www.opengis.net/gml/3.2">
+{%- for f in features %}
+    <ProductionSite>
+        <countryId xlink:href="{{ f.countryId }}"></countryId>
+        <reportingYear>{{ f.reportingYear }}</reportingYear>
+        <inspireId>
+            <localId>{{ f.inspireId_localId }}</localId>
+            <namespace>{{ f.inspireId_namespace }}</namespace>
+        </inspireId>
+        <siteName>
+            <nameOfFeature>{{ f.siteName }}</nameOfFeature>
+        </siteName>
+        <location>
+            <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="{{ f.gmlId }}" srsDimension="2">
+                <gml:pos> {{ f.latitude }} {{ f.longitude }}</gml:pos>
+            </gml:Point>
+        </location>
+    </ProductionSite>
+{%- endfor %}    
+</data>

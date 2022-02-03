@@ -26,17 +26,20 @@
   <!-- <import namespace="http://inspire.ec.europa.eu/schemas/act-core/4.0"
     schemaLocation="http://inspire.ec.europa.eu/schemas/act-core/4.0/ActivityComplex_Core.xsd"/> -->
   
-  <!-- imports a modified version of the Activity Complex core - modification is geometry data type restricted to be GM_Point  --> 
+  <!-- this schema imports a modified version of the Activity Complex core - modification is geometry data type restricted to be GM_Point  -->
+  
+  <!--29.04.2021 modified schemaLocation for INSPIRE schemas: URL changed from http to https. The change DOES NOT apply to related namespaces, which MUST stay in http -->  
+  
   <import namespace="http://inspire.ec.europa.eu/schemas/act-core/4.0"
     schemaLocation="http://dd.eionet.europa.eu/schemas/euregistryonindustrialsites/ActivityComplex_Core-EURegistry.xsd"/>
   <import namespace="http://inspire.ec.europa.eu/schemas/base/3.3"
-    schemaLocation="http://inspire.ec.europa.eu/schemas/base/3.3/BaseTypes.xsd"/>
+    schemaLocation="https://inspire.ec.europa.eu/schemas/base/3.3/BaseTypes.xsd"/>
   <import namespace="http://inspire.ec.europa.eu/schemas/base2/2.0"
-    schemaLocation="http://inspire.ec.europa.eu/schemas/base2/2.0/BaseTypes2.xsd"/>
+    schemaLocation="https://inspire.ec.europa.eu/schemas/base2/2.0/BaseTypes2.xsd"/>
   <import namespace="http://inspire.ec.europa.eu/schemas/bu-base/4.0"
-    schemaLocation="http://inspire.ec.europa.eu/schemas/bu-base/4.0/BuildingsBase.xsd"/>
+    schemaLocation="https://inspire.ec.europa.eu/schemas/bu-base/4.0/BuildingsBase.xsd"/>
   <import namespace="http://inspire.ec.europa.eu/schemas/bu-core2d/4.0"
-    schemaLocation="http://inspire.ec.europa.eu/schemas/bu-core2d/4.0/BuildingsCore2D.xsd"/>
+    schemaLocation="https://inspire.ec.europa.eu/schemas/bu-core2d/4.0/BuildingsCore2D.xsd"/>
   <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo"
     schemaLocation="http://portele.de/ShapeChangeAppinfo.xsd"/>
   <import namespace="http://www.opengis.net/gml/3.2"
