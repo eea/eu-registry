@@ -150,11 +150,14 @@ declare function common:feedback($records as element()*) as element(div) {
         </ul>
     )
 
+    let $zwsp := '&#8203;' (: zero width space :)
+
     return
         <div class="feedbacktext">
             {common:css()}
             <span id="feedbackStatus" class="{$status => upper-case()}" style="display:none">{$feedbackMessage}</span>
             {$errorSummary}
             {$records}
+            <script type="text/javascript" src="./export.js">{$zwsp}</script>
         </div>
 };
