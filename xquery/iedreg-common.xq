@@ -158,6 +158,6 @@ declare function common:feedback($records as element()*) as element(div) {
             <span id="feedbackStatus" class="{$status => upper-case()}" style="display:none">{$feedbackMessage}</span>
             {$errorSummary}
             {$records}
-            <script type="text/javascript" src="./export.js">{$sp}</script>
+            <script type="text/javascript" src="https://converters.eionet.europa.eu/xmlfile/export.js">{$sp}</script>
         </div>
 };
