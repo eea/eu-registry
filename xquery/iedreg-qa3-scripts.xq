@@ -57,7 +57,7 @@ declare function scripts3:checkActivity(
         })[position() = 1 to $scripts3:MSG_LIMIT]
 
     let $hdrs := ("Feature", "Local ID", "Path", $activityName || "Value")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -214,7 +214,7 @@ declare function scripts3:checkReportData(
             }
 
     let $hdrs := ("Feature", "Local ID", "GML ID", "Path", concat($activityType, " xlink:href"))
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -270,7 +270,7 @@ declare function scripts3:checkeHostingSite(
         }
 
     let $hdrs := ("Feature", "Local ID", "Path", "position of pf:status", "position of pf:hostingSite")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -322,7 +322,7 @@ declare function scripts3:checkeHostingSiteHref(
             }
 
     let $hdrs := ("Feature", "Local ID", "GML ID", "Path", concat($activityType, " xlink:href"))
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -372,7 +372,7 @@ declare function scripts3:checkGroupedInstallation(
             }
 
     let $hdrs := ("Feature", "Local ID", "Path", "GML ID")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -422,7 +422,7 @@ declare function scripts3:checkGroupedInstallationHref(
             }
 
     let $hdrs := ("Feature", "Local ID", "GML ID", "Path", "groupedInstallation / @xlink:href")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -465,7 +465,7 @@ declare function scripts3:checkActCoreGeometry(
             }
 
     let $hdrs := ("Feature", "Local ID", "GML ID", "Path")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -533,7 +533,7 @@ declare function scripts3:checkGroupedInstallationPart(
             }
 
     let $hdrs := ("Feature", "Local ID","Path", "GML ID")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -583,7 +583,7 @@ declare function scripts3:checkGroupedInstallationPartHref(
             }
 
     let $hdrs := ("Feature", "Local ID", "GML ID", "Path", "groupedInstallationPart / @xlink:href")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -638,7 +638,7 @@ declare function scripts3:checkStatusNil(
             "data" : ($feature, $ins_id, <span class="iedreg nowrap">{$id}</span>, $p, $v)
             }
     let $hdrs := ("Feature", "Local ID", "GML ID", "Path", "status")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
@@ -683,7 +683,7 @@ declare function scripts3:checkePointGeometry(
         }
 
     let $hdrs := ("Feature", "Local ID", "GML ID", "Path", "element after inspireId")
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };

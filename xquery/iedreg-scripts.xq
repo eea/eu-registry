@@ -39,6 +39,7 @@ import module namespace utils = "iedreg-utils" at "iedreg-utils.xq";
 import module namespace geo = "http://expath.org/ns/geo";
 
 declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
+declare variable $scripts:EXCEL_LIMIT as xs:integer := 1000;
 
 (:declare variable $scripts:location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery';:)
 (:declare variable $scripts:location := '.';:)
@@ -153,6 +154,7 @@ declare function scripts:getValidConcepts($value as xs:string) as xs:string* {
 };
 
 declare function scripts:getDetails(
+        $refcode as xs:string,
         $msg as xs:string,
         $type as xs:string,
         $hdrs as (xs:string)*,
@@ -165,9 +167,21 @@ declare function scripts:getDetails(
                 else ()
     )
 
+
+    let $hdrsList:=
+    for $h at $pos in $hdrs
+        return
+        if ($pos < count($hdrs)) then $h ||","
+        else $h
+
+    
+    let $numberOfRecords:=
+            if (count($data)>$scripts:EXCEL_LIMIT) then $scripts:EXCEL_LIMIT
+            else count($data)
     return
         <div class="iedreg">
-
+            <button class="exportButton" onclick="saveFile('{$refcode}','{$numberOfRecords}')" type="button">Export to XLS</button>   
+            
             <div class="iedreg {$msgClass}">{$msg}</div>
 
             {if (fn:count($data) > 0)
@@ -175,9 +189,40 @@ declare function scripts:getDetails(
                 <div class="iedreg table inner">
                     <div class="iedreg row">
                         {for $h in $hdrs
+
                         return
-                            <div class="iedreg col inner th"><span class="iedreg break">{$h}</span></div>
+                            <div class="iedreg col inner th">
+                                <span class="iedreg break">{$h}</span>
+                            
+                            </div>
+                           
                         }
+
+                <!--<input id="{$refcode}-errorsHeader" type="hidden" value='"Headers" : "{$hdrsList}", "Count" :"{count($hdrs)}"'></input>
+                <input id="{$refcode}-errorsTable_{$pos}" type="hidden" value='"rowData": "{$rowData}",  "number": "{count ($d('data'))}"'></input> -->        
+                <input id="{$refcode}-errorsHeader" type="hidden" value='{$hdrsList}'></input>                                
+                {for $d at $i in $data
+                    let $sort_index := if ('sort' = map:keys($d)) then $d?sort else 1
+                    count $pos
+                    where $pos <= $scripts:MSG_LIMIT
+                    order by $d?data[$sort_index]
+                    
+                    
+                        
+                     let $rowData:=   
+                        for $x at $j in $d('data')(:fn:tokenize($d('data')):)
+                           where $j<=count ($d('data'))(: let $allRow:= $allRow ||:)
+                            return
+                       if ($j=count ($d('data'))) then $x
+                       else $x||","
+
+                    return
+                    <input id="{$refcode}-errorsTable_{$pos}" type="hidden" value='{$rowData}'></input>
+                        
+
+                    }
+                         
+<!--BEFORE TOKENIZE <input id="errors-table{$pos}" type="hidden" value='"Pos":"{$pos}", "x[{$j}]": "{$x[$j]}", "j": "{$j}", "x": "{$x}","$d(data)":"{$d('data')}"'></input> -->
                     </div>
                     {for $d in $data
                     let $sort_index := if ('sort' = map:keys($d)) then $d?sort else 1
@@ -187,24 +232,30 @@ declare function scripts:getDetails(
                     return
                         <div class="iedreg row">
                             {for $z at $i in $d('data')
-                            let $x := if (fn:index-of($d('marks'), $i)) then <span class="iedreg top nowrap">{$z}</span> else <span class="iedreg top">{$z}</span>
+
+                            let $x := if (fn:index-of($d('marks'), $i)) then 
+                            <span class="iedreg top nowrap">{$z}</span> 
+                            else <span class="iedreg top">{$z}</span>
+
                             return
-                                <div class="iedreg col inner{if (fn:index-of($d('marks'), $i)) then ' ' || $type else ''}">{$x}</div>
-                            }
+                                <div class="iedreg col inner{if (fn:index-of($d('marks'), $i)) then ' ' || $type else ''}">{$x}
+
+                                </div>                           
+                            }                        
                         </div>
                     }
+                    
                 </div>
             else ()
             }
         </div>
 };
-
 declare function scripts:noPreviousYearWarning(
   $refcode as xs:string,
   $rulename as xs:string
 ){
     let $warnDb := "There are no data available for previous years."
-    let $details := scripts:getDetails($warnDb, "warning", (), ())
+    let $details := scripts:getDetails($refcode,$warnDb, "warning", (), ())
     return scripts:renderResult($refcode, $rulename, 0, 1, 0, $details)
 };
 
@@ -213,7 +264,7 @@ declare function scripts:noDbWarning(
   $rulename as xs:string
 ){
     let $warnDb := "The database is currently not available. Please try again later."
-    let $details := scripts:getDetails($warnDb, "warning", (), ())
+    let $details := scripts:getDetails($refcode,$warnDb, "warning", (), ())
     return scripts:renderResult($refcode, $rulename, 0, 1, 0, $details)
 };
 
@@ -347,7 +398,7 @@ declare function scripts:checkActivity(
 
     let $hdrs := ("Message", "Feature", "Local ID", "Path", "Code list value")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -481,7 +532,7 @@ declare function scripts:checkCountryId(
 
     let $hdrs := ("Message", "Feature", "Path", "CountryId")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -524,7 +575,7 @@ declare function scripts:checkReasonValue(
 
     let $hdrs := ("Feature", "Local ID", "Path", "ReasonValue")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -646,7 +697,7 @@ declare function scripts:checkInspireIdUniqueness(
 
     let $hdrs := ("Feature", "Local ID", "Local ID")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -710,11 +761,11 @@ declare function scripts:checkAmountOfInspireIds(
         else
             if ($ratio gt 0.5) then
                 let $msg := replace($warn, 'PERC', $perc)
-                let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+                let $details := scripts:getDetails($refcode,$msg, "warning", $hdrs, $data)
                 return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
             else if ($ratio gt 0.2) then
                 let $msg := replace($info, 'PERC', $perc)
-                let $details := scripts:getDetails($msg, "info", $hdrs, $data)
+                let $details := scripts:getDetails($refcode,$msg, "info", $hdrs, $data)
                 return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
             else
                 scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
@@ -821,7 +872,7 @@ declare function scripts:checkInspireIdBlank(
 
     let $hdrs := ("Feature", "localId", "namespace")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -950,7 +1001,7 @@ declare function scripts:checkDuplicates(
 
     let $hdrs := ('Feature', 'Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity / Distance')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -1098,7 +1149,7 @@ declare function scripts:checkDuplicates2(
 
     let $hdrs := ('Local ID', ' ', 'Attribute names', 'Attribute values', ' ')(:, 'Similarity / Distance':)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -1250,7 +1301,7 @@ declare function scripts:checkDatabaseDuplicates_old(
 
     let $hdrs := ('Feature', 'Local ID', 'Local ID (DB)', 'Feature name', 'Feature name (DB)', 'Similarity')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         if (not(database:dbAvailable($docDB))) then
@@ -1329,7 +1380,7 @@ declare function scripts:checkDatabaseDuplicates(
 
     let $hdrs := ('Feature', 'Local ID', 'Local ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)', 'Similarity')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -1485,7 +1536,7 @@ declare function scripts:checkDatabaseDuplicates2(
 
     let $hdrs := ('Local ID', 'Local ID (DB)', 'Attribute names',  'Attribute values', 'Attribute values (DB)')(:, 'Similarity / Distance':)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -1646,7 +1697,73 @@ declare function scripts:checkMissing(
 
     let $hdrs := ('Feature', 'Local ID', 'Status')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
+
+    return
+        if (not(database:dbAvailable($docDB))) then
+            scripts:noDbWarning($refcode, $rulename)
+        else if (empty($lastReportingYear)) then
+            scripts:noPreviousYearWarning($refcode, $rulename)
+        else
+            scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
+};
+
+declare function scripts:checkMissingSkipEEA(
+        $lookupTables,
+        $refcode as xs:string,
+        $rulename as xs:string,
+        $root as element(),
+        $feature as xs:string,
+        $allowed as xs:string*,
+        $docDB as document-node()
+) as element()* {
+    let $featureName := 'Production' || functx:capitalize-first($feature)
+
+    let $msg := "There are inspireIDs for " || scripts:makePlural($featureName) || " missing from this submission. Please verify to ensure that no " || scripts:makePlural($featureName) || " have been missed."
+    let $type := "blocker"
+
+    let $cntry := scripts:getCountry($root)
+    let $lastReportingYear := scripts:getLastYear($root)
+
+    let $seq := $root//*:inspireId/scripts:prettyFormatInspireId(.)
+    let $fromDB := database:queryByYear($cntry, $lastReportingYear,
+        $docDB, 'inspireId')
+    (:****************************************:)    
+
+let $fromDBFeature := database:queryByYearFeature($cntry, $lastReportingYear,
+        $docDB)
+
+    let $data :=
+    
+        for $id in $fromDBFeature
+        
+        
+        let $yID := scripts:prettyFormatInspireId($id//inspireId)
+        where not($yID = $seq) 
+
+        let $p := scripts:getParent($id)
+        where $p/local-name() = $featureName
+
+        let $status := $p//pf:statusType
+        let $status := replace($status/@xlink:href, '/+$', '')
+        let $status := if (scripts:is-empty($status)) then " " else scripts:normalize($status)
+
+        where not($status = $allowed)
+        return 
+        if (not(fn:contains($id//*:namespace/fn:normalize-space(.), ".EEA")))then
+        map {
+        "marks" : (2),
+        "data" : (
+            $featureName,
+            <span class="iedreg nowrap">{$id/scripts:prettyFormatInspireId(.)}</span>,
+           
+            $status
+        )
+        }else ()
+
+    let $hdrs := ('Feature', 'Local ID', 'Status')
+
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         if (not(database:dbAvailable($docDB))) then
@@ -1734,8 +1851,8 @@ declare function scripts:checkMissingSites(
 
     let $details :=
         <div class="iedreg">{
-            if (count($data1) gt 0) then scripts:getDetails($msg1, $type, $hdrs1, $data1) else ()
-            (:if (count($data2) gt 0) then scripts:getDetails($msg2, $type, $hdrs2, $data2) else ():)
+            if (count($data1) gt 0) then scripts:getDetails($refcode,$msg1, $type, $hdrs1, $data1) else ()
+            (:if (count($data2) gt 0) then scripts:getDetails($refcode,$msg2, $type, $hdrs2, $data2) else ():)
         }</div>
     (:let $details := ():)
 
@@ -1781,7 +1898,7 @@ declare function scripts:checkMissingProductionFacilities(
     let $allowed := ("decommissioned", "notRegulated")
     let $docDB := $lookupTables?('ProductionFacility')
 
-    return scripts:checkMissing($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
+    return scripts:checkMissingSkipEEA($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1799,7 +1916,7 @@ declare function scripts:checkMissingProductionInstallations(
     let $allowed := ("decommissioned", "notRegulated")
     let $docDB := $lookupTables?('ProductionInstallation')
 
-    return scripts:checkMissing($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
+    return scripts:checkMissingSkipEEA($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1817,7 +1934,7 @@ declare function scripts:checkMissingProductionInstallationParts(
     let $allowed := ("decommissioned", 'notRegulated')
     let $docDB := $lookupTables?('ProductionInstallationPart')
 
-    return scripts:checkMissing($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
+    return scripts:checkMissingSkipEEA($lookupTables, $refcode, $rulename, $root, $feature, $allowed, $docDB)
 };
 
 (:~
@@ -1869,8 +1986,8 @@ declare function scripts:checkRadius(
 
     let $details :=
         <div class="iedreg">{
-            if (count($yellow) gt 0) then scripts:getDetails($warn, "warning", $hdrs, $yellow) else (),
-            if (count($blue) gt 0) then scripts:getDetails($info, "info", $hdrs, $blue) else ()
+            if (count($yellow) gt 0) then scripts:getDetails($refcode,$warn, "warning", $hdrs, $yellow) else (),
+            if (count($blue) gt 0) then scripts:getDetails($refcode,$info, "info", $hdrs, $blue) else ()
         }</div>
 
     return
@@ -2187,7 +2304,7 @@ declare function scripts:checkCountryBoundary(
 
     let $hdrs := ("Feature", "Local ID", "Path", "Coordinates", "Country")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -2276,8 +2393,8 @@ declare function scripts:checkCoordinatePrecisionCompleteness(
 
     let $details :=
         <div class="iedreg">{
-            if (empty($block)) then () else scripts:getDetails($blockMsg, "blocker", $hdrs, $block),
-            if (empty($warn)) then () else scripts:getDetails($msg, "warning", $hdrs, $warn)
+            if (empty($block)) then () else scripts:getDetails($refcode,$blockMsg, "blocker", $hdrs, $block),
+            if (empty($warn)) then () else scripts:getDetails($refcode,$msg, "warning", $hdrs, $warn)
         }</div>
 
     return
@@ -2438,9 +2555,9 @@ declare function scripts:checkCoordinateContinuity(
 
     let $details :=
         <div class="iedreg">{
-            if (empty($red)) then () else scripts:getDetails($blocker, "warning", $hdrs, $red),
-            if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
-            if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
+            if (empty($red)) then () else scripts:getDetails($refcode,$blocker, "warning", $hdrs, $red),
+            if (empty($yellow)) then () else scripts:getDetails($refcode,$warn, "warning", $hdrs, $yellow),
+            if (empty($blue)) then () else scripts:getDetails($refcode,$info, "info", $hdrs, $blue)
         }</div>
 
     return
@@ -2581,8 +2698,8 @@ declare function scripts:checkProdutionSiteBuffers(
 
     let $details :=
         <div class="iedreg">{
-            if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
-            if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
+            if (empty($yellow)) then () else scripts:getDetails($refcode,$warn, "warning", $hdrs, $yellow),
+            if (empty($blue)) then () else scripts:getDetails($refcode,$info, "info", $hdrs, $blue)
         }</div>
 
     return
@@ -2637,7 +2754,7 @@ declare function scripts:checkProdutionInstallationPartCoords(
     let $hdrs := ("Path", "Local ID",
                     "Path", "Local ID", "Coordinates")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -2680,7 +2797,7 @@ declare function scripts:checkActivityUniqueness(
 
     let $hdrs := ("Feature", "Local ID", $activityName)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -2766,8 +2883,8 @@ declare function scripts:checkActivityContinuity(
 
     let $details :=
         <div class="iedreg">{
-            if (empty($yellow)) then () else scripts:getDetails($warn, "warning", $hdrs, $yellow),
-            if (empty($blue)) then () else scripts:getDetails($info, "info", $hdrs, $blue)
+            if (empty($yellow)) then () else scripts:getDetails($refcode,$warn, "warning", $hdrs, $yellow),
+            if (empty($blue)) then () else scripts:getDetails($refcode,$info, "info", $hdrs, $blue)
         }</div>
 
     return
@@ -2914,10 +3031,10 @@ declare function scripts:checkStatus(
 
     return
         if ($type = "warning") then
-            let $details := scripts:getDetails($warn, $type, $hdrs, $data)
+            let $details := scripts:getDetails($refcode,$warn, $type, $hdrs, $data)
             return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
         else if ($type = "blocker") then
-            let $details := scripts:getDetails($error, $type, $hdrs, $data)
+            let $details := scripts:getDetails($refcode,$error, $type, $hdrs, $data)
             return scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
         else
             scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
@@ -3087,7 +3204,7 @@ declare function scripts:checkFunctionalStatusType(
 
     let $hdrs := ("Feature", "Local ID", "Path", "StatusType", "StatusType (DB)")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         if (not(database:dbAvailable($lookupTables?('ProductionFacility')))) then
@@ -3177,7 +3294,7 @@ declare function scripts:checkDateOfStartOfOperation(
     let $hdrs := ("Path feature", "Local ID", "Feature date",
                    "Path feature child", "Local ID child", "Feature child date")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -3230,7 +3347,7 @@ declare function scripts:checkDateOfStartOfOperationLCP(
 
     let $hdrs := ("Feature", "Local ID", "Path", 'Date of start of operation', "Plant type")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -3273,7 +3390,7 @@ declare function scripts:checkDateOfGranting(
 
     let $hdrs := ("Feature", "Local ID", "dateOfGranting", "dateOfStartOfOperation")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -3316,7 +3433,7 @@ declare function scripts:checkPermitDates(
 
     let $hdrs := ("Feature", "Local ID", "Path", $date1, $date2)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -3393,7 +3510,7 @@ declare function scripts:checkInspections(
 
     let $hdrs := ("Feature", "Local ID", "Competent authority inspections", "Site visits")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -3434,7 +3551,7 @@ declare function scripts:checkPermit(
 
     let $hdrs := ("Feature", "Local ID", "Competent authority permits")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
@@ -3498,7 +3615,7 @@ declare function scripts:checkDateOfGrantingPermitURL(
 
     let $hdrs := ("Feature", "Local ID", "dateofGranting", "dateofGranting (DB)", "permitURL")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         if (not(database:dbAvailable($docDB))) then
@@ -3546,7 +3663,7 @@ declare function scripts:checkEnforcementAction(
 
     let $hdrs := ("Feature", "Local ID", "Path", "Enforcement action", "Permit granted")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -3590,7 +3707,7 @@ declare function scripts:checkStricterPermitConditions(
 
     let $hdrs := ("Feature", "Local ID", "Path", "BATAEL", "Stricter permit conditions indicator")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -3639,7 +3756,7 @@ declare function scripts:checkBATPermit(
 
     let $hdrs := ("Feature", "Local ID", "Path", "BATDerogationIndicator", "permitGranted")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
@@ -3722,7 +3839,7 @@ declare function scripts:checkBATDerogation(
 
     let $hdrs := ("Additional info", "Feature", "Local ID", "Path", "Attribute")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -3769,7 +3886,7 @@ declare function scripts:checkArticle32(
 
     let $hdrs := ("Feature", "Local ID", "DerogationValue", "dateOfGranting")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -3811,7 +3928,7 @@ declare function scripts:checkDerogationsYear(
 
     let $hdrs := ("Feature", "Local ID", "DerogationValue", "reportingYear")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -3906,7 +4023,7 @@ declare function scripts:checkDerogationsContinuity(
 
     let $hdrs := ("Feature", "Local ID", "Path", "DerogationValue", "DerogationValue (DB)")
 
-    let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, "warning", $hdrs, $data)
 
     return
         if (not(database:dbAvailable($docDB))) then
@@ -4040,7 +4157,7 @@ declare function scripts:checkRelevantChapters(
 
     let $hdrs := ("Feature", "Local ID", "Relevant Chapter", "Plant Type")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -4112,7 +4229,7 @@ declare function scripts:checkLCP(
 
     let $hdrs := ("Feature", "Local ID")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -4164,8 +4281,8 @@ declare function scripts:checkRatedThermalInput(
 
     let $details :=
         <div class="iedreg">{
-            if (empty($warn)) then () else scripts:getDetails($warnMsg, "warning", $hdrs, $warn),
-            if (empty($block)) then () else scripts:getDetails($blockMsg, "blocker", $hdrs, $block)
+            if (empty($warn)) then () else scripts:getDetails($refcode,$warnMsg, "warning", $hdrs, $warn),
+            if (empty($block)) then () else scripts:getDetails($refcode,$blockMsg, "blocker", $hdrs, $block)
         }</div>
 
     return
@@ -4248,7 +4365,7 @@ declare function scripts:checkWI(
 
     let $hdrs := ("Feature", "Local ID")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -4333,9 +4450,9 @@ declare function scripts:checkNominalCapacity(
 
     let $details :=
         <div class="iedreg">{
-            if (empty($block)) then () else scripts:getDetails($blockMsg, "blocker", $hdrs, $block),
-            if (empty($warn)) then () else scripts:getDetails($warnMsg, "warning", $hdrs, $warn),
-            if (empty($blue)) then () else scripts:getDetails($infoMsg, "info", $hdrs, $blue)
+            if (empty($block)) then () else scripts:getDetails($refcode,$blockMsg, "blocker", $hdrs, $block),
+            if (empty($warn)) then () else scripts:getDetails($refcode,$warnMsg, "warning", $hdrs, $warn),
+            if (empty($blue)) then () else scripts:getDetails($refcode,$infoMsg, "info", $hdrs, $blue)
         }</div>
 
     return
@@ -4378,7 +4495,7 @@ declare function scripts:checkConfidentialityRestriction(
 
     let $hdrs := ("Feature", "Local ID", "Path", "Confidentiality reason")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -4430,11 +4547,11 @@ declare function scripts:checkConfidentialityOveruse(
     return
         if ($ratio gt 0.1) then
             let $msg := replace($warn, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+            let $details := scripts:getDetails($refcode,$msg, "warning", $hdrs, $data)
             return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
         else if ($ratio gt 0.05) then
             let $msg := replace($info, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "info", $hdrs, $data)
+            let $details := scripts:getDetails($refcode,$msg, "info", $hdrs, $data)
             return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
         else
             scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
@@ -4485,7 +4602,7 @@ declare function scripts:checkIdentifier(
 
     let $hdrs := ("Feature", "Local ID", $identifier)
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -4543,7 +4660,7 @@ let $msg := "The following ETSIdentifiers have invalid format. Please verify an 
 
     let $hdrs := ('Local ID', "Path", "ETSIdentifier")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)};
@@ -4595,7 +4712,7 @@ declare function scripts:checkFacilityName(
 
     let $hdrs := ("Feature", "Local ID", "facilityName")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
@@ -4722,7 +4839,7 @@ declare function scripts:checkNameOfFeatureContinuity(
 
     let $hdrs := ("Feature", "Local ID", "Path", "nameOfFeature", "nameOfFeature (DB)")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         if (not(database:dbAvailable($lookupTables?('ProductionFacility')))) then
@@ -4779,7 +4896,7 @@ declare function scripts:checkReportingYear(
 
     let $hdrs := ("Feature", "Path", "reportingYear", "envelopeYear")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -4817,7 +4934,7 @@ declare function scripts:checkElectronicMailAddressFormat(
 
     let $hdrs := ("Feature", "Local ID", "Path", "E-mail address")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
@@ -4861,11 +4978,11 @@ declare function scripts:checkFacilityAddress(
             scripts:renderResult($refcode, $rulename, 0, 0, 0, ())
         else if ($ratio <= 0.007) then
             let $msg := replace($info, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "info", $hdrs, $data)
+            let $details := scripts:getDetails($refcode,$msg, "info", $hdrs, $data)
             return scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
         else
             let $msg := replace($warn, 'PERC', $perc)
-            let $details := scripts:getDetails($msg, "warning", $hdrs, $data)
+            let $details := scripts:getDetails($refcode,$msg, "warning", $hdrs, $data)
             return scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
 };
 
@@ -4910,7 +5027,7 @@ declare function scripts:checkDateOfStartOfOperationFuture(
 
     let $hdrs := ("Feature", "Local ID", "Date of start of operation", "Reporting year")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -4945,7 +5062,7 @@ declare function scripts:checkWhitespaces(
 
     let $hdrs := ("Path", "CharacterString")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -4985,7 +5102,7 @@ Please ensure all mandatory inputs are completed."
 
     let $hdrs := ("Feature", 'Local ID', "Name of feature")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -5027,7 +5144,7 @@ declare function scripts:checkAllFieldsBlank(
 
     let $hdrs := ('Local ID', "Path", "Element", "Value")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, count($data), 0, $details)
@@ -5058,7 +5175,7 @@ declare function scripts:checkNamespaces(
 
     let $hdrs := ('Namespace', "Number of uses")
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
@@ -5128,7 +5245,7 @@ declare function scripts:check2018year(
 
     let $hdrs := ('Feature main', 'Local ID', 'Feature sub', 'Attribute')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -5189,7 +5306,7 @@ declare function scripts:checkFacilityType(
 
     let $hdrs := ('Feature main', 'Local ID', 'Feature sub', 'Attribute')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
@@ -5297,7 +5414,7 @@ declare function scripts:checkInstallationType(
 
     let $hdrs := ('Feature main', 'Local ID', 'Feature sub', 'Attribute')
 
-    let $details := scripts:getDetails($msg, $type, $hdrs, $data)
+    let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
         scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)

@@ -103,7 +103,7 @@ declare function utils:getLookupTable(
     return utils:getLookupTableByFilename($fileName)
 };
 
-declare function utils:getLookupTableSNV(
+declare function utils:getLookupTableSVN(
     $countryCode as xs:string,
     $featureName as xs:string
 ) as document-node() {
