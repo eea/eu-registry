@@ -21,4 +21,7 @@ import module namespace iedreg-qa3 = "http://cdrtest.eionet.europa.eu/help/ied_r
 
 declare variable $source_url external;
 
+declare option output:method "html";
+declare option output:media-type "text/html";
+
 iedreg-qa3:check($source_url)

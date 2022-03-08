@@ -109,6 +109,73 @@ declare function common:createSummaryRow(
         else ()
 };
 
+(:~
+: JavaScript
+:)
+declare function common:getJS() as element(script) {
+
+    let $js :=
+        <script type="text/javascript">
+            <![CDATA[
+    function saveFile(refCode, numRecords) {
+    var lista = [];
+    var lista2 = [];
+    var headers = "";
+    var excelLine = "{\"";
+    if ((document.getElementById(refCode + "-errorsHeader") != null) && document.getElementById(refCode + "-errorsHeader").value != "") {
+        headers = document.getElementById(refCode + "-errorsHeader").value;
+        var arrayHeaders = headers.split(',');
+    }
+    for (let i = 1; i <= numRecords; i++) {
+        if ((document.getElementById(refCode + "-errorsTable_" + i) != null) && document.getElementById(refCode + "-errorsTable_" + i).value != "") {
+            var row = document.getElementById(refCode + "-errorsTable_" + i).value;
+            var arrayRow = row.split(',');
+            for (let j = 0; j < arrayHeaders.length; j++) {
+                if (j + 1 == arrayHeaders.length) {
+                    excelLine += arrayHeaders[j] + "\":\"" + arrayRow[j] + "\"}";
+                }
+                else {
+
+                    excelLine += arrayHeaders[j] + "\":\"" + arrayRow[j] + "\",\"";
+                }
+            }
+            if (i < numRecords) {
+                excelLine += ",{\"";
+            }
+        }
+    }
+    JSONvalue = "[" + excelLine + "]";
+    data1 = JSON.parse(JSONvalue);
+    data2 = {
+        sheetid: refCode,
+        headers: true,
+        column: {
+            style: {
+                Font: {
+                    Bold: "1",
+                    Color: "#3C3741",
+                },
+                Alignment: {
+                    Horizontal: "Center"
+                },
+                Interior: {
+                    Color: "#7CEECE",
+                    Pattern: "Solid"
+                }
+            }
+        }
+    };
+    lista.push(data1);
+    lista2.push(data2);
+    var opts = lista2;
+    var res = alasql('SELECT * INTO XLSX("' + refCode + '_detailed_ERRORS.xlsx",?) FROM ?', [opts, lista]);
+}
+                ]]>
+        </script>
+    return
+        <script type="text/javascript">{fn:normalize-space($js)}</script>
+};
+
 declare function common:feedback($records as element()*) as element(div) {
     let $all := $records//@class[starts-with(., 'iedreg medium')]/string()
     let $all := for $i in $all return tokenize($i, "\s+")
@@ -150,7 +217,6 @@ declare function common:feedback($records as element()*) as element(div) {
         </ul>
     )
 
-    let $sp := '&#32;' (: space :)
 
     return
         <div class="feedbacktext">
@@ -158,6 +224,6 @@ declare function common:feedback($records as element()*) as element(div) {
             <span id="feedbackStatus" class="{$status => upper-case()}" style="display:none">{$feedbackMessage}</span>
             {$errorSummary}
             {$records}
-            <script type="text/javascript" src="https://converters.eionet.europa.eu/xmlfile/export.js">{$sp}</script>
+            {common:getJS()}
         </div>
 };
