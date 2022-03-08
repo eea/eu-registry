@@ -21,6 +21,7 @@ module namespace iedreg = "http://cdrtest.eionet.europa.eu/help/ied_registry";
 
 declare namespace gml = "http://www.opengis.net/gml/3.2";
 declare namespace xlink = "http://www.w3.org/1999/xlink";
+declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
 
 import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
 import module namespace scripts = "iedreg-scripts" at "iedreg-scripts.xq";
