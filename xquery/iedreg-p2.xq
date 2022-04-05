@@ -47,6 +47,7 @@ declare function iedreg:runChecks05($root as element(), $lookupTables) as elemen
         utils:failsafeWrapper($lookupTables, "C5.6", "Coordinate continuity", $root, scripts:checkCoordinateContinuity#4),
         utils:failsafeWrapper($lookupTables, "C5.7", "ProductionSite to ProductionFacility coordinate comparison", $root, scripts:checkProdutionSiteBuffers#4),
         utils:failsafeWrapper($lookupTables, "C5.8", "ProductionInstallation to ProductionInstallationPart coordinate comparison", $root, scripts:checkProdutionInstallationPartCoords#4)
+
     }</div>
 };
 
@@ -63,7 +64,11 @@ declare function iedreg:runChecks06($root as element(), $lookupTables) as elemen
         (: upd DONE :) utils:failsafeWrapper($lookupTables, "C6.1", "EPRTRAnnexIActivity uniqueness", $root, scripts:checkEPRTRAnnexIActivityUniqueness#4),
         utils:failsafeWrapper($lookupTables, "C6.2", "EPRTRAnnexIActivity continuity", $root, scripts:checkEPRTRAnnexIActivityContinuity#4),
         (: upd DONE :) utils:failsafeWrapper($lookupTables, "C6.3", "IEDAnnexIActivity uniqueness", $root, scripts:checkIEDAnnexIActivityUniqueness#4),
-        utils:failsafeWrapper($lookupTables, "C6.4", "IEDAnnexIActivity continuity", $root, scripts:checkIEDAnnexIActivityContinuity#4)
+        utils:failsafeWrapper($lookupTables, "C6.4", "IEDAnnexIActivity continuity", $root, scripts:checkIEDAnnexIActivityContinuity#4),
+        utils:failsafeWrapper($lookupTables, "C6.5", "NONEPRTR facility with EPRTRAnnexIActivity not null", $root, scripts:checkIEDAnnexIActivityNull#4),
+        utils:failsafeWrapper($lookupTables, "C6.6", "EPRTR facilities with EPRTRAnnexIActivty = 1(c) but no LCP reported", $root, scripts:checkIEDAnnexIActivityValue#4),
+        utils:failsafeWrapper($lookupTables, "C6.7", "NONEPRTR functional facility with functional NONIED installation", $root, scripts:checkFacilityStatusType#4),
+        utils:failsafeWrapper($lookupTables, "C6.8", "Chapter III and Chapter IV reporting", $root, scripts:checkChapters#4)
     }</div>
 };
 

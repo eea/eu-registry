@@ -88,8 +88,79 @@ span.iedreg.pass { color: #fff; background-color: #5cb85c }
 span.iedreg.none { color: #fff; background-color: #999 }
 
 ul.iedreg.error-summary {margin: 0}
+
+.exportButton {padding: 1em 0.5em;float: right;}
+
+.exportButton {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.exportButton:hover,
+.exportButton:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.exportButton:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.exportButton:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+}
 ]]>
     </style>
+};
+
+
+declare function common:script() as element()* {
+
+<script type="text/javascript" src="https://converters.eionet.europa.eu/xmlfile/export.js">
+var wsdf;
+</script>
+
+};
+
+declare function common:script2() as element()* {
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js">
+var wsdf;
+</script>
+
+};
+
+
+declare function common:script3() as element()* {
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js">
+var wsdf;
+</script>
+
 };
 
 declare function common:header() as element()* {
@@ -217,10 +288,11 @@ declare function common:feedback($records as element()*) as element(div) {
         </ul>
     )
 
-
     return
         <div class="feedbacktext">
             {common:css()}
+            {common:script2()}
+            {common:script3()}
             <span id="feedbackStatus" class="{$status => upper-case()}" style="display:none">{$feedbackMessage}</span>
             {$errorSummary}
             {$records}
