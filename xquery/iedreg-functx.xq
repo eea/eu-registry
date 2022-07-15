@@ -90,12 +90,26 @@ declare function functx:replace-first
             concat('$1', $replacement))
 };
 
+declare function functx:escape-for-regex
+  ( $arg as xs:string? )  as xs:string {
+
+   replace($arg,
+           '(\.|\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\))','\\$1')
+ } ;
+
 declare function functx:substring-before-last-match
 ($arg as xs:string?,
         $regex as xs:string) as xs:string? {
 
     replace($arg, concat('^(.*)', $regex, '.*'), '$1')
 };
+
+declare function functx:substring-after-last
+  ( $arg as xs:string? ,
+    $delim as xs:string )  as xs:string {
+
+   replace ($arg,concat('^.*',functx:escape-for-regex($delim)),'')
+ } ;
 
 declare function functx:value-except
 ( $arg1 as xs:anyAtomicType* ,
