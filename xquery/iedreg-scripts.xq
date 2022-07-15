@@ -142,7 +142,8 @@ declare function scripts:getGmlId($e as element()) as xs:string {
 };
 
 declare function scripts:getValidConcepts($value as xs:string) as xs:string* {
-    let $valid := "http://dd.eionet.europa.eu/vocabulary/datadictionary/status/valid"
+    (:let $valid := "http://dd.eionet.europa.eu/vocabulary/datadictionary/status/valid":)
+    let $valid := "valid"
 
     let $vocabulary := "http://dd.eionet.europa.eu/vocabulary/euregistryonindustrialsites/"
     let $vocabularyconcept := "http://dd.eionet.europa.eu/vocabularyconcept/euregistryonindustrialsites/"
@@ -150,7 +151,7 @@ declare function scripts:getValidConcepts($value as xs:string) as xs:string* {
     let $url := $vocabulary || $value || "/rdf"
 
     return
-    data(doc($url)//skos:Concept[adms:status/@rdf:resource = $valid]/@rdf:about)
+    data(doc($url)//skos:Concept[adms:status = $valid]/@rdf:about)
 };
 
 declare function scripts:getDetails(
@@ -2906,8 +2907,8 @@ declare function scripts:checkActivityContinuity(
     $activityName as xs:string,
     $docDB as document-node()
     ) as element()* {
-    let $msg := "message"
-    let $type := "blocker"
+    let $msg := "The following LocalID reported with EPRTR Activity 1(c) without an LCP"
+    let $type := "warning"
 
     let $seq := $root//*[local-name() = $featureName]   
 
@@ -2949,11 +2950,11 @@ declare function scripts:checkActivityContinuity(
     
     return map {
         "marks" : (1),
-        "data" : ($idFacility,$prodInstallID,$prodInstallPartID)
+        "data" : ($idFacility)(:,$prodInstallID,$prodInstallPartID):)
             
         }
 
-    let $hdrs := ("Local ID", "Production Installation ID", "Installation Part ID")
+    let $hdrs := ("Local ID")(:, "Production Installation ID", "Installation Part ID"):)
 
     let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
@@ -2974,24 +2975,41 @@ declare function scripts:checkActivityContinuity(
     $activityName as xs:string,
     $docDB as document-node()
     ) as element()* {
-    let $msg := "message"
+    let $msg := "The following localID missing information on the relevant Chapter (ChapterIII or ChapterIV) OR
+                 The following localID is missing information on PlantType connected to a ChapterIII Installation "
+
+        
     let $type := "blocker"
     let $seq := $root//*[local-name() = $featureName]   
-     let $data :=
+    let $data :=
 
         for $feature in $seq
         let $idInstallation := scripts:getInspireId($feature)
 
        
         (:blocker 1 variables:)
-        let $chapter := $feature/descendant::*[local-name() = 'otherRelevantChapters'][@xlink:href]
-        let $yChapter := replace($chapter/@xlink:href, '/+$', '')
+         let $otherChapters:=$feature/descendant::*[local-name() = "otherRelevantChapters"][@xlink:href]
+        let $blocker1:=
+            for $x in $otherChapters
+            let $chapter := replace($x/@xlink:href, '/+$', '')
+            
+            return
+            if ((scripts:is-empty($chapter))) then
+                 $chapter
+                 else "something"               
+
         (:blocker 2 variables:)
-        let $status := $feature/descendant::*[local-name() = 'otherRelevantChapters'][@xlink:href]
-        let $zStatus := replace($status/@xlink:href, '/+$', '')
-        
-        
-        where (scripts:is-empty($yChapter)) or (contains($zStatus, "ChapterIII")) 
+        let $otherChapters2:=$feature/descendant::*[local-name() = "otherRelevantChapters"][@xlink:href]
+        let $blocker2:=
+            for $x in $otherChapters2
+            let $chapter := replace($x/@xlink:href, '/+$', '')
+            return
+                if (contains($chapter,"ChapterIII")) then 
+                $chapter
+                else()      
+
+
+        where (scripts:is-empty($blocker1)) or not(scripts:is-empty($blocker2))
             
             let $groupedInstallationParts:= $feature/pf:groupedInstallationPart/@xlink:href
             for $installPart in $groupedInstallationParts
@@ -3006,15 +3024,16 @@ declare function scripts:checkActivityContinuity(
             let $xPlantTyp := replace($plantTyp/@xlink:href, '/+$', '')
 
 
-            where (((scripts:is-empty($yChapter)) and  ($stringPlantType != ""))or ((contains($zStatus, "ChapterIII")and((scripts:is-empty($xPlantTyp)) or (contains($xPlantTyp, "WI"))))))
+            where (((scripts:is-empty($blocker1)) and  ($stringPlantType != ""))or ((not(scripts:is-empty($blocker2)))and((scripts:is-empty($xPlantTyp)) or functx:substring-after-last($xPlantTyp, "/")="WI"(:(contains($xPlantTyp, "WI")):))))
 
+            
              return map {
             "marks" : (1),
-            "data" : ($idInstallation,$idInstallationPart,$yChapter,$xPlantType)    
+            "data" : ($idInstallation,$idInstallationPart)(:,$blocker1[1]||$blocker2[1],$stringPlantType,scripts:is-empty($blocker1),$stringPlantType != "")    :)
             }
               
     
-    let $hdrs := ("Local ID","ID Installation Part","Relevant Chapter","Plant Type")
+    let $hdrs := ("Local ID","ID Installation Part")(:,"Relevant Chapter","Plant Type"):)
     
 
     let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
@@ -3110,7 +3129,7 @@ declare function scripts:checkActivityContinuity(
   let $activityName := "IEDAnnexIActivity"
   let $docDB := $lookupTables?('ProductionFacility')
 
-    let $msg := "message C6.5"
+    let $msg := "The following LocalId reported as NONEPRTR facility with an EPRTR Annex I activity"
     let $type := "blocker"
 
     let $seq := $root//*[local-name() = $featureName]   
@@ -3194,7 +3213,7 @@ declare function scripts:checkActivityContinuity(
   let $activityName := "IEDAnnexIActivity"
   let $docDB := $lookupTables?('ProductionFacility')
 
-    let $msg := "message C6.7"
+    let $msg := "The following LocalID has been reported as functional NONEPRTR facility with a functional NONIED installation"
     let $type := "blocker"
 
     let $seq := $root//*[local-name() = $featureName]   
@@ -3231,11 +3250,11 @@ declare function scripts:checkActivityContinuity(
                     
                     return map {
                         "marks" : (1),
-                        "data" : ($idFacility,$facilityTypeValue,$facilityStatusValue,$installTypeValue,$installStatusValue,$plantTypeValue,$totalNominalCapacity)
+                        "data" : ($idFacility,$prodInstallID)(:$facilityTypeValue,$facilityStatusValue,$installTypeValue,$installStatusValue,$plantTypeValue,$totalNominalCapacity):)
                             
                         }
 
-                let $hdrs := ("Local ID", "Facility Type", "Facility Status", "Installation Type", "Installation Status", "Plant Type", "Total Nominal Capacity")
+                let $hdrs := ("Local ID Facility", "LocalID Installation")(:"Facility Type", "Facility Status", "Installation Type", "Installation Status", "Plant Type", "Total Nominal Capacity"):)
 
                 let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
@@ -4848,7 +4867,7 @@ declare function scripts:checkDerogationsContinuity(
     $file as xs:string,
     $identifier as xs:string
     ) as element()* {
-    let $url := "https://converterstest.eionet.europa.eu/xmlfile/" || $file
+    let $url := "https://converters.eionet.europa.eu/xmlfile/" || $file
     return if (doc-available($url)) then
     doc($url)//*[local-name() = $identifier]
     else if (doc-available($file)) then
@@ -4903,8 +4922,17 @@ declare function scripts:checkIdentifier(
     ) {
     let $feature := "ProductionInstallation"
     let $identifier := "ETSIdentifier"
+    let $countryCode := scripts:getCountry($root)
     (:let $ids := scripts:getIdentifier('iedreg-ets.xml', $identifier)/text():)
-    let $ids := utils:getLookupTableByFilename('iedreg-ets.xml')//*[local-name() = $identifier]/text()
+    
+    let $etsFile := "iedreg-ets_"||fn:upper-case($countryCode)||".xml"
+    let $url := "https://converterstest.eionet.europa.eu/xmlfile/" || $etsFile
+   
+   let $ids := 
+   if (doc-available($url)) then
+     utils:getLookupTableByFilename($etsFile)//*[local-name() = $identifier]/text()
+    else
+     utils:getLookupTableByFilename('iedreg-ets.xml')//*[local-name() = $identifier]/text()
 
     return scripts:checkIdentifier($refcode, $rulename, $root, $feature, $identifier, $ids)
 };
@@ -4960,7 +4988,15 @@ declare function scripts:checkIdentifier(
     ) {
     let $feature := "ProductionInstallation"
     let $identifier := "eSPIRSIdentifier"
-    let $ids := scripts:getIdentifier('iedreg-espirs.xml', $identifier)/text()
+    let $countryCode := scripts:getCountry($root)
+    let $espirsFile := "iedreg-espirs_"||fn:upper-case($countryCode)||".xml"
+
+    let $url := "https://converterstest.eionet.europa.eu/xmlfile/" || $espirsFile
+    let $ids :=
+    if (doc-available($url)) then
+     scripts:getIdentifier($espirsFile, $identifier)/text()
+    else
+     scripts:getIdentifier('iedreg-espirs.xml', $identifier)/text()
 
     return scripts:checkIdentifier($refcode, $rulename, $root, $feature, $identifier, $ids)
 };
