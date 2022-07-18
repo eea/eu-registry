@@ -58,18 +58,34 @@ declare function iedreg:runChecks05($root as element(), $lookupTables) as elemen
 declare function iedreg:runChecks06($root as element(), $lookupTables) as element()* {
     let $rulename := '6. ACTIVITY CHECKS'
 
+    let $reportingYear := $root//*:ReportData/*:reportingYear => fn:number()
+
     return
-        <div class="iedreg header">{$rulename}</div>,
+        
+    if ($reportingYear ge 2021)then (
+
+    <div class="iedreg header">{$rulename}</div>,
     <div class="iedreg table parent">{
         (: upd DONE :) utils:failsafeWrapper($lookupTables, "C6.1", "EPRTRAnnexIActivity uniqueness", $root, scripts:checkEPRTRAnnexIActivityUniqueness#4),
         utils:failsafeWrapper($lookupTables, "C6.2", "EPRTRAnnexIActivity continuity", $root, scripts:checkEPRTRAnnexIActivityContinuity#4),
         (: upd DONE :) utils:failsafeWrapper($lookupTables, "C6.3", "IEDAnnexIActivity uniqueness", $root, scripts:checkIEDAnnexIActivityUniqueness#4),
         utils:failsafeWrapper($lookupTables, "C6.4", "IEDAnnexIActivity continuity", $root, scripts:checkIEDAnnexIActivityContinuity#4),
         utils:failsafeWrapper($lookupTables, "C6.5", "NONEPRTR facility with EPRTRAnnexIActivity not null", $root, scripts:checkIEDAnnexIActivityNull#4),
-        utils:failsafeWrapper($lookupTables, "C6.6", "EPRTR facilities with EPRTRAnnexIActivty = 1(c) but no LCP reported", $root, scripts:checkIEDAnnexIActivityValue#4),
+        utils:failsafeWrapper($lookupTables, "C6.6", "EPRTR facilities with EPRTRAnnexIActivty = 1(c) but no LCP reported", $root, scripts:checkIEDAnnexIActivityValue#4),       
         utils:failsafeWrapper($lookupTables, "C6.7", "NONEPRTR functional facility with functional NONIED installation", $root, scripts:checkFacilityStatusType#4),
         utils:failsafeWrapper($lookupTables, "C6.8", "Chapter III and Chapter IV reporting", $root, scripts:checkChapters#4)
-    }</div>
+    }</div>)
+
+    else (
+
+    <div class="iedreg header">{$rulename}</div>,
+    <div class="iedreg table parent">{
+        (: upd DONE :) utils:failsafeWrapper($lookupTables, "C6.1", "EPRTRAnnexIActivity uniqueness", $root, scripts:checkEPRTRAnnexIActivityUniqueness#4),
+        utils:failsafeWrapper($lookupTables, "C6.2", "EPRTRAnnexIActivity continuity", $root, scripts:checkEPRTRAnnexIActivityContinuity#4),
+        (: upd DONE :) utils:failsafeWrapper($lookupTables, "C6.3", "IEDAnnexIActivity uniqueness", $root, scripts:checkIEDAnnexIActivityUniqueness#4),
+        utils:failsafeWrapper($lookupTables, "C6.4", "IEDAnnexIActivity continuity", $root, scripts:checkIEDAnnexIActivityContinuity#4)
+        
+    }</div>)
 };
 
 (:~
@@ -186,24 +202,44 @@ declare function iedreg:runChecks12($root as element(), $lookupTables) as elemen
 
 declare function iedreg:runChecks13($root as element(), $lookupTables) as element()* {
     let $rulename := '13. OTHER IDENTIFIERS &amp; MISCELLANEOUS CHECKS'
-
+    let $countryCode := scripts:getCountry($root)
     return
+    if($countryCode != 'GB' and $countryCode != 'CH') then
+   (
+         <div class="iedreg header">{$rulename}</div>,
+            <div class="iedreg table parent">{
+                (: upd DONE :) utils:failsafeWrapper($lookupTables, "C13.1", "ETSIdentifier validity", $root, scripts:checkETSIdentifier#4),
+                (: upd DONE :) utils:failsafeWrapper($lookupTables, "C13.2", "eSPIRSId validity", $root, scripts:checkeSPIRSIdentifier#4),
+                utils:failsafeWrapper($lookupTables, "C13.3", "ProductionFacility facilityName to parentCompanyName comparison", $root, scripts:checkFacilityName#4),
+                utils:failsafeWrapper($lookupTables, "C13.4", "nameOfFeature", $root, scripts:checkNameOfFeatureContinuity#4),
+                utils:failsafeWrapper($lookupTables, "C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#4),
+                utils:failsafeWrapper($lookupTables, "C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#4),
+                utils:failsafeWrapper($lookupTables, "C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#4),
+                (: new DONE :) utils:failsafeWrapper($lookupTables, "C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#4),
+                (: removed :) (:utils:failsafeWrapper($lookupTables, "C13.8", "Character string space identification", $root, scripts:checkWhitespaces#4):)
+                (: new :) utils:failsafeWrapper($lookupTables, "C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#4),
+                (: new :) utils:failsafeWrapper($lookupTables, "C13.10", "All fields blank check", $root, scripts:checkAllFieldsBlank#4),
+                (: new :) utils:failsafeWrapper($lookupTables, "C13.11", "ETSIdentifier format check", $root, scripts:checkETSFormat#4),
+                (: new :) utils:failsafeWrapper($lookupTables, "C13.12", "Namespaces check", $root, scripts:checkNamespaces#4)
+            }</div>)
+    else
+    (
         <div class="iedreg header">{$rulename}</div>,
-    <div class="iedreg table parent">{
-        (: upd DONE :) utils:failsafeWrapper($lookupTables, "C13.1", "ETSIdentifier validity", $root, scripts:checkETSIdentifier#4),
-        (: upd DONE :) utils:failsafeWrapper($lookupTables, "C13.2", "eSPIRSId validity", $root, scripts:checkeSPIRSIdentifier#4),
-        utils:failsafeWrapper($lookupTables, "C13.3", "ProductionFacility facilityName to parentCompanyName comparison", $root, scripts:checkFacilityName#4),
-        utils:failsafeWrapper($lookupTables, "C13.4", "nameOfFeature", $root, scripts:checkNameOfFeatureContinuity#4),
-        utils:failsafeWrapper($lookupTables, "C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#4),
-        utils:failsafeWrapper($lookupTables, "C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#4),
-        utils:failsafeWrapper($lookupTables, "C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#4),
-        (: new DONE :) utils:failsafeWrapper($lookupTables, "C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#4),
-        (: removed :) (:utils:failsafeWrapper($lookupTables, "C13.8", "Character string space identification", $root, scripts:checkWhitespaces#4):)
-        (: new :) utils:failsafeWrapper($lookupTables, "C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#4),
-        (: new :) utils:failsafeWrapper($lookupTables, "C13.10", "All fields blank check", $root, scripts:checkAllFieldsBlank#4),
-        (: new :) utils:failsafeWrapper($lookupTables, "C13.11", "ETSIdentifier format check", $root, scripts:checkETSFormat#4),
-        (: new :) utils:failsafeWrapper($lookupTables, "C13.12", "Namespaces check", $root, scripts:checkNamespaces#4)
-    }</div>
+        <div class="iedreg table parent">{
+            
+            utils:failsafeWrapper($lookupTables, "C13.3", "ProductionFacility facilityName to parentCompanyName comparison", $root, scripts:checkFacilityName#4),
+            utils:failsafeWrapper($lookupTables, "C13.4", "nameOfFeature", $root, scripts:checkNameOfFeatureContinuity#4),
+            utils:failsafeWrapper($lookupTables, "C13.5", "reportingYear plausibility", $root, scripts:checkReportingYear#4),
+            utils:failsafeWrapper($lookupTables, "C13.6", "electronicMailAddress format", $root, scripts:checkElectronicMailAddressFormat#4),
+            utils:failsafeWrapper($lookupTables, "C13.7", "Lack of facility address", $root, scripts:checkFacilityAddress#4),
+            (: new DONE :) utils:failsafeWrapper($lookupTables, "C13.8", "DateOfStartOfOperation future year", $root, scripts:checkDateOfStartOfOperationFuture#4),
+            (: removed :) (:utils:failsafeWrapper($lookupTables, "C13.8", "Character string space identification", $root, scripts:checkWhitespaces#4):)
+            (: new :) utils:failsafeWrapper($lookupTables, "C13.9", "FeatureName blank check", $root, scripts:checkFeatureNameBlank#4),
+            (: new :) utils:failsafeWrapper($lookupTables, "C13.10", "All fields blank check", $root, scripts:checkAllFieldsBlank#4),
+            (: new :) utils:failsafeWrapper($lookupTables, "C13.11", "ETSIdentifier format check", $root, scripts:checkETSFormat#4),
+            (: new :) utils:failsafeWrapper($lookupTables, "C13.12", "Namespaces check", $root, scripts:checkNamespaces#4)
+        }</div>
+     )
 };
 
 (:~
