@@ -2985,6 +2985,7 @@ declare function scripts:checkActivityContinuity(
 
         for $feature in $seq
         let $idInstallation := scripts:getInspireId($feature)
+        let $installationStatus := functx:substring-after-last( replace($feature/pf:status/pf:StatusType/pf:statusType/@xlink:href, '/+$', ''), "/")
 
        
         (:blocker 1 variables:)
@@ -3050,20 +3051,25 @@ declare function scripts:checkActivityContinuity(
             let $xPlantTyp := replace($plantTyp/@xlink:href, '/+$', '')
 
 
-            where ( ((scripts:is-empty($blocker1)) and  ($stringPlantType != "")) or  
+            (: where ( ((scripts:is-empty($blocker1)) and  ($stringPlantType != "")) or  
             ( $numOfGroupedInstallationParts = 1 and ( (scripts:is-empty($xPlantTyp)) or (functx:substring-after-last($xPlantTyp, "/")="WI" and not("ChapterIV"=$otherChaptersPerInstallation)) or (functx:substring-after-last($xPlantTyp, "/")="LCP" and not("ChapterIII"=$otherChaptersPerInstallation)) or (functx:substring-after-last($xPlantTyp, "/")="co-WI" and (not("ChapterIII"=$otherChaptersPerInstallation) and not($otherChaptersPerInstallation="ChapterIV"))) ) ) or 
             ( $numOfGroupedInstallationParts > 1 and ( ((functx:substring-after-last($xPlantTyp, "/")="WI" or functx:substring-after-last($xPlantTyp, "/")="co-WI" or functx:substring-after-last($xPlantTyp, "/")="LCP") and not("ChapterIII"=$otherChaptersPerInstallation) and not("ChapterIV"=$otherChaptersPerInstallation)) ) ) or 
             ( $numOfGroupedInstallationParts > 1 and $numOfGroupedInstallationParts = $numOfLCPPlantTypePerInstallation and functx:substring-after-last($xPlantTyp, "/")="LCP" and not(count($otherChaptersPerInstallation) = $numOfChapterIIIPerInstallation) )
+            ) :)
+            
+            where $installationStatus = "functional" and ( ((scripts:is-empty($blocker1)) and ($stringPlantType != "") ) or  
+            ( (scripts:is-empty($xPlantTyp)) or ((functx:substring-after-last($xPlantTyp, "/")="LCP" and not("ChapterIII"=$otherChaptersPerInstallation))) ) or 
+            ( (scripts:is-empty($xPlantTyp)) or ((functx:substring-after-last($xPlantTyp, "/")="WI" or functx:substring-after-last($xPlantTyp, "/")="co-WI") and not("ChapterIII"=$otherChaptersPerInstallation) and not("ChapterIV"=$otherChaptersPerInstallation)) )
             )
 
             
              return map {
             "marks" : (1),
-            "data" : ($idInstallation,$idInstallationPart, $numOfGroupedInstallationParts, functx:substring-after-last($xPlantTyp, "/"), $otherChaptersPerInstallationSeq, count($otherChaptersPerInstallation))
+            "data" : ($idInstallation,$idInstallationPart, $numOfGroupedInstallationParts, functx:substring-after-last($xPlantTyp, "/"), $otherChaptersPerInstallationSeq, count($otherChaptersPerInstallation), $installationStatus)
             }
               
     
-    let $hdrs := ("Local ID","ID Installation Part","Number of Installation Parts", "Plant type", "otherRelevantChapter", "Number of otherRelevantChapter per Installation")
+    let $hdrs := ("Local ID","ID Installation Part","Number of Installation Parts", "Plant type", "otherRelevantChapter", "Number of otherRelevantChapter per Installation", "Installation Status")
     
 
     let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
