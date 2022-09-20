@@ -3264,35 +3264,36 @@ declare function scripts:checkActivityContinuity(
         let $facilityStatusValue:= substring-after($facilityStatus/@xlink:href,'ConditionOfFacilityValue/') 
 
         where (contains($facilityType/@xlink:href, 'NONEPRTR') and contains($facilityStatus/@xlink:href, 'functional'))
-        let $groupedInstallation:=$feature/pf:groupedInstallation/@xlink:href
-        for $y in $root//*:ProductionInstallation[@gml:id = substring-after($groupedInstallation,"#")]  
-                
-            let $prodInstallID:=scripts:getInspireId($y)
-            let $installType := $y/descendant::*[local-name() = 'installationType'][@xlink:href]
-            let $status := $y/descendant::*[local-name() = 'statusType'][@xlink:href]
-            let $installTypeValue:= substring-after($installType/@xlink:href,'InstallationTypeValue/') 
-            let $installStatusValue:= substring-after($status/@xlink:href,'ConditionOfFacilityValue/') 
+        let $groupedInstallations:=$feature/pf:groupedInstallation/@xlink:href
+            for $groupedInstallation in $groupedInstallations
+                for $y in $root//*:ProductionInstallation[@gml:id = substring-after($groupedInstallation,"#")]  
+                        
+                    let $prodInstallID:=scripts:getInspireId($y)
+                    let $installType := $y/descendant::*[local-name() = 'installationType'][@xlink:href]
+                    let $status := $y/descendant::*[local-name() = 'statusType'][@xlink:href]
+                    let $installTypeValue:= substring-after($installType/@xlink:href,'InstallationTypeValue/') 
+                    let $installStatusValue:= substring-after($status/@xlink:href,'ConditionOfFacilityValue/') 
 
-            where (contains($installType/@xlink:href, "NONIED") and contains($status/@xlink:href, "functional"))
-            let $groupedInstallationParts:= $y/pf:groupedInstallationPart/@xlink:href
-            for $installPart in $groupedInstallationParts
-                for $x in $root//*:ProductionInstallationPart[@gml:id = substring-after($installPart,"#")]       
-                   
-                    let $prodInstallPartID:=scripts:getInspireId($x)
-                    let $plantType := $x/descendant::*[local-name() = 'plantType'][@xlink:href]
-                    let $totalNominalCapacity:=$x/descendant::*[local-name() = 'totalNominalCapacityAnyWasteType']
-                    let $plantTypeValue:= substring-after($plantType/@xlink:href,'PlantTypeValue/') 
-                    where (($plantTypeValue!="WI") and ($plantTypeValue!= "co-WI") and ($totalNominalCapacity>3))                   
-                    
-                    return map {
-                        "marks" : (1),
-                        "data" : ($idFacility,$prodInstallID)(:$facilityTypeValue,$facilityStatusValue,$installTypeValue,$installStatusValue,$plantTypeValue,$totalNominalCapacity):)
+                    where (contains($installType/@xlink:href, "NONIED") and contains($status/@xlink:href, "functional"))
+                    let $groupedInstallationParts:= $y/pf:groupedInstallationPart/@xlink:href
+                    for $installPart in $groupedInstallationParts
+                        for $x in $root//*:ProductionInstallationPart[@gml:id = substring-after($installPart,"#")]       
+                           
+                            let $prodInstallPartID:=scripts:getInspireId($x)
+                            let $plantType := $x/descendant::*[local-name() = 'plantType'][@xlink:href]
+                            let $totalNominalCapacity:=$x/descendant::*[local-name() = 'totalNominalCapacityAnyWasteType']
+                            let $plantTypeValue:= substring-after($plantType/@xlink:href,'PlantTypeValue/') 
+                            where (($plantTypeValue!="WI") and ($plantTypeValue!= "co-WI") and ($totalNominalCapacity>3))                   
                             
-                        }
+                            return map {
+                                "marks" : (1),
+                                "data" : ($idFacility,$prodInstallID)(:$facilityTypeValue,$facilityStatusValue,$installTypeValue,$installStatusValue,$plantTypeValue,$totalNominalCapacity):)
+                                    
+                                }
 
-                let $hdrs := ("Local ID Facility", "LocalID Installation")(:"Facility Type", "Facility Status", "Installation Type", "Installation Status", "Plant Type", "Total Nominal Capacity"):)
+                        let $hdrs := ("Local ID Facility", "LocalID Installation")(:"Facility Type", "Facility Status", "Installation Type", "Installation Status", "Plant Type", "Total Nominal Capacity"):)
 
-                let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
+                        let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
     return
 
