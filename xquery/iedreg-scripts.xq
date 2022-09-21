@@ -3020,13 +3020,22 @@ declare function scripts:checkActivityContinuity(
           -- in case all the plantType are LCP then ChapterIII only
         :)
         let $numOfGroupedInstallationParts := count($feature//pf:groupedInstallationPart)
-        let $plantTypesPerInstallation := (
+        let $plantTypesPerInstallationAndStatus := (
           for $installationPart in $feature//pf:groupedInstallationPart/@xlink:href
             let $plantType := $root//*:ProductionInstallationPart[@gml:id = substring-after($installationPart, "#")]/descendant::*[local-name() = 'plantType'][@xlink:href]
             let $plantTypeAux := replace($plantType/@xlink:href, '/+$', '')
-            return functx:substring-after-last($plantTypeAux, "/")
+            let $installationPartStatus := data($root//*:ProductionInstallationPart[@gml:id = substring-after($installationPart, "#")]/descendant::*[local-name() = "status"]/descendant::*[local-name() = "statusType"]/@xlink:href)
+            
+            (:let $installationPartStatus := functx:substring-after-last( replace($installationPart/pf:status/pf:StatusType/pf:statusType/@xlink:href, '/+$', ''), "/"):)
+            return (:functx:substring-after-last($plantTypeAux, "/")||"###"||:)functx:substring-after-last($installationPartStatus, "/")
         )
-        let $numOfLCPPlantTypePerInstallation := count(index-of($plantTypesPerInstallation, "LCP"))
+
+
+       (: let $plantTypesPerInstallation:=substring-before($plantTypesPerInstallationAndStatus,"###")
+        let $installationPartStatus:=substring-after($plantTypesPerInstallationAndStatus,"###"):)
+
+        let $numOfFunctionalStatusPerInstallationPart := index-of($plantTypesPerInstallationAndStatus, "functional")
+        for $mierda in $numOfFunctionalStatusPerInstallationPart
         
         let $otherChaptersPerInstallation := (
           for $otherRelevantChapters in $feature/descendant::*[local-name() = "otherRelevantChapters"][@xlink:href]
@@ -3057,7 +3066,7 @@ declare function scripts:checkActivityContinuity(
             ( $numOfGroupedInstallationParts > 1 and $numOfGroupedInstallationParts = $numOfLCPPlantTypePerInstallation and functx:substring-after-last($xPlantTyp, "/")="LCP" and not(count($otherChaptersPerInstallation) = $numOfChapterIIIPerInstallation) )
             ) :)
             
-            where $installationStatus = "functional" and ( ((scripts:is-empty($blocker1)) and ($stringPlantType != "") ) or  
+            where $installationStatus = "functional" and not(empty($numOfFunctionalStatusPerInstallationPart)) and ( ((scripts:is-empty($blocker1)) and ($stringPlantType != "") ) or  
             ( (scripts:is-empty($xPlantTyp)) or ((functx:substring-after-last($xPlantTyp, "/")="LCP" and not("ChapterIII"=$otherChaptersPerInstallation))) ) or 
             ( (scripts:is-empty($xPlantTyp)) or ((functx:substring-after-last($xPlantTyp, "/")="WI" or functx:substring-after-last($xPlantTyp, "/")="co-WI") and not("ChapterIII"=$otherChaptersPerInstallation) and not("ChapterIV"=$otherChaptersPerInstallation)) )
             )
