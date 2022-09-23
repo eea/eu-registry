@@ -2933,7 +2933,7 @@ declare function scripts:checkActivityContinuity(
     where (contains($xStatus, "functional"))
     
 
-    let $groupedInstallationParts:= $y/pf:groupedInstallationPart/@xlink:href
+    for $groupedInstallationParts in $y/pf:groupedInstallationPart/@xlink:href
 
     for $installPart in $groupedInstallationParts
 
