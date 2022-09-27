@@ -3066,7 +3066,7 @@ declare function scripts:checkActivityContinuity(
             ( $numOfGroupedInstallationParts > 1 and $numOfGroupedInstallationParts = $numOfLCPPlantTypePerInstallation and functx:substring-after-last($xPlantTyp, "/")="LCP" and not(count($otherChaptersPerInstallation) = $numOfChapterIIIPerInstallation) )
             ) :)
             
-            where $installationStatus = "functional" and $installationPartStatus != 'functional' and ( ((scripts:is-empty($blocker1)) and ($stringPlantType != "") ) or  
+            where $installationStatus = "functional" and $installationPartStatus = 'functional' and ( ((scripts:is-empty($blocker1)) and ($stringPlantType != "") ) or  
             ( (scripts:is-empty($xPlantTyp)) or ((functx:substring-after-last($xPlantTyp, "/")="LCP" and not("ChapterIII"=$otherChaptersPerInstallation))) ) or 
             ( (scripts:is-empty($xPlantTyp)) or ((functx:substring-after-last($xPlantTyp, "/")="WI" or functx:substring-after-last($xPlantTyp, "/")="co-WI") and not("ChapterIII"=$otherChaptersPerInstallation) and not("ChapterIV"=$otherChaptersPerInstallation)) )
             )
