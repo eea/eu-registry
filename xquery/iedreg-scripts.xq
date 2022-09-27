@@ -2923,7 +2923,7 @@ declare function scripts:checkActivityContinuity(
     where (contains($eprtra/@xlink:href, '1(c)'))    
     
 
-    let $groupedInstallation:=$feature/pf:groupedInstallation/@xlink:href
+    for  $groupedInstallation in $feature/pf:groupedInstallation/@xlink:href
     for $y in $root//*:ProductionInstallation[@gml:id = substring-after($groupedInstallation,"#")]
     
      
@@ -3032,10 +3032,9 @@ declare function scripts:checkActivityContinuity(
 
 
        (: let $plantTypesPerInstallation:=substring-before($plantTypesPerInstallationAndStatus,"###")
-        let $installationPartStatus:=substring-after($plantTypesPerInstallationAndStatus,"###"):)
+        let $installationPartStatus:=substring-after($plantTypesPerInstallationAndStatus,"###")
 
-        let $numOfFunctionalStatusPerInstallationPart := index-of($plantTypesPerInstallationAndStatus, "functional")
-        for $mierda in $numOfFunctionalStatusPerInstallationPart
+        let $numOfFunctionalStatusPerInstallationPart := index-of($plantTypesPerInstallationAndStatus, "functional"):)
         
         let $otherChaptersPerInstallation := (
           for $otherRelevantChapters in $feature/descendant::*[local-name() = "otherRelevantChapters"][@xlink:href]
@@ -3051,6 +3050,7 @@ declare function scripts:checkActivityContinuity(
             for $installPart in $groupedInstallationParts
             for $x in $root//*:ProductionInstallationPart[@gml:id = substring-after($installPart,"#")]
             let $idInstallationPart := scripts:getInspireId($x)
+            let $installationPartStatus := functx:substring-after-last( replace($x/pf:status/pf:StatusType/pf:statusType/@xlink:href, '/+$', ''), "/")
             (:blocker 1:)
             let $plantType := $x/descendant::*[local-name() = 'plantType'][@xlink:href]
             let $xPlantType := replace($plantType/@xlink:href, '/+$', '')
@@ -3066,7 +3066,7 @@ declare function scripts:checkActivityContinuity(
             ( $numOfGroupedInstallationParts > 1 and $numOfGroupedInstallationParts = $numOfLCPPlantTypePerInstallation and functx:substring-after-last($xPlantTyp, "/")="LCP" and not(count($otherChaptersPerInstallation) = $numOfChapterIIIPerInstallation) )
             ) :)
             
-            where $installationStatus = "functional" and not(empty($numOfFunctionalStatusPerInstallationPart)) and ( ((scripts:is-empty($blocker1)) and ($stringPlantType != "") ) or  
+            where $installationStatus = "functional" and $installationPartStatus != 'functional' and ( ((scripts:is-empty($blocker1)) and ($stringPlantType != "") ) or  
             ( (scripts:is-empty($xPlantTyp)) or ((functx:substring-after-last($xPlantTyp, "/")="LCP" and not("ChapterIII"=$otherChaptersPerInstallation))) ) or 
             ( (scripts:is-empty($xPlantTyp)) or ((functx:substring-after-last($xPlantTyp, "/")="WI" or functx:substring-after-last($xPlantTyp, "/")="co-WI") and not("ChapterIII"=$otherChaptersPerInstallation) and not("ChapterIV"=$otherChaptersPerInstallation)) )
             )
@@ -3074,11 +3074,11 @@ declare function scripts:checkActivityContinuity(
             
              return map {
             "marks" : (1),
-            "data" : ($idInstallation,$idInstallationPart, $numOfGroupedInstallationParts, functx:substring-after-last($xPlantTyp, "/"), $otherChaptersPerInstallationSeq, count($otherChaptersPerInstallation), $installationStatus)
+            "data" : ($idInstallation,$idInstallationPart, $numOfGroupedInstallationParts, functx:substring-after-last($xPlantTyp, "/"), $otherChaptersPerInstallationSeq, count($otherChaptersPerInstallation), $installationStatus, $installationPartStatus)
             }
               
     
-    let $hdrs := ("Local ID","ID Installation Part","Number of Installation Parts", "Plant type", "otherRelevantChapter", "Number of otherRelevantChapter per Installation", "Installation Status")
+    let $hdrs := ("Local ID","ID Installation Part","Number of Installation Parts", "Plant type", "otherRelevantChapter", "Number of otherRelevantChapter per Installation", "Installation Status", "Installation Part Status")
     
 
     let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
