@@ -2447,8 +2447,8 @@ declare function scripts:isWithinMinMax(
         $featureName,
         $id,
         $path,
-        string-join(($x_lat, $x_long), ", "),
-        string-join(($y_lat, $y_long), ", "),
+        string-join(($x_lat, $x_long), " "),
+        string-join(($y_lat, $y_long), " "),
         $dist
         ]
 
