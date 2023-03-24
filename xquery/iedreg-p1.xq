@@ -30,6 +30,21 @@ import module namespace common = "iedreg-common" at "iedreg-common.xq";
 import module namespace utils = "iedreg-utils" at "iedreg-utils.xq";
 
 (:~
+   0. RE-SUBMISSION CONTROL CHECKS
+:)
+
+declare function iedreg:runChecks00($root as element(), $lookupTables) as element()* {
+    let $rulename := '0. RE-SUBMISSION CONTROL CHECKS'
+
+    return
+        <div class="iedreg header">{$rulename}</div>,
+        <div class="iedreg table parent">{
+            (: new DONE :) utils:failsafeWrapper($lookupTables, "C0", "Prevent re-submission of certain reporting year", $root, scripts:checkPreventReSubmissions#4)
+        }</div>
+};
+
+
+(:~
    1. DATA CONTROL CHECKS
 :)
 
@@ -154,6 +169,7 @@ declare function iedreg:runChecks($url as xs:string) as element()*
 
     return common:feedback((
         common:header(),
+        iedreg:runChecks00($root, $lookupTables),
         iedreg:runChecks01($root, $lookupTables),
         iedreg:runChecks02($root, $lookupTables),
         iedreg:runChecks03($root, $lookupTables),

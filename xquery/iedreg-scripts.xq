@@ -37,6 +37,8 @@ xquery version "3.1" encoding "utf-8";
  import module namespace database = "iedreg-database" at "iedreg-database.xq";
  import module namespace utils = "iedreg-utils" at "iedreg-utils.xq";
  import module namespace geo = "http://expath.org/ns/geo";
+ import module namespace sparqlx = "iedreg-sparql" at "iedreg-sparql.xq";
+ import module namespace query = "iedreg-query" at "iedreg-query.xq";
 
  declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
  declare variable $scripts:EXCEL_LIMIT as xs:integer := 1000;
@@ -5544,6 +5546,64 @@ declare function scripts:checkIdentifier(
 
     return
     scripts:renderResult($refcode, $rulename, 0, 0, count($data), $details)
+};
+
+(:~
+  C0 Prevent re-submission of certain reporting year
+:)
+
+declare function scripts:checkPreventReSubmissions(
+  $lookupTables,
+  $refcode as xs:string,
+  $rulename as xs:string,
+  $root as element()
+  ) as element()* {
+  let $msg := "From 2023 it will be possible to re-submit old data having reporting year = (current reporting year) minus 2. This means that in 2023 countries have to report data having reporting year = 2022 and they can re-submit data for 2021 and 2020 only."
+  let $type := "blocker"
+
+  let $data :=
+    let $url := data($root/gml:metaDataProperty/attribute::xlink:href)
+    let $docEnvelope := doc($url)/envelope
+    let $envelopeCountry := $docEnvelope/*:countrycode
+    let $envelopeYear := $docEnvelope/*:year
+    let $envelopeLink := $docEnvelope/*:link
+    
+    let $xmlYear := $root//*:reportingYear
+    let $xmlCountryCode := functx:substring-after-last(data($root//*:countryId/@xlink:href), '/')
+    
+    let $status := (
+      if($xmlYear = $envelopeYear) then 'Equal'
+      else 'Not equal'
+    )
+    
+    let $cdrUrlPath := functx:substring-before-last-match($envelopeLink, '/')
+    let $cdrUrl := replace($cdrUrlPath, 'cdrtest.', 'cdr.')
+    let $previousEnvelope := query:getLatestEnvelopePerYearOrFilenotfound($cdrUrl, $xmlYear)
+    let $countEnvelopesFound := if( $previousEnvelope = "FILENOTFOUND" ) then 0 else count($previousEnvelope)
+            
+    let $currentDate := current-date()
+    let $currentYear := year-from-date($currentDate)
+    
+    let $ok := (
+      if($countEnvelopesFound = 0 and xs:integer($xmlYear) = ($currentYear - 1) ) then true() (: First submission :)
+      else if( $countEnvelopesFound > 0 and ( xs:integer($xmlYear) = ($currentYear - 2) or xs:integer($xmlYear) = ($currentYear - 3) ) ) then true() (: Allowed re-submission :)
+      else false()
+    )
+            
+    let $submissionType := (if($countEnvelopesFound > 0) then "Re-submission" else "First submission")
+
+  where $ok = false()
+  return map {
+      "marks" : (1),
+      "data" : ($xmlYear, $envelopeYear, $status, $submissionType, $previousEnvelope)
+  }
+
+  let $hdrs := ('XML year', 'Envelope year', 'Status (XML year = Envelope year)', 'Submission type', 'Previous envelope')
+
+  let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
+
+  return
+  scripts:renderResult($refcode, $rulename, count($data), 0, 0, $details)
 };
 
 (:~
