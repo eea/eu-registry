@@ -32,6 +32,7 @@ xquery version "3.1" encoding "utf-8";
  declare namespace rest = "http://basex.org/rest";
  declare namespace skos = "http://www.w3.org/2004/02/skos/core#";
  declare namespace xlink = "http://www.w3.org/1999/xlink";
+ declare namespace sparql = "http://www.w3.org/2005/sparql-results#";
 
  import module namespace functx = "http://www.functx.com" at "iedreg-functx.xq";
  import module namespace database = "iedreg-database" at "iedreg-database.xq";
@@ -5585,14 +5586,14 @@ declare function scripts:checkPreventReSubmissions(
     let $currentYear := year-from-date($currentDate)
     
     let $ok := (
-      if($countEnvelopesFound = 0 and xs:integer($xmlYear) = ($currentYear - 1) ) then true() (: First submission :)
+      if($countEnvelopesFound = 0 and xs:integer($xmlYear) <= ($currentYear - 1)) then true() (: First submission :)
       else if( $countEnvelopesFound > 0 and ( xs:integer($xmlYear) = ($currentYear - 2) or xs:integer($xmlYear) = ($currentYear - 3) ) ) then true() (: Allowed re-submission :)
       else false()
     )
             
     let $submissionType := (if($countEnvelopesFound > 0) then "Re-submission" else "First submission")
 
-  where $ok = false()
+  where $ok = false() or xs:integer($xmlYear) < 2017 (:reporting of EU Registry started with Reporting Year = 2017:)
   return map {
       "marks" : (1),
       "data" : ($xmlYear, $envelopeYear, $status, $submissionType, $previousEnvelope)
