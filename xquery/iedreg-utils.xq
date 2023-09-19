@@ -44,7 +44,9 @@ declare variable $utils:checks2018 := (
     'C10.2'
 );
 declare variable $utils:skipCountries := map {
-    'CH': ('C4.9', 'C4.10', 'C4.11', 'C4.12')
+    'CH': ('C4.9', 'C4.10', 'C4.11', 'C4.12'),
+    'DE': ('C0'),
+    'SK': ('C0')
 };
 declare variable $utils:run2018checks := true();
 
