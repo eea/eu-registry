@@ -3932,11 +3932,11 @@ declare function scripts:checkDateOfGranting(
     let $fromDB := database:queryByYearFeature($cntry, $lastReportingYear, $docDB)
 
     let $data :=
-    for $x in $seq
-    let $id := scripts:getInspireId($x)
+    for $x in $seq//*:permit
+    let $id := element IID { $x/../*:inspireId//*:namespace/fn:normalize-space(.) || "/" || $x/../*:inspireId//*:localId/fn:normalize-space(.) }
 
-    let $xDate := $x/*:permit//*:dateOfGranting
-    let $xUrl := $x/*:permit//*:permitURL
+    let $xDate := $x//*:dateOfGranting
+    let $xUrl := $x//*:permitURL
 
     for $y in $fromDB
     let $ic := scripts:getInspireId($y)
@@ -3956,7 +3956,7 @@ declare function scripts:checkDateOfGranting(
     return map {
         "marks" : (3, 5),
         "data" : (
-            $x/local-name(),
+            $x/../local-name(),
             $id/text(),
             $newDate,
             $oldDate,
