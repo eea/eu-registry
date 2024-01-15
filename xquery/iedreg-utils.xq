@@ -78,7 +78,7 @@ declare function utils:getLookupTableByFilename(
 ) as document-node() {
     let $location := 'https://databridge.eionet.europa.eu/remote.php/dav/files/'
     let $userEnv := 'XQueryUser'
-    let $passwordEnv := '=unnyWolf99'
+    let $passwordEnv := 'XQueryPassword'
 
     let $user := environment-variable($userEnv)
     let $password := environment-variable($passwordEnv)
