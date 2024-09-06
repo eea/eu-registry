@@ -41,8 +41,8 @@ xquery version "3.1" encoding "utf-8";
  import module namespace sparqlx = "iedreg-sparql" at "iedreg-sparql.xq";
  import module namespace query = "iedreg-query" at "iedreg-query.xq";
 
- declare variable $scripts:MSG_LIMIT as xs:integer := 1000;
- declare variable $scripts:EXCEL_LIMIT as xs:integer := 1000;
+ declare variable $scripts:MSG_LIMIT as xs:integer := 15000; (:ORIGINAL 1000:)
+ declare variable $scripts:EXCEL_LIMIT as xs:integer := 15000; (:ORIGINAL 1000:)
 
  (:declare variable $scripts:location := 'https://svn.eionet.europa.eu/repositories/Reportnet/Dataflows/IndustrialSitesEURegistry/xquery';:)
  (:declare variable $scripts:location := '.';:)
@@ -308,9 +308,9 @@ declare function scripts:getDetails(
     else
     'pass'
 
-    let $errors := if($errors > 1000) then 1000 else $errors
-    let $warnings := if($warnings > 1000) then 1000 else $warnings
-    let $messages := if($messages > 1000) then 1000 else $messages
+    let $errors := if($errors > $scripts:EXCEL_LIMIT) then $scripts:EXCEL_LIMIT else $errors
+    let $warnings := if($warnings > $scripts:EXCEL_LIMIT) then $scripts:EXCEL_LIMIT else $warnings
+    let $messages := if($messages > $scripts:MSG_LIMIT) then $scripts:MSG_LIMIT else $messages
 
     return
     <div class="iedreg row">
