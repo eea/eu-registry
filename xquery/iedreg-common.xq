@@ -188,7 +188,7 @@ declare function common:getJS() as element(script) {
     let $js :=
         <script type="text/javascript">
             <![CDATA[
-    function saveFile(refCode, numRecords) {
+    function saveFile(refCode, numRecords, errorType) {
     var lista = [];
     var lista2 = [];
     var headers = "";
@@ -198,9 +198,9 @@ declare function common:getJS() as element(script) {
         var arrayHeaders = headers.split(',');
     }
     for (let i = 1; i <= numRecords; i++) {
-        if ((document.getElementById(refCode + "-errorsTable_" + i) != null) && document.getElementById(refCode + "-errorsTable_" + i).value != "") {
-            var row = document.getElementById(refCode + "-errorsTable_" + i).value;
-            var arrayRow = row.split(',');
+        if ((document.getElementById(refCode + "-errorsTable_" + i + "_" + errorType) != null) && document.getElementById(refCode + "-errorsTable_" + i + "_" + errorType).value != "") {
+            var row = document.getElementById(refCode + "-errorsTable_" + i + "_" + errorType).value;
+            var arrayRow = row.split('#####');
             for (let j = 0; j < arrayHeaders.length; j++) {
                 if (j + 1 == arrayHeaders.length) {
                     excelLine += arrayHeaders[j] + "\":\"" + arrayRow[j] + "\"}";
@@ -239,7 +239,7 @@ declare function common:getJS() as element(script) {
     lista.push(data1);
     lista2.push(data2);
     var opts = lista2;
-    var res = alasql('SELECT * INTO XLSX("' + refCode + '_detailed_ERRORS.xlsx",?) FROM ?', [opts, lista]);
+    var res = alasql('SELECT * INTO XLSX("' + refCode + '_detailed_' + errorType + '.xlsx",?) FROM ?', [opts, lista]);
 }
                 ]]>
         </script>

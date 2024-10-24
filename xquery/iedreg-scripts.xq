@@ -184,7 +184,7 @@ declare function scripts:getDetails(
     else count($data)
     return
     <div class="iedreg">
-    <button class="exportButton" onclick="saveFile('{$refcode}','{$numberOfRecords}')" type="button">Export to XLS</button>   
+    <button class="exportButton" onclick="saveFile('{$refcode}','{$numberOfRecords}','{$type}')" type="button">Export to XLS</button>   
 
     <div class="iedreg {$msgClass}">{$msg}</div>
 
@@ -218,10 +218,10 @@ declare function scripts:getDetails(
                     where $j<=count ($d('data'))(: let $allRow:= $allRow ||:)
                     return
                     if ($j=count ($d('data'))) then $x
-                    else $x||","
+                    else $x||"#####"
 
                     return
-                    <input id="{$refcode}-errorsTable_{$pos}" type="hidden" value='{$rowData}'></input>
+                    <input id="{$refcode}-errorsTable_{$pos}_{$type}" type="hidden" value='{$rowData}'></input>
 
 
                 }
