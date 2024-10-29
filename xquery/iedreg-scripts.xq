@@ -215,10 +215,12 @@ declare function scripts:getDetails(
 
                     let $rowData:=   
                     for $x at $j in $d('data')(:fn:tokenize($d('data')):)
+                      let $xHTMLcharactersFixed1 := replace(string($x), '&#34;', "'") (: double quotes: &#34; --> " :)
+                      let $xHTMLcharactersFixed2 := replace($xHTMLcharactersFixed1, '&#39;', "'") (: single quotes: &#39; --> ' :)
                     where $j<=count ($d('data'))(: let $allRow:= $allRow ||:)
                     return
-                    if ($j=count ($d('data'))) then $x
-                    else $x||"#####"
+                    if ($j=count ($d('data'))) then $xHTMLcharactersFixed2
+                    else $xHTMLcharactersFixed2||"#####"
 
                     return
                     <input id="{$refcode}-errorsTable_{$pos}_{$type}" type="hidden" value='{$rowData}'></input>
