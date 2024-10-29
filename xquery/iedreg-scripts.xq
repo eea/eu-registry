@@ -701,7 +701,7 @@ declare function scripts:getDetails(
         "data" : ($feature, <span class="iedreg nowrap">{$id}</span>, $d)
     }
 
-    let $hdrs := ("Feature", "Local ID", "Local ID")
+    let $hdrs := ("Feature", "Local ID", "Local ID (2)")
 
     let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
@@ -1005,7 +1005,7 @@ declare function scripts:getDetails(
             )
     }
 
-    let $hdrs := ('Feature', 'Local ID', ' ', 'Attribute names', 'Attribute values', ' ', 'Similarity / Distance')
+    let $hdrs := ('Feature', 'Local ID', 'Local ID (2)', 'Attribute names', 'Attribute values', 'Attribute values (2)', 'Similarity / Distance')
 
     let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
@@ -1153,7 +1153,7 @@ declare function scripts:checkDuplicates2(
                     )
                 }
 
-                let $hdrs := ('Local ID', ' ', 'Attribute names', 'Attribute values', ' ')(:, 'Similarity / Distance':)
+                let $hdrs := ('Local ID', 'Local ID (2)', 'Attribute names', 'Attribute values', 'Attribute values (2)')(:, 'Similarity / Distance':)
 
                 let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
@@ -1988,7 +1988,7 @@ declare function scripts:checkRadius(
     return $m
 
     let $hdrs := ("Path", "Local ID", "Coordinate",
-        "Path", "Local ID", "Coordinate", "Distance (km)")
+        "Path", "Local ID (2)", "Coordinate (2)", "Distance (km)")
 
     let $details :=
     <div class="iedreg">{
@@ -2699,8 +2699,8 @@ declare function scripts:isWithinMinMax(
             )
     }
 
-    let $hdrs := ("Path", "Local ID", "Coordinate",
-        "Path", "Local ID", "Coordinate", "Distance (meters)")
+    let $hdrs := ("Path", "Local ID Site", "Coordinate Site",
+        "Path", "Local ID Facility", "Coordinate Facility", "Distance (meters)")
 
     let $details :=
     <div class="iedreg">{
@@ -2757,8 +2757,8 @@ declare function scripts:isWithinMinMax(
             )
     }
 
-    let $hdrs := ("Path", "Local ID",
-        "Path", "Local ID", "Coordinates")
+    let $hdrs := ("Path", "Local ID Installation",
+        "Path", "Local ID InstallationPart", "Coordinates")
 
     let $details := scripts:getDetails($refcode,$msg, $type, $hdrs, $data)
 
