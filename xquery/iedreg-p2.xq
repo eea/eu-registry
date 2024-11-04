@@ -136,7 +136,8 @@ declare function iedreg:runChecks09($root as element(), $lookupTables) as elemen
     <div class="iedreg table parent">{
         (: upd DONE :) utils:failsafeWrapper($lookupTables, "C9.1", "competentAuthorityInspections to inspections comparison", $root, scripts:checkInspections#4),
         utils:failsafeWrapper($lookupTables, "C9.2", "competentAuthorityPermits and permit field comparison", $root, scripts:checkPermit#4),
-        utils:failsafeWrapper($lookupTables, "C9.3", "permitURL to dateOfGranting comparison", $root, scripts:checkDateOfGrantingPermitURL#4),
+        (: utils:failsafeWrapper($lookupTables, "C9.3", "permitURL to dateOfGranting comparison", $root, scripts:checkDateOfGrantingPermitURL#4), :) (: C9.3 disabled because of Taskman #278339 :)
+        utils:notApplicable("C9.3", "permitURL to dateOfGranting comparison", $root), (: C9.3 disabled because of Taskman #278339 :)
         (: new DONE :) utils:failsafeWrapper($lookupTables, "C9.5", "enforcementAction to permitGranted comparison", $root, scripts:checkEnforcementAction#4),
         (: new DONE :) utils:failsafeWrapper($lookupTables, "C9.6", "StricterPermitConditions", $root, scripts:checkStricterPermitConditions#4)
     }</div>
