@@ -5595,7 +5595,7 @@ declare function scripts:checkPreventReSubmissions(
             
     let $submissionType := (if($countEnvelopesFound > 0) then "Re-submission" else "First submission")
 
-  where $ok = false() or xs:integer($xmlYear) < 2017 (:reporting of EU Registry started with Reporting Year = 2017:)
+  where $ok = false() or (xs:integer($xmlYear) < 2017 and $envelopeCountry != 'ME') or (xs:integer($xmlYear) < 2023 and $envelopeCountry = 'ME') (:reporting of EU Registry started with Reporting Year = 2017. First reporting year = 2023 for Montenegro:)
   return map {
       "marks" : (1),
       "data" : ($xmlYear, $envelopeYear, $status, $submissionType, $previousEnvelope)
