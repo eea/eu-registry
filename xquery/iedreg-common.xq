@@ -148,7 +148,8 @@ var wsdf;
 
 declare function common:script2() as element()* {
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js">
+<script type="text/javascript" src="https://bdr.eionet.europa.eu/european_registry/scripts/alasql.min.js">
+
 var wsdf;
 </script>
 
@@ -157,7 +158,7 @@ var wsdf;
 
 declare function common:script3() as element()* {
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js">
+<script src="https://bdr.eionet.europa.eu/european_registry/scripts/xlsx.core.min.js">
 var wsdf;
 </script>
 

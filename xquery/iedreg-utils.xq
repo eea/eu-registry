@@ -102,7 +102,9 @@ declare function utils:getLookupTable(
 ) as document-node() {
     let $fileName := concat($countryCode, '_', $featureName, '.xml')
 
-    return utils:getLookupTableByFilename($fileName)
+    (:return utils:getLookupTableByFilename($fileName):)
+    return utils:getLookupTableSVN($countryCode,$featureName)
+    
 };
 
 declare function utils:getLookupTableSVN(
@@ -285,7 +287,9 @@ declare function utils:failsafeWrapper(
                 (:~ and fn:not(fn:contains($envelope-url, 'converters')) ~:)
 
         return
-            if($refcode = $utils:envelopeChecks and fn:not($envelope-available))
+        
+        if ($refcode="C9.3") then $checkFunc($lookupTables, $refcode, $rulename, $root)
+           else if($refcode = $utils:envelopeChecks and fn:not($envelope-available))
                 then utils:notAvailableEnvelope($refcode, $rulename, $root)
             else if($countryCode = map:keys($utils:skipCountries)
                     and $refcode = $utils:skipCountries?($countryCode))
@@ -293,7 +297,7 @@ declare function utils:failsafeWrapper(
             else if(($refcode = $utils:checks2018 or $refcode = $utils:checksHistoricalData)
                     and (not($utils:run2018checks) or $reportingYear < 2018))
                 then utils:notActive($refcode, $rulename, $root)
-            else $checkFunc($lookupTables, $refcode, $rulename, $root)
+            (:else $checkFunc($lookupTables, $refcode, $rulename, $root):)
     } catch * {
         let $details := utils:getErrorDetails($err:code, $err:description)
         return utils:renderResult($refcode, $rulename, 'failed', $details)
