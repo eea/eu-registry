@@ -46,6 +46,7 @@ declare variable $utils:checks2018 := (
 declare variable $utils:skipCountries := map {
     'BE': ('C0'),
     'CH': ('C4.9', 'C4.10', 'C4.11', 'C4.12'),
+    'NO': ('C0'),
     'RS': ('C0'),
     'SK': ('C0')
 };
@@ -155,7 +156,7 @@ declare function utils:getNotApplicable(
         <div class="iedreg inner msg gray mnone">
             <span class="iedreg nowrap header">Not applicable</span>
             <br/>
-            <span class="iedreg">This check is not applicable for your country</span>
+            <span class="iedreg">This check is not applicable to your country</span>
         </div>
     </div>
 };
