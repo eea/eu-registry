@@ -47,6 +47,7 @@ declare variable $utils:skipCountries := map {
     'BE': ('C0'),
     'CH': ('C4.9', 'C4.10', 'C4.11', 'C4.12'),
     'FR': ('C0'),
+    'NL': ('C0'),
     'NO': ('C0'),
     'RS': ('C0'),
     'SK': ('C0')
