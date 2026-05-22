@@ -50,6 +50,7 @@ declare variable $utils:skipCountries := map {
     'NL': ('C0'),
     'NO': ('C0'),
     'RS': ('C0'),
+    'SI': ('C0'),
     'SK': ('C0')
 };
 declare variable $utils:run2018checks := true();
